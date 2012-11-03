@@ -1,0 +1,10 @@
+C:\Users\Tommy\Desktop\c++ eigene Klassen\DSA 1 Editing Tool\DSA 1 Editing Tool\bin\Debug\DSA 1 Editing Tool.exe
+C:\Users\Tommy\Desktop\c++ eigene Klassen\DSA 1 Editing Tool\DSA 1 Editing Tool\bin\Debug\DSA 1 Editing Tool.pdb
+C:\Users\Tommy\Desktop\c++ eigene Klassen\DSA 1 Editing Tool\DSA 1 Editing Tool\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Tommy\Desktop\c++ eigene Klassen\DSA 1 Editing Tool\DSA 1 Editing Tool\obj\x86\Debug\DSA_1_Editing_Tool.Form1.resources
+C:\Users\Tommy\Desktop\c++ eigene Klassen\DSA 1 Editing Tool\DSA 1 Editing Tool\obj\x86\Debug\DSA_1_Editing_Tool.Properties.Resources.resources
+C:\Users\Tommy\Desktop\c++ eigene Klassen\DSA 1 Editing Tool\DSA 1 Editing Tool\obj\x86\Debug\ResGen.read.1.tlog
+C:\Users\Tommy\Desktop\c++ eigene Klassen\DSA 1 Editing Tool\DSA 1 Editing Tool\obj\x86\Debug\ResGen.write.1.tlog
+C:\Users\Tommy\Desktop\c++ eigene Klassen\DSA 1 Editing Tool\DSA 1 Editing Tool\obj\x86\Debug\DSA 1 Editing Tool.exe
+C:\Users\Tommy\Desktop\c++ eigene Klassen\DSA 1 Editing Tool\DSA 1 Editing Tool\obj\x86\Debug\DSA 1 Editing Tool.pdb
+C:\Users\Tommy\Desktop\c++ eigene Klassen\DSA 1 Editing Tool\DSA 1 Editing Tool\bin\Debug\DSA 1 Editing Tool.exe.config
