@@ -294,7 +294,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                     NVF.endOffset = unpackedData.Length;
                     NVF.startOffset = 0;
                 }
-                catch (SystemException e)
+                catch (SystemException)
                 {
                     CDebugger.addErrorLine("Fehler beim entpacken der Datei " + NVF.filename + " (amiga)");
                     return images;
@@ -313,7 +313,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                     NVF.endOffset = unpackedData.Length;
                     NVF.startOffset = 0;
                 }
-                catch (SystemException e)
+                catch (SystemException)
                 {
                     CDebugger.addErrorLine("Fehler beim entpacken der Datei " + NVF.filename + " (RLE)");
                     return images;
@@ -341,7 +341,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                         //unkomrimiert
                         images.AddRange(this.loadUncompressedImage(ref unpackedData, NVF));
                     }
-                    catch (SystemException e)
+                    catch (SystemException)
                     {
                         CDebugger.addErrorLine("Fehler beim laden des Bildes: " + NVF.filename + "(Unkomprimiert)");
                         return images;
@@ -354,7 +354,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                         //Amiga Power Pack 2.0 Kompression
                         images.AddRange(this.loadAmigaImage(ref unpackedData, NVF));
                     }
-                    catch (SystemException e)
+                    catch (SystemException)
                     {
                         CDebugger.addErrorLine("Fehler beim laden des Bildes: " + NVF.filename + "(Amiga)");
                         return images;
@@ -367,7 +367,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                         //RLE Kompression
                         images.AddRange(this.loadRLEImage(ref unpackedData, NVF));
                     }
-                    catch (SystemException e)
+                    catch (SystemException)
                     {
                         CDebugger.addErrorLine("Fehler beim laden des Bildes: " + NVF.filename + "(RLE)");
                         return images;
@@ -387,7 +387,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                 {
                     images.AddRange(this.loadImageWithoutHeader(ref unpackedData, NVF, header));
                 }
-                catch (SystemException e)
+                catch (SystemException)
                 {
                     CDebugger.addErrorLine("Fehler beim laden des Bildes: " + NVF.filename + "(kein Header)");
                     return images;
@@ -543,7 +543,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                         colors[i] = Color.FromArgb(data[position++] * 4, data[position++] * 4, data[position++] * 4);
                     }
                 }
-                catch (SystemException e)
+                catch (SystemException)
                 {
                     CDebugger.addDebugLine("Fehler beim Laden der Farbpaltte in der Datei " + NVF.filename + " (Amiga)");
                     return images;
@@ -667,7 +667,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                         colors[i] = Color.FromArgb(data[position++] * 4, data[position++] * 4, data[position++] * 4);
                     }
                 }
-                catch (SystemException e)
+                catch (SystemException)
                 {
                     CDebugger.addDebugLine("Fehler beim Laden der Farbpaltte in der Datei " + NVF.filename + " (RLE)");
                     return images;
@@ -955,7 +955,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                         colors[i] = Color.FromArgb(data[position++] * 4, data[position++] * 4, data[position++] * 4);
                     }
                 }
-                catch(SystemException e)
+                catch(SystemException)
                 {
                     CDebugger.addErrorLine("Fehler beim Laden der Farbpaltte in der Datei " + NVF.filename + " (kein Header)");
                     return images;

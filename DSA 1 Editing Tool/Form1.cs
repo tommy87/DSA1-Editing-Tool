@@ -621,7 +621,7 @@ namespace DSA_1_Editing_Tool
                 }
 
             }
-            catch (SystemException e2)
+            catch (SystemException)
             {
                 CDebugger.addErrorLine("Fehler beim Laden der Dialoge");
             }
@@ -661,7 +661,7 @@ namespace DSA_1_Editing_Tool
                 this.Dialoge_btStartTestDialog.Enabled = true;
 
             }
-            catch (SystemException e2)
+            catch (SystemException)
             {
                 CDebugger.addErrorLine("Fehler beim Laden des Gesprächspartners(Dialoge)");
             }
@@ -685,7 +685,7 @@ namespace DSA_1_Editing_Tool
                 this.Dialoge_rtbCurrenText.Text = this.itsDSAFileLoader.dialoge.itsDialoge[index_1].Value.itsTexte[index_2];
 
             }
-            catch (SystemException e2)
+            catch (SystemException)
             {
                 CDebugger.addErrorLine("Fehler beim Laden des Textes(Dialoge)");
             }
@@ -718,7 +718,7 @@ namespace DSA_1_Editing_Tool
                 this.Dialoge_Layout_tbLayoutIndexAntwort3.Text = layout.FolgeLayoutBeiAntwort3.ToString();
 
             }
-            catch (SystemException e2)
+            catch (SystemException)
             {
                 CDebugger.addErrorLine("Fehler beim Laden des Textes(Dialoge)");
             }
@@ -802,7 +802,7 @@ namespace DSA_1_Editing_Tool
                 this.Dialoge_rtbCurrenText.Text = this.itsDSAFileLoader.dialoge.itsDialoge[index_1].Value.itsTexte[index_2];
 
             }
-            catch (SystemException e2)
+            catch (SystemException)
             {
                 CDebugger.addErrorLine("Fehler beim Laden des Textes(Dialoge)");
             }
@@ -831,7 +831,7 @@ namespace DSA_1_Editing_Tool
                 this.Dialoge_Layout_tbLayoutIndexAntwort2.Text = layout.FolgeLayoutBeiAntwort2.ToString();
                 this.Dialoge_Layout_tbLayoutIndexAntwort3.Text = layout.FolgeLayoutBeiAntwort3.ToString();
             }
-            catch (SystemException e2)
+            catch (SystemException)
             {
                 CDebugger.addErrorLine("Fehler beim Laden des Textes(Dialoge)");
             }
@@ -905,7 +905,7 @@ namespace DSA_1_Editing_Tool
 
                 this.loadLayoutForTestDialog(0);
             }
-            catch (SystemException e2)
+            catch (SystemException)
             {
                 CDebugger.addErrorLine("Fehler beim Laden des Gesprächspartners(Dialoge)");
                 this.disableTestDialoge();

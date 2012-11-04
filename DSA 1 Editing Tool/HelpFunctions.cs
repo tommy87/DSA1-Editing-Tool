@@ -272,7 +272,7 @@ namespace DSA_1_Editing_Tool
                     amiga.counter--;
                 }
             }
-            catch (SystemException e)
+            catch (SystemException)
             {
                 return 0;
             }
