@@ -175,6 +175,9 @@ namespace DSA_1_Editing_Tool
             this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
             fileset_1 = this.getFileByName("ROALOGUS.DAT", true);
             this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+
+            //fileset_1 = this.getFileByName("ANIS", false);
+            //this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
             
             //---------Bild Archive-----------------------
             fileset_1 = this.getFileByName("MONSTER", false);
@@ -187,6 +190,7 @@ namespace DSA_1_Editing_Tool
             fileset_2 = this.getFileByName("WFIGS.TAB", false);
             this.bilder.addArchivToList(ref this.MAIN_DAT, fileset_1, fileset_2);
             
+            //Anis fällt irgendwie aus der Reihe, verschoben zu den normalen Bildern
             fileset_1 = this.getFileByName("ANIS", false);
             fileset_2 = this.getFileByName("ANIS.TAB", false);
             this.bilder.addArchivToList(ref this.MAIN_DAT, fileset_1, fileset_2);

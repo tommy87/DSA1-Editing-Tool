@@ -168,21 +168,22 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             List<Int32> offsets = new List<int>();
             List<Image> images = new List<Image>();
+
             //TAB enthält offsets mit Int32
             for (Int32 i = TAB.startOffset; i < TAB.endOffset; i += 4)
             {
-                offsets.Add(CHelpFunctions.byteArrayToInt32(ref data, i));
+                offsets.Add(CHelpFunctions.byteArrayToInt32(ref data, i));  //letzter eintrag in der TAB ist das offset des endes des letzten bildes 
             }
 
             CDSAFileLoader.CFileSet fileSet;
             List<Image> list;
-            for (int i = 0; i < offsets.Count; i++)
+            for (int i = 0; i < offsets.Count - 1; i++)
             {
                 int end;
-                if (i < (offsets.Count - 1))
+                //if (i < (offsets.Count - 1))
                     end = ARCHIV.startOffset + offsets[i + 1];
-                else
-                    end = ARCHIV.endOffset;
+                //else
+                //    end = ARCHIV.endOffset;
 
                 try
                 {
@@ -283,7 +284,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             List<Image> images = new List<Image>();
             byte[] unpackedData = null;
 
-            CImageHeader header = this.checkForSpezialFile(NVF.filename);
+            CImageHeader header = this.checkForSpezialFile(NVF.filename); // ist == null wenn es keine spezielle Datei ist und einen eigenen Header besitzt
 
             if (checkForAmigaPackedFile(NVF.filename))
             {
@@ -318,17 +319,17 @@ namespace DSA_1_Editing_Tool.File_Loader
                     return images;
                 }
             }
-            else if (NVF.filename.Substring(0,4) == "ANIS")
-            {
-                images.AddRange(this.loadANISImages(ref data, NVF));
-                return images;
-            }
             else
                 unpackedData = data;
 
             int offset = NVF.startOffset;
 
-            if (header == null)
+            if (NVF.filename.Substring(0, 4) == "ANIS")
+            {
+                images.AddRange(this.loadANISImages(ref data, NVF));
+                return images;
+            }
+            else if (header == null)
             {
                 //header vorhanden
                 byte crunchmode = unpackedData[offset];
@@ -392,7 +393,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                     return images;
                 }
             }
-
 
             return images;
         }
@@ -851,7 +851,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             int position = NVF.startOffset;
             int i;
 
-            // CDebugger.addDebugLine("Reading ANIS Header for file with startoffset "+NVF.startOffset);
+             //CDebugger.addDebugLine("Reading ANIS Header for file with startoffset "+NVF.startOffset);
             // ANIS-Header einlesen
             int imagedataoffset = CHelpFunctions.byteArrayToInt32(ref data, position);
             int paletteoffset = CHelpFunctions.byteArrayToInt32(ref data, position+4);
@@ -861,12 +861,12 @@ namespace DSA_1_Editing_Tool.File_Loader
             int numelements = (int)data[position+11];
             List<int> elementoffsets = new List<int>(numelements);
             position += 12;
-            // CDebugger.addDebugLine("Image Size "+iwidth+"/"+iheight+", Total of "+numelements+" subelements");
+             //CDebugger.addDebugLine("Image Size "+iwidth+"/"+iheight+", Total of "+numelements+" subelements");
             for (i = 0; i < numelements; i++)
             {
                 elementoffsets.Add( CHelpFunctions.byteArrayToInt32(ref data, position ) );
                 position += 4;
-                // CDebugger.addDebugLine("Subelement Offset "+string.Format("{0:X4}", elementoffsets[elementoffsets.Count-1]));
+               //  CDebugger.addDebugLine("Subelement Offset "+string.Format("{0:X4}", elementoffsets[elementoffsets.Count-1]));
             }
 
             // die ersten vier Bytes geben die gepackte Länge an
