@@ -12,7 +12,7 @@ namespace DSA_1_Editing_Tool
         static Color[] townColors = null;
         static Color[] itemColors = null;
 
-        static private void createColors()
+        static CFarbPalette()
         {
             if (palette_1 == null)
             {
@@ -439,13 +439,10 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
 
         static private Color getDefaultColor(Byte input)
         {
-            createColors();
             return palette_1[input];
         }
         static private Color getTownColor(Byte input)
         {
-            createColors();
-
             byte startValue = 128;
             if (input < startValue || input > (startValue + townColors.Length))
                 return palette_1[input];
@@ -454,7 +451,6 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
         }
         static private Color getItemColor(Byte input)
         {
-            createColors();
 
             byte startValue = 64;
             if (input < startValue || input > (startValue + townColors.Length))
