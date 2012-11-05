@@ -433,7 +433,41 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
         {
             fightPalette = (Color[])defaultPalette.Clone();
 
-            
+            fightPalette[0x00] = Color.FromArgb(0x00 * 4, 0x00 * 4, 0x00 * 4);
+            fightPalette[0x01] = Color.FromArgb(0x3C * 4, 0x2C * 4, 0x24 * 4);
+            fightPalette[0x02] = Color.FromArgb(0x3C * 4, 0x28 * 4, 0x1C * 4);
+            fightPalette[0x03] = Color.FromArgb(0x34 * 4, 0x20 * 4, 0x18 * 4);
+            fightPalette[0x04] = Color.FromArgb(0x28 * 4, 0x18 * 4, 0x14 * 4);
+            fightPalette[0x05] = Color.FromArgb(0x20 * 4, 0x14 * 4, 0x10 * 4);
+            fightPalette[0x06] = Color.FromArgb(0x18 * 4, 0x0C * 4, 0x08 * 4);
+            fightPalette[0x07] = Color.FromArgb(0x10 * 4, 0x08 * 4, 0x08 * 4);
+
+            fightPalette[0x08] = Color.FromArgb(0x0C * 4, 0x04 * 4, 0x04 * 4);
+            fightPalette[0x09] = Color.FromArgb(0x34 * 4, 0x34 * 4, 0x34 * 4);
+            fightPalette[0x0A] = Color.FromArgb(0x28 * 4, 0x28 * 4, 0x28 * 4);
+            fightPalette[0x0B] = Color.FromArgb(0x20 * 4, 0x20 * 4, 0x20 * 4);
+            fightPalette[0x0C] = Color.FromArgb(0x18 * 4, 0x18 * 4, 0x18 * 4);
+            fightPalette[0x0D] = Color.FromArgb(0x14 * 4, 0x14 * 4, 0x14 * 4);
+            fightPalette[0x0E] = Color.FromArgb(0x10 * 4, 0x10 * 4, 0x10 * 4);
+            fightPalette[0x0F] = Color.FromArgb(0x0C * 4, 0x0C * 4, 0x0C * 4);
+
+            fightPalette[0x10] = Color.FromArgb(0x08 * 4, 0x08 * 4, 0x08 * 4);
+            fightPalette[0x11] = Color.FromArgb(0x14 * 4, 0x0C * 4, 0x08 * 4);
+            fightPalette[0x12] = Color.FromArgb(0x00 * 4, 0x00 * 4, 0x00 * 4);
+            fightPalette[0x13] = Color.FromArgb(0x18 * 4, 0x14 * 4, 0x3C * 4);
+            fightPalette[0x14] = Color.FromArgb(0x14 * 4, 0x00 * 4, 0x00 * 4);
+            fightPalette[0x15] = Color.FromArgb(0x1C * 4, 0x00 * 4, 0x00 * 4);
+            fightPalette[0x16] = Color.FromArgb(0x24 * 4, 0x00 * 4, 0x00 * 4);
+            fightPalette[0x17] = Color.FromArgb(0x2C * 4, 0x00 * 4, 0x00 * 4);
+
+            fightPalette[0x18] = Color.FromArgb(0x3C * 4, 0x00 * 4, 0x00 * 4);
+            fightPalette[0x19] = Color.FromArgb(0x1C * 4, 0x10 * 4, 0x10 * 4);
+            fightPalette[0x1A] = Color.FromArgb(0x00 * 4, 0x1C * 4, 0x00 * 4);
+            fightPalette[0x1B] = Color.FromArgb(0x00 * 4, 0x24 * 4, 0x00 * 4);
+            fightPalette[0x1C] = Color.FromArgb(0x00 * 4, 0x2C * 4, 0x00 * 4);
+            fightPalette[0x1D] = Color.FromArgb(0x00 * 4, 0x3C * 4, 0x00 * 4);
+            fightPalette[0x1E] = Color.FromArgb(0x00 * 4, 0x1C * 4, 0x00 * 4);
+            fightPalette[0x1F] = Color.FromArgb(0x00 * 4, 0x28 * 4, 0x00 * 4);
 
         }
 

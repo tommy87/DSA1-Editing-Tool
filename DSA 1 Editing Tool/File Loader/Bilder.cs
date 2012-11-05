@@ -199,7 +199,8 @@ namespace DSA_1_Editing_Tool.File_Loader
 
                 try
                 {
-                    fileSet = new CDSAFileLoader.CFileSet(ARCHIV.filename + "(Bild " + i.ToString() + ")", ARCHIV.startOffset + offsets[i], ARCHIV.startOffset + offsets[i + 1]);
+                    //fileSet = new CDSAFileLoader.CFileSet(ARCHIV.filename + "(Bild " + i.ToString() + ")", ARCHIV.startOffset + offsets[i], ARCHIV.startOffset + offsets[i + 1]);
+                    fileSet = new CDSAFileLoader.CFileSet(ARCHIV.filename, ARCHIV.startOffset + offsets[i], ARCHIV.startOffset + offsets[i + 1]);
                     list = this.loadNVF(ref data, fileSet);
                     if( ARCHIV.filename == "MONSTER" )
                         this.itsMonsterImages.Add(list);
