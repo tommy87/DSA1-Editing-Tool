@@ -15,7 +15,9 @@ namespace DSA_1_Editing_Tool.File_Loader
         private List<KeyValuePair<string, CImageHeader>> itsSpezialFiles_SCHICK = new List<KeyValuePair<string, CImageHeader>>();
         private List<KeyValuePair<string, CImageHeader>> itsSpezialFiles_DSAGEN = new List<KeyValuePair<string, CImageHeader>>();
 
-        private List<string> itsTownBuildings_SCHICK = new List<string>();
+        private List<string> itsTownPictures_SCHICK = new List<string>();
+        private List<string> itsFightPictures_SCHICK = new List<string>();
+        private List<string> itsCharMenüPictures_SCHICK = new List<string>();
 
         private List<string> itsAmigaPackedFiles_SCHICK = new List<string>();
         private List<string> itsAmigaPackedFiles_DSAGEN = new List<string>();
@@ -50,11 +52,25 @@ namespace DSA_1_Editing_Tool.File_Loader
             // this.itsSpezialFiles_SCHICK.Add(new KeyValuePair<string, CImageHeader>("ANIS", new CImageHeader(208, 100, 0)));
             this.itsSpezialFiles_SCHICK.Add(new KeyValuePair<string, CImageHeader>("BSKILLS.DAT", new CImageHeader(50, 26, 0)));
 
-            this.itsTownBuildings_SCHICK.Add("HOUSE1.NVF");
-            this.itsTownBuildings_SCHICK.Add("HOUSE2.NVF");
-            this.itsTownBuildings_SCHICK.Add("HOUSE3.NVF");
-            this.itsTownBuildings_SCHICK.Add("HOUSE4.NVF");
-            this.itsTownBuildings_SCHICK.Add("FINGER.NVF");
+            this.itsTownPictures_SCHICK.Add("HOUSE1.NVF");
+            this.itsTownPictures_SCHICK.Add("HOUSE2.NVF");
+            this.itsTownPictures_SCHICK.Add("HOUSE3.NVF");
+            this.itsTownPictures_SCHICK.Add("HOUSE4.NVF");
+            this.itsTownPictures_SCHICK.Add("FINGER.NVF");
+            this.itsTownPictures_SCHICK.Add("PLAYM_UK");
+            this.itsTownPictures_SCHICK.Add("PLAYM_US");
+            this.itsTownPictures_SCHICK.Add("TEMPICON");
+            this.itsTownPictures_SCHICK.Add("COMPASS");
+            this.itsTownPictures_SCHICK.Add("BICONS");
+
+            this.itsCharMenüPictures_SCHICK.Add("GGSTS.NVF");
+
+            this.itsFightPictures_SCHICK.Add("WEAPONS.NVF");
+            this.itsFightPictures_SCHICK.Add("SPELLOBJ.NVF");
+            this.itsFightPictures_SCHICK.Add("FIGHTOBJ.NVF");
+            this.itsFightPictures_SCHICK.Add("MONSTER");
+            this.itsFightPictures_SCHICK.Add("MFIGS");
+            this.itsFightPictures_SCHICK.Add("WFIGS");
 
             this.itsAmigaPackedFiles_SCHICK.Add("PLAYM_UK");
             this.itsAmigaPackedFiles_SCHICK.Add("PLAYM_US");
@@ -179,15 +195,11 @@ namespace DSA_1_Editing_Tool.File_Loader
             List<Image> list;
             for (int i = 0; i < offsets.Count - 1; i++)
             {
-                int end;
-                //if (i < (offsets.Count - 1))
-                    end = ARCHIV.startOffset + offsets[i + 1];
-                //else
-                //    end = ARCHIV.endOffset;
+                //int end = ;
 
                 try
                 {
-                    fileSet = new CDSAFileLoader.CFileSet(ARCHIV.filename + "(Bild " + i.ToString() + ")", ARCHIV.startOffset + offsets[i], end);
+                    fileSet = new CDSAFileLoader.CFileSet(ARCHIV.filename + "(Bild " + i.ToString() + ")", ARCHIV.startOffset + offsets[i], ARCHIV.startOffset + offsets[i + 1]);
                     list = this.loadNVF(ref data, fileSet);
                     if( ARCHIV.filename == "MONSTER" )
                         this.itsMonsterImages.Add(list);
@@ -209,6 +221,7 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             this.itsImages.Add(new KeyValuePair<string, List<Image>>(NVF.filename, this.loadNVF(ref data, NVF)));
         }
+
         public Image getItemImageByID(Int32 ImageID)
         {
             if (ImageID < 0)
@@ -440,14 +453,23 @@ namespace DSA_1_Editing_Tool.File_Loader
         }
         private CFarbPalette.palettenTyp getPalettenTyp(string filename)
         {
-            foreach (string s in itsTownBuildings_SCHICK)
+            foreach (string s in itsTownPictures_SCHICK)
             {
                 if (s == filename)
                     return CFarbPalette.palettenTyp.Town_Pal;
             }
 
-            if (filename == "GGSTS.NVF")
-                return CFarbPalette.palettenTyp.Item_Pal;
+            foreach (string s in itsFightPictures_SCHICK)
+            {
+                if (s == filename)
+                    return CFarbPalette.palettenTyp.Fight_Pal;
+            }
+
+            foreach (string s in itsCharMenüPictures_SCHICK)
+            {
+                if (s == filename)
+                    return CFarbPalette.palettenTyp.CharMenü_Pal;
+            }                
 
             return CFarbPalette.palettenTyp.default_Pal;
         }

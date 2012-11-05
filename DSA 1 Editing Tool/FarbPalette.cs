@@ -8,11 +8,12 @@ namespace DSA_1_Editing_Tool
 {
     static class CFarbPalette
     {
-        public enum palettenTyp { default_Pal, Town_Pal, Item_Pal };
+        public enum palettenTyp { default_Pal, Town_Pal, CharMenü_Pal, Fight_Pal };
 
         static Color[] defaultPalette = new Color[256];
         static Color[] townPalette = null;
-        static Color[] itemPalette = null;
+        static Color[] charMenüPalette = null;
+        static Color[] fightPalette = null;
 
         static CFarbPalette()
         {
@@ -20,6 +21,7 @@ namespace DSA_1_Editing_Tool
 
             initTownPalette();
             initItemPalette();
+            initFightPalette();
         }
         static private void initDefaultPalette()
         {
@@ -388,44 +390,51 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
         }
         static private void initItemPalette()
         {
-            itemPalette = (Color[])defaultPalette.Clone();
+            charMenüPalette = (Color[])defaultPalette.Clone();
             //itemPalette = new Color[32];
 
-            itemPalette[0x40] = Color.FromArgb(00 * 4, 00 * 4, 00 * 4);
-            itemPalette[0x41] = Color.FromArgb(56 * 4, 48 * 4, 40 * 4);
-            itemPalette[0x42] = Color.FromArgb(48 * 4, 36 * 4, 28 * 4);
-            itemPalette[0x43] = Color.FromArgb(36 * 4, 24 * 4, 16 * 4);
-            itemPalette[0x44] = Color.FromArgb(32 * 4, 20 * 4, 12 * 4);
-            itemPalette[0x45] = Color.FromArgb(24 * 4, 12 * 4, 08 * 4);
-            itemPalette[0x46] = Color.FromArgb(20 * 4, 08 * 4, 04 * 4);
-            itemPalette[0x47] = Color.FromArgb(12 * 4, 04 * 4, 00 * 4);
+            charMenüPalette[0x40] = Color.FromArgb(00 * 4, 00 * 4, 00 * 4);
+            charMenüPalette[0x41] = Color.FromArgb(56 * 4, 48 * 4, 40 * 4);
+            charMenüPalette[0x42] = Color.FromArgb(48 * 4, 36 * 4, 28 * 4);
+            charMenüPalette[0x43] = Color.FromArgb(36 * 4, 24 * 4, 16 * 4);
+            charMenüPalette[0x44] = Color.FromArgb(32 * 4, 20 * 4, 12 * 4);
+            charMenüPalette[0x45] = Color.FromArgb(24 * 4, 12 * 4, 08 * 4);
+            charMenüPalette[0x46] = Color.FromArgb(20 * 4, 08 * 4, 04 * 4);
+            charMenüPalette[0x47] = Color.FromArgb(12 * 4, 04 * 4, 00 * 4);
 
-            itemPalette[0x48] = Color.FromArgb(60 * 4, 56 * 4, 00 * 4);
-            itemPalette[0x49] = Color.FromArgb(25 * 4, 40 * 4, 00 * 4);
-            itemPalette[0x4A] = Color.FromArgb(48 * 4, 28 * 4, 00 * 4);
-            itemPalette[0x4B] = Color.FromArgb(44 * 4, 20 * 4, 00 * 4);
-            itemPalette[0x4C] = Color.FromArgb(60 * 4, 36 * 4, 00 * 4);
-            itemPalette[0x4D] = Color.FromArgb(60 * 4, 12 * 4, 00 * 4);
-            itemPalette[0x4E] = Color.FromArgb(60 * 4, 00 * 4, 08 * 4);
-            itemPalette[0x4F] = Color.FromArgb(60 * 4, 00 * 4, 32 * 4);
+            charMenüPalette[0x48] = Color.FromArgb(60 * 4, 56 * 4, 00 * 4);
+            charMenüPalette[0x49] = Color.FromArgb(25 * 4, 40 * 4, 00 * 4);
+            charMenüPalette[0x4A] = Color.FromArgb(48 * 4, 28 * 4, 00 * 4);
+            charMenüPalette[0x4B] = Color.FromArgb(44 * 4, 20 * 4, 00 * 4);
+            charMenüPalette[0x4C] = Color.FromArgb(60 * 4, 36 * 4, 00 * 4);
+            charMenüPalette[0x4D] = Color.FromArgb(60 * 4, 12 * 4, 00 * 4);
+            charMenüPalette[0x4E] = Color.FromArgb(60 * 4, 00 * 4, 08 * 4);
+            charMenüPalette[0x4F] = Color.FromArgb(60 * 4, 00 * 4, 32 * 4);
 
-            itemPalette[0x50] = Color.FromArgb(00 * 4, 16 * 4, 00 * 4);
-            itemPalette[0x51] = Color.FromArgb(00 * 4, 20 * 4, 00 * 4);
-            itemPalette[0x52] = Color.FromArgb(00 * 4, 28 * 4, 00 * 4);
-            itemPalette[0x53] = Color.FromArgb(04 * 4, 32 * 4, 00 * 4);
-            itemPalette[0x54] = Color.FromArgb(04 * 4, 40 * 4, 00 * 4);
-            itemPalette[0x55] = Color.FromArgb(28 * 4, 58 * 4, 60 * 4);
-            itemPalette[0x56] = Color.FromArgb(20 * 4, 44 * 4, 52 * 4);
-            itemPalette[0x57] = Color.FromArgb(12 * 4, 28 * 4, 48 * 4);
+            charMenüPalette[0x50] = Color.FromArgb(00 * 4, 16 * 4, 00 * 4);
+            charMenüPalette[0x51] = Color.FromArgb(00 * 4, 20 * 4, 00 * 4);
+            charMenüPalette[0x52] = Color.FromArgb(00 * 4, 28 * 4, 00 * 4);
+            charMenüPalette[0x53] = Color.FromArgb(04 * 4, 32 * 4, 00 * 4);
+            charMenüPalette[0x54] = Color.FromArgb(04 * 4, 40 * 4, 00 * 4);
+            charMenüPalette[0x55] = Color.FromArgb(28 * 4, 58 * 4, 60 * 4);
+            charMenüPalette[0x56] = Color.FromArgb(20 * 4, 44 * 4, 52 * 4);
+            charMenüPalette[0x57] = Color.FromArgb(12 * 4, 28 * 4, 48 * 4);
 
-            itemPalette[0x58] = Color.FromArgb(04 * 4, 12 * 4, 40 * 4);
-            itemPalette[0x59] = Color.FromArgb(00 * 4, 00 * 4, 36 * 4);
-            itemPalette[0x5A] = Color.FromArgb(16 * 4, 16 * 4, 16 * 4);
-            itemPalette[0x5B] = Color.FromArgb(20 * 4, 20 * 4, 20 * 4);
-            itemPalette[0x5C] = Color.FromArgb(28 * 4, 28 * 4, 28 * 4);
-            itemPalette[0x5D] = Color.FromArgb(36 * 4, 36 * 4, 36 * 4);
-            itemPalette[0x5E] = Color.FromArgb(48 * 4, 48 * 4, 48 * 4);
-            itemPalette[0x5F] = Color.FromArgb(60 * 4, 60 * 4, 60 * 4);
+            charMenüPalette[0x58] = Color.FromArgb(04 * 4, 12 * 4, 40 * 4);
+            charMenüPalette[0x59] = Color.FromArgb(00 * 4, 00 * 4, 36 * 4);
+            charMenüPalette[0x5A] = Color.FromArgb(16 * 4, 16 * 4, 16 * 4);
+            charMenüPalette[0x5B] = Color.FromArgb(20 * 4, 20 * 4, 20 * 4);
+            charMenüPalette[0x5C] = Color.FromArgb(28 * 4, 28 * 4, 28 * 4);
+            charMenüPalette[0x5D] = Color.FromArgb(36 * 4, 36 * 4, 36 * 4);
+            charMenüPalette[0x5E] = Color.FromArgb(48 * 4, 48 * 4, 48 * 4);
+            charMenüPalette[0x5F] = Color.FromArgb(60 * 4, 60 * 4, 60 * 4);
+        }
+        static private void initFightPalette()
+        {
+            fightPalette = (Color[])defaultPalette.Clone();
+
+            
+
         }
 
         static public Color getColor(palettenTyp typ, Byte input)
@@ -435,8 +444,11 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
                 case palettenTyp.Town_Pal:
                     return townPalette[input];
 
-                case palettenTyp.Item_Pal:
-                    return itemPalette[input];
+                case palettenTyp.CharMenü_Pal:
+                    return charMenüPalette[input];
+
+                case palettenTyp.Fight_Pal:
+                    return fightPalette[input];
 
                 default:
                     return defaultPalette[input];
