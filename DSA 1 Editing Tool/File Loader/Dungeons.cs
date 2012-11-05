@@ -192,11 +192,11 @@ namespace DSA_1_Editing_Tool.File_Loader
 
                     for (int i = 0; i < 4; i++)
                     {
-                        this.Flucht_Ebene[i] = (byte)(data[offset + 4 + 2 * i] & 0x0F);
-                        this.Flucht_PosY[i] = (byte)((data[offset + 4 + 2 * i] & 0xF0) >> 4);
+                        this.Flucht_PosX[i] = (byte)(data[offset + 4 + 2 * i] & 0x0F);
+                        this.Flucht_Blickrichtung[i] = (byte)((data[offset + 4 + 2 * i] & 0xF0) >> 4);
 
-                        this.Flucht_Blickrichtung[i] = (byte)(data[offset + 4 + 2 * i + 1] & 0x0F);
-                        this.Flucht_PosX[i] = (byte)((data[offset + 4 + 2 * i + 1] & 0xF0) >> 4); 
+                        this.Flucht_PosY[i] = (byte)(data[offset + 4 + 2 * i + 1] & 0x0F);
+                        this.Flucht_Ebene[i] = (byte)((data[offset + 4 + 2 * i + 1] & 0xF0) >> 4); 
                     }
 
                     this.extraAP = (Int16)(data[offset + 12] + (data[offset + 13] << 8));

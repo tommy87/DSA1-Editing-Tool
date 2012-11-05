@@ -1612,7 +1612,7 @@ namespace DSA_1_Editing_Tool
                 }
 
                 CFight_SpielerInfo spieler = this.itsDSAFileLoader.kampf.itsFight_LST[index_1].itsSpielerInfos[index_2];
-                this.tB_Fight_Spieler_Blickrichtung.Text = spieler.Blickrichtung.ToString();
+                this.tB_Fight_Spieler_Blickrichtung.Text = CHelpFunctions.dsaRichtungToString(spieler.Blickrichtung);
                 this.tB_Fight_Spieler_Startrunde.Text = spieler.Startrunde.ToString();
                 this.tB_Fight_Spieler_XPos.Text = spieler.Position_X.ToString();
                 this.tB_Fight_Spieler_YPos.Text = spieler.Position_Y.ToString();
@@ -2021,25 +2021,57 @@ namespace DSA_1_Editing_Tool
 
                     this.Dungeons_Fights_tBEbene.Text = fight.Ebene.ToString();
                     this.Dungeons_Fights_tBErstAP.Text = fight.extraAP.ToString();
-                    this.Dungeons_Fights_tBFluchtBlickrichtung.Text = fight.Flucht_Blickrichtung.ToString();
-                    this.Dungeons_Fights_tBFluchtEbene.Text = fight.Flucht_Ebene.ToString();
-                    this.Dungeons_Fights_tBFluchtPosX.Text = fight.Flucht_PosX.ToString();
-                    this.Dungeons_Fights_tBFluchtPosY.Text = fight.Flucht_PosY.ToString();
                     this.Dungeons_Fights_tBID.Text = fight.KampfID.ToString();
                     this.Dungeons_Fights_tBPosX.Text = fight.PositionX.ToString();
                     this.Dungeons_Fights_tBPosY.Text = fight.PositionY.ToString();
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_1.Text = CHelpFunctions.dsaRichtungToString(fight.Flucht_Blickrichtung[0]);
+                    this.Dungeons_Fights_tBFluchtEbene_1.Text = fight.Flucht_Ebene[0].ToString();
+                    this.Dungeons_Fights_tBFluchtPosX_1.Text = fight.Flucht_PosX[0].ToString();
+                    this.Dungeons_Fights_tBFluchtPosY_1.Text = fight.Flucht_PosY[0].ToString();
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_2.Text = CHelpFunctions.dsaRichtungToString(fight.Flucht_Blickrichtung[1]);
+                    this.Dungeons_Fights_tBFluchtEbene_2.Text = fight.Flucht_Ebene[1].ToString();
+                    this.Dungeons_Fights_tBFluchtPosX_2.Text = fight.Flucht_PosX[1].ToString();
+                    this.Dungeons_Fights_tBFluchtPosY_2.Text = fight.Flucht_PosY[1].ToString();
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_3.Text = CHelpFunctions.dsaRichtungToString(fight.Flucht_Blickrichtung[2]);
+                    this.Dungeons_Fights_tBFluchtEbene_3.Text = fight.Flucht_Ebene[2].ToString();
+                    this.Dungeons_Fights_tBFluchtPosX_3.Text = fight.Flucht_PosX[2].ToString();
+                    this.Dungeons_Fights_tBFluchtPosY_3.Text = fight.Flucht_PosY[2].ToString();
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_4.Text = CHelpFunctions.dsaRichtungToString(fight.Flucht_Blickrichtung[3]);
+                    this.Dungeons_Fights_tBFluchtEbene_4.Text = fight.Flucht_Ebene[3].ToString();
+                    this.Dungeons_Fights_tBFluchtPosX_4.Text = fight.Flucht_PosX[3].ToString();
+                    this.Dungeons_Fights_tBFluchtPosY_4.Text = fight.Flucht_PosY[3].ToString();
                 }
                 else
                 {
                     this.Dungeons_Fights_tBEbene.Text = "";
                     this.Dungeons_Fights_tBErstAP.Text = "";
-                    this.Dungeons_Fights_tBFluchtBlickrichtung.Text = "";
-                    this.Dungeons_Fights_tBFluchtEbene.Text = "";
-                    this.Dungeons_Fights_tBFluchtPosX.Text = "";
-                    this.Dungeons_Fights_tBFluchtPosY.Text = "";
                     this.Dungeons_Fights_tBID.Text = "";
                     this.Dungeons_Fights_tBPosX.Text = "";
                     this.Dungeons_Fights_tBPosY.Text = "";
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_1.Text = "";
+                    this.Dungeons_Fights_tBFluchtEbene_1.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosX_1.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosY_1.Text = "";
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_2.Text = "";
+                    this.Dungeons_Fights_tBFluchtEbene_2.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosX_2.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosY_2.Text = "";
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_3.Text = "";
+                    this.Dungeons_Fights_tBFluchtEbene_3.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosX_3.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosY_3.Text = "";
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_4.Text = "";
+                    this.Dungeons_Fights_tBFluchtEbene_4.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosX_4.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosY_4.Text = "";
                 }
             }
             catch (SystemException e2)
@@ -2049,13 +2081,29 @@ namespace DSA_1_Editing_Tool
 
                 this.Dungeons_Fights_tBEbene.Text = "";
                 this.Dungeons_Fights_tBErstAP.Text = "";
-                this.Dungeons_Fights_tBFluchtBlickrichtung.Text = "";
-                this.Dungeons_Fights_tBFluchtEbene.Text = "";
-                this.Dungeons_Fights_tBFluchtPosX.Text = "";
-                this.Dungeons_Fights_tBFluchtPosY.Text = "";
                 this.Dungeons_Fights_tBID.Text = "";
                 this.Dungeons_Fights_tBPosX.Text = "";
                 this.Dungeons_Fights_tBPosY.Text = "";
+
+                this.Dungeons_Fights_tBFluchtBlickrichtung_1.Text = "";
+                this.Dungeons_Fights_tBFluchtEbene_1.Text = "";
+                this.Dungeons_Fights_tBFluchtPosX_1.Text = "";
+                this.Dungeons_Fights_tBFluchtPosY_1.Text = "";
+
+                this.Dungeons_Fights_tBFluchtBlickrichtung_2.Text = "";
+                this.Dungeons_Fights_tBFluchtEbene_2.Text = "";
+                this.Dungeons_Fights_tBFluchtPosX_2.Text = "";
+                this.Dungeons_Fights_tBFluchtPosY_2.Text = "";
+
+                this.Dungeons_Fights_tBFluchtBlickrichtung_3.Text = "";
+                this.Dungeons_Fights_tBFluchtEbene_3.Text = "";
+                this.Dungeons_Fights_tBFluchtPosX_3.Text = "";
+                this.Dungeons_Fights_tBFluchtPosY_3.Text = "";
+
+                this.Dungeons_Fights_tBFluchtBlickrichtung_4.Text = "";
+                this.Dungeons_Fights_tBFluchtEbene_4.Text = "";
+                this.Dungeons_Fights_tBFluchtPosX_4.Text = "";
+                this.Dungeons_Fights_tBFluchtPosY_4.Text = "";
             }
         }
         private void Dungeons_dgvStairs_SelectionChanged(object sender, EventArgs e)
@@ -2080,7 +2128,7 @@ namespace DSA_1_Editing_Tool
                     this.Dungeons_Stairs_tBEbene.Text = stair.Ebene.ToString();
                     this.Dungeons_Stairs_tBPosX.Text = stair.PositionX.ToString();
                     this.Dungeons_Stairs_tBPosY.Text = stair.PositionY.ToString();
-                    this.Dungeons_Stairs_tBZielebeneBlickrichtung.Text = stair.Blickrichtung.ToString();
+                    this.Dungeons_Stairs_tBZielebeneBlickrichtung.Text = CHelpFunctions.dsaRichtungToString(stair.Blickrichtung);
                     this.Dungeons_Stairs_tBZielebeneEbene.Text = stair.getZielebeneString();
                     this.Dungeons_Stairs_tBZielebeneRelPosX.Text = stair.relXPos.ToString();
                     this.Dungeons_Stairs_tBZielebeneRelPosY.Text = stair.relYPos.ToString();
@@ -2291,25 +2339,57 @@ namespace DSA_1_Editing_Tool
 
                     this.Dungeons_Fights_tBEbene.Text = fight.Ebene.ToString();
                     this.Dungeons_Fights_tBErstAP.Text = fight.extraAP.ToString();
-                    this.Dungeons_Fights_tBFluchtBlickrichtung.Text = fight.Flucht_Blickrichtung.ToString();
-                    this.Dungeons_Fights_tBFluchtEbene.Text = fight.Flucht_Ebene.ToString();
-                    this.Dungeons_Fights_tBFluchtPosX.Text = fight.Flucht_PosX.ToString();
-                    this.Dungeons_Fights_tBFluchtPosY.Text = fight.Flucht_PosY.ToString();
                     this.Dungeons_Fights_tBID.Text = fight.KampfID.ToString();
                     this.Dungeons_Fights_tBPosX.Text = fight.PositionX.ToString();
                     this.Dungeons_Fights_tBPosY.Text = fight.PositionY.ToString();
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_1.Text = CHelpFunctions.dsaRichtungToString(fight.Flucht_Blickrichtung[0]);
+                    this.Dungeons_Fights_tBFluchtEbene_1.Text = fight.Flucht_Ebene[0].ToString();
+                    this.Dungeons_Fights_tBFluchtPosX_1.Text = fight.Flucht_PosX[0].ToString();
+                    this.Dungeons_Fights_tBFluchtPosY_1.Text = fight.Flucht_PosY[0].ToString();
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_2.Text = CHelpFunctions.dsaRichtungToString(fight.Flucht_Blickrichtung[1]);
+                    this.Dungeons_Fights_tBFluchtEbene_2.Text = fight.Flucht_Ebene[1].ToString();
+                    this.Dungeons_Fights_tBFluchtPosX_2.Text = fight.Flucht_PosX[1].ToString();
+                    this.Dungeons_Fights_tBFluchtPosY_2.Text = fight.Flucht_PosY[1].ToString();
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_3.Text = CHelpFunctions.dsaRichtungToString(fight.Flucht_Blickrichtung[2]);
+                    this.Dungeons_Fights_tBFluchtEbene_3.Text = fight.Flucht_Ebene[2].ToString();
+                    this.Dungeons_Fights_tBFluchtPosX_3.Text = fight.Flucht_PosX[2].ToString();
+                    this.Dungeons_Fights_tBFluchtPosY_3.Text = fight.Flucht_PosY[2].ToString();
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_4.Text = CHelpFunctions.dsaRichtungToString(fight.Flucht_Blickrichtung[3]);
+                    this.Dungeons_Fights_tBFluchtEbene_4.Text = fight.Flucht_Ebene[3].ToString();
+                    this.Dungeons_Fights_tBFluchtPosX_4.Text = fight.Flucht_PosX[3].ToString();
+                    this.Dungeons_Fights_tBFluchtPosY_4.Text = fight.Flucht_PosY[3].ToString();
                 }
                 else
                 {
                     this.Dungeons_Fights_tBEbene.Text = "";
                     this.Dungeons_Fights_tBErstAP.Text = "";
-                    this.Dungeons_Fights_tBFluchtBlickrichtung.Text = "";
-                    this.Dungeons_Fights_tBFluchtEbene.Text = "";
-                    this.Dungeons_Fights_tBFluchtPosX.Text = "";
-                    this.Dungeons_Fights_tBFluchtPosY.Text = "";
                     this.Dungeons_Fights_tBID.Text = "";
                     this.Dungeons_Fights_tBPosX.Text = "";
                     this.Dungeons_Fights_tBPosY.Text = "";
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_1.Text = "";
+                    this.Dungeons_Fights_tBFluchtEbene_1.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosX_1.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosY_1.Text = "";
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_2.Text = "";
+                    this.Dungeons_Fights_tBFluchtEbene_2.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosX_2.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosY_2.Text = "";
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_3.Text = "";
+                    this.Dungeons_Fights_tBFluchtEbene_3.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosX_3.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosY_3.Text = "";
+
+                    this.Dungeons_Fights_tBFluchtBlickrichtung_4.Text = "";
+                    this.Dungeons_Fights_tBFluchtEbene_4.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosX_4.Text = "";
+                    this.Dungeons_Fights_tBFluchtPosY_4.Text = "";
                 }
             }
             catch (SystemException e2)
@@ -2319,13 +2399,29 @@ namespace DSA_1_Editing_Tool
 
                 this.Dungeons_Fights_tBEbene.Text = "";
                 this.Dungeons_Fights_tBErstAP.Text = "";
-                this.Dungeons_Fights_tBFluchtBlickrichtung.Text = "";
-                this.Dungeons_Fights_tBFluchtEbene.Text = "";
-                this.Dungeons_Fights_tBFluchtPosX.Text = "";
-                this.Dungeons_Fights_tBFluchtPosY.Text = "";
                 this.Dungeons_Fights_tBID.Text = "";
                 this.Dungeons_Fights_tBPosX.Text = "";
                 this.Dungeons_Fights_tBPosY.Text = "";
+
+                this.Dungeons_Fights_tBFluchtBlickrichtung_1.Text = "";
+                this.Dungeons_Fights_tBFluchtEbene_1.Text = "";
+                this.Dungeons_Fights_tBFluchtPosX_1.Text = "";
+                this.Dungeons_Fights_tBFluchtPosY_1.Text = "";
+
+                this.Dungeons_Fights_tBFluchtBlickrichtung_2.Text = "";
+                this.Dungeons_Fights_tBFluchtEbene_2.Text = "";
+                this.Dungeons_Fights_tBFluchtPosX_2.Text = "";
+                this.Dungeons_Fights_tBFluchtPosY_2.Text = "";
+
+                this.Dungeons_Fights_tBFluchtBlickrichtung_3.Text = "";
+                this.Dungeons_Fights_tBFluchtEbene_3.Text = "";
+                this.Dungeons_Fights_tBFluchtPosX_3.Text = "";
+                this.Dungeons_Fights_tBFluchtPosY_3.Text = "";
+
+                this.Dungeons_Fights_tBFluchtBlickrichtung_4.Text = "";
+                this.Dungeons_Fights_tBFluchtEbene_4.Text = "";
+                this.Dungeons_Fights_tBFluchtPosX_4.Text = "";
+                this.Dungeons_Fights_tBFluchtPosY_4.Text = "";
             }
         }
         private void Dungeons_lbStairs_SelectedIndexChanged(object sender, EventArgs e)
@@ -2347,7 +2443,7 @@ namespace DSA_1_Editing_Tool
                     this.Dungeons_Stairs_tBEbene.Text = stair.Ebene.ToString();
                     this.Dungeons_Stairs_tBPosX.Text = stair.PositionX.ToString();
                     this.Dungeons_Stairs_tBPosY.Text = stair.PositionY.ToString();
-                    this.Dungeons_Stairs_tBZielebeneBlickrichtung.Text = stair.Blickrichtung.ToString();
+                    this.Dungeons_Stairs_tBZielebeneBlickrichtung.Text = CHelpFunctions.dsaRichtungToString(stair.Blickrichtung);
                     this.Dungeons_Stairs_tBZielebeneEbene.Text = stair.Zielebene.ToString();
                     this.Dungeons_Stairs_tBZielebeneRelPosX.Text = stair.relXPos.ToString();
                     this.Dungeons_Stairs_tBZielebeneRelPosY.Text = stair.relYPos.ToString();

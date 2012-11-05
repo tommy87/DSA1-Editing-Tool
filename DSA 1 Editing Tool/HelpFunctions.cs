@@ -118,6 +118,18 @@ namespace DSA_1_Editing_Tool
 
             return s;
         }
+        public static string dsaRichtungToString(byte data)
+        {
+            switch (data)
+            {
+                case 0: return ("Norden(" + data.ToString() + ")");
+                case 1: return ("Osten(" + data.ToString() + ")");
+                case 2: return ("Süden(" + data.ToString() + ")");
+                case 3: return ("Westen(" + data.ToString() + ")");
+
+                default: return ("?(" + data.ToString() + ")");
+            }
+        }
 
         public static Int16 byteArrayToInt16(ref byte[] data, Int32 position)
         {

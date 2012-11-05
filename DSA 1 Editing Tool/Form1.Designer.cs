@@ -85,16 +85,7 @@
             this.Dungeons_dgvStairs = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
-            this.label77 = new System.Windows.Forms.Label();
             this.Dungeons_lbFights = new System.Windows.Forms.ListBox();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.Dungeons_Fights_tBFluchtBlickrichtung = new System.Windows.Forms.TextBox();
-            this.label73 = new System.Windows.Forms.Label();
-            this.Dungeons_Fights_tBFluchtEbene = new System.Windows.Forms.TextBox();
-            this.Dungeons_Fights_tBFluchtPosY = new System.Windows.Forms.TextBox();
-            this.Dungeons_Fights_tBFluchtPosX = new System.Windows.Forms.TextBox();
-            this.label76 = new System.Windows.Forms.Label();
             this.Dungeons_Fights_tBErstAP = new System.Windows.Forms.TextBox();
             this.label72 = new System.Windows.Forms.Label();
             this.Dungeons_Fights_tBID = new System.Windows.Forms.TextBox();
@@ -358,6 +349,44 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
+            this.tabControl2 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Dungeons_Fights_tBFluchtPosX_2 = new System.Windows.Forms.TextBox();
+            this.label97 = new System.Windows.Forms.Label();
+            this.label98 = new System.Windows.Forms.Label();
+            this.Dungeons_Fights_tBFluchtBlickrichtung_2 = new System.Windows.Forms.TextBox();
+            this.Dungeons_Fights_tBFluchtPosY_2 = new System.Windows.Forms.TextBox();
+            this.label99 = new System.Windows.Forms.Label();
+            this.Dungeons_Fights_tBFluchtEbene_2 = new System.Windows.Forms.TextBox();
+            this.label100 = new System.Windows.Forms.Label();
+            this.Dungeons_Fights_tBFluchtPosX_3 = new System.Windows.Forms.TextBox();
+            this.label101 = new System.Windows.Forms.Label();
+            this.label102 = new System.Windows.Forms.Label();
+            this.Dungeons_Fights_tBFluchtBlickrichtung_3 = new System.Windows.Forms.TextBox();
+            this.Dungeons_Fights_tBFluchtPosY_3 = new System.Windows.Forms.TextBox();
+            this.label103 = new System.Windows.Forms.Label();
+            this.Dungeons_Fights_tBFluchtEbene_3 = new System.Windows.Forms.TextBox();
+            this.label104 = new System.Windows.Forms.Label();
+            this.Dungeons_Fights_tBFluchtPosX_4 = new System.Windows.Forms.TextBox();
+            this.label105 = new System.Windows.Forms.Label();
+            this.label106 = new System.Windows.Forms.Label();
+            this.Dungeons_Fights_tBFluchtBlickrichtung_4 = new System.Windows.Forms.TextBox();
+            this.Dungeons_Fights_tBFluchtPosY_4 = new System.Windows.Forms.TextBox();
+            this.label107 = new System.Windows.Forms.Label();
+            this.Dungeons_Fights_tBFluchtEbene_4 = new System.Windows.Forms.TextBox();
+            this.label74 = new System.Windows.Forms.Label();
+            this.Dungeons_Fights_tBFluchtPosX_1 = new System.Windows.Forms.TextBox();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.Dungeons_Fights_tBFluchtBlickrichtung_1 = new System.Windows.Forms.TextBox();
+            this.Dungeons_Fights_tBFluchtPosY_1 = new System.Windows.Forms.TextBox();
+            this.label73 = new System.Windows.Forms.Label();
+            this.Dungeons_Fights_tBFluchtEbene_1 = new System.Windows.Forms.TextBox();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -413,6 +442,11 @@
             this.tabControl1.SuspendLayout();
             this.tP_Routs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).BeginInit();
+            this.tabControl2.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -959,15 +993,8 @@
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.label77);
+            this.groupBox8.Controls.Add(this.tabControl2);
             this.groupBox8.Controls.Add(this.Dungeons_lbFights);
-            this.groupBox8.Controls.Add(this.label74);
-            this.groupBox8.Controls.Add(this.label75);
-            this.groupBox8.Controls.Add(this.Dungeons_Fights_tBFluchtBlickrichtung);
-            this.groupBox8.Controls.Add(this.label73);
-            this.groupBox8.Controls.Add(this.Dungeons_Fights_tBFluchtEbene);
-            this.groupBox8.Controls.Add(this.Dungeons_Fights_tBFluchtPosY);
-            this.groupBox8.Controls.Add(this.Dungeons_Fights_tBFluchtPosX);
-            this.groupBox8.Controls.Add(this.label76);
             this.groupBox8.Controls.Add(this.Dungeons_Fights_tBErstAP);
             this.groupBox8.Controls.Add(this.label72);
             this.groupBox8.Controls.Add(this.Dungeons_Fights_tBID);
@@ -986,16 +1013,6 @@
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Kämpfe";
             // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label77.Location = new System.Drawing.Point(195, 168);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(66, 13);
-            this.label77.TabIndex = 36;
-            this.label77.Text = "---Flucht---";
-            // 
             // Dungeons_lbFights
             // 
             this.Dungeons_lbFights.FormattingEnabled = true;
@@ -1005,70 +1022,6 @@
             this.Dungeons_lbFights.TabIndex = 29;
             this.Dungeons_lbFights.Visible = false;
             this.Dungeons_lbFights.SelectedIndexChanged += new System.EventHandler(this.Dungeons_lbFights_SelectedIndexChanged);
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(150, 239);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(41, 13);
-            this.label74.TabIndex = 35;
-            this.label74.Text = "Ebene:";
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(150, 213);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(57, 13);
-            this.label75.TabIndex = 34;
-            this.label75.Text = "Position Y:";
-            // 
-            // Dungeons_Fights_tBFluchtBlickrichtung
-            // 
-            this.Dungeons_Fights_tBFluchtBlickrichtung.Location = new System.Drawing.Point(228, 262);
-            this.Dungeons_Fights_tBFluchtBlickrichtung.Name = "Dungeons_Fights_tBFluchtBlickrichtung";
-            this.Dungeons_Fights_tBFluchtBlickrichtung.Size = new System.Drawing.Size(100, 20);
-            this.Dungeons_Fights_tBFluchtBlickrichtung.TabIndex = 33;
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(150, 265);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(71, 13);
-            this.label73.TabIndex = 32;
-            this.label73.Text = "Blickrichtung:";
-            // 
-            // Dungeons_Fights_tBFluchtEbene
-            // 
-            this.Dungeons_Fights_tBFluchtEbene.Location = new System.Drawing.Point(228, 236);
-            this.Dungeons_Fights_tBFluchtEbene.Name = "Dungeons_Fights_tBFluchtEbene";
-            this.Dungeons_Fights_tBFluchtEbene.Size = new System.Drawing.Size(100, 20);
-            this.Dungeons_Fights_tBFluchtEbene.TabIndex = 31;
-            // 
-            // Dungeons_Fights_tBFluchtPosY
-            // 
-            this.Dungeons_Fights_tBFluchtPosY.Location = new System.Drawing.Point(228, 210);
-            this.Dungeons_Fights_tBFluchtPosY.Name = "Dungeons_Fights_tBFluchtPosY";
-            this.Dungeons_Fights_tBFluchtPosY.Size = new System.Drawing.Size(100, 20);
-            this.Dungeons_Fights_tBFluchtPosY.TabIndex = 29;
-            // 
-            // Dungeons_Fights_tBFluchtPosX
-            // 
-            this.Dungeons_Fights_tBFluchtPosX.Location = new System.Drawing.Point(228, 184);
-            this.Dungeons_Fights_tBFluchtPosX.Name = "Dungeons_Fights_tBFluchtPosX";
-            this.Dungeons_Fights_tBFluchtPosX.Size = new System.Drawing.Size(100, 20);
-            this.Dungeons_Fights_tBFluchtPosX.TabIndex = 27;
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(150, 187);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(57, 13);
-            this.label76.TabIndex = 26;
-            this.label76.Text = "Position X:";
             // 
             // Dungeons_Fights_tBErstAP
             // 
@@ -3703,6 +3656,354 @@
             this.Rout_pictureBox.TabIndex = 15;
             this.Rout_pictureBox.TabStop = false;
             // 
+            // tabControl2
+            // 
+            this.tabControl2.Controls.Add(this.tabPage1);
+            this.tabControl2.Controls.Add(this.tabPage2);
+            this.tabControl2.Controls.Add(this.tabPage3);
+            this.tabControl2.Controls.Add(this.tabPage4);
+            this.tabControl2.Location = new System.Drawing.Point(146, 168);
+            this.tabControl2.Name = "tabControl2";
+            this.tabControl2.SelectedIndex = 0;
+            this.tabControl2.Size = new System.Drawing.Size(191, 135);
+            this.tabControl2.TabIndex = 30;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPage1.Controls.Add(this.label74);
+            this.tabPage1.Controls.Add(this.Dungeons_Fights_tBFluchtPosX_1);
+            this.tabPage1.Controls.Add(this.label75);
+            this.tabPage1.Controls.Add(this.label76);
+            this.tabPage1.Controls.Add(this.Dungeons_Fights_tBFluchtBlickrichtung_1);
+            this.tabPage1.Controls.Add(this.Dungeons_Fights_tBFluchtPosY_1);
+            this.tabPage1.Controls.Add(this.label73);
+            this.tabPage1.Controls.Add(this.Dungeons_Fights_tBFluchtEbene_1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(183, 109);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "1";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.Dungeons_Fights_tBFluchtPosX_2);
+            this.tabPage2.Controls.Add(this.label97);
+            this.tabPage2.Controls.Add(this.label98);
+            this.tabPage2.Controls.Add(this.Dungeons_Fights_tBFluchtBlickrichtung_2);
+            this.tabPage2.Controls.Add(this.Dungeons_Fights_tBFluchtPosY_2);
+            this.tabPage2.Controls.Add(this.label99);
+            this.tabPage2.Controls.Add(this.Dungeons_Fights_tBFluchtEbene_2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(183, 109);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "2";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPage3.Controls.Add(this.label100);
+            this.tabPage3.Controls.Add(this.Dungeons_Fights_tBFluchtPosX_3);
+            this.tabPage3.Controls.Add(this.label101);
+            this.tabPage3.Controls.Add(this.label102);
+            this.tabPage3.Controls.Add(this.Dungeons_Fights_tBFluchtBlickrichtung_3);
+            this.tabPage3.Controls.Add(this.Dungeons_Fights_tBFluchtPosY_3);
+            this.tabPage3.Controls.Add(this.label103);
+            this.tabPage3.Controls.Add(this.Dungeons_Fights_tBFluchtEbene_3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(183, 109);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "3";
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.BackColor = System.Drawing.Color.Gainsboro;
+            this.tabPage4.Controls.Add(this.label104);
+            this.tabPage4.Controls.Add(this.Dungeons_Fights_tBFluchtPosX_4);
+            this.tabPage4.Controls.Add(this.label105);
+            this.tabPage4.Controls.Add(this.label106);
+            this.tabPage4.Controls.Add(this.Dungeons_Fights_tBFluchtBlickrichtung_4);
+            this.tabPage4.Controls.Add(this.Dungeons_Fights_tBFluchtPosY_4);
+            this.tabPage4.Controls.Add(this.label107);
+            this.tabPage4.Controls.Add(this.Dungeons_Fights_tBFluchtEbene_4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(183, 109);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "4";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label77.Location = new System.Drawing.Point(209, 152);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(66, 13);
+            this.label77.TabIndex = 45;
+            this.label77.Text = "---Flucht---";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 60);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 52;
+            this.label2.Text = "Ebene:";
+            // 
+            // Dungeons_Fights_tBFluchtPosX_2
+            // 
+            this.Dungeons_Fights_tBFluchtPosX_2.Location = new System.Drawing.Point(90, 5);
+            this.Dungeons_Fights_tBFluchtPosX_2.Name = "Dungeons_Fights_tBFluchtPosX_2";
+            this.Dungeons_Fights_tBFluchtPosX_2.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtPosX_2.TabIndex = 46;
+            // 
+            // label97
+            // 
+            this.label97.AutoSize = true;
+            this.label97.Location = new System.Drawing.Point(12, 34);
+            this.label97.Name = "label97";
+            this.label97.Size = new System.Drawing.Size(57, 13);
+            this.label97.TabIndex = 51;
+            this.label97.Text = "Position Y:";
+            // 
+            // label98
+            // 
+            this.label98.AutoSize = true;
+            this.label98.Location = new System.Drawing.Point(12, 8);
+            this.label98.Name = "label98";
+            this.label98.Size = new System.Drawing.Size(57, 13);
+            this.label98.TabIndex = 45;
+            this.label98.Text = "Position X:";
+            // 
+            // Dungeons_Fights_tBFluchtBlickrichtung_2
+            // 
+            this.Dungeons_Fights_tBFluchtBlickrichtung_2.Location = new System.Drawing.Point(90, 83);
+            this.Dungeons_Fights_tBFluchtBlickrichtung_2.Name = "Dungeons_Fights_tBFluchtBlickrichtung_2";
+            this.Dungeons_Fights_tBFluchtBlickrichtung_2.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtBlickrichtung_2.TabIndex = 50;
+            // 
+            // Dungeons_Fights_tBFluchtPosY_2
+            // 
+            this.Dungeons_Fights_tBFluchtPosY_2.Location = new System.Drawing.Point(90, 31);
+            this.Dungeons_Fights_tBFluchtPosY_2.Name = "Dungeons_Fights_tBFluchtPosY_2";
+            this.Dungeons_Fights_tBFluchtPosY_2.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtPosY_2.TabIndex = 47;
+            // 
+            // label99
+            // 
+            this.label99.AutoSize = true;
+            this.label99.Location = new System.Drawing.Point(12, 86);
+            this.label99.Name = "label99";
+            this.label99.Size = new System.Drawing.Size(71, 13);
+            this.label99.TabIndex = 49;
+            this.label99.Text = "Blickrichtung:";
+            // 
+            // Dungeons_Fights_tBFluchtEbene_2
+            // 
+            this.Dungeons_Fights_tBFluchtEbene_2.Location = new System.Drawing.Point(90, 57);
+            this.Dungeons_Fights_tBFluchtEbene_2.Name = "Dungeons_Fights_tBFluchtEbene_2";
+            this.Dungeons_Fights_tBFluchtEbene_2.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtEbene_2.TabIndex = 48;
+            // 
+            // label100
+            // 
+            this.label100.AutoSize = true;
+            this.label100.Location = new System.Drawing.Point(12, 60);
+            this.label100.Name = "label100";
+            this.label100.Size = new System.Drawing.Size(41, 13);
+            this.label100.TabIndex = 52;
+            this.label100.Text = "Ebene:";
+            // 
+            // Dungeons_Fights_tBFluchtPosX_3
+            // 
+            this.Dungeons_Fights_tBFluchtPosX_3.Location = new System.Drawing.Point(90, 5);
+            this.Dungeons_Fights_tBFluchtPosX_3.Name = "Dungeons_Fights_tBFluchtPosX_3";
+            this.Dungeons_Fights_tBFluchtPosX_3.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtPosX_3.TabIndex = 46;
+            // 
+            // label101
+            // 
+            this.label101.AutoSize = true;
+            this.label101.Location = new System.Drawing.Point(12, 34);
+            this.label101.Name = "label101";
+            this.label101.Size = new System.Drawing.Size(57, 13);
+            this.label101.TabIndex = 51;
+            this.label101.Text = "Position Y:";
+            // 
+            // label102
+            // 
+            this.label102.AutoSize = true;
+            this.label102.Location = new System.Drawing.Point(12, 8);
+            this.label102.Name = "label102";
+            this.label102.Size = new System.Drawing.Size(57, 13);
+            this.label102.TabIndex = 45;
+            this.label102.Text = "Position X:";
+            // 
+            // Dungeons_Fights_tBFluchtBlickrichtung_3
+            // 
+            this.Dungeons_Fights_tBFluchtBlickrichtung_3.Location = new System.Drawing.Point(90, 83);
+            this.Dungeons_Fights_tBFluchtBlickrichtung_3.Name = "Dungeons_Fights_tBFluchtBlickrichtung_3";
+            this.Dungeons_Fights_tBFluchtBlickrichtung_3.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtBlickrichtung_3.TabIndex = 50;
+            // 
+            // Dungeons_Fights_tBFluchtPosY_3
+            // 
+            this.Dungeons_Fights_tBFluchtPosY_3.Location = new System.Drawing.Point(90, 31);
+            this.Dungeons_Fights_tBFluchtPosY_3.Name = "Dungeons_Fights_tBFluchtPosY_3";
+            this.Dungeons_Fights_tBFluchtPosY_3.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtPosY_3.TabIndex = 47;
+            // 
+            // label103
+            // 
+            this.label103.AutoSize = true;
+            this.label103.Location = new System.Drawing.Point(12, 86);
+            this.label103.Name = "label103";
+            this.label103.Size = new System.Drawing.Size(71, 13);
+            this.label103.TabIndex = 49;
+            this.label103.Text = "Blickrichtung:";
+            // 
+            // Dungeons_Fights_tBFluchtEbene_3
+            // 
+            this.Dungeons_Fights_tBFluchtEbene_3.Location = new System.Drawing.Point(90, 57);
+            this.Dungeons_Fights_tBFluchtEbene_3.Name = "Dungeons_Fights_tBFluchtEbene_3";
+            this.Dungeons_Fights_tBFluchtEbene_3.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtEbene_3.TabIndex = 48;
+            // 
+            // label104
+            // 
+            this.label104.AutoSize = true;
+            this.label104.Location = new System.Drawing.Point(12, 60);
+            this.label104.Name = "label104";
+            this.label104.Size = new System.Drawing.Size(41, 13);
+            this.label104.TabIndex = 52;
+            this.label104.Text = "Ebene:";
+            // 
+            // Dungeons_Fights_tBFluchtPosX_4
+            // 
+            this.Dungeons_Fights_tBFluchtPosX_4.Location = new System.Drawing.Point(90, 5);
+            this.Dungeons_Fights_tBFluchtPosX_4.Name = "Dungeons_Fights_tBFluchtPosX_4";
+            this.Dungeons_Fights_tBFluchtPosX_4.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtPosX_4.TabIndex = 46;
+            // 
+            // label105
+            // 
+            this.label105.AutoSize = true;
+            this.label105.Location = new System.Drawing.Point(12, 34);
+            this.label105.Name = "label105";
+            this.label105.Size = new System.Drawing.Size(57, 13);
+            this.label105.TabIndex = 51;
+            this.label105.Text = "Position Y:";
+            // 
+            // label106
+            // 
+            this.label106.AutoSize = true;
+            this.label106.Location = new System.Drawing.Point(12, 8);
+            this.label106.Name = "label106";
+            this.label106.Size = new System.Drawing.Size(57, 13);
+            this.label106.TabIndex = 45;
+            this.label106.Text = "Position X:";
+            // 
+            // Dungeons_Fights_tBFluchtBlickrichtung_4
+            // 
+            this.Dungeons_Fights_tBFluchtBlickrichtung_4.Location = new System.Drawing.Point(90, 83);
+            this.Dungeons_Fights_tBFluchtBlickrichtung_4.Name = "Dungeons_Fights_tBFluchtBlickrichtung_4";
+            this.Dungeons_Fights_tBFluchtBlickrichtung_4.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtBlickrichtung_4.TabIndex = 50;
+            // 
+            // Dungeons_Fights_tBFluchtPosY_4
+            // 
+            this.Dungeons_Fights_tBFluchtPosY_4.Location = new System.Drawing.Point(90, 31);
+            this.Dungeons_Fights_tBFluchtPosY_4.Name = "Dungeons_Fights_tBFluchtPosY_4";
+            this.Dungeons_Fights_tBFluchtPosY_4.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtPosY_4.TabIndex = 47;
+            // 
+            // label107
+            // 
+            this.label107.AutoSize = true;
+            this.label107.Location = new System.Drawing.Point(12, 86);
+            this.label107.Name = "label107";
+            this.label107.Size = new System.Drawing.Size(71, 13);
+            this.label107.TabIndex = 49;
+            this.label107.Text = "Blickrichtung:";
+            // 
+            // Dungeons_Fights_tBFluchtEbene_4
+            // 
+            this.Dungeons_Fights_tBFluchtEbene_4.Location = new System.Drawing.Point(90, 57);
+            this.Dungeons_Fights_tBFluchtEbene_4.Name = "Dungeons_Fights_tBFluchtEbene_4";
+            this.Dungeons_Fights_tBFluchtEbene_4.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtEbene_4.TabIndex = 48;
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(12, 60);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(41, 13);
+            this.label74.TabIndex = 52;
+            this.label74.Text = "Ebene:";
+            // 
+            // Dungeons_Fights_tBFluchtPosX_1
+            // 
+            this.Dungeons_Fights_tBFluchtPosX_1.Location = new System.Drawing.Point(90, 5);
+            this.Dungeons_Fights_tBFluchtPosX_1.Name = "Dungeons_Fights_tBFluchtPosX_1";
+            this.Dungeons_Fights_tBFluchtPosX_1.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtPosX_1.TabIndex = 46;
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(12, 34);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(57, 13);
+            this.label75.TabIndex = 51;
+            this.label75.Text = "Position Y:";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(12, 8);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(57, 13);
+            this.label76.TabIndex = 45;
+            this.label76.Text = "Position X:";
+            // 
+            // Dungeons_Fights_tBFluchtBlickrichtung_1
+            // 
+            this.Dungeons_Fights_tBFluchtBlickrichtung_1.Location = new System.Drawing.Point(90, 83);
+            this.Dungeons_Fights_tBFluchtBlickrichtung_1.Name = "Dungeons_Fights_tBFluchtBlickrichtung_1";
+            this.Dungeons_Fights_tBFluchtBlickrichtung_1.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtBlickrichtung_1.TabIndex = 50;
+            // 
+            // Dungeons_Fights_tBFluchtPosY_1
+            // 
+            this.Dungeons_Fights_tBFluchtPosY_1.Location = new System.Drawing.Point(90, 31);
+            this.Dungeons_Fights_tBFluchtPosY_1.Name = "Dungeons_Fights_tBFluchtPosY_1";
+            this.Dungeons_Fights_tBFluchtPosY_1.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtPosY_1.TabIndex = 47;
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(12, 86);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(71, 13);
+            this.label73.TabIndex = 49;
+            this.label73.Text = "Blickrichtung:";
+            // 
+            // Dungeons_Fights_tBFluchtEbene_1
+            // 
+            this.Dungeons_Fights_tBFluchtEbene_1.Location = new System.Drawing.Point(90, 57);
+            this.Dungeons_Fights_tBFluchtEbene_1.Name = "Dungeons_Fights_tBFluchtEbene_1";
+            this.Dungeons_Fights_tBFluchtEbene_1.Size = new System.Drawing.Size(80, 20);
+            this.Dungeons_Fights_tBFluchtEbene_1.TabIndex = 48;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3791,6 +4092,15 @@
             this.tabControl1.ResumeLayout(false);
             this.tP_Routs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).EndInit();
+            this.tabControl2.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4010,17 +4320,8 @@
         private System.Windows.Forms.Label label68;
         private System.Windows.Forms.TextBox Dungeons_Fights_tBID;
         private System.Windows.Forms.Label label71;
-        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtBlickrichtung;
-        private System.Windows.Forms.Label label73;
-        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtEbene;
-        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtPosY;
-        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtPosX;
-        private System.Windows.Forms.Label label76;
         private System.Windows.Forms.TextBox Dungeons_Fights_tBErstAP;
         private System.Windows.Forms.Label label72;
-        private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.Label label74;
-        private System.Windows.Forms.Label label75;
         private System.Windows.Forms.TextBox Dungeons_Doors_tBStatus;
         private System.Windows.Forms.Label label78;
         private System.Windows.Forms.TextBox Dungeons_Doors_tBID;
@@ -4127,6 +4428,44 @@
         private System.Windows.Forms.ListBox Dialoge_lbGesprächspartner;
         private System.Windows.Forms.ListBox Dialoge_lbList;
         private System.Windows.Forms.ListBox Bilder_lbBildnummer;
+        private System.Windows.Forms.TabControl tabControl2;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtPosX_1;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtBlickrichtung_1;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtPosY_1;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtEbene_1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtPosX_2;
+        private System.Windows.Forms.Label label97;
+        private System.Windows.Forms.Label label98;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtBlickrichtung_2;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtPosY_2;
+        private System.Windows.Forms.Label label99;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtEbene_2;
+        private System.Windows.Forms.Label label100;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtPosX_3;
+        private System.Windows.Forms.Label label101;
+        private System.Windows.Forms.Label label102;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtBlickrichtung_3;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtPosY_3;
+        private System.Windows.Forms.Label label103;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtEbene_3;
+        private System.Windows.Forms.Label label104;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtPosX_4;
+        private System.Windows.Forms.Label label105;
+        private System.Windows.Forms.Label label106;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtBlickrichtung_4;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtPosY_4;
+        private System.Windows.Forms.Label label107;
+        private System.Windows.Forms.TextBox Dungeons_Fights_tBFluchtEbene_4;
     }
 }
 
