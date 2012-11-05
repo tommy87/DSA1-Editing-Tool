@@ -463,11 +463,11 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
             fightPalette[0x18] = Color.FromArgb(0x3C * 4, 0x00 * 4, 0x00 * 4);
             fightPalette[0x19] = Color.FromArgb(0x1C * 4, 0x10 * 4, 0x10 * 4);
             fightPalette[0x1A] = Color.FromArgb(0x00 * 4, 0x1C * 4, 0x00 * 4);
-            fightPalette[0x1B] = Color.FromArgb(0x00 * 4, 0x24 * 4, 0x00 * 4);
-            fightPalette[0x1C] = Color.FromArgb(0x00 * 4, 0x2C * 4, 0x00 * 4);
-            fightPalette[0x1D] = Color.FromArgb(0x00 * 4, 0x3C * 4, 0x00 * 4);
-            fightPalette[0x1E] = Color.FromArgb(0x00 * 4, 0x1C * 4, 0x00 * 4);
-            fightPalette[0x1F] = Color.FromArgb(0x00 * 4, 0x28 * 4, 0x00 * 4);
+            fightPalette[0x1B] = Color.FromArgb(0x00 * 4, 0x28 * 4, 0x00 * 4);
+            fightPalette[0x1C] = Color.FromArgb(0x00 * 4, 0x04 * 4, 0x20 * 4);
+            fightPalette[0x1D] = Color.FromArgb(0x2C * 4, 0x2C * 4, 0x0C * 4);
+            fightPalette[0x1E] = Color.FromArgb(0x38 * 4, 0x38 * 4, 0x10 * 4);
+            fightPalette[0x1F] = Color.FromArgb(0x3C * 4, 0x3C * 4, 0x3C * 4);
 
         }
 

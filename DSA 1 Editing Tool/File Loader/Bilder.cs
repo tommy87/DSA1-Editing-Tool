@@ -65,6 +65,7 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             this.itsCharMenüPictures_SCHICK.Add("GGSTS.NVF");
 
+            this.itsFightPictures_SCHICK.Add("OBJECTS.NVF");
             this.itsFightPictures_SCHICK.Add("WEAPONS.NVF");
             this.itsFightPictures_SCHICK.Add("SPELLOBJ.NVF");
             this.itsFightPictures_SCHICK.Add("FIGHTOBJ.NVF");
