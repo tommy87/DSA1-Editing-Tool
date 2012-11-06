@@ -1339,8 +1339,8 @@ namespace DSA_1_Editing_Tool
                 this.tB_Monster_SchadenWurfwaffen.Text = CHelpFunctions.dsaWürfelwertToString(monster.Schaden_Wurfwaffen_Würfel);
                 this.tB_Monster_Stufe.Text = monster.Stufe.ToString();
 
-                //this.Monster_pictureBox.BackgroundImage = this.itsDSAFileLoader.bilder.getMonsterImageByID(monster.MonsterGraphicID);
-                this.Monster_pictureBox.BackgroundImage = this.itsDSAFileLoader.bilder.getMonsterImageByID(monster.MonsterID - 1);
+                this.Monster_pictureBox.BackgroundImage = this.itsDSAFileLoader.bilder.getMonsterImageByID(monster.MonsterGraphicID);
+                //this.Monster_pictureBox.BackgroundImage = this.itsDSAFileLoader.bilder.getMonsterImageByID(monster.MonsterID - 1);
                 
             }
             else

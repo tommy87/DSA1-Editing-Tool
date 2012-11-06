@@ -257,15 +257,16 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             return null;
         }
-        public Image getMonsterImageByID(Int32 MonsterID)
+        public Image getMonsterImageByID(Int32 MonsterBildID)
         {
-            //MonsterID *= 2;
-
-            if (MonsterID < 0)
+            if (MonsterBildID < 0x17) //0x17 == 23
                 return null;
 
-            if (MonsterID < this.itsMonsterImages.Count && this.itsMonsterImages[MonsterID].Count > 0)
-                return this.itsMonsterImages[MonsterID][0];
+            MonsterBildID -= 0x17; 
+            MonsterBildID *= 2;
+
+            if (MonsterBildID < this.itsMonsterImages.Count && this.itsMonsterImages[MonsterBildID].Count > 0)
+                return this.itsMonsterImages[MonsterBildID][0];
 
             return null;
         }
