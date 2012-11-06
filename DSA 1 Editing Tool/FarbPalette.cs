@@ -8,20 +8,29 @@ namespace DSA_1_Editing_Tool
 {
     static class CFarbPalette
     {
-        public enum palettenTyp { default_Pal, Town_Pal, CharMenü_Pal, Fight_Pal };
+        public enum palettenTyp { default_Pal, Town_Pal, CharMenü_Pal, Fight_Pal, Logo_Pal };
 
         static Color[] defaultPalette = new Color[256];
         static Color[] townPalette = null;
         static Color[] charMenüPalette = null;
         static Color[] fightPalette = null;
+        static Color[] logoPalette = null;
 
         static CFarbPalette()
         {
-            initDefaultPalette();
+            try
+            {
+                initDefaultPalette();
 
-            initTownPalette();
-            initItemPalette();
-            initFightPalette();
+                initTownPalette();
+                initCharMenüPalette();
+                initFightPalette();
+                initLogoPalette();
+            }
+            catch (SystemException)
+            {
+                CDebugger.addErrorLine("Fehler beim initialisieren der Farbpaletten");
+            }
         }
         static private void initDefaultPalette()
         {
@@ -386,9 +395,47 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
             townPalette[189] = Color.FromArgb(0x3C * 4, 0x36 * 4, 0x3C * 4);
             townPalette[190] = Color.FromArgb(0x3F * 4, 0x3C * 4, 0x3C * 4);
             townPalette[191] = Color.FromArgb(0x3F * 4, 0x3F * 4, 0x3F * 4);
+            //191 = 0xBF
+
+            //Palette for Playmask. Colorspace is E0-FF (Tested by HenneNWH)
+            townPalette[0xE0] = Color.FromArgb(0x00, 0x00, 0x00);
+            townPalette[0xE1] = Color.FromArgb(0x56, 0x56, 0x56);
+            townPalette[0xE2] = Color.FromArgb(0x52, 0x52, 0x52);
+            townPalette[0xE3] = Color.FromArgb(0x48, 0x48, 0x48);
+            townPalette[0xE4] = Color.FromArgb(0x44, 0x44, 0x44);
+            townPalette[0xE5] = Color.FromArgb(0x40, 0x40, 0x40);
+            townPalette[0xE6] = Color.FromArgb(0x36, 0x36, 0x36);
+            townPalette[0xE7] = Color.FromArgb(0x32, 0x32, 0x32);
+
+            townPalette[0xE8] = Color.FromArgb(0x28, 0x28, 0x28);
+            townPalette[0xE9] = Color.FromArgb(0x24, 0x24, 0x24);
+            townPalette[0xEA] = Color.FromArgb(0x20, 0x20, 0x20);
+            townPalette[0xEB] = Color.FromArgb(0x16, 0x16, 0x16);
+            townPalette[0xEC] = Color.FromArgb(0x12, 0x12, 0x12);
+            townPalette[0xED] = Color.FromArgb(0x08, 0x08, 0x08);
+            townPalette[0xEE] = Color.FromArgb(0x04, 0x04, 0x04);
+            townPalette[0xEF] = Color.FromArgb(0x00, 0x00, 0x00);
+
+            townPalette[0xF0] = Color.FromArgb(0x00, 0x60, 0x08);
+            townPalette[0xF1] = Color.FromArgb(0x60, 0x48, 0x40);
+            townPalette[0xF2] = Color.FromArgb(0x60, 0x44, 0x40);
+            townPalette[0xF3] = Color.FromArgb(0x44, 0x28, 0x24);
+            townPalette[0xF4] = Color.FromArgb(0x36, 0x20, 0x16);
+            townPalette[0xF5] = Color.FromArgb(0x28, 0x16, 0x12);
+            townPalette[0xF6] = Color.FromArgb(0x20, 0x08, 0x08);
+            townPalette[0xF7] = Color.FromArgb(0x12, 0x04, 0x04);
+
+            townPalette[0xF8] = Color.FromArgb(0x12, 0x08, 0x00);
+            townPalette[0xF9] = Color.FromArgb(0x44, 0x00, 0x00);
+            townPalette[0xFA] = Color.FromArgb(0x16, 0x20, 0x60);
+            townPalette[0xFB] = Color.FromArgb(0x00, 0x08, 0x56);
+            townPalette[0xFC] = Color.FromArgb(0x00, 0x08, 0x52);
+            townPalette[0xFD] = Color.FromArgb(0x00, 0x00, 0x24);
+            townPalette[0xFE] = Color.FromArgb(0x60, 0x60, 0x00);
+            townPalette[0xFF] = Color.FromArgb(0x60, 0x60, 0x60);
 
         }
-        static private void initItemPalette()
+        static private void initCharMenüPalette()
         {
             charMenüPalette = (Color[])defaultPalette.Clone();
             //itemPalette = new Color[32];
@@ -469,6 +516,10 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
             fightPalette[0x1E] = Color.FromArgb(0x38 * 4, 0x38 * 4, 0x10 * 4);
             fightPalette[0x1F] = Color.FromArgb(0x3C * 4, 0x3C * 4, 0x3C * 4);
 
+        }
+        static private void initLogoPalette()
+        {
+            logoPalette = (Color[])defaultPalette.Clone();
         }
 
         static public Color getColor(palettenTyp typ, Byte input)

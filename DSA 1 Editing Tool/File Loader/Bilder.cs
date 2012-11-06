@@ -18,6 +18,7 @@ namespace DSA_1_Editing_Tool.File_Loader
         private List<string> itsTownPictures_SCHICK = new List<string>();
         private List<string> itsFightPictures_SCHICK = new List<string>();
         private List<string> itsCharMenüPictures_SCHICK = new List<string>();
+        private List<string> itsLogoPictures_SCHICK = new List<string>();
 
         private List<string> itsAmigaPackedFiles_SCHICK = new List<string>();
         private List<string> itsAmigaPackedFiles_DSAGEN = new List<string>();
@@ -59,9 +60,9 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.itsTownPictures_SCHICK.Add("FINGER.NVF");
             this.itsTownPictures_SCHICK.Add("PLAYM_UK");
             this.itsTownPictures_SCHICK.Add("PLAYM_US");
-            this.itsTownPictures_SCHICK.Add("TEMPICON");
+            //this.itsTownPictures_SCHICK.Add("TEMPICON");
             this.itsTownPictures_SCHICK.Add("COMPASS");
-            this.itsTownPictures_SCHICK.Add("BICONS");
+            //this.itsTownPictures_SCHICK.Add("BICONS");
 
             this.itsCharMenüPictures_SCHICK.Add("GGSTS.NVF");
 
@@ -72,6 +73,13 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.itsFightPictures_SCHICK.Add("MONSTER");
             this.itsFightPictures_SCHICK.Add("MFIGS");
             this.itsFightPictures_SCHICK.Add("WFIGS");
+
+            this.itsLogoPictures_SCHICK.Add("ZUSTA_UK");
+            this.itsLogoPictures_SCHICK.Add("ZUSTA_US");
+            this.itsLogoPictures_SCHICK.Add("ATTIC");
+            this.itsLogoPictures_SCHICK.Add("DSALOGO.DAT");
+            this.itsLogoPictures_SCHICK.Add("GENTIT.DAT");
+            this.itsLogoPictures_SCHICK.Add("ROALOGUS.DAT");
 
             this.itsAmigaPackedFiles_SCHICK.Add("PLAYM_UK");
             this.itsAmigaPackedFiles_SCHICK.Add("PLAYM_US");
@@ -471,7 +479,13 @@ namespace DSA_1_Editing_Tool.File_Loader
             {
                 if (s == filename)
                     return CFarbPalette.palettenTyp.CharMenü_Pal;
-            }                
+            }
+
+            foreach (string s in itsLogoPictures_SCHICK)
+            {
+                if (s == filename)
+                    return CFarbPalette.palettenTyp.Logo_Pal;
+            }  
 
             return CFarbPalette.palettenTyp.default_Pal;
         }
