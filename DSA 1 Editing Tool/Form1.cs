@@ -1375,6 +1375,9 @@ namespace DSA_1_Editing_Tool
                 {
                     CFight_LST fight = this.itsDSAFileLoader.kampf.itsFight_LST[i];
 
+                    this.Kämpfe_Item_pictureBox.BackgroundImage = null;
+                    this.Kämpfe_Monster_pictureBox.BackgroundImage = null;
+
                     this.Fight_Monster_dgvList.Rows.Clear();
                     for (int j = 0; j < fight.itsMonsterInfos.Count; j++)
                     {
@@ -1422,12 +1425,23 @@ namespace DSA_1_Editing_Tool
                 if (this.itsDSAFileLoader.kampf.itsFight_LST[i].itsMonsterInfos.Count <= j)
                     return;
 
-                CFight_MonsterInfo monster = this.itsDSAFileLoader.kampf.itsFight_LST[i].itsMonsterInfos[j];
-                this.tB_Fight_Monster_Blickrichtung.Text = monster.Blickrichtung.ToString();
-                this.tB_Fight_Monster_ID.Text = monster.GegnerID.ToString();
-                this.tB_Fight_Monster_Startrunde.Text = monster.Startrunde.ToString();
-                this.tB_Fight_Monster_XPos.Text = monster.Position_X.ToString();
-                this.tB_Fight_Monster_YPos.Text = monster.Position_Y.ToString();
+                CFight_MonsterInfo monsterInfo = this.itsDSAFileLoader.kampf.itsFight_LST[i].itsMonsterInfos[j];
+                this.tB_Fight_Monster_Blickrichtung.Text = monsterInfo.Blickrichtung.ToString();
+                this.tB_Fight_Monster_ID.Text = monsterInfo.GegnerID.ToString();
+                this.tB_Fight_Monster_Startrunde.Text = monsterInfo.Startrunde.ToString();
+                this.tB_Fight_Monster_XPos.Text = monsterInfo.Position_X.ToString();
+                this.tB_Fight_Monster_YPos.Text = monsterInfo.Position_Y.ToString();
+
+                try
+                {
+                    CMonster.CMonsterStats monster = this.itsDSAFileLoader.monster.itsMonsterStats[monsterInfo.GegnerID];
+                    this.Kämpfe_Monster_pictureBox.BackgroundImage = new Bitmap(this.itsDSAFileLoader.bilder.getMonsterImageByID(monster.MonsterGraphicID));
+                }
+                catch (SystemException)
+                {
+                    this.Kämpfe_Monster_pictureBox.BackgroundImage = null;
+                }
+                
             }
             catch (SystemException e2)
             {
@@ -1462,6 +1476,16 @@ namespace DSA_1_Editing_Tool
                     return;
 
                 this.tB_Fight_Item_Menge.Text = this.itsDSAFileLoader.kampf.itsFight_LST[i].itsBeute[j].Menge.ToString();
+
+                try
+                {
+                    short imageID = this.itsDSAFileLoader.itemList.itsItems[this.itsDSAFileLoader.kampf.itsFight_LST[i].itsBeute[j].ItemID].IconID;
+                    this.Kämpfe_Item_pictureBox.BackgroundImage = new Bitmap(this.itsDSAFileLoader.bilder.getItemImageByID(imageID));
+                }
+                catch (SystemException)
+                {
+                    this.Kämpfe_Item_pictureBox.BackgroundImage = null;
+                }
             }
             catch (SystemException e2)
             {

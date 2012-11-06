@@ -40,6 +40,7 @@
             this.bilderExportierenNachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.tP_Pictures = new System.Windows.Forms.TabPage();
+            this.Bilder_cBZoom = new System.Windows.Forms.CheckBox();
             this.Bilder_lbBildnummer = new System.Windows.Forms.ListBox();
             this.Bilder_lbList = new System.Windows.Forms.ListBox();
             this.Bilder_pictureBox = new System.Windows.Forms.PictureBox();
@@ -385,19 +386,20 @@
             this.tB_Item_IconID = new System.Windows.Forms.TextBox();
             this.rTB_Debug = new System.Windows.Forms.RichTextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tP_Routs = new System.Windows.Forms.TabPage();
-            this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
             this.tP_Animations = new System.Windows.Forms.TabPage();
+            this.Animationen_cBZoom = new System.Windows.Forms.CheckBox();
+            this.Animationen_Einzelbild = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Animationen_pictureBox = new System.Windows.Forms.PictureBox();
             this.Animationen_Animationsnummer = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Animationen_dgvList = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Animationen_Einzelbild = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Animationen_cBZoom = new System.Windows.Forms.CheckBox();
-            this.Bilder_cBZoom = new System.Windows.Forms.CheckBox();
+            this.tP_Routs = new System.Windows.Forms.TabPage();
+            this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
+            this.Kämpfe_Monster_pictureBox = new System.Windows.Forms.PictureBox();
+            this.Kämpfe_Item_pictureBox = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -456,13 +458,15 @@
             this.gB_ItemDat.SuspendLayout();
             this.groupBox14.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tP_Routs.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).BeginInit();
             this.tP_Animations.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Animationen_Einzelbild)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_Animationsnummer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Animationen_Einzelbild)).BeginInit();
+            this.tP_Routs.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Kämpfe_Monster_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Kämpfe_Item_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -559,6 +563,17 @@
             this.tP_Pictures.Size = new System.Drawing.Size(987, 683);
             this.tP_Pictures.TabIndex = 7;
             this.tP_Pictures.Text = "Bilder";
+            // 
+            // Bilder_cBZoom
+            // 
+            this.Bilder_cBZoom.AutoSize = true;
+            this.Bilder_cBZoom.Location = new System.Drawing.Point(616, 93);
+            this.Bilder_cBZoom.Name = "Bilder_cBZoom";
+            this.Bilder_cBZoom.Size = new System.Drawing.Size(53, 17);
+            this.Bilder_cBZoom.TabIndex = 20;
+            this.Bilder_cBZoom.Text = "Zoom";
+            this.Bilder_cBZoom.UseVisualStyleBackColor = true;
+            this.Bilder_cBZoom.CheckedChanged += new System.EventHandler(this.Bilder_cBZoom_CheckedChanged);
             // 
             // Bilder_lbBildnummer
             // 
@@ -1928,6 +1943,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.Kämpfe_Item_pictureBox);
             this.groupBox6.Controls.Add(this.Fight_Items_lbList);
             this.groupBox6.Controls.Add(this.tB_Fight_Item_Menge);
             this.groupBox6.Controls.Add(this.label50);
@@ -2120,6 +2136,7 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.Kämpfe_Monster_pictureBox);
             this.groupBox4.Controls.Add(this.tB_Fight_Monster_Startrunde);
             this.groupBox4.Controls.Add(this.Fight_Monster_lbList);
             this.groupBox4.Controls.Add(this.tB_Fight_Monster_Blickrichtung);
@@ -2429,9 +2446,9 @@
             // Monster_pictureBox
             // 
             this.Monster_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Monster_pictureBox.Location = new System.Drawing.Point(195, 170);
+            this.Monster_pictureBox.Location = new System.Drawing.Point(192, 167);
             this.Monster_pictureBox.Name = "Monster_pictureBox";
-            this.Monster_pictureBox.Size = new System.Drawing.Size(48, 48);
+            this.Monster_pictureBox.Size = new System.Drawing.Size(48, 72);
             this.Monster_pictureBox.TabIndex = 48;
             this.Monster_pictureBox.TabStop = false;
             // 
@@ -4003,25 +4020,6 @@
             this.tabControl1.Size = new System.Drawing.Size(995, 709);
             this.tabControl1.TabIndex = 3;
             // 
-            // tP_Routs
-            // 
-            this.tP_Routs.BackColor = System.Drawing.Color.Peru;
-            this.tP_Routs.Controls.Add(this.Rout_pictureBox);
-            this.tP_Routs.Location = new System.Drawing.Point(4, 22);
-            this.tP_Routs.Name = "tP_Routs";
-            this.tP_Routs.Size = new System.Drawing.Size(987, 683);
-            this.tP_Routs.TabIndex = 8;
-            this.tP_Routs.Text = "Routen";
-            // 
-            // Rout_pictureBox
-            // 
-            this.Rout_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Rout_pictureBox.Location = new System.Drawing.Point(162, 35);
-            this.Rout_pictureBox.Name = "Rout_pictureBox";
-            this.Rout_pictureBox.Size = new System.Drawing.Size(640, 400);
-            this.Rout_pictureBox.TabIndex = 15;
-            this.Rout_pictureBox.TabStop = false;
-            // 
             // tP_Animations
             // 
             this.tP_Animations.BackColor = System.Drawing.Color.Peru;
@@ -4036,6 +4034,43 @@
             this.tP_Animations.Size = new System.Drawing.Size(987, 683);
             this.tP_Animations.TabIndex = 9;
             this.tP_Animations.Text = "Animationen";
+            // 
+            // Animationen_cBZoom
+            // 
+            this.Animationen_cBZoom.AutoSize = true;
+            this.Animationen_cBZoom.Location = new System.Drawing.Point(694, 87);
+            this.Animationen_cBZoom.Name = "Animationen_cBZoom";
+            this.Animationen_cBZoom.Size = new System.Drawing.Size(53, 17);
+            this.Animationen_cBZoom.TabIndex = 19;
+            this.Animationen_cBZoom.Text = "Zoom";
+            this.Animationen_cBZoom.UseVisualStyleBackColor = true;
+            this.Animationen_cBZoom.CheckedChanged += new System.EventHandler(this.Animationen_cBZoom_CheckedChanged);
+            // 
+            // Animationen_Einzelbild
+            // 
+            this.Animationen_Einzelbild.AllowUserToAddRows = false;
+            this.Animationen_Einzelbild.AllowUserToDeleteRows = false;
+            this.Animationen_Einzelbild.AllowUserToResizeColumns = false;
+            this.Animationen_Einzelbild.AllowUserToResizeRows = false;
+            this.Animationen_Einzelbild.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Animationen_Einzelbild.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn36});
+            this.Animationen_Einzelbild.Location = new System.Drawing.Point(260, 16);
+            this.Animationen_Einzelbild.MultiSelect = false;
+            this.Animationen_Einzelbild.Name = "Animationen_Einzelbild";
+            this.Animationen_Einzelbild.ReadOnly = true;
+            this.Animationen_Einzelbild.RowHeadersVisible = false;
+            this.Animationen_Einzelbild.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Animationen_Einzelbild.Size = new System.Drawing.Size(71, 440);
+            this.Animationen_Einzelbild.TabIndex = 18;
+            this.Animationen_Einzelbild.SelectionChanged += new System.EventHandler(this.Animationen_Einzelbild_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn36.HeaderText = "#";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.ReadOnly = true;
             // 
             // Animationen_pictureBox
             // 
@@ -4107,53 +4142,42 @@
             this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
             this.dataGridViewTextBoxColumn35.ReadOnly = true;
             // 
-            // Animationen_Einzelbild
+            // tP_Routs
             // 
-            this.Animationen_Einzelbild.AllowUserToAddRows = false;
-            this.Animationen_Einzelbild.AllowUserToDeleteRows = false;
-            this.Animationen_Einzelbild.AllowUserToResizeColumns = false;
-            this.Animationen_Einzelbild.AllowUserToResizeRows = false;
-            this.Animationen_Einzelbild.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Animationen_Einzelbild.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn36});
-            this.Animationen_Einzelbild.Location = new System.Drawing.Point(260, 16);
-            this.Animationen_Einzelbild.MultiSelect = false;
-            this.Animationen_Einzelbild.Name = "Animationen_Einzelbild";
-            this.Animationen_Einzelbild.ReadOnly = true;
-            this.Animationen_Einzelbild.RowHeadersVisible = false;
-            this.Animationen_Einzelbild.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Animationen_Einzelbild.Size = new System.Drawing.Size(71, 440);
-            this.Animationen_Einzelbild.TabIndex = 18;
-            this.Animationen_Einzelbild.SelectionChanged += new System.EventHandler(this.Animationen_Einzelbild_SelectionChanged);
+            this.tP_Routs.BackColor = System.Drawing.Color.Peru;
+            this.tP_Routs.Controls.Add(this.Rout_pictureBox);
+            this.tP_Routs.Location = new System.Drawing.Point(4, 22);
+            this.tP_Routs.Name = "tP_Routs";
+            this.tP_Routs.Size = new System.Drawing.Size(987, 683);
+            this.tP_Routs.TabIndex = 8;
+            this.tP_Routs.Text = "Routen";
             // 
-            // dataGridViewTextBoxColumn36
+            // Rout_pictureBox
             // 
-            this.dataGridViewTextBoxColumn36.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn36.HeaderText = "#";
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            this.dataGridViewTextBoxColumn36.ReadOnly = true;
+            this.Rout_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Rout_pictureBox.Location = new System.Drawing.Point(162, 35);
+            this.Rout_pictureBox.Name = "Rout_pictureBox";
+            this.Rout_pictureBox.Size = new System.Drawing.Size(640, 400);
+            this.Rout_pictureBox.TabIndex = 15;
+            this.Rout_pictureBox.TabStop = false;
             // 
-            // Animationen_cBZoom
+            // Kämpfe_Monster_pictureBox
             // 
-            this.Animationen_cBZoom.AutoSize = true;
-            this.Animationen_cBZoom.Location = new System.Drawing.Point(694, 87);
-            this.Animationen_cBZoom.Name = "Animationen_cBZoom";
-            this.Animationen_cBZoom.Size = new System.Drawing.Size(53, 17);
-            this.Animationen_cBZoom.TabIndex = 19;
-            this.Animationen_cBZoom.Text = "Zoom";
-            this.Animationen_cBZoom.UseVisualStyleBackColor = true;
-            this.Animationen_cBZoom.CheckedChanged += new System.EventHandler(this.Animationen_cBZoom_CheckedChanged);
+            this.Kämpfe_Monster_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Kämpfe_Monster_pictureBox.Location = new System.Drawing.Point(209, 142);
+            this.Kämpfe_Monster_pictureBox.Name = "Kämpfe_Monster_pictureBox";
+            this.Kämpfe_Monster_pictureBox.Size = new System.Drawing.Size(48, 72);
+            this.Kämpfe_Monster_pictureBox.TabIndex = 27;
+            this.Kämpfe_Monster_pictureBox.TabStop = false;
             // 
-            // Bilder_cBZoom
+            // Kämpfe_Item_pictureBox
             // 
-            this.Bilder_cBZoom.AutoSize = true;
-            this.Bilder_cBZoom.Location = new System.Drawing.Point(616, 93);
-            this.Bilder_cBZoom.Name = "Bilder_cBZoom";
-            this.Bilder_cBZoom.Size = new System.Drawing.Size(53, 17);
-            this.Bilder_cBZoom.TabIndex = 20;
-            this.Bilder_cBZoom.Text = "Zoom";
-            this.Bilder_cBZoom.UseVisualStyleBackColor = true;
-            this.Bilder_cBZoom.CheckedChanged += new System.EventHandler(this.Bilder_cBZoom_CheckedChanged);
+            this.Kämpfe_Item_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Kämpfe_Item_pictureBox.Location = new System.Drawing.Point(261, 113);
+            this.Kämpfe_Item_pictureBox.Name = "Kämpfe_Item_pictureBox";
+            this.Kämpfe_Item_pictureBox.Size = new System.Drawing.Size(32, 32);
+            this.Kämpfe_Item_pictureBox.TabIndex = 28;
+            this.Kämpfe_Item_pictureBox.TabStop = false;
             // 
             // Form1
             // 
@@ -4251,14 +4275,16 @@
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.tabControl1.ResumeLayout(false);
-            this.tP_Routs.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).EndInit();
             this.tP_Animations.ResumeLayout(false);
             this.tP_Animations.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Animationen_Einzelbild)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_Animationsnummer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Animationen_Einzelbild)).EndInit();
+            this.tP_Routs.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Kämpfe_Monster_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Kämpfe_Item_pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4635,6 +4661,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
         private System.Windows.Forms.CheckBox Bilder_cBZoom;
         private System.Windows.Forms.CheckBox Animationen_cBZoom;
+        private System.Windows.Forms.PictureBox Kämpfe_Monster_pictureBox;
+        private System.Windows.Forms.PictureBox Kämpfe_Item_pictureBox;
     }
 }
 
