@@ -8,13 +8,15 @@ namespace DSA_1_Editing_Tool
 {
     static class CFarbPalette
     {
-        public enum palettenTyp { default_Pal, Town_Pal, CharMenü_Pal, Fight_Pal, Logo_Pal };
+        public enum palettenTyp { default_Pal, Town_Pal, CharMenü_Pal, Fight_Pal, Logo_Pal, Test_Pal };
 
         static Color[] defaultPalette = new Color[256];
         static Color[] townPalette = null;
         static Color[] charMenüPalette = null;
         static Color[] fightPalette = null;
         static Color[] logoPalette = null;
+
+        static Color[] testPalette = new Color[256];
 
         static CFarbPalette()
         {
@@ -26,6 +28,8 @@ namespace DSA_1_Editing_Tool
                 initCharMenüPalette();
                 initFightPalette();
                 initLogoPalette();
+
+                initTestPalette();
             }
             catch (SystemException)
             {
@@ -398,41 +402,41 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
             //191 = 0xBF
 
             //Palette for Playmask. Colorspace is E0-FF (Tested by HenneNWH)
-            townPalette[0xE0] = Color.FromArgb(0x00, 0x00, 0x00);
-            townPalette[0xE1] = Color.FromArgb(0x56, 0x56, 0x56);
-            townPalette[0xE2] = Color.FromArgb(0x52, 0x52, 0x52);
-            townPalette[0xE3] = Color.FromArgb(0x48, 0x48, 0x48);
-            townPalette[0xE4] = Color.FromArgb(0x44, 0x44, 0x44);
-            townPalette[0xE5] = Color.FromArgb(0x40, 0x40, 0x40);
-            townPalette[0xE6] = Color.FromArgb(0x36, 0x36, 0x36);
-            townPalette[0xE7] = Color.FromArgb(0x32, 0x32, 0x32);
+            townPalette[0xE0] = Color.FromArgb(00 * 4, 00 * 4, 00 * 4);
+            townPalette[0xE1] = Color.FromArgb(56 * 4, 56 * 4, 56 * 4);
+            townPalette[0xE2] = Color.FromArgb(52 * 4, 52 * 4, 52 * 4);
+            townPalette[0xE3] = Color.FromArgb(48 * 4, 48 * 4, 48 * 4);
+            townPalette[0xE4] = Color.FromArgb(44 * 4, 44 * 4, 44 * 4);
+            townPalette[0xE5] = Color.FromArgb(40 * 4, 40 * 4, 40 * 4);
+            townPalette[0xE6] = Color.FromArgb(36 * 4, 36 * 4, 36 * 4);
+            townPalette[0xE7] = Color.FromArgb(32 * 4, 32 * 4, 32 * 4);
 
-            townPalette[0xE8] = Color.FromArgb(0x28, 0x28, 0x28);
-            townPalette[0xE9] = Color.FromArgb(0x24, 0x24, 0x24);
-            townPalette[0xEA] = Color.FromArgb(0x20, 0x20, 0x20);
-            townPalette[0xEB] = Color.FromArgb(0x16, 0x16, 0x16);
-            townPalette[0xEC] = Color.FromArgb(0x12, 0x12, 0x12);
-            townPalette[0xED] = Color.FromArgb(0x08, 0x08, 0x08);
-            townPalette[0xEE] = Color.FromArgb(0x04, 0x04, 0x04);
-            townPalette[0xEF] = Color.FromArgb(0x00, 0x00, 0x00);
+            townPalette[0xE8] = Color.FromArgb(28 * 4, 28 * 4, 28 * 4);
+            townPalette[0xE9] = Color.FromArgb(24 * 4, 24 * 4, 24 * 4);
+            townPalette[0xEA] = Color.FromArgb(20 * 4, 20 * 4, 20 * 4);
+            townPalette[0xEB] = Color.FromArgb(16 * 4, 16 * 4, 16 * 4);
+            townPalette[0xEC] = Color.FromArgb(12 * 4, 12 * 4, 12 * 4);
+            townPalette[0xED] = Color.FromArgb(08 * 4, 08 * 4, 08 * 4);
+            townPalette[0xEE] = Color.FromArgb(04 * 4, 04 * 4, 04 * 4);
+            townPalette[0xEF] = Color.FromArgb(00 * 4, 00 * 4, 00 * 4);
 
-            townPalette[0xF0] = Color.FromArgb(0x00, 0x60, 0x08);
-            townPalette[0xF1] = Color.FromArgb(0x60, 0x48, 0x40);
-            townPalette[0xF2] = Color.FromArgb(0x60, 0x44, 0x40);
-            townPalette[0xF3] = Color.FromArgb(0x44, 0x28, 0x24);
-            townPalette[0xF4] = Color.FromArgb(0x36, 0x20, 0x16);
-            townPalette[0xF5] = Color.FromArgb(0x28, 0x16, 0x12);
-            townPalette[0xF6] = Color.FromArgb(0x20, 0x08, 0x08);
-            townPalette[0xF7] = Color.FromArgb(0x12, 0x04, 0x04);
+            townPalette[0xF0] = Color.FromArgb(00 * 4, 60 * 4, 08 * 4);
+            townPalette[0xF1] = Color.FromArgb(60 * 4, 48 * 4, 40 * 4);
+            townPalette[0xF2] = Color.FromArgb(60 * 4, 44 * 4, 40 * 4);
+            townPalette[0xF3] = Color.FromArgb(44 * 4, 28 * 4, 24 * 4);
+            townPalette[0xF4] = Color.FromArgb(36 * 4, 20 * 4, 16 * 4);
+            townPalette[0xF5] = Color.FromArgb(28 * 4, 16 * 4, 12 * 4);
+            townPalette[0xF6] = Color.FromArgb(20 * 4, 08 * 4, 08 * 4);
+            townPalette[0xF7] = Color.FromArgb(12 * 4, 04 * 4, 04 * 4);
 
-            townPalette[0xF8] = Color.FromArgb(0x12, 0x08, 0x00);
-            townPalette[0xF9] = Color.FromArgb(0x44, 0x00, 0x00);
-            townPalette[0xFA] = Color.FromArgb(0x16, 0x20, 0x60);
-            townPalette[0xFB] = Color.FromArgb(0x00, 0x08, 0x56);
-            townPalette[0xFC] = Color.FromArgb(0x00, 0x08, 0x52);
-            townPalette[0xFD] = Color.FromArgb(0x00, 0x00, 0x24);
-            townPalette[0xFE] = Color.FromArgb(0x60, 0x60, 0x00);
-            townPalette[0xFF] = Color.FromArgb(0x60, 0x60, 0x60);
+            townPalette[0xF8] = Color.FromArgb(12 * 4, 08 * 4, 00 * 4);
+            townPalette[0xF9] = Color.FromArgb(44 * 4, 00 * 4, 00 * 4);
+            townPalette[0xFA] = Color.FromArgb(16 * 4, 20 * 4, 60 * 4);
+            townPalette[0xFB] = Color.FromArgb(00 * 4, 08 * 4, 56 * 4);
+            townPalette[0xFC] = Color.FromArgb(00 * 4, 08 * 4, 52 * 4);
+            townPalette[0xFD] = Color.FromArgb(00 * 4, 00 * 4, 24 * 4);
+            townPalette[0xFE] = Color.FromArgb(60 * 4, 60 * 4, 00 * 4);
+            townPalette[0xFF] = Color.FromArgb(60 * 4, 60 * 4, 60 * 4);
 
         }
         static private void initCharMenüPalette()
@@ -440,6 +444,44 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
             charMenüPalette = (Color[])defaultPalette.Clone();
             //itemPalette = new Color[32];
 
+            //Charaktermenü Hintergrund 0x00-0x1F
+            charMenüPalette[0x00] = Color.FromArgb(00 * 4, 00 * 4, 00 * 4);
+            charMenüPalette[0x01] = Color.FromArgb(06 * 4, 06 * 4, 06 * 4);
+            charMenüPalette[0x02] = Color.FromArgb(63 * 4, 38 * 4, 16 * 4);
+            charMenüPalette[0x03] = Color.FromArgb(63 * 4, 30 * 4, 00 * 4);
+            charMenüPalette[0x04] = Color.FromArgb(51 * 4, 24 * 4, 00 * 4);
+            charMenüPalette[0x05] = Color.FromArgb(39 * 4, 19 * 4, 00 * 4);
+            charMenüPalette[0x06] = Color.FromArgb(12 * 4, 14 * 4, 00 * 4);
+            charMenüPalette[0x07] = Color.FromArgb(16 * 4, 08 * 4, 00 * 4);
+
+            charMenüPalette[0x08] = Color.FromArgb(63 * 4, 63 * 4, 00 * 4);
+            charMenüPalette[0x09] = Color.FromArgb(60 * 4, 00 * 4, 00 * 4);
+            charMenüPalette[0x0A] = Color.FromArgb(27 * 4, 00 * 4, 00 * 4);
+            charMenüPalette[0x0B] = Color.FromArgb(00 * 4, 14 * 4, 63 * 4);
+            charMenüPalette[0x0C] = Color.FromArgb(00 * 4, 00 * 4, 37 * 4);
+            charMenüPalette[0x0D] = Color.FromArgb(60 * 4, 48 * 4, 33 * 4);
+            charMenüPalette[0x0E] = Color.FromArgb(52 * 4, 40 * 4, 25 * 4);
+            charMenüPalette[0x0F] = Color.FromArgb(44 * 4, 31 * 4, 18 * 4);
+
+            charMenüPalette[0x10] = Color.FromArgb(36 * 4, 23 * 4, 10 * 4);
+            charMenüPalette[0x11] = Color.FromArgb(60 * 4, 60 * 4, 60 * 4);
+            charMenüPalette[0x12] = Color.FromArgb(56 * 4, 56 * 4, 56 * 4);
+            charMenüPalette[0x13] = Color.FromArgb(52 * 4, 52 * 4, 52 * 4);
+            charMenüPalette[0x14] = Color.FromArgb(48 * 4, 48 * 4, 48 * 4);
+            charMenüPalette[0x15] = Color.FromArgb(44 * 4, 44 * 4, 44 * 4);
+            charMenüPalette[0x16] = Color.FromArgb(40 * 4, 40 * 4, 40 * 4);
+            charMenüPalette[0x17] = Color.FromArgb(36 * 4, 36 * 4, 36 * 4);
+
+            charMenüPalette[0x18] = Color.FromArgb(32 * 4, 32 * 4, 32 * 4);
+            charMenüPalette[0x19] = Color.FromArgb(28 * 4, 28 * 4, 28 * 4);
+            charMenüPalette[0x1A] = Color.FromArgb(24 * 4, 24 * 4, 24 * 4);
+            charMenüPalette[0x1B] = Color.FromArgb(20 * 4, 20 * 4, 20 * 4);
+            charMenüPalette[0x1C] = Color.FromArgb(16 * 4, 16 * 4, 16 * 4);
+            charMenüPalette[0x1D] = Color.FromArgb(12 * 4, 12 * 4, 12 * 4);
+            charMenüPalette[0x1E] = Color.FromArgb(08 * 4, 08 * 4, 08 * 4);
+            charMenüPalette[0x1F] = Color.FromArgb(63 * 4, 63 * 4, 63 * 4);
+
+            //Gegenstände 0x40-0x5F
             charMenüPalette[0x40] = Color.FromArgb(00 * 4, 00 * 4, 00 * 4);
             charMenüPalette[0x41] = Color.FromArgb(56 * 4, 48 * 4, 40 * 4);
             charMenüPalette[0x42] = Color.FromArgb(48 * 4, 36 * 4, 28 * 4);
@@ -520,6 +562,60 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
         static private void initLogoPalette()
         {
             logoPalette = (Color[])defaultPalette.Clone();
+
+
+            //GENXX.NVF
+            logoPalette[0x40] = Color.FromArgb(00 * 4, 00 * 4, 00 * 4);
+            logoPalette[0x41] = Color.FromArgb(56 * 4, 56 * 4, 56 * 4);
+            logoPalette[0x42] = Color.FromArgb(52 * 4, 52 * 4, 52 * 4);
+            logoPalette[0x43] = Color.FromArgb(48 * 4, 48 * 4, 48 * 4);
+            logoPalette[0x44] = Color.FromArgb(44 * 4, 44 * 4, 44 * 4);
+            logoPalette[0x45] = Color.FromArgb(40 * 4, 40 * 4, 40 * 4);
+            logoPalette[0x46] = Color.FromArgb(36 * 4, 36 * 4, 36 * 4);
+            logoPalette[0x47] = Color.FromArgb(32 * 4, 32 * 4, 32 * 4);
+
+            logoPalette[0x48] = Color.FromArgb(28 * 4, 28 * 4, 28 * 4);
+            logoPalette[0x49] = Color.FromArgb(24 * 4, 24 * 4, 24 * 4);
+            logoPalette[0x4A] = Color.FromArgb(20 * 4, 20 * 4, 20 * 4);
+            logoPalette[0x4B] = Color.FromArgb(16 * 4, 16 * 4, 16 * 4);
+            logoPalette[0x4C] = Color.FromArgb(12 * 4, 12 * 4, 12 * 4);
+            logoPalette[0x4D] = Color.FromArgb(08 * 4, 08 * 4, 08 * 4);
+            logoPalette[0x4E] = Color.FromArgb(60 * 4, 60 * 4, 60 * 4);
+            logoPalette[0x4F] = Color.FromArgb(60 * 4, 52 * 4, 24 * 4);
+
+            logoPalette[0x50] = Color.FromArgb(60 * 4, 52 * 4, 08 * 4);
+            logoPalette[0x51] = Color.FromArgb(60 * 4, 52 * 4, 00 * 4);
+            logoPalette[0x52] = Color.FromArgb(56 * 4, 48 * 4, 00 * 4);
+            logoPalette[0x53] = Color.FromArgb(52 * 4, 44 * 4, 00 * 4);
+            logoPalette[0x54] = Color.FromArgb(48 * 4, 40 * 4, 00 * 4);
+            logoPalette[0x55] = Color.FromArgb(44 * 4, 36 * 4, 00 * 4);
+            logoPalette[0x56] = Color.FromArgb(40 * 4, 32 * 4, 00 * 4);
+            logoPalette[0x57] = Color.FromArgb(36 * 4, 28 * 4, 00 * 4);
+
+            logoPalette[0x58] = Color.FromArgb(32 * 4, 24 * 4, 00 * 4);
+            logoPalette[0x59] = Color.FromArgb(28 * 4, 20 * 4, 00 * 4);
+            logoPalette[0x5A] = Color.FromArgb(56 * 4, 20 * 4, 12 * 4);
+            logoPalette[0x5B] = Color.FromArgb(52 * 4, 12 * 4, 00 * 4);
+            logoPalette[0x5C] = Color.FromArgb(44 * 4, 08 * 4, 00 * 4);
+            logoPalette[0x5D] = Color.FromArgb(36 * 4, 04 * 4, 00 * 4);
+            logoPalette[0x5E] = Color.FromArgb(28 * 4, 00 * 4, 00 * 4);
+            logoPalette[0x5F] = Color.FromArgb(20 * 4, 00 * 4, 00 * 4);
+
+            //GEN.EXE
+            logoPalette[0xC8] = Color.FromArgb(40 * 4, 00 * 4, 00 * 4);
+            logoPalette[0xC9] = Color.FromArgb(40 * 4, 40 * 4, 00 * 4);
+            logoPalette[0xCA] = Color.FromArgb(00 * 4, 00 * 4, 40 * 4);
+        }
+
+        static private void initTestPalette()
+        {
+            int startwert = 0x01;
+            int länge = 0x2F;
+
+            testPalette[0] = Color.FromArgb(0x00, 0x60, 0x00);
+
+            for (int i = startwert; i < (länge); i++)
+                testPalette[i] = Color.FromArgb(0x60, 0x00, 0x00);
         }
 
         static public Color getColor(palettenTyp typ, Byte input)
@@ -534,6 +630,12 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
 
                 case palettenTyp.Fight_Pal:
                     return fightPalette[input];
+
+                case palettenTyp.Logo_Pal:
+                    return logoPalette[input];
+
+                case palettenTyp.Test_Pal:
+                    return testPalette[input];
 
                 default:
                     return defaultPalette[input];

@@ -20,6 +20,8 @@ namespace DSA_1_Editing_Tool.File_Loader
         private List<string> itsCharMenüPictures_SCHICK = new List<string>();
         private List<string> itsLogoPictures_SCHICK = new List<string>();
 
+        private List<string> itsTestPictures = new List<string>();
+
         private List<string> itsAmigaPackedFiles_SCHICK = new List<string>();
         private List<string> itsAmigaPackedFiles_DSAGEN = new List<string>();
         private List<string> itsRLEPackedFiles_DSAGEN = new List<string>();
@@ -60,11 +62,11 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.itsTownPictures_SCHICK.Add("FINGER.NVF");
             this.itsTownPictures_SCHICK.Add("PLAYM_UK");
             this.itsTownPictures_SCHICK.Add("PLAYM_US");
-            //this.itsTownPictures_SCHICK.Add("TEMPICON");
             this.itsTownPictures_SCHICK.Add("COMPASS");
-            //this.itsTownPictures_SCHICK.Add("BICONS");
 
             this.itsCharMenüPictures_SCHICK.Add("GGSTS.NVF");
+            this.itsCharMenüPictures_SCHICK.Add("ZUSTA_UK");
+            this.itsCharMenüPictures_SCHICK.Add("ZUSTA_US");
 
             this.itsFightPictures_SCHICK.Add("OBJECTS.NVF");
             this.itsFightPictures_SCHICK.Add("WEAPONS.NVF");
@@ -74,12 +76,20 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.itsFightPictures_SCHICK.Add("MFIGS");
             this.itsFightPictures_SCHICK.Add("WFIGS");
 
-            this.itsLogoPictures_SCHICK.Add("ZUSTA_UK");
-            this.itsLogoPictures_SCHICK.Add("ZUSTA_US");
             this.itsLogoPictures_SCHICK.Add("ATTIC");
             this.itsLogoPictures_SCHICK.Add("DSALOGO.DAT");
             this.itsLogoPictures_SCHICK.Add("GENTIT.DAT");
             this.itsLogoPictures_SCHICK.Add("ROALOGUS.DAT");
+            this.itsLogoPictures_SCHICK.Add("TEMPICON");
+            
+            //this.itsTestPictures.Add("ATTIC");
+            //this.itsTestPictures.Add("DSALOGO.DAT");
+            //this.itsTestPictures.Add("GENTIT.DAT");
+            //this.itsTestPictures.Add("ROALOGUS.DAT");
+            //this.itsTestPictures.Add("TEMPICON");
+            //this.itsTestPictures.Add("OBJECTS.NVF");
+            //this.itsTestPictures.Add("FIGHTOBJ.NVF");
+            //this.itsTownPictures_SCHICK.Add("BICONS");
 
             this.itsAmigaPackedFiles_SCHICK.Add("PLAYM_UK");
             this.itsAmigaPackedFiles_SCHICK.Add("PLAYM_US");
@@ -463,6 +473,12 @@ namespace DSA_1_Editing_Tool.File_Loader
         }
         private CFarbPalette.palettenTyp getPalettenTyp(string filename)
         {
+            foreach (string s in itsTestPictures)
+            {
+                if (s == filename)
+                    return CFarbPalette.palettenTyp.Test_Pal;
+            }
+
             foreach (string s in itsTownPictures_SCHICK)
             {
                 if (s == filename)
