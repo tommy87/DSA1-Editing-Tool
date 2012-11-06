@@ -2762,6 +2762,14 @@ namespace DSA_1_Editing_Tool
             }
         }
 
+        private void Bilder_cBZoom_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.Bilder_cBZoom.Checked)
+                this.Bilder_pictureBox.BackgroundImageLayout = ImageLayout.Zoom;
+            else
+                this.Bilder_pictureBox.BackgroundImageLayout = ImageLayout.Center;
+        }
+
         //------------Animationen-----------------------------
         private void Animationen_dgvList_SelectionChanged(object sender, EventArgs e)
         {
@@ -2882,6 +2890,14 @@ namespace DSA_1_Editing_Tool
             }
         }
 
+        private void Animationen_cBZoom_CheckedChanged(object sender, EventArgs e)
+        {
+            if (this.Animationen_cBZoom.Checked)
+                this.Animationen_pictureBox.BackgroundImageLayout = ImageLayout.Zoom;
+            else
+                this.Animationen_pictureBox.BackgroundImageLayout = ImageLayout.Center;
+        }
+
         //------------Hyperlinks-----------------------------
         private void lL_ItemInfos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -2929,6 +2945,6 @@ namespace DSA_1_Editing_Tool
             {
                 this.itsDSAFileLoader.exportPictures(folderBrowserDialog1.SelectedPath);
             }
-        }
+        }        
     }
 }

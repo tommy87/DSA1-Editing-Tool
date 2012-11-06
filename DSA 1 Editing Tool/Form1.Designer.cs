@@ -396,6 +396,8 @@
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Animationen_Einzelbild = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Animationen_cBZoom = new System.Windows.Forms.CheckBox();
+            this.Bilder_cBZoom = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -546,6 +548,7 @@
             // tP_Pictures
             // 
             this.tP_Pictures.BackColor = System.Drawing.Color.Peru;
+            this.tP_Pictures.Controls.Add(this.Bilder_cBZoom);
             this.tP_Pictures.Controls.Add(this.Bilder_lbBildnummer);
             this.tP_Pictures.Controls.Add(this.Bilder_lbList);
             this.tP_Pictures.Controls.Add(this.Bilder_pictureBox);
@@ -4022,6 +4025,7 @@
             // tP_Animations
             // 
             this.tP_Animations.BackColor = System.Drawing.Color.Peru;
+            this.tP_Animations.Controls.Add(this.Animationen_cBZoom);
             this.tP_Animations.Controls.Add(this.Animationen_Einzelbild);
             this.tP_Animations.Controls.Add(this.Animationen_pictureBox);
             this.tP_Animations.Controls.Add(this.Animationen_Animationsnummer);
@@ -4036,7 +4040,7 @@
             // Animationen_pictureBox
             // 
             this.Animationen_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Animationen_pictureBox.Location = new System.Drawing.Point(489, 38);
+            this.Animationen_pictureBox.Location = new System.Drawing.Point(346, 16);
             this.Animationen_pictureBox.Name = "Animationen_pictureBox";
             this.Animationen_pictureBox.Size = new System.Drawing.Size(320, 200);
             this.Animationen_pictureBox.TabIndex = 17;
@@ -4129,6 +4133,28 @@
             this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
             this.dataGridViewTextBoxColumn36.ReadOnly = true;
             // 
+            // Animationen_cBZoom
+            // 
+            this.Animationen_cBZoom.AutoSize = true;
+            this.Animationen_cBZoom.Location = new System.Drawing.Point(694, 87);
+            this.Animationen_cBZoom.Name = "Animationen_cBZoom";
+            this.Animationen_cBZoom.Size = new System.Drawing.Size(53, 17);
+            this.Animationen_cBZoom.TabIndex = 19;
+            this.Animationen_cBZoom.Text = "Zoom";
+            this.Animationen_cBZoom.UseVisualStyleBackColor = true;
+            this.Animationen_cBZoom.CheckedChanged += new System.EventHandler(this.Animationen_cBZoom_CheckedChanged);
+            // 
+            // Bilder_cBZoom
+            // 
+            this.Bilder_cBZoom.AutoSize = true;
+            this.Bilder_cBZoom.Location = new System.Drawing.Point(616, 93);
+            this.Bilder_cBZoom.Name = "Bilder_cBZoom";
+            this.Bilder_cBZoom.Size = new System.Drawing.Size(53, 17);
+            this.Bilder_cBZoom.TabIndex = 20;
+            this.Bilder_cBZoom.Text = "Zoom";
+            this.Bilder_cBZoom.UseVisualStyleBackColor = true;
+            this.Bilder_cBZoom.CheckedChanged += new System.EventHandler(this.Bilder_cBZoom_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4147,6 +4173,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tP_Pictures.ResumeLayout(false);
+            this.tP_Pictures.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bilder_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bilder_dgvBildnummer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bilder_dgvList)).EndInit();
@@ -4227,6 +4254,7 @@
             this.tP_Routs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).EndInit();
             this.tP_Animations.ResumeLayout(false);
+            this.tP_Animations.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_Animationsnummer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).EndInit();
@@ -4605,6 +4633,8 @@
         private System.Windows.Forms.DataGridView Animationen_dgvList;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
+        private System.Windows.Forms.CheckBox Bilder_cBZoom;
+        private System.Windows.Forms.CheckBox Animationen_cBZoom;
     }
 }
 
