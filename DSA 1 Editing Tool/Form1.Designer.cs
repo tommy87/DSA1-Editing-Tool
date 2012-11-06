@@ -150,8 +150,6 @@
             this.Citys_PictureBox = new System.Windows.Forms.PictureBox();
             this.lL_Städte = new System.Windows.Forms.LinkLabel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.label63 = new System.Windows.Forms.Label();
-            this.label62 = new System.Windows.Forms.Label();
             this.Städte_Event_tbUnbekannt = new System.Windows.Forms.TextBox();
             this.label61 = new System.Windows.Forms.Label();
             this.Städte_Event_tbIndex_Global = new System.Windows.Forms.TextBox();
@@ -180,6 +178,7 @@
             this.tB_Fight_Silberlinge = new System.Windows.Forms.TextBox();
             this.label51 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.Kämpfe_Item_pictureBox = new System.Windows.Forms.PictureBox();
             this.Fight_Items_lbList = new System.Windows.Forms.ListBox();
             this.tB_Fight_Item_Menge = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
@@ -199,6 +198,7 @@
             this.label49 = new System.Windows.Forms.Label();
             this.lB_Fight_Spieler = new System.Windows.Forms.ListBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.Kämpfe_Monster_pictureBox = new System.Windows.Forms.PictureBox();
             this.tB_Fight_Monster_Startrunde = new System.Windows.Forms.TextBox();
             this.Fight_Monster_lbList = new System.Windows.Forms.ListBox();
             this.tB_Fight_Monster_Blickrichtung = new System.Windows.Forms.TextBox();
@@ -398,8 +398,6 @@
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
-            this.Kämpfe_Monster_pictureBox = new System.Windows.Forms.PictureBox();
-            this.Kämpfe_Item_pictureBox = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -428,9 +426,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.Städte_dgvList)).BeginInit();
             this.tP_Fights.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Kämpfe_Item_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fight_Items_dgvList)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Kämpfe_Monster_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fight_Monster_dgvList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fight_dgvList)).BeginInit();
             this.tP_Monster.SuspendLayout();
@@ -465,8 +465,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).BeginInit();
             this.tP_Routs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Kämpfe_Monster_pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Kämpfe_Item_pictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -1647,8 +1645,6 @@
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.label63);
-            this.groupBox7.Controls.Add(this.label62);
             this.groupBox7.Controls.Add(this.Städte_Event_tbUnbekannt);
             this.groupBox7.Controls.Add(this.label61);
             this.groupBox7.Controls.Add(this.Städte_Event_tbIndex_Global);
@@ -1668,27 +1664,9 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Event";
             // 
-            // label63
-            // 
-            this.label63.AutoSize = true;
-            this.label63.Location = new System.Drawing.Point(203, 126);
-            this.label63.Name = "label63";
-            this.label63.Size = new System.Drawing.Size(106, 13);
-            this.label63.TabIndex = 25;
-            this.label63.Text = "Hier stimmt was nicht";
-            // 
-            // label62
-            // 
-            this.label62.AutoSize = true;
-            this.label62.Location = new System.Drawing.Point(203, 100);
-            this.label62.Name = "label62";
-            this.label62.Size = new System.Drawing.Size(106, 13);
-            this.label62.TabIndex = 24;
-            this.label62.Text = "Hier stimmt was nicht";
-            // 
             // Städte_Event_tbUnbekannt
             // 
-            this.Städte_Event_tbUnbekannt.Location = new System.Drawing.Point(97, 149);
+            this.Städte_Event_tbUnbekannt.Location = new System.Drawing.Point(182, 149);
             this.Städte_Event_tbUnbekannt.Name = "Städte_Event_tbUnbekannt";
             this.Städte_Event_tbUnbekannt.Size = new System.Drawing.Size(100, 20);
             this.Städte_Event_tbUnbekannt.TabIndex = 23;
@@ -1698,13 +1676,13 @@
             this.label61.AutoSize = true;
             this.label61.Location = new System.Drawing.Point(19, 152);
             this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(61, 13);
+            this.label61.Size = new System.Drawing.Size(43, 13);
             this.label61.TabIndex = 22;
-            this.label61.Text = "unbekannt:";
+            this.label61.Text = "Reisen:";
             // 
             // Städte_Event_tbIndex_Global
             // 
-            this.Städte_Event_tbIndex_Global.Location = new System.Drawing.Point(97, 123);
+            this.Städte_Event_tbIndex_Global.Location = new System.Drawing.Point(182, 123);
             this.Städte_Event_tbIndex_Global.Name = "Städte_Event_tbIndex_Global";
             this.Städte_Event_tbIndex_Global.Size = new System.Drawing.Size(100, 20);
             this.Städte_Event_tbIndex_Global.TabIndex = 21;
@@ -1714,13 +1692,13 @@
             this.label60.AutoSize = true;
             this.label60.Location = new System.Drawing.Point(19, 126);
             this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(72, 13);
+            this.label60.Size = new System.Drawing.Size(118, 13);
             this.label60.TabIndex = 20;
-            this.label60.Text = "Index(Global):";
+            this.label60.Text = "unbekannte Parameter:";
             // 
             // Städte_Event_tbIndex_Lokal
             // 
-            this.Städte_Event_tbIndex_Lokal.Location = new System.Drawing.Point(97, 97);
+            this.Städte_Event_tbIndex_Lokal.Location = new System.Drawing.Point(182, 97);
             this.Städte_Event_tbIndex_Lokal.Name = "Städte_Event_tbIndex_Lokal";
             this.Städte_Event_tbIndex_Lokal.Size = new System.Drawing.Size(100, 20);
             this.Städte_Event_tbIndex_Lokal.TabIndex = 19;
@@ -1730,15 +1708,15 @@
             this.label59.AutoSize = true;
             this.label59.Location = new System.Drawing.Point(19, 100);
             this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(68, 13);
+            this.label59.Size = new System.Drawing.Size(160, 13);
             this.label59.TabIndex = 18;
-            this.label59.Text = "Index(Lokal):";
+            this.label59.Text = "Name + Icons + Angebot(Index):";
             // 
             // Städte_Event_tbTyp
             // 
             this.Städte_Event_tbTyp.Location = new System.Drawing.Point(97, 71);
             this.Städte_Event_tbTyp.Name = "Städte_Event_tbTyp";
-            this.Städte_Event_tbTyp.Size = new System.Drawing.Size(100, 20);
+            this.Städte_Event_tbTyp.Size = new System.Drawing.Size(212, 20);
             this.Städte_Event_tbTyp.TabIndex = 17;
             // 
             // label58
@@ -1955,6 +1933,15 @@
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "gefundene Items";
             // 
+            // Kämpfe_Item_pictureBox
+            // 
+            this.Kämpfe_Item_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Kämpfe_Item_pictureBox.Location = new System.Drawing.Point(261, 113);
+            this.Kämpfe_Item_pictureBox.Name = "Kämpfe_Item_pictureBox";
+            this.Kämpfe_Item_pictureBox.Size = new System.Drawing.Size(32, 32);
+            this.Kämpfe_Item_pictureBox.TabIndex = 28;
+            this.Kämpfe_Item_pictureBox.TabStop = false;
+            // 
             // Fight_Items_lbList
             // 
             this.Fight_Items_lbList.FormattingEnabled = true;
@@ -2155,6 +2142,15 @@
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Monster";
+            // 
+            // Kämpfe_Monster_pictureBox
+            // 
+            this.Kämpfe_Monster_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Kämpfe_Monster_pictureBox.Location = new System.Drawing.Point(209, 142);
+            this.Kämpfe_Monster_pictureBox.Name = "Kämpfe_Monster_pictureBox";
+            this.Kämpfe_Monster_pictureBox.Size = new System.Drawing.Size(48, 72);
+            this.Kämpfe_Monster_pictureBox.TabIndex = 27;
+            this.Kämpfe_Monster_pictureBox.TabStop = false;
             // 
             // tB_Fight_Monster_Startrunde
             // 
@@ -4161,24 +4157,6 @@
             this.Rout_pictureBox.TabIndex = 15;
             this.Rout_pictureBox.TabStop = false;
             // 
-            // Kämpfe_Monster_pictureBox
-            // 
-            this.Kämpfe_Monster_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Kämpfe_Monster_pictureBox.Location = new System.Drawing.Point(209, 142);
-            this.Kämpfe_Monster_pictureBox.Name = "Kämpfe_Monster_pictureBox";
-            this.Kämpfe_Monster_pictureBox.Size = new System.Drawing.Size(48, 72);
-            this.Kämpfe_Monster_pictureBox.TabIndex = 27;
-            this.Kämpfe_Monster_pictureBox.TabStop = false;
-            // 
-            // Kämpfe_Item_pictureBox
-            // 
-            this.Kämpfe_Item_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Kämpfe_Item_pictureBox.Location = new System.Drawing.Point(261, 113);
-            this.Kämpfe_Item_pictureBox.Name = "Kämpfe_Item_pictureBox";
-            this.Kämpfe_Item_pictureBox.Size = new System.Drawing.Size(32, 32);
-            this.Kämpfe_Item_pictureBox.TabIndex = 28;
-            this.Kämpfe_Item_pictureBox.TabStop = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4234,11 +4212,13 @@
             this.tP_Fights.PerformLayout();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Kämpfe_Item_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fight_Items_dgvList)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.Kämpfe_Monster_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fight_Monster_dgvList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Fight_dgvList)).EndInit();
             this.tP_Monster.ResumeLayout(false);
@@ -4283,8 +4263,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).EndInit();
             this.tP_Routs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Kämpfe_Monster_pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Kämpfe_Item_pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4304,8 +4282,6 @@
         private System.Windows.Forms.TabPage tP_Towns;
         private System.Windows.Forms.LinkLabel lL_Städte;
         private System.Windows.Forms.GroupBox groupBox7;
-        private System.Windows.Forms.Label label63;
-        private System.Windows.Forms.Label label62;
         private System.Windows.Forms.TextBox Städte_Event_tbUnbekannt;
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.TextBox Städte_Event_tbIndex_Global;

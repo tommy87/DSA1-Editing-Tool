@@ -1692,7 +1692,7 @@ namespace DSA_1_Editing_Tool
                     this.Städte_dgvStadtEventList.Rows.Clear();
                     for (int j = 0; j < town.townEvents.Count; j++)
                     {
-                        this.Städte_dgvStadtEventList.Rows.Add(j.ToString("D3"), town.townEvents[j].Typ.ToString());
+                        this.Städte_dgvStadtEventList.Rows.Add(j.ToString("D3"), town.townEvents[j].EventTypToString());
                     }
                 }
                 this.drawCity();
@@ -1741,12 +1741,12 @@ namespace DSA_1_Editing_Tool
                 this.drawCity();
 
                 CTownEvent townEvent = this.itsDSAFileLoader.städte.itsTowns[i].Value.townEvents[j];
-                this.Städte_Event_tbIndex_Global.Text = townEvent.Index_Global.ToString();
-                this.Städte_Event_tbIndex_Lokal.Text = townEvent.Index_Lokal.ToString();
+                this.Städte_Event_tbIndex_Global.Text = townEvent.Untertyp_2_unbekannte_Parameter.ToString();
+                this.Städte_Event_tbIndex_Lokal.Text = townEvent.Untertyp_1_Name_Icons_Angebot.ToString();
                 this.Städte_Event_tbPosX.Text = townEvent.Position_X.ToString();
                 this.Städte_Event_tbPosY.Text = townEvent.Position_Y.ToString();
-                this.Städte_Event_tbTyp.Text = townEvent.Typ.ToString();
-                this.Städte_Event_tbUnbekannt.Text = townEvent.unbekannt.ToString();
+                this.Städte_Event_tbTyp.Text = townEvent.EventTypToString();
+                this.Städte_Event_tbUnbekannt.Text = townEvent.Untertyp_3_Reisen.ToString();
             }
             catch (SystemException e2)
             {
@@ -1839,12 +1839,12 @@ namespace DSA_1_Editing_Tool
                 this.drawCity();
 
                 CTownEvent townEvent = this.itsDSAFileLoader.städte.itsTowns[index_1].Value.townEvents[index_2];
-                this.Städte_Event_tbIndex_Global.Text = townEvent.Index_Global.ToString();
-                this.Städte_Event_tbIndex_Lokal.Text = townEvent.Index_Lokal.ToString();
+                this.Städte_Event_tbIndex_Global.Text = townEvent.Untertyp_2_unbekannte_Parameter.ToString();
+                this.Städte_Event_tbIndex_Lokal.Text = townEvent.Untertyp_1_Name_Icons_Angebot.ToString();
                 this.Städte_Event_tbPosX.Text = townEvent.Position_X.ToString();
                 this.Städte_Event_tbPosY.Text = townEvent.Position_Y.ToString();
                 this.Städte_Event_tbTyp.Text = townEvent.Typ.ToString();
-                this.Städte_Event_tbUnbekannt.Text = townEvent.unbekannt.ToString();
+                this.Städte_Event_tbUnbekannt.Text = townEvent.Untertyp_3_Reisen.ToString();
             }
             catch (SystemException e2)
             {

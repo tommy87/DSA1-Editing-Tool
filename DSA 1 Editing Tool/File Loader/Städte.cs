@@ -101,9 +101,9 @@ namespace DSA_1_Editing_Tool.File_Loader
         public byte Position_Y = 0;
         public byte Position_X = 0;
         public byte Typ = 0;
-        public byte Index_Lokal = 0;
-        public byte Index_Global = 0;
-        public byte unbekannt = 0;
+        public byte Untertyp_1_Name_Icons_Angebot = 0;
+        public byte Untertyp_2_unbekannte_Parameter = 0;
+        public byte Untertyp_3_Reisen = 0;
 
         public CTownEvent(ref byte[] data, int offset)
         {
@@ -113,9 +113,51 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.Position_Y = data[offset];
             this.Position_X = data[offset + 1];
             this.Typ = data[offset + 2];
-            this.Index_Lokal = data[offset + 3];
-            this.Index_Global = data[offset + 4];
-            this.unbekannt = data[offset + 5];
+            this.Untertyp_1_Name_Icons_Angebot = data[offset + 3];
+            this.Untertyp_2_unbekannte_Parameter = data[offset + 4];
+            this.Untertyp_3_Reisen = data[offset + 5];
+        }
+
+        public string EventTypToString()
+        {
+            switch (this.Typ)
+            {
+                case 2:
+                    return ("Tempel (" + this.Typ.ToString() + ")");
+                case 3:
+                    return ("Taverne (" + this.Typ.ToString() + ")");
+                case 4:
+                    return ("Heiler (" + this.Typ.ToString() + ")");
+                case 5:
+                    return ("Geschäft (" + this.Typ.ToString() + ")");
+                case 6:
+                    return ("Wildnislager (" + this.Typ.ToString() + ")");
+                case 7:
+                    return ("Herberge (" + this.Typ.ToString() + ")");
+                case 8:
+                    return ("Schmied (" + this.Typ.ToString() + ")");
+                case 9:
+                    return ("Markt (" + this.Typ.ToString() + ")");
+                case 10:
+                    return ("normales Haus? (" + this.Typ.ToString() + ")");
+                case 11:
+                    return ("Hafen (" + this.Typ.ToString() + ")");
+                case 12:
+                    return ("Wegweiser (" + this.Typ.ToString() + ")");
+                case 13:
+                    return ("QuestNPC? (" + this.Typ.ToString() + ")");
+                case 14:
+                    return ("Dungeon (" + this.Typ.ToString() + ")");
+                case 16:
+                    return ("Haus zum einbrechen? (" + this.Typ.ToString() + ")");
+                case 17:
+                    return ("Herberge & Taverne (" + this.Typ.ToString() + ")");
+                case 18:
+                    return ("Lager? (" + this.Typ.ToString() + ")");
+
+                default:
+                    return ("??? (" + this.Typ.ToString() + ")");
+            }
         }
     }
 }
