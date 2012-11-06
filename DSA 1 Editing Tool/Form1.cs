@@ -222,6 +222,7 @@ namespace DSA_1_Editing_Tool
             this.loadStädteTab();
             this.loadDungeonsTab();
             this.loadBilderTab();
+            this.loadAnimationenTab();
             this.loadRouts();
         }
         private void loadItemTab()
@@ -450,6 +451,15 @@ namespace DSA_1_Editing_Tool
                     this.Bilder_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.bilder.itsImages[i].Key);
                 };
             }
+        }
+        private void loadAnimationenTab()
+        {
+            this.Animationen_dgvList.Rows.Clear();
+
+            for (int i = 0; i < this.itsDSAFileLoader.bilder.itsAnimations.Count; i++)
+            {
+                this.Animationen_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.bilder.itsAnimations[i].Key);
+            };
         }
         private void loadRouts()
         {
@@ -2752,6 +2762,126 @@ namespace DSA_1_Editing_Tool
             }
         }
 
+        //------------Animationen-----------------------------
+        private void Animationen_dgvList_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection animationen = this.Animationen_dgvList.SelectedRows;
+
+            if (animationen.Count <= 0)
+            {
+                //this.Bilder_pictureBox.Image = null;
+                this.Animationen_pictureBox.BackgroundImage = null;
+                return;
+            }
+
+
+            try
+            {
+                int i = Convert.ToInt32(this.Animationen_dgvList.SelectedRows[0].Cells[0].Value);
+
+                if (i < this.itsDSAFileLoader.bilder.itsAnimations.Count)
+                {
+                    this.Animationen_Einzelbild.ClearSelection();
+                    this.Animationen_Animationsnummer.ClearSelection();
+                    this.Animationen_Einzelbild.Rows.Clear();
+                    this.Animationen_Animationsnummer.Rows.Clear();
+
+                    for (int j = 0; j < this.itsDSAFileLoader.bilder.itsAnimations[i].Value.Count; j++)
+                    {
+                        this.Animationen_Animationsnummer.Rows.Add(j.ToString());
+                    }
+
+                    this.Animationen_Animationsnummer.ClearSelection();
+                    if (this.Animationen_Animationsnummer.Rows.Count > 0)
+                        this.Animationen_Animationsnummer.Rows[0].Selected = true;
+                }
+            }
+            catch (SystemException e2)
+            {
+                this.Animationen_Einzelbild.ClearSelection();
+                this.Animationen_Animationsnummer.ClearSelection();
+                this.Animationen_Einzelbild.Rows.Clear();
+                this.Animationen_Animationsnummer.Rows.Clear();
+                CDebugger.addErrorLine("Animationen: Fehler beim laden der einzel Animationen");
+                CDebugger.addErrorLine(e2.ToString());
+            }
+        }
+        private void Animationen_Animationsnummer_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection animationen = this.Animationen_dgvList.SelectedRows;
+            DataGridViewSelectedRowCollection animationsnummern = this.Animationen_Animationsnummer.SelectedRows;
+
+            if (animationen.Count <= 0 || animationsnummern.Count <= 0)
+            {
+                //this.Bilder_pictureBox.Image = null;
+                this.Animationen_pictureBox.BackgroundImage = null;
+                return;
+            }
+
+
+            try
+            {
+                int index_1 = Convert.ToInt32(this.Animationen_dgvList.SelectedRows[0].Cells[0].Value);
+                int index_2 = Convert.ToInt32(this.Animationen_Animationsnummer.SelectedRows[0].Cells[0].Value);
+
+                if (index_1 < this.itsDSAFileLoader.bilder.itsAnimations.Count && index_2 < this.itsDSAFileLoader.bilder.itsAnimations[index_1].Value.Count)
+                {
+                    this.Animationen_Einzelbild.ClearSelection();
+                    this.Animationen_Einzelbild.Rows.Clear();
+
+                    for (int j = 0; j < this.itsDSAFileLoader.bilder.itsAnimations[index_1].Value[index_2].Count; j++)
+                    {
+                        this.Animationen_Einzelbild.Rows.Add(j.ToString());
+                    }
+
+                    this.Animationen_Einzelbild.ClearSelection();
+                    if (this.Animationen_Einzelbild.Rows.Count > 0)
+                        this.Animationen_Einzelbild.Rows[0].Selected = true;
+                }
+            }
+            catch (SystemException e2)
+            {
+                this.Animationen_Animationsnummer.ClearSelection();
+                this.Animationen_Animationsnummer.Rows.Clear();
+                CDebugger.addErrorLine("Animationen: Fehler beim laden der einzelbilder");
+                CDebugger.addErrorLine(e2.ToString());
+            }
+        }
+        private void Animationen_Einzelbild_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection animationen = this.Animationen_dgvList.SelectedRows;
+            DataGridViewSelectedRowCollection animationsnummern = this.Animationen_Animationsnummer.SelectedRows;
+            DataGridViewSelectedRowCollection einzelbild = this.Animationen_Einzelbild.SelectedRows;
+
+            if (animationen.Count <= 0 || animationsnummern.Count <= 0 || einzelbild.Count <= 0)
+            {
+                //this.Bilder_pictureBox.Image = null;
+                this.Animationen_pictureBox.BackgroundImage = null;
+                return;
+            }
+
+
+            try
+            {
+                int index_1 = Convert.ToInt32(this.Animationen_dgvList.SelectedRows[0].Cells[0].Value);
+                int index_2 = Convert.ToInt32(this.Animationen_Animationsnummer.SelectedRows[0].Cells[0].Value);
+                int index_3 = Convert.ToInt32(this.Animationen_Einzelbild.SelectedRows[0].Cells[0].Value);
+
+                if (index_1 < this.itsDSAFileLoader.bilder.itsAnimations.Count && index_2 < this.itsDSAFileLoader.bilder.itsAnimations[index_1].Value.Count && index_3 < this.itsDSAFileLoader.bilder.itsAnimations[index_1].Value[index_2].Count)
+                {
+                    this.Animationen_pictureBox.BackgroundImage = new Bitmap(this.itsDSAFileLoader.bilder.itsAnimations[index_1].Value[index_2][index_3]);
+                }
+                else
+                    this.Animationen_pictureBox.BackgroundImage = null;
+            }
+            catch (SystemException e2)
+            {
+                Animationen_pictureBox.BackgroundImage = null;
+                CDebugger.addErrorLine("Animationen: Fehler beim laden der einzelbilder");
+                CDebugger.addErrorLine(e2.ToString());
+            }
+        }
+
         //------------Hyperlinks-----------------------------
         private void lL_ItemInfos_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -2799,6 +2929,6 @@ namespace DSA_1_Editing_Tool
             {
                 this.itsDSAFileLoader.exportPictures(folderBrowserDialog1.SelectedPath);
             }
-        }   
+        }
     }
 }

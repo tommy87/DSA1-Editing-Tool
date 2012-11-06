@@ -9,7 +9,7 @@ namespace DSA_1_Editing_Tool.File_Loader
     public class CBilder
     {
         public List<KeyValuePair<string, List<Image>>> itsImages = new List<KeyValuePair<string, List<Image>>>();
-        public List<List<Image>> itsMonsterImages = new List<List<Image>>();
+        public List<KeyValuePair<string, List<List<Image>>>> itsAnimations = new List<KeyValuePair<string,List<List<Image>>>>();
 
         //----------------------------------------------------------
         private List<KeyValuePair<string, CImageHeader>> itsSpezialFiles_SCHICK = new List<KeyValuePair<string, CImageHeader>>();
@@ -175,7 +175,7 @@ namespace DSA_1_Editing_Tool.File_Loader
         public void loadPictures(ref byte[] MAIN_DAT, List<CDSAFileLoader.CFileSet> MAIN_NVFs, ref byte[] DSAGEN_DAT, List<CDSAFileLoader.CFileSet> DSAGEN_NVFs)
         {
             this.itsImages.Clear();
-            this.itsMonsterImages.Clear();
+            this.itsAnimations.Clear();
 
             if (MAIN_DAT == null)
                 return;
@@ -202,7 +202,6 @@ namespace DSA_1_Editing_Tool.File_Loader
             CDebugger.addDebugLine("Bild Archiv " + ARCHIV.filename + " wird geladen. Bitte warten...");
 
             List<Int32> offsets = new List<int>();
-            List<Image> images = new List<Image>();
 
             //TAB enthält offsets mit Int32
             for (Int32 i = TAB.startOffset; i < TAB.endOffset; i += 4)
@@ -211,7 +210,8 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
 
             CDSAFileLoader.CFileSet fileSet;
-            List<Image> list;
+            //List<Image> list;
+            List<List<Image>> list = new List<List<Image>>(); ;
             for (int i = 0; i < offsets.Count - 1; i++)
             {
                 //int end = ;
@@ -220,10 +220,11 @@ namespace DSA_1_Editing_Tool.File_Loader
                 {
                     //fileSet = new CDSAFileLoader.CFileSet(ARCHIV.filename + "(Bild " + i.ToString() + ")", ARCHIV.startOffset + offsets[i], ARCHIV.startOffset + offsets[i + 1]);
                     fileSet = new CDSAFileLoader.CFileSet(ARCHIV.filename, ARCHIV.startOffset + offsets[i], ARCHIV.startOffset + offsets[i + 1]);
-                    list = this.loadNVF(ref data, fileSet);
-                    if( ARCHIV.filename == "MONSTER" )
-                        this.itsMonsterImages.Add(list);
-                    images.AddRange(list);
+                    //list = this.loadNVF(ref data, fileSet);
+                    list.Add(this.loadNVF(ref data, fileSet));
+                    //if( ARCHIV.filename == "MONSTER" )
+                    //    this.itsMonsterImages.Add(list);
+                    //images.AddRange(list);
                 }
                 catch (SystemException e)
                 {
@@ -231,8 +232,9 @@ namespace DSA_1_Editing_Tool.File_Loader
                 }
             }
 
-            this.itsImages.Add(new KeyValuePair<string, List<Image>>(ARCHIV.filename, images));
-            CDebugger.addDebugLine(images.Count.ToString() + " Bilder wurden aus dem Archiv " + ARCHIV.filename + " geladen");
+            //this.itsImages.Add(new KeyValuePair<string, List<Image>>(ARCHIV.filename, images));
+            this.itsAnimations.Add(new KeyValuePair<string, List<List<Image>>>(ARCHIV.filename, list));
+            CDebugger.addDebugLine(list.Count.ToString() + " Animationen wurden aus dem Archiv " + ARCHIV.filename + " geladen");
         }
         public void addPictureToList(ref byte[] data, CDSAFileLoader.CFileSet NVF)
         {
@@ -259,14 +261,74 @@ namespace DSA_1_Editing_Tool.File_Loader
         }
         public Image getMonsterImageByID(Int32 MonsterBildID)
         {
-            if (MonsterBildID < 0x17) //0x17 == 23
+            if (MonsterBildID < 0x01)
                 return null;
 
-            MonsterBildID -= 0x17; 
-            MonsterBildID *= 2;
+            if (MonsterBildID < 8)//0x17) //0x17 == 23
+            {
+                MonsterBildID--;
+                MonsterBildID *= 4;
+                foreach (KeyValuePair<string, List<List<Image>>> pair in this.itsAnimations)
+                {
+                    if (pair.Key == "MFIGS")
+                    {
+                        if (pair.Value.Count > MonsterBildID && pair.Value[MonsterBildID].Count > 0)
+                            return pair.Value[MonsterBildID][0];
+                        else
+                            return null;
+                    }
+                }
+            }
+            else if (MonsterBildID == 8)
+            {
+                //kleine anomalie, da ab ID 8 ein Monster mit 5 Animationen kommt, dann der Druide mit 4(kein Bogen aber Zauber) und ab 10 haben alle wieder 5 Animationen
+                MonsterBildID = 29;
+                foreach (KeyValuePair<string, List<List<Image>>> pair in this.itsAnimations)
+                {
+                    if (pair.Key == "MFIGS")
+                    {
+                        if (pair.Value.Count > MonsterBildID && pair.Value[MonsterBildID].Count > 0)
+                            return pair.Value[MonsterBildID][0];
+                        else
+                            return null;
+                    }
+                }
+            }
+            else if (MonsterBildID < 0x17)
+            {
+                MonsterBildID = 33 + (MonsterBildID - 9) * 5;
+                foreach (KeyValuePair<string, List<List<Image>>> pair in this.itsAnimations)
+                {
+                    if (pair.Key == "MFIGS")
+                    {
+                        if (pair.Value.Count > MonsterBildID && pair.Value[MonsterBildID].Count > 0)
+                            return pair.Value[MonsterBildID][0];
+                        else
+                            return null;
+                    }
+                }
+            }
+            else
+            {
+                MonsterBildID -= 0x17;
+                MonsterBildID *= 2;
 
-            if (MonsterBildID < this.itsMonsterImages.Count && this.itsMonsterImages[MonsterBildID].Count > 0)
-                return this.itsMonsterImages[MonsterBildID][0];
+                foreach (KeyValuePair<string, List<List<Image>>> pair in this.itsAnimations)
+                {
+                    if (pair.Key == "MONSTER")
+                    {
+                        if (pair.Value.Count > MonsterBildID && pair.Value[MonsterBildID].Count > 0)
+                            return pair.Value[MonsterBildID][0];
+                        else
+                            return null;
+                    }
+                }
+            }
+
+
+
+            //if (MonsterBildID < this.itsMonsterImages.Count && this.itsMonsterImages[MonsterBildID].Count > 0)
+            //    return this.itsMonsterImages[MonsterBildID][0];
 
             return null;
         }
