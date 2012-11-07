@@ -1562,7 +1562,6 @@ namespace DSA_1_Editing_Tool
             {
                 //this.Bilder_pictureBox.Image = null;
                 this.Bilder_pictureBox.BackgroundImage = null;
-                CDebugger.addErrorLine("Keine Bilddatei ausgewählt");
                 return;
             }
 

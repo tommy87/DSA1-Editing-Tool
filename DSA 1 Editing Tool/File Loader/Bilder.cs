@@ -973,9 +973,9 @@ namespace DSA_1_Editing_Tool.File_Loader
             int imagedataoffset = CHelpFunctions.byteArrayToInt32(ref data, position);
             int paletteoffset = CHelpFunctions.byteArrayToInt32(ref data, position+4);
             int iwidth = CHelpFunctions.byteArrayToInt16(ref data, position+8);
-            int iheight = (int) data[position+10];
+            int iheight = CHelpFunctions.byteArrayToInt16(ref data, position + 10);
 
-            int numelements = (int)data[position+11];
+            int numelements = (int)data[position+12];
             List<int> elementoffsets = new List<int>(numelements);
             position += 12;
              //CDebugger.addDebugLine("Image Size "+iwidth+"/"+iheight+", Total of "+numelements+" subelements");
