@@ -41,8 +41,6 @@
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.tP_Pictures = new System.Windows.Forms.TabPage();
             this.Bilder_cBZoom = new System.Windows.Forms.CheckBox();
-            this.Bilder_lbBildnummer = new System.Windows.Forms.ListBox();
-            this.Bilder_lbList = new System.Windows.Forms.ListBox();
             this.Bilder_pictureBox = new System.Windows.Forms.PictureBox();
             this.Bilder_dgvBildnummer = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,7 +50,6 @@
             this.tP_Dungeons = new System.Windows.Forms.TabPage();
             this.Dungeons_PictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
-            this.Dungeons_lbDoors = new System.Windows.Forms.ListBox();
             this.Dungeons_Doors_tBStatus = new System.Windows.Forms.TextBox();
             this.Dungeons_Doors_tBEbene = new System.Windows.Forms.TextBox();
             this.label78 = new System.Windows.Forms.Label();
@@ -65,10 +62,8 @@
             this.label67 = new System.Windows.Forms.Label();
             this.Dungeons_dgvDoors = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dungeons_lbDungeonFloors = new System.Windows.Forms.ListBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.label80 = new System.Windows.Forms.Label();
-            this.Dungeons_lbStairs = new System.Windows.Forms.ListBox();
             this.label81 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
             this.Dungeons_Stairs_tBZielebeneBlickrichtung = new System.Windows.Forms.TextBox();
@@ -124,7 +119,6 @@
             this.Dungeons_Fights_tBFluchtPosY_4 = new System.Windows.Forms.TextBox();
             this.label107 = new System.Windows.Forms.Label();
             this.Dungeons_Fights_tBFluchtEbene_4 = new System.Windows.Forms.TextBox();
-            this.Dungeons_lbFights = new System.Windows.Forms.ListBox();
             this.Dungeons_Fights_tBErstAP = new System.Windows.Forms.TextBox();
             this.label72 = new System.Windows.Forms.Label();
             this.Dungeons_Fights_tBID = new System.Windows.Forms.TextBox();
@@ -138,15 +132,12 @@
             this.Dungeons_dgvFights = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dungeons_lbList = new System.Windows.Forms.ListBox();
             this.Dungeons_dgvDungeonFloors = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dungeons_dgvList = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Towns = new System.Windows.Forms.TabPage();
-            this.Städte_lbStadtEventList = new System.Windows.Forms.ListBox();
-            this.Städte_lbList = new System.Windows.Forms.ListBox();
             this.Citys_PictureBox = new System.Windows.Forms.PictureBox();
             this.lL_Städte = new System.Windows.Forms.LinkLabel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -169,7 +160,6 @@
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Fights = new System.Windows.Forms.TabPage();
-            this.Fight_lbList = new System.Windows.Forms.ListBox();
             this.label40 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
@@ -179,7 +169,6 @@
             this.label51 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.Kämpfe_Item_pictureBox = new System.Windows.Forms.PictureBox();
-            this.Fight_Items_lbList = new System.Windows.Forms.ListBox();
             this.tB_Fight_Item_Menge = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
             this.Fight_Items_dgvList = new System.Windows.Forms.DataGridView();
@@ -200,7 +189,6 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.Kämpfe_Monster_pictureBox = new System.Windows.Forms.PictureBox();
             this.tB_Fight_Monster_Startrunde = new System.Windows.Forms.TextBox();
-            this.Fight_Monster_lbList = new System.Windows.Forms.ListBox();
             this.tB_Fight_Monster_Blickrichtung = new System.Windows.Forms.TextBox();
             this.tB_Fight_Monster_YPos = new System.Windows.Forms.TextBox();
             this.tB_Fight_Monster_XPos = new System.Windows.Forms.TextBox();
@@ -219,7 +207,6 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Monster = new System.Windows.Forms.TabPage();
-            this.Monster_lbList = new System.Windows.Forms.ListBox();
             this.Monster_dgvList = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -288,8 +275,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.tP_Text = new System.Windows.Forms.TabPage();
-            this.Texte_lbTexte = new System.Windows.Forms.ListBox();
-            this.Texte_Filenames_lbList = new System.Windows.Forms.ListBox();
             this.Texte_Filenames_dgvList = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -301,10 +286,6 @@
             this.rB_Texte_DTX = new System.Windows.Forms.RadioButton();
             this.rB_Texte_LTX = new System.Windows.Forms.RadioButton();
             this.tP_Dialoge = new System.Windows.Forms.TabPage();
-            this.Dialoge_lbLayout = new System.Windows.Forms.ListBox();
-            this.Dialoge_lbTexte = new System.Windows.Forms.ListBox();
-            this.Dialoge_lbGesprächspartner = new System.Windows.Forms.ListBox();
-            this.Dialoge_lbList = new System.Windows.Forms.ListBox();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
             this.Dialoge_btTestDialogAntwort3 = new System.Windows.Forms.Button();
             this.Dialoge_btTestDialogAntwort2 = new System.Windows.Forms.Button();
@@ -352,7 +333,6 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Items = new System.Windows.Forms.TabPage();
-            this.Item_lbList = new System.Windows.Forms.ListBox();
             this.Item_dgvList = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -398,6 +378,7 @@
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -551,8 +532,6 @@
             // 
             this.tP_Pictures.BackColor = System.Drawing.Color.Peru;
             this.tP_Pictures.Controls.Add(this.Bilder_cBZoom);
-            this.tP_Pictures.Controls.Add(this.Bilder_lbBildnummer);
-            this.tP_Pictures.Controls.Add(this.Bilder_lbList);
             this.tP_Pictures.Controls.Add(this.Bilder_pictureBox);
             this.tP_Pictures.Controls.Add(this.Bilder_dgvBildnummer);
             this.tP_Pictures.Controls.Add(this.Bilder_dgvList);
@@ -572,26 +551,6 @@
             this.Bilder_cBZoom.Text = "Zoom";
             this.Bilder_cBZoom.UseVisualStyleBackColor = true;
             this.Bilder_cBZoom.CheckedChanged += new System.EventHandler(this.Bilder_cBZoom_CheckedChanged);
-            // 
-            // Bilder_lbBildnummer
-            // 
-            this.Bilder_lbBildnummer.FormattingEnabled = true;
-            this.Bilder_lbBildnummer.Location = new System.Drawing.Point(184, 46);
-            this.Bilder_lbBildnummer.Name = "Bilder_lbBildnummer";
-            this.Bilder_lbBildnummer.Size = new System.Drawing.Size(42, 30);
-            this.Bilder_lbBildnummer.TabIndex = 16;
-            this.Bilder_lbBildnummer.Visible = false;
-            this.Bilder_lbBildnummer.SelectedIndexChanged += new System.EventHandler(this.Bilder_lbBildnummer_SelectedIndexChanged);
-            // 
-            // Bilder_lbList
-            // 
-            this.Bilder_lbList.FormattingEnabled = true;
-            this.Bilder_lbList.Location = new System.Drawing.Point(21, 46);
-            this.Bilder_lbList.Name = "Bilder_lbList";
-            this.Bilder_lbList.Size = new System.Drawing.Size(42, 30);
-            this.Bilder_lbList.TabIndex = 15;
-            this.Bilder_lbList.Visible = false;
-            this.Bilder_lbList.SelectedIndexChanged += new System.EventHandler(this.Bilder_lbList_SelectedIndexChanged);
             // 
             // Bilder_pictureBox
             // 
@@ -668,10 +627,8 @@
             this.tP_Dungeons.BackColor = System.Drawing.Color.Peru;
             this.tP_Dungeons.Controls.Add(this.Dungeons_PictureBox);
             this.tP_Dungeons.Controls.Add(this.groupBox10);
-            this.tP_Dungeons.Controls.Add(this.Dungeons_lbDungeonFloors);
             this.tP_Dungeons.Controls.Add(this.groupBox9);
             this.tP_Dungeons.Controls.Add(this.groupBox8);
-            this.tP_Dungeons.Controls.Add(this.Dungeons_lbList);
             this.tP_Dungeons.Controls.Add(this.Dungeons_dgvDungeonFloors);
             this.tP_Dungeons.Controls.Add(this.Dungeons_dgvList);
             this.tP_Dungeons.Location = new System.Drawing.Point(4, 22);
@@ -691,7 +648,6 @@
             // 
             // groupBox10
             // 
-            this.groupBox10.Controls.Add(this.Dungeons_lbDoors);
             this.groupBox10.Controls.Add(this.Dungeons_Doors_tBStatus);
             this.groupBox10.Controls.Add(this.Dungeons_Doors_tBEbene);
             this.groupBox10.Controls.Add(this.label78);
@@ -709,16 +665,6 @@
             this.groupBox10.TabIndex = 15;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Türen";
-            // 
-            // Dungeons_lbDoors
-            // 
-            this.Dungeons_lbDoors.FormattingEnabled = true;
-            this.Dungeons_lbDoors.Location = new System.Drawing.Point(16, 52);
-            this.Dungeons_lbDoors.Name = "Dungeons_lbDoors";
-            this.Dungeons_lbDoors.Size = new System.Drawing.Size(42, 30);
-            this.Dungeons_lbDoors.TabIndex = 30;
-            this.Dungeons_lbDoors.Visible = false;
-            this.Dungeons_lbDoors.SelectedIndexChanged += new System.EventHandler(this.Dungeons_lbDoors_SelectedIndexChanged);
             // 
             // Dungeons_Doors_tBStatus
             // 
@@ -826,20 +772,9 @@
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             this.dataGridViewTextBoxColumn23.ReadOnly = true;
             // 
-            // Dungeons_lbDungeonFloors
-            // 
-            this.Dungeons_lbDungeonFloors.FormattingEnabled = true;
-            this.Dungeons_lbDungeonFloors.Location = new System.Drawing.Point(256, 44);
-            this.Dungeons_lbDungeonFloors.Name = "Dungeons_lbDungeonFloors";
-            this.Dungeons_lbDungeonFloors.Size = new System.Drawing.Size(42, 30);
-            this.Dungeons_lbDungeonFloors.TabIndex = 27;
-            this.Dungeons_lbDungeonFloors.Visible = false;
-            this.Dungeons_lbDungeonFloors.SelectedIndexChanged += new System.EventHandler(this.Dungeons_lbDungeonFloors_SelectedIndexChanged);
-            // 
             // groupBox9
             // 
             this.groupBox9.Controls.Add(this.label80);
-            this.groupBox9.Controls.Add(this.Dungeons_lbStairs);
             this.groupBox9.Controls.Add(this.label81);
             this.groupBox9.Controls.Add(this.label82);
             this.groupBox9.Controls.Add(this.Dungeons_Stairs_tBZielebeneBlickrichtung);
@@ -871,16 +806,6 @@
             this.label80.Size = new System.Drawing.Size(87, 13);
             this.label80.TabIndex = 45;
             this.label80.Text = "---Zielebene---";
-            // 
-            // Dungeons_lbStairs
-            // 
-            this.Dungeons_lbStairs.FormattingEnabled = true;
-            this.Dungeons_lbStairs.Location = new System.Drawing.Point(16, 48);
-            this.Dungeons_lbStairs.Name = "Dungeons_lbStairs";
-            this.Dungeons_lbStairs.Size = new System.Drawing.Size(42, 30);
-            this.Dungeons_lbStairs.TabIndex = 28;
-            this.Dungeons_lbStairs.Visible = false;
-            this.Dungeons_lbStairs.SelectedIndexChanged += new System.EventHandler(this.Dungeons_lbStairs_SelectedIndexChanged);
             // 
             // label81
             // 
@@ -1024,7 +949,6 @@
             // 
             this.groupBox8.Controls.Add(this.label77);
             this.groupBox8.Controls.Add(this.tabControl2);
-            this.groupBox8.Controls.Add(this.Dungeons_lbFights);
             this.groupBox8.Controls.Add(this.Dungeons_Fights_tBErstAP);
             this.groupBox8.Controls.Add(this.label72);
             this.groupBox8.Controls.Add(this.Dungeons_Fights_tBID);
@@ -1391,16 +1315,6 @@
             this.Dungeons_Fights_tBFluchtEbene_4.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtEbene_4.TabIndex = 48;
             // 
-            // Dungeons_lbFights
-            // 
-            this.Dungeons_lbFights.FormattingEnabled = true;
-            this.Dungeons_lbFights.Location = new System.Drawing.Point(17, 48);
-            this.Dungeons_lbFights.Name = "Dungeons_lbFights";
-            this.Dungeons_lbFights.Size = new System.Drawing.Size(42, 30);
-            this.Dungeons_lbFights.TabIndex = 29;
-            this.Dungeons_lbFights.Visible = false;
-            this.Dungeons_lbFights.SelectedIndexChanged += new System.EventHandler(this.Dungeons_lbFights_SelectedIndexChanged);
-            // 
             // Dungeons_Fights_tBErstAP
             // 
             this.Dungeons_Fights_tBErstAP.Location = new System.Drawing.Point(228, 123);
@@ -1516,16 +1430,6 @@
             this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
             this.dataGridViewTextBoxColumn22.ReadOnly = true;
             // 
-            // Dungeons_lbList
-            // 
-            this.Dungeons_lbList.FormattingEnabled = true;
-            this.Dungeons_lbList.Location = new System.Drawing.Point(19, 44);
-            this.Dungeons_lbList.Name = "Dungeons_lbList";
-            this.Dungeons_lbList.Size = new System.Drawing.Size(42, 30);
-            this.Dungeons_lbList.TabIndex = 26;
-            this.Dungeons_lbList.Visible = false;
-            this.Dungeons_lbList.SelectedIndexChanged += new System.EventHandler(this.Dungeons_lbList_SelectedIndexChanged);
-            // 
             // Dungeons_dgvDungeonFloors
             // 
             this.Dungeons_dgvDungeonFloors.AllowUserToAddRows = false;
@@ -1590,8 +1494,6 @@
             // tP_Towns
             // 
             this.tP_Towns.BackColor = System.Drawing.Color.Peru;
-            this.tP_Towns.Controls.Add(this.Städte_lbStadtEventList);
-            this.tP_Towns.Controls.Add(this.Städte_lbList);
             this.tP_Towns.Controls.Add(this.Citys_PictureBox);
             this.tP_Towns.Controls.Add(this.lL_Städte);
             this.tP_Towns.Controls.Add(this.groupBox7);
@@ -1602,26 +1504,6 @@
             this.tP_Towns.Size = new System.Drawing.Size(987, 683);
             this.tP_Towns.TabIndex = 5;
             this.tP_Towns.Text = "Städte";
-            // 
-            // Städte_lbStadtEventList
-            // 
-            this.Städte_lbStadtEventList.FormattingEnabled = true;
-            this.Städte_lbStadtEventList.Location = new System.Drawing.Point(262, 211);
-            this.Städte_lbStadtEventList.Name = "Städte_lbStadtEventList";
-            this.Städte_lbStadtEventList.Size = new System.Drawing.Size(42, 30);
-            this.Städte_lbStadtEventList.TabIndex = 15;
-            this.Städte_lbStadtEventList.Visible = false;
-            this.Städte_lbStadtEventList.SelectedIndexChanged += new System.EventHandler(this.Städte_lbStadtEventList_SelectedIndexChanged);
-            // 
-            // Städte_lbList
-            // 
-            this.Städte_lbList.FormattingEnabled = true;
-            this.Städte_lbList.Location = new System.Drawing.Point(19, 43);
-            this.Städte_lbList.Name = "Städte_lbList";
-            this.Städte_lbList.Size = new System.Drawing.Size(42, 30);
-            this.Städte_lbList.TabIndex = 14;
-            this.Städte_lbList.Visible = false;
-            this.Städte_lbList.SelectedIndexChanged += new System.EventHandler(this.Städte_lbList_SelectedIndexChanged);
             // 
             // Citys_PictureBox
             // 
@@ -1833,7 +1715,6 @@
             // tP_Fights
             // 
             this.tP_Fights.BackColor = System.Drawing.Color.Peru;
-            this.tP_Fights.Controls.Add(this.Fight_lbList);
             this.tP_Fights.Controls.Add(this.label40);
             this.tP_Fights.Controls.Add(this.label55);
             this.tP_Fights.Controls.Add(this.label54);
@@ -1851,16 +1732,6 @@
             this.tP_Fights.Size = new System.Drawing.Size(987, 683);
             this.tP_Fights.TabIndex = 4;
             this.tP_Fights.Text = "Kämpfe";
-            // 
-            // Fight_lbList
-            // 
-            this.Fight_lbList.FormattingEnabled = true;
-            this.Fight_lbList.Location = new System.Drawing.Point(23, 45);
-            this.Fight_lbList.Name = "Fight_lbList";
-            this.Fight_lbList.Size = new System.Drawing.Size(42, 30);
-            this.Fight_lbList.TabIndex = 25;
-            this.Fight_lbList.Visible = false;
-            this.Fight_lbList.SelectedIndexChanged += new System.EventHandler(this.Fight_lbList_SelectedIndexChanged);
             // 
             // label40
             // 
@@ -1922,7 +1793,6 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.Kämpfe_Item_pictureBox);
-            this.groupBox6.Controls.Add(this.Fight_Items_lbList);
             this.groupBox6.Controls.Add(this.tB_Fight_Item_Menge);
             this.groupBox6.Controls.Add(this.label50);
             this.groupBox6.Controls.Add(this.Fight_Items_dgvList);
@@ -1941,16 +1811,6 @@
             this.Kämpfe_Item_pictureBox.Size = new System.Drawing.Size(32, 32);
             this.Kämpfe_Item_pictureBox.TabIndex = 28;
             this.Kämpfe_Item_pictureBox.TabStop = false;
-            // 
-            // Fight_Items_lbList
-            // 
-            this.Fight_Items_lbList.FormattingEnabled = true;
-            this.Fight_Items_lbList.Location = new System.Drawing.Point(21, 50);
-            this.Fight_Items_lbList.Name = "Fight_Items_lbList";
-            this.Fight_Items_lbList.Size = new System.Drawing.Size(42, 30);
-            this.Fight_Items_lbList.TabIndex = 27;
-            this.Fight_Items_lbList.Visible = false;
-            this.Fight_Items_lbList.SelectedIndexChanged += new System.EventHandler(this.Fight_Items_lbList_SelectedIndexChanged);
             // 
             // tB_Fight_Item_Menge
             // 
@@ -2125,7 +1985,6 @@
             // 
             this.groupBox4.Controls.Add(this.Kämpfe_Monster_pictureBox);
             this.groupBox4.Controls.Add(this.tB_Fight_Monster_Startrunde);
-            this.groupBox4.Controls.Add(this.Fight_Monster_lbList);
             this.groupBox4.Controls.Add(this.tB_Fight_Monster_Blickrichtung);
             this.groupBox4.Controls.Add(this.tB_Fight_Monster_YPos);
             this.groupBox4.Controls.Add(this.tB_Fight_Monster_XPos);
@@ -2146,9 +2005,9 @@
             // Kämpfe_Monster_pictureBox
             // 
             this.Kämpfe_Monster_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Kämpfe_Monster_pictureBox.Location = new System.Drawing.Point(209, 142);
+            this.Kämpfe_Monster_pictureBox.Location = new System.Drawing.Point(206, 151);
             this.Kämpfe_Monster_pictureBox.Name = "Kämpfe_Monster_pictureBox";
-            this.Kämpfe_Monster_pictureBox.Size = new System.Drawing.Size(48, 72);
+            this.Kämpfe_Monster_pictureBox.Size = new System.Drawing.Size(48, 60);
             this.Kämpfe_Monster_pictureBox.TabIndex = 27;
             this.Kämpfe_Monster_pictureBox.TabStop = false;
             // 
@@ -2158,16 +2017,6 @@
             this.tB_Fight_Monster_Startrunde.Name = "tB_Fight_Monster_Startrunde";
             this.tB_Fight_Monster_Startrunde.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Monster_Startrunde.TabIndex = 15;
-            // 
-            // Fight_Monster_lbList
-            // 
-            this.Fight_Monster_lbList.FormattingEnabled = true;
-            this.Fight_Monster_lbList.Location = new System.Drawing.Point(21, 48);
-            this.Fight_Monster_lbList.Name = "Fight_Monster_lbList";
-            this.Fight_Monster_lbList.Size = new System.Drawing.Size(42, 30);
-            this.Fight_Monster_lbList.TabIndex = 26;
-            this.Fight_Monster_lbList.Visible = false;
-            this.Fight_Monster_lbList.SelectedIndexChanged += new System.EventHandler(this.Fight_Monster_lbList_SelectedIndexChanged);
             // 
             // tB_Fight_Monster_Blickrichtung
             // 
@@ -2331,7 +2180,6 @@
             // tP_Monster
             // 
             this.tP_Monster.BackColor = System.Drawing.Color.Peru;
-            this.tP_Monster.Controls.Add(this.Monster_lbList);
             this.tP_Monster.Controls.Add(this.Monster_dgvList);
             this.tP_Monster.Controls.Add(this.groupBox1);
             this.tP_Monster.Location = new System.Drawing.Point(4, 22);
@@ -2339,16 +2187,6 @@
             this.tP_Monster.Size = new System.Drawing.Size(987, 683);
             this.tP_Monster.TabIndex = 3;
             this.tP_Monster.Text = "Monster";
-            // 
-            // Monster_lbList
-            // 
-            this.Monster_lbList.FormattingEnabled = true;
-            this.Monster_lbList.Location = new System.Drawing.Point(24, 46);
-            this.Monster_lbList.Name = "Monster_lbList";
-            this.Monster_lbList.Size = new System.Drawing.Size(42, 30);
-            this.Monster_lbList.TabIndex = 49;
-            this.Monster_lbList.Visible = false;
-            this.Monster_lbList.SelectedIndexChanged += new System.EventHandler(this.Monster_lbList_SelectedIndexChanged);
             // 
             // Monster_dgvList
             // 
@@ -2444,7 +2282,7 @@
             this.Monster_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Monster_pictureBox.Location = new System.Drawing.Point(192, 167);
             this.Monster_pictureBox.Name = "Monster_pictureBox";
-            this.Monster_pictureBox.Size = new System.Drawing.Size(48, 72);
+            this.Monster_pictureBox.Size = new System.Drawing.Size(48, 60);
             this.Monster_pictureBox.TabIndex = 48;
             this.Monster_pictureBox.TabStop = false;
             // 
@@ -2969,8 +2807,6 @@
             // tP_Text
             // 
             this.tP_Text.BackColor = System.Drawing.Color.Peru;
-            this.tP_Text.Controls.Add(this.Texte_lbTexte);
-            this.tP_Text.Controls.Add(this.Texte_Filenames_lbList);
             this.tP_Text.Controls.Add(this.Texte_Filenames_dgvList);
             this.tP_Text.Controls.Add(this.Texte_dgvTexte);
             this.tP_Text.Controls.Add(this.rTB_Texte_text);
@@ -2980,26 +2816,6 @@
             this.tP_Text.Size = new System.Drawing.Size(987, 683);
             this.tP_Text.TabIndex = 2;
             this.tP_Text.Text = "Texte";
-            // 
-            // Texte_lbTexte
-            // 
-            this.Texte_lbTexte.FormattingEnabled = true;
-            this.Texte_lbTexte.Location = new System.Drawing.Point(185, 41);
-            this.Texte_lbTexte.Name = "Texte_lbTexte";
-            this.Texte_lbTexte.Size = new System.Drawing.Size(42, 30);
-            this.Texte_lbTexte.TabIndex = 10;
-            this.Texte_lbTexte.Visible = false;
-            this.Texte_lbTexte.SelectedIndexChanged += new System.EventHandler(this.Texte_lbTexte_SelectedIndexChanged);
-            // 
-            // Texte_Filenames_lbList
-            // 
-            this.Texte_Filenames_lbList.FormattingEnabled = true;
-            this.Texte_Filenames_lbList.Location = new System.Drawing.Point(23, 118);
-            this.Texte_Filenames_lbList.Name = "Texte_Filenames_lbList";
-            this.Texte_Filenames_lbList.Size = new System.Drawing.Size(42, 30);
-            this.Texte_Filenames_lbList.TabIndex = 9;
-            this.Texte_Filenames_lbList.Visible = false;
-            this.Texte_Filenames_lbList.SelectedIndexChanged += new System.EventHandler(this.Texte_Filenames_lbList_SelectedIndexChanged);
             // 
             // Texte_Filenames_dgvList
             // 
@@ -3119,10 +2935,6 @@
             // tP_Dialoge
             // 
             this.tP_Dialoge.BackColor = System.Drawing.Color.Peru;
-            this.tP_Dialoge.Controls.Add(this.Dialoge_lbLayout);
-            this.tP_Dialoge.Controls.Add(this.Dialoge_lbTexte);
-            this.tP_Dialoge.Controls.Add(this.Dialoge_lbGesprächspartner);
-            this.tP_Dialoge.Controls.Add(this.Dialoge_lbList);
             this.tP_Dialoge.Controls.Add(this.groupBox13);
             this.tP_Dialoge.Controls.Add(this.groupBox12);
             this.tP_Dialoge.Controls.Add(this.Dialoge_dgvLayout);
@@ -3136,46 +2948,6 @@
             this.tP_Dialoge.Size = new System.Drawing.Size(987, 683);
             this.tP_Dialoge.TabIndex = 1;
             this.tP_Dialoge.Text = "Dialoge";
-            // 
-            // Dialoge_lbLayout
-            // 
-            this.Dialoge_lbLayout.FormattingEnabled = true;
-            this.Dialoge_lbLayout.Location = new System.Drawing.Point(915, 49);
-            this.Dialoge_lbLayout.Name = "Dialoge_lbLayout";
-            this.Dialoge_lbLayout.Size = new System.Drawing.Size(42, 30);
-            this.Dialoge_lbLayout.TabIndex = 18;
-            this.Dialoge_lbLayout.Visible = false;
-            this.Dialoge_lbLayout.SelectedIndexChanged += new System.EventHandler(this.Dialoge_lbLayout_SelectedIndexChanged);
-            // 
-            // Dialoge_lbTexte
-            // 
-            this.Dialoge_lbTexte.FormattingEnabled = true;
-            this.Dialoge_lbTexte.Location = new System.Drawing.Point(200, 263);
-            this.Dialoge_lbTexte.Name = "Dialoge_lbTexte";
-            this.Dialoge_lbTexte.Size = new System.Drawing.Size(42, 30);
-            this.Dialoge_lbTexte.TabIndex = 17;
-            this.Dialoge_lbTexte.Visible = false;
-            this.Dialoge_lbTexte.SelectedIndexChanged += new System.EventHandler(this.Dialoge_lbTexte_SelectedIndexChanged);
-            // 
-            // Dialoge_lbGesprächspartner
-            // 
-            this.Dialoge_lbGesprächspartner.FormattingEnabled = true;
-            this.Dialoge_lbGesprächspartner.Location = new System.Drawing.Point(200, 49);
-            this.Dialoge_lbGesprächspartner.Name = "Dialoge_lbGesprächspartner";
-            this.Dialoge_lbGesprächspartner.Size = new System.Drawing.Size(42, 30);
-            this.Dialoge_lbGesprächspartner.TabIndex = 16;
-            this.Dialoge_lbGesprächspartner.Visible = false;
-            this.Dialoge_lbGesprächspartner.SelectedIndexChanged += new System.EventHandler(this.Dialoge_lbGesprächspartner_SelectedIndexChanged);
-            // 
-            // Dialoge_lbList
-            // 
-            this.Dialoge_lbList.FormattingEnabled = true;
-            this.Dialoge_lbList.Location = new System.Drawing.Point(18, 49);
-            this.Dialoge_lbList.Name = "Dialoge_lbList";
-            this.Dialoge_lbList.Size = new System.Drawing.Size(42, 30);
-            this.Dialoge_lbList.TabIndex = 15;
-            this.Dialoge_lbList.Visible = false;
-            this.Dialoge_lbList.SelectedIndexChanged += new System.EventHandler(this.Dialoge_lbList_SelectedIndexChanged);
             // 
             // groupBox13
             // 
@@ -3641,7 +3413,7 @@
             // tP_Items
             // 
             this.tP_Items.BackColor = System.Drawing.Color.Peru;
-            this.tP_Items.Controls.Add(this.Item_lbList);
+            this.tP_Items.Controls.Add(this.richTextBox1);
             this.tP_Items.Controls.Add(this.Item_dgvList);
             this.tP_Items.Controls.Add(this.lL_ItemInfos);
             this.tP_Items.Controls.Add(this.groupBox2);
@@ -3652,16 +3424,6 @@
             this.tP_Items.Size = new System.Drawing.Size(987, 683);
             this.tP_Items.TabIndex = 0;
             this.tP_Items.Text = "Items";
-            // 
-            // Item_lbList
-            // 
-            this.Item_lbList.FormattingEnabled = true;
-            this.Item_lbList.Location = new System.Drawing.Point(22, 46);
-            this.Item_lbList.Name = "Item_lbList";
-            this.Item_lbList.Size = new System.Drawing.Size(42, 30);
-            this.Item_lbList.TabIndex = 8;
-            this.Item_lbList.Visible = false;
-            this.Item_lbList.SelectedIndexChanged += new System.EventHandler(this.Item_lbList_SelectedIndexChanged);
             // 
             // Item_dgvList
             // 
@@ -4157,6 +3919,18 @@
             this.Rout_pictureBox.TabIndex = 15;
             this.Rout_pictureBox.TabStop = false;
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.DarkRed;
+            this.richTextBox1.Location = new System.Drawing.Point(449, 377);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(343, 43);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "für eine korrekte Ausführung unter Mono wird mindestens Mono Version 2.11 benötig" +
+    "t!!!";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4568,26 +4342,6 @@
         private System.Windows.Forms.CheckBox Items_cBItemTypBit_2;
         private System.Windows.Forms.CheckBox Items_cBItemTypBit_;
         private System.Windows.Forms.PictureBox Monster_pictureBox;
-        private System.Windows.Forms.ListBox Item_lbList;
-        private System.Windows.Forms.ListBox Bilder_lbList;
-        private System.Windows.Forms.ListBox Dungeons_lbDoors;
-        private System.Windows.Forms.ListBox Dungeons_lbFights;
-        private System.Windows.Forms.ListBox Dungeons_lbStairs;
-        private System.Windows.Forms.ListBox Dungeons_lbDungeonFloors;
-        private System.Windows.Forms.ListBox Dungeons_lbList;
-        private System.Windows.Forms.ListBox Städte_lbStadtEventList;
-        private System.Windows.Forms.ListBox Städte_lbList;
-        private System.Windows.Forms.ListBox Fight_Items_lbList;
-        private System.Windows.Forms.ListBox Fight_Monster_lbList;
-        private System.Windows.Forms.ListBox Fight_lbList;
-        private System.Windows.Forms.ListBox Monster_lbList;
-        private System.Windows.Forms.ListBox Texte_lbTexte;
-        private System.Windows.Forms.ListBox Texte_Filenames_lbList;
-        private System.Windows.Forms.ListBox Dialoge_lbLayout;
-        private System.Windows.Forms.ListBox Dialoge_lbTexte;
-        private System.Windows.Forms.ListBox Dialoge_lbGesprächspartner;
-        private System.Windows.Forms.ListBox Dialoge_lbList;
-        private System.Windows.Forms.ListBox Bilder_lbBildnummer;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
@@ -4639,6 +4393,7 @@
         private System.Windows.Forms.CheckBox Animationen_cBZoom;
         private System.Windows.Forms.PictureBox Kämpfe_Monster_pictureBox;
         private System.Windows.Forms.PictureBox Kämpfe_Item_pictureBox;
+        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 

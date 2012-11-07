@@ -20,9 +20,6 @@ namespace DSA_1_Editing_Tool
             folderBrowserDialog1.SelectedPath = "C:\\";
 
             CDebugger.IncommingMessage += HandleDebugMessage;
-
-            if (CHelpFunctions.IsRunningOnMono())
-                this.prepaireItemsForMono();
         }
         private void Form1_Shown(object sender, EventArgs e)
         {
@@ -100,118 +97,6 @@ namespace DSA_1_Editing_Tool
             }
         }
 
-        private void prepaireItemsForMono()
-        {
-            //---------Items----------
-            this.Item_dgvList.Visible = false;
-            this.Item_lbList.Location = this.Item_dgvList.Location;
-            this.Item_lbList.Size = this.Item_dgvList.Size;
-            this.Item_lbList.Visible = true;
-
-            //---------Dialoge----------
-            this.Dialoge_dgvList.Visible = false;
-            this.Dialoge_lbList.Location = this.Dialoge_dgvList.Location;
-            this.Dialoge_lbList.Size = this.Dialoge_dgvList.Size;
-            this.Dialoge_lbList.Visible = true;
-
-            this.Dialoge_dgvTexte.Visible = false;
-            this.Dialoge_lbTexte.Location = this.Dialoge_dgvTexte.Location;
-            this.Dialoge_lbTexte.Size = this.Dialoge_dgvTexte.Size;
-            this.Dialoge_lbTexte.Visible = true;
-
-            this.Dialoge_dgvLayout.Visible = false;
-            this.Dialoge_lbLayout.Location = this.Dialoge_dgvLayout.Location;
-            this.Dialoge_lbLayout.Size = this.Dialoge_dgvLayout.Size;
-            this.Dialoge_lbLayout.Visible = true;
-
-            this.Dialoge_dgvGesprächspartner.Visible = false;
-            this.Dialoge_lbGesprächspartner.Location = this.Dialoge_dgvGesprächspartner.Location;
-            this.Dialoge_lbGesprächspartner.Size = this.Dialoge_dgvGesprächspartner.Size;
-            this.Dialoge_lbGesprächspartner.Visible = true;
-
-            //---------Texte----------
-            this.Texte_Filenames_dgvList.Visible = false;
-            this.Texte_Filenames_lbList.Location = this.Texte_Filenames_dgvList.Location;
-            this.Texte_Filenames_lbList.Size = this.Texte_Filenames_dgvList.Size;
-            this.Texte_Filenames_lbList.Visible = true;
-
-            this.Texte_dgvTexte.Visible = false;
-            this.Texte_lbTexte.Location = this.Texte_dgvTexte.Location;
-            this.Texte_lbTexte.Size = this.Texte_dgvTexte.Size;
-            this.Texte_lbTexte.Visible = true;
-
-            //---------Monster----------
-            this.Monster_dgvList.Visible = false;
-            this.Monster_lbList.Location = this.Monster_dgvList.Location;
-            this.Monster_lbList.Size = this.Monster_dgvList.Size;
-            this.Monster_lbList.Visible = true;
-
-            //---------Kämpfe----------
-            this.Fight_dgvList.Visible = false;
-            this.Fight_lbList.Location = this.Fight_dgvList.Location;
-            this.Fight_lbList.Size = this.Fight_dgvList.Size;
-            this.Fight_lbList.Visible = true;
-
-            this.Fight_Items_dgvList.Visible = false;
-            this.Fight_Items_lbList.Location = this.Fight_Items_dgvList.Location;
-            this.Fight_Items_lbList.Size = this.Fight_Items_dgvList.Size;
-            this.Fight_Items_lbList.Visible = true;
-
-            this.Fight_Monster_dgvList.Visible = false;
-            this.Fight_Monster_lbList.Location = this.Fight_Monster_dgvList.Location;
-            this.Fight_Monster_lbList.Size = this.Fight_Monster_dgvList.Size;
-            this.Fight_Monster_lbList.Visible = true;
-
-            //---------Städte----------
-            this.Städte_dgvList.Visible = false;
-            this.Städte_lbList.Location = this.Städte_dgvList.Location;
-            this.Städte_lbList.Size = this.Städte_dgvList.Size;
-            this.Städte_lbList.Visible = true;
-
-            this.Städte_dgvStadtEventList.Visible = false;
-            this.Städte_lbStadtEventList.Location = this.Städte_dgvStadtEventList.Location;
-            this.Städte_lbStadtEventList.Size = this.Städte_dgvStadtEventList.Size;
-            this.Städte_lbStadtEventList.Visible = true;
-
-            //---------Dungeons----------
-            this.Dungeons_dgvList.Visible = false;
-            this.Dungeons_lbList.Location = this.Dungeons_dgvList.Location;
-            this.Dungeons_lbList.Size = this.Dungeons_dgvList.Size;
-            this.Dungeons_lbList.Visible = true;
-
-            this.Dungeons_dgvDoors.Visible = false;
-            this.Dungeons_lbDoors.Location = this.Dungeons_dgvDoors.Location;
-            this.Dungeons_lbDoors.Size = this.Dungeons_dgvDoors.Size;
-            this.Dungeons_lbDoors.Visible = true;
-
-            this.Dungeons_dgvDungeonFloors.Visible = false;
-            this.Dungeons_lbDungeonFloors.Location = this.Dungeons_dgvDungeonFloors.Location;
-            this.Dungeons_lbDungeonFloors.Size = this.Dungeons_dgvDungeonFloors.Size;
-            this.Dungeons_lbDungeonFloors.Visible = true;
-
-            this.Dungeons_dgvFights.Visible = false;
-            this.Dungeons_lbFights.Location = this.Dungeons_dgvFights.Location;
-            this.Dungeons_lbFights.Size = this.Dungeons_dgvFights.Size;
-            this.Dungeons_lbFights.Visible = true;
-
-            this.Dungeons_dgvStairs.Visible = false;
-            this.Dungeons_lbStairs.Location = this.Dungeons_dgvStairs.Location;
-            this.Dungeons_lbStairs.Size = this.Dungeons_dgvStairs.Size;
-            this.Dungeons_lbStairs.Visible = true;
-
-            //---------Bilder----------
-            this.Bilder_dgvList.Visible = false;
-            this.Bilder_lbList.Location = this.Bilder_dgvList.Location;
-            this.Bilder_lbList.Size = this.Bilder_dgvList.Size;
-            this.Bilder_lbList.Visible = true;
-
-            this.Bilder_dgvBildnummer.Visible = false;
-            this.Bilder_lbBildnummer.Location = this.Bilder_dgvBildnummer.Location;
-            this.Bilder_lbBildnummer.Size = this.Bilder_dgvBildnummer.Size;
-            this.Bilder_lbBildnummer.Visible = true;
-
-        }
-
         private void loadAllTabs()
         {
             this.loadItemTab();
@@ -227,230 +112,92 @@ namespace DSA_1_Editing_Tool
         }
         private void loadItemTab()
         {
-            if (CHelpFunctions.IsRunningOnMono())
+            this.Item_dgvList.Rows.Clear();
+
+            for (int i = 0; i < this.itsDSAFileLoader.itemList.itsItems.Count; i++)
             {
-                this.Item_lbList.Items.Clear();
-
-                this.Item_lbList.Items.AddRange(this.itsDSAFileLoader.itemList.itsItemNames.ToArray());
-                for (int i = this.itsDSAFileLoader.itemList.itsItemNames.Count; i < this.itsDSAFileLoader.itemList.itsItems.Count; i++)
-                {
-                    this.Item_lbList.Items.Add("???");
-                }
-
-                if (this.Item_lbList.Items.Count > 0)
-                    this.Item_lbList.SelectedIndex = 0;
-            }
-            else
-            {
-                this.Item_dgvList.Rows.Clear();
-
-                for (int i = 0; i < this.itsDSAFileLoader.itemList.itsItems.Count; i++)
-                {
-                    if (i < this.itsDSAFileLoader.itemList.itsItemNames.Count)
-                        this.Item_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.itemList.itsItemNames[i]);
-                    else
-                        this.Item_dgvList.Rows.Add(i.ToString("D3"), "???");
-                }
+                if (i < this.itsDSAFileLoader.itemList.itsItemNames.Count)
+                    this.Item_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.itemList.itsItemNames[i]);
+                else
+                    this.Item_dgvList.Rows.Add(i.ToString("D3"), "???");
             }
         }
         private void loadDialoge()
         {
-            if (CHelpFunctions.IsRunningOnMono())
+            this.Dialoge_dgvList.Rows.Clear();
+
+            for (int i = 0; i < this.itsDSAFileLoader.dialoge.itsDialoge.Count; i++)
             {
-                this.Dialoge_lbList.Items.Clear();
-
-                string[] items = new string[this.itsDSAFileLoader.dialoge.itsDialoge.Count];
-                for (int i = 0; i < this.itsDSAFileLoader.dialoge.itsDialoge.Count; i++)
-                    items[i] = this.itsDSAFileLoader.dialoge.itsDialoge[i].Key;
-
-                this.Dialoge_lbList.Items.AddRange(items);
-
-                if (this.Dialoge_lbList.Items.Count > 0)
-                    this.Dialoge_lbList.SelectedIndex = 0;
+                this.Dialoge_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.dialoge.itsDialoge[i].Key);
             }
-            else
-            {
-                this.Dialoge_dgvList.Rows.Clear();
-
-                for (int i = 0; i < this.itsDSAFileLoader.dialoge.itsDialoge.Count; i++)
-                {
-                    this.Dialoge_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.dialoge.itsDialoge[i].Key);
-                }
-            }
-
         }
         private void loadTextTab()
         {
-            if (CHelpFunctions.IsRunningOnMono())
+            this.Texte_Filenames_dgvList.Rows.Clear();
+
+            if (this.rB_Texte_LTX.Checked)
             {
-                this.Texte_Filenames_lbList.Items.Clear();
-
-                if (this.rB_Texte_LTX.Checked)
+                for (int i = 0; i < this.itsDSAFileLoader.texte.LTX_Texte.Count; i++)
                 {
-                    string[] items = new string[this.itsDSAFileLoader.texte.LTX_Texte.Count];
-                    for (int i = 0; i < this.itsDSAFileLoader.texte.LTX_Texte.Count; i++)
-                        items[i] = this.itsDSAFileLoader.texte.LTX_Texte[i].Key;
-
-                    this.Texte_Filenames_lbList.Items.AddRange(items);
+                    this.Texte_Filenames_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.texte.LTX_Texte[i].Key);
                 }
-                else
-                {
-                    string[] items = new string[this.itsDSAFileLoader.texte.DTX_Texte.Count];
-                    for (int i = 0; i < this.itsDSAFileLoader.texte.DTX_Texte.Count; i++)
-                        items[i] = this.itsDSAFileLoader.texte.DTX_Texte[i].Key;
-
-                    this.Texte_Filenames_lbList.Items.AddRange(items);
-                }
-
-                if (this.Texte_Filenames_lbList.Items.Count > 0)
-                    this.Texte_Filenames_lbList.SelectedIndex = 0;
             }
             else
             {
-                this.Texte_Filenames_dgvList.Rows.Clear();
-
-                if (this.rB_Texte_LTX.Checked)
+                for (int i = 0; i < this.itsDSAFileLoader.texte.DTX_Texte.Count; i++)
                 {
-                    for (int i = 0; i < this.itsDSAFileLoader.texte.LTX_Texte.Count; i++)
-                    {
-                        this.Texte_Filenames_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.texte.LTX_Texte[i].Key);
-                    }
-                }
-                else
-                {
-                    for (int i = 0; i < this.itsDSAFileLoader.texte.DTX_Texte.Count; i++)
-                    {
-                        this.Texte_Filenames_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.texte.DTX_Texte[i].Key);
-                    }
+                    this.Texte_Filenames_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.texte.DTX_Texte[i].Key);
                 }
             }
         }
         private void loadMonsterTab()
         {
-            if (CHelpFunctions.IsRunningOnMono())
+            this.Monster_dgvList.Rows.Clear();
+
+            for (int i = 0; i < this.itsDSAFileLoader.monster.itsMonsterStats.Count; i++)
             {
-                this.Monster_lbList.Items.Clear();
-
-                this.Monster_lbList.Items.AddRange(this.itsDSAFileLoader.monster.itsMonsterNames.ToArray());
-                for (int i = this.itsDSAFileLoader.monster.itsMonsterNames.Count; i < this.itsDSAFileLoader.monster.itsMonsterStats.Count; i++)
-                    this.Monster_lbList.Items.Add("???");
-
-                if (this.Monster_lbList.Items.Count > 0)
-                    this.Monster_lbList.SelectedIndex = 0;
-            }
-            else
-            {
-                this.Monster_dgvList.Rows.Clear();
-
-                for (int i = 0; i < this.itsDSAFileLoader.monster.itsMonsterStats.Count; i++)
-                {
-                    if (i < this.itsDSAFileLoader.monster.itsMonsterNames.Count)
-                        this.Monster_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.monster.itsMonsterNames[i]);
-                    else
-                        this.Monster_dgvList.Rows.Add(i.ToString("D3"), "???");
-                }
+                if (i < this.itsDSAFileLoader.monster.itsMonsterNames.Count)
+                    this.Monster_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.monster.itsMonsterNames[i]);
+                else
+                    this.Monster_dgvList.Rows.Add(i.ToString("D3"), "???");
             }
         }
         private void loadKampfTab()
         {
-            if (CHelpFunctions.IsRunningOnMono())
+            this.Fight_dgvList.Rows.Clear();
+
+            for (int i = 0; i < this.itsDSAFileLoader.kampf.itsFight_LST.Count; i++)
             {
-                this.Fight_lbList.Items.Clear();
-
-                string[] items = new string[this.itsDSAFileLoader.kampf.itsFight_LST.Count];
-                for (int i = 0; i < this.itsDSAFileLoader.kampf.itsFight_LST.Count; i++)
-                    items[i] = this.itsDSAFileLoader.kampf.itsFight_LST[i].name;
-
-                this.Fight_lbList.Items.AddRange(items);
-
-                if (this.Fight_lbList.Items.Count > 0)
-                    this.Fight_lbList.SelectedIndex = 0;
-            }
-            else
-            {
-                this.Fight_dgvList.Rows.Clear();
-
-                for (int i = 0; i < this.itsDSAFileLoader.kampf.itsFight_LST.Count; i++)
-                {
-                    CFight_LST fight = this.itsDSAFileLoader.kampf.itsFight_LST[i];
-                    this.Fight_dgvList.Rows.Add(i.ToString("D3"), fight.nummerDesScenarios.ToString("D3"), fight.name);     //D3 ->Decimal 3
-                }
+                CFight_LST fight = this.itsDSAFileLoader.kampf.itsFight_LST[i];
+                this.Fight_dgvList.Rows.Add(i.ToString("D3"), fight.nummerDesScenarios.ToString("D3"), fight.name);     //D3 ->Decimal 3
             }
         }
         private void loadStädteTab()
         {
-            if (CHelpFunctions.IsRunningOnMono())
+            this.Städte_dgvList.Rows.Clear();
+
+            for (int i = 0; i < this.itsDSAFileLoader.städte.itsTowns.Count; i++)
             {
-                this.Städte_lbList.Items.Clear();
-
-                string[] items = new string[this.itsDSAFileLoader.städte.itsTowns.Count];
-                for (int i = 0; i < this.itsDSAFileLoader.städte.itsTowns.Count; i++)
-                    items[i] = this.itsDSAFileLoader.städte.itsTowns[i].Key;
-
-                this.Städte_lbList.Items.AddRange(items);
-
-                if (this.Städte_lbList.Items.Count > 0)
-                    this.Städte_lbList.SelectedIndex = 0;
-            }
-            else
-            {
-                this.Städte_dgvList.Rows.Clear();
-
-                for (int i = 0; i < this.itsDSAFileLoader.städte.itsTowns.Count; i++)
-                {
-                    this.Städte_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.städte.itsTowns[i].Key);
-                }
+                this.Städte_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.städte.itsTowns[i].Key);
             }
         }
         private void loadDungeonsTab()
         {
-            if (CHelpFunctions.IsRunningOnMono())
+            this.Dungeons_dgvList.Rows.Clear();
+
+            for (int i = 0; i < this.itsDSAFileLoader.dungeons.itsDungeons.Count; i++)
             {
-                this.Dungeons_lbList.Items.Clear();
-
-                string[] items = new string[this.itsDSAFileLoader.dungeons.itsDungeons.Count];
-                for (int i = 0; i < this.itsDSAFileLoader.dungeons.itsDungeons.Count; i++)
-                    items[i] = this.itsDSAFileLoader.dungeons.itsDungeons[i].Key;
-
-                this.Dungeons_lbList.Items.AddRange(items);
-
-                if (this.Dungeons_lbList.Items.Count > 0)
-                    this.Dungeons_lbList.SelectedIndex = 0;
-            }
-            else
-            {
-                this.Dungeons_dgvList.Rows.Clear();
-
-                for (int i = 0; i < this.itsDSAFileLoader.dungeons.itsDungeons.Count; i++)
-                {
-                    this.Dungeons_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.dungeons.itsDungeons[i].Key);
-                }
+                this.Dungeons_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.dungeons.itsDungeons[i].Key);
             }
         }
         private void loadBilderTab()
         {
-            if (CHelpFunctions.IsRunningOnMono())
+            this.Bilder_dgvList.Rows.Clear();
+
+            for (int i = 0; i < this.itsDSAFileLoader.bilder.itsImages.Count; i++)
             {
-                this.Bilder_lbList.Items.Clear();
-
-                string[] items = new string[this.itsDSAFileLoader.bilder.itsImages.Count];
-                for (int i = 0; i < this.itsDSAFileLoader.bilder.itsImages.Count; i++)
-                    items[i] = this.itsDSAFileLoader.bilder.itsImages[i].Key;
-
-                this.Bilder_lbList.Items.AddRange(items);
-
-                if (this.Bilder_lbList.Items.Count > 0)
-                    this.Bilder_lbList.SelectedIndex = 0;
-            }
-            else
-            {
-                this.Bilder_dgvList.Rows.Clear();
-
-                for (int i = 0; i < this.itsDSAFileLoader.bilder.itsImages.Count; i++)
-                {
-                    this.Bilder_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.bilder.itsImages[i].Key);
-                };
-            }
+                this.Bilder_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.bilder.itsImages[i].Key);
+            };
         }
         private void loadAnimationenTab()
         {
@@ -522,13 +269,6 @@ namespace DSA_1_Editing_Tool
                 CDebugger.addErrorLine("Fehler beim laden des Items:");
                 CDebugger.addErrorLine(e2.ToString());
             }
-        }
-        private void Item_lbList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Item_lbList.SelectedIndex < 0)
-                return;
-
-            this.ItemTab_loadSelectedItem(this.Item_lbList.SelectedIndex);
         }
         private void ItemTab_loadSelectedItem(int index)
         {
@@ -734,119 +474,6 @@ namespace DSA_1_Editing_Tool
             }
         }
 
-        private void Dialoge_lbList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Dialoge_lbList.SelectedIndex < 0 || this.Dialoge_lbList.SelectedIndex >= this.itsDSAFileLoader.dialoge.itsDialoge.Count)
-                return;
-
-            this.Dialoge_lbLayout.Items.Clear();
-            this.Dialoge_lbGesprächspartner.Items.Clear();
-            this.Dialoge_lbTexte.Items.Clear();
-
-            CDialoge.CDialog dialog = this.itsDSAFileLoader.dialoge.itsDialoge[this.Dialoge_lbList.SelectedIndex].Value;
-            
-            string[] items = new string[dialog.itsDialogZeile.Count];
-            for (int i = 0; i < dialog.itsDialogZeile.Count; i++)
-                items[i] = i.ToString();
-            this.Dialoge_lbLayout.Items.AddRange(items);
-
-            items = new string[dialog.itsPartner.Count];
-            for (int i = 0; i < dialog.itsPartner.Count; i++)
-                items[i] = dialog.itsPartner[i].name;
-            this.Dialoge_lbGesprächspartner.Items.AddRange(items);
-
-            this.Dialoge_lbTexte.Items.AddRange(dialog.itsTexte.ToArray());
-
-            if (this.Dialoge_lbLayout.Items.Count > 0)
-                this.Dialoge_lbLayout.SelectedIndex = 0;
-
-            if (this.Dialoge_lbGesprächspartner.Items.Count > 0)
-                this.Dialoge_lbGesprächspartner.SelectedIndex = 0;
-
-            if (this.Dialoge_lbTexte.Items.Count > 0)
-                this.Dialoge_lbTexte.SelectedIndex = 0;
-
-        }
-        private void Dialoge_lbGesprächspartner_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (Dialoge_lbList.SelectedIndex < 0 || Dialoge_lbGesprächspartner.SelectedIndex < 0)
-            {
-                this.Dialoge_btStartTestDialog.Enabled = false;
-                this.disableTestDialoge();
-                return;
-            }
-
-            int index_1 = Dialoge_lbList.SelectedIndex;
-            int index_2 = Dialoge_lbGesprächspartner.SelectedIndex;
-
-            if (index_1 >= this.itsDSAFileLoader.dialoge.itsDialoge.Count || index_2 >= this.itsDSAFileLoader.dialoge.itsDialoge[index_1].Value.itsPartner.Count)
-            {
-                this.Dialoge_btStartTestDialog.Enabled = false;
-                this.disableTestDialoge();
-                return;
-            }
-
-            CDialoge.CGesprächspartner partner = this.itsDSAFileLoader.dialoge.itsDialoge[index_1].Value.itsPartner[index_2];
-            this.Dialoge_pictureBox.BackgroundImage = this.itsDSAFileLoader.bilder.getIn_HeadsImageByID(partner.BildID_IN_HEADS_NVF);
-
-            this.Dialoge_Gesprächspartner_tbBildID.Text = partner.BildID_IN_HEADS_NVF.ToString();
-            this.Dialoge_Gesprächspartner_tbIndexStartLayout.Text = partner.offsetStartLayoutZeile.ToString();
-            this.Dialoge_Gesprächspartner_tbIndexStartText.Text = partner.offsetStartString.ToString();
-            this.Dialoge_Gesprächspartner_tbName.Text = partner.name;
-
-            this.Dialoge_btStartTestDialog.Enabled = true;
-        }
-        private void Dialoge_lbTexte_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (this.Dialoge_lbTexte.SelectedIndex < 0 || this.Dialoge_lbList.SelectedIndex < 0)
-                    return;
-
-                int index_1 = this.Dialoge_lbList.SelectedIndex;
-                int index_2 = this.Dialoge_lbTexte.SelectedIndex;
-
-                if (index_1 >= this.itsDSAFileLoader.dialoge.itsDialoge.Count || index_2 >= this.itsDSAFileLoader.dialoge.itsDialoge[index_1].Value.itsTexte.Count)
-                    return;
-
-                this.Dialoge_rtbCurrenText.Text = this.itsDSAFileLoader.dialoge.itsDialoge[index_1].Value.itsTexte[index_2];
-
-            }
-            catch (SystemException)
-            {
-                CDebugger.addErrorLine("Fehler beim Laden des Textes(Dialoge)");
-            }
-        }
-        private void Dialoge_lbLayout_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (this.Dialoge_lbList.SelectedIndex < 0 || this.Dialoge_lbLayout.SelectedIndex < 0)
-                    return;
-
-                int index_1 = this.Dialoge_lbList.SelectedIndex;
-                int index_2 = this.Dialoge_lbLayout.SelectedIndex;
-
-                if (index_1 >= this.itsDSAFileLoader.dialoge.itsDialoge.Count || index_2 >= this.itsDSAFileLoader.dialoge.itsDialoge[index_1].Value.itsDialogZeile.Count)
-                    return;
-
-                CDialoge.CDialogLayoutZeile layout = this.itsDSAFileLoader.dialoge.itsDialoge[index_1].Value.itsDialogZeile[index_2];
-
-                this.Dialoge_Layout_tbTextIndex.Text = layout.offsetHaupttext.ToString();
-                this.Dialoge_Layout_tbUnbekannt.Text = layout.unbekannterWert.ToString();
-                this.Dialoge_Layout_tbTextIndexAntwort1.Text = layout.Antwort1.ToString();
-                this.Dialoge_Layout_tbTextIndexAntwort2.Text = layout.Antwort2.ToString();
-                this.Dialoge_Layout_tbTextIndexAntwort3.Text = layout.Antwort3.ToString();
-                this.Dialoge_Layout_tbLayoutIndexAntwort1.Text = layout.FolgeLayoutBeiAntwort1.ToString();
-                this.Dialoge_Layout_tbLayoutIndexAntwort2.Text = layout.FolgeLayoutBeiAntwort2.ToString();
-                this.Dialoge_Layout_tbLayoutIndexAntwort3.Text = layout.FolgeLayoutBeiAntwort3.ToString();
-            }
-            catch (SystemException)
-            {
-                CDebugger.addErrorLine("Fehler beim Laden des Textes(Dialoge)");
-            }
-        }
-
         private void disableTestDialoge()
         {
             this.Dialoge_btTestDialogAntwort1.Text = "";
@@ -864,33 +491,18 @@ namespace DSA_1_Editing_Tool
                 int index_1;
                 int index_2;
 
-                if (CHelpFunctions.IsRunningOnMono())
+                DataGridViewSelectedRowCollection dialogFile = Dialoge_dgvList.SelectedRows;
+                DataGridViewSelectedRowCollection selectedPartner = Dialoge_dgvGesprächspartner.SelectedRows;
+
+                if (dialogFile.Count <= 0 || selectedPartner.Count <= 0)
                 {
-                    if (this.Dialoge_lbList.SelectedIndex < 0 || this.Dialoge_lbGesprächspartner.SelectedIndex < 0)
-                    {
-                        this.Dialoge_btStartTestDialog.Enabled = false;
-                        this.disableTestDialoge();
-                        return;
-                    }
-
-                    index_1 = this.Dialoge_lbList.SelectedIndex;
-                    index_2 = this.Dialoge_lbGesprächspartner.SelectedIndex;
+                    this.Dialoge_btStartTestDialog.Enabled = false;
+                    this.disableTestDialoge();
+                    return;
                 }
-                else
-                {
-                    DataGridViewSelectedRowCollection dialogFile = Dialoge_dgvList.SelectedRows;
-                    DataGridViewSelectedRowCollection selectedPartner = Dialoge_dgvGesprächspartner.SelectedRows;
 
-                    if (dialogFile.Count <= 0 || selectedPartner.Count <= 0)
-                    {
-                        this.Dialoge_btStartTestDialog.Enabled = false;
-                        this.disableTestDialoge();
-                        return;
-                    }
-
-                    index_1 = Convert.ToInt32(dialogFile[0].Cells[0].Value);
-                    index_2 = Convert.ToInt32(selectedPartner[0].Cells[0].Value);
-                }
+                index_1 = Convert.ToInt32(dialogFile[0].Cells[0].Value);
+                index_2 = Convert.ToInt32(selectedPartner[0].Cells[0].Value);
 
                 
 
@@ -949,10 +561,7 @@ namespace DSA_1_Editing_Tool
 
             this.currentLayout = currentDialog.itsDialogZeile[layoutIndex];
 
-            if (CHelpFunctions.IsRunningOnMono())
-                this.Dialoge_lbLayout.SelectedIndex = layoutIndex;
-            else
-                this.Dialoge_dgvLayout.Rows[layoutIndex].Selected = true;
+            this.Dialoge_dgvLayout.Rows[layoutIndex].Selected = true;
 
             if (currentLayout.offsetHaupttext == 255)
                 this.Dialoge_rtbTestDialog.Text = "";
@@ -1158,125 +767,6 @@ namespace DSA_1_Editing_Tool
             //}
         }
 
-        private void Texte_Filenames_lbList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Texte_Filenames_lbList.SelectedIndex < 0)
-            {
-                return;
-            }
-
-            try
-            {
-                int index = this.Texte_Filenames_lbList.SelectedIndex;
-                this.Texte_lbTexte.Items.Clear();
-
-                if (this.rB_Texte_LTX.Checked)
-                {
-                    if (this.itsDSAFileLoader.texte.LTX_Texte.Count <= index)
-                        return;
-
-                    this.Texte_lbTexte.Items.AddRange(this.itsDSAFileLoader.texte.LTX_Texte[index].Value.ToArray());
-                    
-                }
-                else
-                {
-                    if (this.itsDSAFileLoader.texte.DTX_Texte.Count <= index)
-                        return;
-
-                    this.Texte_lbTexte.Items.AddRange(this.itsDSAFileLoader.texte.DTX_Texte[index].Value.ToArray());
-                }
-
-                if (this.Texte_lbTexte.Items.Count > 0)
-                    this.Texte_lbTexte.SelectedIndex = 0;
-            }
-            catch (SystemException e2)
-            {
-                CDebugger.addErrorLine("Fehler beim laden der Texte:");
-                CDebugger.addErrorLine(e2.ToString());
-            }
-        }
-        private void Texte_lbTexte_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Texte_lbTexte.SelectedIndex < 0 || this.Texte_Filenames_lbList.SelectedIndex < 0)
-            {
-                return;
-            }
-
-            int index_1 = this.Texte_Filenames_lbList.SelectedIndex;
-            int index_2 = this.Texte_lbTexte.SelectedIndex;
-
-            try
-            {
-                this.rTB_Texte_text.Clear();
-                if (this.rB_Texte_LTX.Checked)
-                    this.rTB_Texte_text.Text = this.itsDSAFileLoader.texte.LTX_Texte[index_1].Value[index_2];
-                else
-                    this.rTB_Texte_text.Text = this.itsDSAFileLoader.texte.DTX_Texte[index_1].Value[index_2];
-
-                List<Int32> startvaluesRed = new List<int>();
-                List<Int32> startvaluesYellow = new List<int>();
-                List<Int32> startvaluesBlue = new List<int>();
-                List<Int32> endvalues = new List<int>();
-
-                for (int i = 0; i < this.rTB_Texte_text.Text.Length; i++)
-                {
-                    if (this.rTB_Texte_text.Text[i] == (char)241)
-                        startvaluesRed.Add(i);
-                    else if (this.rTB_Texte_text.Text[i] == (char)242)
-                        startvaluesYellow.Add(i);
-                    else if (this.rTB_Texte_text.Text[i] == (char)243)
-                        startvaluesBlue.Add(i);
-                    else if (this.rTB_Texte_text.Text[i] == (char)240)
-                        endvalues.Add(i);
-                }
-
-                foreach (int start in startvaluesRed)
-                {
-                    foreach (int end in endvalues)
-                    {
-                        if (end > start)
-                        {
-                            this.rTB_Texte_text.SelectionStart = start;
-                            this.rTB_Texte_text.SelectionLength = end - start + 1;
-                            this.rTB_Texte_text.SelectionColor = Color.Red;
-                            break;
-                        }
-                    }
-                }
-                foreach (int start in startvaluesYellow)
-                {
-                    foreach (int end in endvalues)
-                    {
-                        if (end > start)
-                        {
-                            this.rTB_Texte_text.SelectionStart = start;
-                            this.rTB_Texte_text.SelectionLength = end - start + 1;
-                            this.rTB_Texte_text.SelectionColor = Color.Gold;
-                            break;
-                        }
-                    }
-                }
-                foreach (int start in startvaluesBlue)
-                {
-                    foreach (int end in endvalues)
-                    {
-                        if (end > start)
-                        {
-                            this.rTB_Texte_text.SelectionStart = start;
-                            this.rTB_Texte_text.SelectionLength = end - start + 1;
-                            this.rTB_Texte_text.SelectionColor = Color.Blue;
-                            break;
-                        }
-                    }
-                }
-            }
-            catch (SystemException e2)
-            {
-                CDebugger.addErrorLine("Fehler beim Laden der Texte");
-                CDebugger.addErrorLine(e2.ToString());
-            }
-        } 
-
         //------------Monster-----------------------------
         private void Monster_dgvList_SelectionChanged(object sender, EventArgs e)
         {
@@ -1296,23 +786,6 @@ namespace DSA_1_Editing_Tool
                 CDebugger.addErrorLine(e2.ToString());
             }
         }
-        private void Monster_lbList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (this.Monster_lbList.SelectedIndex < 0)
-                {
-                    return;
-                }
-
-                this.MonsterTab_loadSelectedMonster(this.Monster_lbList.SelectedIndex);
-            }
-            catch (SystemException e2)
-            {
-                CDebugger.addErrorLine("Fehler beim laden des Monster:");
-                CDebugger.addErrorLine(e2.ToString());
-            }
-        } 
         private void MonsterTab_loadSelectedMonster(int index)
         {
             if (index >= 0 && index < this.itsDSAFileLoader.monster.itsMonsterStats.Count)
@@ -1495,126 +968,6 @@ namespace DSA_1_Editing_Tool
             }
         }  
 
-        private void Fight_lbList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Fight_lbList.SelectedIndex < 0)
-            {
-                return;
-            }
-
-
-            try
-            {
-                int index = this.Fight_lbList.SelectedIndex;
-
-                if (index < this.itsDSAFileLoader.kampf.itsFight_LST.Count)
-                {
-                    CFight_LST fight = this.itsDSAFileLoader.kampf.itsFight_LST[index];
-
-                    this.Fight_Monster_lbList.Items.Clear();
-                    string[] items = new string[fight.itsMonsterInfos.Count];
-                    for (int j = 0; j < fight.itsMonsterInfos.Count; j++)
-                    {
-                        //this.Fight_Monster_dgvList.Rows.Add(j.ToString("D2"), fight.itsMonsterInfos[j].GegnerID.ToString("D3"), this.itsDSAFileLoader.monster.getMonsterNameByID(fight.itsMonsterInfos[j].GegnerID));
-                        items[j] = this.itsDSAFileLoader.monster.getMonsterNameByID(fight.itsMonsterInfos[j].GegnerID);
-                    }
-                    this.Fight_Monster_lbList.Items.AddRange(items);
-
-                    this.Fight_Items_lbList.Items.Clear();
-                    items = new string[fight.itsBeute.Count];
-                    for (int j = 0; j < fight.itsBeute.Count; j++)
-                    {
-                        //this.Fight_Items_dgvList.Rows.Add(j.ToString("D2"), fight.itsBeute[j].ItemID.ToString("D3"), this.itsDSAFileLoader.itemList.getItemNameByID(fight.itsBeute[j].ItemID));
-                        items[j] = this.itsDSAFileLoader.itemList.getItemNameByID(fight.itsBeute[j].ItemID);
-                    }
-                    this.Fight_Items_lbList.Items.AddRange(items);
-
-                    if (this.Fight_Monster_lbList.Items.Count > 0)
-                        this.Fight_Monster_lbList.SelectedIndex = 0;
-
-                    if (this.Fight_Items_lbList.Items.Count > 0)
-                        this.Fight_Items_lbList.SelectedIndex = 0;
-
-                    this.lB_Fight_Spieler.SelectedIndex = -1;
-                    this.lB_Fight_Spieler.SelectedIndex = 0;
-
-                    this.tB_Fight_Silberlinge.Text = fight.Beute_Silberstücke.ToString();
-                    this.tB_Fight_Dukaten.Text = fight.Beute_Dukaten.ToString();
-                    this.tB_Fight_Heller.Text = fight.Beute_Heller.ToString();
-                }
-            }
-            catch (SystemException e2)
-            {
-                CDebugger.addErrorLine("Fehler beim laden der Kämpfe:");
-                CDebugger.addErrorLine(e2.ToString());
-            }
-        }
-        private void Fight_Monster_lbList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Fight_lbList.SelectedIndex < 0 || this.Fight_Monster_lbList.SelectedIndex < 0)
-            {
-                return;
-            }
-
-
-            try
-            {
-                int index_1 = this.Fight_lbList.SelectedIndex;
-                int index_2 = this.Fight_Monster_lbList.SelectedIndex;
-
-                if (this.itsDSAFileLoader.kampf.itsFight_LST.Count <= index_1)
-                    return;
-
-                if (this.itsDSAFileLoader.kampf.itsFight_LST[index_1].itsMonsterInfos.Count <= index_2)
-                    return;
-
-                CFight_MonsterInfo monster = this.itsDSAFileLoader.kampf.itsFight_LST[index_1].itsMonsterInfos[index_2];
-                this.tB_Fight_Monster_Blickrichtung.Text = monster.Blickrichtung.ToString();
-                this.tB_Fight_Monster_ID.Text = monster.GegnerID.ToString();
-                this.tB_Fight_Monster_Startrunde.Text = monster.Startrunde.ToString();
-                this.tB_Fight_Monster_XPos.Text = monster.Position_X.ToString();
-                this.tB_Fight_Monster_YPos.Text = monster.Position_Y.ToString();
-            }
-            catch (SystemException e2)
-            {
-                CDebugger.addErrorLine("Fehler beim laden der Kämpfe(Monster):");
-                CDebugger.addErrorLine(e2.ToString());
-
-                this.tB_Fight_Monster_Blickrichtung.Text = "";
-                this.tB_Fight_Monster_ID.Text = "";
-                this.tB_Fight_Monster_Startrunde.Text = "";
-                this.tB_Fight_Monster_XPos.Text = "";
-                this.tB_Fight_Monster_YPos.Text = "";
-            }
-        }
-        private void Fight_Items_lbList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Fight_lbList.SelectedIndex < 0 || this.Fight_Items_lbList.SelectedIndex < 0)
-            {
-                return;
-            }
-
-            try
-            {
-                int index_1 = this.Fight_lbList.SelectedIndex;
-                int index_2 = this.Fight_Items_lbList.SelectedIndex;
-
-                if (this.itsDSAFileLoader.kampf.itsFight_LST.Count <= 0)
-                    return;
-
-                if (this.itsDSAFileLoader.kampf.itsFight_LST[index_1].itsBeute.Count <= 0)
-                    return;
-
-                this.tB_Fight_Item_Menge.Text = this.itsDSAFileLoader.kampf.itsFight_LST[index_1].itsBeute[index_2].Menge.ToString();
-            }
-            catch (SystemException e2)
-            {
-                CDebugger.addErrorLine("Fehler beim laden der Kämpfe(Items):");
-                CDebugger.addErrorLine(e2.ToString());
-                this.tB_Fight_Item_Menge.Text = "";
-            }
-        } 
-
         private void lB_Fight_Spieler_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -1622,28 +975,17 @@ namespace DSA_1_Editing_Tool
                 int index_1;
                 int index_2;
 
-                if (CHelpFunctions.IsRunningOnMono())
+                DataGridViewSelectedRowCollection kämpfe = this.Fight_dgvList.SelectedRows;
+                if (kämpfe.Count <= 0 || lB_Fight_Spieler.SelectedIndex < 0)
                 {
-                    if (this.lB_Fight_Spieler.SelectedIndex < 0 || this.Fight_lbList.SelectedIndex < 0)
-                        return;
-
-                    index_1 = this.Fight_lbList.SelectedIndex;
-                    index_2 = this.lB_Fight_Spieler.SelectedIndex;
+                    return;
                 }
-                else
-                {
-                    DataGridViewSelectedRowCollection kämpfe = this.Fight_dgvList.SelectedRows;
-                    if (kämpfe.Count <= 0 || lB_Fight_Spieler.SelectedIndex < 0)
-                    {
-                        return;
-                    }
 
-                    index_1 = Convert.ToInt32(kämpfe[0].Cells[0].Value);
-                    index_2 = this.lB_Fight_Spieler.SelectedIndex;
+                index_1 = Convert.ToInt32(kämpfe[0].Cells[0].Value);
+                index_2 = this.lB_Fight_Spieler.SelectedIndex;
 
-                    if (this.itsDSAFileLoader.kampf.itsFight_LST.Count <= 0)
-                        return;
-                }
+                if (this.itsDSAFileLoader.kampf.itsFight_LST.Count <= 0)
+                    return;
 
                 CFight_SpielerInfo spieler = this.itsDSAFileLoader.kampf.itsFight_LST[index_1].itsSpielerInfos[index_2];
                 this.tB_Fight_Spieler_Blickrichtung.Text = CHelpFunctions.dsaRichtungToString(spieler.Blickrichtung);
@@ -1746,104 +1088,6 @@ namespace DSA_1_Editing_Tool
                 this.Städte_Event_tbPosX.Text = townEvent.Position_X.ToString();
                 this.Städte_Event_tbPosY.Text = townEvent.Position_Y.ToString();
                 this.Städte_Event_tbTyp.Text = townEvent.EventTypToString();
-                this.Städte_Event_tbUnbekannt.Text = townEvent.Untertyp_3_Reisen.ToString();
-            }
-            catch (SystemException e2)
-            {
-                CDebugger.addErrorLine("Fehler beim laden der Stadtevents:");
-                CDebugger.addErrorLine(e2.ToString());
-
-                this.selectedEvent = -1;
-                this.Städte_Event_tbIndex_Global.Text = "";
-                this.Städte_Event_tbIndex_Lokal.Text = "";
-                this.Städte_Event_tbPosX.Text = "";
-                this.Städte_Event_tbPosY.Text = "";
-                this.Städte_Event_tbTyp.Text = "";
-                this.Städte_Event_tbUnbekannt.Text = "";
-            }
-        }
-
-        private void Städte_lbList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Städte_lbList.SelectedIndex < 0)
-            {
-                this.currentTown = -1;
-                this.selectedEvent = -1;
-                this.drawCity();
-
-                return;
-            }
-
-            try
-            {
-                int index = this.Städte_lbList.SelectedIndex;
-
-                if (index < this.itsDSAFileLoader.städte.itsTowns.Count)
-                {
-                    this.currentTown = index;
-                    CTown town = this.itsDSAFileLoader.städte.itsTowns[index].Value;
-
-                    this.Städte_lbStadtEventList.Items.Clear();
-                    string[] items = new string[town.townEvents.Count];
-                    for (int j = 0; j < town.townEvents.Count; j++)
-                    {
-                        //this.Städte_dgvStadtEventList.Rows.Add(j.ToString("D3"), town.townEvents[j].Typ.ToString());
-                        items[j] = j.ToString();
-                    }
-                    this.Städte_lbStadtEventList.Items.AddRange(items);
-
-                    if (this.Städte_lbStadtEventList.Items.Count > 0)
-                        this.Städte_lbStadtEventList.SelectedIndex = 0;
-
-                }
-                this.drawCity();
-            }
-            catch (SystemException e2)
-            {
-                CDebugger.addErrorLine("Fehler beim laden der Städte:");
-                CDebugger.addErrorLine(e2.ToString());
-
-                this.currentTown = -1;
-                this.selectedEvent = -1;
-                this.drawCity();
-            }
-        }
-        private void Städte_lbStadtEventList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Städte_lbList.SelectedIndex < 0 || this.Städte_lbStadtEventList.SelectedIndex < 0)
-            {
-                this.selectedEvent = -1;
-                this.drawCity();
-
-                return;
-            }
-
-            try
-            {
-                int index_1 = this.Städte_lbList.SelectedIndex;
-                int index_2 = this.Städte_lbStadtEventList.SelectedIndex;
-
-                if (this.itsDSAFileLoader.städte.itsTowns.Count < index_1)
-                {
-                    this.selectedEvent = -1;
-                    return;
-                }
-
-                if (this.itsDSAFileLoader.städte.itsTowns[index_1].Value.townEvents.Count < index_2)
-                {
-                    this.selectedEvent = -1;
-                    return;
-                }
-
-                this.selectedEvent = index_2;
-                this.drawCity();
-
-                CTownEvent townEvent = this.itsDSAFileLoader.städte.itsTowns[index_1].Value.townEvents[index_2];
-                this.Städte_Event_tbIndex_Global.Text = townEvent.Untertyp_2_unbekannte_Parameter.ToString();
-                this.Städte_Event_tbIndex_Lokal.Text = townEvent.Untertyp_1_Name_Icons_Angebot.ToString();
-                this.Städte_Event_tbPosX.Text = townEvent.Position_X.ToString();
-                this.Städte_Event_tbPosY.Text = townEvent.Position_Y.ToString();
-                this.Städte_Event_tbTyp.Text = townEvent.Typ.ToString();
                 this.Städte_Event_tbUnbekannt.Text = townEvent.Untertyp_3_Reisen.ToString();
             }
             catch (SystemException e2)
@@ -2239,318 +1483,6 @@ namespace DSA_1_Editing_Tool
             }
         }
 
-        private void Dungeons_lbList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Dungeons_lbList.SelectedIndex < 0)
-            {
-                this.currentDungeon = -1;
-                this.currentDungeonFloor = -1;
-
-                return;
-            }
-
-            try
-            {
-                int index = this.Dungeons_lbList.SelectedIndex;
-
-                if (index < this.itsDSAFileLoader.dungeons.itsDungeons.Count)
-                {
-                    this.currentDungeon = index;
-
-                    CDungeons.CDungeon dungeon = this.itsDSAFileLoader.dungeons.itsDungeons[index].Value;
-
-                    //--------Ebenen----------
-                    this.Dungeons_lbDungeonFloors.Items.Clear();
-                    string[] items = new string[dungeon.floors.Count];
-                    for (int j = 0; j < dungeon.floors.Count; j++)
-                    {
-                        //this.Dungeons_dgvDungeonFloors.Rows.Add(j.ToString());
-                        items[j] = j.ToString();
-                    }
-                    this.Dungeons_lbDungeonFloors.Items.AddRange(items);
-
-                    //--------Kämpfe----------
-                    this.Dungeons_lbFights.Items.Clear();
-                    items = new string[dungeon.fights.Count];
-                    for (int j = 0; j < dungeon.fights.Count; j++)
-                    {
-                        if (this.itsDSAFileLoader.kampf.itsFight_LST.Count > dungeon.fights[j].KampfID)
-                            //this.Dungeons_dgvFights.Rows.Add(j.ToString("D3"), this.itsDSAFileLoader.kampf.itsFight_LST[dungeon.fights[j].KampfID].name);
-                            items[j] = this.itsDSAFileLoader.kampf.itsFight_LST[dungeon.fights[j].KampfID].name;
-                        else
-                            //this.Dungeons_dgvFights.Rows.Add(j.ToString("D3"), "???");
-                            items[j] = "???";
-                    }
-                    this.Dungeons_lbFights.Items.AddRange(items);
-
-                    //--------Treppen----------
-                    this.Dungeons_lbStairs.Items.Clear();
-                    items = new string[dungeon.stairs.Count];
-                    for (int j = 0; j < dungeon.stairs.Count; j++)
-                    {
-                        //this.Dungeons_dgvStairs.Rows.Add(j.ToString("D3"));
-                        items[j] = j.ToString();
-                    }
-                    this.Dungeons_lbStairs.Items.AddRange(items);
-
-                    //--------Türen----------
-                    this.Dungeons_lbDoors.Items.Clear();
-                    items = new string[dungeon.doors.Count];
-                    for (int j = 0; j < dungeon.doors.Count; j++)
-                    {
-                        //this.Dungeons_dgvDoors.Rows.Add(j.ToString("D3"));
-                        items[j] = j.ToString();
-                    }
-                    this.Dungeons_lbDoors.Items.AddRange(items);
-
-                    if (this.Dungeons_lbDungeonFloors.Items.Count > 0)
-                        this.Dungeons_lbDungeonFloors.SelectedIndex = 0;
-
-                    if (this.Dungeons_lbFights.Items.Count > 0)
-                        this.Dungeons_lbFights.SelectedIndex = 0;
-
-                    if (this.Dungeons_lbStairs.Items.Count > 0)
-                        this.Dungeons_lbStairs.SelectedIndex = 0;
-
-                    if (this.Dungeons_lbDoors.Items.Count > 0)
-                        this.Dungeons_lbDoors.SelectedIndex = 0;
-                }
-                this.drawDungeon();
-            }
-            catch (SystemException e2)
-            {
-                CDebugger.addErrorLine("Fehler beim laden der Dungeons:");
-                CDebugger.addErrorLine(e2.ToString());
-
-                this.currentDungeon = -1;
-                this.currentDungeonFloor = -1;
-            }
-        }
-        private void Dungeons_lbDungeonFloors_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Dungeons_lbList.SelectedIndex < 0 || this.Dungeons_lbDungeonFloors.SelectedIndex < 0)
-            {
-                this.currentDungeonFloor = -1;
-                return;
-            }
-
-            try
-            {
-                int index_1 = this.Dungeons_lbList.SelectedIndex;
-                int index_2 = this.Dungeons_lbDungeonFloors.SelectedIndex;
-
-                if ((index_1 < this.itsDSAFileLoader.dungeons.itsDungeons.Count) && (index_2 < this.itsDSAFileLoader.dungeons.itsDungeons[index_1].Value.floors.Count))
-                {
-                    this.currentDungeonFloor = index_2;
-                    CDungeons.CDungeon.CFloor floor = this.itsDSAFileLoader.dungeons.itsDungeons[index_1].Value.floors[index_2];
-                }
-                this.drawDungeon();
-            }
-            catch (SystemException e2)
-            {
-                CDebugger.addErrorLine("Fehler beim laden der Dungeon ebene:");
-                CDebugger.addErrorLine(e2.ToString());
-
-                this.currentDungeonFloor = -1;
-                this.drawDungeon();
-            }
-        }
-        private void Dungeons_lbFights_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Dungeons_lbList.SelectedIndex < 0 || this.Dungeons_lbFights.SelectedIndex < 0)
-            {
-                return;
-            }
-
-            try
-            {
-                int index_1 = this.Dungeons_lbList.SelectedIndex;
-                int index_2 = this.Dungeons_lbFights.SelectedIndex;
-
-                if ((index_1 < this.itsDSAFileLoader.dungeons.itsDungeons.Count) && (index_2 < this.itsDSAFileLoader.dungeons.itsDungeons[index_1].Value.fights.Count))
-                {
-                    CDungeons.CDungeon.CDungeonFight fight = this.itsDSAFileLoader.dungeons.itsDungeons[index_1].Value.fights[index_2];
-
-                    this.Dungeons_Fights_tBEbene.Text = fight.Ebene.ToString();
-                    this.Dungeons_Fights_tBErstAP.Text = fight.extraAP.ToString();
-                    this.Dungeons_Fights_tBID.Text = fight.KampfID.ToString();
-                    this.Dungeons_Fights_tBPosX.Text = fight.PositionX.ToString();
-                    this.Dungeons_Fights_tBPosY.Text = fight.PositionY.ToString();
-
-                    this.Dungeons_Fights_tBFluchtBlickrichtung_1.Text = CHelpFunctions.dsaRichtungToString(fight.Flucht_Blickrichtung[0]);
-                    this.Dungeons_Fights_tBFluchtEbene_1.Text = fight.Flucht_Ebene[0].ToString();
-                    this.Dungeons_Fights_tBFluchtPosX_1.Text = fight.Flucht_PosX[0].ToString();
-                    this.Dungeons_Fights_tBFluchtPosY_1.Text = fight.Flucht_PosY[0].ToString();
-
-                    this.Dungeons_Fights_tBFluchtBlickrichtung_2.Text = CHelpFunctions.dsaRichtungToString(fight.Flucht_Blickrichtung[1]);
-                    this.Dungeons_Fights_tBFluchtEbene_2.Text = fight.Flucht_Ebene[1].ToString();
-                    this.Dungeons_Fights_tBFluchtPosX_2.Text = fight.Flucht_PosX[1].ToString();
-                    this.Dungeons_Fights_tBFluchtPosY_2.Text = fight.Flucht_PosY[1].ToString();
-
-                    this.Dungeons_Fights_tBFluchtBlickrichtung_3.Text = CHelpFunctions.dsaRichtungToString(fight.Flucht_Blickrichtung[2]);
-                    this.Dungeons_Fights_tBFluchtEbene_3.Text = fight.Flucht_Ebene[2].ToString();
-                    this.Dungeons_Fights_tBFluchtPosX_3.Text = fight.Flucht_PosX[2].ToString();
-                    this.Dungeons_Fights_tBFluchtPosY_3.Text = fight.Flucht_PosY[2].ToString();
-
-                    this.Dungeons_Fights_tBFluchtBlickrichtung_4.Text = CHelpFunctions.dsaRichtungToString(fight.Flucht_Blickrichtung[3]);
-                    this.Dungeons_Fights_tBFluchtEbene_4.Text = fight.Flucht_Ebene[3].ToString();
-                    this.Dungeons_Fights_tBFluchtPosX_4.Text = fight.Flucht_PosX[3].ToString();
-                    this.Dungeons_Fights_tBFluchtPosY_4.Text = fight.Flucht_PosY[3].ToString();
-                }
-                else
-                {
-                    this.Dungeons_Fights_tBEbene.Text = "";
-                    this.Dungeons_Fights_tBErstAP.Text = "";
-                    this.Dungeons_Fights_tBID.Text = "";
-                    this.Dungeons_Fights_tBPosX.Text = "";
-                    this.Dungeons_Fights_tBPosY.Text = "";
-
-                    this.Dungeons_Fights_tBFluchtBlickrichtung_1.Text = "";
-                    this.Dungeons_Fights_tBFluchtEbene_1.Text = "";
-                    this.Dungeons_Fights_tBFluchtPosX_1.Text = "";
-                    this.Dungeons_Fights_tBFluchtPosY_1.Text = "";
-
-                    this.Dungeons_Fights_tBFluchtBlickrichtung_2.Text = "";
-                    this.Dungeons_Fights_tBFluchtEbene_2.Text = "";
-                    this.Dungeons_Fights_tBFluchtPosX_2.Text = "";
-                    this.Dungeons_Fights_tBFluchtPosY_2.Text = "";
-
-                    this.Dungeons_Fights_tBFluchtBlickrichtung_3.Text = "";
-                    this.Dungeons_Fights_tBFluchtEbene_3.Text = "";
-                    this.Dungeons_Fights_tBFluchtPosX_3.Text = "";
-                    this.Dungeons_Fights_tBFluchtPosY_3.Text = "";
-
-                    this.Dungeons_Fights_tBFluchtBlickrichtung_4.Text = "";
-                    this.Dungeons_Fights_tBFluchtEbene_4.Text = "";
-                    this.Dungeons_Fights_tBFluchtPosX_4.Text = "";
-                    this.Dungeons_Fights_tBFluchtPosY_4.Text = "";
-                }
-            }
-            catch (SystemException e2)
-            {
-                CDebugger.addErrorLine("Fehler beim laden der Dungeon kämpfe:");
-                CDebugger.addErrorLine(e2.ToString());
-
-                this.Dungeons_Fights_tBEbene.Text = "";
-                this.Dungeons_Fights_tBErstAP.Text = "";
-                this.Dungeons_Fights_tBID.Text = "";
-                this.Dungeons_Fights_tBPosX.Text = "";
-                this.Dungeons_Fights_tBPosY.Text = "";
-
-                this.Dungeons_Fights_tBFluchtBlickrichtung_1.Text = "";
-                this.Dungeons_Fights_tBFluchtEbene_1.Text = "";
-                this.Dungeons_Fights_tBFluchtPosX_1.Text = "";
-                this.Dungeons_Fights_tBFluchtPosY_1.Text = "";
-
-                this.Dungeons_Fights_tBFluchtBlickrichtung_2.Text = "";
-                this.Dungeons_Fights_tBFluchtEbene_2.Text = "";
-                this.Dungeons_Fights_tBFluchtPosX_2.Text = "";
-                this.Dungeons_Fights_tBFluchtPosY_2.Text = "";
-
-                this.Dungeons_Fights_tBFluchtBlickrichtung_3.Text = "";
-                this.Dungeons_Fights_tBFluchtEbene_3.Text = "";
-                this.Dungeons_Fights_tBFluchtPosX_3.Text = "";
-                this.Dungeons_Fights_tBFluchtPosY_3.Text = "";
-
-                this.Dungeons_Fights_tBFluchtBlickrichtung_4.Text = "";
-                this.Dungeons_Fights_tBFluchtEbene_4.Text = "";
-                this.Dungeons_Fights_tBFluchtPosX_4.Text = "";
-                this.Dungeons_Fights_tBFluchtPosY_4.Text = "";
-            }
-        }
-        private void Dungeons_lbStairs_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Dungeons_lbList.SelectedIndex < 0 || this.Dungeons_lbStairs.SelectedIndex < 0)
-            {
-                return;
-            }
-
-            try
-            {
-                int index_1 = this.Dungeons_lbList.SelectedIndex;
-                int index_2 = this.Dungeons_lbStairs.SelectedIndex;
-
-                if ((index_1 < this.itsDSAFileLoader.dungeons.itsDungeons.Count) && (index_2 < this.itsDSAFileLoader.dungeons.itsDungeons[index_1].Value.stairs.Count))
-                {
-                    CDungeons.CDungeon.CDungeonStair stair = this.itsDSAFileLoader.dungeons.itsDungeons[index_1].Value.stairs[index_2];
-
-                    this.Dungeons_Stairs_tBEbene.Text = stair.Ebene.ToString();
-                    this.Dungeons_Stairs_tBPosX.Text = stair.PositionX.ToString();
-                    this.Dungeons_Stairs_tBPosY.Text = stair.PositionY.ToString();
-                    this.Dungeons_Stairs_tBZielebeneBlickrichtung.Text = CHelpFunctions.dsaRichtungToString(stair.Blickrichtung);
-                    this.Dungeons_Stairs_tBZielebeneEbene.Text = stair.Zielebene.ToString();
-                    this.Dungeons_Stairs_tBZielebeneRelPosX.Text = stair.relXPos.ToString();
-                    this.Dungeons_Stairs_tBZielebeneRelPosY.Text = stair.relYPos.ToString();
-                }
-                else
-                {
-                    this.Dungeons_Stairs_tBEbene.Text = "";
-                    this.Dungeons_Stairs_tBPosX.Text = "";
-                    this.Dungeons_Stairs_tBPosY.Text = "";
-                    this.Dungeons_Stairs_tBZielebeneBlickrichtung.Text = "";
-                    this.Dungeons_Stairs_tBZielebeneEbene.Text = "";
-                    this.Dungeons_Stairs_tBZielebeneRelPosX.Text = "";
-                    this.Dungeons_Stairs_tBZielebeneRelPosY.Text = "";
-                }
-            }
-            catch (SystemException e2)
-            {
-                CDebugger.addErrorLine("Fehler beim laden der Dungeon Treppen:");
-                CDebugger.addErrorLine(e2.ToString());
-
-                this.Dungeons_Stairs_tBEbene.Text = "";
-                this.Dungeons_Stairs_tBPosX.Text = "";
-                this.Dungeons_Stairs_tBPosY.Text = "";
-                this.Dungeons_Stairs_tBZielebeneBlickrichtung.Text = "";
-                this.Dungeons_Stairs_tBZielebeneEbene.Text = "";
-                this.Dungeons_Stairs_tBZielebeneRelPosX.Text = "";
-                this.Dungeons_Stairs_tBZielebeneRelPosY.Text = "";
-            }
-        }
-        private void Dungeons_lbDoors_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Dungeons_lbList.SelectedIndex < 0 || this.Dungeons_lbDoors.SelectedIndex < 0)
-            {
-                return;
-            }
-
-            try
-            {
-                int index_1 = this.Dungeons_lbList.SelectedIndex;
-                int index_2 = this.Dungeons_lbDoors.SelectedIndex;
-
-                if ((index_1 < this.itsDSAFileLoader.dungeons.itsDungeons.Count) && (index_2 < this.itsDSAFileLoader.dungeons.itsDungeons[index_1].Value.doors.Count))
-                {
-                    CDungeons.CDungeon.CDungeonDoor door = this.itsDSAFileLoader.dungeons.itsDungeons[index_1].Value.doors[index_2];
-
-                    this.Dungeons_Doors_tBEbene.Text = door.Ebene.ToString();
-                    this.Dungeons_Doors_tBID.Text = door.TürID.ToString();
-                    this.Dungeons_Doors_tBPosX.Text = door.PositionX.ToString();
-                    this.Dungeons_Doors_tBPosY.Text = door.PositionY.ToString();
-                    this.Dungeons_Doors_tBStatus.Text = door.Status.ToString();
-                }
-                else
-                {
-                    this.Dungeons_Doors_tBEbene.Text = "";
-                    this.Dungeons_Doors_tBID.Text = "";
-                    this.Dungeons_Doors_tBPosX.Text = "";
-                    this.Dungeons_Doors_tBPosY.Text = "";
-                    this.Dungeons_Doors_tBStatus.Text = "";
-                }
-            }
-            catch (SystemException e2)
-            {
-                CDebugger.addErrorLine("Fehler beim laden der Dungeon Türen:");
-                CDebugger.addErrorLine(e2.ToString());
-
-                this.Dungeons_Doors_tBEbene.Text = "";
-                this.Dungeons_Doors_tBID.Text = "";
-                this.Dungeons_Doors_tBPosX.Text = "";
-                this.Dungeons_Doors_tBPosY.Text = "";
-                this.Dungeons_Doors_tBStatus.Text = "";
-            }
-        } 
-
         private void drawDungeon()
         {
             if (this.currentDungeon == -1 || this.currentDungeonFloor == -1)
@@ -2685,84 +1617,6 @@ namespace DSA_1_Editing_Tool
                 if ((i < this.itsDSAFileLoader.bilder.itsImages.Count) && (j < this.itsDSAFileLoader.bilder.itsImages[i].Value.Count))
                 {
                     Image image = this.itsDSAFileLoader.bilder.itsImages[i].Value[j];
-
-                    if (image == null)
-                    {
-                        //this.Bilder_pictureBox.Image = null;
-                        this.Bilder_pictureBox.BackgroundImage = null;
-                    }
-                    else
-                    {
-                        //this.Bilder_pictureBox.Width = image.Width;
-                        //this.Bilder_pictureBox.Height = image.Height;
-                        //this.Bilder_pictureBox.Image = new Bitmap(image);
-                        this.Bilder_pictureBox.BackgroundImage = new Bitmap(image);
-                    }
-                }
-            }
-            catch (SystemException e2)
-            {
-                this.Bilder_dgvBildnummer.Rows.Clear();
-                CDebugger.addErrorLine("Bilder: Fehler beim laden des Bildes");
-                CDebugger.addErrorLine(e2.ToString());
-            }
-        }
-
-        private void Bilder_lbList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Bilder_lbList.SelectedIndex < 0)
-            {
-                //this.Bilder_pictureBox.Image = null;
-                this.Bilder_pictureBox.BackgroundImage = null;
-                CDebugger.addErrorLine("Keine Bilddatei ausgewählt");
-                return;
-            }
-
-
-            try
-            {
-                int index = this.Bilder_lbList.SelectedIndex;
-
-                if (index < this.itsDSAFileLoader.bilder.itsImages.Count)
-                {
-                    this.Bilder_lbBildnummer.Items.Clear();
-                    string[] items = new string[this.itsDSAFileLoader.bilder.itsImages[index].Value.Count];
-                    for (int j = 0; j < this.itsDSAFileLoader.bilder.itsImages[index].Value.Count; j++)
-                    {
-                        //this.Bilder_dgvBildnummer.Rows.Add(j.ToString());
-                        items[j] = j.ToString();
-                    }
-                    this.Bilder_lbBildnummer.Items.AddRange(items);
-
-                    if (this.Bilder_lbBildnummer.Items.Count > 0)
-                        this.Bilder_lbBildnummer.SelectedIndex = 0;
-                }
-            }
-            catch (SystemException e2)
-            {
-                this.Bilder_dgvBildnummer.ClearSelection();
-                this.Bilder_dgvBildnummer.Rows.Clear();
-                CDebugger.addErrorLine("Bilder: Fehler beim laden der Bildlisten");
-                CDebugger.addErrorLine(e2.ToString());
-            }
-        }
-        private void Bilder_lbBildnummer_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (this.Bilder_lbList.SelectedIndex < 0 || this.Bilder_lbBildnummer.SelectedIndex < 0)
-            {
-                //this.Bilder_pictureBox.Image = null;
-                this.Bilder_pictureBox.BackgroundImage = null;
-                return;
-            }
-
-            try
-            {
-                int index_1 = this.Bilder_lbList.SelectedIndex;
-                int index_2 = this.Bilder_lbBildnummer.SelectedIndex;
-
-                if ((index_1 < this.itsDSAFileLoader.bilder.itsImages.Count) && (index_2 < this.itsDSAFileLoader.bilder.itsImages[index_1].Value.Count))
-                {
-                    Image image = this.itsDSAFileLoader.bilder.itsImages[index_1].Value[index_2];
 
                     if (image == null)
                     {
