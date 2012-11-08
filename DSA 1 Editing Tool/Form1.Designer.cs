@@ -544,7 +544,7 @@
             // Bilder_cBZoom
             // 
             this.Bilder_cBZoom.AutoSize = true;
-            this.Bilder_cBZoom.Location = new System.Drawing.Point(616, 93);
+            this.Bilder_cBZoom.Location = new System.Drawing.Point(605, 93);
             this.Bilder_cBZoom.Name = "Bilder_cBZoom";
             this.Bilder_cBZoom.Size = new System.Drawing.Size(53, 17);
             this.Bilder_cBZoom.TabIndex = 20;
@@ -555,7 +555,7 @@
             // Bilder_pictureBox
             // 
             this.Bilder_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Bilder_pictureBox.Location = new System.Drawing.Point(265, 14);
+            this.Bilder_pictureBox.Location = new System.Drawing.Point(252, 12);
             this.Bilder_pictureBox.Name = "Bilder_pictureBox";
             this.Bilder_pictureBox.Size = new System.Drawing.Size(320, 200);
             this.Bilder_pictureBox.TabIndex = 14;
@@ -570,7 +570,7 @@
             this.Bilder_dgvBildnummer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Bilder_dgvBildnummer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn27});
-            this.Bilder_dgvBildnummer.Location = new System.Drawing.Point(175, 14);
+            this.Bilder_dgvBildnummer.Location = new System.Drawing.Point(175, 12);
             this.Bilder_dgvBildnummer.MultiSelect = false;
             this.Bilder_dgvBildnummer.Name = "Bilder_dgvBildnummer";
             this.Bilder_dgvBildnummer.ReadOnly = true;
@@ -597,7 +597,7 @@
             this.Bilder_dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn25,
             this.dataGridViewTextBoxColumn26});
-            this.Bilder_dgvList.Location = new System.Drawing.Point(8, 14);
+            this.Bilder_dgvList.Location = new System.Drawing.Point(8, 12);
             this.Bilder_dgvList.MultiSelect = false;
             this.Bilder_dgvList.Name = "Bilder_dgvList";
             this.Bilder_dgvList.ReadOnly = true;
@@ -640,7 +640,7 @@
             // Dungeons_PictureBox
             // 
             this.Dungeons_PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Dungeons_PictureBox.Location = new System.Drawing.Point(403, 13);
+            this.Dungeons_PictureBox.Location = new System.Drawing.Point(403, 12);
             this.Dungeons_PictureBox.Name = "Dungeons_PictureBox";
             this.Dungeons_PictureBox.Size = new System.Drawing.Size(160, 160);
             this.Dungeons_PictureBox.TabIndex = 16;
@@ -659,7 +659,7 @@
             this.groupBox10.Controls.Add(this.Dungeons_Doors_tBPosX);
             this.groupBox10.Controls.Add(this.label67);
             this.groupBox10.Controls.Add(this.Dungeons_dgvDoors);
-            this.groupBox10.Location = new System.Drawing.Point(599, 253);
+            this.groupBox10.Location = new System.Drawing.Point(599, 252);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(308, 235);
             this.groupBox10.TabIndex = 15;
@@ -790,7 +790,7 @@
             this.groupBox9.Controls.Add(this.Dungeons_Stairs_tBPosX);
             this.groupBox9.Controls.Add(this.label65);
             this.groupBox9.Controls.Add(this.Dungeons_dgvStairs);
-            this.groupBox9.Location = new System.Drawing.Point(599, 13);
+            this.groupBox9.Location = new System.Drawing.Point(599, 12);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(308, 227);
             this.groupBox9.TabIndex = 14;
@@ -960,7 +960,7 @@
             this.groupBox8.Controls.Add(this.Dungeons_Fights_tBPosX);
             this.groupBox8.Controls.Add(this.label53);
             this.groupBox8.Controls.Add(this.Dungeons_dgvFights);
-            this.groupBox8.Location = new System.Drawing.Point(250, 179);
+            this.groupBox8.Location = new System.Drawing.Point(250, 178);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(343, 309);
             this.groupBox8.TabIndex = 13;
@@ -1439,7 +1439,7 @@
             this.Dungeons_dgvDungeonFloors.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dungeons_dgvDungeonFloors.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn21});
-            this.Dungeons_dgvDungeonFloors.Location = new System.Drawing.Point(250, 13);
+            this.Dungeons_dgvDungeonFloors.Location = new System.Drawing.Point(250, 12);
             this.Dungeons_dgvDungeonFloors.MultiSelect = false;
             this.Dungeons_dgvDungeonFloors.Name = "Dungeons_dgvDungeonFloors";
             this.Dungeons_dgvDungeonFloors.ReadOnly = true;
@@ -1466,7 +1466,7 @@
             this.Dungeons_dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn18,
             this.dataGridViewTextBoxColumn19});
-            this.Dungeons_dgvList.Location = new System.Drawing.Point(8, 13);
+            this.Dungeons_dgvList.Location = new System.Drawing.Point(8, 12);
             this.Dungeons_dgvList.MultiSelect = false;
             this.Dungeons_dgvList.Name = "Dungeons_dgvList";
             this.Dungeons_dgvList.ReadOnly = true;
@@ -1508,7 +1508,7 @@
             // Citys_PictureBox
             // 
             this.Citys_PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Citys_PictureBox.Location = new System.Drawing.Point(250, 13);
+            this.Citys_PictureBox.Location = new System.Drawing.Point(250, 12);
             this.Citys_PictureBox.Name = "Citys_PictureBox";
             this.Citys_PictureBox.Size = new System.Drawing.Size(320, 160);
             this.Citys_PictureBox.TabIndex = 13;
@@ -1652,7 +1652,7 @@
             this.Städte_dgvStadtEventList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn17,
             this.Column4});
-            this.Städte_dgvStadtEventList.Location = new System.Drawing.Point(250, 180);
+            this.Städte_dgvStadtEventList.Location = new System.Drawing.Point(250, 179);
             this.Städte_dgvStadtEventList.MultiSelect = false;
             this.Städte_dgvStadtEventList.Name = "Städte_dgvStadtEventList";
             this.Städte_dgvStadtEventList.ReadOnly = true;
@@ -1687,7 +1687,7 @@
             this.Städte_dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn15,
             this.dataGridViewTextBoxColumn16});
-            this.Städte_dgvList.Location = new System.Drawing.Point(8, 13);
+            this.Städte_dgvList.Location = new System.Drawing.Point(8, 12);
             this.Städte_dgvList.MultiSelect = false;
             this.Städte_dgvList.Name = "Städte_dgvList";
             this.Städte_dgvList.ReadOnly = true;
@@ -1796,7 +1796,7 @@
             this.groupBox6.Controls.Add(this.tB_Fight_Item_Menge);
             this.groupBox6.Controls.Add(this.label50);
             this.groupBox6.Controls.Add(this.Fight_Items_dgvList);
-            this.groupBox6.Location = new System.Drawing.Point(256, 250);
+            this.groupBox6.Location = new System.Drawing.Point(253, 248);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(394, 195);
             this.groupBox6.TabIndex = 9;
@@ -1893,7 +1893,7 @@
             this.groupBox5.Controls.Add(this.label48);
             this.groupBox5.Controls.Add(this.label49);
             this.groupBox5.Controls.Add(this.lB_Fight_Spieler);
-            this.groupBox5.Location = new System.Drawing.Point(656, 14);
+            this.groupBox5.Location = new System.Drawing.Point(664, 12);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(296, 129);
             this.groupBox5.TabIndex = 7;
@@ -1995,7 +1995,7 @@
             this.groupBox4.Controls.Add(this.label42);
             this.groupBox4.Controls.Add(this.label41);
             this.groupBox4.Controls.Add(this.Fight_Monster_dgvList);
-            this.groupBox4.Location = new System.Drawing.Point(256, 14);
+            this.groupBox4.Location = new System.Drawing.Point(253, 12);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(394, 227);
             this.groupBox4.TabIndex = 6;
@@ -2145,7 +2145,7 @@
             this.dataGridViewTextBoxColumn1,
             this.Column3,
             this.dataGridViewTextBoxColumn2});
-            this.Fight_dgvList.Location = new System.Drawing.Point(8, 14);
+            this.Fight_dgvList.Location = new System.Drawing.Point(8, 12);
             this.Fight_dgvList.MultiSelect = false;
             this.Fight_dgvList.Name = "Fight_dgvList";
             this.Fight_dgvList.ReadOnly = true;
@@ -3447,7 +3447,7 @@
             this.Item_dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn13,
             this.dataGridViewTextBoxColumn14});
-            this.Item_dgvList.Location = new System.Drawing.Point(8, 14);
+            this.Item_dgvList.Location = new System.Drawing.Point(8, 12);
             this.Item_dgvList.MultiSelect = false;
             this.Item_dgvList.Name = "Item_dgvList";
             this.Item_dgvList.ReadOnly = true;
@@ -3530,7 +3530,7 @@
             this.gB_ItemDat.Controls.Add(this.tB_Item_Position);
             this.gB_ItemDat.Controls.Add(this.label1);
             this.gB_ItemDat.Controls.Add(this.tB_Item_IconID);
-            this.gB_ItemDat.Location = new System.Drawing.Point(249, 14);
+            this.gB_ItemDat.Location = new System.Drawing.Point(249, 12);
             this.gB_ItemDat.Name = "gB_ItemDat";
             this.gB_ItemDat.Size = new System.Drawing.Size(661, 230);
             this.gB_ItemDat.TabIndex = 0;
@@ -3808,7 +3808,7 @@
             // Animationen_cBZoom
             // 
             this.Animationen_cBZoom.AutoSize = true;
-            this.Animationen_cBZoom.Location = new System.Drawing.Point(694, 87);
+            this.Animationen_cBZoom.Location = new System.Drawing.Point(677, 83);
             this.Animationen_cBZoom.Name = "Animationen_cBZoom";
             this.Animationen_cBZoom.Size = new System.Drawing.Size(53, 17);
             this.Animationen_cBZoom.TabIndex = 19;
@@ -3825,7 +3825,7 @@
             this.Animationen_Einzelbild.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Animationen_Einzelbild.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn36});
-            this.Animationen_Einzelbild.Location = new System.Drawing.Point(260, 16);
+            this.Animationen_Einzelbild.Location = new System.Drawing.Point(252, 12);
             this.Animationen_Einzelbild.MultiSelect = false;
             this.Animationen_Einzelbild.Name = "Animationen_Einzelbild";
             this.Animationen_Einzelbild.ReadOnly = true;
@@ -3845,7 +3845,7 @@
             // Animationen_pictureBox
             // 
             this.Animationen_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.Animationen_pictureBox.Location = new System.Drawing.Point(346, 16);
+            this.Animationen_pictureBox.Location = new System.Drawing.Point(329, 12);
             this.Animationen_pictureBox.Name = "Animationen_pictureBox";
             this.Animationen_pictureBox.Size = new System.Drawing.Size(320, 200);
             this.Animationen_pictureBox.TabIndex = 17;
@@ -3860,7 +3860,7 @@
             this.Animationen_Animationsnummer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Animationen_Animationsnummer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn33});
-            this.Animationen_Animationsnummer.Location = new System.Drawing.Point(183, 16);
+            this.Animationen_Animationsnummer.Location = new System.Drawing.Point(175, 12);
             this.Animationen_Animationsnummer.MultiSelect = false;
             this.Animationen_Animationsnummer.Name = "Animationen_Animationsnummer";
             this.Animationen_Animationsnummer.ReadOnly = true;
@@ -3887,7 +3887,7 @@
             this.Animationen_dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn34,
             this.dataGridViewTextBoxColumn35});
-            this.Animationen_dgvList.Location = new System.Drawing.Point(16, 16);
+            this.Animationen_dgvList.Location = new System.Drawing.Point(8, 12);
             this.Animationen_dgvList.MultiSelect = false;
             this.Animationen_dgvList.Name = "Animationen_dgvList";
             this.Animationen_dgvList.ReadOnly = true;

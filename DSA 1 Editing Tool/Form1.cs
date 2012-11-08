@@ -899,7 +899,7 @@ namespace DSA_1_Editing_Tool
                     return;
 
                 CFight_MonsterInfo monsterInfo = this.itsDSAFileLoader.kampf.itsFight_LST[i].itsMonsterInfos[j];
-                this.tB_Fight_Monster_Blickrichtung.Text = monsterInfo.Blickrichtung.ToString();
+                this.tB_Fight_Monster_Blickrichtung.Text = CHelpFunctions.dsaRichtungToString(monsterInfo.Blickrichtung);
                 this.tB_Fight_Monster_ID.Text = monsterInfo.GegnerID.ToString();
                 this.tB_Fight_Monster_Startrunde.Text = monsterInfo.Startrunde.ToString();
                 this.tB_Fight_Monster_XPos.Text = monsterInfo.Position_X.ToString();
