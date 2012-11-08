@@ -966,76 +966,199 @@ namespace DSA_1_Editing_Tool.File_Loader
         {
             List<Image> images = new List<Image>();
             int position = NVF.startOffset;
-            int i;
 
-             //CDebugger.addDebugLine("Reading ANIS Header for file with startoffset "+NVF.startOffset);
             // ANIS-Header einlesen
             int imagedataoffset = CHelpFunctions.byteArrayToInt32(ref data, position);
             int paletteoffset = CHelpFunctions.byteArrayToInt32(ref data, position+4);
             int iwidth = CHelpFunctions.byteArrayToInt16(ref data, position+8);
-            int iheight = CHelpFunctions.byteArrayToInt16(ref data, position + 10);
+            int iheight = (int)data[position + 10];
 
-            int numelements = (int)data[position+12];
+            int numelements = (int)data[position + 11]; //Anzahl der Subelemente auslesen
+
+            //Offsets der Subelemente auslesen
             List<int> elementoffsets = new List<int>(numelements);
-            position += 12;
-             //CDebugger.addDebugLine("Image Size "+iwidth+"/"+iheight+", Total of "+numelements+" subelements");
-            for (i = 0; i < numelements; i++)
+            position = NVF.startOffset + 12;
+            for (int i = 0; i < numelements; i++)
             {
-                elementoffsets.Add( CHelpFunctions.byteArrayToInt32(ref data, position ) );
+                elementoffsets.Add(CHelpFunctions.byteArrayToInt32(ref data, position));
                 position += 4;
-               //  CDebugger.addDebugLine("Subelement Offset "+string.Format("{0:X4}", elementoffsets[elementoffsets.Count-1]));
             }
 
-            // die ersten vier Bytes geben die gepackte Länge an
-            int packedLength = CHelpFunctions.byteArrayToInt32(ref data, NVF.startOffset + imagedataoffset);
-            byte[] bytes = null;
-            // Daten dürften ungepackt sein
-            if( packedLength > iwidth*iheight ) {
-                bytes = new byte[iwidth * iheight];
-                Buffer.BlockCopy(data, NVF.startOffset + imagedataoffset, bytes, 0, iwidth * iheight);
+            //Subelement infos auslesen
+            List<CBOBElement> subElements = new List<CBOBElement>(numelements);
+            foreach (int offset in elementoffsets)
+            {
+                subElements.Add(new CBOBElement(ref data, NVF.startOffset + offset));
             }
-            else
-                bytes = CHelpFunctions.unpackAmiga2Data(ref data, NVF.startOffset + imagedataoffset, packedLength);
 
-
+            // Farbpalette auslesen
             Color[] colors = null;
-            position = NVF.startOffset + paletteoffset + 6;
+            position = NVF.startOffset + paletteoffset + 6;     //Anzahl der Farben steht nicht drin, sondern muss berechnet werden
             int anzahlFarben = (NVF.endOffset - position) / 3;
             try
             {
                 colors = new Color[anzahlFarben];
-                for (i = 0; i < anzahlFarben; i++)
+                for (int i = 0; i < anzahlFarben; i++)
                 {
                     colors[i] = Color.FromArgb(Math.Min(255, data[position++] * 4), Math.Min(255, data[position++] * 4), Math.Min(255, data[position++] * 4));
                 }
             }
             catch (SystemException e)
             {
-                CDebugger.addErrorLine("Fehler beim Laden der Farbpaltte in der Datei " + NVF.filename + " Offset "+NVF.startOffset+" Pos "+i+" Fehler "+e.Message);
+                CDebugger.addErrorLine("Fehler beim laden der Farbpalette der Datei " + NVF.filename + ": " + e.Message);
                 return images;
             }
 
+            //////////////////////////////////////
+            //      Hauptbild entpacken         //
+            //////////////////////////////////////
+            position =  NVF.startOffset + imagedataoffset;
+
+            int packedLength = CHelpFunctions.byteArrayToInt32(ref data, position);
+            bool packed = true;
+            byte[] bytes = null;
+            if (packedLength > iwidth * iheight)
+            {
+                // daten dürften ungepackt sein
+                bytes = new byte[iwidth * iheight];
+                Buffer.BlockCopy(data, position, bytes, 0, iwidth * iheight);
+                packed = false;
+            }
+            else
+                bytes = CHelpFunctions.unpackAmiga2Data(ref data, position, packedLength);
+
             Bitmap image = new Bitmap(iwidth, iheight);
-            position = 0;
+            int positionInUnpackedData = 0;
             int x = 0, y = 0;
-            try {
+            try
+            {
                 for (y = 0; y < iheight; y++)
                 {
                     for (x = 0; x < iwidth; x++)
                     {
-                        image.SetPixel(x, y, colors[bytes[position] % colors.Length]);
-                        position++;
+                        image.SetPixel(x, y, colors[bytes[positionInUnpackedData] % colors.Length]);
+                        positionInUnpackedData++;
                     }
                 }
             }
             catch (SystemException e)
             {
-                CDebugger.addErrorLine("Fehler beim Bild befüllen auf " + x + "/" + y + ", position " + position + ", Größe " + bytes.Length + ": " + e.Message);
+                CDebugger.addErrorLine("Fehler beim Bild befüllen auf " + x + "/" + y + ", position " + positionInUnpackedData + ", Größe " + bytes.Length + ": " + e.Message);
             }
             images.Add(image);
 
+            if (packed)
+                position += packedLength;
+            else
+                position += (iwidth * iheight);
+
+            //////////////////////////////////////
+            //      Subelemente entpacken       //
+            //////////////////////////////////////
+            //int bobCount = 0;
+            foreach (CBOBElement bob in subElements)
+            {
+                //bobCount++;
+                //CDebugger.addDebugLine("BobCount: " + bobCount.ToString() + "/" + subElements.Count);
+
+                packedLength = CHelpFunctions.byteArrayToInt32(ref data, position);
+                positionInUnpackedData = 0;
+
+                //prüfen ob die Daten gepackt sind...falls es mal Probleme gibt, könnte man auch einfach Versuchen sie zu entpacken und dann auf "null" zu prüfen
+                if (packedLength > bob.width * bob.height * bob.bilder.Count)
+                {
+                    // daten dürften ungepackt sein
+                    bytes = new byte[bob.width * bob.height * bob.bilder.Count];
+                    Buffer.BlockCopy(data, position, bytes, 0, bob.width * bob.height * bob.bilder.Count);
+                    packed = false;
+                }
+                else
+                    bytes = CHelpFunctions.unpackAmiga2Data(ref data, position, packedLength);
+                    
+
+                foreach (CBOBElement.CEinzelbild einzelbild in bob.bilder)
+                {
+                    image = new Bitmap(bob.width, bob.height);
+                    try
+                    {
+                        for (y = 0; y < bob.height; y++)
+                        {
+                            for (x = 0; x < bob.width; x++)
+                            {
+                                image.SetPixel(x, y, colors[bytes[positionInUnpackedData++] % colors.Length]);
+                            }
+                        }
+                        images.Add(image);
+                    }
+                    catch (SystemException e)
+                    {
+                        CDebugger.addErrorLine("Fehler beim Bild befüllen auf " + x.ToString() + "/" + y.ToString() + ", position " + positionInUnpackedData + ", Größe " + bytes.Length + ": " + e.Message);
+                    }
+                }
+
+                if (packed)
+                    position += packedLength;
+                else
+                    position += (bob.width * bob.height * bob.bilder.Count);
+            }
 
             return images;
+        }
+        private class CBOBElement
+        {
+            public List<CEinzelbild> bilder = new List<CEinzelbild>();
+            public List<CAnimation> animationen = new List<CAnimation>();
+
+            public int width = 0;
+            public int height = 0;
+
+            public CBOBElement(ref byte[] data, int position)
+            {
+                height = data[position + 7];
+                width = data[position + 8];
+                position += 11; //die Verwendung der ersten 11 Elemente ist unbekannt
+
+                int anzahlBilder = data[position++];
+                for (int i = 0; i < anzahlBilder; i++)
+                {
+                    bilder.Add(new CEinzelbild(ref data, position));
+                    position += 4;
+                }
+
+                int anzahlAnimationen = CHelpFunctions.byteArrayToInt16(ref data, position);
+                position += 2;
+                for (int i = 0; i < anzahlAnimationen; i++)
+                {
+                    animationen.Add(new CAnimation(ref data, position));
+                    position += 4;
+                }
+            }
+
+            public class CEinzelbild
+            {
+                public int posX = 0;
+                public int posY = 0;
+
+                public CEinzelbild(ref byte[] data, int position)
+                {
+                    this.posX = data[position++];
+                    this.posY = data[position++];   
+                }
+            }
+
+            public class CAnimation
+            {
+                public int BildIndex = 0;
+                public int TimeDelay = 15;
+
+                public CAnimation(ref byte[] data, int position)
+                {
+                    this.BildIndex = CHelpFunctions.byteArrayToInt16(ref data, position);
+                    position += 2;
+                    this.TimeDelay = CHelpFunctions.byteArrayToInt16(ref data, position);
+                    position += 2;
+                }
+            }
         }
 
         private List<Image> loadImageWithoutHeader(ref byte[] data, CDSAFileLoader.CFileSet NVF, CImageHeader header)

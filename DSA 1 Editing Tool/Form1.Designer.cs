@@ -333,6 +333,7 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Items = new System.Windows.Forms.TabPage();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.Item_dgvList = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -378,7 +379,6 @@
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -3425,6 +3425,18 @@
             this.tP_Items.TabIndex = 0;
             this.tP_Items.Text = "Items";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.DarkRed;
+            this.richTextBox1.Location = new System.Drawing.Point(329, 364);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(565, 62);
+            this.richTextBox1.TabIndex = 9;
+            this.richTextBox1.Text = "für eine korrekte Ausführung unter Mono wird mindestens Mono Version 2.11 benötig" +
+    "t!!!\n(Gelegentlich kommt es unter Mono bei den Bildern trotzdem zu Abstürzen)";
+            // 
             // Item_dgvList
             // 
             this.Item_dgvList.AllowUserToAddRows = false;
@@ -3918,18 +3930,6 @@
             this.Rout_pictureBox.Size = new System.Drawing.Size(640, 400);
             this.Rout_pictureBox.TabIndex = 15;
             this.Rout_pictureBox.TabStop = false;
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.ForeColor = System.Drawing.Color.DarkRed;
-            this.richTextBox1.Location = new System.Drawing.Point(449, 377);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(343, 43);
-            this.richTextBox1.TabIndex = 9;
-            this.richTextBox1.Text = "für eine korrekte Ausführung unter Mono wird mindestens Mono Version 2.11 benötig" +
-    "t!!!";
             // 
             // Form1
             // 

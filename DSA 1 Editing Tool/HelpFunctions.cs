@@ -226,9 +226,10 @@ namespace DSA_1_Editing_Tool
                         returnData[destinationPosition - 1] = returnData[destinationPosition + offset];
                         destinationPosition--;
                     }
-                    catch (SystemException e)
+                    catch (SystemException)
                     {
-                        throw e;
+                        return null;
+                        //throw e;
                     }
 
                     
