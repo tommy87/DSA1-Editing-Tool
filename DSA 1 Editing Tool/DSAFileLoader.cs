@@ -719,6 +719,24 @@ namespace DSA_1_Editing_Tool
                 for (int i = 0; i < pair.Value.Count; i++)
                     pair.Value[i].Save(path + this.itsPathSign + i.ToString() + ".png");
             }
+            foreach (KeyValuePair<string, List<List<Image>>> pair_name in this.bilder.itsAnimations)
+            {
+                string name = getFileFront(pair_name.Key);
+                int counter = 0;
+
+                foreach (List<Image> Images in pair_name.Value)
+                {
+                    string path = filepath + this.itsPathSign + "Animationen" + this.itsPathSign + name + this.itsPathSign + counter;
+
+                    if (!Directory.Exists(path))
+                        Directory.CreateDirectory(path);
+
+                    for (int i = 0; i < Images.Count; i++)
+                        Images[i].Save(path + this.itsPathSign + i.ToString() + ".png");
+
+                    counter++;
+                }
+            }
             CDebugger.addDebugLine("Bilder wurden erfolgreich exportiert");
         }
         private string getFileFront(string filename)
