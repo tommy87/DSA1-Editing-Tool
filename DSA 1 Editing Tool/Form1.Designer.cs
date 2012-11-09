@@ -40,6 +40,10 @@
             this.bilderExportierenNachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.tP_Pictures = new System.Windows.Forms.TabPage();
+            this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.Bilder_rBInterpolationMode_Bikubisch = new System.Windows.Forms.RadioButton();
+            this.Bilder_rBInterpolationMode_Biliniear = new System.Windows.Forms.RadioButton();
+            this.Bilder_rBInterpolationMode_NearestNeighbor = new System.Windows.Forms.RadioButton();
             this.Bilder_cBZoom = new System.Windows.Forms.CheckBox();
             this.Bilder_pictureBox = new System.Windows.Forms.PictureBox();
             this.Bilder_dgvBildnummer = new System.Windows.Forms.DataGridView();
@@ -379,9 +383,14 @@
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.Animationen_rBInterpolationMode_Bikubisch = new System.Windows.Forms.RadioButton();
+            this.Animationen_rBInterpolationMode_Bilinear = new System.Windows.Forms.RadioButton();
+            this.Animationen_rBInterpolationMode_NearestNeighbor = new System.Windows.Forms.RadioButton();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
+            this.groupBox15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bilder_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bilder_dgvBildnummer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bilder_dgvList)).BeginInit();
@@ -446,6 +455,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).BeginInit();
             this.tP_Routs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).BeginInit();
+            this.groupBox16.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -531,6 +541,7 @@
             // tP_Pictures
             // 
             this.tP_Pictures.BackColor = System.Drawing.Color.Peru;
+            this.tP_Pictures.Controls.Add(this.groupBox15);
             this.tP_Pictures.Controls.Add(this.Bilder_cBZoom);
             this.tP_Pictures.Controls.Add(this.Bilder_pictureBox);
             this.tP_Pictures.Controls.Add(this.Bilder_dgvBildnummer);
@@ -541,6 +552,54 @@
             this.tP_Pictures.TabIndex = 7;
             this.tP_Pictures.Text = "Bilder";
             // 
+            // groupBox15
+            // 
+            this.groupBox15.Controls.Add(this.Bilder_rBInterpolationMode_Bikubisch);
+            this.groupBox15.Controls.Add(this.Bilder_rBInterpolationMode_Biliniear);
+            this.groupBox15.Controls.Add(this.Bilder_rBInterpolationMode_NearestNeighbor);
+            this.groupBox15.Location = new System.Drawing.Point(664, 51);
+            this.groupBox15.Name = "groupBox15";
+            this.groupBox15.Size = new System.Drawing.Size(165, 97);
+            this.groupBox15.TabIndex = 21;
+            this.groupBox15.TabStop = false;
+            this.groupBox15.Text = "Zoom verfahren";
+            // 
+            // Bilder_rBInterpolationMode_Bikubisch
+            // 
+            this.Bilder_rBInterpolationMode_Bikubisch.AutoSize = true;
+            this.Bilder_rBInterpolationMode_Bikubisch.Checked = true;
+            this.Bilder_rBInterpolationMode_Bikubisch.Location = new System.Drawing.Point(19, 65);
+            this.Bilder_rBInterpolationMode_Bikubisch.Name = "Bilder_rBInterpolationMode_Bikubisch";
+            this.Bilder_rBInterpolationMode_Bikubisch.Size = new System.Drawing.Size(71, 17);
+            this.Bilder_rBInterpolationMode_Bikubisch.TabIndex = 2;
+            this.Bilder_rBInterpolationMode_Bikubisch.TabStop = true;
+            this.Bilder_rBInterpolationMode_Bikubisch.Text = "Bikubisch";
+            this.Bilder_rBInterpolationMode_Bikubisch.UseVisualStyleBackColor = true;
+            this.Bilder_rBInterpolationMode_Bikubisch.CheckedChanged += new System.EventHandler(this.Bilder_dgvBildnummer_SelectionChanged);
+            // 
+            // Bilder_rBInterpolationMode_Biliniear
+            // 
+            this.Bilder_rBInterpolationMode_Biliniear.AutoSize = true;
+            this.Bilder_rBInterpolationMode_Biliniear.Location = new System.Drawing.Point(19, 42);
+            this.Bilder_rBInterpolationMode_Biliniear.Name = "Bilder_rBInterpolationMode_Biliniear";
+            this.Bilder_rBInterpolationMode_Biliniear.Size = new System.Drawing.Size(59, 17);
+            this.Bilder_rBInterpolationMode_Biliniear.TabIndex = 1;
+            this.Bilder_rBInterpolationMode_Biliniear.TabStop = true;
+            this.Bilder_rBInterpolationMode_Biliniear.Text = "Bilinear";
+            this.Bilder_rBInterpolationMode_Biliniear.UseVisualStyleBackColor = true;
+            this.Bilder_rBInterpolationMode_Biliniear.CheckedChanged += new System.EventHandler(this.Bilder_dgvBildnummer_SelectionChanged);
+            // 
+            // Bilder_rBInterpolationMode_NearestNeighbor
+            // 
+            this.Bilder_rBInterpolationMode_NearestNeighbor.AutoSize = true;
+            this.Bilder_rBInterpolationMode_NearestNeighbor.Location = new System.Drawing.Point(19, 19);
+            this.Bilder_rBInterpolationMode_NearestNeighbor.Name = "Bilder_rBInterpolationMode_NearestNeighbor";
+            this.Bilder_rBInterpolationMode_NearestNeighbor.Size = new System.Drawing.Size(108, 17);
+            this.Bilder_rBInterpolationMode_NearestNeighbor.TabIndex = 0;
+            this.Bilder_rBInterpolationMode_NearestNeighbor.Text = "Nearest Neighbor";
+            this.Bilder_rBInterpolationMode_NearestNeighbor.UseVisualStyleBackColor = true;
+            this.Bilder_rBInterpolationMode_NearestNeighbor.CheckedChanged += new System.EventHandler(this.Bilder_dgvBildnummer_SelectionChanged);
+            // 
             // Bilder_cBZoom
             // 
             this.Bilder_cBZoom.AutoSize = true;
@@ -550,7 +609,7 @@
             this.Bilder_cBZoom.TabIndex = 20;
             this.Bilder_cBZoom.Text = "Zoom";
             this.Bilder_cBZoom.UseVisualStyleBackColor = true;
-            this.Bilder_cBZoom.CheckedChanged += new System.EventHandler(this.Bilder_cBZoom_CheckedChanged);
+            this.Bilder_cBZoom.CheckedChanged += new System.EventHandler(this.Bilder_dgvBildnummer_SelectionChanged);
             // 
             // Bilder_pictureBox
             // 
@@ -558,6 +617,7 @@
             this.Bilder_pictureBox.Location = new System.Drawing.Point(252, 12);
             this.Bilder_pictureBox.Name = "Bilder_pictureBox";
             this.Bilder_pictureBox.Size = new System.Drawing.Size(320, 200);
+            this.Bilder_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.Bilder_pictureBox.TabIndex = 14;
             this.Bilder_pictureBox.TabStop = false;
             // 
@@ -3793,6 +3853,7 @@
             // tP_Animations
             // 
             this.tP_Animations.BackColor = System.Drawing.Color.Peru;
+            this.tP_Animations.Controls.Add(this.groupBox16);
             this.tP_Animations.Controls.Add(this.Animationen_cBZoom);
             this.tP_Animations.Controls.Add(this.Animationen_Einzelbild);
             this.tP_Animations.Controls.Add(this.Animationen_pictureBox);
@@ -3814,7 +3875,7 @@
             this.Animationen_cBZoom.TabIndex = 19;
             this.Animationen_cBZoom.Text = "Zoom";
             this.Animationen_cBZoom.UseVisualStyleBackColor = true;
-            this.Animationen_cBZoom.CheckedChanged += new System.EventHandler(this.Animationen_cBZoom_CheckedChanged);
+            this.Animationen_cBZoom.CheckedChanged += new System.EventHandler(this.Animationen_Einzelbild_SelectionChanged);
             // 
             // Animationen_Einzelbild
             // 
@@ -3848,6 +3909,7 @@
             this.Animationen_pictureBox.Location = new System.Drawing.Point(329, 12);
             this.Animationen_pictureBox.Name = "Animationen_pictureBox";
             this.Animationen_pictureBox.Size = new System.Drawing.Size(320, 200);
+            this.Animationen_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.Animationen_pictureBox.TabIndex = 17;
             this.Animationen_pictureBox.TabStop = false;
             // 
@@ -3931,6 +3993,54 @@
             this.Rout_pictureBox.TabIndex = 15;
             this.Rout_pictureBox.TabStop = false;
             // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.Animationen_rBInterpolationMode_Bikubisch);
+            this.groupBox16.Controls.Add(this.Animationen_rBInterpolationMode_Bilinear);
+            this.groupBox16.Controls.Add(this.Animationen_rBInterpolationMode_NearestNeighbor);
+            this.groupBox16.Location = new System.Drawing.Point(736, 41);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(165, 97);
+            this.groupBox16.TabIndex = 22;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Zoom verfahren";
+            // 
+            // Animationen_rBInterpolationMode_Bikubisch
+            // 
+            this.Animationen_rBInterpolationMode_Bikubisch.AutoSize = true;
+            this.Animationen_rBInterpolationMode_Bikubisch.Checked = true;
+            this.Animationen_rBInterpolationMode_Bikubisch.Location = new System.Drawing.Point(19, 65);
+            this.Animationen_rBInterpolationMode_Bikubisch.Name = "Animationen_rBInterpolationMode_Bikubisch";
+            this.Animationen_rBInterpolationMode_Bikubisch.Size = new System.Drawing.Size(71, 17);
+            this.Animationen_rBInterpolationMode_Bikubisch.TabIndex = 2;
+            this.Animationen_rBInterpolationMode_Bikubisch.TabStop = true;
+            this.Animationen_rBInterpolationMode_Bikubisch.Text = "Bikubisch";
+            this.Animationen_rBInterpolationMode_Bikubisch.UseVisualStyleBackColor = true;
+            this.Animationen_rBInterpolationMode_Bikubisch.CheckedChanged += new System.EventHandler(this.Animationen_Einzelbild_SelectionChanged);
+            // 
+            // Animationen_rBInterpolationMode_Bilinear
+            // 
+            this.Animationen_rBInterpolationMode_Bilinear.AutoSize = true;
+            this.Animationen_rBInterpolationMode_Bilinear.Location = new System.Drawing.Point(19, 42);
+            this.Animationen_rBInterpolationMode_Bilinear.Name = "Animationen_rBInterpolationMode_Bilinear";
+            this.Animationen_rBInterpolationMode_Bilinear.Size = new System.Drawing.Size(59, 17);
+            this.Animationen_rBInterpolationMode_Bilinear.TabIndex = 1;
+            this.Animationen_rBInterpolationMode_Bilinear.TabStop = true;
+            this.Animationen_rBInterpolationMode_Bilinear.Text = "Bilinear";
+            this.Animationen_rBInterpolationMode_Bilinear.UseVisualStyleBackColor = true;
+            this.Animationen_rBInterpolationMode_Bilinear.CheckedChanged += new System.EventHandler(this.Animationen_Einzelbild_SelectionChanged);
+            // 
+            // Animationen_rBInterpolationMode_NearestNeighbor
+            // 
+            this.Animationen_rBInterpolationMode_NearestNeighbor.AutoSize = true;
+            this.Animationen_rBInterpolationMode_NearestNeighbor.Location = new System.Drawing.Point(19, 19);
+            this.Animationen_rBInterpolationMode_NearestNeighbor.Name = "Animationen_rBInterpolationMode_NearestNeighbor";
+            this.Animationen_rBInterpolationMode_NearestNeighbor.Size = new System.Drawing.Size(108, 17);
+            this.Animationen_rBInterpolationMode_NearestNeighbor.TabIndex = 0;
+            this.Animationen_rBInterpolationMode_NearestNeighbor.Text = "Nearest Neighbor";
+            this.Animationen_rBInterpolationMode_NearestNeighbor.UseVisualStyleBackColor = true;
+            this.Animationen_rBInterpolationMode_NearestNeighbor.CheckedChanged += new System.EventHandler(this.Animationen_Einzelbild_SelectionChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3950,6 +4060,8 @@
             this.menuStrip1.PerformLayout();
             this.tP_Pictures.ResumeLayout(false);
             this.tP_Pictures.PerformLayout();
+            this.groupBox15.ResumeLayout(false);
+            this.groupBox15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Bilder_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bilder_dgvBildnummer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bilder_dgvList)).EndInit();
@@ -4037,6 +4149,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).EndInit();
             this.tP_Routs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).EndInit();
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox16.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4394,6 +4508,14 @@
         private System.Windows.Forms.PictureBox Kämpfe_Monster_pictureBox;
         private System.Windows.Forms.PictureBox Kämpfe_Item_pictureBox;
         private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.GroupBox groupBox15;
+        private System.Windows.Forms.RadioButton Bilder_rBInterpolationMode_NearestNeighbor;
+        private System.Windows.Forms.RadioButton Bilder_rBInterpolationMode_Bikubisch;
+        private System.Windows.Forms.RadioButton Bilder_rBInterpolationMode_Biliniear;
+        private System.Windows.Forms.GroupBox groupBox16;
+        private System.Windows.Forms.RadioButton Animationen_rBInterpolationMode_Bikubisch;
+        private System.Windows.Forms.RadioButton Animationen_rBInterpolationMode_Bilinear;
+        private System.Windows.Forms.RadioButton Animationen_rBInterpolationMode_NearestNeighbor;
     }
 }
 

@@ -1615,19 +1615,38 @@ namespace DSA_1_Editing_Tool
 
                 if ((i < this.itsDSAFileLoader.bilder.itsImages.Count) && (j < this.itsDSAFileLoader.bilder.itsImages[i].Value.Count))
                 {
-                    Image image = this.itsDSAFileLoader.bilder.itsImages[i].Value[j];
+                    Image image = new Bitmap(this.itsDSAFileLoader.bilder.itsImages[i].Value[j]);
 
                     if (image == null)
                     {
-                        //this.Bilder_pictureBox.Image = null;
-                        this.Bilder_pictureBox.BackgroundImage = null;
+                        this.Bilder_pictureBox.Image = null;
                     }
                     else
                     {
-                        //this.Bilder_pictureBox.Width = image.Width;
-                        //this.Bilder_pictureBox.Height = image.Height;
-                        //this.Bilder_pictureBox.Image = new Bitmap(image);
-                        this.Bilder_pictureBox.BackgroundImage = new Bitmap(image);
+                        if (this.Bilder_cBZoom.Checked)
+                        {
+                            float faktor_X = (float)Bilder_pictureBox.Width / (float)image.Width;
+                            float faktor_Y = (float)Bilder_pictureBox.Height / (float)image.Height;
+                            Bitmap bmp2;
+                            if (faktor_X > faktor_Y)
+                                bmp2 = new Bitmap((int)(image.Width * faktor_Y), (int)(image.Height * faktor_Y));
+                            else
+                                bmp2 = new Bitmap((int)(image.Width * faktor_X), (int)(image.Height * faktor_X));
+
+                            Graphics g = Graphics.FromImage(bmp2);
+
+                            if (this.Bilder_rBInterpolationMode_NearestNeighbor.Checked)
+                                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
+                            else if (this.Bilder_rBInterpolationMode_Biliniear.Checked)
+                                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bilinear;
+                            else if (this.Bilder_rBInterpolationMode_Bikubisch.Checked)
+                                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+
+                            g.DrawImage(image, new Rectangle(Point.Empty, bmp2.Size));
+                            Bilder_pictureBox.BackgroundImage = bmp2;
+                        }
+                        else
+                            Bilder_pictureBox.BackgroundImage = image;
                     }
                 }
             }
@@ -1637,14 +1656,6 @@ namespace DSA_1_Editing_Tool
                 CDebugger.addErrorLine("Bilder: Fehler beim laden des Bildes");
                 CDebugger.addErrorLine(e2.ToString());
             }
-        }
-
-        private void Bilder_cBZoom_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.Bilder_cBZoom.Checked)
-                this.Bilder_pictureBox.BackgroundImageLayout = ImageLayout.Zoom;
-            else
-                this.Bilder_pictureBox.BackgroundImageLayout = ImageLayout.Center;
         }
 
         //------------Animationen-----------------------------
@@ -1740,7 +1751,6 @@ namespace DSA_1_Editing_Tool
 
             if (animationen.Count <= 0 || animationsnummern.Count <= 0 || einzelbild.Count <= 0)
             {
-                //this.Bilder_pictureBox.Image = null;
                 this.Animationen_pictureBox.BackgroundImage = null;
                 return;
             }
@@ -1754,7 +1764,31 @@ namespace DSA_1_Editing_Tool
 
                 if (index_1 < this.itsDSAFileLoader.bilder.itsAnimations.Count && index_2 < this.itsDSAFileLoader.bilder.itsAnimations[index_1].Value.Count && index_3 < this.itsDSAFileLoader.bilder.itsAnimations[index_1].Value[index_2].Count)
                 {
-                    this.Animationen_pictureBox.BackgroundImage = new Bitmap(this.itsDSAFileLoader.bilder.itsAnimations[index_1].Value[index_2][index_3]);
+                    Bitmap image = new Bitmap(this.itsDSAFileLoader.bilder.itsAnimations[index_1].Value[index_2][index_3]);
+                    if (this.Animationen_cBZoom.Checked)
+                    {
+                        float faktor_X = (float)Animationen_pictureBox.Width / (float)image.Width;
+                        float faktor_Y = (float)Animationen_pictureBox.Height / (float)image.Height;
+                        Bitmap bmp2;
+                        if (faktor_X > faktor_Y)
+                            bmp2 = new Bitmap((int)(image.Width * faktor_Y), (int)(image.Height * faktor_Y));
+                        else
+                            bmp2 = new Bitmap((int)(image.Width * faktor_X), (int)(image.Height * faktor_X));
+
+                        Graphics g = Graphics.FromImage(bmp2);
+
+                        if (this.Animationen_rBInterpolationMode_NearestNeighbor.Checked)
+                            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
+                        else if (this.Animationen_rBInterpolationMode_Bilinear.Checked)
+                            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bilinear;
+                        else if (this.Animationen_rBInterpolationMode_Bikubisch.Checked)
+                            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+
+                        g.DrawImage(image, new Rectangle(Point.Empty, bmp2.Size));
+                        this.Animationen_pictureBox.BackgroundImage = bmp2;
+                    }
+                    else
+                        this.Animationen_pictureBox.BackgroundImage = image;
                 }
                 else
                     this.Animationen_pictureBox.BackgroundImage = null;
@@ -1765,14 +1799,6 @@ namespace DSA_1_Editing_Tool
                 CDebugger.addErrorLine("Animationen: Fehler beim laden der einzelbilder");
                 CDebugger.addErrorLine(e2.ToString());
             }
-        }
-
-        private void Animationen_cBZoom_CheckedChanged(object sender, EventArgs e)
-        {
-            if (this.Animationen_cBZoom.Checked)
-                this.Animationen_pictureBox.BackgroundImageLayout = ImageLayout.Zoom;
-            else
-                this.Animationen_pictureBox.BackgroundImageLayout = ImageLayout.Center;
         }
 
         //------------Hyperlinks-----------------------------
