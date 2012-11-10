@@ -13,11 +13,14 @@ namespace DSA_1_Editing_Tool
     public partial class Form1 : Form
     {
         CDSAFileLoader itsDSAFileLoader = new CDSAFileLoader();
+        Settings setdlg;
 
         public Form1()
         {
             InitializeComponent();
             folderBrowserDialog1.SelectedPath = "C:\\";
+            setdlg = new Settings();
+            setdlg.Hide();
 
             CDebugger.IncommingMessage += HandleDebugMessage;
         }
@@ -1847,6 +1850,20 @@ namespace DSA_1_Editing_Tool
             if (objResult == System.Windows.Forms.DialogResult.OK)
             {
                 this.itsDSAFileLoader.exportPictures(folderBrowserDialog1.SelectedPath);
+            }
+        }
+
+        private void einstellungenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            setdlg.ShowDialog(this);
+        }
+
+        private void monsterXMLExportierenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult objResult = saveXMLDialog.ShowDialog();
+            if (objResult == System.Windows.Forms.DialogResult.OK)
+            {
+                this.itsDSAFileLoader.monster.exportMonsterXML(saveXMLDialog.FileName);
             }
         }        
     }

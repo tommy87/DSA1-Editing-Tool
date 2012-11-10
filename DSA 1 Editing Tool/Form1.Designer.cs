@@ -33,6 +33,7 @@
             this.tSBOpenFile = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.einstellungenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.öffnenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -372,6 +373,10 @@
             this.rTB_Debug = new System.Windows.Forms.RichTextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tP_Animations = new System.Windows.Forms.TabPage();
+            this.groupBox16 = new System.Windows.Forms.GroupBox();
+            this.Animationen_rBInterpolationMode_Bikubisch = new System.Windows.Forms.RadioButton();
+            this.Animationen_rBInterpolationMode_Bilinear = new System.Windows.Forms.RadioButton();
+            this.Animationen_rBInterpolationMode_NearestNeighbor = new System.Windows.Forms.RadioButton();
             this.Animationen_cBZoom = new System.Windows.Forms.CheckBox();
             this.Animationen_Einzelbild = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -383,10 +388,8 @@
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
-            this.groupBox16 = new System.Windows.Forms.GroupBox();
-            this.Animationen_rBInterpolationMode_Bikubisch = new System.Windows.Forms.RadioButton();
-            this.Animationen_rBInterpolationMode_Bilinear = new System.Windows.Forms.RadioButton();
-            this.Animationen_rBInterpolationMode_NearestNeighbor = new System.Windows.Forms.RadioButton();
+            this.monsterXMLExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -449,13 +452,13 @@
             this.groupBox14.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tP_Animations.SuspendLayout();
+            this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_Einzelbild)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_Animationsnummer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).BeginInit();
             this.tP_Routs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).BeginInit();
-            this.groupBox16.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -493,23 +496,31 @@
             // dateiToolStripMenuItem
             // 
             this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.einstellungenToolStripMenuItem,
             this.öffnenToolStripMenuItem,
             this.beendenToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
             this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.dateiToolStripMenuItem.Text = "Datei";
             // 
+            // einstellungenToolStripMenuItem
+            // 
+            this.einstellungenToolStripMenuItem.Name = "einstellungenToolStripMenuItem";
+            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.einstellungenToolStripMenuItem.Text = "Einstellungen";
+            this.einstellungenToolStripMenuItem.Click += new System.EventHandler(this.einstellungenToolStripMenuItem_Click);
+            // 
             // öffnenToolStripMenuItem
             // 
             this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
-            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.öffnenToolStripMenuItem.Text = "Öffnen";
             this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.öffnenToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -517,7 +528,8 @@
             // 
             this.exportierenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.entpackenNachToolStripMenuItem,
-            this.bilderExportierenNachToolStripMenuItem});
+            this.bilderExportierenNachToolStripMenuItem,
+            this.monsterXMLExportierenToolStripMenuItem});
             this.exportierenToolStripMenuItem.Name = "exportierenToolStripMenuItem";
             this.exportierenToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.exportierenToolStripMenuItem.Text = "Exportieren";
@@ -3607,7 +3619,7 @@
             this.groupBox14.Controls.Add(this.Items_cBItemTypBit_3);
             this.groupBox14.Controls.Add(this.Items_cBItemTypBit_2);
             this.groupBox14.Controls.Add(this.Items_cBItemTypBit_);
-            this.groupBox14.Location = new System.Drawing.Point(325, 41);
+            this.groupBox14.Location = new System.Drawing.Point(325, 24);
             this.groupBox14.Name = "groupBox14";
             this.groupBox14.Size = new System.Drawing.Size(320, 118);
             this.groupBox14.TabIndex = 17;
@@ -3866,6 +3878,54 @@
             this.tP_Animations.TabIndex = 9;
             this.tP_Animations.Text = "Animationen";
             // 
+            // groupBox16
+            // 
+            this.groupBox16.Controls.Add(this.Animationen_rBInterpolationMode_Bikubisch);
+            this.groupBox16.Controls.Add(this.Animationen_rBInterpolationMode_Bilinear);
+            this.groupBox16.Controls.Add(this.Animationen_rBInterpolationMode_NearestNeighbor);
+            this.groupBox16.Location = new System.Drawing.Point(736, 41);
+            this.groupBox16.Name = "groupBox16";
+            this.groupBox16.Size = new System.Drawing.Size(165, 97);
+            this.groupBox16.TabIndex = 22;
+            this.groupBox16.TabStop = false;
+            this.groupBox16.Text = "Zoom verfahren";
+            // 
+            // Animationen_rBInterpolationMode_Bikubisch
+            // 
+            this.Animationen_rBInterpolationMode_Bikubisch.AutoSize = true;
+            this.Animationen_rBInterpolationMode_Bikubisch.Checked = true;
+            this.Animationen_rBInterpolationMode_Bikubisch.Location = new System.Drawing.Point(19, 65);
+            this.Animationen_rBInterpolationMode_Bikubisch.Name = "Animationen_rBInterpolationMode_Bikubisch";
+            this.Animationen_rBInterpolationMode_Bikubisch.Size = new System.Drawing.Size(71, 17);
+            this.Animationen_rBInterpolationMode_Bikubisch.TabIndex = 2;
+            this.Animationen_rBInterpolationMode_Bikubisch.TabStop = true;
+            this.Animationen_rBInterpolationMode_Bikubisch.Text = "Bikubisch";
+            this.Animationen_rBInterpolationMode_Bikubisch.UseVisualStyleBackColor = true;
+            this.Animationen_rBInterpolationMode_Bikubisch.CheckedChanged += new System.EventHandler(this.Animationen_Einzelbild_SelectionChanged);
+            // 
+            // Animationen_rBInterpolationMode_Bilinear
+            // 
+            this.Animationen_rBInterpolationMode_Bilinear.AutoSize = true;
+            this.Animationen_rBInterpolationMode_Bilinear.Location = new System.Drawing.Point(19, 42);
+            this.Animationen_rBInterpolationMode_Bilinear.Name = "Animationen_rBInterpolationMode_Bilinear";
+            this.Animationen_rBInterpolationMode_Bilinear.Size = new System.Drawing.Size(59, 17);
+            this.Animationen_rBInterpolationMode_Bilinear.TabIndex = 1;
+            this.Animationen_rBInterpolationMode_Bilinear.TabStop = true;
+            this.Animationen_rBInterpolationMode_Bilinear.Text = "Bilinear";
+            this.Animationen_rBInterpolationMode_Bilinear.UseVisualStyleBackColor = true;
+            this.Animationen_rBInterpolationMode_Bilinear.CheckedChanged += new System.EventHandler(this.Animationen_Einzelbild_SelectionChanged);
+            // 
+            // Animationen_rBInterpolationMode_NearestNeighbor
+            // 
+            this.Animationen_rBInterpolationMode_NearestNeighbor.AutoSize = true;
+            this.Animationen_rBInterpolationMode_NearestNeighbor.Location = new System.Drawing.Point(19, 19);
+            this.Animationen_rBInterpolationMode_NearestNeighbor.Name = "Animationen_rBInterpolationMode_NearestNeighbor";
+            this.Animationen_rBInterpolationMode_NearestNeighbor.Size = new System.Drawing.Size(108, 17);
+            this.Animationen_rBInterpolationMode_NearestNeighbor.TabIndex = 0;
+            this.Animationen_rBInterpolationMode_NearestNeighbor.Text = "Nearest Neighbor";
+            this.Animationen_rBInterpolationMode_NearestNeighbor.UseVisualStyleBackColor = true;
+            this.Animationen_rBInterpolationMode_NearestNeighbor.CheckedChanged += new System.EventHandler(this.Animationen_Einzelbild_SelectionChanged);
+            // 
             // Animationen_cBZoom
             // 
             this.Animationen_cBZoom.AutoSize = true;
@@ -3993,53 +4053,19 @@
             this.Rout_pictureBox.TabIndex = 15;
             this.Rout_pictureBox.TabStop = false;
             // 
-            // groupBox16
+            // monsterXMLExportierenToolStripMenuItem
             // 
-            this.groupBox16.Controls.Add(this.Animationen_rBInterpolationMode_Bikubisch);
-            this.groupBox16.Controls.Add(this.Animationen_rBInterpolationMode_Bilinear);
-            this.groupBox16.Controls.Add(this.Animationen_rBInterpolationMode_NearestNeighbor);
-            this.groupBox16.Location = new System.Drawing.Point(736, 41);
-            this.groupBox16.Name = "groupBox16";
-            this.groupBox16.Size = new System.Drawing.Size(165, 97);
-            this.groupBox16.TabIndex = 22;
-            this.groupBox16.TabStop = false;
-            this.groupBox16.Text = "Zoom verfahren";
+            this.monsterXMLExportierenToolStripMenuItem.Name = "monsterXMLExportierenToolStripMenuItem";
+            this.monsterXMLExportierenToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.monsterXMLExportierenToolStripMenuItem.Text = "MonsterXML exportieren";
+            this.monsterXMLExportierenToolStripMenuItem.Click += new System.EventHandler(this.monsterXMLExportierenToolStripMenuItem_Click);
             // 
-            // Animationen_rBInterpolationMode_Bikubisch
+            // saveXMLDialog
             // 
-            this.Animationen_rBInterpolationMode_Bikubisch.AutoSize = true;
-            this.Animationen_rBInterpolationMode_Bikubisch.Checked = true;
-            this.Animationen_rBInterpolationMode_Bikubisch.Location = new System.Drawing.Point(19, 65);
-            this.Animationen_rBInterpolationMode_Bikubisch.Name = "Animationen_rBInterpolationMode_Bikubisch";
-            this.Animationen_rBInterpolationMode_Bikubisch.Size = new System.Drawing.Size(71, 17);
-            this.Animationen_rBInterpolationMode_Bikubisch.TabIndex = 2;
-            this.Animationen_rBInterpolationMode_Bikubisch.TabStop = true;
-            this.Animationen_rBInterpolationMode_Bikubisch.Text = "Bikubisch";
-            this.Animationen_rBInterpolationMode_Bikubisch.UseVisualStyleBackColor = true;
-            this.Animationen_rBInterpolationMode_Bikubisch.CheckedChanged += new System.EventHandler(this.Animationen_Einzelbild_SelectionChanged);
-            // 
-            // Animationen_rBInterpolationMode_Bilinear
-            // 
-            this.Animationen_rBInterpolationMode_Bilinear.AutoSize = true;
-            this.Animationen_rBInterpolationMode_Bilinear.Location = new System.Drawing.Point(19, 42);
-            this.Animationen_rBInterpolationMode_Bilinear.Name = "Animationen_rBInterpolationMode_Bilinear";
-            this.Animationen_rBInterpolationMode_Bilinear.Size = new System.Drawing.Size(59, 17);
-            this.Animationen_rBInterpolationMode_Bilinear.TabIndex = 1;
-            this.Animationen_rBInterpolationMode_Bilinear.TabStop = true;
-            this.Animationen_rBInterpolationMode_Bilinear.Text = "Bilinear";
-            this.Animationen_rBInterpolationMode_Bilinear.UseVisualStyleBackColor = true;
-            this.Animationen_rBInterpolationMode_Bilinear.CheckedChanged += new System.EventHandler(this.Animationen_Einzelbild_SelectionChanged);
-            // 
-            // Animationen_rBInterpolationMode_NearestNeighbor
-            // 
-            this.Animationen_rBInterpolationMode_NearestNeighbor.AutoSize = true;
-            this.Animationen_rBInterpolationMode_NearestNeighbor.Location = new System.Drawing.Point(19, 19);
-            this.Animationen_rBInterpolationMode_NearestNeighbor.Name = "Animationen_rBInterpolationMode_NearestNeighbor";
-            this.Animationen_rBInterpolationMode_NearestNeighbor.Size = new System.Drawing.Size(108, 17);
-            this.Animationen_rBInterpolationMode_NearestNeighbor.TabIndex = 0;
-            this.Animationen_rBInterpolationMode_NearestNeighbor.Text = "Nearest Neighbor";
-            this.Animationen_rBInterpolationMode_NearestNeighbor.UseVisualStyleBackColor = true;
-            this.Animationen_rBInterpolationMode_NearestNeighbor.CheckedChanged += new System.EventHandler(this.Animationen_Einzelbild_SelectionChanged);
+            this.saveXMLDialog.DefaultExt = "xml";
+            this.saveXMLDialog.FileName = "monster.xml";
+            this.saveXMLDialog.Filter = "MonsterXML|*.xml|Alle Dateien|*.*";
+            this.saveXMLDialog.Title = "XML-File speichern unter";
             // 
             // Form1
             // 
@@ -4143,14 +4169,14 @@
             this.tabControl1.ResumeLayout(false);
             this.tP_Animations.ResumeLayout(false);
             this.tP_Animations.PerformLayout();
+            this.groupBox16.ResumeLayout(false);
+            this.groupBox16.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_Einzelbild)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_Animationsnummer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).EndInit();
             this.tP_Routs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).EndInit();
-            this.groupBox16.ResumeLayout(false);
-            this.groupBox16.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4516,6 +4542,9 @@
         private System.Windows.Forms.RadioButton Animationen_rBInterpolationMode_Bikubisch;
         private System.Windows.Forms.RadioButton Animationen_rBInterpolationMode_Bilinear;
         private System.Windows.Forms.RadioButton Animationen_rBInterpolationMode_NearestNeighbor;
+        private System.Windows.Forms.ToolStripMenuItem einstellungenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem monsterXMLExportierenToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog saveXMLDialog;
     }
 }
 

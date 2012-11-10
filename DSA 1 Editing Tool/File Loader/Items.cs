@@ -27,7 +27,14 @@ namespace DSA_1_Editing_Tool.File_Loader
                 Int32 position = items_dat.startOffset;
                 while ((position + blockLength) < items_dat.endOffset)
                 {
-                    itsItems.Add(new CItem((Int16)(data[position] + ((Int16)data[position + 1] << 8)), data[position + 2], data[position + 3], (Int16)(data[position + 5] + ((Int16)data[position + 6] << 8)), data[position + 7], (Int16)(data[position + 8] + ((Int16)data[position + 9] << 8)), data[position + 10], data[position + 11]));
+                    itsItems.Add(new CItem((Int16)(data[position] + ((Int16)data[position + 1] << 8)), 
+                                            data[position + 2], 
+                                            data[position + 3], 
+                                            (Int16)(data[position + 5] + ((Int16)data[position + 6] << 8)), 
+                                            data[position + 7], 
+                                            (Int16)(data[position + 8] + ((Int16)data[position + 9] << 8)), 
+                                            data[position + 10], 
+                                            data[position + 11]));
                     position += blockLength;
                 }
                 CDebugger.addDebugLine("Items: ITEM.DAT wurde erfolgreich extrahiert");

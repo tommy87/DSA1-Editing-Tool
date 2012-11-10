@@ -57,143 +57,152 @@ namespace DSA_1_Editing_Tool
             List<CFileSet> filesetList_1;
             List<CFileSet> filesetList_2;
 
-            fileset_1 = this.getFileByName("ITEMS.DAT", false);
-            fileset_2 = this.getFileByName("ITEMNAME", false);
-            this.itemList.LoadItems(ref this.MAIN_DAT, fileset_1, fileset_2);
+            if (Properties.Settings.Default.loadData)
+            {
+                fileset_1 = this.getFileByName("ITEMS.DAT", false);
+                fileset_2 = this.getFileByName("ITEMNAME", false);
+                this.itemList.LoadItems(ref this.MAIN_DAT, fileset_1, fileset_2);
 
-            filesetList_1 = this.getFilesBySuffix(".LTX", false);
-            filesetList_2 = this.getFilesBySuffix(".DTX", false);
-            this.texte.loadTexte(ref this.MAIN_DAT, filesetList_1, filesetList_2);
+                filesetList_1 = this.getFilesBySuffix(".LTX", false);
+                filesetList_2 = this.getFilesBySuffix(".DTX", false);
+                this.texte.loadTexte(ref this.MAIN_DAT, filesetList_1, filesetList_2);
 
-            fileset_1 = this.getFileByName("MONSTER.DAT", false);
-            fileset_2 = this.getFileByName("MONNAMES", false);
-            this.monster.loadMonster(ref this.MAIN_DAT, fileset_1, fileset_2);
+                fileset_1 = this.getFileByName("MONSTER.DAT", false);
+                fileset_2 = this.getFileByName("MONNAMES", false);
+                this.monster.loadMonster(ref this.MAIN_DAT, fileset_1, fileset_2);
 
-            fileset_1 = this.getFileByName("FIGHT.LST", false);
-            this.kampf.loadKämpfe(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("FIGHT.LST", false);
+                this.kampf.loadKämpfe(ref this.MAIN_DAT, fileset_1);
 
-            filesetList_1 = this.getTownFiles();
-            this.städte.loadStädte(ref this.MAIN_DAT, filesetList_1);
+                filesetList_1 = this.getTownFiles();
+                this.städte.loadStädte(ref this.MAIN_DAT, filesetList_1);
 
-            filesetList_1 = this.getFilesBySuffix(".DNG", false);
-            filesetList_2 = this.getFilesBySuffix(".DDT", false);
-            this.dungeons.loadDungeons(ref this.MAIN_DAT, filesetList_1, filesetList_2);
+                filesetList_1 = this.getFilesBySuffix(".DNG", false);
+                filesetList_2 = this.getFilesBySuffix(".DDT", false);
+                this.dungeons.loadDungeons(ref this.MAIN_DAT, filesetList_1, filesetList_2);
+            }
 
-            filesetList_1 = this.getFilesBySuffix(".NVF", false);
-            filesetList_2 = this.getFilesBySuffix(".NVF", true);
-            this.bilder.loadPictures(ref this.MAIN_DAT, filesetList_1, ref this.DSAGEN_DAT, filesetList_2);
-            //-------------Main Images------------------
-            CDebugger.addDebugLine("weitere Bilder werden geladen, bitte warten...");
+            if (Properties.Settings.Default.loadImages)
+            {
+                filesetList_1 = this.getFilesBySuffix(".NVF", false);
+                filesetList_2 = this.getFilesBySuffix(".NVF", true);
+                this.bilder.loadPictures(ref this.MAIN_DAT, filesetList_1, ref this.DSAGEN_DAT, filesetList_2);
+                //-------------Main Images------------------
+                CDebugger.addDebugLine("weitere Bilder werden geladen, bitte warten...");
 
-            fileset_1 = this.getFileByName("COMPASS", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("SPLASHES.DAT", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("TEMPICON", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("KARTE.DAT", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("BICONS", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("ICONS", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("COMPASS", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("SPLASHES.DAT", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("TEMPICON", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("KARTE.DAT", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("BICONS", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("ICONS", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
 
-            //-------------Main Power Pack--------------
-            fileset_1 = this.getFileByName("PLAYM_UK", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("PLAYM_US", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("ZUSTA_UK", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("ZUSTA_US", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                //-------------Main Power Pack--------------
+                fileset_1 = this.getFileByName("PLAYM_UK", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("PLAYM_US", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("ZUSTA_UK", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("ZUSTA_US", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
 
-            fileset_1 = this.getFileByName("BUCH.DAT", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("KCBACK.DAT", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("KCLBACK.DAT", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("KDBACK.DAT", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("KDLBACK.DAT", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("KLBACK.DAT", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("KLLBACK.DAT", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("KSBACK.DAT", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("KSLBACK.DAT", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("BUCH.DAT", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("KCBACK.DAT", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("KCLBACK.DAT", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("KDBACK.DAT", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("KDLBACK.DAT", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("KLBACK.DAT", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("KLLBACK.DAT", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("KSBACK.DAT", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("KSLBACK.DAT", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
 
-            fileset_1 = this.getFileByName("BSKILLS.DAT", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("BSKILLS.DAT", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
 
-            fileset_1 = this.getFileByName("POPUP.DAT", false);
-            this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            //-------------DSA GEN Images---------------
-            fileset_1 = this.getFileByName("ATTIC", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("DSALOGO.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("GENTIT.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("HEADS.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1); //daten sind amiga komprimiert
-            fileset_1 = this.getFileByName("SEX.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            //-------------DSA GEN Power Pack------------
-            fileset_1 = this.getFileByName("DZWERG.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("DTHORWAL.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("DSTREUNE.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("DMENGE.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("DMAGIER.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("DKRIEGER.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("DDRUIDE.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("DAELF.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("DFELF.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("DWELF.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("DGAUKLER.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("DHEXE.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("DJAEGER.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("POPUP.DAT", false);
+                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                //-------------DSA GEN Images---------------
+                fileset_1 = this.getFileByName("ATTIC", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("DSALOGO.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("GENTIT.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("HEADS.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1); //daten sind amiga komprimiert
+                fileset_1 = this.getFileByName("SEX.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                //-------------DSA GEN Power Pack------------
+                fileset_1 = this.getFileByName("DZWERG.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("DTHORWAL.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("DSTREUNE.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("DMENGE.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("DMAGIER.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("DKRIEGER.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("DDRUIDE.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("DAELF.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("DFELF.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("DWELF.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("DGAUKLER.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("DHEXE.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("DJAEGER.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
 
-            fileset_1 = this.getFileByName("POPUP.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-            fileset_1 = this.getFileByName("ROALOGUS.DAT", true);
-            this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("POPUP.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                fileset_1 = this.getFileByName("ROALOGUS.DAT", true);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+            }
 
             //fileset_1 = this.getFileByName("ANIS", false);
             //this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-            
-            //---------Bild Archive-----------------------
-            fileset_1 = this.getFileByName("MONSTER", false);
-            fileset_2 = this.getFileByName("MONSTER.TAB", false);
-            this.bilder.addArchivToList(ref this.MAIN_DAT, fileset_1, fileset_2);
-            fileset_1 = this.getFileByName("MFIGS", false);
-            fileset_2 = this.getFileByName("MFIGS.TAB", false);
-            this.bilder.addArchivToList(ref this.MAIN_DAT, fileset_1, fileset_2);
-            fileset_1 = this.getFileByName("WFIGS", false);
-            fileset_2 = this.getFileByName("WFIGS.TAB", false);
-            this.bilder.addArchivToList(ref this.MAIN_DAT, fileset_1, fileset_2);
-            
-            //Anis fällt irgendwie aus der Reihe, verschoben zu den normalen Bildern
-            fileset_1 = this.getFileByName("ANIS", false);
-            fileset_2 = this.getFileByName("ANIS.TAB", false);
-            this.bilder.addArchivToList(ref this.MAIN_DAT, fileset_1, fileset_2);
+
+            if (Properties.Settings.Default.loadAnims)
+            {
+                //---------Bild Archive-----------------------
+                fileset_1 = this.getFileByName("MONSTER", false);
+                fileset_2 = this.getFileByName("MONSTER.TAB", false);
+                this.bilder.addArchivToList(ref this.MAIN_DAT, fileset_1, fileset_2);
+                fileset_1 = this.getFileByName("MFIGS", false);
+                fileset_2 = this.getFileByName("MFIGS.TAB", false);
+                this.bilder.addArchivToList(ref this.MAIN_DAT, fileset_1, fileset_2);
+                fileset_1 = this.getFileByName("WFIGS", false);
+                fileset_2 = this.getFileByName("WFIGS.TAB", false);
+                this.bilder.addArchivToList(ref this.MAIN_DAT, fileset_1, fileset_2);
+
+                //Anis fällt irgendwie aus der Reihe, verschoben zu den normalen Bildern
+                fileset_1 = this.getFileByName("ANIS", false);
+                fileset_2 = this.getFileByName("ANIS.TAB", false);
+                this.bilder.addArchivToList(ref this.MAIN_DAT, fileset_1, fileset_2);
+            }
 
             int fileCount;
             int imageCount;

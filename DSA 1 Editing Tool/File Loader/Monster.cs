@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Xml;
 using System.IO;
 
 namespace DSA_1_Editing_Tool.File_Loader
@@ -158,6 +158,92 @@ namespace DSA_1_Editing_Tool.File_Loader
 
                 this.Flucht_Bei_XX_LP = data[position + 34];
             }
+
+            /**
+             * schreibt das Monster in einen bereits initialisierten XMLTextWriter
+             * @input       wr  XMLTextWriter       das Ziel
+             */
+            public void writeXML( XmlTextWriter wr ) {
+                wr.WriteStartElement("monster");
+                wr.WriteAttributeString("id", this.MonsterID.ToString());
+                wr.WriteAttributeString("img", this.MonsterGraphicID.ToString());
+                wr.WriteStartElement("base");
+                    wr.WriteAttributeString("level", this.Stufe.ToString());
+                    wr.WriteAttributeString("firstap", this.erstAP.ToString());
+                    wr.WriteAttributeString("immunetomundane", this.Immunität_gegen_Normale_Waffen.ToString());
+                    wr.WriteAttributeString("magicclassid", this.ID_Magierklasse.ToString());
+                    wr.WriteAttributeString("size", this.Größenklasse.ToString());
+                    wr.WriteAttributeString("type", this.MonsterTyp.ToString());
+
+                    wr.WriteStartElement("battlebase");
+                        wr.WriteAttributeString("RS", this.RS.ToString());
+                        wr.WriteAttributeString("AT", this.AT.ToString());
+                        wr.WriteAttributeString("PA", this.PA.ToString());
+                        wr.WriteAttributeString("BP", this.BP.ToString());
+                        this.writeXMLDice(wr, "MR", MR_Würfel);
+                    wr.WriteEndElement();
+                wr.WriteEndElement();
+
+                wr.WriteStartElement("attributes");
+                    this.writeXMLDice(wr, "LE", LE_Würfel);
+                    this.writeXMLDice(wr, "AE", AE_Würfel);
+                    this.writeXMLDice(wr, "MU", MU_Würfel);
+                    this.writeXMLDice(wr, "KL", KL_Würfel);
+                    this.writeXMLDice(wr, "CH", CH_Würfel);
+                    this.writeXMLDice(wr, "FF", FF_Würfel);
+                    this.writeXMLDice(wr, "GE", GE_Würfel);
+                    this.writeXMLDice(wr, "IN", IN_Würfel);
+                    this.writeXMLDice(wr, "KK", KK_Würfel);
+                wr.WriteEndElement();
+
+                wr.WriteStartElement("battle");
+                    wr.WriteAttributeString("escape", this.Flucht_Bei_XX_LP.ToString());
+                    wr.WriteAttributeString("numatk", this.Anzahl_Attacken.ToString());
+                    wr.WriteAttributeString("numshot", this.Anzahl_Geschosse.ToString());
+                    wr.WriteAttributeString("numthrow", this.Anzahl_Wurfwaffen.ToString());
+                    writeXMLDice(wr, "dmgatk1", this.Schaden_1_Angriff_Würfel);
+                    writeXMLDice(wr, "dmgatk2", this.Schaden_2_Angriff_Würfel);
+                    writeXMLDice(wr, "dmgshot", this.Schaden_Schusswaffen_Würfel);
+                    writeXMLDice(wr, "dmgthrow", this.Schaden_Wurfwaffen_Würfel);
+                wr.WriteEndElement();
+                wr.WriteEndElement();
+            }
+
+            private void writeXMLDice(XmlTextWriter wr, string elname, byte[] data)
+            {
+                wr.WriteStartElement(elname);
+                wr.WriteAttributeString("mod", ((sbyte)data[0]).ToString());
+
+                // Datenfehler korrigieren, 15W4 bedeuted gar kein Würfelwurf
+                if (((data[1] & 0xF0) > 0) && ((data[1] & 0xF0) != 0xF0))
+                {
+                    wr.WriteAttributeString("diecnt", ((data[1] & 0xF0) >> 4).ToString());
+                    int dietype = 4;
+                    switch (data[1] & 0x0F)
+                    {
+                        case 1: dietype = 6; break;
+                        case 2: dietype = 20; break;
+                        case 3: dietype = 3; break;
+                    }
+                    wr.WriteAttributeString("dietype", dietype.ToString());
+                }
+                wr.WriteEndElement();
+            }
+        }
+
+        public void exportMonsterXML(string filename)
+        {
+            XmlTextWriter wr = new XmlTextWriter(filename, Encoding.UTF8);
+            wr.WriteStartDocument();
+            wr.WriteStartElement("monsters");
+
+            for (int i = 1; i < this.itsMonsterStats.Count; i++)
+            {
+                this.itsMonsterStats[i].writeXML(wr);
+            }
+            wr.WriteEndElement();
+            wr.WriteEndDocument();
+            wr.Close();
         }
     }
 }
