@@ -151,7 +151,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                 case 16:
                     return ("Haus zum einbrechen? (" + this.Typ.ToString() + ")");
                 case 17:
-                    return ("Herberge & Taverne (" + this.Typ.ToString() + ")");
+                    return ("Besonderes Gebäude (" + this.Typ.ToString() + ")");
                 case 18:
                     return ("Lager? (" + this.Typ.ToString() + ")");
 

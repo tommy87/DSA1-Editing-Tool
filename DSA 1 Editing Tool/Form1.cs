@@ -1128,6 +1128,9 @@ namespace DSA_1_Editing_Tool
             int PanelBlock_Y = TownImage.Height / 16;
             int PanelBlock_X = TownImage.Width / 32;
 
+            //////////////////////
+            //  Stadt zeichen   //
+            //////////////////////
             for (int y = 0; y < town.townLängeSN; y++)
             {
                 for (int x = 0; x < town.townLängeWO; x++)
@@ -1136,7 +1139,26 @@ namespace DSA_1_Editing_Tool
                     g.FillRectangle(new SolidBrush(color), new Rectangle(PanelBlock_X * x + 1, PanelBlock_Y * y + 1, PanelBlock_X - 2, PanelBlock_Y - 2));
                 }
             }
+            ////////////////////////////
+            //   Stadtevents zeichen  //
+            ////////////////////////////
+            foreach (CTownEvent townEvent in town.townEvents)
+            {
+                try
+                {
+                    byte townByte = town.townData[townEvent.Position_X, townEvent.Position_Y];
+                    Color color = getColorFromTownByteAndEventID(townByte, townEvent.Typ);
+                    g.FillRectangle(new SolidBrush(color), new Rectangle(PanelBlock_X * townEvent.Position_X + 1, PanelBlock_Y * townEvent.Position_Y + 1, PanelBlock_X - 2, PanelBlock_Y - 2));
+                }
+                catch(SystemException)
+                {
+                    CDebugger.addErrorLine("Fehler beim Laden der Stadtevents");
+                }
+            }
 
+            //////////////////////
+            //    Eventmarker   //
+            //////////////////////
             if (this.selectedEvent != -1 && this.selectedEvent < town.townEvents.Count)
             {
                 CTownEvent townEvent = town.townEvents[selectedEvent];
@@ -1169,14 +1191,59 @@ namespace DSA_1_Editing_Tool
                     return Color.FromArgb(0, 206, 0);     //gras
                 case 12:
                     return Color.FromArgb(255, 0, 0);     //wegweiser
+                case 13:
+                    return Color.FromArgb(52, 50, 125);     //Quest NPC
                 case 14:
                 case 15:
                     return Color.FromArgb(52, 50, 125);    //Leuchtturm
                 case 16:
-                    return Color.Lavender;
+                    return Color.Lavender;                 //	Straße/Unsichtbare Wand???
 
                 default:
-                    return Color.FloralWhite;
+                    return Color.FloralWhite;   
+            }
+        }
+        private Color getColorFromTownByteAndEventID(byte townByte, byte eventID)
+        {
+            //townByte = (byte)((townByte & 0xF0) >> 4);
+
+            //if (townByte == 14 || townByte == 15 || (townByte == 6 && eventID == 17))
+            //{
+            //    //return Color.FromArgb(0, 0, 0, 0);  //durchsichtig
+            //    return Color.FromArgb(52, 50, 125);
+            //}
+
+            //townbyte wird aktuell noch ignoriert
+
+            switch (eventID)
+            {
+                case 2: return Color.FromArgb(255, 127, 0);     //Tempel
+                case 3: return Color.Aquamarine;                //Taverne    
+                case 4: return Color.FromArgb(255, 0, 255);     //Heiler    
+                case 5: return Color.FromArgb(128, 128, 128);   //Geschäft
+                //case 6:
+                //    return ("Wildnislager (" + this.Typ.ToString() + ")");
+                case 7: return Color.Aquamarine;                //Herberge
+                case 8: return Color.FromArgb(52, 126, 52);     //Schmied
+                case 9: return Color.FromArgb(0, 0, 0, 0);  //Markt
+                    
+                //case 10:
+                //    return ("normales Haus? (" + this.Typ.ToString() + ")");
+                case 11:    //Hafen
+                case 12:    //Wegweiser
+                    return Color.FromArgb(255, 0, 0);     //wegweiser
+                //case 13:
+                //    return ("QuestNPC? (" + this.Typ.ToString() + ")");
+                //case 14:
+                //    return ("Dungeon (" + this.Typ.ToString() + ")");
+                //case 16:
+                //    return ("Haus zum einbrechen? (" + this.Typ.ToString() + ")");
+                case 17: return Color.FromArgb(0, 0, 0, 0);       //Besondere Gebäude
+                //case 18:
+                //    return ("Lager? (" + this.Typ.ToString() + ")");
+
+                default:
+                    return Color.FromArgb(0, 0, 0, 0);
             }
         }
 
