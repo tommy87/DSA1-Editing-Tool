@@ -39,6 +39,7 @@
             this.exportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entpackenNachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bilderExportierenNachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.monsterXMLExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.tP_Pictures = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
@@ -143,6 +144,15 @@
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Towns = new System.Windows.Forms.TabPage();
+            this.groupBox17 = new System.Windows.Forms.GroupBox();
+            this.Städte_SelectedField_EventNr = new System.Windows.Forms.TextBox();
+            this.label108 = new System.Windows.Forms.Label();
+            this.Städte_SelectedField_FieldTyp = new System.Windows.Forms.TextBox();
+            this.label109 = new System.Windows.Forms.Label();
+            this.Städte_SelectedField_tbPosY = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
+            this.Städte_SelectedField_tbPosX = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
             this.Citys_PictureBox = new System.Windows.Forms.PictureBox();
             this.lL_Städte = new System.Windows.Forms.LinkLabel();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
@@ -388,7 +398,6 @@
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
-            this.monsterXMLExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -413,6 +422,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dungeons_dgvDungeonFloors)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dungeons_dgvList)).BeginInit();
             this.tP_Towns.SuspendLayout();
+            this.groupBox17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Citys_PictureBox)).BeginInit();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Städte_dgvStadtEventList)).BeginInit();
@@ -506,21 +516,21 @@
             // einstellungenToolStripMenuItem
             // 
             this.einstellungenToolStripMenuItem.Name = "einstellungenToolStripMenuItem";
-            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.einstellungenToolStripMenuItem.Text = "Einstellungen";
             this.einstellungenToolStripMenuItem.Click += new System.EventHandler(this.einstellungenToolStripMenuItem_Click);
             // 
             // öffnenToolStripMenuItem
             // 
             this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
-            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.öffnenToolStripMenuItem.Text = "Öffnen";
             this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.öffnenToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -549,6 +559,13 @@
             this.bilderExportierenNachToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.bilderExportierenNachToolStripMenuItem.Text = "Bilder exportieren nach...";
             this.bilderExportierenNachToolStripMenuItem.Click += new System.EventHandler(this.bilderExportierenNachToolStripMenuItem_Click);
+            // 
+            // monsterXMLExportierenToolStripMenuItem
+            // 
+            this.monsterXMLExportierenToolStripMenuItem.Name = "monsterXMLExportierenToolStripMenuItem";
+            this.monsterXMLExportierenToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.monsterXMLExportierenToolStripMenuItem.Text = "MonsterXML exportieren";
+            this.monsterXMLExportierenToolStripMenuItem.Click += new System.EventHandler(this.monsterXMLExportierenToolStripMenuItem_Click);
             // 
             // tP_Pictures
             // 
@@ -1566,6 +1583,7 @@
             // tP_Towns
             // 
             this.tP_Towns.BackColor = System.Drawing.Color.Peru;
+            this.tP_Towns.Controls.Add(this.groupBox17);
             this.tP_Towns.Controls.Add(this.Citys_PictureBox);
             this.tP_Towns.Controls.Add(this.lL_Städte);
             this.tP_Towns.Controls.Add(this.groupBox7);
@@ -1577,6 +1595,87 @@
             this.tP_Towns.TabIndex = 5;
             this.tP_Towns.Text = "Städte";
             // 
+            // groupBox17
+            // 
+            this.groupBox17.Controls.Add(this.Städte_SelectedField_EventNr);
+            this.groupBox17.Controls.Add(this.label108);
+            this.groupBox17.Controls.Add(this.Städte_SelectedField_FieldTyp);
+            this.groupBox17.Controls.Add(this.label109);
+            this.groupBox17.Controls.Add(this.Städte_SelectedField_tbPosY);
+            this.groupBox17.Controls.Add(this.label62);
+            this.groupBox17.Controls.Add(this.Städte_SelectedField_tbPosX);
+            this.groupBox17.Controls.Add(this.label63);
+            this.groupBox17.Location = new System.Drawing.Point(593, 12);
+            this.groupBox17.Name = "groupBox17";
+            this.groupBox17.Size = new System.Drawing.Size(344, 135);
+            this.groupBox17.TabIndex = 14;
+            this.groupBox17.TabStop = false;
+            this.groupBox17.Text = "Ausgewähltes Feld";
+            // 
+            // Städte_SelectedField_EventNr
+            // 
+            this.Städte_SelectedField_EventNr.Location = new System.Drawing.Point(101, 100);
+            this.Städte_SelectedField_EventNr.Name = "Städte_SelectedField_EventNr";
+            this.Städte_SelectedField_EventNr.Size = new System.Drawing.Size(226, 20);
+            this.Städte_SelectedField_EventNr.TabIndex = 23;
+            // 
+            // label108
+            // 
+            this.label108.AutoSize = true;
+            this.label108.Location = new System.Drawing.Point(23, 103);
+            this.label108.Name = "label108";
+            this.label108.Size = new System.Drawing.Size(55, 13);
+            this.label108.TabIndex = 22;
+            this.label108.Text = "Event Nr.:";
+            // 
+            // Städte_SelectedField_FieldTyp
+            // 
+            this.Städte_SelectedField_FieldTyp.Location = new System.Drawing.Point(101, 74);
+            this.Städte_SelectedField_FieldTyp.Name = "Städte_SelectedField_FieldTyp";
+            this.Städte_SelectedField_FieldTyp.Size = new System.Drawing.Size(100, 20);
+            this.Städte_SelectedField_FieldTyp.TabIndex = 21;
+            // 
+            // label109
+            // 
+            this.label109.AutoSize = true;
+            this.label109.Location = new System.Drawing.Point(23, 77);
+            this.label109.Name = "label109";
+            this.label109.Size = new System.Drawing.Size(51, 13);
+            this.label109.TabIndex = 20;
+            this.label109.Text = "Feld Typ:";
+            // 
+            // Städte_SelectedField_tbPosY
+            // 
+            this.Städte_SelectedField_tbPosY.Location = new System.Drawing.Point(101, 48);
+            this.Städte_SelectedField_tbPosY.Name = "Städte_SelectedField_tbPosY";
+            this.Städte_SelectedField_tbPosY.Size = new System.Drawing.Size(100, 20);
+            this.Städte_SelectedField_tbPosY.TabIndex = 19;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Location = new System.Drawing.Point(23, 51);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(57, 13);
+            this.label62.TabIndex = 18;
+            this.label62.Text = "Position Y:";
+            // 
+            // Städte_SelectedField_tbPosX
+            // 
+            this.Städte_SelectedField_tbPosX.Location = new System.Drawing.Point(101, 22);
+            this.Städte_SelectedField_tbPosX.Name = "Städte_SelectedField_tbPosX";
+            this.Städte_SelectedField_tbPosX.Size = new System.Drawing.Size(100, 20);
+            this.Städte_SelectedField_tbPosX.TabIndex = 17;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Location = new System.Drawing.Point(23, 25);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(57, 13);
+            this.label63.TabIndex = 16;
+            this.label63.Text = "Position X:";
+            // 
             // Citys_PictureBox
             // 
             this.Citys_PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -1585,11 +1684,12 @@
             this.Citys_PictureBox.Size = new System.Drawing.Size(320, 160);
             this.Citys_PictureBox.TabIndex = 13;
             this.Citys_PictureBox.TabStop = false;
+            this.Citys_PictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Citys_PictureBox_MouseClick);
             // 
             // lL_Städte
             // 
             this.lL_Städte.AutoSize = true;
-            this.lL_Städte.Location = new System.Drawing.Point(423, 393);
+            this.lL_Städte.Location = new System.Drawing.Point(519, 389);
             this.lL_Städte.Name = "lL_Städte";
             this.lL_Städte.Size = new System.Drawing.Size(66, 13);
             this.lL_Städte.TabIndex = 12;
@@ -1611,12 +1711,12 @@
             this.groupBox7.Controls.Add(this.label57);
             this.groupBox7.Controls.Add(this.Städte_Event_tbPosX);
             this.groupBox7.Controls.Add(this.label56);
-            this.groupBox7.Location = new System.Drawing.Point(426, 180);
+            this.groupBox7.Location = new System.Drawing.Point(522, 179);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.Size = new System.Drawing.Size(328, 190);
             this.groupBox7.TabIndex = 11;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Event";
+            this.groupBox7.Text = "Event infos";
             // 
             // Städte_Event_tbUnbekannt
             // 
@@ -1730,7 +1830,7 @@
             this.Städte_dgvStadtEventList.ReadOnly = true;
             this.Städte_dgvStadtEventList.RowHeadersVisible = false;
             this.Städte_dgvStadtEventList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Städte_dgvStadtEventList.Size = new System.Drawing.Size(161, 265);
+            this.Städte_dgvStadtEventList.Size = new System.Drawing.Size(243, 265);
             this.Städte_dgvStadtEventList.TabIndex = 9;
             this.Städte_dgvStadtEventList.SelectionChanged += new System.EventHandler(this.Städte_dgvStadtEventList_SelectionChanged);
             // 
@@ -4053,13 +4153,6 @@
             this.Rout_pictureBox.TabIndex = 15;
             this.Rout_pictureBox.TabStop = false;
             // 
-            // monsterXMLExportierenToolStripMenuItem
-            // 
-            this.monsterXMLExportierenToolStripMenuItem.Name = "monsterXMLExportierenToolStripMenuItem";
-            this.monsterXMLExportierenToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
-            this.monsterXMLExportierenToolStripMenuItem.Text = "MonsterXML exportieren";
-            this.monsterXMLExportierenToolStripMenuItem.Click += new System.EventHandler(this.monsterXMLExportierenToolStripMenuItem_Click);
-            // 
             // saveXMLDialog
             // 
             this.saveXMLDialog.DefaultExt = "xml";
@@ -4115,6 +4208,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Dungeons_dgvList)).EndInit();
             this.tP_Towns.ResumeLayout(false);
             this.tP_Towns.PerformLayout();
+            this.groupBox17.ResumeLayout(false);
+            this.groupBox17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Citys_PictureBox)).EndInit();
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
@@ -4545,6 +4640,15 @@
         private System.Windows.Forms.ToolStripMenuItem einstellungenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem monsterXMLExportierenToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveXMLDialog;
+        private System.Windows.Forms.GroupBox groupBox17;
+        private System.Windows.Forms.TextBox Städte_SelectedField_EventNr;
+        private System.Windows.Forms.Label label108;
+        private System.Windows.Forms.TextBox Städte_SelectedField_FieldTyp;
+        private System.Windows.Forms.Label label109;
+        private System.Windows.Forms.TextBox Städte_SelectedField_tbPosY;
+        private System.Windows.Forms.Label label62;
+        private System.Windows.Forms.TextBox Städte_SelectedField_tbPosX;
+        private System.Windows.Forms.Label label63;
     }
 }
 

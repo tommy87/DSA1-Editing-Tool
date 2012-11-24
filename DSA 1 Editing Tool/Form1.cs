@@ -55,6 +55,7 @@ namespace DSA_1_Editing_Tool
                     this.rTB_Debug.ResetText();
                     break;
             }
+            this.rTB_Debug.ScrollToCaret();
         }
 
         private void tSBOpenFile_Click(object sender, EventArgs e)
@@ -1009,9 +1010,12 @@ namespace DSA_1_Editing_Tool
         }
 
         //------------Städte-----------------------------
-        public int currentTown = -1;
-        public int selectedEvent = -1;
-        Bitmap TownImage;
+        private int currentTown = -1;
+        private int selectedEvent = -1;
+        private int selectetPos_X = -1;
+        private int selectetPos_Y = -1;
+
+        private Bitmap TownImage = null;
 
         private void Städte_dgvList_SelectionChanged(object sender, EventArgs e)
         {
@@ -1024,6 +1028,14 @@ namespace DSA_1_Editing_Tool
 
                 return;
             }
+
+            this.selectedEvent = -1;
+            this.selectetPos_X = -1;
+            this.selectetPos_Y = -1;
+            this.Städte_SelectedField_tbPosX.Text = "";
+            this.Städte_SelectedField_tbPosY.Text = "";
+            this.Städte_SelectedField_FieldTyp.Text = "";
+            this.Städte_SelectedField_EventNr.Text = "";
 
             try
             {
@@ -1107,6 +1119,41 @@ namespace DSA_1_Editing_Tool
                 this.Städte_Event_tbUnbekannt.Text = "";
             }
         }
+        private void Citys_PictureBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            int factorX = this.Citys_PictureBox.Width / 32;
+            int factorY = this.Citys_PictureBox.Height / 16;
+            //CDebugger.addDebugLine("Box at X:" + e.X/factorX + " Y:" + e.Y/factorY);
+
+            this.selectetPos_X = e.X / factorX;
+            this.selectetPos_Y = e.Y / factorY;
+
+            CTown town = this.itsDSAFileLoader.städte.itsTowns[this.currentTown].Value;
+            
+            bool bigcity = town.townData.Length == 16*32;
+            if (bigcity || (!bigcity && this.selectetPos_X < 16))
+            {
+                this.Städte_SelectedField_tbPosX.Text = this.selectetPos_X.ToString();
+                this.Städte_SelectedField_tbPosY.Text = this.selectetPos_Y.ToString();
+                this.Städte_SelectedField_FieldTyp.Text = town.TownByteToString(this.selectetPos_X, this.selectetPos_Y);
+                this.Städte_SelectedField_EventNr.Text = "kein Event";
+                this.selectedEvent = -1;
+
+                for (int i = 0; i <town.townEvents.Count; i++)
+                {
+                    CTownEvent townEvent = town.townEvents[i];
+                    if ((townEvent.Position_X == this.selectetPos_X) && (townEvent.Position_Y == this.selectetPos_Y))
+                    {
+                        this.Städte_SelectedField_EventNr.Text = "Event Nr. " + i.ToString() + "   (" + townEvent.EventTypToString() + ")";
+                        this.Städte_dgvStadtEventList.Rows[i].Selected = true;
+                        this.Städte_dgvStadtEventList.FirstDisplayedScrollingRowIndex = i;
+                        break;
+                    }
+                }
+            }
+
+            this.drawCity();
+        }
 
         private void drawCity()
         {
@@ -1137,6 +1184,24 @@ namespace DSA_1_Editing_Tool
                 {
                     Color color = getColorFromTownByte(town.townData[x, y]);
                     g.FillRectangle(new SolidBrush(color), new Rectangle(PanelBlock_X * x + 1, PanelBlock_Y * y + 1, PanelBlock_X - 2, PanelBlock_Y - 2));
+
+                    int value = ((town.townData[x, y] & 0xF0) >> 4);
+                    if (value != 0 && value != 10 && value != 11 && value != 12)
+                        switch (town.townData[x, y] & 0x0F)
+                        {
+                            case 0: //N
+                                g.FillRectangle(new SolidBrush(Color.Black), new Rectangle(PanelBlock_X * x + 3, PanelBlock_Y * y + 1, PanelBlock_X - 6, 2));
+                                break;
+                            case 1: //O
+                                g.FillRectangle(new SolidBrush(Color.Black), new Rectangle(PanelBlock_X * x + 1 + PanelBlock_X - 4, PanelBlock_Y * y + 3, 2, PanelBlock_Y - 6));
+                                break;
+                            case 2: //S
+                                g.FillRectangle(new SolidBrush(Color.Black), new Rectangle(PanelBlock_X * x + 3, PanelBlock_Y * y + 1 + PanelBlock_Y - 4, PanelBlock_X - 6, 2));
+                                break;
+                            case 3: //W
+                                g.FillRectangle(new SolidBrush(Color.Black), new Rectangle(PanelBlock_X * x + 1, PanelBlock_Y * y + 3, 2, PanelBlock_Y - 6));
+                                break;
+                        }
                 }
             }
             ////////////////////////////
@@ -1149,6 +1214,26 @@ namespace DSA_1_Editing_Tool
                     byte townByte = town.townData[townEvent.Position_X, townEvent.Position_Y];
                     Color color = getColorFromTownByteAndEventID(townByte, townEvent.Typ);
                     g.FillRectangle(new SolidBrush(color), new Rectangle(PanelBlock_X * townEvent.Position_X + 1, PanelBlock_Y * townEvent.Position_Y + 1, PanelBlock_X - 2, PanelBlock_Y - 2));
+
+                    int x = townEvent.Position_X;
+                    int y = townEvent.Position_Y;
+                    int value = ((town.townData[x, y] & 0xF0) >> 4);
+                    if (value != 0 && value != 10 && value != 11 && value != 12 && townEvent.Typ != 9 && townEvent.Typ != 11 && townEvent.Typ != 12)
+                        switch (town.townData[x, y] & 0x0F)
+                        {
+                            case 0: //N
+                                g.FillRectangle(new SolidBrush(Color.Black), new Rectangle(PanelBlock_X * x + 3, PanelBlock_Y * y + 1, PanelBlock_X - 6, 2));
+                                break;
+                            case 1: //O
+                                g.FillRectangle(new SolidBrush(Color.Black), new Rectangle(PanelBlock_X * x + 1 + PanelBlock_X - 4, PanelBlock_Y * y + 3, 2, PanelBlock_Y - 6));
+                                break;
+                            case 2: //S
+                                g.FillRectangle(new SolidBrush(Color.Black), new Rectangle(PanelBlock_X * x + 3, PanelBlock_Y * y + 1 + PanelBlock_Y - 4, PanelBlock_X - 6, 2));
+                                break;
+                            case 3: //W
+                                g.FillRectangle(new SolidBrush(Color.Black), new Rectangle(PanelBlock_X * x + 1, PanelBlock_Y * y + 3, 2, PanelBlock_Y - 6));
+                                break;
+                        }
                 }
                 catch(SystemException)
                 {
@@ -1163,6 +1248,11 @@ namespace DSA_1_Editing_Tool
             {
                 CTownEvent townEvent = town.townEvents[selectedEvent];
                 g.DrawRectangle(new Pen(Color.Red, 3.0f), new Rectangle(PanelBlock_X * townEvent.Position_X, PanelBlock_Y * townEvent.Position_Y, PanelBlock_X - 1, PanelBlock_Y - 1));
+            }
+
+            if (this.selectetPos_X != -1 && this.selectetPos_Y != -1)
+            {
+                g.DrawRectangle(new Pen(Color.RoyalBlue, 3.0f), new Rectangle(PanelBlock_X * this.selectetPos_X, PanelBlock_Y * this.selectetPos_Y, PanelBlock_X - 1, PanelBlock_Y - 1));
             }
 
             this.Citys_PictureBox.Image = TownImage;

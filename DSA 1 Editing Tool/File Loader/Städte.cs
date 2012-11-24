@@ -94,6 +94,42 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
         }
 
+        public string TownByteToString(int x, int y)
+        {
+            try
+            {
+                byte value = (byte)((this.townData[x, y] & 0xF0) >> 4);
+                switch (value)
+                {
+                    case 0: return "Straße(" + value.ToString() + ")";
+                    case 1: return "Tempel(" + value.ToString() + ")";
+                    case 2: return "Haus 1a (" + value.ToString() + ")";
+                    case 3: return "Haus 1b (" + value.ToString() + ")";
+                    case 4: return "Haus 2a(" + value.ToString() + ")";
+                    case 5: return "Haus 2b(" + value.ToString() + ")";
+                    case 6: return "Haus 3a(" + value.ToString() + ")";
+                    case 7: return "Haus 3b(" + value.ToString() + ")";
+                    case 8: return "Haus 3c(" + value.ToString() + ")";
+                    case 9: return "Haus 3d(" + value.ToString() + ")";
+                    case 10: return "Wasser(" + value.ToString() + ")";
+                    case 11: return "Gras(" + value.ToString() + ")";
+                    case 12: return "Wegweiser(" + value.ToString() + ")";
+                    case 13: return "Quest NPC(" + value.ToString() + ")";
+                    case 14: return "Leuchtturm (dunkel)(" + value.ToString() + ")";
+                    case 15: return "Leuchtturm (hell)(" + value.ToString() + ")";
+                    case 16:
+                        return "Straße/Unsichtbare Wand???(" + value.ToString() + ")";
+
+                    default:
+                        return "Fehler(";
+                }
+            }
+            catch (SystemException)
+            {
+                return "Fehler";
+            }
+        }
+
      
     }
     public class CTownEvent
