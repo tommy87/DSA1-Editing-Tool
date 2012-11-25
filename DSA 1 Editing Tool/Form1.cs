@@ -1011,7 +1011,6 @@ namespace DSA_1_Editing_Tool
 
         //------------Städte-----------------------------
         private int currentTown = -1;
-        private int selectedEvent = -1;
         private int selectetPos_X = -1;
         private int selectetPos_Y = -1;
 
@@ -1023,13 +1022,11 @@ namespace DSA_1_Editing_Tool
             if (towns.Count <= 0)
             {
                 this.currentTown = -1;
-                this.selectedEvent = -1;
                 this.drawCity();
 
                 return;
             }
 
-            this.selectedEvent = -1;
             this.selectetPos_X = -1;
             this.selectetPos_Y = -1;
             this.Städte_SelectedField_tbPosX.Text = "";
@@ -1060,7 +1057,6 @@ namespace DSA_1_Editing_Tool
                 CDebugger.addErrorLine(e2.ToString());
 
                 this.currentTown = -1;
-                this.selectedEvent = -1;
                 this.drawCity();
             }
         }
@@ -1071,7 +1067,6 @@ namespace DSA_1_Editing_Tool
 
             if (towns.Count <= 0 || events.Count <= 0)
             {
-                this.selectedEvent = -1;
                 this.drawCity();
 
                 return;
@@ -1084,33 +1079,47 @@ namespace DSA_1_Editing_Tool
 
                 if (this.itsDSAFileLoader.städte.itsTowns.Count < i)
                 {
-                    this.selectedEvent = -1;
                     return;
                 }
 
                 if (this.itsDSAFileLoader.städte.itsTowns[i].Value.townEvents.Count < j)
                 {
-                    this.selectedEvent = -1;
                     return;
                 }
 
-                this.selectedEvent = j;
-                this.drawCity();
+                CTown town = this.itsDSAFileLoader.städte.itsTowns[i].Value;
+                CTownEvent townEvent = town.townEvents[j];
 
-                CTownEvent townEvent = this.itsDSAFileLoader.städte.itsTowns[i].Value.townEvents[j];
+                this.selectetPos_X = townEvent.Position_X;
+                this.selectetPos_Y = townEvent.Position_Y;
+
+                this.Städte_SelectedField_tbPosX.Text = this.selectetPos_X.ToString();
+                this.Städte_SelectedField_tbPosY.Text = this.selectetPos_Y.ToString();
+                this.Städte_SelectedField_FieldTyp.Text = town.TownByteToString(this.selectetPos_X, this.selectetPos_Y);
+                this.Städte_SelectedField_EventNr.Text = "Event Nr. " + j.ToString() + "   (" + townEvent.EventTypToString() + ")";
+
                 this.Städte_Event_tbIndex_Global.Text = townEvent.Untertyp_2_unbekannte_Parameter.ToString();
                 this.Städte_Event_tbIndex_Lokal.Text = townEvent.Untertyp_1_Name_Icons_Angebot.ToString();
                 this.Städte_Event_tbPosX.Text = townEvent.Position_X.ToString();
                 this.Städte_Event_tbPosY.Text = townEvent.Position_Y.ToString();
                 this.Städte_Event_tbTyp.Text = townEvent.EventTypToString();
                 this.Städte_Event_tbUnbekannt.Text = townEvent.Untertyp_3_Reisen.ToString();
+
+                this.drawCity();
             }
             catch (SystemException e2)
             {
                 CDebugger.addErrorLine("Fehler beim laden der Stadtevents:");
                 CDebugger.addErrorLine(e2.ToString());
 
-                this.selectedEvent = -1;
+                this.selectetPos_X = -1;
+                this.selectetPos_Y = -1;
+
+                this.Städte_SelectedField_tbPosX.Text = "";
+                this.Städte_SelectedField_tbPosY.Text = "";
+                this.Städte_SelectedField_FieldTyp.Text = "";
+                this.Städte_SelectedField_EventNr.Text = "";
+
                 this.Städte_Event_tbIndex_Global.Text = "";
                 this.Städte_Event_tbIndex_Lokal.Text = "";
                 this.Städte_Event_tbPosX.Text = "";
@@ -1137,7 +1146,6 @@ namespace DSA_1_Editing_Tool
                 this.Städte_SelectedField_tbPosY.Text = this.selectetPos_Y.ToString();
                 this.Städte_SelectedField_FieldTyp.Text = town.TownByteToString(this.selectetPos_X, this.selectetPos_Y);
                 this.Städte_SelectedField_EventNr.Text = "kein Event";
-                this.selectedEvent = -1;
 
                 for (int i = 0; i <town.townEvents.Count; i++)
                 {
@@ -1212,7 +1220,7 @@ namespace DSA_1_Editing_Tool
                 try
                 {
                     byte townByte = town.townData[townEvent.Position_X, townEvent.Position_Y];
-                    Color color = getColorFromTownByteAndEventID(townByte, townEvent.Typ);
+                    Color color = getOverrideColorFromTownByteAndEventID(townByte, townEvent.Typ);
                     g.FillRectangle(new SolidBrush(color), new Rectangle(PanelBlock_X * townEvent.Position_X + 1, PanelBlock_Y * townEvent.Position_Y + 1, PanelBlock_X - 2, PanelBlock_Y - 2));
 
                     int x = townEvent.Position_X;
@@ -1244,12 +1252,6 @@ namespace DSA_1_Editing_Tool
             //////////////////////
             //    Eventmarker   //
             //////////////////////
-            if (this.selectedEvent != -1 && this.selectedEvent < town.townEvents.Count)
-            {
-                CTownEvent townEvent = town.townEvents[selectedEvent];
-                g.DrawRectangle(new Pen(Color.Red, 3.0f), new Rectangle(PanelBlock_X * townEvent.Position_X, PanelBlock_Y * townEvent.Position_Y, PanelBlock_X - 1, PanelBlock_Y - 1));
-            }
-
             if (this.selectetPos_X != -1 && this.selectetPos_Y != -1)
             {
                 g.DrawRectangle(new Pen(Color.RoyalBlue, 3.0f), new Rectangle(PanelBlock_X * this.selectetPos_X, PanelBlock_Y * this.selectetPos_Y, PanelBlock_X - 1, PanelBlock_Y - 1));
@@ -1293,17 +1295,9 @@ namespace DSA_1_Editing_Tool
                     return Color.FloralWhite;   
             }
         }
-        private Color getColorFromTownByteAndEventID(byte townByte, byte eventID)
+        private Color getOverrideColorFromTownByteAndEventID(byte townByte, byte eventID)
         {
-            //townByte = (byte)((townByte & 0xF0) >> 4);
-
-            //if (townByte == 14 || townByte == 15 || (townByte == 6 && eventID == 17))
-            //{
-            //    //return Color.FromArgb(0, 0, 0, 0);  //durchsichtig
-            //    return Color.FromArgb(52, 50, 125);
-            //}
-
-            //townbyte wird aktuell noch ignoriert
+            townByte = (byte)((townByte & 0xF0) >> 4);
 
             switch (eventID)
             {
@@ -1328,7 +1322,11 @@ namespace DSA_1_Editing_Tool
                 //    return ("Dungeon (" + this.Typ.ToString() + ")");
                 //case 16:
                 //    return ("Haus zum einbrechen? (" + this.Typ.ToString() + ")");
-                case 17: return Color.FromArgb(0, 0, 0, 0);       //Besondere Gebäude
+                case 17: 
+                    if (townByte == 4)
+                        return Color.Aquamarine;                //Herberge
+                    else
+                        return Color.FromArgb(0, 0, 0, 0);       //Besondere Gebäude
                 //case 18:
                 //    return ("Lager? (" + this.Typ.ToString() + ")");
 
