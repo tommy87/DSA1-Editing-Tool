@@ -87,7 +87,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             public Byte[] IN_Würfel = { 0, 0 };
             public Byte[] KK_Würfel = { 0, 0 };
 
-            public Byte[] LE_Würfel = { 0, 0 };    //das Ergebnis wird durch 6 geteilt und mit 5 multipliziert
+            public Byte[] LE_Würfel = { 0, 0 };    //das Ergebnis wird durch 6 geteilt und mit 5 multipliziert (war eine Last minute änderung der Entwickler)
             public Byte[] AE_Würfel = { 0, 0 };
 
             public Byte[] MR_Würfel = { 0, 0 };
@@ -159,6 +159,47 @@ namespace DSA_1_Editing_Tool.File_Loader
                 this.Flucht_Bei_XX_LP = data[position + 34];
             }
 
+            public string größenklasseToString()
+            {
+                switch (this.Größenklasse)
+                {
+                    case 2:
+                        return ("Klein(" + this.Größenklasse.ToString() + ")");
+                    case 3:
+                        return ("Normal(" + this.Größenklasse.ToString() + ")");
+                    case 4:
+                        return ("Groß(" + this.Größenklasse.ToString() + ")");
+                    case 5:
+                        return ("Riesig(" + this.Größenklasse.ToString() + ")");
+                    default:
+                        return ("???(" + this.Größenklasse.ToString() + ")");
+                }
+            }
+            public string monsterTypToString()
+            {
+                switch (this.MonsterTyp)
+                {
+                    case 0:
+                        return ("Normal(" + this.MonsterTyp.ToString() + ")");
+                    case 1:
+                        return ("Tier(" + this.MonsterTyp.ToString() + ")");
+                    default:
+                        return ("???(" + this.MonsterTyp.ToString() + ")");
+                }
+            }
+            public string immunitätGegenNormaleWaffenToString()
+            {
+                switch (this.Immunität_gegen_Normale_Waffen)
+                {
+                    case 0:
+                        return ("keine(" + this.Immunität_gegen_Normale_Waffen.ToString() + ")");
+                    case 1:
+                        return ("Immun(" + this.Immunität_gegen_Normale_Waffen.ToString() + ")");
+                    default:
+                        return ("???(" + this.Immunität_gegen_Normale_Waffen.ToString() + ")");
+                }
+            }
+
             /**
              * schreibt das Monster in einen bereits initialisierten XMLTextWriter
              * @input       wr  XMLTextWriter       das Ziel
@@ -208,7 +249,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 wr.WriteEndElement();
                 wr.WriteEndElement();
             }
-
             private void writeXMLDice(XmlTextWriter wr, string elname, byte[] data)
             {
                 wr.WriteStartElement(elname);

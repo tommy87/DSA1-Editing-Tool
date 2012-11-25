@@ -132,8 +132,8 @@ namespace DSA_1_Editing_Tool
                 fileset_1 = this.getFileByName("KSLBACK.DAT", false);
                 this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
 
-                fileset_1 = this.getFileByName("BSKILLS.DAT", false);
-                this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
+                //fileset_1 = this.getFileByName("BSKILLS.DAT", false);
+                //this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
 
                 fileset_1 = this.getFileByName("POPUP.DAT", false);
                 this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
@@ -182,9 +182,6 @@ namespace DSA_1_Editing_Tool
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
             }
 
-            //fileset_1 = this.getFileByName("ANIS", false);
-            //this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
-
             if (Properties.Settings.Default.loadAnims)
             {
                 //---------Bild Archive-----------------------
@@ -198,7 +195,7 @@ namespace DSA_1_Editing_Tool
                 fileset_2 = this.getFileByName("WFIGS.TAB", false);
                 this.bilder.addArchivToList(ref this.MAIN_DAT, fileset_1, fileset_2);
 
-                //Anis fällt irgendwie aus der Reihe, verschoben zu den normalen Bildern
+                //Bilder im Archiv ANIS sind in einem alten Animationsformat (siehe wiki)
                 fileset_1 = this.getFileByName("ANIS", false);
                 fileset_2 = this.getFileByName("ANIS.TAB", false);
                 this.bilder.addArchivToList(ref this.MAIN_DAT, fileset_1, fileset_2);
