@@ -65,6 +65,7 @@
     <Compile Include="DSAFileLoader.cs" />
     <Compile Include="FarbPalette.cs" />
     <Compile Include="File Loader\Bilder.cs" />
+    <Compile Include="File Loader\Colors.cs" />
     <Compile Include="File Loader\Dialoge.cs" />
     <Compile Include="File Loader\Dungeons.cs" />
     <Compile Include="File Loader\Items.cs" />

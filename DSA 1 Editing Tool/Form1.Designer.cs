@@ -399,6 +399,9 @@
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
             this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
+            this.Dungeons_KeyColor_Door = new System.Windows.Forms.Panel();
+            this.Dungeons_KeyColor_Fight = new System.Windows.Forms.Panel();
+            this.Dungeons_KeyColor_Stair = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -737,6 +740,7 @@
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.Dungeons_KeyColor_Door);
             this.groupBox10.Controls.Add(this.Dungeons_Doors_tBStatus);
             this.groupBox10.Controls.Add(this.Dungeons_Doors_tBEbene);
             this.groupBox10.Controls.Add(this.label78);
@@ -863,6 +867,7 @@
             // 
             // groupBox9
             // 
+            this.groupBox9.Controls.Add(this.Dungeons_KeyColor_Stair);
             this.groupBox9.Controls.Add(this.label80);
             this.groupBox9.Controls.Add(this.label81);
             this.groupBox9.Controls.Add(this.label82);
@@ -1036,6 +1041,7 @@
             // 
             // groupBox8
             // 
+            this.groupBox8.Controls.Add(this.Dungeons_KeyColor_Fight);
             this.groupBox8.Controls.Add(this.label77);
             this.groupBox8.Controls.Add(this.tabControl2);
             this.groupBox8.Controls.Add(this.Dungeons_Fights_tBErstAP);
@@ -4160,6 +4166,27 @@
             this.saveXMLDialog.Filter = "MonsterXML|*.xml|Alle Dateien|*.*";
             this.saveXMLDialog.Title = "XML-File speichern unter";
             // 
+            // Dungeons_KeyColor_Door
+            // 
+            this.Dungeons_KeyColor_Door.Location = new System.Drawing.Point(152, 73);
+            this.Dungeons_KeyColor_Door.Name = "Dungeons_KeyColor_Door";
+            this.Dungeons_KeyColor_Door.Size = new System.Drawing.Size(15, 15);
+            this.Dungeons_KeyColor_Door.TabIndex = 26;
+            // 
+            // Dungeons_KeyColor_Fight
+            // 
+            this.Dungeons_KeyColor_Fight.Location = new System.Drawing.Point(192, 74);
+            this.Dungeons_KeyColor_Fight.Name = "Dungeons_KeyColor_Fight";
+            this.Dungeons_KeyColor_Fight.Size = new System.Drawing.Size(15, 15);
+            this.Dungeons_KeyColor_Fight.TabIndex = 46;
+            // 
+            // Dungeons_KeyColor_Stair
+            // 
+            this.Dungeons_KeyColor_Stair.Location = new System.Drawing.Point(152, 72);
+            this.Dungeons_KeyColor_Stair.Name = "Dungeons_KeyColor_Stair";
+            this.Dungeons_KeyColor_Stair.Size = new System.Drawing.Size(15, 15);
+            this.Dungeons_KeyColor_Stair.TabIndex = 46;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4649,6 +4676,9 @@
         private System.Windows.Forms.Label label62;
         private System.Windows.Forms.TextBox Städte_SelectedField_tbPosX;
         private System.Windows.Forms.Label label63;
+        private System.Windows.Forms.Panel Dungeons_KeyColor_Door;
+        private System.Windows.Forms.Panel Dungeons_KeyColor_Stair;
+        private System.Windows.Forms.Panel Dungeons_KeyColor_Fight;
     }
 }
 
