@@ -107,7 +107,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             public byte Stufe = 0;
 
             public byte Größenklasse = 0;
-            public byte MonsterTyp = 0; //offenbar werden einzelme bits gesetzt
+            public byte MonsterTyp = 0; //offenbar werden einzelne bits gesetzt
 
             public byte Anzahl_Geschosse = 0;
             public Byte[] Schaden_Schusswaffen_Würfel = { 0, 0 };

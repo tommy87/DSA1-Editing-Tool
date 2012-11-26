@@ -165,6 +165,24 @@ namespace DSA_1_Editing_Tool.File_Loader
                         }
                     }
                 }
+
+                public string FieldToString(int x, int y)
+                {
+                    int value = ((this.dungeonData[x,y] & 0xF0) >> 4);
+                    switch (value)
+                    {
+                        case 0: return "normaler Boden(" + value.ToString() + ")";
+                        case 1: return "Illusionswand A(" + value.ToString() + ")";
+                        case 2: return "Illusionswand B(" + value.ToString() + ")";
+                        case 3: return "Treppe runter(" + value.ToString() + ")";
+                        case 4: return "Treppe rauf(" + value.ToString() + ")";
+                        case 8: return "Schatztruhe(" + value.ToString() + ")";
+                        case 15: return "Wand(" + value.ToString() + ")";
+
+                        default:
+                            return "???(" + value.ToString() + ")";
+                    }
+                }
             }
             public class CDungeonFight
             {

@@ -23,6 +23,8 @@ namespace DSA_1_Editing_Tool
             setdlg.Hide();
 
             CDebugger.IncommingMessage += HandleDebugMessage;
+
+            this.initKeyColors();
         }
         private void Form1_Shown(object sender, EventArgs e)
         {
@@ -99,6 +101,14 @@ namespace DSA_1_Editing_Tool
                 }
                 this.loadAllTabs();
             }
+        }
+
+        private void initKeyColors()
+        {
+            this.Dungeons_KeyColor_Door.BackColor = Colors.keyColor_Door;
+            this.Dungeons_KeyColor_Fight.BackColor = Colors.keyColor_Fight;
+            this.Dungeons_KeyColor_Stair.BackColor = Colors.keyColor_Stair;
+            this.Dungeons_KeyColor_DungeonField.BackColor = Colors.keyColor_DungeonField;
         }
 
         private void loadAllTabs()
@@ -193,10 +203,6 @@ namespace DSA_1_Editing_Tool
             {
                 this.Dungeons_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.dungeons.itsDungeons[i].Key);
             }
-
-            this.Dungeons_KeyColor_Door.BackColor = Colors.keyColor_Door;
-            this.Dungeons_KeyColor_Fight.BackColor = Colors.keyColor_Fight;
-            this.Dungeons_KeyColor_Stair.BackColor = Colors.keyColor_Stair;
         }
         private void loadBilderTab()
         {
@@ -1345,6 +1351,8 @@ namespace DSA_1_Editing_Tool
         private int Dungeonmarker_selectetFight = -1;
         private int Dungeonmarker_selectetDoor = -1;
         private int Dungeonmarker_selectetStair = -1;
+        private int Dungeonmarker_selectedPosX = -1;
+        private int Dungeonmarker_selectedPosY = -1;
         private Bitmap DungeonImage = null;
 
         private void Dungeons_dgvList_SelectionChanged(object sender, EventArgs e)
@@ -1362,6 +1370,13 @@ namespace DSA_1_Editing_Tool
             this.Dungeonmarker_selectetFight = -1;
             this.Dungeonmarker_selectetDoor = -1;
             this.Dungeonmarker_selectetStair = -1;
+
+            this.Dungeonmarker_selectedPosX = -1;
+            this.Dungeonmarker_selectedPosY = -1;
+
+            this.Dungeons_SelectedField_tbPosX.Text = "";
+            this.Dungeons_SelectedField_tbPosY.Text = "";
+            this.Dungeons_SelectedField_tbFieldTyp.Text = "";
 
             try
             {
@@ -1425,6 +1440,13 @@ namespace DSA_1_Editing_Tool
                 this.Dungeonmarker_currentDungeonFloor = -1;
                 return;
             }
+
+            this.Dungeonmarker_selectedPosX = -1;
+            this.Dungeonmarker_selectedPosY = -1;
+
+            this.Dungeons_SelectedField_tbPosX.Text = "";
+            this.Dungeons_SelectedField_tbPosY.Text = "";
+            this.Dungeons_SelectedField_tbFieldTyp.Text = "";
 
             try
             {
@@ -1678,6 +1700,88 @@ namespace DSA_1_Editing_Tool
 
             this.drawDungeon();
         }
+        private void Dungeons_PictureBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            this.Dungeons_SelectedField_tbEvent.Text = "kein Event";
+
+            if (this.Dungeonmarker_currentDungeon != -1 && this.Dungeonmarker_currentDungeonFloor != -1)
+            {
+
+                int factorX = this.Dungeons_PictureBox.Width / 16;
+                int factorY = this.Dungeons_PictureBox.Height / 16;
+                //CDebugger.addDebugLine("Dungeon_PictureBox at X:" + e.X/factorX + " Y:" + e.Y/factorY);
+
+                this.Dungeonmarker_selectedPosX = e.X / factorX;
+                this.Dungeonmarker_selectedPosY = e.Y / factorY;
+
+                CDungeons.CDungeon dungeon = this.itsDSAFileLoader.dungeons.itsDungeons[this.Dungeonmarker_currentDungeon].Value;
+
+                this.Dungeons_SelectedField_tbPosX.Text = this.Dungeonmarker_selectedPosX.ToString();
+                this.Dungeons_SelectedField_tbPosY.Text = this.Dungeonmarker_selectedPosY.ToString();
+                this.Dungeons_SelectedField_tbFieldTyp.Text = dungeon.floors[this.Dungeonmarker_currentDungeonFloor].FieldToString(this.Dungeonmarker_selectedPosX, this.Dungeonmarker_selectedPosY);
+
+                bool found = false;
+                for (int i = 0; i < dungeon.doors.Count; i++)
+                {
+                    CDungeons.CDungeon.CDungeonDoor door = dungeon.doors[i];
+                    if (door.Ebene == this.Dungeonmarker_currentDungeonFloor && door.PositionX == this.Dungeonmarker_selectedPosX && door.PositionY == this.Dungeonmarker_selectedPosY)
+                    {
+                        this.Dungeons_SelectedField_tbEvent.Text = "Tür Nr. " + i.ToString();
+                        if (this.Dungeons_dgvDoors.Rows.Count > i)
+                            this.Dungeons_dgvDoors.Rows[i].Selected = true;
+                        
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found)
+                {
+                    for (int i = 0; i < dungeon.fights.Count; i++)
+                    {
+                        CDungeons.CDungeon.CDungeonFight fight = dungeon.fights[i];
+                        if (fight.Ebene == this.Dungeonmarker_currentDungeonFloor && fight.PositionX == this.Dungeonmarker_selectedPosX && fight.PositionY == this.Dungeonmarker_selectedPosY)
+                        {
+                            this.Dungeons_SelectedField_tbEvent.Text = "Kampf Nr. " + i.ToString();
+                            if (this.Dungeons_dgvFights.Rows.Count > i)
+                                this.Dungeons_dgvFights.Rows[i].Selected = true;
+
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+
+                if (!found)
+                {
+                    for (int i = 0; i < dungeon.stairs.Count; i++)
+                    {
+                        CDungeons.CDungeon.CDungeonStair stair = dungeon.stairs[i];
+                        if (stair.Ebene == this.Dungeonmarker_currentDungeonFloor && stair.PositionX == this.Dungeonmarker_selectedPosX && stair.PositionY == this.Dungeonmarker_selectedPosY)
+                        {
+                            this.Dungeons_SelectedField_tbEvent.Text = "Treppe Nr. " + i.ToString();
+                            if (this.Dungeons_dgvStairs.Rows.Count > i)
+                                this.Dungeons_dgvStairs.Rows[i].Selected = true;
+
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+
+            }
+            else
+            {
+                this.Dungeonmarker_selectedPosX = -1;
+                this.Dungeonmarker_selectedPosY = -1;
+
+                this.Dungeons_SelectedField_tbPosX.Text = "";
+                this.Dungeons_SelectedField_tbPosY.Text = "";
+                this.Dungeons_SelectedField_tbFieldTyp.Text = "";
+            }
+
+            this.drawDungeon();
+        }  
 
         private void drawDungeon()
         {
@@ -1746,6 +1850,12 @@ namespace DSA_1_Editing_Tool
                 {
                     g.DrawRectangle(new Pen(Colors.keyColor_Fight, 3), new Rectangle(fight.PositionX * PanelBlock_X, fight.PositionY * PanelBlock_Y, PanelBlock_X - 1, PanelBlock_Y - 1));
                 }
+            }
+
+            //-----field------
+            if (this.Dungeonmarker_selectedPosX != -1 && this.Dungeonmarker_selectedPosY != -1)
+            {
+                g.DrawRectangle(new Pen(Colors.keyColor_DungeonField, 3), new Rectangle(this.Dungeonmarker_selectedPosX * PanelBlock_X, this.Dungeonmarker_selectedPosY * PanelBlock_Y, PanelBlock_X - 1, PanelBlock_Y - 1));
             }
 
             this.Dungeons_PictureBox.Image = DungeonImage;
@@ -2087,6 +2197,6 @@ namespace DSA_1_Editing_Tool
             {
                 this.itsDSAFileLoader.monster.exportMonsterXML(saveXMLDialog.FileName);
             }
-        }        
+        }      
     }
 }

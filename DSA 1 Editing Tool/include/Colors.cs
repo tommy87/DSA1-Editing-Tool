@@ -11,5 +11,6 @@ namespace DSA_1_Editing_Tool
         public static Color keyColor_Fight = Color.LightSeaGreen;
         public static Color keyColor_Door = Color.RoyalBlue;
         public static Color keyColor_Stair = Color.LightSalmon;
+        public static Color keyColor_DungeonField = Color.GreenYellow;
     }
 }

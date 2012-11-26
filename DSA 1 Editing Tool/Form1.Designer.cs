@@ -54,8 +54,16 @@
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Dungeons = new System.Windows.Forms.TabPage();
+            this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.Dungeons_SelectedField_tbFieldTyp = new System.Windows.Forms.TextBox();
+            this.label112 = new System.Windows.Forms.Label();
+            this.Dungeons_SelectedField_tbPosY = new System.Windows.Forms.TextBox();
+            this.label110 = new System.Windows.Forms.Label();
+            this.Dungeons_SelectedField_tbPosX = new System.Windows.Forms.TextBox();
+            this.label111 = new System.Windows.Forms.Label();
             this.Dungeons_PictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
+            this.Dungeons_KeyColor_Door = new System.Windows.Forms.Panel();
             this.Dungeons_Doors_tBStatus = new System.Windows.Forms.TextBox();
             this.Dungeons_Doors_tBEbene = new System.Windows.Forms.TextBox();
             this.label78 = new System.Windows.Forms.Label();
@@ -69,6 +77,7 @@
             this.Dungeons_dgvDoors = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.Dungeons_KeyColor_Stair = new System.Windows.Forms.Panel();
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
@@ -87,6 +96,7 @@
             this.Dungeons_dgvStairs = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.Dungeons_KeyColor_Fight = new System.Windows.Forms.Panel();
             this.label77 = new System.Windows.Forms.Label();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -399,9 +409,9 @@
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
             this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
-            this.Dungeons_KeyColor_Door = new System.Windows.Forms.Panel();
-            this.Dungeons_KeyColor_Fight = new System.Windows.Forms.Panel();
-            this.Dungeons_KeyColor_Stair = new System.Windows.Forms.Panel();
+            this.Dungeons_SelectedField_tbEvent = new System.Windows.Forms.TextBox();
+            this.label113 = new System.Windows.Forms.Label();
+            this.Dungeons_KeyColor_DungeonField = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -410,6 +420,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Bilder_dgvBildnummer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bilder_dgvList)).BeginInit();
             this.tP_Dungeons.SuspendLayout();
+            this.groupBox18.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dungeons_PictureBox)).BeginInit();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dungeons_dgvDoors)).BeginInit();
@@ -717,6 +728,7 @@
             // tP_Dungeons
             // 
             this.tP_Dungeons.BackColor = System.Drawing.Color.Peru;
+            this.tP_Dungeons.Controls.Add(this.groupBox18);
             this.tP_Dungeons.Controls.Add(this.Dungeons_PictureBox);
             this.tP_Dungeons.Controls.Add(this.groupBox10);
             this.tP_Dungeons.Controls.Add(this.groupBox9);
@@ -729,6 +741,72 @@
             this.tP_Dungeons.TabIndex = 6;
             this.tP_Dungeons.Text = "Dungeons";
             // 
+            // groupBox18
+            // 
+            this.groupBox18.Controls.Add(this.Dungeons_KeyColor_DungeonField);
+            this.groupBox18.Controls.Add(this.Dungeons_SelectedField_tbEvent);
+            this.groupBox18.Controls.Add(this.label113);
+            this.groupBox18.Controls.Add(this.Dungeons_SelectedField_tbFieldTyp);
+            this.groupBox18.Controls.Add(this.label112);
+            this.groupBox18.Controls.Add(this.Dungeons_SelectedField_tbPosY);
+            this.groupBox18.Controls.Add(this.label110);
+            this.groupBox18.Controls.Add(this.Dungeons_SelectedField_tbPosX);
+            this.groupBox18.Controls.Add(this.label111);
+            this.groupBox18.Location = new System.Drawing.Point(599, 12);
+            this.groupBox18.Name = "groupBox18";
+            this.groupBox18.Size = new System.Drawing.Size(308, 84);
+            this.groupBox18.TabIndex = 17;
+            this.groupBox18.TabStop = false;
+            this.groupBox18.Text = "Ausgwähltes Feld";
+            // 
+            // Dungeons_SelectedField_tbFieldTyp
+            // 
+            this.Dungeons_SelectedField_tbFieldTyp.Location = new System.Drawing.Point(179, 19);
+            this.Dungeons_SelectedField_tbFieldTyp.Name = "Dungeons_SelectedField_tbFieldTyp";
+            this.Dungeons_SelectedField_tbFieldTyp.Size = new System.Drawing.Size(121, 20);
+            this.Dungeons_SelectedField_tbFieldTyp.TabIndex = 25;
+            // 
+            // label112
+            // 
+            this.label112.AutoSize = true;
+            this.label112.Location = new System.Drawing.Point(122, 22);
+            this.label112.Name = "label112";
+            this.label112.Size = new System.Drawing.Size(51, 13);
+            this.label112.TabIndex = 24;
+            this.label112.Text = "Feld Typ:";
+            // 
+            // Dungeons_SelectedField_tbPosY
+            // 
+            this.Dungeons_SelectedField_tbPosY.Location = new System.Drawing.Point(76, 45);
+            this.Dungeons_SelectedField_tbPosY.Name = "Dungeons_SelectedField_tbPosY";
+            this.Dungeons_SelectedField_tbPosY.Size = new System.Drawing.Size(36, 20);
+            this.Dungeons_SelectedField_tbPosY.TabIndex = 23;
+            // 
+            // label110
+            // 
+            this.label110.AutoSize = true;
+            this.label110.Location = new System.Drawing.Point(13, 48);
+            this.label110.Name = "label110";
+            this.label110.Size = new System.Drawing.Size(57, 13);
+            this.label110.TabIndex = 22;
+            this.label110.Text = "Position Y:";
+            // 
+            // Dungeons_SelectedField_tbPosX
+            // 
+            this.Dungeons_SelectedField_tbPosX.Location = new System.Drawing.Point(76, 19);
+            this.Dungeons_SelectedField_tbPosX.Name = "Dungeons_SelectedField_tbPosX";
+            this.Dungeons_SelectedField_tbPosX.Size = new System.Drawing.Size(36, 20);
+            this.Dungeons_SelectedField_tbPosX.TabIndex = 21;
+            // 
+            // label111
+            // 
+            this.label111.AutoSize = true;
+            this.label111.Location = new System.Drawing.Point(13, 22);
+            this.label111.Name = "label111";
+            this.label111.Size = new System.Drawing.Size(57, 13);
+            this.label111.TabIndex = 20;
+            this.label111.Text = "Position X:";
+            // 
             // Dungeons_PictureBox
             // 
             this.Dungeons_PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -737,6 +815,7 @@
             this.Dungeons_PictureBox.Size = new System.Drawing.Size(160, 160);
             this.Dungeons_PictureBox.TabIndex = 16;
             this.Dungeons_PictureBox.TabStop = false;
+            this.Dungeons_PictureBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Dungeons_PictureBox_MouseClick);
             // 
             // groupBox10
             // 
@@ -752,12 +831,19 @@
             this.groupBox10.Controls.Add(this.Dungeons_Doors_tBPosX);
             this.groupBox10.Controls.Add(this.label67);
             this.groupBox10.Controls.Add(this.Dungeons_dgvDoors);
-            this.groupBox10.Location = new System.Drawing.Point(599, 252);
+            this.groupBox10.Location = new System.Drawing.Point(599, 335);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(308, 235);
+            this.groupBox10.Size = new System.Drawing.Size(308, 152);
             this.groupBox10.TabIndex = 15;
             this.groupBox10.TabStop = false;
             this.groupBox10.Text = "Türen";
+            // 
+            // Dungeons_KeyColor_Door
+            // 
+            this.Dungeons_KeyColor_Door.Location = new System.Drawing.Point(152, 73);
+            this.Dungeons_KeyColor_Door.Name = "Dungeons_KeyColor_Door";
+            this.Dungeons_KeyColor_Door.Size = new System.Drawing.Size(15, 15);
+            this.Dungeons_KeyColor_Door.TabIndex = 26;
             // 
             // Dungeons_Doors_tBStatus
             // 
@@ -854,7 +940,7 @@
             this.Dungeons_dgvDoors.ReadOnly = true;
             this.Dungeons_dgvDoors.RowHeadersVisible = false;
             this.Dungeons_dgvDoors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dungeons_dgvDoors.Size = new System.Drawing.Size(94, 210);
+            this.Dungeons_dgvDoors.Size = new System.Drawing.Size(94, 124);
             this.Dungeons_dgvDoors.TabIndex = 12;
             this.Dungeons_dgvDoors.SelectionChanged += new System.EventHandler(this.Dungeons_dgvDoors_SelectionChanged);
             // 
@@ -884,12 +970,19 @@
             this.groupBox9.Controls.Add(this.Dungeons_Stairs_tBPosX);
             this.groupBox9.Controls.Add(this.label65);
             this.groupBox9.Controls.Add(this.Dungeons_dgvStairs);
-            this.groupBox9.Location = new System.Drawing.Point(599, 12);
+            this.groupBox9.Location = new System.Drawing.Point(599, 102);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(308, 227);
             this.groupBox9.TabIndex = 14;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Treppen";
+            // 
+            // Dungeons_KeyColor_Stair
+            // 
+            this.Dungeons_KeyColor_Stair.Location = new System.Drawing.Point(152, 72);
+            this.Dungeons_KeyColor_Stair.Name = "Dungeons_KeyColor_Stair";
+            this.Dungeons_KeyColor_Stair.Size = new System.Drawing.Size(15, 15);
+            this.Dungeons_KeyColor_Stair.TabIndex = 46;
             // 
             // label80
             // 
@@ -1061,6 +1154,13 @@
             this.groupBox8.TabIndex = 13;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Kämpfe";
+            // 
+            // Dungeons_KeyColor_Fight
+            // 
+            this.Dungeons_KeyColor_Fight.Location = new System.Drawing.Point(192, 74);
+            this.Dungeons_KeyColor_Fight.Name = "Dungeons_KeyColor_Fight";
+            this.Dungeons_KeyColor_Fight.Size = new System.Drawing.Size(15, 15);
+            this.Dungeons_KeyColor_Fight.TabIndex = 46;
             // 
             // label77
             // 
@@ -4166,26 +4266,28 @@
             this.saveXMLDialog.Filter = "MonsterXML|*.xml|Alle Dateien|*.*";
             this.saveXMLDialog.Title = "XML-File speichern unter";
             // 
-            // Dungeons_KeyColor_Door
+            // Dungeons_SelectedField_tbEvent
             // 
-            this.Dungeons_KeyColor_Door.Location = new System.Drawing.Point(152, 73);
-            this.Dungeons_KeyColor_Door.Name = "Dungeons_KeyColor_Door";
-            this.Dungeons_KeyColor_Door.Size = new System.Drawing.Size(15, 15);
-            this.Dungeons_KeyColor_Door.TabIndex = 26;
+            this.Dungeons_SelectedField_tbEvent.Location = new System.Drawing.Point(179, 45);
+            this.Dungeons_SelectedField_tbEvent.Name = "Dungeons_SelectedField_tbEvent";
+            this.Dungeons_SelectedField_tbEvent.Size = new System.Drawing.Size(121, 20);
+            this.Dungeons_SelectedField_tbEvent.TabIndex = 27;
             // 
-            // Dungeons_KeyColor_Fight
+            // label113
             // 
-            this.Dungeons_KeyColor_Fight.Location = new System.Drawing.Point(192, 74);
-            this.Dungeons_KeyColor_Fight.Name = "Dungeons_KeyColor_Fight";
-            this.Dungeons_KeyColor_Fight.Size = new System.Drawing.Size(15, 15);
-            this.Dungeons_KeyColor_Fight.TabIndex = 46;
+            this.label113.AutoSize = true;
+            this.label113.Location = new System.Drawing.Point(122, 48);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(38, 13);
+            this.label113.TabIndex = 26;
+            this.label113.Text = "Event:";
             // 
-            // Dungeons_KeyColor_Stair
+            // Dungeons_KeyColor_DungeonField
             // 
-            this.Dungeons_KeyColor_Stair.Location = new System.Drawing.Point(152, 72);
-            this.Dungeons_KeyColor_Stair.Name = "Dungeons_KeyColor_Stair";
-            this.Dungeons_KeyColor_Stair.Size = new System.Drawing.Size(15, 15);
-            this.Dungeons_KeyColor_Stair.TabIndex = 46;
+            this.Dungeons_KeyColor_DungeonField.Location = new System.Drawing.Point(16, 63);
+            this.Dungeons_KeyColor_DungeonField.Name = "Dungeons_KeyColor_DungeonField";
+            this.Dungeons_KeyColor_DungeonField.Size = new System.Drawing.Size(15, 15);
+            this.Dungeons_KeyColor_DungeonField.TabIndex = 47;
             // 
             // Form1
             // 
@@ -4212,6 +4314,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Bilder_dgvBildnummer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Bilder_dgvList)).EndInit();
             this.tP_Dungeons.ResumeLayout(false);
+            this.groupBox18.ResumeLayout(false);
+            this.groupBox18.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Dungeons_PictureBox)).EndInit();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
@@ -4679,6 +4783,16 @@
         private System.Windows.Forms.Panel Dungeons_KeyColor_Door;
         private System.Windows.Forms.Panel Dungeons_KeyColor_Stair;
         private System.Windows.Forms.Panel Dungeons_KeyColor_Fight;
+        private System.Windows.Forms.GroupBox groupBox18;
+        private System.Windows.Forms.TextBox Dungeons_SelectedField_tbFieldTyp;
+        private System.Windows.Forms.Label label112;
+        private System.Windows.Forms.TextBox Dungeons_SelectedField_tbPosY;
+        private System.Windows.Forms.Label label110;
+        private System.Windows.Forms.TextBox Dungeons_SelectedField_tbPosX;
+        private System.Windows.Forms.Label label111;
+        private System.Windows.Forms.TextBox Dungeons_SelectedField_tbEvent;
+        private System.Windows.Forms.Label label113;
+        private System.Windows.Forms.Panel Dungeons_KeyColor_DungeonField;
     }
 }
 
