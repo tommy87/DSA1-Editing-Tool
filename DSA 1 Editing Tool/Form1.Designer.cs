@@ -55,6 +55,9 @@
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Dungeons = new System.Windows.Forms.TabPage();
             this.groupBox18 = new System.Windows.Forms.GroupBox();
+            this.Dungeons_KeyColor_DungeonField = new System.Windows.Forms.Panel();
+            this.Dungeons_SelectedField_tbEvent = new System.Windows.Forms.TextBox();
+            this.label113 = new System.Windows.Forms.Label();
             this.Dungeons_SelectedField_tbFieldTyp = new System.Windows.Forms.TextBox();
             this.label112 = new System.Windows.Forms.Label();
             this.Dungeons_SelectedField_tbPosY = new System.Windows.Forms.TextBox();
@@ -409,9 +412,6 @@
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
             this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
-            this.Dungeons_SelectedField_tbEvent = new System.Windows.Forms.TextBox();
-            this.label113 = new System.Windows.Forms.Label();
-            this.Dungeons_KeyColor_DungeonField = new System.Windows.Forms.Panel();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -530,21 +530,21 @@
             // einstellungenToolStripMenuItem
             // 
             this.einstellungenToolStripMenuItem.Name = "einstellungenToolStripMenuItem";
-            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.einstellungenToolStripMenuItem.Text = "Einstellungen";
             this.einstellungenToolStripMenuItem.Click += new System.EventHandler(this.einstellungenToolStripMenuItem_Click);
             // 
             // öffnenToolStripMenuItem
             // 
             this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
-            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.öffnenToolStripMenuItem.Text = "Öffnen";
             this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.öffnenToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -758,6 +758,29 @@
             this.groupBox18.TabIndex = 17;
             this.groupBox18.TabStop = false;
             this.groupBox18.Text = "Ausgwähltes Feld";
+            // 
+            // Dungeons_KeyColor_DungeonField
+            // 
+            this.Dungeons_KeyColor_DungeonField.Location = new System.Drawing.Point(16, 63);
+            this.Dungeons_KeyColor_DungeonField.Name = "Dungeons_KeyColor_DungeonField";
+            this.Dungeons_KeyColor_DungeonField.Size = new System.Drawing.Size(15, 15);
+            this.Dungeons_KeyColor_DungeonField.TabIndex = 47;
+            // 
+            // Dungeons_SelectedField_tbEvent
+            // 
+            this.Dungeons_SelectedField_tbEvent.Location = new System.Drawing.Point(179, 45);
+            this.Dungeons_SelectedField_tbEvent.Name = "Dungeons_SelectedField_tbEvent";
+            this.Dungeons_SelectedField_tbEvent.Size = new System.Drawing.Size(121, 20);
+            this.Dungeons_SelectedField_tbEvent.TabIndex = 27;
+            // 
+            // label113
+            // 
+            this.label113.AutoSize = true;
+            this.label113.Location = new System.Drawing.Point(122, 48);
+            this.label113.Name = "label113";
+            this.label113.Size = new System.Drawing.Size(38, 13);
+            this.label113.TabIndex = 26;
+            this.label113.Text = "Event:";
             // 
             // Dungeons_SelectedField_tbFieldTyp
             // 
@@ -4266,29 +4289,6 @@
             this.saveXMLDialog.Filter = "MonsterXML|*.xml|Alle Dateien|*.*";
             this.saveXMLDialog.Title = "XML-File speichern unter";
             // 
-            // Dungeons_SelectedField_tbEvent
-            // 
-            this.Dungeons_SelectedField_tbEvent.Location = new System.Drawing.Point(179, 45);
-            this.Dungeons_SelectedField_tbEvent.Name = "Dungeons_SelectedField_tbEvent";
-            this.Dungeons_SelectedField_tbEvent.Size = new System.Drawing.Size(121, 20);
-            this.Dungeons_SelectedField_tbEvent.TabIndex = 27;
-            // 
-            // label113
-            // 
-            this.label113.AutoSize = true;
-            this.label113.Location = new System.Drawing.Point(122, 48);
-            this.label113.Name = "label113";
-            this.label113.Size = new System.Drawing.Size(38, 13);
-            this.label113.TabIndex = 26;
-            this.label113.Text = "Event:";
-            // 
-            // Dungeons_KeyColor_DungeonField
-            // 
-            this.Dungeons_KeyColor_DungeonField.Location = new System.Drawing.Point(16, 63);
-            this.Dungeons_KeyColor_DungeonField.Name = "Dungeons_KeyColor_DungeonField";
-            this.Dungeons_KeyColor_DungeonField.Size = new System.Drawing.Size(15, 15);
-            this.Dungeons_KeyColor_DungeonField.TabIndex = 47;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4300,7 +4300,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "DSA 1 Editing Tool";
+            this.Text = "DSA 1 Editing Tool v.0.99";
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

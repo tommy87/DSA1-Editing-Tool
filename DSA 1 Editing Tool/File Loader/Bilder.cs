@@ -592,8 +592,6 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             int position = offset + 3;
 
-            int test = 0;
-
             //int helpvalue = 0;  //gibt die Länge eines Datenblocks an
             if ((data[offset] & 0x01) != 0)
             {
@@ -633,9 +631,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                     depackLengths[i] = value;
 
                     position += headerblocklength;
-
-                    if (i == 0)
-                        test = dataBlocklength;
                 }
             }
 

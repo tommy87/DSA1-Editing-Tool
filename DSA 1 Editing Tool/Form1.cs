@@ -1456,7 +1456,6 @@ namespace DSA_1_Editing_Tool
                 if ((i < this.itsDSAFileLoader.dungeons.itsDungeons.Count) && (j < this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.floors.Count))
                 {
                     this.Dungeonmarker_currentDungeonFloor = j;
-                    CDungeons.CDungeon.CFloor floor = this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.floors[j];
                 }
                 this.drawDungeon();
             }
