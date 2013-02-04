@@ -2272,5 +2272,40 @@ namespace DSA_1_Editing_Tool
                 this.itsDSAFileLoader.dungeons.exportXML(folderBrowserDialog1.SelectedPath, itsDSAFileLoader.kampf);
             }
         }
+
+
+        private void Dungeons_dgvFights_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            DataGridViewSelectedRowCollection dungeons = this.Dungeons_dgvList.SelectedRows;
+            DataGridViewSelectedRowCollection dungeonFights = this.Dungeons_dgvFights.SelectedRows;
+
+            if (dungeons.Count <= 0 || dungeonFights.Count <= 0)
+            {
+                return;
+            }
+
+            try
+            {
+                int i = Convert.ToInt32(dungeons[0].Cells[0].Value);
+                int j = Convert.ToInt32(dungeonFights[0].Cells[0].Value);
+
+                if ((i < this.itsDSAFileLoader.dungeons.itsDungeons.Count) && (j < this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.fights.Count))
+                {
+                    CDungeons.CDungeon.CDungeonFight fight = this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.fights[j];
+                    tabControl1.SelectTab("tP_Fights");
+                    foreach (DataGridViewRow row in Fight_dgvList.Rows)
+                    {
+                        if (Convert.ToInt32(row.Cells[0].Value) == fight.KampfID)
+                        {
+                            Fight_dgvList.CurrentCell = row.Cells[0]; // SelectedRows  row.Index
+                        }
+                    }
+                }
+            }
+            catch (Exception e2)
+            {
+                CDebugger.addErrorLine("Error doubleclicking dungeon fights: " + e2);
+            }
+        }
     }
 }

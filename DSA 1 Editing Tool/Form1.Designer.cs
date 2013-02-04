@@ -45,6 +45,7 @@
             this.itemsExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aktuelleStadtExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alleStädteExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alleDungeonsExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.tP_Pictures = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
@@ -417,7 +418,6 @@
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
             this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
-            this.alleDungeonsExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -627,6 +627,13 @@
             this.alleStädteExportierenToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.alleStädteExportierenToolStripMenuItem.Text = "Alle Städte exportieren";
             this.alleStädteExportierenToolStripMenuItem.Click += new System.EventHandler(this.alleStädteExportierenToolStripMenuItem_Click);
+            // 
+            // alleDungeonsExportierenToolStripMenuItem
+            // 
+            this.alleDungeonsExportierenToolStripMenuItem.Name = "alleDungeonsExportierenToolStripMenuItem";
+            this.alleDungeonsExportierenToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.alleDungeonsExportierenToolStripMenuItem.Text = "Alle Dungeons exportieren";
+            this.alleDungeonsExportierenToolStripMenuItem.Click += new System.EventHandler(this.alleDungeonsExportierenToolStripMenuItem_Click);
             // 
             // tP_Pictures
             // 
@@ -1678,6 +1685,7 @@
             this.Dungeons_dgvFights.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Dungeons_dgvFights.Size = new System.Drawing.Size(134, 284);
             this.Dungeons_dgvFights.TabIndex = 10;
+            this.Dungeons_dgvFights.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.Dungeons_dgvFights_CellMouseDoubleClick);
             this.Dungeons_dgvFights.SelectionChanged += new System.EventHandler(this.Dungeons_dgvFights_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn20
@@ -4335,13 +4343,6 @@
             this.saveXMLDialog.FileName = "monster.xml";
             this.saveXMLDialog.Filter = "MonsterXML|*.xml|Alle Dateien|*.*";
             this.saveXMLDialog.Title = "XML-File speichern unter";
-            // 
-            // alleDungeonsExportierenToolStripMenuItem
-            // 
-            this.alleDungeonsExportierenToolStripMenuItem.Name = "alleDungeonsExportierenToolStripMenuItem";
-            this.alleDungeonsExportierenToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
-            this.alleDungeonsExportierenToolStripMenuItem.Text = "Alle Dungeons exportieren";
-            this.alleDungeonsExportierenToolStripMenuItem.Click += new System.EventHandler(this.alleDungeonsExportierenToolStripMenuItem_Click);
             // 
             // Form1
             // 
