@@ -281,7 +281,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
             public string PreisToString()
             {
-                int geld = this.Preis; // * this.Preis_Grundeinheit;
+                int geld = this.Preis * this.Preis_Grundeinheit;
 
                 int Heller = geld % 10;
                 int Silberlinge = (geld / 10) % 10;
