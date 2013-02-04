@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml;
 
 using System.Data;
 
@@ -26,6 +27,155 @@ namespace DSA_1_Editing_Tool.File_Loader
             CDebugger.addDebugLine("Dialoge wurden erfolgreich geladen");
         }
 
+        public void exportUnrefTexts( XmlTextWriter wr ) {
+            foreach (KeyValuePair<string, CDialog> dlgstore in itsDialoge)
+            {
+                CDialog dlg = dlgstore.Value;
+
+                int i, j;
+                List<int> unused = new List<int>();
+                for (i = 0; i < dlgstore.Value.itsTexte.Count; i++)
+                {
+                    unused.Add(i);
+                }
+
+                string cap = "dlg" + dlgstore.Key.Substring(0, dlgstore.Key.Length - 4).ToLower();
+                CDebugger.addDebugLine("initial "+unused.Count.ToString()+" Texte in "+cap+" vorhanden");
+
+                for (i = 0; i < dlg.itsPartner.Count; i++ )
+                {
+                    CGesprächspartner p = dlg.itsPartner[i];
+                    int layoutstart = p.offsetStartLayoutZeile;
+                    int stringstart = p.offsetStartString;
+
+                    int layoutende;
+                    if( i == dlg.itsPartner.Count - 1 )
+                        layoutende = dlg.itsDialogZeile.Count;
+                    else
+                        layoutende = dlg.itsPartner[i+1].offsetStartLayoutZeile;
+
+                    for( j = layoutstart; j < layoutende; j++ )
+                    {
+                        CDialogLayoutZeile lay = dlg.itsDialogZeile[j];
+                        // CDebugger.addDebugLine("Entferne " + lay.Antwort1.ToString());
+                        try { unused.Remove(lay.Antwort1 + stringstart); }
+                        catch (Exception) { }
+                        // CDebugger.addDebugLine("Entferne " + lay.Antwort2.ToString());
+                        try { unused.Remove(lay.Antwort2 + stringstart); }
+                        catch (Exception) { }
+                        // CDebugger.addDebugLine("Entferne " + lay.Antwort3.ToString());
+                        try { unused.Remove(lay.Antwort3 + stringstart); }
+                        catch (Exception) { }
+
+                        // CDebugger.addDebugLine("Entferne Haupttext " + lay.offsetHaupttext.ToString());
+                        try { unused.Remove(lay.offsetHaupttext + stringstart); }
+                        catch (Exception) { }
+                    }
+                }
+
+                CDebugger.addDebugLine("Noch " + unused.Count.ToString() + " Texte vorhanden");
+                foreach (int uid in unused)
+                {
+                    wr.WriteStartElement("text");
+                    wr.WriteAttributeString("key", cap + "_" + uid.ToString());
+                    if( dlg.itsTexte[uid] != "" )
+                        wr.WriteCData(dlg.itsTexte[uid]);
+                    wr.WriteEndElement();
+                }
+            }
+        }
+
+
+        private void writeResponse( XmlTextWriter wr, int id, int aid, string text, int nextgoto ) {
+            if( (aid != 0) || (nextgoto != 0) )
+            {
+                wr.WriteStartElement("response" + id.ToString());
+                wr.WriteAttributeString("goto", nextgoto.ToString());
+                if( aid != 0 )
+                    wr.WriteCData(text);
+                wr.WriteEndElement();
+            }
+        }
+
+        public void exportXML(string path)
+        {
+            XmlTextWriter wp = new XmlTextWriter(path + "\\de_dlgpartner.xml", Encoding.UTF8);
+            XmlTextWriter wr = new XmlTextWriter(path + "\\de_dlgtext.xml", Encoding.UTF8);
+
+            wp.WriteStartDocument();
+            wp.WriteStartElement("dialogpartner");
+
+            wr.WriteStartDocument();
+            wr.WriteStartElement("dialog");
+
+            foreach (KeyValuePair<string, CDialog> dlgstore in itsDialoge)
+            {
+                CDialog dlg = dlgstore.Value;
+
+                int i, j;
+                string cap = dlgstore.Key.Substring(0, dlgstore.Key.Length - 4).ToLower();
+                // CDebugger.addDebugLine("initial " + unused.Count.ToString() + " Texte in " + cap + " vorhanden");
+
+                for (i = 0; i < dlg.itsPartner.Count; i++)
+                {
+                    CGesprächspartner p = dlg.itsPartner[i];
+                    wp.WriteStartElement("partner");
+
+                    string pid = cap + "_" + (i+1).ToString();
+                    wp.WriteElementString("id", pid);
+                    wp.WriteElementString("name", p.name);
+                    wp.WriteElementString("bildid", p.BildID_IN_HEADS_NVF.ToString());
+                    wp.WriteEndElement();
+
+                    int layoutstart = p.offsetStartLayoutZeile;
+                    int stringstart = p.offsetStartString;
+
+                    int layoutende;
+                    if (i == dlg.itsPartner.Count - 1)
+                        layoutende = dlg.itsDialogZeile.Count;
+                    else
+                        layoutende = dlg.itsPartner[i + 1].offsetStartLayoutZeile;
+
+                    for (j = layoutstart; j < layoutende; j++)
+                    {
+                        CDialogLayoutZeile lay = dlg.itsDialogZeile[j];
+
+                        wr.WriteStartElement("text");
+                        wr.WriteElementString("partner", pid);
+                        wr.WriteElementString("id", (j - layoutstart + 1).ToString() );
+                        wr.WriteElementString("adddata",lay.unbekannterWert.ToString());
+                        if (lay.offsetHaupttext == 255)
+                        {
+                            wr.WriteElementString("empty", "true");
+                        }
+                        else
+                        {
+                            wr.WriteElementString("request", dlg.itsTexte[lay.offsetHaupttext + stringstart]);
+                        }
+
+                        int folge = lay.FolgeLayoutBeiAntwort1;
+                        if ((folge != 0) && (folge != 255)) folge = lay.FolgeLayoutBeiAntwort1 + 1;
+                        writeResponse(wr, 1, lay.Antwort1, dlg.itsTexte[lay.Antwort1 + stringstart], folge);
+
+                        folge = lay.FolgeLayoutBeiAntwort2;
+                        if ((folge != 0) && (folge != 255)) folge = lay.FolgeLayoutBeiAntwort2 + 1;
+                        writeResponse(wr, 2, lay.Antwort2, dlg.itsTexte[lay.Antwort2 + stringstart], folge);
+                        
+                        folge = lay.FolgeLayoutBeiAntwort3;
+                        if ((folge != 0) && (folge != 255)) folge = lay.FolgeLayoutBeiAntwort3 + 1;
+                        writeResponse(wr, 3, lay.Antwort3, dlg.itsTexte[lay.Antwort3 + stringstart], folge);
+                        wr.WriteEndElement();
+                    }
+                }
+            }
+
+            wr.WriteEndElement();
+            wr.WriteEndDocument();
+            wr.Close();
+            wp.WriteEndElement();
+            wp.WriteEndDocument();
+            wp.Close();
+        }
         public class CDialog
         {
             public List<CGesprächspartner> itsPartner = new List<CGesprächspartner>();

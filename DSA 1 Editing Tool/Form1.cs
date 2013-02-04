@@ -2191,11 +2191,86 @@ namespace DSA_1_Editing_Tool
 
         private void monsterXMLExportierenToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            this.saveXMLDialog.FileName = "monster.xml";
+            this.saveXMLDialog.Filter = "MonsterXML|*.xml|Alle Dateien|*.*";
+            this.saveXMLDialog.InitialDirectory = Properties.Settings.Default.DefaultExportPath;
             DialogResult objResult = saveXMLDialog.ShowDialog();
             if (objResult == System.Windows.Forms.DialogResult.OK)
             {
                 this.itsDSAFileLoader.monster.exportMonsterXML(saveXMLDialog.FileName);
             }
-        }      
+        }
+
+        private void texteXMLExportierenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveXMLDialog.FileName = "de.xml";
+            saveXMLDialog.Filter = "Text XML|*.xml|Text CSV|*.CSV|Alle Dateien|*.*";
+            this.saveXMLDialog.InitialDirectory = Properties.Settings.Default.DefaultExportPath;
+            DialogResult objResult = saveXMLDialog.ShowDialog();
+            if (objResult == System.Windows.Forms.DialogResult.OK)
+            {
+                if( saveXMLDialog.FileName.EndsWith(".xml") )
+                    this.itsDSAFileLoader.texte.exportXML(saveXMLDialog.FileName, itsDSAFileLoader.itemList, itsDSAFileLoader.dialoge);
+                else
+                    this.itsDSAFileLoader.texte.exportCSV(saveXMLDialog.FileName);
+            }
+        }
+
+        private void itemsExportierenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            saveXMLDialog.FileName = "items.xml";
+            saveXMLDialog.Filter = "Text XML|*.xml|Alle Dateien|*.*";
+            this.saveXMLDialog.InitialDirectory = Properties.Settings.Default.DefaultExportPath;
+            DialogResult objResult = saveXMLDialog.ShowDialog();
+            if (objResult == System.Windows.Forms.DialogResult.OK)
+            {
+                this.itsDSAFileLoader.itemList.exportXML(saveXMLDialog.FileName);
+            }
+        }
+
+        private void aktuelleStadtExportierenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KeyValuePair<string, CTown> sel = this.itsDSAFileLoader.städte.itsTowns[this.Townmarker_currentTown];
+
+            saveXMLDialog.FileName = sel.Key.Substring( 0, sel.Key.Length - 4)+".xml";
+            saveXMLDialog.Filter = "Text XML|*.xml|Alle Dateien|*.*";
+            this.saveXMLDialog.InitialDirectory = Properties.Settings.Default.DefaultExportPath;
+            DialogResult objResult = saveXMLDialog.ShowDialog();
+            if (objResult == System.Windows.Forms.DialogResult.OK)
+            {
+                sel.Value.exportXML(saveXMLDialog.FileName, sel.Key.Substring(0, sel.Key.Length - 4));
+            }
+        }
+
+        private void alleStädteExportierenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.SelectedPath = Properties.Settings.Default.DefaultExportPath;
+            DialogResult objResult = folderBrowserDialog1.ShowDialog();
+            if (objResult == System.Windows.Forms.DialogResult.OK)
+            {
+                this.itsDSAFileLoader.städte.exportStädteXML(folderBrowserDialog1.SelectedPath);
+            }
+
+        }
+
+        private void dialogeExportierenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.SelectedPath = Properties.Settings.Default.DefaultExportPath;
+            DialogResult objResult = folderBrowserDialog1.ShowDialog();
+            if (objResult == System.Windows.Forms.DialogResult.OK)
+            {
+                this.itsDSAFileLoader.dialoge.exportXML(folderBrowserDialog1.SelectedPath);
+            }
+        }
+
+        private void alleDungeonsExportierenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            folderBrowserDialog1.SelectedPath = Properties.Settings.Default.DefaultExportPath;
+            DialogResult objResult = folderBrowserDialog1.ShowDialog();
+            if (objResult == System.Windows.Forms.DialogResult.OK)
+            {
+                this.itsDSAFileLoader.dungeons.exportXML(folderBrowserDialog1.SelectedPath, itsDSAFileLoader.kampf);
+            }
+        }
     }
 }

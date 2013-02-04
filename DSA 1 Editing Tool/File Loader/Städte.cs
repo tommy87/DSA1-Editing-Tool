@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml;
 
 namespace DSA_1_Editing_Tool.File_Loader
 {
@@ -27,6 +28,15 @@ namespace DSA_1_Editing_Tool.File_Loader
             foreach (CDSAFileLoader.CFileSet fileSet in towns)
                 this.itsTowns.Add(new KeyValuePair<string, CTown>(fileSet.filename, new CTown(ref data, fileSet)));
                 
+        }
+
+        public void exportStädteXML(string dir)
+        {
+            foreach (KeyValuePair<string, CTown> ct in itsTowns)
+            {
+                string name = ct.Key.Substring(0, ct.Key.Length - 4).ToLower();
+                ct.Value.exportXML(dir + "\\" + name + ".xml", name);
+            }
         }
     }
 
@@ -114,10 +124,9 @@ namespace DSA_1_Editing_Tool.File_Loader
                     case 10: return "Wasser(" + value.ToString() + ")";
                     case 11: return "Gras(" + value.ToString() + ")";
                     case 12: return "Wegweiser(" + value.ToString() + ")";
-                    case 13: return "Quest NPC(" + value.ToString() + ")";
-                    case 14: return "Leuchtturm (dunkel)(" + value.ToString() + ")";
-                    case 15: return "Leuchtturm (hell)(" + value.ToString() + ")";
-                    case 16:
+                    case 13: return "Leuchtturm (dunkel)(" + value.ToString() + ")";
+                    case 14: return "Leuchtturm (hell)(" + value.ToString() + ")";
+                    case 15:
                         return "Straße/Unsichtbare Wand???(" + value.ToString() + ")";
 
                     default:
@@ -130,7 +139,146 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
         }
 
-     
+        private CTownEvent getEventAtPos(int x, int y)
+        {
+            foreach (CTownEvent evt in townEvents)
+            {
+                if (evt.Position_X == x && evt.Position_Y == y)
+                    return evt;
+            }
+            return null;
+        }
+
+        public void exportXML(string filename, string intname)
+        {
+            XmlTextWriter wr = new XmlTextWriter(filename, Encoding.UTF8);
+            wr.WriteStartDocument();
+            wr.WriteStartElement("town");
+            wr.WriteAttributeString("intname", intname);
+
+            wr.WriteStartElement("buildings");
+
+            float squarebld = 9f;
+
+            List<int> rowBld = new List<int>(townLängeSN);
+            List<int> colBld = new List<int>(townLängeWO);
+
+            for (int i = 0; i < townLängeWO; i++) { colBld.Add(0); }
+            for (int i = 0; i < townLängeSN; i++) { rowBld.Add(0); }
+            Random r = new Random();
+
+            for (int y = 0; y < townLängeSN; y++)
+            {
+                for (int x = 0; x < townLängeWO; x++)
+                {
+                    byte value = (byte)((this.townData[x, y] & 0xF0) >> 4);
+                    byte align = (byte)((this.townData[x, y] & 0x0F));
+                    string tp = "";
+
+                    /*float posx = rowBld[y] * squarebld + (y - rowBld[y]) * squareoth;
+                    float posy = colBld[x] * squarebld + (x - colBld[x]) * squareoth;*/
+                    float posx = x * squarebld - (squarebld / 2);
+                    float posy = (townLängeSN - y) * squarebld - squarebld * townLängeSN - (squarebld / 2);
+                    CTownEvent evt = getEventAtPos(x, y);
+
+                    if( ((value == 0) || (value == 10) || (value == 11)) && evt == null )
+                    {
+                        switch (value)
+                        {
+                            case 0: tp = "road"; break;
+                            case 10: tp = "water"; break;
+                        }
+                        if (tp != "")
+                        {
+                            wr.WriteStartElement("prop");
+                            wr.WriteAttributeString("type", tp);
+                        }
+                        else
+                        {
+                            // don't export grass props
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        wr.WriteStartElement("building");
+                        colBld[x]++;
+                        rowBld[y]++;
+
+                        string trigger = "";
+                        switch (value)
+                        {
+                            case 1: tp = "tempel"; break;
+                            case 2:
+                            case 3:
+                            case 4:
+                            case 5:
+                            case 6:
+                            case 7:
+                            case 8:
+                            case 9: tp = "house_1"; break;
+                            case 12:tp = "wegweiser"; break;     //wegweiser
+                            case 13: tp = "house_1"; trigger = "questnpc"; break; 
+                            case 14: tp = "schwarzerfinger"; break;
+                            case 15: tp = "schwarzerfinger"; trigger = "hell"; break;
+                        }
+
+                        if (evt != null)
+                        {
+                            switch (evt.Typ)
+                            {
+                                case 2: trigger = "tempel"; break;
+                                case 3: trigger = "taverne"; break;
+                                case 4: tp = "heiler"; break;
+                                case 5: tp = "handel_gemischt"; trigger = "handel"; break;
+                                case 6: trigger = "wildnislager"; break;
+                                case 7: tp = "herberge_1"; break;
+                                case 8: tp = "schmiede"; break;
+                                case 9: tp = "marktplatz"; break;
+                                case 10: trigger = "10_normales_haus"; break;
+                                case 11: tp = "windmuehle"; trigger = "hafen"; break;
+                                case 12: tp = "wegweiser"; break;
+                                case 13: trigger = "quest"; break;
+                                case 14: tp = "zwingfeste"; trigger = "dungeon"; break;
+                                case 16: trigger = "16_leeres_haus"; break;
+                                case 17: if (value == 4) { tp = "herberge_2"; trigger = "tav+her"; } else { trigger = "special"; } break;
+                                case 18: trigger = "18_dings"; break;
+                            }
+
+                            wr.WriteAttributeString("typ", evt.Typ.ToString());
+                            wr.WriteAttributeString("ut1", evt.Untertyp_1_Name_Icons_Angebot.ToString());
+                            wr.WriteAttributeString("ut2", evt.Untertyp_2_unbekannte_Parameter.ToString());
+                            wr.WriteAttributeString("ut3", evt.Untertyp_3_Reisen.ToString());
+                        }
+
+                        if (tp == "house_1")
+                        {
+                            tp = "house_"+ (r.Next(3) + 1).ToString();
+                        }
+
+                        if (tp == "taverne" && (r.Next(2) == 1) )
+                        {
+                            tp = "taverne_2";
+                        }
+
+                        wr.WriteAttributeString("type", tp);
+                        if (trigger != "")
+                            wr.WriteAttributeString("trigger", trigger);
+
+                        wr.WriteAttributeString("align", align.ToString());
+                    }
+
+                    wr.WriteAttributeString("x", posx.ToString().Replace(",","."));
+                    wr.WriteAttributeString("y", posy.ToString().Replace(",", "."));
+                    wr.WriteEndElement();
+                }
+            }
+
+            wr.WriteEndElement();
+            wr.WriteEndElement();
+            wr.WriteEndDocument();
+            wr.Close();
+        }
     }
     public class CTownEvent
     {
@@ -187,7 +335,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                 case 16:
                     return ("Haus zum einbrechen? (" + this.Typ.ToString() + ")");
                 case 17:
-                    return ("Besonderes Gebäude (" + this.Typ.ToString() + ")");
+                    return ("Taverne UND Herberge (" + this.Typ.ToString() + ")");
                 case 18:
                     return ("Lager? (" + this.Typ.ToString() + ")");
 

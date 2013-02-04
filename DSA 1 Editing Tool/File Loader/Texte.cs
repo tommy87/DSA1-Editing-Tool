@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
+using System.Xml;
 using System.IO;
 
 namespace DSA_1_Editing_Tool.File_Loader
@@ -85,6 +86,90 @@ namespace DSA_1_Editing_Tool.File_Loader
                 //dateinamen auslesen
                 this.DTX_Texte.Add(new KeyValuePair<string, List<string>>(fileSet.filename, textList));
             }
+        }
+
+        private void writeTextgroup(XmlTextWriter wr, List<string> list, string prefix)
+        {
+            for (int i = 0; i < list.Count; i++)
+            {
+                wr.WriteStartElement("text");
+                wr.WriteAttributeString("key", prefix + "_" + i.ToString());
+                wr.WriteCData(prepareText(list[i]));
+                wr.WriteEndElement();
+            }
+        }
+
+        private void writeTextlist( XmlTextWriter wr, List<KeyValuePair<string, List<string>>> list, string prefix ) {
+            for (int i = 0; i < list.Count; i++)
+            {
+                string idkey = list[i].Key.ToLower();
+                idkey = prefix + idkey.Substring(0, idkey.Length - 4);
+                writeTextgroup(wr, list[i].Value, idkey);
+            }
+        }
+
+        public void exportXML(string filename, CItemList itl, CDialoge dlg)
+        {
+            XmlTextWriter wr = new XmlTextWriter(filename, Encoding.UTF8);
+            wr.WriteStartDocument();
+            wr.WriteStartElement("texts");
+            wr.WriteStartElement("alltexts");
+
+            writeTextlist( wr, this.LTX_Texte, "" );
+            writeTextlist( wr, this.DTX_Texte, "d" );
+
+            itl.exportTextXML(wr);
+            dlg.exportUnrefTexts(wr);
+
+            wr.WriteEndElement();
+            wr.WriteEndDocument();
+            wr.Close();
+        }
+
+        private string prepareText(string text, bool forcsv = false)
+        {
+            string ret = text.Replace("ñ", "[hl]").Replace("ð", "[/hl]");
+            // if (forcsv)
+            {
+                ret = ret.Replace("\r\n", " ").Replace("\r", " ").Replace("\n", " ");
+            }
+            return ret.Trim();
+        }
+
+        public void exportCSV(string filename)
+        {
+            StreamWriter tw = new StreamWriter(filename);
+
+            tw.WriteLine("Filename;Key;Text");
+            string fn;
+            int i, j;
+            List<string> val;
+            string str;
+
+            for (i = 0; i < LTX_Texte.Count; i++)
+            {
+                fn = LTX_Texte[i].Key.ToLower().Replace(".ltx","");
+                val = LTX_Texte[i].Value;
+                for (j = 0; j < val.Count; j++)
+                {
+                    str = prepareText(val[j], true);
+                    if( str != "" )
+                        tw.WriteLine(fn + ";" + j.ToString() + ";" + str);
+                }
+            }
+            for (i = 0; i < DTX_Texte.Count; i++)
+            {
+                fn = DTX_Texte[i].Key.ToLower().Replace(".dtx","");
+                val = DTX_Texte[i].Value;
+                for (j = 0; j < val.Count; j++)
+                {
+                    str = prepareText(val[j], true);
+                    if (str != "")
+                        tw.WriteLine(fn + ";" + j.ToString() + ";" + str);
+                }
+            }
+
+            tw.Close();
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Xml;
 using System.IO;
 
 namespace DSA_1_Editing_Tool.File_Loader
@@ -71,6 +71,43 @@ namespace DSA_1_Editing_Tool.File_Loader
             return "???";
         }
 
+        public void exportTextXML(XmlTextWriter wr)
+        {
+            for (int i = 0; i < itsItems.Count; i++)
+            {
+                string name = itsItemNames[i];
+                string basename = name.Substring(0, name.IndexOf("."));
+                string singularname = basename + name.Substring(basename.Length + 1, name.LastIndexOf(".") - basename.Length - 1);
+                string pluralname = basename + name.Substring(name.LastIndexOf(".")+1);
+
+                wr.WriteStartElement("text");
+                wr.WriteAttributeString("key", "item_"+ i.ToString()+"_sin");
+                wr.WriteCData(singularname);
+                wr.WriteEndElement();
+                wr.WriteStartElement("text");
+                wr.WriteAttributeString("key", "item_"+i.ToString()+"_plu");
+                wr.WriteCData(pluralname);
+                wr.WriteEndElement();
+            }
+        }
+
+        public void exportXML(string filename)
+        {
+            XmlTextWriter wr = new XmlTextWriter(filename, Encoding.UTF8);
+            wr.WriteStartDocument();
+            wr.WriteStartElement("items");
+
+            for (int i = 0; i < itsItems.Count; i++)
+            {
+                itsItems[i].writeXML(wr,i, itsItemNames[i]);
+                // writeItem(wr, i, itsItems[i], itsItemNames[i]);
+            }
+
+            wr.WriteEndElement();
+            wr.WriteEndDocument();
+            wr.Close();
+        }
+
         public class CItem
         {
             public Int16 IconID = 0;
@@ -92,6 +129,73 @@ namespace DSA_1_Editing_Tool.File_Loader
                 this.Preis = Preis;
                 this.SortimentsID = SortimentsID;
                 this.Magisch = Magisch;
+            }
+
+            public void writeXML(XmlTextWriter wr, int origid, string name)
+            {
+                wr.WriteStartElement("item");
+
+                string singlename = name.Substring(0, name.IndexOf("."));
+                singlename += name.Substring(singlename.Length + 1, name.LastIndexOf(".") - singlename.Length - 1);
+
+                wr.WriteAttributeString("origid", origid.ToString());
+                wr.WriteAttributeString("origname", name);
+                wr.WriteAttributeString("image", singlename.ToLower());
+                wr.WriteAttributeString("value", (Preis * Preis_Grundeinheit).ToString());
+                wr.WriteAttributeString("weight", Gewicht.ToString());
+                string slot = "";
+                if ((ItemTyp & 0x01) != 0)
+                {
+                    switch (this.AnziehbarAnPosition)
+                    {
+                        case 0: slot = "head"; break;
+                        case 1: slot = "upperarm"; break;
+                        case 2: slot = "chest"; break;
+                        case 5: slot = "leg"; break;
+                        case 6: slot = "shoe"; break;
+                        case 9: slot = "shield"; break;
+                        default: slot = "--tbd"; break;
+                    }
+                }
+                if ((ItemTyp & 0x02) != 0)
+                {
+                    string skill = "";
+                    slot = "weapon";
+                    switch (this.AnziehbarAnPosition)
+                    {
+                        case 0: slot = "shield"; break;
+                        case 1: skill = "hiebwaffen"; break;
+                        case 2: skill = "stichwaffen"; break;
+                        case 3: skill = "schwerter"; break;
+                        case 4: skill = "aexte"; break;
+                        case 5: skill = "speere"; break;
+                        case 6: skill = "zweihaender"; break;
+                        case 7: skill = "schusswaffen"; break;
+                        case 8: skill = "wurfwaffen"; break;
+                    }
+                    if (skill != "")
+                        wr.WriteAttributeString("skill", skill);
+                }
+
+                // & 0x04 Benutzbar ergibt sich aus den Effekten
+                // & 0x08 Essbar ergibt sich aus den Effekten
+                // & 0x10 Trank/Gift/Kraut ergibt sich aus den Effekten
+                if ((ItemTyp & 0x20) != 0)
+                    wr.WriteAttributeString("stackable", "1");
+
+                if ((ItemTyp & 0x40) != 0)
+                    wr.WriteAttributeString("personal", "1");
+
+                if ((ItemTyp & 0x80) != 0)
+                    wr.WriteAttributeString("unusable", "1");
+
+                if (Magisch > 0)
+                    wr.WriteAttributeString("magical", "1");
+
+                if (slot != "")
+                    wr.WriteAttributeString("slot", slot);
+
+                wr.WriteEndElement();
             }
 
             public string AnziehbarAnPositionToString()

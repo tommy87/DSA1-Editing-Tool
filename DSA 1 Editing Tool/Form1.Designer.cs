@@ -40,6 +40,11 @@
             this.entpackenNachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bilderExportierenNachToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.monsterXMLExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.texteXMLExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dialogeExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.itemsExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.aktuelleStadtExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.alleStädteExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.tP_Pictures = new System.Windows.Forms.TabPage();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
@@ -412,6 +417,7 @@
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
             this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
+            this.alleDungeonsExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -530,21 +536,21 @@
             // einstellungenToolStripMenuItem
             // 
             this.einstellungenToolStripMenuItem.Name = "einstellungenToolStripMenuItem";
-            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.einstellungenToolStripMenuItem.Text = "Einstellungen";
             this.einstellungenToolStripMenuItem.Click += new System.EventHandler(this.einstellungenToolStripMenuItem_Click);
             // 
             // öffnenToolStripMenuItem
             // 
             this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
-            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.öffnenToolStripMenuItem.Text = "Öffnen";
             this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.öffnenToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -553,7 +559,13 @@
             this.exportierenToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.entpackenNachToolStripMenuItem,
             this.bilderExportierenNachToolStripMenuItem,
-            this.monsterXMLExportierenToolStripMenuItem});
+            this.monsterXMLExportierenToolStripMenuItem,
+            this.texteXMLExportierenToolStripMenuItem,
+            this.dialogeExportierenToolStripMenuItem,
+            this.itemsExportierenToolStripMenuItem,
+            this.aktuelleStadtExportierenToolStripMenuItem,
+            this.alleStädteExportierenToolStripMenuItem,
+            this.alleDungeonsExportierenToolStripMenuItem});
             this.exportierenToolStripMenuItem.Name = "exportierenToolStripMenuItem";
             this.exportierenToolStripMenuItem.Size = new System.Drawing.Size(78, 20);
             this.exportierenToolStripMenuItem.Text = "Exportieren";
@@ -562,7 +574,7 @@
             // 
             this.entpackenNachToolStripMenuItem.Enabled = false;
             this.entpackenNachToolStripMenuItem.Name = "entpackenNachToolStripMenuItem";
-            this.entpackenNachToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.entpackenNachToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.entpackenNachToolStripMenuItem.Text = "Entpacken nach...";
             this.entpackenNachToolStripMenuItem.Click += new System.EventHandler(this.entpackenNachToolStripMenuItem_Click);
             // 
@@ -570,16 +582,51 @@
             // 
             this.bilderExportierenNachToolStripMenuItem.Enabled = false;
             this.bilderExportierenNachToolStripMenuItem.Name = "bilderExportierenNachToolStripMenuItem";
-            this.bilderExportierenNachToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.bilderExportierenNachToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.bilderExportierenNachToolStripMenuItem.Text = "Bilder exportieren nach...";
             this.bilderExportierenNachToolStripMenuItem.Click += new System.EventHandler(this.bilderExportierenNachToolStripMenuItem_Click);
             // 
             // monsterXMLExportierenToolStripMenuItem
             // 
             this.monsterXMLExportierenToolStripMenuItem.Name = "monsterXMLExportierenToolStripMenuItem";
-            this.monsterXMLExportierenToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.monsterXMLExportierenToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.monsterXMLExportierenToolStripMenuItem.Text = "MonsterXML exportieren";
             this.monsterXMLExportierenToolStripMenuItem.Click += new System.EventHandler(this.monsterXMLExportierenToolStripMenuItem_Click);
+            // 
+            // texteXMLExportierenToolStripMenuItem
+            // 
+            this.texteXMLExportierenToolStripMenuItem.Name = "texteXMLExportierenToolStripMenuItem";
+            this.texteXMLExportierenToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.texteXMLExportierenToolStripMenuItem.Text = "Texte exportieren";
+            this.texteXMLExportierenToolStripMenuItem.Click += new System.EventHandler(this.texteXMLExportierenToolStripMenuItem_Click);
+            // 
+            // dialogeExportierenToolStripMenuItem
+            // 
+            this.dialogeExportierenToolStripMenuItem.Name = "dialogeExportierenToolStripMenuItem";
+            this.dialogeExportierenToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.dialogeExportierenToolStripMenuItem.Text = "Dialoge exportieren";
+            this.dialogeExportierenToolStripMenuItem.Click += new System.EventHandler(this.dialogeExportierenToolStripMenuItem_Click);
+            // 
+            // itemsExportierenToolStripMenuItem
+            // 
+            this.itemsExportierenToolStripMenuItem.Name = "itemsExportierenToolStripMenuItem";
+            this.itemsExportierenToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.itemsExportierenToolStripMenuItem.Text = "Items exportieren";
+            this.itemsExportierenToolStripMenuItem.Click += new System.EventHandler(this.itemsExportierenToolStripMenuItem_Click);
+            // 
+            // aktuelleStadtExportierenToolStripMenuItem
+            // 
+            this.aktuelleStadtExportierenToolStripMenuItem.Name = "aktuelleStadtExportierenToolStripMenuItem";
+            this.aktuelleStadtExportierenToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.aktuelleStadtExportierenToolStripMenuItem.Text = "Aktuelle Stadt exportieren";
+            this.aktuelleStadtExportierenToolStripMenuItem.Click += new System.EventHandler(this.aktuelleStadtExportierenToolStripMenuItem_Click);
+            // 
+            // alleStädteExportierenToolStripMenuItem
+            // 
+            this.alleStädteExportierenToolStripMenuItem.Name = "alleStädteExportierenToolStripMenuItem";
+            this.alleStädteExportierenToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.alleStädteExportierenToolStripMenuItem.Text = "Alle Städte exportieren";
+            this.alleStädteExportierenToolStripMenuItem.Click += new System.EventHandler(this.alleStädteExportierenToolStripMenuItem_Click);
             // 
             // tP_Pictures
             // 
@@ -4289,6 +4336,13 @@
             this.saveXMLDialog.Filter = "MonsterXML|*.xml|Alle Dateien|*.*";
             this.saveXMLDialog.Title = "XML-File speichern unter";
             // 
+            // alleDungeonsExportierenToolStripMenuItem
+            // 
+            this.alleDungeonsExportierenToolStripMenuItem.Name = "alleDungeonsExportierenToolStripMenuItem";
+            this.alleDungeonsExportierenToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
+            this.alleDungeonsExportierenToolStripMenuItem.Text = "Alle Dungeons exportieren";
+            this.alleDungeonsExportierenToolStripMenuItem.Click += new System.EventHandler(this.alleDungeonsExportierenToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4793,6 +4847,12 @@
         private System.Windows.Forms.TextBox Dungeons_SelectedField_tbEvent;
         private System.Windows.Forms.Label label113;
         private System.Windows.Forms.Panel Dungeons_KeyColor_DungeonField;
+        private System.Windows.Forms.ToolStripMenuItem texteXMLExportierenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem itemsExportierenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem aktuelleStadtExportierenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alleStädteExportierenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dialogeExportierenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem alleDungeonsExportierenToolStripMenuItem;
     }
 }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Xml;
 
 namespace DSA_1_Editing_Tool.File_Loader
 {
@@ -87,6 +88,43 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.Beute_Dukaten = CHelpFunctions.byteArrayToInt16(ref data, position + 210);
             this.Beute_Silberstücke = CHelpFunctions.byteArrayToInt16(ref data, position + 212);
             this.Beute_Heller = CHelpFunctions.byteArrayToInt16(ref data, position + 214);
+        }
+
+        public void exportXML(XmlTextWriter wr)
+        {
+            wr.WriteStartElement("fightdata");
+            wr.WriteAttributeString("id", nummerDesScenarios.ToString());
+            wr.WriteAttributeString("name", name);
+
+            wr.WriteStartElement("enemy");
+            foreach (CFight_MonsterInfo m in itsMonsterInfos)
+            {
+                wr.WriteStartElement("monster");
+                wr.WriteAttributeString("id", m.GegnerID.ToString());
+                wr.WriteAttributeString("startin", m.Startrunde.ToString());
+                wr.WriteEndElement();
+            }
+            wr.WriteEndElement();
+
+            wr.WriteStartElement("loot");
+            int lootmoney = Beute_Dukaten * 100 + Beute_Silberstücke * 10 + Beute_Heller;
+            if (lootmoney > 0)
+            {
+                wr.WriteStartElement("item");
+                wr.WriteAttributeString("id", "254");
+                wr.WriteAttributeString("count", lootmoney.ToString());
+                CDebugger.addDebugLine("Exporting money " + lootmoney.ToString());
+            }
+            foreach (CFight_HinterlassenesItem i in itsBeute)
+            {
+                wr.WriteStartElement("item");
+                if( i.Menge > 0 )
+                    wr.WriteAttributeString("count", i.Menge.ToString());
+                wr.WriteAttributeString("id", i.ItemID.ToString());
+                wr.WriteEndElement();
+            }
+            wr.WriteEndElement();
+            wr.WriteEndElement();
         }
 
     }
