@@ -131,9 +131,9 @@ namespace DSA_1_Editing_Tool
             for (int i = 0; i < this.itsDSAFileLoader.itemList.itsItems.Count; i++)
             {
                 if (i < this.itsDSAFileLoader.itemList.itsItemNames.Count)
-                    this.Item_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.itemList.itsItemNames[i]);
+                    this.Item_dgvList.Rows.Add(i, this.itsDSAFileLoader.itemList.itsItemNames[i]);
                 else
-                    this.Item_dgvList.Rows.Add(i.ToString("D3"), "???");
+                    this.Item_dgvList.Rows.Add(i, "???");
             }
         }
         private void loadDialoge()
@@ -142,7 +142,7 @@ namespace DSA_1_Editing_Tool
 
             for (int i = 0; i < this.itsDSAFileLoader.dialoge.itsDialoge.Count; i++)
             {
-                this.Dialoge_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.dialoge.itsDialoge[i].Key);
+                this.Dialoge_dgvList.Rows.Add(i, this.itsDSAFileLoader.dialoge.itsDialoge[i].Key);
             }
         }
         private void loadTextTab()
@@ -153,14 +153,14 @@ namespace DSA_1_Editing_Tool
             {
                 for (int i = 0; i < this.itsDSAFileLoader.texte.LTX_Texte.Count; i++)
                 {
-                    this.Texte_Filenames_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.texte.LTX_Texte[i].Key);
+                    this.Texte_Filenames_dgvList.Rows.Add(i, this.itsDSAFileLoader.texte.LTX_Texte[i].Key);
                 }
             }
             else
             {
                 for (int i = 0; i < this.itsDSAFileLoader.texte.DTX_Texte.Count; i++)
                 {
-                    this.Texte_Filenames_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.texte.DTX_Texte[i].Key);
+                    this.Texte_Filenames_dgvList.Rows.Add(i, this.itsDSAFileLoader.texte.DTX_Texte[i].Key);
                 }
             }
         }
@@ -171,9 +171,9 @@ namespace DSA_1_Editing_Tool
             for (int i = 0; i < this.itsDSAFileLoader.monster.itsMonsterStats.Count; i++)
             {
                 if (i < this.itsDSAFileLoader.monster.itsMonsterNames.Count)
-                    this.Monster_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.monster.itsMonsterNames[i]);
+                    this.Monster_dgvList.Rows.Add(i, this.itsDSAFileLoader.monster.itsMonsterNames[i]);
                 else
-                    this.Monster_dgvList.Rows.Add(i.ToString("D3"), "???");
+                    this.Monster_dgvList.Rows.Add(i, "???");
             }
         }
         private void loadKampfTab()
@@ -183,7 +183,7 @@ namespace DSA_1_Editing_Tool
             for (int i = 0; i < this.itsDSAFileLoader.kampf.itsFight_LST.Count; i++)
             {
                 CFight_LST fight = this.itsDSAFileLoader.kampf.itsFight_LST[i];
-                this.Fight_dgvList.Rows.Add(i.ToString("D3"), fight.nummerDesScenarios.ToString("D3"), fight.name);     //D3 ->Decimal 3
+                this.Fight_dgvList.Rows.Add(i, fight.nummerDesScenarios.ToString("D3"), fight.name);     //D3 ->Decimal 3
             }
         }
         private void loadStädteTab()
@@ -192,7 +192,7 @@ namespace DSA_1_Editing_Tool
 
             for (int i = 0; i < this.itsDSAFileLoader.städte.itsTowns.Count; i++)
             {
-                this.Städte_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.städte.itsTowns[i].Key);
+                this.Städte_dgvList.Rows.Add(i, this.itsDSAFileLoader.städte.itsTowns[i].Key);
             }
         }
         private void loadDungeonsTab()
@@ -201,7 +201,7 @@ namespace DSA_1_Editing_Tool
 
             for (int i = 0; i < this.itsDSAFileLoader.dungeons.itsDungeons.Count; i++)
             {
-                this.Dungeons_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.dungeons.itsDungeons[i].Key);
+                this.Dungeons_dgvList.Rows.Add(i, this.itsDSAFileLoader.dungeons.itsDungeons[i].Key);
             }
         }
         private void loadBilderTab()
@@ -210,7 +210,7 @@ namespace DSA_1_Editing_Tool
 
             for (int i = 0; i < this.itsDSAFileLoader.bilder.itsImages.Count; i++)
             {
-                this.Bilder_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.bilder.itsImages[i].Key);
+                this.Bilder_dgvList.Rows.Add(i, this.itsDSAFileLoader.bilder.itsImages[i].Key);
             };
         }
         private void loadAnimationenTab()
@@ -219,7 +219,7 @@ namespace DSA_1_Editing_Tool
 
             for (int i = 0; i < this.itsDSAFileLoader.bilder.itsAnimations.Count; i++)
             {
-                this.Animationen_dgvList.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.bilder.itsAnimations[i].Key);
+                this.Animationen_dgvList.Rows.Add(i, this.itsDSAFileLoader.bilder.itsAnimations[i].Key);
             };
         }
         private void loadRouts()
@@ -371,7 +371,7 @@ namespace DSA_1_Editing_Tool
                 CDialoge.CDialog dialog = this.itsDSAFileLoader.dialoge.itsDialoge[index].Value;
                 for (int i = 0; i < dialog.itsPartner.Count; i++)
                 {
-                    this.Dialoge_dgvGesprächspartner.Rows.Add(i.ToString(), dialog.itsPartner[i].name);
+                    this.Dialoge_dgvGesprächspartner.Rows.Add(i, dialog.itsPartner[i].name);
                 }
 
                 for (int i = 0; i < dialog.itsDialogZeile.Count; i++)
@@ -381,7 +381,7 @@ namespace DSA_1_Editing_Tool
 
                 for (int i = 0; i < dialog.itsTexte.Count; i++)
                 {
-                    this.Dialoge_dgvTexte.Rows.Add(i.ToString(), dialog.itsTexte[i]);
+                    this.Dialoge_dgvTexte.Rows.Add(i, dialog.itsTexte[i]);
                 }
 
             }
@@ -680,7 +680,7 @@ namespace DSA_1_Editing_Tool
 
                     for (int i = 0; i < this.itsDSAFileLoader.texte.LTX_Texte[index].Value.Count; i++)
                     {
-                        this.Texte_dgvTexte.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.texte.LTX_Texte[index].Value[i]);
+                        this.Texte_dgvTexte.Rows.Add(i, this.itsDSAFileLoader.texte.LTX_Texte[index].Value[i]);
                     }
                 }
                 else
@@ -692,7 +692,7 @@ namespace DSA_1_Editing_Tool
 
                     for (int i = 0; i < this.itsDSAFileLoader.texte.DTX_Texte[index].Value.Count; i++)
                     {
-                        this.Texte_dgvTexte.Rows.Add(i.ToString("D3"), this.itsDSAFileLoader.texte.DTX_Texte[index].Value[i]);
+                        this.Texte_dgvTexte.Rows.Add(i, this.itsDSAFileLoader.texte.DTX_Texte[index].Value[i]);
                     }
                 }
             }
@@ -868,13 +868,13 @@ namespace DSA_1_Editing_Tool
                     this.Fight_Monster_dgvList.Rows.Clear();
                     for (int j = 0; j < fight.itsMonsterInfos.Count; j++)
                     {
-                        this.Fight_Monster_dgvList.Rows.Add(j.ToString("D2"), fight.itsMonsterInfos[j].GegnerID.ToString("D3"), this.itsDSAFileLoader.monster.getMonsterNameByID(fight.itsMonsterInfos[j].GegnerID));
+                        this.Fight_Monster_dgvList.Rows.Add(j, fight.itsMonsterInfos[j].GegnerID, this.itsDSAFileLoader.monster.getMonsterNameByID(fight.itsMonsterInfos[j].GegnerID));
                     }
 
                     this.Fight_Items_dgvList.Rows.Clear();
                     for (int j = 0; j < fight.itsBeute.Count; j++)
                     {
-                        this.Fight_Items_dgvList.Rows.Add(j.ToString("D2"), fight.itsBeute[j].ItemID.ToString("D3"), this.itsDSAFileLoader.itemList.getItemNameByID(fight.itsBeute[j].ItemID));
+                        this.Fight_Items_dgvList.Rows.Add(j, fight.itsBeute[j].ItemID, this.itsDSAFileLoader.itemList.getItemNameByID(fight.itsBeute[j].ItemID));
                     }
 
                     this.lB_Fight_Spieler.SelectedIndex = -1;
@@ -2305,6 +2305,34 @@ namespace DSA_1_Editing_Tool
             catch (Exception e2)
             {
                 CDebugger.addErrorLine("Error doubleclicking dungeon fights: " + e2);
+            }
+        }
+
+        private void Fight_Items_dgvList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                int itemid = Convert.ToInt32(Fight_Items_dgvList.Rows[e.RowIndex].Cells[1].Value);
+                tabControl1.SelectTab("tP_Items");
+                Item_dgvList.CurrentCell = Item_dgvList.Rows[itemid].Cells[0];
+            }
+            catch (Exception e2)
+            {
+                CDebugger.addErrorLine("Error selecting Item: " + e2);
+            }
+        }
+
+        private void Fight_Monster_dgvList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                int monsterid = Convert.ToInt32(Fight_Monster_dgvList.Rows[e.RowIndex].Cells[1].Value);
+                tabControl1.SelectTab("tP_Monster");
+                Monster_dgvList.CurrentCell = Monster_dgvList.Rows[monsterid].Cells[0];
+            }
+            catch (Exception e2)
+            {
+                CDebugger.addErrorLine("Error selecting Monster: " + e2);
             }
         }
     }
