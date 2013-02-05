@@ -1883,7 +1883,7 @@ namespace DSA_1_Editing_Tool
                     return Color.FromArgb(253, 0, 0);   //Wand
 
                 default:
-                    return Color.GreenYellow;
+                    return Color.White;
             }
         }
 
