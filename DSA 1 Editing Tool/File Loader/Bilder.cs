@@ -52,9 +52,6 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.itsSpezialFiles_SCHICK.Add(new KeyValuePair<string, CImageHeader>("KSBACK.DAT", new CImageHeader(320, 200, 32)));
             this.itsSpezialFiles_SCHICK.Add(new KeyValuePair<string, CImageHeader>("KSLBACK.DAT", new CImageHeader(320, 200, 32)));
 
-            // this.itsSpezialFiles_SCHICK.Add(new KeyValuePair<string, CImageHeader>("ANIS", new CImageHeader(208, 100, 0)));
-            this.itsSpezialFiles_SCHICK.Add(new KeyValuePair<string, CImageHeader>("BSKILLS.DAT", new CImageHeader(50, 26, 0)));
-
             this.itsTownPictures_SCHICK.Add("HOUSE1.NVF");
             this.itsTownPictures_SCHICK.Add("HOUSE2.NVF");
             this.itsTownPictures_SCHICK.Add("HOUSE3.NVF");
@@ -63,12 +60,14 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.itsTownPictures_SCHICK.Add("PLAYM_UK");
             this.itsTownPictures_SCHICK.Add("PLAYM_US");
             this.itsTownPictures_SCHICK.Add("COMPASS");
+            this.itsTownPictures_SCHICK.Add("BICONS");
+            this.itsTownPictures_SCHICK.Add("TEMPICON");
+            this.itsTownPictures_SCHICK.Add("OBJECTS.NVF");
 
             this.itsCharMenüPictures_SCHICK.Add("GGSTS.NVF");
             this.itsCharMenüPictures_SCHICK.Add("ZUSTA_UK");
             this.itsCharMenüPictures_SCHICK.Add("ZUSTA_US");
 
-            this.itsFightPictures_SCHICK.Add("OBJECTS.NVF");
             this.itsFightPictures_SCHICK.Add("WEAPONS.NVF");
             this.itsFightPictures_SCHICK.Add("SPELLOBJ.NVF");
             this.itsFightPictures_SCHICK.Add("FIGHTOBJ.NVF");
@@ -80,16 +79,6 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.itsLogoPictures_SCHICK.Add("DSALOGO.DAT");
             this.itsLogoPictures_SCHICK.Add("GENTIT.DAT");
             this.itsLogoPictures_SCHICK.Add("ROALOGUS.DAT");
-            this.itsLogoPictures_SCHICK.Add("TEMPICON");
-            
-            //this.itsTestPictures.Add("ATTIC");
-            //this.itsTestPictures.Add("DSALOGO.DAT");
-            //this.itsTestPictures.Add("GENTIT.DAT");
-            //this.itsTestPictures.Add("ROALOGUS.DAT");
-            //this.itsTestPictures.Add("TEMPICON");
-            //this.itsTestPictures.Add("OBJECTS.NVF");
-            //this.itsTestPictures.Add("FIGHTOBJ.NVF");
-            //this.itsTownPictures_SCHICK.Add("BICONS");
 
             this.itsAmigaPackedFiles_SCHICK.Add("PLAYM_UK");
             this.itsAmigaPackedFiles_SCHICK.Add("PLAYM_US");
@@ -105,8 +94,6 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.itsAmigaPackedFiles_SCHICK.Add("KSBACK.DAT");
             this.itsAmigaPackedFiles_SCHICK.Add("KSLBACK.DAT");
             this.itsAmigaPackedFiles_SCHICK.Add("POPUP.DAT");
-
-            //BSKILLS.DAT
 
             //-------DSAGEN----------------------
             this.itsSpezialFiles_DSAGEN.Add(new KeyValuePair<string, CImageHeader>("GEN1.NVF", new CImageHeader(320, 200, 0)));
