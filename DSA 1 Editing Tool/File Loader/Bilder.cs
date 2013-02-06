@@ -18,9 +18,6 @@ namespace DSA_1_Editing_Tool.File_Loader
         private List<string> itsTownPictures_SCHICK = new List<string>();
         private List<string> itsFightPictures_SCHICK = new List<string>();
         private List<string> itsCharMenüPictures_SCHICK = new List<string>();
-        private List<string> itsLogoPictures_SCHICK = new List<string>();
-
-        private List<string> itsTestPictures = new List<string>();
 
         private List<string> itsAmigaPackedFiles_SCHICK = new List<string>();
         private List<string> itsAmigaPackedFiles_DSAGEN = new List<string>();
@@ -74,11 +71,6 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.itsFightPictures_SCHICK.Add("MONSTER");
             this.itsFightPictures_SCHICK.Add("MFIGS");
             this.itsFightPictures_SCHICK.Add("WFIGS");
-
-            this.itsLogoPictures_SCHICK.Add("ATTIC");
-            this.itsLogoPictures_SCHICK.Add("DSALOGO.DAT");
-            this.itsLogoPictures_SCHICK.Add("GENTIT.DAT");
-            this.itsLogoPictures_SCHICK.Add("ROALOGUS.DAT");
 
             this.itsAmigaPackedFiles_SCHICK.Add("PLAYM_UK");
             this.itsAmigaPackedFiles_SCHICK.Add("PLAYM_US");
@@ -159,6 +151,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             
         }
 
+        //fügt den Bildern die angegebenen Bilder hinzu
         public void loadPictures(ref byte[] MAIN_DAT, List<CDSAFileLoader.CFileSet> MAIN_NVFs, ref byte[] DSAGEN_DAT, List<CDSAFileLoader.CFileSet> DSAGEN_NVFs)
         {
             this.itsImages.Clear();
@@ -181,6 +174,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                 this.itsImages.Add(new KeyValuePair<string, List<Image>>(fileset.filename, this.loadNVF(ref DSAGEN_DAT, fileset)));
             }
         }
+        //fügt den Animationen ein Archiv hinzu
         public void addArchivToList(ref byte[] data, CDSAFileLoader.CFileSet ARCHIV, CDSAFileLoader.CFileSet TAB)
         {
             if (data == null || ARCHIV == null || TAB == null)
@@ -197,21 +191,13 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
 
             CDSAFileLoader.CFileSet fileSet;
-            //List<Image> list;
             List<List<Image>> list = new List<List<Image>>(); ;
             for (int i = 0; i < offsets.Count - 1; i++)
             {
-                //int end = ;
-
                 try
                 {
-                    //fileSet = new CDSAFileLoader.CFileSet(ARCHIV.filename + "(Bild " + i.ToString() + ")", ARCHIV.startOffset + offsets[i], ARCHIV.startOffset + offsets[i + 1]);
-                    fileSet = new CDSAFileLoader.CFileSet(ARCHIV.filename, ARCHIV.startOffset + offsets[i], ARCHIV.startOffset + offsets[i + 1]);
-                    //list = this.loadNVF(ref data, fileSet);
+                    fileSet = new CDSAFileLoader.CFileSet(ARCHIV.filename, ARCHIV.startOffset + offsets[i], ARCHIV.startOffset + offsets[i + 1]);                    
                     list.Add(this.loadNVF(ref data, fileSet));
-                    //if( ARCHIV.filename == "MONSTER" )
-                    //    this.itsMonsterImages.Add(list);
-                    //images.AddRange(list);
                 }
                 catch (SystemException e)
                 {
@@ -223,6 +209,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.itsAnimations.Add(new KeyValuePair<string, List<List<Image>>>(ARCHIV.filename, list));
             CDebugger.addDebugLine(list.Count.ToString() + " Animationen wurden aus dem Archiv " + ARCHIV.filename + " geladen");
         }
+        //fügt den Bildern ein einzelnes Bild hinzu
         public void addPictureToList(ref byte[] data, CDSAFileLoader.CFileSet NVF)
         {
             if (data == null || NVF == null)
@@ -367,8 +354,10 @@ namespace DSA_1_Editing_Tool.File_Loader
             List<Image> images = new List<Image>();
             byte[] unpackedData = null;
 
-            CImageHeader header = this.checkForSpezialFile(NVF.filename); // ist == null wenn es keine spezielle Datei ist und einen eigenen Header besitzt
+            CImageHeader header = this.checkForSpezialFile(NVF.filename); // header == null wenn es keine spezielle Datei ist und einen eigenen Header besitzt
 
+            //----------------------------------------
+            //  schauen ob das Bild gepackt ist
             if (checkForAmigaPackedFile(NVF.filename))
             {
                 try
@@ -404,6 +393,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
             else
                 unpackedData = data;
+            //----------------------------------------
 
             int offset = NVF.startOffset;
 
@@ -523,12 +513,6 @@ namespace DSA_1_Editing_Tool.File_Loader
         }
         private CFarbPalette.palettenTyp getPalettenTyp(string filename)
         {
-            foreach (string s in itsTestPictures)
-            {
-                if (s == filename)
-                    return CFarbPalette.palettenTyp.Test_Pal;
-            }
-
             foreach (string s in itsTownPictures_SCHICK)
             {
                 if (s == filename)
@@ -547,11 +531,17 @@ namespace DSA_1_Editing_Tool.File_Loader
                     return CFarbPalette.palettenTyp.CharMenü_Pal;
             }
 
-            foreach (string s in itsLogoPictures_SCHICK)
-            {
-                if (s == filename)
-                    return CFarbPalette.palettenTyp.Logo_Pal;
-            }  
+            if (filename == "ATTIC")
+                return CFarbPalette.palettenTyp.Logo_Attic;
+
+            if (filename == "DSALOGO.DAT")
+                return CFarbPalette.palettenTyp.GEN_Pal;
+
+            if (filename == "GENTIT.DAT")
+                return CFarbPalette.palettenTyp.GEN_Pal;
+
+            if (filename == "ROALOGUS.DAT")
+                return CFarbPalette.palettenTyp.GEN_Pal;
 
             return CFarbPalette.palettenTyp.default_Pal;
         }
@@ -1208,9 +1198,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             }           
 
             return images;
-        }
-
-        
+        }       
 
         private class CImageHeader  //für Bilder ohne eigenen Header
         {

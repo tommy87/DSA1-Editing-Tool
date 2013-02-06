@@ -26,15 +26,14 @@ namespace DSA_1_Editing_Tool
 
         //sollten alle im intro verfügbar sein
 
-        public enum palettenTyp { default_Pal, Town_Pal, CharMenü_Pal, Fight_Pal, Logo_Pal, Test_Pal };
+        public enum palettenTyp { default_Pal, Town_Pal, CharMenü_Pal, Fight_Pal, Logo_Attic, GEN_Pal };
 
         static Color[] defaultPalette = new Color[256];
         static Color[] townPalette = null;
         static Color[] charMenüPalette = null;
         static Color[] fightPalette = null;
-        static Color[] logoPalette = null;
-
-        static Color[] testPalette = new Color[256];
+        static Color[] AtticPalette = null;
+        static Color[] GENPalette = null;
 
         static CFarbPalette()
         {
@@ -45,9 +44,8 @@ namespace DSA_1_Editing_Tool
                 initTownPalette();
                 initCharMenüPalette();
                 initFightPalette();
-                initLogoPalette();
-
-                initTestPalette();
+                initAtticPalette();
+                initGENPalette();
             }
             catch (SystemException)
             {
@@ -1110,329 +1108,558 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
             //for (int i = 0; i <= 255; i++)
             //    fightPalette[i] = Color.FromArgb(255, 0, 0);
         }
-        static private void initLogoPalette()
+        static private void initAtticPalette()
         {
             //0x00 - 0x45 ist bei jedem logo anders + 0xF0-0xFF
-            logoPalette = (Color[])defaultPalette.Clone();
+            AtticPalette = (Color[])defaultPalette.Clone();
 
-            logoPalette[0x00] = Color.FromArgb(0x00, 0x00, 0x00);
-            logoPalette[0x01] = Color.FromArgb(0xdf, 0xae, 0xbe);
-            logoPalette[0x02] = Color.FromArgb(0xdf, 0x9e, 0xae);
-            logoPalette[0x03] = Color.FromArgb(0xdf, 0x8e, 0xae);
-            logoPalette[0x04] = Color.FromArgb(0xcf, 0x6d, 0x8e);
-            logoPalette[0x05] = Color.FromArgb(0xbe, 0x4d, 0x6d);
-            logoPalette[0x06] = Color.FromArgb(0xbe, 0x2c, 0x4d);
-            logoPalette[0x07] = Color.FromArgb(0xae, 0x0c, 0x3c);
+            AtticPalette[0x00] = Color.FromArgb(0x00, 0x00, 0x00);
+            AtticPalette[0x01] = Color.FromArgb(0x92, 0x92, 0xf3);
+            AtticPalette[0x02] = Color.FromArgb(0x71, 0x71, 0xe3);
+            AtticPalette[0x03] = Color.FromArgb(0x61, 0x61, 0xd3);
+            AtticPalette[0x04] = Color.FromArgb(0x51, 0x51, 0xc3);
+            AtticPalette[0x05] = Color.FromArgb(0x30, 0x41, 0xa2);
+            AtticPalette[0x06] = Color.FromArgb(0x30, 0x30, 0x92);
+            AtticPalette[0x07] = Color.FromArgb(0x20, 0x20, 0x82);
 
-            logoPalette[0x08] = Color.FromArgb(0x9e, 0x0c, 0x0c);
-            logoPalette[0x09] = Color.FromArgb(0x8e, 0x0c, 0x0c);
-            logoPalette[0x0A] = Color.FromArgb(0x6d, 0x00, 0x00);
-            logoPalette[0x0B] = Color.FromArgb(0x5d, 0x00, 0x00);
-            logoPalette[0x0C] = Color.FromArgb(0x3c, 0x00, 0x00);
-            logoPalette[0x0D] = Color.FromArgb(0x2c, 0x00, 0x00);
-            logoPalette[0x0E] = Color.FromArgb(0x0c, 0x00, 0x00);
-            logoPalette[0x0F] = Color.FromArgb(0x0c, 0x0c, 0x0c);
+            AtticPalette[0x08] = Color.FromArgb(0x10, 0x10, 0x71);
+            AtticPalette[0x09] = Color.FromArgb(0x00, 0x00, 0x61);
+            AtticPalette[0x0A] = Color.FromArgb(0x00, 0x00, 0x51);
+            AtticPalette[0x0B] = Color.FromArgb(0xf3, 0xc3, 0xa2);
+            AtticPalette[0x0C] = Color.FromArgb(0xd3, 0xd3, 0xf3);
+            AtticPalette[0x0D] = Color.FromArgb(0xc3, 0xc3, 0xf3);
+            AtticPalette[0x0E] = Color.FromArgb(0xa2, 0xa2, 0xf3);
+            AtticPalette[0x0F] = Color.FromArgb(0x82, 0x9a, 0xf3);
 
-            logoPalette[0x10] = Color.FromArgb(0x1c, 0x1c, 0x1c);
-            logoPalette[0x11] = Color.FromArgb(0x2c, 0x2c, 0x2c);
-            logoPalette[0x12] = Color.FromArgb(0x3c, 0x3c, 0x3c);
-            logoPalette[0x13] = Color.FromArgb(0x4d, 0x4d, 0x4d);
-            logoPalette[0x14] = Color.FromArgb(0x5d, 0x5d, 0x5d);
-            logoPalette[0x15] = Color.FromArgb(0x6d, 0x6d, 0x6d);
-            logoPalette[0x16] = Color.FromArgb(0x7d, 0x7d, 0x7d);
-            logoPalette[0x17] = Color.FromArgb(0x8e, 0x8e, 0x8e);
+            AtticPalette[0x10] = Color.FromArgb(0x00, 0x00, 0x00);
+            AtticPalette[0x11] = Color.FromArgb(0x14, 0x14, 0x14);
+            AtticPalette[0x12] = Color.FromArgb(0x20, 0x20, 0x20);
+            AtticPalette[0x13] = Color.FromArgb(0x2c, 0x2c, 0x2c);
+            AtticPalette[0x14] = Color.FromArgb(0x38, 0x38, 0x38);
+            AtticPalette[0x15] = Color.FromArgb(0x45, 0x45, 0x45);
+            AtticPalette[0x16] = Color.FromArgb(0x51, 0x51, 0x51);
+            AtticPalette[0x17] = Color.FromArgb(0x61, 0x61, 0x61);
 
-            logoPalette[0x18] = Color.FromArgb(0x9e, 0x9e, 0x9e);
-            logoPalette[0x19] = Color.FromArgb(0xae, 0xae, 0xae);
-            logoPalette[0x1A] = Color.FromArgb(0xbe, 0xbe, 0xbe);
-            logoPalette[0x1B] = Color.FromArgb(0xcf, 0xcf, 0xcf);
-            logoPalette[0x1C] = Color.FromArgb(0xdf, 0xdf, 0xdf);
-            logoPalette[0x1D] = Color.FromArgb(0xef, 0xef, 0xef);
-            logoPalette[0x1E] = Color.FromArgb(0xef, 0xef, 0xef);
-            logoPalette[0x1F] = Color.FromArgb(0x55, 0x00, 0x00);
-
-            logoPalette[0x20] = Color.FromArgb(0x00, 0x69, 0xb2);
-            logoPalette[0x21] = Color.FromArgb(0x00, 0x59, 0x9a);
-            logoPalette[0x22] = Color.FromArgb(0x00, 0x49, 0x82);
-            logoPalette[0x23] = Color.FromArgb(0x00, 0x3c, 0x6d);
-            logoPalette[0x24] = Color.FromArgb(0x00, 0x2c, 0x55);
-            logoPalette[0x25] = Color.FromArgb(0x00, 0x20, 0x3c);
-            logoPalette[0x26] = Color.FromArgb(0xd7, 0xd7, 0xfb);
-            logoPalette[0x27] = Color.FromArgb(0xb6, 0xba, 0xfb);
-
-            logoPalette[0x28] = Color.FromArgb(0x9a, 0x9a, 0xfb);
-            logoPalette[0x29] = Color.FromArgb(0x79, 0x7d, 0xfb);
-            logoPalette[0x2A] = Color.FromArgb(0x59, 0x5d, 0xfb);
-            logoPalette[0x2B] = Color.FromArgb(0x3c, 0x3c, 0xfb);
-            logoPalette[0x2C] = Color.FromArgb(0x00, 0x00, 0x82);
-            logoPalette[0x2D] = Color.FromArgb(0x00, 0x00, 0x6d);
-            logoPalette[0x2E] = Color.FromArgb(0x00, 0x00, 0x55);
-            logoPalette[0x2F] = Color.FromArgb(0x00, 0x00, 0x3c);
-
-            logoPalette[0x30] = Color.FromArgb(0x71, 0x00, 0xb2);
-            logoPalette[0x31] = Color.FromArgb(0x5d, 0x00, 0x9a);
-            logoPalette[0x32] = Color.FromArgb(0x4d, 0x00, 0x82);
-            logoPalette[0x33] = Color.FromArgb(0x41, 0x00, 0x6d);
-            logoPalette[0x34] = Color.FromArgb(0x30, 0x00, 0x55);
-            logoPalette[0x35] = Color.FromArgb(0x24, 0x00, 0x3c);
-            logoPalette[0x36] = Color.FromArgb(0x9a, 0x00, 0x9a);
-            logoPalette[0x37] = Color.FromArgb(0x82, 0x00, 0x82);
-
-            logoPalette[0x38] = Color.FromArgb(0x69, 0x00, 0x6d);
-            logoPalette[0x39] = Color.FromArgb(0x55, 0x00, 0x55);
-            logoPalette[0x3A] = Color.FromArgb(0x3c, 0x00, 0x3c);
-            logoPalette[0x3B] = Color.FromArgb(0x8e, 0x59, 0x30);
-            logoPalette[0x3C] = Color.FromArgb(0x86, 0x55, 0x2c);
-            logoPalette[0x3D] = Color.FromArgb(0x7d, 0x4d, 0x28);
-            logoPalette[0x3E] = Color.FromArgb(0x71, 0x49, 0x24);
-            logoPalette[0x3F] = Color.FromArgb(0x69, 0x45, 0x20);
-
-            //GENXX.NVF
-            logoPalette[0x40] = Color.FromArgb(00 * 4, 00 * 4, 00 * 4);
-            logoPalette[0x41] = Color.FromArgb(56 * 4, 56 * 4, 56 * 4);
-            logoPalette[0x42] = Color.FromArgb(52 * 4, 52 * 4, 52 * 4);
-            logoPalette[0x43] = Color.FromArgb(48 * 4, 48 * 4, 48 * 4);
-            logoPalette[0x44] = Color.FromArgb(44 * 4, 44 * 4, 44 * 4);
-            logoPalette[0x45] = Color.FromArgb(40 * 4, 40 * 4, 40 * 4);
-            logoPalette[0x46] = Color.FromArgb(36 * 4, 36 * 4, 36 * 4);
-            logoPalette[0x47] = Color.FromArgb(32 * 4, 32 * 4, 32 * 4);
-
-            logoPalette[0x48] = Color.FromArgb(28 * 4, 28 * 4, 28 * 4);
-            logoPalette[0x49] = Color.FromArgb(24 * 4, 24 * 4, 24 * 4);
-            logoPalette[0x4A] = Color.FromArgb(20 * 4, 20 * 4, 20 * 4);
-            logoPalette[0x4B] = Color.FromArgb(16 * 4, 16 * 4, 16 * 4);
-            logoPalette[0x4C] = Color.FromArgb(12 * 4, 12 * 4, 12 * 4);
-            logoPalette[0x4D] = Color.FromArgb(08 * 4, 08 * 4, 08 * 4);
-            logoPalette[0x4E] = Color.FromArgb(60 * 4, 60 * 4, 60 * 4);
-            logoPalette[0x4F] = Color.FromArgb(60 * 4, 52 * 4, 24 * 4);
-
-            logoPalette[0x50] = Color.FromArgb(60 * 4, 52 * 4, 08 * 4);
-            logoPalette[0x51] = Color.FromArgb(60 * 4, 52 * 4, 00 * 4);
-            logoPalette[0x52] = Color.FromArgb(56 * 4, 48 * 4, 00 * 4);
-            logoPalette[0x53] = Color.FromArgb(52 * 4, 44 * 4, 00 * 4);
-            logoPalette[0x54] = Color.FromArgb(48 * 4, 40 * 4, 00 * 4);
-            logoPalette[0x55] = Color.FromArgb(44 * 4, 36 * 4, 00 * 4);
-            logoPalette[0x56] = Color.FromArgb(40 * 4, 32 * 4, 00 * 4);
-            logoPalette[0x57] = Color.FromArgb(36 * 4, 28 * 4, 00 * 4);
-
-            logoPalette[0x58] = Color.FromArgb(32 * 4, 24 * 4, 00 * 4);
-            logoPalette[0x59] = Color.FromArgb(28 * 4, 20 * 4, 00 * 4);
-            logoPalette[0x5A] = Color.FromArgb(56 * 4, 20 * 4, 12 * 4);
-            logoPalette[0x5B] = Color.FromArgb(52 * 4, 12 * 4, 00 * 4);
-            logoPalette[0x5C] = Color.FromArgb(44 * 4, 08 * 4, 00 * 4);
-            logoPalette[0x5D] = Color.FromArgb(36 * 4, 04 * 4, 00 * 4);
-            logoPalette[0x5E] = Color.FromArgb(28 * 4, 00 * 4, 00 * 4);
-            logoPalette[0x5F] = Color.FromArgb(20 * 4, 00 * 4, 00 * 4);
+            AtticPalette[0x18] = Color.FromArgb(0x71, 0x71, 0x71);
+            AtticPalette[0x19] = Color.FromArgb(0x82, 0x82, 0x82);
+            AtticPalette[0x1A] = Color.FromArgb(0x92, 0x92, 0x92);
+            AtticPalette[0x1B] = Color.FromArgb(0xa2, 0xa2, 0xa2);
+            AtticPalette[0x1C] = Color.FromArgb(0xb6, 0xb6, 0xb6);
+            AtticPalette[0x1D] = Color.FromArgb(0xcb, 0xcb, 0xcb);
+            AtticPalette[0x1E] = Color.FromArgb(0xe3, 0xe3, 0xe3);
+            AtticPalette[0x1F] = Color.FromArgb(0xff, 0xff, 0xff);
             
-            //logoPalette[0x40] = Color.FromArgb(0x593c1c
-            //logoPalette[0x41] = Color.FromArgb(0x0069a6
-            //logoPalette[0x42] = Color.FromArgb(0x0045a6
-            //logoPalette[0x43] = Color.FromArgb(0x0024aa
-            //logoPalette[0x44] = Color.FromArgb(0x4900b6
-            //logoPalette[0x45] = Color.FromArgb(0x6900b6
-            //logoPalette[0x46] = Color.FromArgb(0xbeff7d
-            //logoPalette[0x47] = Color.FromArgb(0x9eff7d
-            //logoPalette[0x48] = Color.FromArgb(0x7dff7d
-            //logoPalette[0x49] = Color.FromArgb(0x7dff9e
-            //logoPalette[0x4A] = Color.FromArgb(0x7dffbe
-            //logoPalette[0x4B] = Color.FromArgb(0x7dffdf
-            //logoPalette[0x4C] = Color.FromArgb(0x7dffff
-            //logoPalette[0x4D] = Color.FromArgb(0x7ddfff
-            //logoPalette[0x4E] = Color.FromArgb(0x7dbeff
-            //logoPalette[0x4F] = Color.FromArgb(0x7d9eff
-            
-            //logoPalette[0x00] = Color.FromArgb(0xb6b6ff
-            //logoPalette[0x00] = Color.FromArgb(0xc7b6ff
-            //logoPalette[0x00] = Color.FromArgb(0xdbb6ff
-            //logoPalette[0x00] = Color.FromArgb(0xebb6ff
-            //logoPalette[0x00] = Color.FromArgb(0xffb6ff
-            //logoPalette[0x00] = Color.FromArgb(0xffb6eb
-            //logoPalette[0x00] = Color.FromArgb(0xffb6db
-            //logoPalette[0x00] = Color.FromArgb(0xffb6c7
-            //logoPalette[0x00] = Color.FromArgb(0xffb6b6
-            //logoPalette[0x00] = Color.FromArgb(0xffc7b6
-            //logoPalette[0x00] = Color.FromArgb(0xffdbb6
-            //logoPalette[0x00] = Color.FromArgb(0xffebb6
-            //logoPalette[0x00] = Color.FromArgb(0xffffb6
-            //logoPalette[0x00] = Color.FromArgb(0xebffb6
-            //logoPalette[0x00] = Color.FromArgb(0xdbffb6
-            //logoPalette[0x00] = Color.FromArgb(0xc7ffb6
-            //logoPalette[0x00] = Color.FromArgb(0xb6ffb6
-            //logoPalette[0x00] = Color.FromArgb(0xb6ffc7
-            //logoPalette[0x00] = Color.FromArgb(0xb6ffdb
-            //logoPalette[0x00] = Color.FromArgb(0xb6ffeb
-            //logoPalette[0x00] = Color.FromArgb(0xb6ffff
-            //logoPalette[0x00] = Color.FromArgb(0xb6ebff
-            //logoPalette[0x00] = Color.FromArgb(0xb6dbff
-            //logoPalette[0x00] = Color.FromArgb(0xb6c7ff
-            //logoPalette[0x00] = Color.FromArgb(0x000071
-            //logoPalette[0x00] = Color.FromArgb(0x1c0071
-            //logoPalette[0x00] = Color.FromArgb(0x380071
-            //logoPalette[0x00] = Color.FromArgb(0x550071
-            //logoPalette[0x00] = Color.FromArgb(0x710071
-            //logoPalette[0x00] = Color.FromArgb(0x710055
-            //logoPalette[0x00] = Color.FromArgb(0x710038
-            //logoPalette[0x00] = Color.FromArgb(0x71001c
-            //logoPalette[0x00] = Color.FromArgb(0x710000
-            //logoPalette[0x00] = Color.FromArgb(0x711c00
-            //logoPalette[0x00] = Color.FromArgb(0x713800
-            //logoPalette[0x00] = Color.FromArgb(0x715500
-            //logoPalette[0x00] = Color.FromArgb(0x717100
-            //logoPalette[0x00] = Color.FromArgb(0x557100
-            //logoPalette[0x00] = Color.FromArgb(0x387100
-            //logoPalette[0x00] = Color.FromArgb(0x1c7100
-            //logoPalette[0x00] = Color.FromArgb(0x007100
-            //logoPalette[0x00] = Color.FromArgb(0x00711c
-            //logoPalette[0x00] = Color.FromArgb(0x007138
-            //logoPalette[0x00] = Color.FromArgb(0x007155
-            //logoPalette[0x00] = Color.FromArgb(0x007171
-            //logoPalette[0x00] = Color.FromArgb(0x005571
-            //logoPalette[0x00] = Color.FromArgb(0x003871
-            //logoPalette[0x00] = Color.FromArgb(0x001c71
-            //logoPalette[0x00] = Color.FromArgb(0x383871
-            //logoPalette[0x00] = Color.FromArgb(0x453871
-            //logoPalette[0x00] = Color.FromArgb(0x553871
-            //logoPalette[0x00] = Color.FromArgb(0x613871
-            //logoPalette[0x00] = Color.FromArgb(0x713871
-            //logoPalette[0x00] = Color.FromArgb(0x713861
-            //logoPalette[0x00] = Color.FromArgb(0x713855
-            //logoPalette[0x00] = Color.FromArgb(0x713845
-            //logoPalette[0x00] = Color.FromArgb(0x713838
-            //logoPalette[0x00] = Color.FromArgb(0x714538
-            //logoPalette[0x00] = Color.FromArgb(0x715538
-            //logoPalette[0x00] = Color.FromArgb(0x716138
-            //logoPalette[0x00] = Color.FromArgb(0x717138
-            //logoPalette[0x00] = Color.FromArgb(0x617138
-            //logoPalette[0x00] = Color.FromArgb(0x557138
-            //logoPalette[0x00] = Color.FromArgb(0x457138
-            //logoPalette[0x00] = Color.FromArgb(0x387138
-            //logoPalette[0x00] = Color.FromArgb(0x387145
-            //logoPalette[0x00] = Color.FromArgb(0x387155
-            //logoPalette[0x00] = Color.FromArgb(0x387161
-            //logoPalette[0x00] = Color.FromArgb(0x387171
-            //logoPalette[0x00] = Color.FromArgb(0x386171
-            //logoPalette[0x00] = Color.FromArgb(0x385571
-            //logoPalette[0x00] = Color.FromArgb(0x384571
-            //logoPalette[0x00] = Color.FromArgb(0x515171
-            //logoPalette[0x00] = Color.FromArgb(0x595171
-            //logoPalette[0x00] = Color.FromArgb(0x615171
-            //logoPalette[0x00] = Color.FromArgb(0x695171
-            //logoPalette[0x00] = Color.FromArgb(0x715171
-            //logoPalette[0x00] = Color.FromArgb(0x715169
-            //logoPalette[0x00] = Color.FromArgb(0x715161
-            //logoPalette[0x00] = Color.FromArgb(0x715159
-            //logoPalette[0x00] = Color.FromArgb(0x715151
-            //logoPalette[0x00] = Color.FromArgb(0x715951
-            //logoPalette[0x00] = Color.FromArgb(0x716151
-            //logoPalette[0x00] = Color.FromArgb(0x716951
-            //logoPalette[0x00] = Color.FromArgb(0x717151
-            //logoPalette[0x00] = Color.FromArgb(0x697151
-            //logoPalette[0x00] = Color.FromArgb(0x617151
-            //logoPalette[0x00] = Color.FromArgb(0x597151
-            //logoPalette[0x00] = Color.FromArgb(0x517151
-            //logoPalette[0x00] = Color.FromArgb(0x517159
-            //logoPalette[0x00] = Color.FromArgb(0x517161
-            //logoPalette[0x00] = Color.FromArgb(0x517169
-            //logoPalette[0x00] = Color.FromArgb(0x517171
-            //logoPalette[0x00] = Color.FromArgb(0x516971
-            //logoPalette[0x00] = Color.FromArgb(0x516171
-            //logoPalette[0x00] = Color.FromArgb(0x515971
-            //logoPalette[0x00] = Color.FromArgb(0x000041
-            //logoPalette[0x00] = Color.FromArgb(0x100041
-            //logoPalette[0x00] = Color.FromArgb(0x200041
-            //logoPalette[0x00] = Color.FromArgb(0x300041
-            //logoPalette[0x00] = Color.FromArgb(0x410041
-            //logoPalette[0x00] = Color.FromArgb(0x410030
-            //logoPalette[0x00] = Color.FromArgb(0x410020
-            //logoPalette[0x00] = Color.FromArgb(0x410010
-            //logoPalette[0x00] = Color.FromArgb(0x410000
-            //logoPalette[0x00] = Color.FromArgb(0x411000
-            //logoPalette[0x00] = Color.FromArgb(0x412000
-            //logoPalette[0x00] = Color.FromArgb(0x413000
-            //logoPalette[0x00] = Color.FromArgb(0x414100
-            //logoPalette[0x00] = Color.FromArgb(0x304100
-            //logoPalette[0x00] = Color.FromArgb(0x204100
-            //logoPalette[0x00] = Color.FromArgb(0x104100
-            //logoPalette[0x00] = Color.FromArgb(0x004100
-            //logoPalette[0x00] = Color.FromArgb(0x004110
-            //logoPalette[0x00] = Color.FromArgb(0x004120
-            //logoPalette[0x00] = Color.FromArgb(0x004130
-            //logoPalette[0x00] = Color.FromArgb(0x004141
-            //logoPalette[0x00] = Color.FromArgb(0x003041
-            //logoPalette[0x00] = Color.FromArgb(0x002041
-            //logoPalette[0x00] = Color.FromArgb(0x001041
-            //logoPalette[0x00] = Color.FromArgb(0x202041
-            //logoPalette[0x00] = Color.FromArgb(0x282041
-            //logoPalette[0x00] = Color.FromArgb(0x302041
-            //logoPalette[0x00] = Color.FromArgb(0x382041
-            //logoPalette[0x00] = Color.FromArgb(0x412041
-            //logoPalette[0x00] = Color.FromArgb(0x412038
-            //logoPalette[0x00] = Color.FromArgb(0x412030
-            //logoPalette[0x00] = Color.FromArgb(0x412028
-            //logoPalette[0x00] = Color.FromArgb(0x412020
-            //logoPalette[0x00] = Color.FromArgb(0x412820
-            //logoPalette[0x00] = Color.FromArgb(0x413020
-            //logoPalette[0x00] = Color.FromArgb(0x413820
-            //logoPalette[0x00] = Color.FromArgb(0x414120
-            //logoPalette[0x00] = Color.FromArgb(0x384120
-            //logoPalette[0x00] = Color.FromArgb(0x304120
-            //logoPalette[0x00] = Color.FromArgb(0x284120
-            //logoPalette[0x00] = Color.FromArgb(0x204120
-            //logoPalette[0x00] = Color.FromArgb(0x204128
-            //logoPalette[0x00] = Color.FromArgb(0x204130
-            //logoPalette[0x00] = Color.FromArgb(0x204138
-            //logoPalette[0x00] = Color.FromArgb(0x204141
-            //logoPalette[0x00] = Color.FromArgb(0x203841
-            //logoPalette[0x00] = Color.FromArgb(0x203041
-            //logoPalette[0x00] = Color.FromArgb(0x202841
-            //logoPalette[0x00] = Color.FromArgb(0x2c2c41
-            //logoPalette[0x00] = Color.FromArgb(0x302c41
-            //logoPalette[0x00] = Color.FromArgb(0x342c41
-            //logoPalette[0x00] = Color.FromArgb(0x3c2c41
-            //logoPalette[0x00] = Color.FromArgb(0x412c41
-            //logoPalette[0x00] = Color.FromArgb(0x412c3c
-            //logoPalette[0x00] = Color.FromArgb(0x412c34
-            //logoPalette[0x00] = Color.FromArgb(0x412c30
-            //logoPalette[0x00] = Color.FromArgb(0x412c2c
-            //logoPalette[0x00] = Color.FromArgb(0x41302c
-            //logoPalette[0x00] = Color.FromArgb(0x41342c
-            //logoPalette[0x00] = Color.FromArgb(0x413c2c
-            //logoPalette[0x00] = Color.FromArgb(0x41412c
-            //logoPalette[0x00] = Color.FromArgb(0x3c412c
-            //logoPalette[0x00] = Color.FromArgb(0x34412c
-            //logoPalette[0x00] = Color.FromArgb(0x30412c
-            //logoPalette[0x00] = Color.FromArgb(0xd7c782
-            //logoPalette[0x00] = Color.FromArgb(0xd7c361
-            //logoPalette[0x00] = Color.FromArgb(0xd7ba3c
-            //logoPalette[0x00] = Color.FromArgb(0xd7aa1c
-            //logoPalette[0x00] = Color.FromArgb(0xd79e00
-            //logoPalette[0x00] = Color.FromArgb(0xcf8600
-            //logoPalette[0x00] = Color.FromArgb(0xc77500
-            //logoPalette[0x00] = Color.FromArgb(0xc36500
-            //logoPalette[0x00] = Color.FromArgb(0xba5500
-            //logoPalette[0x00] = Color.FromArgb(0xa24900
-            //logoPalette[0x00] = Color.FromArgb(0x8e3c00
-            //logoPalette[0x00] = Color.FromArgb(0x713400
-            //logoPalette[0x00] = Color.FromArgb(0x552c00
-            //logoPalette[0x00] = Color.FromArgb(0x492400
-            //logoPalette[0x00] = Color.FromArgb(0x3c2000
-            //logoPalette[0x00] = Color.FromArgb(0x341800
-
-            //GEN.EXE
-            logoPalette[0xC8] = Color.FromArgb(40 * 4, 00 * 4, 00 * 4);
-            logoPalette[0xC9] = Color.FromArgb(40 * 4, 40 * 4, 00 * 4);
-            logoPalette[0xCA] = Color.FromArgb(00 * 4, 00 * 4, 40 * 4);
+            //AtticPalette[0x20] = Color.FromArgb(0x00,0000
+            //AtticPalette[0x00] = Color.FromArgb(0x00,00ff
+            //AtticPalette[0x00] = Color.FromArgb(0x00,0092
+            //AtticPalette[0x00] = Color.FromArgb(0xf3,c3a2
+            //AtticPalette[0x00] = Color.FromArgb(0xf3,b292
+            //AtticPalette[0x00] = Color.FromArgb(0xf3,a271
+            //AtticPalette[0x00] = Color.FromArgb(0xe3,9261
+            //AtticPalette[0x00] = Color.FromArgb(0xd3,8251
+            //AtticPalette[0x00] = Color.FromArgb(0xc3,7151
+            //AtticPalette[0x00] = Color.FromArgb(0xa2,6141
+            //AtticPalette[0x00] = Color.FromArgb(0x92,5130
+            //AtticPalette[0x00] = Color.FromArgb(0x71,4130
+            //AtticPalette[0x00] = Color.FromArgb(0x61,3020
+            //AtticPalette[0x00] = Color.FromArgb(0x51,3020
+            //AtticPalette[0x00] = Color.FromArgb(0xe3,e3e3
+            //AtticPalette[0x00] = Color.FromArgb(0xc3,c3c3
+            //AtticPalette[0x00] = Color.FromArgb(0xb2,b2b2
+            //AtticPalette[0x00] = Color.FromArgb(0xa2,a2a2
+            //AtticPalette[0x00] = Color.FromArgb(0x828282
+            //AtticPalette[0x00] = Color.FromArgb(0x717171
+            //AtticPalette[0x00] = Color.FromArgb(0x515151
+            //AtticPalette[0x00] = Color.FromArgb(0x414141
+            //AtticPalette[0x00] = Color.FromArgb(0x00ff00
+            //AtticPalette[0x00] = Color.FromArgb(0x009200
+            //AtticPalette[0x00] = Color.FromArgb(0xf3e300
+            //AtticPalette[0x00] = Color.FromArgb(0xd3b200
+            //AtticPalette[0x00] = Color.FromArgb(0xa28200
+            //AtticPalette[0x00] = Color.FromArgb(0xf36141
+            //AtticPalette[0x00] = Color.FromArgb(0xc34120
+            //AtticPalette[0x00] = Color.FromArgb(0x923010
+            //AtticPalette[0x00] = Color.FromArgb(0x412010
+            //AtticPalette[0x00] = Color.FromArgb(0xf3f3f3
+            //AtticPalette[0x00] = Color.FromArgb(0x000000
+            //AtticPalette[0x00] = Color.FromArgb(0xe3e3e3
+            //AtticPalette[0x00] = Color.FromArgb(0xd3d3d3
+            //AtticPalette[0x00] = Color.FromArgb(0xc3c3c3
+            //AtticPalette[0x00] = Color.FromArgb(0xb2b2b2
+            //AtticPalette[0x00] = Color.FromArgb(0xa2a2a2
+            //AtticPalette[0x00] = Color.FromArgb(0x929292
+            //AtticPalette[0x00] = Color.FromArgb(0x828282
+            //AtticPalette[0x00] = Color.FromArgb(0x717171
+            //AtticPalette[0x00] = Color.FromArgb(0x616161
+            //AtticPalette[0x00] = Color.FromArgb(0x515151
+            //AtticPalette[0x00] = Color.FromArgb(0x414141
+            //AtticPalette[0x00] = Color.FromArgb(0x303030
+            //AtticPalette[0x00] = Color.FromArgb(0x202020
+            //AtticPalette[0x00] = Color.FromArgb(0xf3f3f3
+            //AtticPalette[0x00] = Color.FromArgb(0xf3d361
+            //AtticPalette[0x00] = Color.FromArgb(0xf3d320
+            //AtticPalette[0x00] = Color.FromArgb(0xf3d300
+            //AtticPalette[0x00] = Color.FromArgb(0xe3c300
+            //AtticPalette[0x00] = Color.FromArgb(0xd3b200
+            //AtticPalette[0x00] = Color.FromArgb(0xc3a200
+            //AtticPalette[0x00] = Color.FromArgb(0xb29200
+            //AtticPalette[0x00] = Color.FromArgb(0xa28200
+            //AtticPalette[0x00] = Color.FromArgb(0x927100
+            //AtticPalette[0x00] = Color.FromArgb(0x826100
+            //AtticPalette[0x00] = Color.FromArgb(0x715100
+            //AtticPalette[0x00] = Color.FromArgb(0xe35130
+            //AtticPalette[0x00] = Color.FromArgb(0xd33000
+            //AtticPalette[0x00] = Color.FromArgb(0xb22000
+            //AtticPalette[0x00] = Color.FromArgb(0x921000
+            //AtticPalette[0x00] = Color.FromArgb(0x710000
+            //AtticPalette[0x00] = Color.FromArgb(0x510000
+            //AtticPalette[0x00] = Color.FromArgb(0xb6ffb6
+            //AtticPalette[0x00] = Color.FromArgb(0xb6ffc7
+            //AtticPalette[0x00] = Color.FromArgb(0xb6ffdb
+            //AtticPalette[0x00] = Color.FromArgb(0xb6ffeb
+            //AtticPalette[0x00] = Color.FromArgb(0xb6ffff
+            //AtticPalette[0x00] = Color.FromArgb(0xb6ebff
+            //AtticPalette[0x00] = Color.FromArgb(0xb6dbff
+            //AtticPalette[0x00] = Color.FromArgb(0xb6c7ff
+            //AtticPalette[0x00] = Color.FromArgb(0x000071
+            //AtticPalette[0x00] = Color.FromArgb(0x1c0071
+            //AtticPalette[0x00] = Color.FromArgb(0x380071
+            //AtticPalette[0x00] = Color.FromArgb(0x550071
+            //AtticPalette[0x00] = Color.FromArgb(0x710071
+            //AtticPalette[0x00] = Color.FromArgb(0x710055
+            //AtticPalette[0x00] = Color.FromArgb(0x710038
+            //AtticPalette[0x00] = Color.FromArgb(0x71001c
+            //AtticPalette[0x00] = Color.FromArgb(0x710000
+            //AtticPalette[0x00] = Color.FromArgb(0x711c00
+            //AtticPalette[0x00] = Color.FromArgb(0x713800
+            //AtticPalette[0x00] = Color.FromArgb(0x715500
+            //AtticPalette[0x00] = Color.FromArgb(0x717100
+            //AtticPalette[0x00] = Color.FromArgb(0x557100
+            //AtticPalette[0x00] = Color.FromArgb(0x387100
+            //AtticPalette[0x00] = Color.FromArgb(0x1c7100
+            //AtticPalette[0x00] = Color.FromArgb(0x007100
+            //AtticPalette[0x00] = Color.FromArgb(0x00711c
+            //AtticPalette[0x00] = Color.FromArgb(0x007138
+            //AtticPalette[0x00] = Color.FromArgb(0x007155
+            //AtticPalette[0x00] = Color.FromArgb(0x007171
+            //AtticPalette[0x00] = Color.FromArgb(0x005571
+            //AtticPalette[0x00] = Color.FromArgb(0x003871
+            //AtticPalette[0x00] = Color.FromArgb(0x001c71
+            //AtticPalette[0x00] = Color.FromArgb(0x383871
+            //AtticPalette[0x00] = Color.FromArgb(0x453871
+            //AtticPalette[0x00] = Color.FromArgb(0x553871
+            //AtticPalette[0x00] = Color.FromArgb(0x613871
+            //AtticPalette[0x00] = Color.FromArgb(0x713871
+            //AtticPalette[0x00] = Color.FromArgb(0x713861
+            //AtticPalette[0x00] = Color.FromArgb(0x713855
+            //AtticPalette[0x00] = Color.FromArgb(0x713845
+            //AtticPalette[0x00] = Color.FromArgb(0x713838
+            //AtticPalette[0x00] = Color.FromArgb(0x714538
+            //AtticPalette[0x00] = Color.FromArgb(0x715538
+            //AtticPalette[0x00] = Color.FromArgb(0x716138
+            //AtticPalette[0x00] = Color.FromArgb(0x717138
+            //AtticPalette[0x00] = Color.FromArgb(0x617138
+            //AtticPalette[0x00] = Color.FromArgb(0x557138
+            //AtticPalette[0x00] = Color.FromArgb(0x457138
+            //AtticPalette[0x00] = Color.FromArgb(0x387138
+            //AtticPalette[0x00] = Color.FromArgb(0x387145
+            //AtticPalette[0x00] = Color.FromArgb(0x387155
+            //AtticPalette[0x00] = Color.FromArgb(0x387161
+            //AtticPalette[0x00] = Color.FromArgb(0x387171
+            //AtticPalette[0x00] = Color.FromArgb(0x386171
+            //AtticPalette[0x00] = Color.FromArgb(0x385571
+            //AtticPalette[0x00] = Color.FromArgb(0x384571
+            //AtticPalette[0x00] = Color.FromArgb(0x515171
+            //AtticPalette[0x00] = Color.FromArgb(0x595171
+            //AtticPalette[0x00] = Color.FromArgb(0x615171
+            //AtticPalette[0x00] = Color.FromArgb(0x695171
+            //AtticPalette[0x00] = Color.FromArgb(0x715171
+            //AtticPalette[0x00] = Color.FromArgb(0x715169
+            //AtticPalette[0x00] = Color.FromArgb(0x715161
+            //AtticPalette[0x00] = Color.FromArgb(0x715159
+            //AtticPalette[0x00] = Color.FromArgb(0x715151
+            //AtticPalette[0x00] = Color.FromArgb(0x715951
+            //AtticPalette[0x00] = Color.FromArgb(0x716151
+            //AtticPalette[0x00] = Color.FromArgb(0x716951
+            //AtticPalette[0x00] = Color.FromArgb(0x717151
+            //AtticPalette[0x00] = Color.FromArgb(0x697151
+            //AtticPalette[0x00] = Color.FromArgb(0x617151
+            //AtticPalette[0x00] = Color.FromArgb(0x597151
+            //AtticPalette[0x00] = Color.FromArgb(0x517151
+            //AtticPalette[0x00] = Color.FromArgb(0x517159
+            //AtticPalette[0x00] = Color.FromArgb(0x517161
+            //AtticPalette[0x00] = Color.FromArgb(0x517169
+            //AtticPalette[0x00] = Color.FromArgb(0x517171
+            //AtticPalette[0x00] = Color.FromArgb(0x516971
+            //AtticPalette[0x00] = Color.FromArgb(0x516171
+            //AtticPalette[0x00] = Color.FromArgb(0x515971
+            //AtticPalette[0x00] = Color.FromArgb(0x000041
+            //AtticPalette[0x00] = Color.FromArgb(0x100041
+            //AtticPalette[0x00] = Color.FromArgb(0x200041
+            //AtticPalette[0x00] = Color.FromArgb(0x300041
+            //AtticPalette[0x00] = Color.FromArgb(0x410041
+            //AtticPalette[0x00] = Color.FromArgb(0x410030
+            //AtticPalette[0x00] = Color.FromArgb(0x410020
+            //AtticPalette[0x00] = Color.FromArgb(0x410010
+            //AtticPalette[0x00] = Color.FromArgb(0x410000
+            //AtticPalette[0x00] = Color.FromArgb(0x411000
+            //AtticPalette[0x00] = Color.FromArgb(0x412000
+            //AtticPalette[0x00] = Color.FromArgb(0x413000
+            //AtticPalette[0x00] = Color.FromArgb(0x414100
+            //AtticPalette[0x00] = Color.FromArgb(0x304100
+            //AtticPalette[0x00] = Color.FromArgb(0x204100
+            //AtticPalette[0x00] = Color.FromArgb(0x104100
+            //AtticPalette[0x00] = Color.FromArgb(0x004100
+            //AtticPalette[0x00] = Color.FromArgb(0x004110
+            //AtticPalette[0x00] = Color.FromArgb(0x004120
+            //AtticPalette[0x00] = Color.FromArgb(0x004130
+            //AtticPalette[0x00] = Color.FromArgb(0x004141
+            //AtticPalette[0x00] = Color.FromArgb(0x003041
+            //AtticPalette[0x00] = Color.FromArgb(0x002041
+            //AtticPalette[0x00] = Color.FromArgb(0x001041
+            //AtticPalette[0x00] = Color.FromArgb(0xa20000
+            //AtticPalette[0x00] = Color.FromArgb(0xa2a200
+            //AtticPalette[0x00] = Color.FromArgb(0x0000a2
+            //AtticPalette[0x00] = Color.FromArgb(0x382041
+            //AtticPalette[0x00] = Color.FromArgb(0x412041
+            //AtticPalette[0x00] = Color.FromArgb(0x412038
+            //AtticPalette[0x00] = Color.FromArgb(0x412030
+            //AtticPalette[0x00] = Color.FromArgb(0x412028
+            //AtticPalette[0x00] = Color.FromArgb(0x412020
+            //AtticPalette[0x00] = Color.FromArgb(0x412820
+            //AtticPalette[0x00] = Color.FromArgb(0x413020
+            //AtticPalette[0x00] = Color.FromArgb(0x413820
+            //AtticPalette[0x00] = Color.FromArgb(0x414120
+            //AtticPalette[0x00] = Color.FromArgb(0x384120
+            //AtticPalette[0x00] = Color.FromArgb(0x304120
+            //AtticPalette[0x00] = Color.FromArgb(0x284120
+            //AtticPalette[0x00] = Color.FromArgb(0x000000
+            //AtticPalette[0x00] = Color.FromArgb(0xe3c3a2
+            //AtticPalette[0x00] = Color.FromArgb(0xe3c341
+            //AtticPalette[0x00] = Color.FromArgb(0xc3a230
+            //AtticPalette[0x00] = Color.FromArgb(0xb29220
+            //AtticPalette[0x00] = Color.FromArgb(0xa28210
+            //AtticPalette[0x00] = Color.FromArgb(0x615100
+            //AtticPalette[0x00] = Color.FromArgb(0x2c6530
+            //AtticPalette[0x00] = Color.FromArgb(0x2c2c41
+            //AtticPalette[0x00] = Color.FromArgb(0x302c41
+            //AtticPalette[0x00] = Color.FromArgb(0x342c41
+            //AtticPalette[0x00] = Color.FromArgb(0x3c2c41
+            //AtticPalette[0x00] = Color.FromArgb(0x412c41
+            //AtticPalette[0x00] = Color.FromArgb(0x412c3c
+            //AtticPalette[0x00] = Color.FromArgb(0x412c34
+            //AtticPalette[0x00] = Color.FromArgb(0x412c30
+            //AtticPalette[0x00] = Color.FromArgb(0x412c2c
+            //AtticPalette[0x00] = Color.FromArgb(0x41302c
+            //AtticPalette[0x00] = Color.FromArgb(0x41342c
+            //AtticPalette[0x00] = Color.FromArgb(0x413c2c
+            //AtticPalette[0x00] = Color.FromArgb(0x41412c
+            //AtticPalette[0x00] = Color.FromArgb(0x3c412c
+            //AtticPalette[0x00] = Color.FromArgb(0x34412c
+            //AtticPalette[0x00] = Color.FromArgb(0x30412c
+            //AtticPalette[0x00] = Color.FromArgb(0x2c412c
+            //AtticPalette[0x00] = Color.FromArgb(0x2c4130
+            //AtticPalette[0x00] = Color.FromArgb(0x2c4134
+            //AtticPalette[0x00] = Color.FromArgb(0x2c413c
+            //AtticPalette[0x00] = Color.FromArgb(0x2c4141
+            //AtticPalette[0x00] = Color.FromArgb(0x2c3c41
+            //AtticPalette[0x00] = Color.FromArgb(0x2c3441
+            //AtticPalette[0x00] = Color.FromArgb(0x2c3041
+            //AtticPalette[0x00] = Color.FromArgb(0x000000
+            //AtticPalette[0x00] = Color.FromArgb(0x000000
+            //AtticPalette[0x00] = Color.FromArgb(0x000000
+            //AtticPalette[0x00] = Color.FromArgb(0x000000
+            //AtticPalette[0x00] = Color.FromArgb(0x000000
+            //AtticPalette[0x00] = Color.FromArgb(0x000000
+            //AtticPalette[0x00] = Color.FromArgb(0x000000
+            //AtticPalette[0x00] = Color.FromArgb(0xffffff
         }
-
-        static private void initTestPalette()
+        static private void initGENPalette()
         {
-            int startwert = 0x01;
-            int länge = 0x2F;
+            //0x00 - 0x45 ist bei jedem logo anders + 0xF0-0xFF
+            GENPalette = (Color[])defaultPalette.Clone();
 
-            testPalette[0] = Color.FromArgb(0x00, 0x60, 0x00);
+            //-------------------------------------------------
+            //    DSALOGO.DAT(Palettenbereich:0x00-0x2F)
+            //    GENTIT.DAT (Palettenbereich:0x00-0x2F)
+            //-------------------------------------------------
+            GENPalette[0x00] = Color.FromArgb(0x00, 0x00, 0x00);
+            GENPalette[0x01] = Color.FromArgb(0xe3, 0xe3, 0xe3);
+            GENPalette[0x02] = Color.FromArgb(0xd3, 0xd3, 0xd3);
+            GENPalette[0x03] = Color.FromArgb(0xc3, 0xc3, 0xc3);
+            GENPalette[0x04] = Color.FromArgb(0xb2, 0xb2, 0xb2);
+            GENPalette[0x05] = Color.FromArgb(0xa2, 0xa2, 0xa2);
+            GENPalette[0x06] = Color.FromArgb(0x92, 0x92, 0x92);
+            GENPalette[0x07] = Color.FromArgb(0x82, 0x82, 0x82);
+            GENPalette[0x08] = Color.FromArgb(0x71, 0x71, 0x71);
+            GENPalette[0x09] = Color.FromArgb(0x61, 0x61, 0x61);
+            GENPalette[0x0A] = Color.FromArgb(0x51, 0x51, 0x51);
+            GENPalette[0x0B] = Color.FromArgb(0x41, 0x41, 0x41);
+            GENPalette[0x0C] = Color.FromArgb(0x30, 0x30, 0x30);
+            GENPalette[0x0D] = Color.FromArgb(0x20, 0x20, 0x20);
+            GENPalette[0x0E] = Color.FromArgb(0x10, 0x10, 0x10);
+            GENPalette[0x0F] = Color.FromArgb(0xb2, 0x00, 0xb2);
 
-            for (int i = startwert; i < (länge); i++)
-                testPalette[i] = Color.FromArgb(0x60, 0x00, 0x00);
+            GENPalette[0x10] = Color.FromArgb(0xb2, 0x00, 0xb2);
+            GENPalette[0x11] = Color.FromArgb(0xb2, 0x00, 0xb2);
+            GENPalette[0x12] = Color.FromArgb(0xb2, 0x00, 0xb2);
+            GENPalette[0x13] = Color.FromArgb(0xb2, 0x00, 0xb2);
+            GENPalette[0x14] = Color.FromArgb(0xb2, 0x00, 0xb2);
+            GENPalette[0x15] = Color.FromArgb(0xf3, 0xc3, 0xc3);
+            GENPalette[0x16] = Color.FromArgb(0xe3, 0xa2, 0xa2);
+            GENPalette[0x17] = Color.FromArgb(0xd3, 0x61, 0x61);
+            GENPalette[0x18] = Color.FromArgb(0xc3, 0x30, 0x30);
+            GENPalette[0x19] = Color.FromArgb(0xb2, 0x00, 0x00);
+            GENPalette[0x1A] = Color.FromArgb(0xa2, 0x00, 0x00);
+            GENPalette[0x1B] = Color.FromArgb(0x92, 0x00, 0x00);
+            GENPalette[0x1C] = Color.FromArgb(0x71, 0x00, 0x00);
+            GENPalette[0x1D] = Color.FromArgb(0x61, 0x00, 0x00);
+            GENPalette[0x1E] = Color.FromArgb(0x51, 0x00, 0x00);
+            GENPalette[0x1F] = Color.FromArgb(0xf3, 0xf3, 0xf3);
+
+            GENPalette[0x20] = Color.FromArgb(0x00, 0x00, 0x00);
+            GENPalette[0x21] = Color.FromArgb(0x00, 0x00, 0xff);
+            GENPalette[0x22] = Color.FromArgb(0x00, 0x00, 0x92);
+            GENPalette[0x23] = Color.FromArgb(0xf3, 0xc3, 0xa2);
+            GENPalette[0x24] = Color.FromArgb(0xf3, 0xb2, 0x92);
+            GENPalette[0x25] = Color.FromArgb(0xf3, 0xa2, 0x71);
+            GENPalette[0x26] = Color.FromArgb(0xe3, 0x92, 0x61);
+            GENPalette[0x27] = Color.FromArgb(0xd3, 0x82, 0x51);
+            GENPalette[0x28] = Color.FromArgb(0xc3, 0x71, 0x51);
+            GENPalette[0x29] = Color.FromArgb(0xa2, 0x61, 0x41);
+            GENPalette[0x2A] = Color.FromArgb(0x92, 0x51, 0x30);
+            GENPalette[0x2B] = Color.FromArgb(0x71, 0x41, 0x30);
+            GENPalette[0x2C] = Color.FromArgb(0x61, 0x30, 0x20);
+            GENPalette[0x2D] = Color.FromArgb(0x51, 0x30, 0x20);
+            GENPalette[0x2E] = Color.FromArgb(0xe3, 0xe3, 0xe3);
+            GENPalette[0x2F] = Color.FromArgb(0xc3, 0xc3, 0xc3);
+
+            //-------------------------------------------------
+
+            //GENPalette[0x30] = Color.FromArgb(0xb2b2b2
+            //GENPalette[0x31] = Color.FromArgb(0xa2a2a2
+            //GENPalette[0x32] = Color.FromArgb(0x828282
+            //GENPalette[0x33] = Color.FromArgb(0x717171
+            //GENPalette[0x34] = Color.FromArgb(0x515151
+            //GENPalette[0x35] = Color.FromArgb(0x414141
+            //GENPalette[0x36] = Color.FromArgb(0x00ff00
+            //GENPalette[0x37] = Color.FromArgb(0x009200
+            //GENPalette[0x38] = Color.FromArgb(0xf3e300
+            //GENPalette[0x39] = Color.FromArgb(0xd3b200
+            //GENPalette[0x3A] = Color.FromArgb(0xa28200
+            //GENPalette[0x3B] = Color.FromArgb(0xf36141
+            //GENPalette[0x3C] = Color.FromArgb(0xc34120
+            //GENPalette[0x3D] = Color.FromArgb(0x923010
+            //GENPalette[0x3E] = Color.FromArgb(0x412010
+            //GENPalette[0x3F] = Color.FromArgb(0xf3f3f3
+            
+            //GENPalette[0x40] = Color.FromArgb(0x000000
+            //GENPalette[0x41] = Color.FromArgb(0xe3e3e3
+            //GENPalette[0x42] = Color.FromArgb(0xd3d3d3
+            //GENPalette[0x43] = Color.FromArgb(0xc3c3c3
+            //GENPalette[0x44] = Color.FromArgb(0xb2b2b2
+            //GENPalette[0x45] = Color.FromArgb(0xa2a2a2
+            //GENPalette[0x46] = Color.FromArgb(0x929292
+            //GENPalette[0x47] = Color.FromArgb(0x828282
+            //GENPalette[0x48] = Color.FromArgb(0x717171
+            //GENPalette[0x49] = Color.FromArgb(0x616161
+            //GENPalette[0x4A] = Color.FromArgb(0x515151
+            //GENPalette[0x4B] = Color.FromArgb(0x414141
+            //GENPalette[0x4C] = Color.FromArgb(0x303030
+            //GENPalette[0x4D] = Color.FromArgb(0x202020
+            //GENPalette[0x4E] = Color.FromArgb(0xf3f3f3
+            //GENPalette[0x4F] = Color.FromArgb(0xf3d361
+            
+            //GENPalette[0x50] = Color.FromArgb(0xf3d320
+            //GENPalette[0x51] = Color.FromArgb(0xf3d300
+            //GENPalette[0x52] = Color.FromArgb(0xe3c300
+            //GENPalette[0x53] = Color.FromArgb(0xd3b200
+            //GENPalette[0x54] = Color.FromArgb(0xc3a200
+            //GENPalette[0x55] = Color.FromArgb(0xb29200
+            //GENPalette[0x56] = Color.FromArgb(0xa28200
+            //GENPalette[0x57] = Color.FromArgb(0x927100
+            //GENPalette[0x58] = Color.FromArgb(0x826100
+            //GENPalette[0x59] = Color.FromArgb(0x715100
+            //GENPalette[0x5A] = Color.FromArgb(0xe35130
+            //GENPalette[0x5B] = Color.FromArgb(0xd33000
+            //GENPalette[0x5C] = Color.FromArgb(0xb22000
+            //GENPalette[0x5D] = Color.FromArgb(0x921000
+            //GENPalette[0x5E] = Color.FromArgb(0x710000
+            //GENPalette[0x5F] = Color.FromArgb(0x510000
+            
+            //GENPalette[0x60] = Color.FromArgb(0xb6ffb6
+            //GENPalette[0x61] = Color.FromArgb(0xb6ffc7
+            //GENPalette[0x62] = Color.FromArgb(0xb6ffdb
+            //GENPalette[0x63] = Color.FromArgb(0xb6ffeb
+            //GENPalette[0x64] = Color.FromArgb(0xb6ffff
+            //GENPalette[0x65] = Color.FromArgb(0xb6ebff
+            //GENPalette[0x66] = Color.FromArgb(0xb6dbff
+            //GENPalette[0x67] = Color.FromArgb(0xb6c7ff
+            //GENPalette[0x68] = Color.FromArgb(0x000071
+            //GENPalette[0x69] = Color.FromArgb(0x1c0071
+            //GENPalette[0x6A] = Color.FromArgb(0x380071
+            //GENPalette[0x6B] = Color.FromArgb(0x550071
+            //GENPalette[0x6C] = Color.FromArgb(0x710071
+            //GENPalette[0x6D] = Color.FromArgb(0x710055
+            //GENPalette[0x6E] = Color.FromArgb(0x710038
+            //GENPalette[0x6F] = Color.FromArgb(0x71001c
+            
+            //GENPalette[0x70] = Color.FromArgb(0x710000
+            //GENPalette[0x71] = Color.FromArgb(0x711c00
+            //GENPalette[0x72] = Color.FromArgb(0x713800
+            //GENPalette[0x73] = Color.FromArgb(0x715500
+            //GENPalette[0x74] = Color.FromArgb(0x717100
+            //GENPalette[0x75] = Color.FromArgb(0x557100
+            //GENPalette[0x76] = Color.FromArgb(0x387100
+            //GENPalette[0x77] = Color.FromArgb(0x1c7100
+            //GENPalette[0x78] = Color.FromArgb(0x007100
+            //GENPalette[0x79] = Color.FromArgb(0x00711c
+            //GENPalette[0x7A] = Color.FromArgb(0x007138
+            //GENPalette[0x7B] = Color.FromArgb(0x007155
+            //GENPalette[0x7C] = Color.FromArgb(0x007171
+            //GENPalette[0x7D] = Color.FromArgb(0x005571
+            //GENPalette[0x7E] = Color.FromArgb(0x003871
+            //GENPalette[0x7F] = Color.FromArgb(0x001c71
+            
+            //----------------------------------------------
+            //  ROALOGUS.DAT (Palettenbereich:0x80-0xCF)
+            //----------------------------------------------
+            GENPalette[0x80] = Color.FromArgb(0x38, 0x38, 0x71);
+            GENPalette[0x81] = Color.FromArgb(0x45, 0x38, 0x71);
+            GENPalette[0x82] = Color.FromArgb(0x55, 0x38, 0x71);
+            GENPalette[0x83] = Color.FromArgb(0x61, 0x38, 0x71);
+            GENPalette[0x84] = Color.FromArgb(0x71, 0x38, 0x71);
+            GENPalette[0x85] = Color.FromArgb(0x71, 0x38, 0x61);
+            GENPalette[0x86] = Color.FromArgb(0x71, 0x38, 0x55);
+            GENPalette[0x87] = Color.FromArgb(0x71, 0x38, 0x45);
+            GENPalette[0x88] = Color.FromArgb(0x71, 0x38, 0x38);
+            GENPalette[0x89] = Color.FromArgb(0x71, 0x45, 0x38);
+            GENPalette[0x8A] = Color.FromArgb(0x71, 0x55, 0x38);
+            GENPalette[0x8B] = Color.FromArgb(0x71, 0x61, 0x38);
+            GENPalette[0x8C] = Color.FromArgb(0x71, 0x71, 0x38);
+            GENPalette[0x8D] = Color.FromArgb(0x61, 0x71, 0x38);
+            GENPalette[0x8E] = Color.FromArgb(0x55, 0x71, 0x38);
+            GENPalette[0x8F] = Color.FromArgb(0x45, 0x71, 0x38);
+
+            GENPalette[0x90] = Color.FromArgb(0x38, 0x71, 0x38);
+            GENPalette[0x91] = Color.FromArgb(0x38, 0x71, 0x45);
+            GENPalette[0x92] = Color.FromArgb(0x38, 0x71, 0x55);
+            GENPalette[0x93] = Color.FromArgb(0x38, 0x71, 0x61);
+            GENPalette[0x94] = Color.FromArgb(0x38, 0x71, 0x71);
+            GENPalette[0x95] = Color.FromArgb(0x38, 0x61, 0x71);
+            GENPalette[0x96] = Color.FromArgb(0x38, 0x55, 0x71);
+            GENPalette[0x97] = Color.FromArgb(0x38, 0x45, 0x71);
+            GENPalette[0x98] = Color.FromArgb(0x51, 0x51, 0x71);
+            GENPalette[0x99] = Color.FromArgb(0x59, 0x51, 0x71);
+            GENPalette[0x9A] = Color.FromArgb(0x61, 0x51, 0x71);
+            GENPalette[0x9B] = Color.FromArgb(0x69, 0x51, 0x71);
+            GENPalette[0x9C] = Color.FromArgb(0x71, 0x51, 0x71);
+            GENPalette[0x9D] = Color.FromArgb(0x71, 0x51, 0x69);
+            GENPalette[0x9E] = Color.FromArgb(0x71, 0x51, 0x61);
+            GENPalette[0x9F] = Color.FromArgb(0x71, 0x51, 0x59);
+
+            GENPalette[0xA0] = Color.FromArgb(0x71, 0x51, 0x51);
+            GENPalette[0xA1] = Color.FromArgb(0x71, 0x59, 0x51);
+            GENPalette[0xA2] = Color.FromArgb(0x71, 0x61, 0x51);
+            GENPalette[0xA3] = Color.FromArgb(0x71, 0x69, 0x51);
+            GENPalette[0xA4] = Color.FromArgb(0x71, 0x71, 0x51);
+            GENPalette[0xA5] = Color.FromArgb(0x69, 0x71, 0x51);
+            GENPalette[0xA6] = Color.FromArgb(0x61, 0x71, 0x51);
+            GENPalette[0xA7] = Color.FromArgb(0x59, 0x71, 0x51);
+            GENPalette[0xA8] = Color.FromArgb(0x51, 0x71, 0x51);
+            GENPalette[0xA9] = Color.FromArgb(0x51, 0x71, 0x59);
+            GENPalette[0xAA] = Color.FromArgb(0x51, 0x71, 0x61);
+            GENPalette[0xAB] = Color.FromArgb(0x51, 0x71, 0x69);
+            GENPalette[0xAC] = Color.FromArgb(0x51, 0x71, 0x71);
+            GENPalette[0xAD] = Color.FromArgb(0x51, 0x69, 0x71);
+            GENPalette[0xAE] = Color.FromArgb(0x51, 0x61, 0x71);
+            GENPalette[0xAF] = Color.FromArgb(0x51, 0x59, 0x71);
+
+            GENPalette[0xB0] = Color.FromArgb(0x00, 0x00, 0x41);
+            GENPalette[0xB1] = Color.FromArgb(0x10, 0x00, 0x41);
+            GENPalette[0xB2] = Color.FromArgb(0x20, 0x00, 0x41);
+            GENPalette[0xB3] = Color.FromArgb(0x30, 0x00, 0x41);
+            GENPalette[0xB4] = Color.FromArgb(0x41, 0x00, 0x41);
+            GENPalette[0xB5] = Color.FromArgb(0x41, 0x00, 0x30);
+            GENPalette[0xB6] = Color.FromArgb(0x41, 0x00, 0x20);
+            GENPalette[0xB7] = Color.FromArgb(0x41, 0x00, 0x10);
+            GENPalette[0xB8] = Color.FromArgb(0x41, 0x00, 0x00);
+            GENPalette[0xB9] = Color.FromArgb(0x41, 0x10, 0x00);
+            GENPalette[0xBA] = Color.FromArgb(0x41, 0x20, 0x00);
+            GENPalette[0xBB] = Color.FromArgb(0x41, 0x30, 0x00);
+            GENPalette[0xBC] = Color.FromArgb(0x41, 0x41, 0x00);
+            GENPalette[0xBD] = Color.FromArgb(0x30, 0x41, 0x00);
+            GENPalette[0xBE] = Color.FromArgb(0x20, 0x41, 0x00);
+            GENPalette[0xBF] = Color.FromArgb(0x10, 0x41, 0x00);
+
+            GENPalette[0xC0] = Color.FromArgb(0x00, 0x41, 0x00);
+            GENPalette[0xC1] = Color.FromArgb(0x00, 0x41, 0x10);
+            GENPalette[0xC2] = Color.FromArgb(0x00, 0x41, 0x20);
+            GENPalette[0xC3] = Color.FromArgb(0x00, 0x41, 0x30);
+            GENPalette[0xC4] = Color.FromArgb(0x00, 0x41, 0x41);
+            GENPalette[0xC5] = Color.FromArgb(0x00, 0x30, 0x41);
+            GENPalette[0xC6] = Color.FromArgb(0x00, 0x20, 0x41);
+            GENPalette[0xC7] = Color.FromArgb(0x00, 0x10, 0x41);
+            GENPalette[0xC8] = Color.FromArgb(0xa2, 0x00, 0x00);
+            GENPalette[0xC9] = Color.FromArgb(0xa2, 0xa2, 0x00);
+            GENPalette[0xCA] = Color.FromArgb(0x00, 0x00, 0xa2);
+            GENPalette[0xCB] = Color.FromArgb(0x38, 0x20, 0x41);
+            GENPalette[0xCC] = Color.FromArgb(0x41, 0x20, 0x41);
+            GENPalette[0xCD] = Color.FromArgb(0x41, 0x20, 0x38);
+            GENPalette[0xCE] = Color.FromArgb(0x41, 0x20, 0x30);
+            GENPalette[0xCF] = Color.FromArgb(0x41, 0x20, 0x28);
+
+            //----------------------------------------------
+
+            //GENPalette[0xD0] = Color.FromArgb(0x412020
+            //GENPalette[0x00] = Color.FromArgb(0x412820
+            //GENPalette[0x00] = Color.FromArgb(0x413020
+            //GENPalette[0x00] = Color.FromArgb(0x413820
+            //GENPalette[0x00] = Color.FromArgb(0x414120
+            //GENPalette[0x00] = Color.FromArgb(0x384120
+            //GENPalette[0x00] = Color.FromArgb(0x304120
+            //GENPalette[0x00] = Color.FromArgb(0x284120
+            //GENPalette[0x00] = Color.FromArgb(0x000000
+            //GENPalette[0x00] = Color.FromArgb(0xe3c3a2
+            //GENPalette[0x00] = Color.FromArgb(0xe3c341
+            //GENPalette[0x00] = Color.FromArgb(0xc3a230
+            //GENPalette[0x00] = Color.FromArgb(0xb29220
+            //GENPalette[0x00] = Color.FromArgb(0xa28210
+            //GENPalette[0x00] = Color.FromArgb(0x615100
+            //GENPalette[0x00] = Color.FromArgb(0x2c6530
+            //GENPalette[0x00] = Color.FromArgb(0x2c2c41
+            //GENPalette[0x00] = Color.FromArgb(0x302c41
+            //GENPalette[0x00] = Color.FromArgb(0x342c41
+            //GENPalette[0x00] = Color.FromArgb(0x3c2c41
+            //GENPalette[0x00] = Color.FromArgb(0x412c41
+            //GENPalette[0x00] = Color.FromArgb(0x412c3c
+            //GENPalette[0x00] = Color.FromArgb(0x412c34
+            //GENPalette[0x00] = Color.FromArgb(0x412c30
+            //GENPalette[0x00] = Color.FromArgb(0x412c2c
+            //GENPalette[0x00] = Color.FromArgb(0x41302c
+            //GENPalette[0x00] = Color.FromArgb(0x41342c
+            //GENPalette[0x00] = Color.FromArgb(0x413c2c
+            //GENPalette[0x00] = Color.FromArgb(0x41412c
+            //GENPalette[0x00] = Color.FromArgb(0x3c412c
+            //GENPalette[0x00] = Color.FromArgb(0x34412c
+            //GENPalette[0x00] = Color.FromArgb(0x30412c
+            //GENPalette[0x00] = Color.FromArgb(0x2c412c
+            //GENPalette[0x00] = Color.FromArgb(0x2c4130
+            //GENPalette[0x00] = Color.FromArgb(0x2c4134
+            //GENPalette[0x00] = Color.FromArgb(0x2c413c
+            //GENPalette[0x00] = Color.FromArgb(0x2c4141
+            //GENPalette[0x00] = Color.FromArgb(0x2c3c41
+            //GENPalette[0x00] = Color.FromArgb(0x2c3441
+            //GENPalette[0x00] = Color.FromArgb(0x2c3041
+            //GENPalette[0x00] = Color.FromArgb(0x000000
+            //GENPalette[0x00] = Color.FromArgb(0x000000
+            //GENPalette[0x00] = Color.FromArgb(0x000000
+            //GENPalette[0x00] = Color.FromArgb(0x000000
+            //GENPalette[0x00] = Color.FromArgb(0x000000
+            //GENPalette[0x00] = Color.FromArgb(0x000000
+            //GENPalette[0x00] = Color.FromArgb(0x000000
+            //GENPalette[0x00] = Color.FromArgb(0xffffff
+
         }
 
         static public Color getColor(palettenTyp typ, Byte input)
@@ -1448,11 +1675,11 @@ Z.B. sind die Gesichter der Helden 0x20-0x3f, die Gegenstände 0x40-0x5f. Bei di
                 case palettenTyp.Fight_Pal:
                     return fightPalette[input];
 
-                case palettenTyp.Logo_Pal:
-                    return logoPalette[input];
+                case palettenTyp.Logo_Attic:
+                    return AtticPalette[input];
 
-                case palettenTyp.Test_Pal:
-                    return testPalette[input];
+                case palettenTyp.GEN_Pal:
+                    return GENPalette[input];
 
                 default:
                     return defaultPalette[input];
