@@ -17,6 +17,34 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.addLTX(ref data, LTX);
             this.addDTX(ref data, DTX);
         }
+        public void addLTX(ref byte[] data, CDSAFileLoader.CFileSet LTX)
+        {
+            if (data == null || LTX == null)
+                return;
+
+            CDebugger.addDebugLine("Texte: " + LTX.filename + " wurde hinzugefügt");
+
+            // alle Texte der Datei auslesen
+            Int32 position = LTX.startOffset;
+            List<string> textList = new List<string>();
+
+            string text = CHelpFunctions.readDSAString(ref data, position, 0);
+            textList.Add(text);
+            position += (text.Length + 1);
+
+            while ((position + text.Length + 2) < LTX.endOffset)
+            {
+                text = CHelpFunctions.readDSAString(ref data, position, 0);
+                textList.Add(text);
+                position += (text.Length + 1);
+            }
+
+            //dateinamen auslesen
+            //int pos = s.LastIndexOf("\\");
+            //string filename = s.Substring(pos + 1);
+
+            this.LTX_Texte.Add(new KeyValuePair<string, List<string>>(LTX.filename, textList));
+        }
         public void clear()
         {
             this.LTX_Texte.Clear();

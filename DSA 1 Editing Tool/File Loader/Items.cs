@@ -11,7 +11,7 @@ namespace DSA_1_Editing_Tool.File_Loader
         public List<CItem> itsItems = new List<CItem>();
         public List<string> itsItemNames = new List<string>();
 
-        public void LoadItems(ref byte[] data, CDSAFileLoader.CFileSet items_dat, CDSAFileLoader.CFileSet itemname)
+        public void addItems(ref byte[] data, CDSAFileLoader.CFileSet items_dat, CDSAFileLoader.CFileSet itemname)
         {
             this.itsItems.Clear();
             this.itsItemNames.Clear();

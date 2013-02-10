@@ -69,7 +69,7 @@ namespace DSA_1_Editing_Tool
                     break;
 
                 case DSAVersion.Schweif:
-                    this.loadDSA2();
+                    this.loadDSA2(filepath);
                     break;
 
                 default:
@@ -90,145 +90,145 @@ namespace DSA_1_Editing_Tool
 
             if (Properties.Settings.Default.loadData)
             {
-                fileset_1 = this.getFileByName("ITEMS.DAT", false);
-                fileset_2 = this.getFileByName("ITEMNAME", false);
-                this.itemList.LoadItems(ref this.SCHICK_DAT, fileset_1, fileset_2);
+                fileset_1 = this.getFileByName_DSA_1("ITEMS.DAT", false);
+                fileset_2 = this.getFileByName_DSA_1("ITEMNAME", false);
+                this.itemList.addItems(ref this.SCHICK_DAT, fileset_1, fileset_2);
 
-                filesetList_1 = this.getFilesBySuffix(".LTX", false);
-                filesetList_2 = this.getFilesBySuffix(".DTX", false);
+                filesetList_1 = this.getFilesBySuffix_DSA_1(".LTX", false);
+                filesetList_2 = this.getFilesBySuffix_DSA_1(".DTX", false);
                 this.texte.addTexte(ref this.SCHICK_DAT, filesetList_1, filesetList_2);
 
-                fileset_1 = this.getFileByName("MONSTER.DAT", false);
-                fileset_2 = this.getFileByName("MONNAMES", false);
+                fileset_1 = this.getFileByName_DSA_1("MONSTER.DAT", false);
+                fileset_2 = this.getFileByName_DSA_1("MONNAMES", false);
                 this.monster.addMonsters(ref this.SCHICK_DAT, fileset_1, fileset_2);
 
-                fileset_1 = this.getFileByName("FIGHT.LST", false);
+                fileset_1 = this.getFileByName_DSA_1("FIGHT.LST", false);
                 this.kampf.addKämpfe(ref this.SCHICK_DAT, fileset_1);
 
                 filesetList_1 = this.getTownFiles();
                 this.städte.addStädte(ref this.SCHICK_DAT, filesetList_1);
 
-                filesetList_1 = this.getFilesBySuffix(".DNG", false);
-                filesetList_2 = this.getFilesBySuffix(".DDT", false);
+                filesetList_1 = this.getFilesBySuffix_DSA_1(".DNG", false);
+                filesetList_2 = this.getFilesBySuffix_DSA_1(".DDT", false);
                 this.dungeons.addDungeons(ref this.SCHICK_DAT, filesetList_1, filesetList_2);
             }
 
             if (Properties.Settings.Default.loadImages)
             {
-                filesetList_1 = this.getFilesBySuffix(".NVF", false);
-                filesetList_2 = this.getFilesBySuffix(".NVF", true);
+                filesetList_1 = this.getFilesBySuffix_DSA_1(".NVF", false);
+                filesetList_2 = this.getFilesBySuffix_DSA_1(".NVF", true);
                 this.bilder.addPictures(ref this.SCHICK_DAT, filesetList_1, ref this.DSAGEN_DAT, filesetList_2);
                 //-------------Main Images------------------
                 CDebugger.addDebugLine("weitere Bilder werden geladen, bitte warten...");
 
-                fileset_1 = this.getFileByName("COMPASS", false);
+                fileset_1 = this.getFileByName_DSA_1("COMPASS", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("SPLASHES.DAT", false);
+                fileset_1 = this.getFileByName_DSA_1("SPLASHES.DAT", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("TEMPICON", false);
+                fileset_1 = this.getFileByName_DSA_1("TEMPICON", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("KARTE.DAT", false);
+                fileset_1 = this.getFileByName_DSA_1("KARTE.DAT", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("BICONS", false);
+                fileset_1 = this.getFileByName_DSA_1("BICONS", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("ICONS", false);
+                fileset_1 = this.getFileByName_DSA_1("ICONS", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
 
                 //-------------Main Power Pack--------------
-                fileset_1 = this.getFileByName("PLAYM_UK", false);
+                fileset_1 = this.getFileByName_DSA_1("PLAYM_UK", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("PLAYM_US", false);
+                fileset_1 = this.getFileByName_DSA_1("PLAYM_US", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("ZUSTA_UK", false);
+                fileset_1 = this.getFileByName_DSA_1("ZUSTA_UK", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("ZUSTA_US", false);
+                fileset_1 = this.getFileByName_DSA_1("ZUSTA_US", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
 
-                fileset_1 = this.getFileByName("BUCH.DAT", false);
+                fileset_1 = this.getFileByName_DSA_1("BUCH.DAT", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("KCBACK.DAT", false);
+                fileset_1 = this.getFileByName_DSA_1("KCBACK.DAT", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("KCLBACK.DAT", false);
+                fileset_1 = this.getFileByName_DSA_1("KCLBACK.DAT", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("KDBACK.DAT", false);
+                fileset_1 = this.getFileByName_DSA_1("KDBACK.DAT", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("KDLBACK.DAT", false);
+                fileset_1 = this.getFileByName_DSA_1("KDLBACK.DAT", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("KLBACK.DAT", false);
+                fileset_1 = this.getFileByName_DSA_1("KLBACK.DAT", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("KLLBACK.DAT", false);
+                fileset_1 = this.getFileByName_DSA_1("KLLBACK.DAT", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("KSBACK.DAT", false);
+                fileset_1 = this.getFileByName_DSA_1("KSBACK.DAT", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
-                fileset_1 = this.getFileByName("KSLBACK.DAT", false);
+                fileset_1 = this.getFileByName_DSA_1("KSLBACK.DAT", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
 
                 //fileset_1 = this.getFileByName("BSKILLS.DAT", false);
                 //this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
 
-                fileset_1 = this.getFileByName("POPUP.DAT", false);
+                fileset_1 = this.getFileByName_DSA_1("POPUP.DAT", false);
                 this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
                 //-------------DSA GEN Images---------------
-                fileset_1 = this.getFileByName("ATTIC", true);
+                fileset_1 = this.getFileByName_DSA_1("ATTIC", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("DSALOGO.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DSALOGO.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("GENTIT.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("GENTIT.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("HEADS.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("HEADS.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1); //daten sind amiga komprimiert
-                fileset_1 = this.getFileByName("SEX.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("SEX.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
                 //-------------DSA GEN Power Pack------------
-                fileset_1 = this.getFileByName("DZWERG.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DZWERG.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("DTHORWAL.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DTHORWAL.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("DSTREUNE.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DSTREUNE.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("DMENGE.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DMENGE.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("DMAGIER.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DMAGIER.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("DKRIEGER.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DKRIEGER.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("DDRUIDE.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DDRUIDE.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("DAELF.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DAELF.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("DFELF.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DFELF.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("DWELF.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DWELF.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("DGAUKLER.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DGAUKLER.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("DHEXE.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DHEXE.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("DJAEGER.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("DJAEGER.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
 
-                fileset_1 = this.getFileByName("POPUP.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("POPUP.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
-                fileset_1 = this.getFileByName("ROALOGUS.DAT", true);
+                fileset_1 = this.getFileByName_DSA_1("ROALOGUS.DAT", true);
                 this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
             }
 
             if (Properties.Settings.Default.loadAnims)
             {
                 //---------Bild Archive-----------------------
-                fileset_1 = this.getFileByName("MONSTER", false);
-                fileset_2 = this.getFileByName("MONSTER.TAB", false);
+                fileset_1 = this.getFileByName_DSA_1("MONSTER", false);
+                fileset_2 = this.getFileByName_DSA_1("MONSTER.TAB", false);
                 this.bilder.addArchivToList(ref this.SCHICK_DAT, fileset_1, fileset_2);
-                fileset_1 = this.getFileByName("MFIGS", false);
-                fileset_2 = this.getFileByName("MFIGS.TAB", false);
+                fileset_1 = this.getFileByName_DSA_1("MFIGS", false);
+                fileset_2 = this.getFileByName_DSA_1("MFIGS.TAB", false);
                 this.bilder.addArchivToList(ref this.SCHICK_DAT, fileset_1, fileset_2);
-                fileset_1 = this.getFileByName("WFIGS", false);
-                fileset_2 = this.getFileByName("WFIGS.TAB", false);
+                fileset_1 = this.getFileByName_DSA_1("WFIGS", false);
+                fileset_2 = this.getFileByName_DSA_1("WFIGS.TAB", false);
                 this.bilder.addArchivToList(ref this.SCHICK_DAT, fileset_1, fileset_2);
 
                 //Bilder im Archiv ANIS sind in einem alten Animationsformat (siehe wiki)
-                fileset_1 = this.getFileByName("ANIS", false);
-                fileset_2 = this.getFileByName("ANIS.TAB", false);
+                fileset_1 = this.getFileByName_DSA_1("ANIS", false);
+                fileset_2 = this.getFileByName_DSA_1("ANIS.TAB", false);
                 this.bilder.addArchivToList(ref this.SCHICK_DAT, fileset_1, fileset_2);
             }
 
@@ -238,18 +238,41 @@ namespace DSA_1_Editing_Tool
             CDebugger.addDebugLine("es wurden " + fileCount.ToString() + " Bilddatein mit insgesammt " + imageCount.ToString() + " Bildern geladen");
 
             //----------Routen--------------------
-            fileset_1 = this.getFileByName("LROUT.DAT", false);
-            fileset_2 = this.getFileByName("HSROUT.DAT", false);
-            fileset_3 = this.getFileByName("SROUT.DAT", false);
+            fileset_1 = this.getFileByName_DSA_1("LROUT.DAT", false);
+            fileset_2 = this.getFileByName_DSA_1("HSROUT.DAT", false);
+            fileset_3 = this.getFileByName_DSA_1("SROUT.DAT", false);
             this.routen.addRouten(ref this.SCHICK_DAT, fileset_1, fileset_2, fileset_3);
 
             //----------Dialoge--------------------
-            filesetList_1 = this.getFilesBySuffix("TLK", false);
+            filesetList_1 = this.getFilesBySuffix_DSA_1("TLK", false);
             this.dialoge.addDialoge(ref this.SCHICK_DAT, filesetList_1);
         }
-        private void loadDSA2()
+        private void loadDSA2(string filepath)
         {
             this.clearItems();
+
+            CFileSet fileset_1;
+            CFileSet fileset_2;
+            CFileSet fileset_3;
+            List<CFileSet> filesetList_1;
+            List<CFileSet> filesetList_2;
+
+            ///////////////
+            //  Texte
+            if (Properties.Settings.Default.loadData)
+            {
+                string myFile = filepath + Config.PathSign + "DATA" + Config.PathSign + "GLOBLTXT.LTX";
+                if (File.Exists(myFile))
+                {
+                    byte[] data = File.ReadAllBytes(myFile);
+                    fileset_1 = new CFileSet("GLOBLTXT.LTX", 0, data.Length);
+                    this.texte.addLTX(ref data, fileset_1);
+                }
+            }
+            filesetList_1 = this.getFilesBySuffix_DSA_2("LTX");
+            filesetList_2 = this.getFilesBySuffix_DSA_2("DTX");
+            this.texte.addTexte(ref this.STAR_DAT, filesetList_1, filesetList_2);
+            //---------------------------
         }
 
         public bool unpackAll(string filepath)
@@ -311,13 +334,27 @@ namespace DSA_1_Editing_Tool
 
                     string path_starDat = filepath + s + "DATA" + s + "STAR.DAT";
                     if (!File.Exists(path_starDat))
-                    {
                         CDebugger.addErrorLine("Die Datei " + path_starDat + " konnte nicht gefunden werden");
-                    }
                     else
-                    {
                         this.unpack_SCHWEIF(path_starDat);    
-                    }
+                    break;
+                }
+                else if (File.Exists(filepath + s + "STAR.EXE"))
+                {
+                    Properties.Settings.Default.DefaultDSAPath = filepath;
+                    Properties.Settings.Default.Save();
+
+                    CDebugger.addDebugLine("STAR.EXE wurde erkannt ");
+
+                    found = true;
+                    Config.PathSign = s;
+                    this._version = DSAVersion.Schweif;
+
+                    string path_starDat = filepath + s + "DATA" + s + "STAR.DAT";
+                    if (!File.Exists(path_starDat))
+                        CDebugger.addErrorLine("Die Datei " + path_starDat + " konnte nicht gefunden werden");
+                    else
+                        this.unpack_SCHWEIF(path_starDat);
                     break;
                 }
             }
@@ -455,15 +492,6 @@ namespace DSA_1_Editing_Tool
             //    //Datei schreiben
             //    File.WriteAllBytes(this.path + CConfig.ExportFolder + "\\" + CConfig.ExportSubFolder_Schick + "\\" + SubDirectory + writeName, temp);
             //}
-        }
-        private void unpack_SCHWEIF(string filename)
-        {
-            if (!File.Exists(filename))
-                return;
-
-            this.STAR_DAT = File.ReadAllBytes(filename);
-
-            this.itsSTAROffsets.Clear();
         }   
         private void unpack_DSAGEN(string filename)
         {
@@ -529,8 +557,44 @@ namespace DSA_1_Editing_Tool
             //    File.WriteAllBytes(this.path + CConfig.ExportFolder + "\\" + CConfig.ExportSubFolder_DSAGEN + "\\" + SubDirectory + writeName, temp);
             //}
         }
+        private void unpack_SCHWEIF(string filename)
+        {
+            this.itsSTAROffsets.Clear();
 
-        private CFileSet getFileByName(string filename, bool useDSAGenDat)
+            if (!File.Exists(filename))
+            {
+                CDebugger.addErrorLine("die Datei '" + filename + "' konnte nicht geladen werden");
+                return;
+            }
+
+            this.STAR_DAT = File.ReadAllBytes(filename);
+
+            Int16 anzahlEinträge = CHelpFunctions.byteArrayToInt16(ref this.STAR_DAT, 0);
+            Int32 position = 2;
+            Int32 offsetFiles = 2 + anzahlEinträge * 20;
+
+            for (int i = 0; i < anzahlEinträge; i++)
+            {
+                string name = CHelpFunctions.readDSAString(ref this.STAR_DAT, position + 2, 14);
+                Int32 offset = CHelpFunctions.byteArrayToInt32(ref this.STAR_DAT, position + 16);
+
+                Int32 value = CHelpFunctions.byteArrayToInt16(ref this.STAR_DAT, position);
+                if (value == 0)
+                {
+                    CDebugger.addErrorLine("Die Datei " + name + " ist nur mit CD verfügbar");
+                }
+                else if (value != 1)
+                    CDebugger.addErrorLine("Die Datei " + name + " ist nicht verfügbar CD verfügbar (" + value.ToString() + ")");
+
+                this.itsSTAROffsets.Add(new KeyValuePair<string, int>(name, offsetFiles + offset));
+
+                position += 20;
+            }
+
+            CDebugger.addDebugLine(this.itsSTAROffsets.Count.ToString() + " Datei Einträge wurden in \"" + filename + "\" gefunden");
+        }
+
+        private CFileSet getFileByName_DSA_1(string filename, bool useDSAGenDat)
         {
             if (!useDSAGenDat)
             {
@@ -583,7 +647,25 @@ namespace DSA_1_Editing_Tool
 
             return null;
         }
-        private List<CFileSet> getFilesBySuffix(string suffix, bool useDSAGenDat)
+        private CFileSet getFileByName_DSA_2(string filename)
+        {
+            if (this.STAR_DAT == null)
+                return null;
+
+            for (int i = 0; i < this.itsSTAROffsets.Count; i++)
+            {
+                if (this.itsSTAROffsets[i].Key == filename)
+                {
+                    if (i < (this.itsSTAROffsets.Count - 1))
+                        return new CFileSet(filename, this.itsSTAROffsets[i].Value, this.itsSTAROffsets[i + 1].Value);
+                    else
+                        return new CFileSet(filename, this.itsSTAROffsets[i].Value, this.itsSTAROffsets.Count);
+                }
+            }
+
+            return null;
+        }
+        private List<CFileSet> getFilesBySuffix_DSA_1(string suffix, bool useDSAGenDat)
         {
             List<CFileSet> fileSet = new List<CFileSet>();
 
@@ -627,6 +709,26 @@ namespace DSA_1_Editing_Tool
                                 fileSet.Add(new CFileSet(this.itsDSAGENOffsets[i].Key, this.itsDSAGENOffsets[i].Value, this.DSAGEN_DAT.Length));
                         }
                     }
+                }
+            }
+
+            return fileSet;
+        }
+        private List<CFileSet> getFilesBySuffix_DSA_2(string suffix)
+        {
+            List<CFileSet> fileSet = new List<CFileSet>();
+
+            if (this.STAR_DAT == null)
+                return fileSet;
+
+            for (int i = 0; i < this.itsSTAROffsets.Count; i++)
+            {
+                if (this.itsSTAROffsets[i].Key.Contains(suffix))
+                {
+                    if (i < (this.itsSTAROffsets.Count - 1))
+                        fileSet.Add(new CFileSet(this.itsSTAROffsets[i].Key, this.itsSTAROffsets[i].Value, this.itsSTAROffsets[i + 1].Value));
+                    else
+                        fileSet.Add(new CFileSet(this.itsSTAROffsets[i].Key, this.itsSTAROffsets[i].Value, this.itsSTAROffsets.Count));
                 }
             }
 
