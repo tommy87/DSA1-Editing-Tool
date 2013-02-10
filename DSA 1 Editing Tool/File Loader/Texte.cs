@@ -12,16 +12,19 @@ namespace DSA_1_Editing_Tool.File_Loader
         public List<KeyValuePair<string, List<string>>> LTX_Texte = new List<KeyValuePair<string, List<string>>>();   //Liste von Dateinamen und einer Liste mit den zugehörigen Texten
         public List<KeyValuePair<string, List<string>>> DTX_Texte = new List<KeyValuePair<string, List<string>>>();   //Liste von Dateinamen und einer Liste mit den zugehörigen Texten
 
-        public void loadTexte(ref byte[] data, List<CDSAFileLoader.CFileSet> LTX, List<CDSAFileLoader.CFileSet> DTX)
+        public void addTexte(ref byte[] data, List<CDSAFileLoader.CFileSet> LTX, List<CDSAFileLoader.CFileSet> DTX)
         {
-            this.loadLTX(ref data, LTX);
-            this.loadDTX(ref data, DTX);
+            this.addLTX(ref data, LTX);
+            this.addDTX(ref data, DTX);
         }
-
-        private void loadLTX(ref byte[] data, List<CDSAFileLoader.CFileSet> LTX)
+        public void clear()
         {
             this.LTX_Texte.Clear();
+            this.DTX_Texte.Clear();
+        }
 
+        private void addLTX(ref byte[] data, List<CDSAFileLoader.CFileSet> LTX)
+        {
             if (data == null)
                 return;
 
@@ -54,10 +57,8 @@ namespace DSA_1_Editing_Tool.File_Loader
                 this.LTX_Texte.Add(new KeyValuePair<string, List<string>>(fileSet.filename, textList));
             }
         }
-        private void loadDTX(ref byte[] data, List<CDSAFileLoader.CFileSet> DTX)
+        private void addDTX(ref byte[] data, List<CDSAFileLoader.CFileSet> DTX)
         {
-            this.DTX_Texte.Clear();
-
             if (data == null)
                 return;
 
@@ -88,6 +89,9 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
         }
 
+        //////////////////
+        //  XML export  //
+        //////////////////
         private void writeTextgroup(XmlTextWriter wr, List<string> list, string prefix)
         {
             for (int i = 0; i < list.Count; i++)
@@ -98,7 +102,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 wr.WriteEndElement();
             }
         }
-
         private void writeTextlist( XmlTextWriter wr, List<KeyValuePair<string, List<string>>> list, string prefix ) {
             for (int i = 0; i < list.Count; i++)
             {
@@ -107,7 +110,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 writeTextgroup(wr, list[i].Value, idkey);
             }
         }
-
         public void exportXML(string filename, CItemList itl, CDialoge dlg)
         {
             XmlTextWriter wr = new XmlTextWriter(filename, Encoding.UTF8);
@@ -126,6 +128,9 @@ namespace DSA_1_Editing_Tool.File_Loader
             wr.Close();
         }
 
+        //////////////////
+        //  CSV export  //
+        //////////////////
         private string prepareText(string text, bool forcsv = false)
         {
             string ret = text.Replace("ñ", "[hl]").Replace("ð", "[/hl]");
@@ -135,7 +140,6 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
             return ret.Trim();
         }
-
         public void exportCSV(string filename)
         {
             StreamWriter tw = new StreamWriter(filename);

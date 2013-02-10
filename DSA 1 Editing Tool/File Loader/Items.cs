@@ -62,6 +62,11 @@ namespace DSA_1_Editing_Tool.File_Loader
             else
                 CDebugger.addDebugLine("Items: ITEMNAME konnte nicht extrahiert werden");
         }
+        public void clear()
+        {
+            this.itsItemNames.Clear();
+            this.itsItems.Clear();
+        }
 
         public string getItemNameByID(Int16 ID)
         {
@@ -71,6 +76,10 @@ namespace DSA_1_Editing_Tool.File_Loader
             return "???";
         }
 
+        //////////////////
+        //  XML export  //
+        //////////////////
+        
         public void exportTextXML(XmlTextWriter wr)
         {
             for (int i = 0; i < itsItems.Count; i++)
@@ -90,7 +99,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 wr.WriteEndElement();
             }
         }
-
         public void exportXML(string filename)
         {
             XmlTextWriter wr = new XmlTextWriter(filename, Encoding.UTF8);
@@ -107,6 +115,8 @@ namespace DSA_1_Editing_Tool.File_Loader
             wr.WriteEndDocument();
             wr.Close();
         }
+
+        //--------------------------------------
 
         public class CItem
         {

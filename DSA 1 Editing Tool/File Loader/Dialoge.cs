@@ -15,10 +15,8 @@ namespace DSA_1_Editing_Tool.File_Loader
         {
         }
 
-        public void loadDialoge(ref byte[] data, List<CDSAFileLoader.CFileSet> TLKs)
+        public void addDialoge(ref byte[] data, List<CDSAFileLoader.CFileSet> TLKs)
         {
-            this.itsDialoge.Clear();
-
             foreach (CDSAFileLoader.CFileSet set in TLKs)
             {
                 this.itsDialoge.Add(new KeyValuePair<string, CDialog>(set.filename, new CDialog(ref data, set)));
@@ -26,6 +24,14 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             CDebugger.addDebugLine("Dialoge wurden erfolgreich geladen");
         }
+        public void clear()
+        {
+            this.itsDialoge.Clear();
+        }
+
+        //////////////////
+        //  XML export  //
+        //////////////////
 
         public void exportUnrefTexts( XmlTextWriter wr ) {
             foreach (KeyValuePair<string, CDialog> dlgstore in itsDialoge)
@@ -84,8 +90,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 }
             }
         }
-
-
         private void writeResponse( XmlTextWriter wr, int id, int aid, string text, int nextgoto ) {
             if( (aid != 0) || (nextgoto != 0) )
             {
@@ -96,7 +100,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 wr.WriteEndElement();
             }
         }
-
         public void exportXML(string path)
         {
             XmlTextWriter wp = new XmlTextWriter(path + "\\de_dlgpartner.xml", Encoding.UTF8);
@@ -176,6 +179,9 @@ namespace DSA_1_Editing_Tool.File_Loader
             wp.WriteEndDocument();
             wp.Close();
         }
+
+        //----------------------------------------
+
         public class CDialog
         {
             public List<CGesprächspartner> itsPartner = new List<CGesprächspartner>();
@@ -218,7 +224,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 while (position < TLK.endOffset);
             }
         }
-
         public class CGesprächspartner
         {
             public UInt16 offsetStartLayoutZeile = 0;
@@ -238,7 +243,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 this.BildID_IN_HEADS_NVF = (UInt16)CHelpFunctions.byteArrayToInt16(ref data, position);
             }
         }
-
         public class CDialogLayoutZeile
         {
             public byte offsetHaupttext = 0;

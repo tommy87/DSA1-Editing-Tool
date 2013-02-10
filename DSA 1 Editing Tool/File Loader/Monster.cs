@@ -11,7 +11,7 @@ namespace DSA_1_Editing_Tool.File_Loader
         public List<CMonsterStats> itsMonsterStats = new List<CMonsterStats>();
         public List<string> itsMonsterNames = new List<string>();
 
-        public void loadMonster(ref byte[] data, CDSAFileLoader.CFileSet monster_dat, CDSAFileLoader.CFileSet monstername)
+        public void addMonsters(ref byte[] data, CDSAFileLoader.CFileSet monster_dat, CDSAFileLoader.CFileSet monstername)
         {
             itsMonsterStats.Clear();
 
@@ -57,6 +57,11 @@ namespace DSA_1_Editing_Tool.File_Loader
             else
                 CDebugger.addDebugLine("Monster: MONSTERNAME konnte nicht extrahiert werden");
         }
+        public void clear()
+        {
+            this.itsMonsterNames.Clear();
+            this.itsMonsterStats.Clear();
+        }
 
         public string getMonsterNameByID(Int16 ID)
         {
@@ -70,6 +75,20 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
 
             return "unknown";
+        }
+        public void exportMonsterXML(string filename)
+        {
+            XmlTextWriter wr = new XmlTextWriter(filename, Encoding.UTF8);
+            wr.WriteStartDocument();
+            wr.WriteStartElement("monsters");
+
+            for (int i = 1; i < this.itsMonsterStats.Count; i++)
+            {
+                this.itsMonsterStats[i].writeXML(wr);
+            }
+            wr.WriteEndElement();
+            wr.WriteEndDocument();
+            wr.Close();
         }
 
         public class CMonsterStats
@@ -269,21 +288,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 }
                 wr.WriteEndElement();
             }
-        }
-
-        public void exportMonsterXML(string filename)
-        {
-            XmlTextWriter wr = new XmlTextWriter(filename, Encoding.UTF8);
-            wr.WriteStartDocument();
-            wr.WriteStartElement("monsters");
-
-            for (int i = 1; i < this.itsMonsterStats.Count; i++)
-            {
-                this.itsMonsterStats[i].writeXML(wr);
-            }
-            wr.WriteEndElement();
-            wr.WriteEndDocument();
-            wr.Close();
         }
     }
 }

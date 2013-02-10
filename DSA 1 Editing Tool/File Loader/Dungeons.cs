@@ -5,15 +5,13 @@ using System.Xml;
 
 namespace DSA_1_Editing_Tool.File_Loader
 {
-    public class CDungeons
+    public class CDungeon_list
     {
         public List<KeyValuePair<string, CDungeon>> itsDungeons = new List<KeyValuePair<string, CDungeon>>();
 
-        public CDungeons() { }
-        public void loadDungeons(ref byte[] data, List<CDSAFileLoader.CFileSet> dungeons_DNG, List<CDSAFileLoader.CFileSet> dungeonEvents_DDT)
+        public CDungeon_list() { }
+        public void addDungeons(ref byte[] data, List<CDSAFileLoader.CFileSet> dungeons_DNG, List<CDSAFileLoader.CFileSet> dungeonEvents_DDT)
         {
-            this.itsDungeons.Clear();
-
             if (data == null)
                 return;
 
@@ -42,6 +40,10 @@ namespace DSA_1_Editing_Tool.File_Loader
                     CDebugger.addDebugLine("Fehler: zum Dungeon " + dungeon.filename + " wurde keine .DDT datei gefunden");
                 }
             }
+        }
+        public void clear()
+        {
+            this.itsDungeons.Clear();
         }
 
         public void exportXML(string path, CKampf fightdata)
@@ -159,6 +161,10 @@ namespace DSA_1_Editing_Tool.File_Loader
                 }
             }
 
+            //////////////////
+            //  XML export  //
+            //////////////////
+
             List<CDungeonFight> filterFights(int Ebene)
             {
                 List<CDungeonFight> ret = new List<CDungeonFight>();
@@ -168,7 +174,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 }
                 return ret;
             }
-
             List<CDungeonDoor> filterDoors(int Ebene)
             {
                 List<CDungeonDoor> ret = new List<CDungeonDoor>();
@@ -179,7 +184,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 }
                 return ret;
             }
-
             List<CDungeonStair> filterStairs(int Ebene)
             {
                 List<CDungeonStair> ret = new List<CDungeonStair>();
@@ -190,7 +194,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 }
                 return ret;
             }
-
             Dictionary<int,CFight_LST> filterFightsData(List<CDungeonFight> dfights, CKampf fightdata)
             {
                 Dictionary<int,CFight_LST> ret = new Dictionary<int,CFight_LST>(dfights.Count);
@@ -201,7 +204,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 }
                 return ret;
             }
-
             public void exportXML(string filename, string name, CKampf fightdata)
             {
                 XmlTextWriter wr = new XmlTextWriter(filename, Encoding.UTF8);
@@ -230,6 +232,8 @@ namespace DSA_1_Editing_Tool.File_Loader
                 wr.WriteEndElement();
                 wr.Close();
             }
+
+            //------------------------------------
 
             public class CFloor
             {
@@ -439,7 +443,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                     wr.WriteEndElement();
                 }
             }
-
             public class CDungeonFight
             {
                 public byte PositionX = 0;

@@ -4,7 +4,8 @@ using System.Text;
 
 namespace DSA_1_Editing_Tool
 {
-    public class CConfig
+    public static class Config
     {
+        public static string PathSign = "";
     }
 }

@@ -150,13 +150,9 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             
         }
-
         //fügt den Bildern die angegebenen Bilder hinzu
-        public void loadPictures(ref byte[] MAIN_DAT, List<CDSAFileLoader.CFileSet> MAIN_NVFs, ref byte[] DSAGEN_DAT, List<CDSAFileLoader.CFileSet> DSAGEN_NVFs)
+        public void addPictures(ref byte[] MAIN_DAT, List<CDSAFileLoader.CFileSet> MAIN_NVFs, ref byte[] DSAGEN_DAT, List<CDSAFileLoader.CFileSet> DSAGEN_NVFs)
         {
-            this.itsImages.Clear();
-            this.itsAnimations.Clear();
-
             if (MAIN_DAT == null)
                 return;
 
@@ -217,6 +213,13 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             this.itsImages.Add(new KeyValuePair<string, List<Image>>(NVF.filename, this.loadNVF(ref data, NVF)));
         }
+        public void clear()
+        {
+            this.itsImages.Clear();
+            this.itsAnimations.Clear();
+        }
+
+        //----------------------------------------------------------
 
         public Image getItemImageByID(Int32 ImageID)
         {
@@ -347,7 +350,8 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             imageCount = images;
         }
-        
+
+        //----------------------------------------------------------
 
         private List<Image> loadNVF(ref byte[] data, CDSAFileLoader.CFileSet NVF)
         {

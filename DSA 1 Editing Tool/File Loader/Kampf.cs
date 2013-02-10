@@ -13,7 +13,7 @@ namespace DSA_1_Editing_Tool.File_Loader
         {
         }
 
-        public void loadKämpfe(ref byte[] data, CDSAFileLoader.CFileSet fight_lst)
+        public void addKämpfe(ref byte[] data, CDSAFileLoader.CFileSet fight_lst)
         {
             this.itsFight_LST.Clear();
 
@@ -39,6 +39,10 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
             else
                 CDebugger.addDebugLine("Kampf: FIGHT.LST konnte nicht extrahiert werden");
+        }
+        public void clear()
+        {
+            this.itsFight_LST.Clear();
         }
     }
 
@@ -128,7 +132,6 @@ namespace DSA_1_Editing_Tool.File_Loader
         }
 
     }
-
     public class CFight_MonsterInfo
     {
         public byte GegnerID = 0;
@@ -146,7 +149,6 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.Startrunde = data[position + 4];
         }
     }
-
     public class CFight_SpielerInfo
     {
         public byte Position_X = 0;
@@ -162,7 +164,6 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.Startrunde = data[position + 3];
         }
     }
-
     public class CFight_HinterlassenesItem
     {
         public byte ItemID = 0;

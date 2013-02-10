@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tSBOpenFile = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -850,6 +850,7 @@
             // 
             this.Dungeons_SelectedField_tbEvent.Location = new System.Drawing.Point(179, 45);
             this.Dungeons_SelectedField_tbEvent.Name = "Dungeons_SelectedField_tbEvent";
+            this.Dungeons_SelectedField_tbEvent.ReadOnly = true;
             this.Dungeons_SelectedField_tbEvent.Size = new System.Drawing.Size(121, 20);
             this.Dungeons_SelectedField_tbEvent.TabIndex = 27;
             // 
@@ -866,6 +867,7 @@
             // 
             this.Dungeons_SelectedField_tbFieldTyp.Location = new System.Drawing.Point(179, 19);
             this.Dungeons_SelectedField_tbFieldTyp.Name = "Dungeons_SelectedField_tbFieldTyp";
+            this.Dungeons_SelectedField_tbFieldTyp.ReadOnly = true;
             this.Dungeons_SelectedField_tbFieldTyp.Size = new System.Drawing.Size(121, 20);
             this.Dungeons_SelectedField_tbFieldTyp.TabIndex = 25;
             // 
@@ -882,6 +884,7 @@
             // 
             this.Dungeons_SelectedField_tbPosY.Location = new System.Drawing.Point(76, 45);
             this.Dungeons_SelectedField_tbPosY.Name = "Dungeons_SelectedField_tbPosY";
+            this.Dungeons_SelectedField_tbPosY.ReadOnly = true;
             this.Dungeons_SelectedField_tbPosY.Size = new System.Drawing.Size(36, 20);
             this.Dungeons_SelectedField_tbPosY.TabIndex = 23;
             // 
@@ -898,6 +901,7 @@
             // 
             this.Dungeons_SelectedField_tbPosX.Location = new System.Drawing.Point(76, 19);
             this.Dungeons_SelectedField_tbPosX.Name = "Dungeons_SelectedField_tbPosX";
+            this.Dungeons_SelectedField_tbPosX.ReadOnly = true;
             this.Dungeons_SelectedField_tbPosX.Size = new System.Drawing.Size(36, 20);
             this.Dungeons_SelectedField_tbPosX.TabIndex = 21;
             // 
@@ -952,6 +956,7 @@
             // 
             this.Dungeons_Doors_tBStatus.Location = new System.Drawing.Point(188, 123);
             this.Dungeons_Doors_tBStatus.Name = "Dungeons_Doors_tBStatus";
+            this.Dungeons_Doors_tBStatus.ReadOnly = true;
             this.Dungeons_Doors_tBStatus.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Doors_tBStatus.TabIndex = 25;
             // 
@@ -959,6 +964,7 @@
             // 
             this.Dungeons_Doors_tBEbene.Location = new System.Drawing.Point(188, 71);
             this.Dungeons_Doors_tBEbene.Name = "Dungeons_Doors_tBEbene";
+            this.Dungeons_Doors_tBEbene.ReadOnly = true;
             this.Dungeons_Doors_tBEbene.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Doors_tBEbene.TabIndex = 21;
             // 
@@ -984,6 +990,7 @@
             // 
             this.Dungeons_Doors_tBID.Location = new System.Drawing.Point(188, 97);
             this.Dungeons_Doors_tBID.Name = "Dungeons_Doors_tBID";
+            this.Dungeons_Doors_tBID.ReadOnly = true;
             this.Dungeons_Doors_tBID.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Doors_tBID.TabIndex = 23;
             // 
@@ -1000,6 +1007,7 @@
             // 
             this.Dungeons_Doors_tBPosY.Location = new System.Drawing.Point(188, 45);
             this.Dungeons_Doors_tBPosY.Name = "Dungeons_Doors_tBPosY";
+            this.Dungeons_Doors_tBPosY.ReadOnly = true;
             this.Dungeons_Doors_tBPosY.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Doors_tBPosY.TabIndex = 19;
             // 
@@ -1016,6 +1024,7 @@
             // 
             this.Dungeons_Doors_tBPosX.Location = new System.Drawing.Point(188, 19);
             this.Dungeons_Doors_tBPosX.Name = "Dungeons_Doors_tBPosX";
+            this.Dungeons_Doors_tBPosX.ReadOnly = true;
             this.Dungeons_Doors_tBPosX.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Doors_tBPosX.TabIndex = 17;
             // 
@@ -1119,6 +1128,7 @@
             // 
             this.Dungeons_Stairs_tBZielebeneBlickrichtung.Location = new System.Drawing.Point(188, 195);
             this.Dungeons_Stairs_tBZielebeneBlickrichtung.Name = "Dungeons_Stairs_tBZielebeneBlickrichtung";
+            this.Dungeons_Stairs_tBZielebeneBlickrichtung.ReadOnly = true;
             this.Dungeons_Stairs_tBZielebeneBlickrichtung.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Stairs_tBZielebeneBlickrichtung.TabIndex = 42;
             // 
@@ -1135,6 +1145,7 @@
             // 
             this.Dungeons_Stairs_tBZielebeneEbene.Location = new System.Drawing.Point(188, 169);
             this.Dungeons_Stairs_tBZielebeneEbene.Name = "Dungeons_Stairs_tBZielebeneEbene";
+            this.Dungeons_Stairs_tBZielebeneEbene.ReadOnly = true;
             this.Dungeons_Stairs_tBZielebeneEbene.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Stairs_tBZielebeneEbene.TabIndex = 40;
             // 
@@ -1142,6 +1153,7 @@
             // 
             this.Dungeons_Stairs_tBZielebeneRelPosY.Location = new System.Drawing.Point(188, 143);
             this.Dungeons_Stairs_tBZielebeneRelPosY.Name = "Dungeons_Stairs_tBZielebeneRelPosY";
+            this.Dungeons_Stairs_tBZielebeneRelPosY.ReadOnly = true;
             this.Dungeons_Stairs_tBZielebeneRelPosY.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Stairs_tBZielebeneRelPosY.TabIndex = 39;
             // 
@@ -1149,6 +1161,7 @@
             // 
             this.Dungeons_Stairs_tBZielebeneRelPosX.Location = new System.Drawing.Point(188, 117);
             this.Dungeons_Stairs_tBZielebeneRelPosX.Name = "Dungeons_Stairs_tBZielebeneRelPosX";
+            this.Dungeons_Stairs_tBZielebeneRelPosX.ReadOnly = true;
             this.Dungeons_Stairs_tBZielebeneRelPosX.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Stairs_tBZielebeneRelPosX.TabIndex = 38;
             // 
@@ -1165,6 +1178,7 @@
             // 
             this.Dungeons_Stairs_tBEbene.Location = new System.Drawing.Point(188, 71);
             this.Dungeons_Stairs_tBEbene.Name = "Dungeons_Stairs_tBEbene";
+            this.Dungeons_Stairs_tBEbene.ReadOnly = true;
             this.Dungeons_Stairs_tBEbene.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Stairs_tBEbene.TabIndex = 21;
             // 
@@ -1181,6 +1195,7 @@
             // 
             this.Dungeons_Stairs_tBPosY.Location = new System.Drawing.Point(188, 45);
             this.Dungeons_Stairs_tBPosY.Name = "Dungeons_Stairs_tBPosY";
+            this.Dungeons_Stairs_tBPosY.ReadOnly = true;
             this.Dungeons_Stairs_tBPosY.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Stairs_tBPosY.TabIndex = 19;
             // 
@@ -1197,6 +1212,7 @@
             // 
             this.Dungeons_Stairs_tBPosX.Location = new System.Drawing.Point(188, 19);
             this.Dungeons_Stairs_tBPosX.Name = "Dungeons_Stairs_tBPosX";
+            this.Dungeons_Stairs_tBPosX.ReadOnly = true;
             this.Dungeons_Stairs_tBPosX.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Stairs_tBPosX.TabIndex = 17;
             // 
@@ -1318,6 +1334,7 @@
             // 
             this.Dungeons_Fights_tBFluchtPosX_1.Location = new System.Drawing.Point(90, 5);
             this.Dungeons_Fights_tBFluchtPosX_1.Name = "Dungeons_Fights_tBFluchtPosX_1";
+            this.Dungeons_Fights_tBFluchtPosX_1.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtPosX_1.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtPosX_1.TabIndex = 46;
             // 
@@ -1343,6 +1360,7 @@
             // 
             this.Dungeons_Fights_tBFluchtBlickrichtung_1.Location = new System.Drawing.Point(90, 83);
             this.Dungeons_Fights_tBFluchtBlickrichtung_1.Name = "Dungeons_Fights_tBFluchtBlickrichtung_1";
+            this.Dungeons_Fights_tBFluchtBlickrichtung_1.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtBlickrichtung_1.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtBlickrichtung_1.TabIndex = 50;
             // 
@@ -1350,6 +1368,7 @@
             // 
             this.Dungeons_Fights_tBFluchtPosY_1.Location = new System.Drawing.Point(90, 31);
             this.Dungeons_Fights_tBFluchtPosY_1.Name = "Dungeons_Fights_tBFluchtPosY_1";
+            this.Dungeons_Fights_tBFluchtPosY_1.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtPosY_1.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtPosY_1.TabIndex = 47;
             // 
@@ -1366,6 +1385,7 @@
             // 
             this.Dungeons_Fights_tBFluchtEbene_1.Location = new System.Drawing.Point(90, 57);
             this.Dungeons_Fights_tBFluchtEbene_1.Name = "Dungeons_Fights_tBFluchtEbene_1";
+            this.Dungeons_Fights_tBFluchtEbene_1.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtEbene_1.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtEbene_1.TabIndex = 48;
             // 
@@ -1400,6 +1420,7 @@
             // 
             this.Dungeons_Fights_tBFluchtPosX_2.Location = new System.Drawing.Point(90, 5);
             this.Dungeons_Fights_tBFluchtPosX_2.Name = "Dungeons_Fights_tBFluchtPosX_2";
+            this.Dungeons_Fights_tBFluchtPosX_2.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtPosX_2.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtPosX_2.TabIndex = 46;
             // 
@@ -1425,6 +1446,7 @@
             // 
             this.Dungeons_Fights_tBFluchtBlickrichtung_2.Location = new System.Drawing.Point(90, 83);
             this.Dungeons_Fights_tBFluchtBlickrichtung_2.Name = "Dungeons_Fights_tBFluchtBlickrichtung_2";
+            this.Dungeons_Fights_tBFluchtBlickrichtung_2.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtBlickrichtung_2.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtBlickrichtung_2.TabIndex = 50;
             // 
@@ -1432,6 +1454,7 @@
             // 
             this.Dungeons_Fights_tBFluchtPosY_2.Location = new System.Drawing.Point(90, 31);
             this.Dungeons_Fights_tBFluchtPosY_2.Name = "Dungeons_Fights_tBFluchtPosY_2";
+            this.Dungeons_Fights_tBFluchtPosY_2.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtPosY_2.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtPosY_2.TabIndex = 47;
             // 
@@ -1448,6 +1471,7 @@
             // 
             this.Dungeons_Fights_tBFluchtEbene_2.Location = new System.Drawing.Point(90, 57);
             this.Dungeons_Fights_tBFluchtEbene_2.Name = "Dungeons_Fights_tBFluchtEbene_2";
+            this.Dungeons_Fights_tBFluchtEbene_2.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtEbene_2.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtEbene_2.TabIndex = 48;
             // 
@@ -1481,6 +1505,7 @@
             // 
             this.Dungeons_Fights_tBFluchtPosX_3.Location = new System.Drawing.Point(90, 5);
             this.Dungeons_Fights_tBFluchtPosX_3.Name = "Dungeons_Fights_tBFluchtPosX_3";
+            this.Dungeons_Fights_tBFluchtPosX_3.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtPosX_3.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtPosX_3.TabIndex = 46;
             // 
@@ -1506,6 +1531,7 @@
             // 
             this.Dungeons_Fights_tBFluchtBlickrichtung_3.Location = new System.Drawing.Point(90, 83);
             this.Dungeons_Fights_tBFluchtBlickrichtung_3.Name = "Dungeons_Fights_tBFluchtBlickrichtung_3";
+            this.Dungeons_Fights_tBFluchtBlickrichtung_3.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtBlickrichtung_3.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtBlickrichtung_3.TabIndex = 50;
             // 
@@ -1513,6 +1539,7 @@
             // 
             this.Dungeons_Fights_tBFluchtPosY_3.Location = new System.Drawing.Point(90, 31);
             this.Dungeons_Fights_tBFluchtPosY_3.Name = "Dungeons_Fights_tBFluchtPosY_3";
+            this.Dungeons_Fights_tBFluchtPosY_3.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtPosY_3.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtPosY_3.TabIndex = 47;
             // 
@@ -1529,6 +1556,7 @@
             // 
             this.Dungeons_Fights_tBFluchtEbene_3.Location = new System.Drawing.Point(90, 57);
             this.Dungeons_Fights_tBFluchtEbene_3.Name = "Dungeons_Fights_tBFluchtEbene_3";
+            this.Dungeons_Fights_tBFluchtEbene_3.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtEbene_3.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtEbene_3.TabIndex = 48;
             // 
@@ -1562,6 +1590,7 @@
             // 
             this.Dungeons_Fights_tBFluchtPosX_4.Location = new System.Drawing.Point(90, 5);
             this.Dungeons_Fights_tBFluchtPosX_4.Name = "Dungeons_Fights_tBFluchtPosX_4";
+            this.Dungeons_Fights_tBFluchtPosX_4.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtPosX_4.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtPosX_4.TabIndex = 46;
             // 
@@ -1587,6 +1616,7 @@
             // 
             this.Dungeons_Fights_tBFluchtBlickrichtung_4.Location = new System.Drawing.Point(90, 83);
             this.Dungeons_Fights_tBFluchtBlickrichtung_4.Name = "Dungeons_Fights_tBFluchtBlickrichtung_4";
+            this.Dungeons_Fights_tBFluchtBlickrichtung_4.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtBlickrichtung_4.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtBlickrichtung_4.TabIndex = 50;
             // 
@@ -1594,6 +1624,7 @@
             // 
             this.Dungeons_Fights_tBFluchtPosY_4.Location = new System.Drawing.Point(90, 31);
             this.Dungeons_Fights_tBFluchtPosY_4.Name = "Dungeons_Fights_tBFluchtPosY_4";
+            this.Dungeons_Fights_tBFluchtPosY_4.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtPosY_4.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtPosY_4.TabIndex = 47;
             // 
@@ -1610,6 +1641,7 @@
             // 
             this.Dungeons_Fights_tBFluchtEbene_4.Location = new System.Drawing.Point(90, 57);
             this.Dungeons_Fights_tBFluchtEbene_4.Name = "Dungeons_Fights_tBFluchtEbene_4";
+            this.Dungeons_Fights_tBFluchtEbene_4.ReadOnly = true;
             this.Dungeons_Fights_tBFluchtEbene_4.Size = new System.Drawing.Size(80, 20);
             this.Dungeons_Fights_tBFluchtEbene_4.TabIndex = 48;
             // 
@@ -1617,6 +1649,7 @@
             // 
             this.Dungeons_Fights_tBErstAP.Location = new System.Drawing.Point(228, 123);
             this.Dungeons_Fights_tBErstAP.Name = "Dungeons_Fights_tBErstAP";
+            this.Dungeons_Fights_tBErstAP.ReadOnly = true;
             this.Dungeons_Fights_tBErstAP.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Fights_tBErstAP.TabIndex = 25;
             // 
@@ -1633,6 +1666,7 @@
             // 
             this.Dungeons_Fights_tBID.Location = new System.Drawing.Point(228, 97);
             this.Dungeons_Fights_tBID.Name = "Dungeons_Fights_tBID";
+            this.Dungeons_Fights_tBID.ReadOnly = true;
             this.Dungeons_Fights_tBID.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Fights_tBID.TabIndex = 23;
             // 
@@ -1649,6 +1683,7 @@
             // 
             this.Dungeons_Fights_tBEbene.Location = new System.Drawing.Point(228, 71);
             this.Dungeons_Fights_tBEbene.Name = "Dungeons_Fights_tBEbene";
+            this.Dungeons_Fights_tBEbene.ReadOnly = true;
             this.Dungeons_Fights_tBEbene.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Fights_tBEbene.TabIndex = 21;
             // 
@@ -1665,6 +1700,7 @@
             // 
             this.Dungeons_Fights_tBPosY.Location = new System.Drawing.Point(228, 45);
             this.Dungeons_Fights_tBPosY.Name = "Dungeons_Fights_tBPosY";
+            this.Dungeons_Fights_tBPosY.ReadOnly = true;
             this.Dungeons_Fights_tBPosY.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Fights_tBPosY.TabIndex = 19;
             // 
@@ -1681,6 +1717,7 @@
             // 
             this.Dungeons_Fights_tBPosX.Location = new System.Drawing.Point(228, 19);
             this.Dungeons_Fights_tBPosX.Name = "Dungeons_Fights_tBPosX";
+            this.Dungeons_Fights_tBPosX.ReadOnly = true;
             this.Dungeons_Fights_tBPosX.Size = new System.Drawing.Size(100, 20);
             this.Dungeons_Fights_tBPosX.TabIndex = 17;
             // 
@@ -1826,6 +1863,7 @@
             // 
             this.Städte_SelectedField_EventNr.Location = new System.Drawing.Point(101, 100);
             this.Städte_SelectedField_EventNr.Name = "Städte_SelectedField_EventNr";
+            this.Städte_SelectedField_EventNr.ReadOnly = true;
             this.Städte_SelectedField_EventNr.Size = new System.Drawing.Size(226, 20);
             this.Städte_SelectedField_EventNr.TabIndex = 23;
             // 
@@ -1842,6 +1880,7 @@
             // 
             this.Städte_SelectedField_FieldTyp.Location = new System.Drawing.Point(101, 74);
             this.Städte_SelectedField_FieldTyp.Name = "Städte_SelectedField_FieldTyp";
+            this.Städte_SelectedField_FieldTyp.ReadOnly = true;
             this.Städte_SelectedField_FieldTyp.Size = new System.Drawing.Size(100, 20);
             this.Städte_SelectedField_FieldTyp.TabIndex = 21;
             // 
@@ -1858,6 +1897,7 @@
             // 
             this.Städte_SelectedField_tbPosY.Location = new System.Drawing.Point(101, 48);
             this.Städte_SelectedField_tbPosY.Name = "Städte_SelectedField_tbPosY";
+            this.Städte_SelectedField_tbPosY.ReadOnly = true;
             this.Städte_SelectedField_tbPosY.Size = new System.Drawing.Size(100, 20);
             this.Städte_SelectedField_tbPosY.TabIndex = 19;
             // 
@@ -1874,6 +1914,7 @@
             // 
             this.Städte_SelectedField_tbPosX.Location = new System.Drawing.Point(101, 22);
             this.Städte_SelectedField_tbPosX.Name = "Städte_SelectedField_tbPosX";
+            this.Städte_SelectedField_tbPosX.ReadOnly = true;
             this.Städte_SelectedField_tbPosX.Size = new System.Drawing.Size(100, 20);
             this.Städte_SelectedField_tbPosX.TabIndex = 17;
             // 
@@ -1932,6 +1973,7 @@
             // 
             this.Städte_Event_tbUnbekannt.Location = new System.Drawing.Point(182, 149);
             this.Städte_Event_tbUnbekannt.Name = "Städte_Event_tbUnbekannt";
+            this.Städte_Event_tbUnbekannt.ReadOnly = true;
             this.Städte_Event_tbUnbekannt.Size = new System.Drawing.Size(100, 20);
             this.Städte_Event_tbUnbekannt.TabIndex = 23;
             // 
@@ -1948,6 +1990,7 @@
             // 
             this.Städte_Event_tbIndex_Global.Location = new System.Drawing.Point(182, 123);
             this.Städte_Event_tbIndex_Global.Name = "Städte_Event_tbIndex_Global";
+            this.Städte_Event_tbIndex_Global.ReadOnly = true;
             this.Städte_Event_tbIndex_Global.Size = new System.Drawing.Size(100, 20);
             this.Städte_Event_tbIndex_Global.TabIndex = 21;
             // 
@@ -1964,6 +2007,7 @@
             // 
             this.Städte_Event_tbIndex_Lokal.Location = new System.Drawing.Point(182, 97);
             this.Städte_Event_tbIndex_Lokal.Name = "Städte_Event_tbIndex_Lokal";
+            this.Städte_Event_tbIndex_Lokal.ReadOnly = true;
             this.Städte_Event_tbIndex_Lokal.Size = new System.Drawing.Size(100, 20);
             this.Städte_Event_tbIndex_Lokal.TabIndex = 19;
             // 
@@ -1980,6 +2024,7 @@
             // 
             this.Städte_Event_tbTyp.Location = new System.Drawing.Point(97, 71);
             this.Städte_Event_tbTyp.Name = "Städte_Event_tbTyp";
+            this.Städte_Event_tbTyp.ReadOnly = true;
             this.Städte_Event_tbTyp.Size = new System.Drawing.Size(212, 20);
             this.Städte_Event_tbTyp.TabIndex = 17;
             // 
@@ -1996,6 +2041,7 @@
             // 
             this.Städte_Event_tbPosY.Location = new System.Drawing.Point(97, 45);
             this.Städte_Event_tbPosY.Name = "Städte_Event_tbPosY";
+            this.Städte_Event_tbPosY.ReadOnly = true;
             this.Städte_Event_tbPosY.Size = new System.Drawing.Size(100, 20);
             this.Städte_Event_tbPosY.TabIndex = 15;
             // 
@@ -2012,6 +2058,7 @@
             // 
             this.Städte_Event_tbPosX.Location = new System.Drawing.Point(97, 19);
             this.Städte_Event_tbPosX.Name = "Städte_Event_tbPosX";
+            this.Städte_Event_tbPosX.ReadOnly = true;
             this.Städte_Event_tbPosX.Size = new System.Drawing.Size(100, 20);
             this.Städte_Event_tbPosX.TabIndex = 13;
             // 
@@ -2047,9 +2094,9 @@
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle31.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn17.HeaderText = "#";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
@@ -2085,9 +2132,9 @@
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle32.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn15.HeaderText = "#";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
@@ -2153,6 +2200,7 @@
             // 
             this.tB_Fight_Heller.Location = new System.Drawing.Point(767, 221);
             this.tB_Fight_Heller.Name = "tB_Fight_Heller";
+            this.tB_Fight_Heller.ReadOnly = true;
             this.tB_Fight_Heller.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Heller.TabIndex = 21;
             // 
@@ -2160,6 +2208,7 @@
             // 
             this.tB_Fight_Dukaten.Location = new System.Drawing.Point(767, 273);
             this.tB_Fight_Dukaten.Name = "tB_Fight_Dukaten";
+            this.tB_Fight_Dukaten.ReadOnly = true;
             this.tB_Fight_Dukaten.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Dukaten.TabIndex = 19;
             // 
@@ -2167,6 +2216,7 @@
             // 
             this.tB_Fight_Silberlinge.Location = new System.Drawing.Point(767, 247);
             this.tB_Fight_Silberlinge.Name = "tB_Fight_Silberlinge";
+            this.tB_Fight_Silberlinge.ReadOnly = true;
             this.tB_Fight_Silberlinge.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Silberlinge.TabIndex = 17;
             // 
@@ -2205,6 +2255,7 @@
             // 
             this.tB_Fight_Item_Menge.Location = new System.Drawing.Point(233, 60);
             this.tB_Fight_Item_Menge.Name = "tB_Fight_Item_Menge";
+            this.tB_Fight_Item_Menge.ReadOnly = true;
             this.tB_Fight_Item_Menge.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Item_Menge.TabIndex = 13;
             // 
@@ -2242,9 +2293,9 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle33.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn6.HeaderText = "#";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -2252,9 +2303,9 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle34.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn7.HeaderText = "ID";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -2300,6 +2351,7 @@
             // 
             this.tB_Fight_Spieler_Startrunde.Location = new System.Drawing.Point(185, 97);
             this.tB_Fight_Spieler_Startrunde.Name = "tB_Fight_Spieler_Startrunde";
+            this.tB_Fight_Spieler_Startrunde.ReadOnly = true;
             this.tB_Fight_Spieler_Startrunde.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Spieler_Startrunde.TabIndex = 23;
             // 
@@ -2307,6 +2359,7 @@
             // 
             this.tB_Fight_Spieler_Blickrichtung.Location = new System.Drawing.Point(185, 71);
             this.tB_Fight_Spieler_Blickrichtung.Name = "tB_Fight_Spieler_Blickrichtung";
+            this.tB_Fight_Spieler_Blickrichtung.ReadOnly = true;
             this.tB_Fight_Spieler_Blickrichtung.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Spieler_Blickrichtung.TabIndex = 22;
             // 
@@ -2314,6 +2367,7 @@
             // 
             this.tB_Fight_Spieler_YPos.Location = new System.Drawing.Point(186, 45);
             this.tB_Fight_Spieler_YPos.Name = "tB_Fight_Spieler_YPos";
+            this.tB_Fight_Spieler_YPos.ReadOnly = true;
             this.tB_Fight_Spieler_YPos.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Spieler_YPos.TabIndex = 21;
             // 
@@ -2321,6 +2375,7 @@
             // 
             this.tB_Fight_Spieler_XPos.Location = new System.Drawing.Point(186, 19);
             this.tB_Fight_Spieler_XPos.Name = "tB_Fight_Spieler_XPos";
+            this.tB_Fight_Spieler_XPos.ReadOnly = true;
             this.tB_Fight_Spieler_XPos.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Spieler_XPos.TabIndex = 20;
             // 
@@ -2411,6 +2466,7 @@
             // 
             this.tB_Fight_Monster_Startrunde.Location = new System.Drawing.Point(272, 123);
             this.tB_Fight_Monster_Startrunde.Name = "tB_Fight_Monster_Startrunde";
+            this.tB_Fight_Monster_Startrunde.ReadOnly = true;
             this.tB_Fight_Monster_Startrunde.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Monster_Startrunde.TabIndex = 15;
             // 
@@ -2418,6 +2474,7 @@
             // 
             this.tB_Fight_Monster_Blickrichtung.Location = new System.Drawing.Point(272, 97);
             this.tB_Fight_Monster_Blickrichtung.Name = "tB_Fight_Monster_Blickrichtung";
+            this.tB_Fight_Monster_Blickrichtung.ReadOnly = true;
             this.tB_Fight_Monster_Blickrichtung.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Monster_Blickrichtung.TabIndex = 14;
             // 
@@ -2425,6 +2482,7 @@
             // 
             this.tB_Fight_Monster_YPos.Location = new System.Drawing.Point(273, 71);
             this.tB_Fight_Monster_YPos.Name = "tB_Fight_Monster_YPos";
+            this.tB_Fight_Monster_YPos.ReadOnly = true;
             this.tB_Fight_Monster_YPos.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Monster_YPos.TabIndex = 13;
             // 
@@ -2432,6 +2490,7 @@
             // 
             this.tB_Fight_Monster_XPos.Location = new System.Drawing.Point(273, 45);
             this.tB_Fight_Monster_XPos.Name = "tB_Fight_Monster_XPos";
+            this.tB_Fight_Monster_XPos.ReadOnly = true;
             this.tB_Fight_Monster_XPos.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Monster_XPos.TabIndex = 12;
             // 
@@ -2439,6 +2498,7 @@
             // 
             this.tB_Fight_Monster_ID.Location = new System.Drawing.Point(273, 19);
             this.tB_Fight_Monster_ID.Name = "tB_Fight_Monster_ID";
+            this.tB_Fight_Monster_ID.ReadOnly = true;
             this.tB_Fight_Monster_ID.Size = new System.Drawing.Size(100, 20);
             this.tB_Fight_Monster_ID.TabIndex = 11;
             // 
@@ -2512,9 +2572,9 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle35.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn3.HeaderText = "#";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -2522,9 +2582,9 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle36.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn4.HeaderText = "ID";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -2561,9 +2621,9 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle37.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn1.HeaderText = "#";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -2571,9 +2631,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle38.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column3.HeaderText = "ID";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -2620,9 +2680,9 @@
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle39.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn11.HeaderText = "#";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
@@ -2713,6 +2773,7 @@
             // 
             this.tB_Monster_FluchtBeiXXLP.Location = new System.Drawing.Point(9, 301);
             this.tB_Monster_FluchtBeiXXLP.Name = "tB_Monster_FluchtBeiXXLP";
+            this.tB_Monster_FluchtBeiXXLP.ReadOnly = true;
             this.tB_Monster_FluchtBeiXXLP.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_FluchtBeiXXLP.TabIndex = 47;
             // 
@@ -2729,6 +2790,7 @@
             // 
             this.tB_Monster_MonsterTyp.Location = new System.Drawing.Point(269, 141);
             this.tB_Monster_MonsterTyp.Name = "tB_Monster_MonsterTyp";
+            this.tB_Monster_MonsterTyp.ReadOnly = true;
             this.tB_Monster_MonsterTyp.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_MonsterTyp.TabIndex = 45;
             // 
@@ -2745,6 +2807,7 @@
             // 
             this.tB_Monster_Größenklasse.Location = new System.Drawing.Point(269, 115);
             this.tB_Monster_Größenklasse.Name = "tB_Monster_Größenklasse";
+            this.tB_Monster_Größenklasse.ReadOnly = true;
             this.tB_Monster_Größenklasse.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_Größenklasse.TabIndex = 43;
             // 
@@ -2761,6 +2824,7 @@
             // 
             this.tB_Monster_IDMagierklasse.Location = new System.Drawing.Point(269, 70);
             this.tB_Monster_IDMagierklasse.Name = "tB_Monster_IDMagierklasse";
+            this.tB_Monster_IDMagierklasse.ReadOnly = true;
             this.tB_Monster_IDMagierklasse.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_IDMagierklasse.TabIndex = 41;
             // 
@@ -2777,6 +2841,7 @@
             // 
             this.tB_Monster_ImmunitätNormaleWaffen.Location = new System.Drawing.Point(269, 44);
             this.tB_Monster_ImmunitätNormaleWaffen.Name = "tB_Monster_ImmunitätNormaleWaffen";
+            this.tB_Monster_ImmunitätNormaleWaffen.ReadOnly = true;
             this.tB_Monster_ImmunitätNormaleWaffen.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_ImmunitätNormaleWaffen.TabIndex = 39;
             // 
@@ -2793,6 +2858,7 @@
             // 
             this.tB_Monster_Stufe.Location = new System.Drawing.Point(89, 219);
             this.tB_Monster_Stufe.Name = "tB_Monster_Stufe";
+            this.tB_Monster_Stufe.ReadOnly = true;
             this.tB_Monster_Stufe.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_Stufe.TabIndex = 37;
             // 
@@ -2809,6 +2875,7 @@
             // 
             this.tB_Monster_BP.Location = new System.Drawing.Point(89, 193);
             this.tB_Monster_BP.Name = "tB_Monster_BP";
+            this.tB_Monster_BP.ReadOnly = true;
             this.tB_Monster_BP.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_BP.TabIndex = 35;
             // 
@@ -2825,6 +2892,7 @@
             // 
             this.tB_Monster_SchadenWurfwaffen.Location = new System.Drawing.Point(327, 321);
             this.tB_Monster_SchadenWurfwaffen.Name = "tB_Monster_SchadenWurfwaffen";
+            this.tB_Monster_SchadenWurfwaffen.ReadOnly = true;
             this.tB_Monster_SchadenWurfwaffen.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_SchadenWurfwaffen.TabIndex = 33;
             // 
@@ -2841,6 +2909,7 @@
             // 
             this.tB_Monster_AnzahlWurfattacken.Location = new System.Drawing.Point(327, 295);
             this.tB_Monster_AnzahlWurfattacken.Name = "tB_Monster_AnzahlWurfattacken";
+            this.tB_Monster_AnzahlWurfattacken.ReadOnly = true;
             this.tB_Monster_AnzahlWurfattacken.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_AnzahlWurfattacken.TabIndex = 31;
             // 
@@ -2848,6 +2917,7 @@
             // 
             this.tB_Monster_SchadeGeschosse.Location = new System.Drawing.Point(327, 269);
             this.tB_Monster_SchadeGeschosse.Name = "tB_Monster_SchadeGeschosse";
+            this.tB_Monster_SchadeGeschosse.ReadOnly = true;
             this.tB_Monster_SchadeGeschosse.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_SchadeGeschosse.TabIndex = 30;
             // 
@@ -2855,6 +2925,7 @@
             // 
             this.tB_Monster_AnzahlSchussattacken.Location = new System.Drawing.Point(327, 243);
             this.tB_Monster_AnzahlSchussattacken.Name = "tB_Monster_AnzahlSchussattacken";
+            this.tB_Monster_AnzahlSchussattacken.ReadOnly = true;
             this.tB_Monster_AnzahlSchussattacken.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_AnzahlSchussattacken.TabIndex = 29;
             // 
@@ -2953,6 +3024,7 @@
             // 
             this.tB_Monster_PA.Location = new System.Drawing.Point(89, 167);
             this.tB_Monster_PA.Name = "tB_Monster_PA";
+            this.tB_Monster_PA.ReadOnly = true;
             this.tB_Monster_PA.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_PA.TabIndex = 17;
             // 
@@ -2996,6 +3068,7 @@
             // 
             this.tB_Monster_KK.Location = new System.Drawing.Point(191, 110);
             this.tB_Monster_KK.Name = "tB_Monster_KK";
+            this.tB_Monster_KK.ReadOnly = true;
             this.tB_Monster_KK.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_KK.TabIndex = 34;
             // 
@@ -3003,6 +3076,7 @@
             // 
             this.tB_Monster_IN.Location = new System.Drawing.Point(191, 84);
             this.tB_Monster_IN.Name = "tB_Monster_IN";
+            this.tB_Monster_IN.ReadOnly = true;
             this.tB_Monster_IN.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_IN.TabIndex = 33;
             // 
@@ -3010,6 +3084,7 @@
             // 
             this.tB_Monster_GE.Location = new System.Drawing.Point(191, 58);
             this.tB_Monster_GE.Name = "tB_Monster_GE";
+            this.tB_Monster_GE.ReadOnly = true;
             this.tB_Monster_GE.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_GE.TabIndex = 32;
             // 
@@ -3017,6 +3092,7 @@
             // 
             this.tB_Monster_LE.Location = new System.Drawing.Point(71, 20);
             this.tB_Monster_LE.Name = "tB_Monster_LE";
+            this.tB_Monster_LE.ReadOnly = true;
             this.tB_Monster_LE.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_LE.TabIndex = 31;
             // 
@@ -3024,6 +3100,7 @@
             // 
             this.tB_Monster_AE.Location = new System.Drawing.Point(191, 19);
             this.tB_Monster_AE.Name = "tB_Monster_AE";
+            this.tB_Monster_AE.ReadOnly = true;
             this.tB_Monster_AE.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_AE.TabIndex = 30;
             // 
@@ -3067,6 +3144,7 @@
             // 
             this.tB_Monster_FF.Location = new System.Drawing.Point(71, 136);
             this.tB_Monster_FF.Name = "tB_Monster_FF";
+            this.tB_Monster_FF.ReadOnly = true;
             this.tB_Monster_FF.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_FF.TabIndex = 24;
             // 
@@ -3074,6 +3152,7 @@
             // 
             this.tB_Monster_CH.Location = new System.Drawing.Point(71, 110);
             this.tB_Monster_CH.Name = "tB_Monster_CH";
+            this.tB_Monster_CH.ReadOnly = true;
             this.tB_Monster_CH.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_CH.TabIndex = 23;
             // 
@@ -3081,6 +3160,7 @@
             // 
             this.tB_Monster_KL.Location = new System.Drawing.Point(71, 84);
             this.tB_Monster_KL.Name = "tB_Monster_KL";
+            this.tB_Monster_KL.ReadOnly = true;
             this.tB_Monster_KL.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_KL.TabIndex = 22;
             // 
@@ -3088,6 +3168,7 @@
             // 
             this.tB_Monster_MU.Location = new System.Drawing.Point(71, 58);
             this.tB_Monster_MU.Name = "tB_Monster_MU";
+            this.tB_Monster_MU.ReadOnly = true;
             this.tB_Monster_MU.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_MU.TabIndex = 21;
             // 
@@ -3140,6 +3221,7 @@
             // 
             this.tB_Monster_AT.Location = new System.Drawing.Point(89, 141);
             this.tB_Monster_AT.Name = "tB_Monster_AT";
+            this.tB_Monster_AT.ReadOnly = true;
             this.tB_Monster_AT.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_AT.TabIndex = 14;
             // 
@@ -3147,6 +3229,7 @@
             // 
             this.tB_Monster_MR.Location = new System.Drawing.Point(89, 115);
             this.tB_Monster_MR.Name = "tB_Monster_MR";
+            this.tB_Monster_MR.ReadOnly = true;
             this.tB_Monster_MR.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_MR.TabIndex = 13;
             // 
@@ -3154,6 +3237,7 @@
             // 
             this.tB_Monster_RS.Location = new System.Drawing.Point(89, 89);
             this.tB_Monster_RS.Name = "tB_Monster_RS";
+            this.tB_Monster_RS.ReadOnly = true;
             this.tB_Monster_RS.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_RS.TabIndex = 12;
             // 
@@ -3161,6 +3245,7 @@
             // 
             this.tB_Monster_BildID.Location = new System.Drawing.Point(89, 51);
             this.tB_Monster_BildID.Name = "tB_Monster_BildID";
+            this.tB_Monster_BildID.ReadOnly = true;
             this.tB_Monster_BildID.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_BildID.TabIndex = 11;
             // 
@@ -3168,6 +3253,7 @@
             // 
             this.tB_Monster_MonsterID.Location = new System.Drawing.Point(89, 25);
             this.tB_Monster_MonsterID.Name = "tB_Monster_MonsterID";
+            this.tB_Monster_MonsterID.ReadOnly = true;
             this.tB_Monster_MonsterID.Size = new System.Drawing.Size(71, 20);
             this.tB_Monster_MonsterID.TabIndex = 10;
             // 
@@ -3252,9 +3338,9 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle40.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn9.HeaderText = "#";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -3290,9 +3376,9 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle41.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column1.HeaderText = "#";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -3428,6 +3514,7 @@
             // 
             this.Dialoge_rtbTestDialog.Location = new System.Drawing.Point(6, 19);
             this.Dialoge_rtbTestDialog.Name = "Dialoge_rtbTestDialog";
+            this.Dialoge_rtbTestDialog.ReadOnly = true;
             this.Dialoge_rtbTestDialog.Size = new System.Drawing.Size(301, 103);
             this.Dialoge_rtbTestDialog.TabIndex = 0;
             this.Dialoge_rtbTestDialog.Text = "";
@@ -3461,6 +3548,7 @@
             // 
             this.Dialoge_Layout_tbLayoutIndexAntwort3.Location = new System.Drawing.Point(417, 79);
             this.Dialoge_Layout_tbLayoutIndexAntwort3.Name = "Dialoge_Layout_tbLayoutIndexAntwort3";
+            this.Dialoge_Layout_tbLayoutIndexAntwort3.ReadOnly = true;
             this.Dialoge_Layout_tbLayoutIndexAntwort3.Size = new System.Drawing.Size(100, 20);
             this.Dialoge_Layout_tbLayoutIndexAntwort3.TabIndex = 15;
             // 
@@ -3477,6 +3565,7 @@
             // 
             this.Dialoge_Layout_tbTextIndexAntwort3.Location = new System.Drawing.Point(417, 40);
             this.Dialoge_Layout_tbTextIndexAntwort3.Name = "Dialoge_Layout_tbTextIndexAntwort3";
+            this.Dialoge_Layout_tbTextIndexAntwort3.ReadOnly = true;
             this.Dialoge_Layout_tbTextIndexAntwort3.Size = new System.Drawing.Size(100, 20);
             this.Dialoge_Layout_tbTextIndexAntwort3.TabIndex = 13;
             // 
@@ -3493,6 +3582,7 @@
             // 
             this.Dialoge_Layout_tbLayoutIndexAntwort2.Location = new System.Drawing.Point(292, 79);
             this.Dialoge_Layout_tbLayoutIndexAntwort2.Name = "Dialoge_Layout_tbLayoutIndexAntwort2";
+            this.Dialoge_Layout_tbLayoutIndexAntwort2.ReadOnly = true;
             this.Dialoge_Layout_tbLayoutIndexAntwort2.Size = new System.Drawing.Size(100, 20);
             this.Dialoge_Layout_tbLayoutIndexAntwort2.TabIndex = 11;
             // 
@@ -3509,6 +3599,7 @@
             // 
             this.Dialoge_Layout_tbTextIndexAntwort2.Location = new System.Drawing.Point(292, 40);
             this.Dialoge_Layout_tbTextIndexAntwort2.Name = "Dialoge_Layout_tbTextIndexAntwort2";
+            this.Dialoge_Layout_tbTextIndexAntwort2.ReadOnly = true;
             this.Dialoge_Layout_tbTextIndexAntwort2.Size = new System.Drawing.Size(100, 20);
             this.Dialoge_Layout_tbTextIndexAntwort2.TabIndex = 9;
             // 
@@ -3525,6 +3616,7 @@
             // 
             this.Dialoge_Layout_tbLayoutIndexAntwort1.Location = new System.Drawing.Point(167, 79);
             this.Dialoge_Layout_tbLayoutIndexAntwort1.Name = "Dialoge_Layout_tbLayoutIndexAntwort1";
+            this.Dialoge_Layout_tbLayoutIndexAntwort1.ReadOnly = true;
             this.Dialoge_Layout_tbLayoutIndexAntwort1.Size = new System.Drawing.Size(100, 20);
             this.Dialoge_Layout_tbLayoutIndexAntwort1.TabIndex = 7;
             // 
@@ -3541,6 +3633,7 @@
             // 
             this.Dialoge_Layout_tbTextIndexAntwort1.Location = new System.Drawing.Point(167, 40);
             this.Dialoge_Layout_tbTextIndexAntwort1.Name = "Dialoge_Layout_tbTextIndexAntwort1";
+            this.Dialoge_Layout_tbTextIndexAntwort1.ReadOnly = true;
             this.Dialoge_Layout_tbTextIndexAntwort1.Size = new System.Drawing.Size(100, 20);
             this.Dialoge_Layout_tbTextIndexAntwort1.TabIndex = 5;
             // 
@@ -3557,6 +3650,7 @@
             // 
             this.Dialoge_Layout_tbUnbekannt.Location = new System.Drawing.Point(21, 79);
             this.Dialoge_Layout_tbUnbekannt.Name = "Dialoge_Layout_tbUnbekannt";
+            this.Dialoge_Layout_tbUnbekannt.ReadOnly = true;
             this.Dialoge_Layout_tbUnbekannt.Size = new System.Drawing.Size(100, 20);
             this.Dialoge_Layout_tbUnbekannt.TabIndex = 3;
             // 
@@ -3573,6 +3667,7 @@
             // 
             this.Dialoge_Layout_tbTextIndex.Location = new System.Drawing.Point(21, 40);
             this.Dialoge_Layout_tbTextIndex.Name = "Dialoge_Layout_tbTextIndex";
+            this.Dialoge_Layout_tbTextIndex.ReadOnly = true;
             this.Dialoge_Layout_tbTextIndex.Size = new System.Drawing.Size(100, 20);
             this.Dialoge_Layout_tbTextIndex.TabIndex = 1;
             // 
@@ -3615,6 +3710,7 @@
             // 
             this.Dialoge_rtbCurrenText.Location = new System.Drawing.Point(357, 358);
             this.Dialoge_rtbCurrenText.Name = "Dialoge_rtbCurrenText";
+            this.Dialoge_rtbCurrenText.ReadOnly = true;
             this.Dialoge_rtbCurrenText.Size = new System.Drawing.Size(622, 118);
             this.Dialoge_rtbCurrenText.TabIndex = 11;
             this.Dialoge_rtbCurrenText.Text = "";
@@ -3642,9 +3738,9 @@
             // dataGridViewTextBoxColumn28
             // 
             this.dataGridViewTextBoxColumn28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle42.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn28.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn28.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn28.HeaderText = "#";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
             this.dataGridViewTextBoxColumn28.ReadOnly = true;
@@ -3712,6 +3808,7 @@
             // 
             this.Dialoge_Gesprächspartner_tbBildID.Location = new System.Drawing.Point(109, 99);
             this.Dialoge_Gesprächspartner_tbBildID.Name = "Dialoge_Gesprächspartner_tbBildID";
+            this.Dialoge_Gesprächspartner_tbBildID.ReadOnly = true;
             this.Dialoge_Gesprächspartner_tbBildID.Size = new System.Drawing.Size(100, 20);
             this.Dialoge_Gesprächspartner_tbBildID.TabIndex = 11;
             // 
@@ -3728,6 +3825,7 @@
             // 
             this.Dialoge_Gesprächspartner_tbIndexStartLayout.Location = new System.Drawing.Point(109, 151);
             this.Dialoge_Gesprächspartner_tbIndexStartLayout.Name = "Dialoge_Gesprächspartner_tbIndexStartLayout";
+            this.Dialoge_Gesprächspartner_tbIndexStartLayout.ReadOnly = true;
             this.Dialoge_Gesprächspartner_tbIndexStartLayout.Size = new System.Drawing.Size(100, 20);
             this.Dialoge_Gesprächspartner_tbIndexStartLayout.TabIndex = 7;
             // 
@@ -3744,6 +3842,7 @@
             // 
             this.Dialoge_Gesprächspartner_tbName.Location = new System.Drawing.Point(52, 73);
             this.Dialoge_Gesprächspartner_tbName.Name = "Dialoge_Gesprächspartner_tbName";
+            this.Dialoge_Gesprächspartner_tbName.ReadOnly = true;
             this.Dialoge_Gesprächspartner_tbName.Size = new System.Drawing.Size(157, 20);
             this.Dialoge_Gesprächspartner_tbName.TabIndex = 9;
             // 
@@ -3751,6 +3850,7 @@
             // 
             this.Dialoge_Gesprächspartner_tbIndexStartText.Location = new System.Drawing.Point(109, 125);
             this.Dialoge_Gesprächspartner_tbIndexStartText.Name = "Dialoge_Gesprächspartner_tbIndexStartText";
+            this.Dialoge_Gesprächspartner_tbIndexStartText.ReadOnly = true;
             this.Dialoge_Gesprächspartner_tbIndexStartText.Size = new System.Drawing.Size(100, 20);
             this.Dialoge_Gesprächspartner_tbIndexStartText.TabIndex = 5;
             // 
@@ -3795,9 +3895,9 @@
             // dataGridViewTextBoxColumn30
             // 
             this.dataGridViewTextBoxColumn30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle43.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn30.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn30.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewTextBoxColumn30.HeaderText = "#";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
             this.dataGridViewTextBoxColumn30.ReadOnly = true;
@@ -3833,9 +3933,9 @@
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle44.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle14;
             this.Column5.HeaderText = "#";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -3896,9 +3996,9 @@
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle45.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewTextBoxColumn13.HeaderText = "#";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
@@ -3966,6 +4066,7 @@
             // 
             // Items_cBItemTypBit_8
             // 
+            this.Items_cBItemTypBit_8.AutoCheck = false;
             this.Items_cBItemTypBit_8.AutoSize = true;
             this.Items_cBItemTypBit_8.BackColor = System.Drawing.Color.Peru;
             this.Items_cBItemTypBit_8.Location = new System.Drawing.Point(167, 88);
@@ -3977,6 +4078,7 @@
             // 
             // Items_cBItemTypBit_7
             // 
+            this.Items_cBItemTypBit_7.AutoCheck = false;
             this.Items_cBItemTypBit_7.AutoSize = true;
             this.Items_cBItemTypBit_7.BackColor = System.Drawing.Color.Peru;
             this.Items_cBItemTypBit_7.Location = new System.Drawing.Point(167, 65);
@@ -3988,6 +4090,7 @@
             // 
             // Items_cBItemTypBit_6
             // 
+            this.Items_cBItemTypBit_6.AutoCheck = false;
             this.Items_cBItemTypBit_6.AutoSize = true;
             this.Items_cBItemTypBit_6.BackColor = System.Drawing.Color.Peru;
             this.Items_cBItemTypBit_6.Location = new System.Drawing.Point(167, 42);
@@ -3999,6 +4102,7 @@
             // 
             // Items_cBItemTypBit_5
             // 
+            this.Items_cBItemTypBit_5.AutoCheck = false;
             this.Items_cBItemTypBit_5.AutoSize = true;
             this.Items_cBItemTypBit_5.BackColor = System.Drawing.Color.Peru;
             this.Items_cBItemTypBit_5.Location = new System.Drawing.Point(167, 19);
@@ -4010,6 +4114,7 @@
             // 
             // Items_cBItemTypBit_4
             // 
+            this.Items_cBItemTypBit_4.AutoCheck = false;
             this.Items_cBItemTypBit_4.AutoSize = true;
             this.Items_cBItemTypBit_4.BackColor = System.Drawing.Color.Peru;
             this.Items_cBItemTypBit_4.Location = new System.Drawing.Point(23, 92);
@@ -4021,6 +4126,7 @@
             // 
             // Items_cBItemTypBit_3
             // 
+            this.Items_cBItemTypBit_3.AutoCheck = false;
             this.Items_cBItemTypBit_3.AutoSize = true;
             this.Items_cBItemTypBit_3.BackColor = System.Drawing.Color.Peru;
             this.Items_cBItemTypBit_3.Location = new System.Drawing.Point(23, 69);
@@ -4032,6 +4138,7 @@
             // 
             // Items_cBItemTypBit_2
             // 
+            this.Items_cBItemTypBit_2.AutoCheck = false;
             this.Items_cBItemTypBit_2.AutoSize = true;
             this.Items_cBItemTypBit_2.BackColor = System.Drawing.Color.Peru;
             this.Items_cBItemTypBit_2.Location = new System.Drawing.Point(23, 46);
@@ -4043,6 +4150,7 @@
             // 
             // Items_cBItemTypBit_
             // 
+            this.Items_cBItemTypBit_.AutoCheck = false;
             this.Items_cBItemTypBit_.AutoSize = true;
             this.Items_cBItemTypBit_.BackColor = System.Drawing.Color.Peru;
             this.Items_cBItemTypBit_.Location = new System.Drawing.Point(23, 23);
@@ -4077,6 +4185,7 @@
             // 
             this.tB_Item_Magisch.Location = new System.Drawing.Point(153, 195);
             this.tB_Item_Magisch.Name = "tB_Item_Magisch";
+            this.tB_Item_Magisch.ReadOnly = true;
             this.tB_Item_Magisch.Size = new System.Drawing.Size(85, 20);
             this.tB_Item_Magisch.TabIndex = 15;
             this.tB_Item_Magisch.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -4095,6 +4204,7 @@
             // 
             this.tB_Item_SortimentsID.Location = new System.Drawing.Point(153, 169);
             this.tB_Item_SortimentsID.Name = "tB_Item_SortimentsID";
+            this.tB_Item_SortimentsID.ReadOnly = true;
             this.tB_Item_SortimentsID.Size = new System.Drawing.Size(85, 20);
             this.tB_Item_SortimentsID.TabIndex = 13;
             this.tB_Item_SortimentsID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -4113,6 +4223,7 @@
             // 
             this.tB_Item_Price.Location = new System.Drawing.Point(153, 143);
             this.tB_Item_Price.Name = "tB_Item_Price";
+            this.tB_Item_Price.ReadOnly = true;
             this.tB_Item_Price.Size = new System.Drawing.Size(85, 20);
             this.tB_Item_Price.TabIndex = 11;
             this.tB_Item_Price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -4131,6 +4242,7 @@
             // 
             this.tB_Item_PriceBase.Location = new System.Drawing.Point(153, 117);
             this.tB_Item_PriceBase.Name = "tB_Item_PriceBase";
+            this.tB_Item_PriceBase.ReadOnly = true;
             this.tB_Item_PriceBase.Size = new System.Drawing.Size(85, 20);
             this.tB_Item_PriceBase.TabIndex = 9;
             this.tB_Item_PriceBase.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -4149,6 +4261,7 @@
             // 
             this.tB_Item_Gewicht.Location = new System.Drawing.Point(153, 91);
             this.tB_Item_Gewicht.Name = "tB_Item_Gewicht";
+            this.tB_Item_Gewicht.ReadOnly = true;
             this.tB_Item_Gewicht.Size = new System.Drawing.Size(85, 20);
             this.tB_Item_Gewicht.TabIndex = 7;
             this.tB_Item_Gewicht.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -4167,6 +4280,7 @@
             // 
             this.tB_Item_Position.Location = new System.Drawing.Point(152, 65);
             this.tB_Item_Position.Name = "tB_Item_Position";
+            this.tB_Item_Position.ReadOnly = true;
             this.tB_Item_Position.Size = new System.Drawing.Size(86, 20);
             this.tB_Item_Position.TabIndex = 5;
             this.tB_Item_Position.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -4185,6 +4299,7 @@
             // 
             this.tB_Item_IconID.Location = new System.Drawing.Point(153, 29);
             this.tB_Item_IconID.Name = "tB_Item_IconID";
+            this.tB_Item_IconID.ReadOnly = true;
             this.tB_Item_IconID.Size = new System.Drawing.Size(85, 20);
             this.tB_Item_IconID.TabIndex = 0;
             this.tB_Item_IconID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;

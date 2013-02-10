@@ -28,7 +28,7 @@ namespace DSA_1_Editing_Tool
         }
         private void Form1_Shown(object sender, EventArgs e)
         {
-            if ((System.IO.File.Exists(Properties.Settings.Default.DefaultDSAPath + "\\SCHICKM.EXE")) || (System.IO.File.Exists(Properties.Settings.Default.DefaultDSAPath + "/SCHICKM.EXE")))
+            if (System.IO.Directory.Exists(Properties.Settings.Default.DefaultDSAPath))
             {
                 CDebugger.addDebugLine("---Lade Default Pfad---");
                 this.openFile(Properties.Settings.Default.DefaultDSAPath);
@@ -37,6 +37,11 @@ namespace DSA_1_Editing_Tool
             {
                 CDebugger.addDebugLine("---Lade Default Pfad---");
                 this.openFile("C:\\dosgames\\DSA1");
+            }
+            else if (System.IO.File.Exists("C:\\dosgames\\DSA2\\SCHWEIF.EXE"))
+            {
+                CDebugger.addDebugLine("---Lade Default Pfad---");
+                this.openFile("C:\\dosgames\\DSA2");
             }
         }   
         private void HandleDebugMessage(object sender, CDebugger.DebugEventArgs e)
@@ -271,16 +276,14 @@ namespace DSA_1_Editing_Tool
             {
                 DataGridViewSelectedRowCollection items = Item_dgvList.SelectedRows;
                 if (items.Count <= 0)
-                {
-                    return;
-                }
-
-                ItemTab_loadSelectedItem(Convert.ToInt32(items[0].Cells[0].Value));
+                    ItemTab_loadSelectedItem(-1);
+                else
+                    ItemTab_loadSelectedItem(Convert.ToInt32(items[0].Cells[0].Value));
                 
             }
             catch (SystemException e2)
             {
-                CDebugger.addErrorLine("Fehler beim laden des Items:");
+                CDebugger.addErrorLine("Fehler beim laden des ausgewählten Items:");
                 CDebugger.addErrorLine(e2.ToString());
             }
         }
@@ -304,7 +307,19 @@ namespace DSA_1_Editing_Tool
 
             }
             else
-                CDebugger.addDebugLine("loadSelectedItem: index is out if Range");
+            {
+                this.tB_Item_IconID.Text = String.Empty;
+                this.tB_Item_Gewicht.Text = String.Empty;
+                this.tB_Item_Magisch.Text = String.Empty;
+                this.tB_Item_Position.Text = String.Empty;
+                this.tB_Item_Price.Text = String.Empty;
+                this.tB_Item_PriceBase.Text = String.Empty;
+                this.tB_Item_SortimentsID.Text = String.Empty;
+
+                this.loadItemTyp(0);
+
+                this.Item_PictureBox.BackgroundImage = null;
+            }
         }
         private void loadItemTyp(byte itemTyp)
         {
@@ -1051,7 +1066,7 @@ namespace DSA_1_Editing_Tool
                 if (i < this.itsDSAFileLoader.städte.itsTowns.Count)
                 {
                     this.Townmarker_currentTown = i;
-                    CTown town = this.itsDSAFileLoader.städte.itsTowns[i].Value;
+                    CStädte.CTown town = this.itsDSAFileLoader.städte.itsTowns[i].Value;
 
                     this.Städte_dgvStadtEventList.Rows.Clear();
                     for (int j = 0; j < town.townEvents.Count; j++)
@@ -1097,8 +1112,8 @@ namespace DSA_1_Editing_Tool
                     return;
                 }
 
-                CTown town = this.itsDSAFileLoader.städte.itsTowns[i].Value;
-                CTownEvent townEvent = town.townEvents[j];
+                CStädte.CTown town = this.itsDSAFileLoader.städte.itsTowns[i].Value;
+                CStädte.CTownEvent townEvent = town.townEvents[j];
 
                 this.Townmarker_selectetPos_X = townEvent.Position_X;
                 this.Townmarker_selectetPos_Y = townEvent.Position_Y;
@@ -1147,7 +1162,7 @@ namespace DSA_1_Editing_Tool
             this.Townmarker_selectetPos_X = e.X / factorX;
             this.Townmarker_selectetPos_Y = e.Y / factorY;
 
-            CTown town = this.itsDSAFileLoader.städte.itsTowns[this.Townmarker_currentTown].Value;
+            CStädte.CTown town = this.itsDSAFileLoader.städte.itsTowns[this.Townmarker_currentTown].Value;
             
             bool bigcity = town.townData.Length == 16*32;
             if (bigcity || (!bigcity && this.Townmarker_selectetPos_X < 16))
@@ -1159,7 +1174,7 @@ namespace DSA_1_Editing_Tool
 
                 for (int i = 0; i <town.townEvents.Count; i++)
                 {
-                    CTownEvent townEvent = town.townEvents[i];
+                    CStädte.CTownEvent townEvent = town.townEvents[i];
                     if ((townEvent.Position_X == this.Townmarker_selectetPos_X) && (townEvent.Position_Y == this.Townmarker_selectetPos_Y))
                     {
                         this.Städte_SelectedField_EventNr.Text = "Event Nr. " + i.ToString() + "   (" + townEvent.EventTypToString() + ")";
@@ -1184,7 +1199,7 @@ namespace DSA_1_Editing_Tool
             if (TownImage == null)
                 TownImage = new Bitmap(this.Citys_PictureBox.Width, this.Citys_PictureBox.Height);
 
-            CTown town = this.itsDSAFileLoader.städte.itsTowns[this.Townmarker_currentTown].Value;
+            CStädte.CTown town = this.itsDSAFileLoader.städte.itsTowns[this.Townmarker_currentTown].Value;
 
             //Graphics g = this.Städte_TownPanel.CreateGraphics();
             Graphics g = Graphics.FromImage(TownImage);
@@ -1225,7 +1240,7 @@ namespace DSA_1_Editing_Tool
             ////////////////////////////
             //   Stadtevents zeichen  //
             ////////////////////////////
-            foreach (CTownEvent townEvent in town.townEvents)
+            foreach (CStädte.CTownEvent townEvent in town.townEvents)
             {
                 try
                 {
@@ -1386,7 +1401,7 @@ namespace DSA_1_Editing_Tool
                 {
                     this.Dungeonmarker_currentDungeon = i;
 
-                    CDungeons.CDungeon dungeon = this.itsDSAFileLoader.dungeons.itsDungeons[i].Value;
+                    CDungeon_list.CDungeon dungeon = this.itsDSAFileLoader.dungeons.itsDungeons[i].Value;
 
                     //--------Kämpfe----------
                     this.Dungeons_dgvFights.Rows.Clear();
@@ -1489,7 +1504,7 @@ namespace DSA_1_Editing_Tool
                 {
                     this.Dungeonmarker_selectetFight = j;
 
-                    CDungeons.CDungeon.CDungeonFight fight = this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.fights[j];
+                    CDungeon_list.CDungeon.CDungeonFight fight = this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.fights[j];
 
                     if (this.Dungeons_dgvDungeonFloors.Rows.Count > fight.Ebene)
                         this.Dungeons_dgvDungeonFloors.Rows[fight.Ebene].Selected = true;
@@ -1604,7 +1619,7 @@ namespace DSA_1_Editing_Tool
 
                 if ((i < this.itsDSAFileLoader.dungeons.itsDungeons.Count) && (j < this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.stairs.Count))
                 {
-                    CDungeons.CDungeon.CDungeonStair stair = this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.stairs[j];
+                    CDungeon_list.CDungeon.CDungeonStair stair = this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.stairs[j];
 
                     if (this.Dungeons_dgvDungeonFloors.Rows.Count > stair.Ebene)
                         this.Dungeons_dgvDungeonFloors.Rows[stair.Ebene].Selected = true;
@@ -1665,7 +1680,7 @@ namespace DSA_1_Editing_Tool
 
                 if ((i < this.itsDSAFileLoader.dungeons.itsDungeons.Count) && (j < this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.doors.Count))
                 {
-                    CDungeons.CDungeon.CDungeonDoor door = this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.doors[j];
+                    CDungeon_list.CDungeon.CDungeonDoor door = this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.doors[j];
 
                     if (this.Dungeons_dgvDungeonFloors.Rows.Count > door.Ebene)
                         this.Dungeons_dgvDungeonFloors.Rows[door.Ebene].Selected = true;
@@ -1713,7 +1728,7 @@ namespace DSA_1_Editing_Tool
                 this.Dungeonmarker_selectedPosX = e.X / factorX;
                 this.Dungeonmarker_selectedPosY = e.Y / factorY;
 
-                CDungeons.CDungeon dungeon = this.itsDSAFileLoader.dungeons.itsDungeons[this.Dungeonmarker_currentDungeon].Value;
+                CDungeon_list.CDungeon dungeon = this.itsDSAFileLoader.dungeons.itsDungeons[this.Dungeonmarker_currentDungeon].Value;
 
                 this.Dungeons_SelectedField_tbPosX.Text = this.Dungeonmarker_selectedPosX.ToString();
                 this.Dungeons_SelectedField_tbPosY.Text = this.Dungeonmarker_selectedPosY.ToString();
@@ -1722,7 +1737,7 @@ namespace DSA_1_Editing_Tool
                 bool found = false;
                 for (int i = 0; i < dungeon.doors.Count; i++)
                 {
-                    CDungeons.CDungeon.CDungeonDoor door = dungeon.doors[i];
+                    CDungeon_list.CDungeon.CDungeonDoor door = dungeon.doors[i];
                     if (door.Ebene == this.Dungeonmarker_currentDungeonFloor && door.PositionX == this.Dungeonmarker_selectedPosX && door.PositionY == this.Dungeonmarker_selectedPosY)
                     {
                         this.Dungeons_SelectedField_tbEvent.Text = "Tür Nr. " + i.ToString();
@@ -1738,7 +1753,7 @@ namespace DSA_1_Editing_Tool
                 {
                     for (int i = 0; i < dungeon.fights.Count; i++)
                     {
-                        CDungeons.CDungeon.CDungeonFight fight = dungeon.fights[i];
+                        CDungeon_list.CDungeon.CDungeonFight fight = dungeon.fights[i];
                         if (fight.Ebene == this.Dungeonmarker_currentDungeonFloor && fight.PositionX == this.Dungeonmarker_selectedPosX && fight.PositionY == this.Dungeonmarker_selectedPosY)
                         {
                             this.Dungeons_SelectedField_tbEvent.Text = "Kampf Nr. " + i.ToString();
@@ -1755,7 +1770,7 @@ namespace DSA_1_Editing_Tool
                 {
                     for (int i = 0; i < dungeon.stairs.Count; i++)
                     {
-                        CDungeons.CDungeon.CDungeonStair stair = dungeon.stairs[i];
+                        CDungeon_list.CDungeon.CDungeonStair stair = dungeon.stairs[i];
                         if (stair.Ebene == this.Dungeonmarker_currentDungeonFloor && stair.PositionX == this.Dungeonmarker_selectedPosX && stair.PositionY == this.Dungeonmarker_selectedPosY)
                         {
                             this.Dungeons_SelectedField_tbEvent.Text = "Treppe Nr. " + i.ToString();
@@ -1796,7 +1811,7 @@ namespace DSA_1_Editing_Tool
                 return;
             }
 
-            CDungeons.CDungeon.CFloor dungeonFloor = this.itsDSAFileLoader.dungeons.itsDungeons[this.Dungeonmarker_currentDungeon].Value.floors[this.Dungeonmarker_currentDungeonFloor];
+            CDungeon_list.CDungeon.CFloor dungeonFloor = this.itsDSAFileLoader.dungeons.itsDungeons[this.Dungeonmarker_currentDungeon].Value.floors[this.Dungeonmarker_currentDungeonFloor];
 
             if (DungeonImage == null)
                 DungeonImage = new Bitmap(this.Dungeons_PictureBox.Width, this.Dungeons_PictureBox.Height);
@@ -1819,12 +1834,12 @@ namespace DSA_1_Editing_Tool
             //////////////////
             //  Eventmarker //
             //////////////////
-            CDungeons.CDungeon dungeon = this.itsDSAFileLoader.dungeons.itsDungeons[this.Dungeonmarker_currentDungeon].Value;
+            CDungeon_list.CDungeon dungeon = this.itsDSAFileLoader.dungeons.itsDungeons[this.Dungeonmarker_currentDungeon].Value;
             
             //-----Doors------
             if (this.Dungeonmarker_selectetDoor != -1 && dungeon.doors.Count > this.Dungeonmarker_selectetDoor)
             {
-                CDungeons.CDungeon.CDungeonDoor door = dungeon.doors[this.Dungeonmarker_selectetDoor];
+                CDungeon_list.CDungeon.CDungeonDoor door = dungeon.doors[this.Dungeonmarker_selectetDoor];
                 if (door.Ebene == this.Dungeonmarker_currentDungeonFloor)
                 {
                     g.DrawRectangle(new Pen(Colors.keyColor_Door, 3), new Rectangle(door.PositionX * PanelBlock_X, door.PositionY * PanelBlock_Y, PanelBlock_X - 1, PanelBlock_Y - 1));
@@ -1834,7 +1849,7 @@ namespace DSA_1_Editing_Tool
             //-----stairs------
             if (this.Dungeonmarker_selectetStair != -1 && dungeon.stairs.Count > this.Dungeonmarker_selectetStair)
             {
-                CDungeons.CDungeon.CDungeonStair stair = dungeon.stairs[this.Dungeonmarker_selectetStair];
+                CDungeon_list.CDungeon.CDungeonStair stair = dungeon.stairs[this.Dungeonmarker_selectetStair];
                 if (stair.Ebene == this.Dungeonmarker_currentDungeonFloor)
                 {
                     g.DrawRectangle(new Pen(Colors.keyColor_Stair, 3), new Rectangle(stair.PositionX * PanelBlock_X, stair.PositionY * PanelBlock_Y, PanelBlock_X - 1, PanelBlock_Y - 1));
@@ -1844,7 +1859,7 @@ namespace DSA_1_Editing_Tool
             //-----fights------
             if (this.Dungeonmarker_selectetFight != -1 && dungeon.fights.Count > this.Dungeonmarker_selectetFight)
             {
-                CDungeons.CDungeon.CDungeonFight fight = dungeon.fights[this.Dungeonmarker_selectetFight];
+                CDungeon_list.CDungeon.CDungeonFight fight = dungeon.fights[this.Dungeonmarker_selectetFight];
                 if (fight.Ebene == this.Dungeonmarker_currentDungeonFloor)
                 {
                     g.DrawRectangle(new Pen(Colors.keyColor_Fight, 3), new Rectangle(fight.PositionX * PanelBlock_X, fight.PositionY * PanelBlock_Y, PanelBlock_X - 1, PanelBlock_Y - 1));
@@ -2230,7 +2245,7 @@ namespace DSA_1_Editing_Tool
 
         private void aktuelleStadtExportierenToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            KeyValuePair<string, CTown> sel = this.itsDSAFileLoader.städte.itsTowns[this.Townmarker_currentTown];
+            KeyValuePair<string, CStädte.CTown> sel = this.itsDSAFileLoader.städte.itsTowns[this.Townmarker_currentTown];
 
             saveXMLDialog.FileName = sel.Key.Substring( 0, sel.Key.Length - 4)+".xml";
             saveXMLDialog.Filter = "Text XML|*.xml|Alle Dateien|*.*";
@@ -2291,7 +2306,7 @@ namespace DSA_1_Editing_Tool
 
                 if ((i < this.itsDSAFileLoader.dungeons.itsDungeons.Count) && (j < this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.fights.Count))
                 {
-                    CDungeons.CDungeon.CDungeonFight fight = this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.fights[j];
+                    CDungeon_list.CDungeon.CDungeonFight fight = this.itsDSAFileLoader.dungeons.itsDungeons[i].Value.fights[j];
                     tabControl1.SelectTab("tP_Fights");
                     foreach (DataGridViewRow row in Fight_dgvList.Rows)
                     {

@@ -8,21 +8,27 @@ namespace DSA_1_Editing_Tool.File_Loader
 {
     public class CRouten
     {
-        public List<List<Point>> itsLRout = new List<List<Point>>();
-        public List<List<Point>> itsHSRout = new List<List<Point>>();
-        public List<List<Point>> itsSRout = new List<List<Point>>();
+        public List<List<Point>> itsLRout = new List<List<Point>>();    //Land Routen
+        public List<List<Point>> itsHSRout = new List<List<Point>>();   //Hochsee Routen
+        public List<List<Point>> itsSRout = new List<List<Point>>();    //See Routen
 
         public CRouten()
         {
         }
 
-        public void loadRuten(ref byte[] data, CDSAFileLoader.CFileSet LROUT, CDSAFileLoader.CFileSet HSROUT, CDSAFileLoader.CFileSet SROUT)
+        public void addRouten(ref byte[] data, CDSAFileLoader.CFileSet LROUT, CDSAFileLoader.CFileSet HSROUT, CDSAFileLoader.CFileSet SROUT)
         {
             this.itsLRout = this.loadRout(ref data, LROUT);
             this.itsHSRout = this.loadRout(ref data, HSROUT);
             this.itsSRout = this.loadRout(ref data, SROUT);
 
             CDebugger.addDebugLine("Ruten wurden erfolgreich geladen");
+        }
+        public void clear()
+        {
+            this.itsLRout.Clear();
+            this.itsHSRout.Clear();
+            this.itsSRout.Clear();
         }
 
         private List<List<Point>> loadRout(ref byte[] data, CDSAFileLoader.CFileSet ROUT)
