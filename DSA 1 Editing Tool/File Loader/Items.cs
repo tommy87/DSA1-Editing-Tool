@@ -20,18 +20,13 @@ namespace DSA_1_Editing_Tool.File_Loader
             {
                 //blocklänge 12Bytes
                 Int32 blockLength = 12;
+                if (version == DSAVersion.Schweif)
+                    blockLength = 14;
 
                 Int32 position = items_dat.startOffset;
                 while ((position + blockLength) < items_dat.endOffset)
                 {
-                    itsItems.Add(new CItem((Int16)(data[position] + ((Int16)data[position + 1] << 8)), 
-                                            data[position + 2], 
-                                            data[position + 3], 
-                                            (Int16)(data[position + 5] + ((Int16)data[position + 6] << 8)), 
-                                            data[position + 7], 
-                                            (Int16)(data[position + 8] + ((Int16)data[position + 9] << 8)), 
-                                            data[position + 10], 
-                                            data[position + 11]));
+                    itsItems.Add(new CItem(ref data, position, version));
                     position += blockLength;
                 }
                 CDebugger.addDebugLine("Items: ITEM.DAT wurde erfolgreich extrahiert");
@@ -126,16 +121,42 @@ namespace DSA_1_Editing_Tool.File_Loader
             public byte SortimentsID = 0;
             public byte Magisch = 0;
 
-            public CItem(Int16 IconID, byte ItemTyp, byte AnziehbarAnPosition, Int16 Gewicht, byte Preis_Grundeinheit, Int16 Preis, byte SortimentsID, byte Magisch)
+            public byte unbekannt_1_DSA2 = 0;
+            public byte unbekannt_2_DSA2 = 0;
+
+            public CItem(ref byte[] data, int position, DSAVersion version)
             {
-                this.IconID = IconID;
-                this.ItemTyp = ItemTyp;
-                this.AnziehbarAnPosition = AnziehbarAnPosition;
-                this.Gewicht = Gewicht;
-                this.Preis_Grundeinheit = Preis_Grundeinheit;
-                this.Preis = Preis;
-                this.SortimentsID = SortimentsID;
-                this.Magisch = Magisch;
+                switch (version)
+                {
+                    case DSAVersion.Blade:
+                    case DSAVersion.Schick:
+                        this.IconID = CHelpFunctions.byteArrayToInt16(ref data, position);
+                        this.ItemTyp = data[position + 2];
+                        this.AnziehbarAnPosition = data[position + 3];
+                        this.Gewicht = CHelpFunctions.byteArrayToInt16(ref data, position + 5);
+                        this.Preis_Grundeinheit = data[position + 7];
+                        this.Preis = CHelpFunctions.byteArrayToInt16(ref data, position + 8);
+                        this.SortimentsID = data[position + 10];
+                        this.Magisch = data[position + 11];
+                        break;
+
+                    case DSAVersion.Schweif:
+                        this.IconID = CHelpFunctions.byteArrayToInt16(ref data, position);
+                        this.ItemTyp = data[position + 2];
+                        this.AnziehbarAnPosition = data[position + 3];
+
+                        //position 4 + 5 sind noch unbekannt
+                        this.unbekannt_1_DSA2 = data[position + 4];
+                        this.unbekannt_2_DSA2 = data[position + 5];
+
+                        this.Gewicht = CHelpFunctions.byteArrayToInt16(ref data, position + 6);
+                        this.Preis = CHelpFunctions.byteArrayToInt16(ref data, position + 8);                        
+                        this.Preis_Grundeinheit = data[position + 10];
+                        this.SortimentsID = data[position + 11];
+
+                        this.Magisch = data[position + 12];
+                        break;
+                }
             }
 
             public void writeXML(XmlTextWriter wr, int origid, string name)

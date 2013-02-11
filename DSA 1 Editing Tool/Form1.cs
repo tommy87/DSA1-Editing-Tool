@@ -294,17 +294,26 @@ namespace DSA_1_Editing_Tool
                 CItemList.CItem item = this.itsDSAFileLoader.itemList.itsItems[index];
                 this.tB_Item_IconID.Text = item.IconID.ToString();
                 this.tB_Item_Gewicht.Text = item.Gewicht.ToString();
-                this.tB_Item_Magisch.Text = item.MagischToString();//item.Magisch.ToString();
-                this.tB_Item_Position.Text = item.AnziehbarAnPositionToString();//item.AnziehbarAnPosition.ToString();
-                this.tB_Item_Price.Text = item.PreisToString(); //item.Preis.ToString();
-                this.tB_Item_PriceBase.Text = item.Preis_GrundeinheitToString();//item.Preis_Grundeinheit.ToString();
+                this.tB_Item_Magisch.Text = item.MagischToString();
+                this.tB_Item_Position.Text = item.AnziehbarAnPositionToString();
+                this.tB_Item_Price.Text = item.PreisToString();
+                this.tB_Item_PriceBase.Text = item.Preis_GrundeinheitToString();
                 this.tB_Item_SortimentsID.Text = item.SortimentsID.ToString();
+
+                if (this.itsDSAFileLoader.Version == DSAVersion.Schweif)
+                {
+                    this.tB_Item_Unbekannt_1.Text = item.unbekannt_1_DSA2.ToString();
+                    this.tB_Item_Unbekannt_2.Text = item.unbekannt_2_DSA2.ToString();
+                }
+                else
+                {
+                    this.tB_Item_Unbekannt_1.Text = String.Empty;
+                    this.tB_Item_Unbekannt_2.Text = String.Empty;
+                }
 
                 this.loadItemTyp(item.ItemTyp);
 
                 this.Item_PictureBox.BackgroundImage = this.itsDSAFileLoader.bilder.getItemImageByID(item.IconID);
-
-
             }
             else
             {
@@ -315,6 +324,9 @@ namespace DSA_1_Editing_Tool
                 this.tB_Item_Price.Text = String.Empty;
                 this.tB_Item_PriceBase.Text = String.Empty;
                 this.tB_Item_SortimentsID.Text = String.Empty;
+
+                this.tB_Item_Unbekannt_1.Text = String.Empty;
+                this.tB_Item_Unbekannt_2.Text = String.Empty;
 
                 this.loadItemTyp(0);
 

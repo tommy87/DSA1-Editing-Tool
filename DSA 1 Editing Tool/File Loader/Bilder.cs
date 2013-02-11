@@ -253,7 +253,7 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             foreach (KeyValuePair<string, List<Image>> pair in itsImages)
             {
-                if (pair.Key == "GGSTS.NVF" && ImageID < pair.Value.Count)
+                if ((pair.Key == "GGSTS.NVF" || pair.Key == "ITEMS.NVF") && ImageID < pair.Value.Count)
                 {
                     return new Bitmap(pair.Value[ImageID]);
                 }
