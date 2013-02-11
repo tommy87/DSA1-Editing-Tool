@@ -4691,7 +4691,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "DSA Viewer v.1.00";
+            this.Text = "DSA Viewer v.1.20";
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();

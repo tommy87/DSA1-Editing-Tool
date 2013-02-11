@@ -226,15 +226,17 @@ namespace DSA_1_Editing_Tool.File_Loader
                         this.Größenklasse = data[position + 36];
                         this.MonsterTyp = data[position + 37];
 
-                        this.Anzahl_Geschosse = data[position + 38];
-                        this.Schaden_Schusswaffen_Würfel[0] = data[position + 39]; this.Schaden_Schusswaffen_Würfel[1] = data[position + 40];
-                        this.Anzahl_Wurfwaffen = data[position + 41];
-                        this.Schaden_Wurfwaffen_Würfel[0] = data[position + 42]; this.Schaden_Wurfwaffen_Würfel[1] = data[position + 43];
+                        this.unbekannterWert_2_DSA_2 = data[position + 38];
+                        this.unbekannterWert_3_DSA_2 = data[position + 39];
 
-                        this.Flucht_Bei_XX_LP = data[position + 44];
+                        //-------------------------------------------
+                        this.Anzahl_Geschosse = data[position + 40];
+                        this.Schaden_Schusswaffen_Würfel[0] = data[position + 41]; this.Schaden_Schusswaffen_Würfel[1] = data[position + 42];
+                        this.Anzahl_Wurfwaffen = data[position + 43];
+                        this.Schaden_Wurfwaffen_Würfel[0] = data[position + 44]; this.Schaden_Wurfwaffen_Würfel[1] = data[position + 45];
 
-                        this.unbekannterWert_2_DSA_2 = data[position + 45];
-                        this.unbekannterWert_3_DSA_2 = data[position + 46];
+                        this.Flucht_Bei_XX_LP = data[position + 46];
+
                         this.unbekannterWert_4_DSA_2 = data[position + 47];
 
                         break;

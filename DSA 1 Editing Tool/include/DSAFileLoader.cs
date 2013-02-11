@@ -14,6 +14,20 @@ namespace DSA_1_Editing_Tool
 
     public class CDSAFileLoader
     {
+        public CDSAFileLoader()
+        {
+            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.STAR));
+            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.SPEECH));
+            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.RAW));
+            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.FX));
+
+            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.CD_STARCD));
+            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.CD_STAR));
+            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.CD_SPEECHCD));
+            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.CD_SPEECH));
+            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.CD_RAW));
+            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.CD_FX));
+        }
         //-----------DSA 1----------------------
         List<string> itsSCHICKFilenames = new List<string>();
         List<Int32> itsSCHICKOffsets = new List<Int32>();
@@ -24,9 +38,10 @@ namespace DSA_1_Editing_Tool
         byte[] DSAGEN_DAT = null;
 
         //-----------DSA 2----------------------
-        byte[] STAR_DAT = null;
+        //byte[] DSA2_STAR_DAT = null;
 
-        List<KeyValuePair<string, Int32>> itsSTAROffsets = new List<KeyValuePair<string, Int32>>();
+        //List<KeyValuePair<string, Int32>> itsSTAROffsets = new List<KeyValuePair<string, Int32>>();
+        List<DSA2_Archiv> DSA2_Archive = new List<DSA2_Archiv>();
 
         //--------------------------------------
 
@@ -261,31 +276,51 @@ namespace DSA_1_Editing_Tool
 
             ///////////////
             //  Texte
-            if (Properties.Settings.Default.loadData)
+            //if (Properties.Settings.Default.loadData)
+            //{
+            //    string myFile = filepath + Config.PathSign + "DATA" + Config.PathSign + "GLOBLTXT.LTX";
+            //    if (File.Exists(myFile))
+            //    {
+            //        byte[] data = File.ReadAllBytes(myFile);
+            //        fileset_1 = new CFileSet("GLOBLTXT.LTX", 0, data.Length);
+            //        this.texte.addLTX(ref data, fileset_1);
+            //    }
+            //}
+
+            DSA2_Archiv currentArchiv = null;
+            foreach (var Archiv in this.DSA2_Archive)
             {
-                string myFile = filepath + Config.PathSign + "DATA" + Config.PathSign + "GLOBLTXT.LTX";
-                if (File.Exists(myFile))
+                if (Archiv.Typ == DSA2_Archiv.ArchivTyp.STAR)
                 {
-                    byte[] data = File.ReadAllBytes(myFile);
-                    fileset_1 = new CFileSet("GLOBLTXT.LTX", 0, data.Length);
-                    this.texte.addLTX(ref data, fileset_1);
+                    currentArchiv = Archiv;
+                    break;
                 }
             }
-            filesetList_1 = this.getFilesBySuffix_DSA_2("LTX");
-            filesetList_2 = this.getFilesBySuffix_DSA_2("DTX");
-            this.texte.addTexte(ref this.STAR_DAT, filesetList_1, filesetList_2);
 
-            fileset_1 = this.getFileByName_DSA_2("ITEMS.DAT");
-            fileset_2 = this.getFileByName_DSA_2("ITEMS.LTX");
-            this.itemList.addItems(ref this.STAR_DAT, fileset_1, fileset_2, this._version);
+            if (currentArchiv != null)
+            {
+                filesetList_1 = this.getFilesBySuffix_DSA_2("LTX", currentArchiv.Typ);
+                filesetList_2 = this.getFilesBySuffix_DSA_2("DTX", currentArchiv.Typ);
+                this.texte.addTexte(ref currentArchiv.data, filesetList_1, filesetList_2);
+            }
 
-            fileset_1 = this.getFileByName_DSA_2("MONSTER.DAT");
-            fileset_2 = this.getFileByName_DSA_2("MONNAMES.LTX");
-            this.monster.addMonsters(ref this.STAR_DAT, fileset_1, fileset_2, this._version);
+            if (currentArchiv != null)
+            {
+                fileset_1 = this.getFileByName_DSA_2("ITEMS.DAT", currentArchiv.Typ);
+                fileset_2 = this.getFileByName_DSA_2("ITEMS.LTX", currentArchiv.Typ);
+                this.itemList.addItems(ref currentArchiv.data, fileset_1, fileset_2, this._version);
 
-            filesetList_1 = this.getFilesBySuffix_DSA_2("NVF");
-            this.bilder.addPictures(ref this.STAR_DAT, filesetList_1, this.Version);
-            //---------------------------
+                fileset_1 = this.getFileByName_DSA_2("MONSTER.DAT", currentArchiv.Typ);
+                fileset_2 = this.getFileByName_DSA_2("MONNAMES.LTX", currentArchiv.Typ);
+                this.monster.addMonsters(ref currentArchiv.data, fileset_1, fileset_2, this._version);
+            }
+
+            if (currentArchiv != null)  //vielleicht später nochmal die CD miteinbeziehen
+            {
+                filesetList_1 = this.getFilesBySuffix_DSA_2("NVF", currentArchiv.Typ);
+                this.bilder.addPictures(ref currentArchiv.data, filesetList_1, this.Version);
+                //---------------------------
+            }
 
         }
 
@@ -298,7 +333,6 @@ namespace DSA_1_Editing_Tool
             this.itsSCHICKOffsets.Clear();
             this.SCHICK_DAT = null;
             this.DSAGEN_DAT = null;
-            this.STAR_DAT = null;
 
             string[] steuerungszeichen = { "\\", "/" }; //Windows, Linux
             bool found = false;
@@ -346,8 +380,8 @@ namespace DSA_1_Editing_Tool
                     Config.PathSign = s;
                     this._version = DSAVersion.Schweif;
 
-                    string path_starDat = filepath + s + "DATA" + s + "STAR.DAT";
-                    if (!File.Exists(path_starDat))
+                    string path_starDat = filepath + s + "DATA";
+                    if (!File.Exists(path_starDat + s + "STAR.DAT"))
                         CDebugger.addErrorLine("Die Datei " + path_starDat + " konnte nicht gefunden werden");
                     else
                         this.unpack_SCHWEIF(path_starDat);    
@@ -364,8 +398,8 @@ namespace DSA_1_Editing_Tool
                     Config.PathSign = s;
                     this._version = DSAVersion.Schweif;
 
-                    string path_starDat = filepath + s + "DATA" + s + "STAR.DAT";
-                    if (!File.Exists(path_starDat))
+                    string path_starDat = filepath + s + "DATA";
+                    if (!Directory.Exists(path_starDat + s + "STAR.DAT"))
                         CDebugger.addErrorLine("Die Datei " + path_starDat + " konnte nicht gefunden werden");
                     else
                         this.unpack_SCHWEIF(path_starDat);
@@ -573,45 +607,103 @@ namespace DSA_1_Editing_Tool
         }
         private void unpack_SCHWEIF(string filename)
         {
-            this.itsSTAROffsets.Clear();
-
-            if (!File.Exists(filename))
+            string CD_Path = null;
+            System.IO.DriveInfo[] allDrives = System.IO.DriveInfo.GetDrives();
+            foreach (System.IO.DriveInfo d in allDrives)
             {
-                CDebugger.addErrorLine("die Datei '" + filename + "' konnte nicht geladen werden");
-                return;
-            }
-
-            this.STAR_DAT = File.ReadAllBytes(filename);
-
-            Int16 anzahlEinträge = CHelpFunctions.byteArrayToInt16(ref this.STAR_DAT, 0);
-            Int32 position = 2;
-            Int32 offsetFiles = 2 + anzahlEinträge * 20;
-
-            for (int i = 0; i < anzahlEinträge; i++)
-            {
-                string name = CHelpFunctions.readDSAString(ref this.STAR_DAT, position + 2, 14);
-                Int32 offset = CHelpFunctions.byteArrayToInt32(ref this.STAR_DAT, position + 16);
-
-                if (name == "DUMMY")
+                if (d.DriveType == DriveType.CDRom)
                 {
+                    if (File.Exists(d.RootDirectory + "DATA" + Config.PathSign + "STAR.DAT"))
+                    {
+                        CD_Path = d.RootDirectory + "DATA" + Config.PathSign;
+                    }
+                }
+            }
+            if (CD_Path == null)
+                CDebugger.addErrorLine("Sternenschweif CD wurde nicht gefunden");
+
+            //---------------------------------------------------------------------
+
+            foreach (var Archiv in this.DSA2_Archive)
+            {
+                Archiv.data = null;
+                Archiv.entries.Clear();
+
+                string path = null;
+                bool cd = false;
+                switch(Archiv.Typ)
+                {
+                    case DSA2_Archiv.ArchivTyp.FX:
+                        path = filename + Config.PathSign + "FX.DAT";
+                        break;
+                    case DSA2_Archiv.ArchivTyp.RAW:
+                        path = filename + Config.PathSign + "RAW.DAT";
+                        break;
+                    case DSA2_Archiv.ArchivTyp.SPEECH:
+                        path = filename + Config.PathSign + "SPEECH.DAT";
+                        break;
+                    case DSA2_Archiv.ArchivTyp.STAR:
+                        path = filename + Config.PathSign + "STAR.DAT";
+                        break;
+
+                    case DSA2_Archiv.ArchivTyp.CD_FX:
+                        path = CD_Path + "FX.DAT"; cd = true;
+                        break;
+                    case DSA2_Archiv.ArchivTyp.CD_RAW:
+                        path = CD_Path + "RAW.DAT"; cd = true;
+                        break;
+                    case DSA2_Archiv.ArchivTyp.CD_SPEECH:
+                        path = CD_Path + "SPEECH.DAT"; cd = true;
+                        break;
+                    case DSA2_Archiv.ArchivTyp.CD_SPEECHCD:
+                        path = CD_Path + "SPEECHCD.DAT"; cd = true;
+                        break;
+                    case DSA2_Archiv.ArchivTyp.CD_STAR:
+                        path = CD_Path + "STAR.DAT"; cd = true;
+                        break;
+                    case DSA2_Archiv.ArchivTyp.CD_STARCD:
+                        path = CD_Path + "STARCD.DAT"; cd = true;
+                        break;
+                }
+           
+
+                if (!File.Exists(path))
+                {
+                    CDebugger.addErrorLine("die Datei '" + filename + "' konnte nicht geladen werden");
+                    return;
+                }
+
+                Archiv.data = File.ReadAllBytes(path);
+
+
+                Int16 anzahlEinträge = CHelpFunctions.byteArrayToInt16(ref Archiv.data, 0);
+                Int32 position = 2;
+                Int32 offsetFiles = 2 + anzahlEinträge * 20;
+
+                for (int i = 0; i < anzahlEinträge; i++)
+                {
+                    string name = CHelpFunctions.readDSAString(ref Archiv.data, position + 2, 14);
+                    Int32 offset = CHelpFunctions.byteArrayToInt32(ref Archiv.data, position + 16);
+
+                    if (name == "DUMMY")
+                    {
+                        position += 20;
+                        continue;
+                    }
+
+                    Int32 value = CHelpFunctions.byteArrayToInt16(ref Archiv.data, position);
+                    if ((value == 0) == cd)
+                    {
+                            Archiv.entries.Add(new KeyValuePair<string, int>(name, offsetFiles + offset));
+                    }
+                    else if (value > 1)
+                        CDebugger.addErrorLine("Die Datei " + name + " ist nicht verfügbar ??? (" + value.ToString() + ")");
+
                     position += 20;
-                    continue;
                 }
 
-                Int32 value = CHelpFunctions.byteArrayToInt16(ref this.STAR_DAT, position);
-                if (value == 0)
-                {
-                    CDebugger.addErrorLine("Die Datei " + name + " ist nur mit CD verfügbar");
-                }
-                else if (value != 1)
-                    CDebugger.addErrorLine("Die Datei " + name + " ist nicht verfügbar ??? (" + value.ToString() + ")");
-                else
-                    this.itsSTAROffsets.Add(new KeyValuePair<string, int>(name, offsetFiles + offset));
-
-                position += 20;
+                CDebugger.addDebugLine(Archiv.entries.Count.ToString() + " Datei Einträge wurden in \"" + path + "\" gefunden");
             }
-
-            CDebugger.addDebugLine(this.itsSTAROffsets.Count.ToString() + " Datei Einträge wurden in \"" + filename + "\" gefunden");
         }
 
         private CFileSet getFileByName_DSA_1(string filename, bool useDSAGenDat)
@@ -667,20 +759,27 @@ namespace DSA_1_Editing_Tool
 
             return null;
         }
-        private CFileSet getFileByName_DSA_2(string filename)
+        private CFileSet getFileByName_DSA_2(string filename, DSA2_Archiv.ArchivTyp typ)
         {
-            if (this.STAR_DAT == null)
-                return null;
-
-            for (int i = 0; i < this.itsSTAROffsets.Count; i++)
+            foreach (var Archiv in this.DSA2_Archive)
             {
-                if (this.itsSTAROffsets[i].Key == filename)
+                if (Archiv.Typ != typ)
+                    continue;
+
+                if (Archiv.data == null)
+                    return null;
+
+                for (int i = 0; i < Archiv.entries.Count; i++)
                 {
-                    if (i < (this.itsSTAROffsets.Count - 1))
-                        return new CFileSet(filename, this.itsSTAROffsets[i].Value, this.itsSTAROffsets[i + 1].Value);
-                    else
-                        return new CFileSet(filename, this.itsSTAROffsets[i].Value, this.itsSTAROffsets.Count);
+                    if (Archiv.entries[i].Key == filename)
+                    {
+                        if (i < (Archiv.entries.Count - 1))
+                            return new CFileSet(filename, Archiv.entries[i].Value, Archiv.entries[i + 1].Value);
+                        else
+                            return new CFileSet(filename, Archiv.entries[i].Value, Archiv.entries.Count);
+                    }
                 }
+                break;
             }
 
             return null;
@@ -734,22 +833,30 @@ namespace DSA_1_Editing_Tool
 
             return fileSet;
         }
-        private List<CFileSet> getFilesBySuffix_DSA_2(string suffix)
+        private List<CFileSet> getFilesBySuffix_DSA_2(string suffix, DSA2_Archiv.ArchivTyp typ)
         {
             List<CFileSet> fileSet = new List<CFileSet>();
 
-            if (this.STAR_DAT == null)
-                return fileSet;
-
-            for (int i = 0; i < this.itsSTAROffsets.Count; i++)
+            foreach (var Archiv in this.DSA2_Archive)
             {
-                if (this.itsSTAROffsets[i].Key.Contains(suffix))
+                if (Archiv.Typ != typ)
+                    continue;
+
+                if (Archiv.data == null)
+                    return fileSet;
+
+                for (int i = 0; i < Archiv.entries.Count; i++)
                 {
-                    if (i < (this.itsSTAROffsets.Count - 1))
-                        fileSet.Add(new CFileSet(this.itsSTAROffsets[i].Key, this.itsSTAROffsets[i].Value, this.itsSTAROffsets[i + 1].Value));
-                    else
-                        fileSet.Add(new CFileSet(this.itsSTAROffsets[i].Key, this.itsSTAROffsets[i].Value, this.itsSTAROffsets.Count));
+                    if (Archiv.entries[i].Key.Contains(suffix))
+                    {
+                        if (i < (Archiv.entries.Count - 1))
+                            fileSet.Add(new CFileSet(Archiv.entries[i].Key, Archiv.entries[i].Value, Archiv.entries[i + 1].Value));
+                        else
+                            fileSet.Add(new CFileSet(Archiv.entries[i].Key, Archiv.entries[i].Value, Archiv.entries.Count));
+                    }
                 }
+
+                break;
             }
 
             return fileSet;
@@ -905,34 +1012,67 @@ namespace DSA_1_Editing_Tool
                     break;
 
                 case DSAVersion.Schweif:
-                    string folder = filepath + Config.PathSign + "SCHWEIF";
-                    if (!Directory.Exists(folder))
-                        Directory.CreateDirectory(folder);
-
-                    for (int i = 0; i < this.itsSTAROffsets.Count; i++)
+                    foreach (var Archiv in this.DSA2_Archive)
                     {
-                        string typ = getFileTyp(this.itsSTAROffsets[i].Key);
+                        string folder = null;
+                        switch(Archiv.Typ)
+                        {
+                            case DSA2_Archiv.ArchivTyp.FX:
+                                folder = filepath + Config.PathSign + "SCHWEIF" + Config.PathSign + "FX" ; break;
+                            case DSA2_Archiv.ArchivTyp.RAW:
+                                folder = filepath + Config.PathSign + "SCHWEIF" + Config.PathSign + "RAW"; break;
+                            case DSA2_Archiv.ArchivTyp.SPEECH:
+                                folder = filepath + Config.PathSign + "SCHWEIF" + Config.PathSign + "SPEECH"; break;
+                            case DSA2_Archiv.ArchivTyp.STAR:
+                                folder = filepath + Config.PathSign + "SCHWEIF" + Config.PathSign + "STAR"; break;
 
-                        if (!Directory.Exists(folder + Config.PathSign + typ))
-                            Directory.CreateDirectory(folder + Config.PathSign + typ);
+                            case DSA2_Archiv.ArchivTyp.CD_FX:
+                                folder = filepath + Config.PathSign + "CD" + Config.PathSign + "FX"; break;
+                            case DSA2_Archiv.ArchivTyp.CD_RAW:
+                                folder = filepath + Config.PathSign + "CD" + Config.PathSign + "RAW"; break;
+                            case DSA2_Archiv.ArchivTyp.CD_SPEECH:
+                                folder = filepath + Config.PathSign + "CD" + Config.PathSign + "SPEECH"; break;
+                            case DSA2_Archiv.ArchivTyp.CD_SPEECHCD:
+                                folder = filepath + Config.PathSign + "CD" + Config.PathSign + "SPEECHCD"; break;
+                            case DSA2_Archiv.ArchivTyp.CD_STAR:
+                                folder = filepath + Config.PathSign + "CD" + Config.PathSign + "STAR"; break;
+                            case DSA2_Archiv.ArchivTyp.CD_STARCD:
+                                folder = filepath + Config.PathSign + "CD" + Config.PathSign + "STARCD"; break;
+                        }
+                        if (folder == null)
+                        {
+                            MessageBox.Show("Fehler beim exportieren des Archives " + Archiv.Typ.ToString());
+                            continue;
+                        }
+                        
+                        if (!Directory.Exists(folder))
+                            Directory.CreateDirectory(folder);
 
-                        int end;
-                        if (i >= (this.itsSTAROffsets.Count - 1))
-                            end = this.STAR_DAT.Length;
-                        else
-                            end = this.itsSTAROffsets[i + 1].Value;
+                        for (int i = 0; i < Archiv.entries.Count; i++)
+                        {
+                            string typ = getFileTyp(Archiv.entries[i].Key);
 
-                        string name;
-                        if (i < this.itsSTAROffsets.Count && this.itsSTAROffsets[i].Key != "")
-                            name = this.itsSTAROffsets[i].Key;
-                        else
-                            name = i.ToString();
+                            if (!Directory.Exists(folder + Config.PathSign + typ))
+                                Directory.CreateDirectory(folder + Config.PathSign + typ);
 
-                        byte[] data = new byte[end - this.itsSTAROffsets[i].Value];
-                        Array.Copy(this.STAR_DAT, this.itsSTAROffsets[i].Value, data, 0, data.Length);
+                            int end;
+                            if (i >= (Archiv.entries.Count - 1))
+                                end = Archiv.data.Length;
+                            else
+                                end = Archiv.entries[i + 1].Value;
 
-                        if (data.Length > 0)
-                            File.WriteAllBytes(folder + Config.PathSign + typ + Config.PathSign + name, data);
+                            string name;
+                            if (i < Archiv.entries.Count && Archiv.entries[i].Key != "")
+                                name = Archiv.entries[i].Key;
+                            else
+                                name = i.ToString();
+
+                            byte[] data = new byte[end - Archiv.entries[i].Value];
+                            Array.Copy(Archiv.data, Archiv.entries[i].Value, data, 0, data.Length);
+
+                            if (data.Length > 0)
+                                File.WriteAllBytes(folder + Config.PathSign + typ + Config.PathSign + name, data);
+                        }
                     }
 
                     break;
@@ -1001,6 +1141,21 @@ namespace DSA_1_Editing_Tool
             }
 
             return filename;
+        }
+
+
+        private class DSA2_Archiv
+        {
+            public enum ArchivTyp { Unknown, STAR, FX, RAW, SPEECH, CD_STAR, CD_STARCD, CD_FX, CD_RAW, CD_SPEECH, CD_SPEECHCD }
+            
+            public ArchivTyp Typ = ArchivTyp.Unknown;
+            public byte[] data = null;
+            public List<KeyValuePair<string, Int32>> entries = new List<KeyValuePair<string, Int32>>();
+
+            public DSA2_Archiv(ArchivTyp typ)
+            {
+                this.Typ = typ;
+            }
         }
     }
 }
