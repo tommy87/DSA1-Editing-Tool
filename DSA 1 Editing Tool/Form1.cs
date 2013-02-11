@@ -863,8 +863,26 @@ namespace DSA_1_Editing_Tool
                 this.tB_Monster_SchadenWurfwaffen.Text = CHelpFunctions.dsaWürfelwertToString(monster.Schaden_Wurfwaffen_Würfel);
                 this.tB_Monster_Stufe.Text = monster.Stufe.ToString();
 
-                this.Monster_pictureBox.BackgroundImage = this.itsDSAFileLoader.bilder.getMonsterImageByID(monster.MonsterGraphicID);
+                this.Monster_pictureBox.BackgroundImage = this.itsDSAFileLoader.bilder.getMonsterImageByID(monster.MonsterGraphicID, this.itsDSAFileLoader.Version);
                 //this.Monster_pictureBox.BackgroundImage = this.itsDSAFileLoader.bilder.getMonsterImageByID(monster.MonsterID - 1);
+
+                if (this.itsDSAFileLoader.Version == DSAVersion.Schweif)
+                {
+                    if (monster.unbekannterWert_1_DSA_2 == 0)
+                        this.tB_Monster_Unbekannt_1.Text = "nein(" + monster.unbekannterWert_1_DSA_2.ToString() + ")";
+                    else
+                        this.tB_Monster_Unbekannt_1.Text = "ja(" + monster.unbekannterWert_1_DSA_2.ToString() + ")";
+                    this.tB_Monster_Unbekannt_2.Text = monster.unbekannterWert_2_DSA_2.ToString();
+                    this.tB_Monster_Unbekannt_3.Text = monster.unbekannterWert_3_DSA_2.ToString();
+                    this.tB_Monster_Unbekannt_4.Text = monster.unbekannterWert_4_DSA_2.ToString();
+                }
+                else
+                {
+                    this.tB_Monster_Unbekannt_1.Text = String.Empty;
+                    this.tB_Monster_Unbekannt_2.Text = String.Empty;
+                    this.tB_Monster_Unbekannt_3.Text = String.Empty;
+                    this.tB_Monster_Unbekannt_4.Text = String.Empty;
+                }
                 
             }
             else
@@ -949,7 +967,7 @@ namespace DSA_1_Editing_Tool
                 try
                 {
                     CMonster.CMonsterStats monster = this.itsDSAFileLoader.monster.itsMonsterStats[monsterInfo.GegnerID];
-                    this.Kämpfe_Monster_pictureBox.BackgroundImage = new Bitmap(this.itsDSAFileLoader.bilder.getMonsterImageByID(monster.MonsterGraphicID));
+                    this.Kämpfe_Monster_pictureBox.BackgroundImage = new Bitmap(this.itsDSAFileLoader.bilder.getMonsterImageByID(monster.MonsterGraphicID, this.itsDSAFileLoader.Version));
                 }
                 catch (SystemException)
                 {

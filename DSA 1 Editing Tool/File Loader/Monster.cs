@@ -11,7 +11,7 @@ namespace DSA_1_Editing_Tool.File_Loader
         public List<CMonsterStats> itsMonsterStats = new List<CMonsterStats>();
         public List<string> itsMonsterNames = new List<string>();
 
-        public void addMonsters(ref byte[] data, CDSAFileLoader.CFileSet monster_dat, CDSAFileLoader.CFileSet monstername)
+        public void addMonsters(ref byte[] data, CDSAFileLoader.CFileSet monster_dat, CDSAFileLoader.CFileSet monstername, DSAVersion version)
         {
             itsMonsterStats.Clear();
 
@@ -23,10 +23,13 @@ namespace DSA_1_Editing_Tool.File_Loader
                 //blocklänge 44Bytes
                 Int32 blockLength = 44;
 
+                if (version == DSAVersion.Schweif)
+                    blockLength = 48;
+
                 Int32 position = monster_dat.startOffset;
                 while ((position + blockLength) < monster_dat.endOffset)
                 {
-                    itsMonsterStats.Add(new CMonsterStats(ref data, position));
+                    itsMonsterStats.Add(new CMonsterStats(ref data, position, version));
                     position += blockLength;
                 }
                 CDebugger.addDebugLine("Monster: MONSTER.DAT wurde erfolgreich extrahiert");
@@ -135,47 +138,107 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             public byte Flucht_Bei_XX_LP = 0;
 
-            public CMonsterStats(ref byte[] data, Int32 position)
+            public byte unbekannterWert_1_DSA_2 = 0;
+            public byte unbekannterWert_2_DSA_2 = 0;
+            public byte unbekannterWert_3_DSA_2 = 0;
+            public byte unbekannterWert_4_DSA_2 = 0;
+
+            public CMonsterStats(ref byte[] data, Int32 position, DSAVersion version)
             {
-                this.MonsterID = data[position];
-                this.MonsterGraphicID = data[position + 1];
-                this.RS = (sbyte)data[position + 2];
+                switch (version)
+                {
+                    case DSAVersion.Blade:
+                    case DSAVersion.Schick:
+                        this.MonsterID = data[position];
+                        this.MonsterGraphicID = data[position + 1];
+                        this.RS = (sbyte)data[position + 2];
 
-                this.MU_Würfel[0] = data[position + 3]; this.MU_Würfel[1] = data[position + 4];
-                this.KL_Würfel[0] = data[position + 5]; this.KL_Würfel[1] = data[position + 6];
-                this.CH_Würfel[0] = data[position + 7]; this.CH_Würfel[1] = data[position + 8];
-                this.FF_Würfel[0] = data[position + 9]; this.FF_Würfel[1] = data[position + 10];
-                this.GE_Würfel[0] = data[position + 11]; this.GE_Würfel[1] = data[position + 12];
-                this.IN_Würfel[0] = data[position + 13]; this.IN_Würfel[1] = data[position + 14];
-                this.KK_Würfel[0] = data[position + 15]; this.KK_Würfel[1] = data[position + 16];
-                this.LE_Würfel[0] = data[position + 17]; this.LE_Würfel[1] = data[position + 18];
-                this.AE_Würfel[0] = data[position + 19]; this.AE_Würfel[1] = data[position + 20];
+                        this.MU_Würfel[0] = data[position + 3]; this.MU_Würfel[1] = data[position + 4];
+                        this.KL_Würfel[0] = data[position + 5]; this.KL_Würfel[1] = data[position + 6];
+                        this.CH_Würfel[0] = data[position + 7]; this.CH_Würfel[1] = data[position + 8];
+                        this.FF_Würfel[0] = data[position + 9]; this.FF_Würfel[1] = data[position + 10];
+                        this.GE_Würfel[0] = data[position + 11]; this.GE_Würfel[1] = data[position + 12];
+                        this.IN_Würfel[0] = data[position + 13]; this.IN_Würfel[1] = data[position + 14];
+                        this.KK_Würfel[0] = data[position + 15]; this.KK_Würfel[1] = data[position + 16];
+                        this.LE_Würfel[0] = data[position + 17]; this.LE_Würfel[1] = data[position + 18];
+                        this.AE_Würfel[0] = data[position + 19]; this.AE_Würfel[1] = data[position + 20];
 
-                this.MR_Würfel[0] = data[position + 21]; this.MR_Würfel[1] = data[position + 22];
-                this.erstAP = data[position + 23];
-                this.Anzahl_Attacken = data[position + 24];
+                        this.MR_Würfel[0] = data[position + 21]; this.MR_Würfel[1] = data[position + 22];
+                        this.erstAP = data[position + 23];
+                        this.Anzahl_Attacken = data[position + 24];
 
-                this.AT = (sbyte)data[position + 25];
-                this.PA = (sbyte)data[position + 26];
+                        this.AT = (sbyte)data[position + 25];
+                        this.PA = (sbyte)data[position + 26];
 
-                this.Schaden_1_Angriff_Würfel[0] = data[position + 27]; this.Schaden_1_Angriff_Würfel[1] = data[position + 28];
-                this.Schaden_2_Angriff_Würfel[0] = data[position + 29]; this.Schaden_2_Angriff_Würfel[1] = data[position + 30];
+                        this.Schaden_1_Angriff_Würfel[0] = data[position + 27]; this.Schaden_1_Angriff_Würfel[1] = data[position + 28];
+                        this.Schaden_2_Angriff_Würfel[0] = data[position + 29]; this.Schaden_2_Angriff_Würfel[1] = data[position + 30];
 
-                this.BP = data[position + 31];
+                        this.BP = data[position + 31];
 
-                this.Immunität_gegen_Normale_Waffen = data[position + 32];
-                this.ID_Magierklasse = (sbyte)data[position + 33];
-                this.Stufe = data[position + 34];
+                        this.Immunität_gegen_Normale_Waffen = data[position + 32];
+                        this.ID_Magierklasse = (sbyte)data[position + 33];
+                        this.Stufe = data[position + 34];
 
-                this.Größenklasse = data[position + 35];
-                this.MonsterTyp = data[position + 36];
+                        this.Größenklasse = data[position + 35];
+                        this.MonsterTyp = data[position + 36];
 
-                this.Anzahl_Geschosse = data[position + 37];
-                this.Schaden_Schusswaffen_Würfel[0] = data[position + 38]; this.Schaden_Schusswaffen_Würfel[1] = data[position + 39];
-                this.Anzahl_Wurfwaffen = data[position + 40];
-                this.Schaden_Wurfwaffen_Würfel[0] = data[position + 41]; this.Schaden_Wurfwaffen_Würfel[1] = data[position + 42];
+                        this.Anzahl_Geschosse = data[position + 37];
+                        this.Schaden_Schusswaffen_Würfel[0] = data[position + 38]; this.Schaden_Schusswaffen_Würfel[1] = data[position + 39];
+                        this.Anzahl_Wurfwaffen = data[position + 40];
+                        this.Schaden_Wurfwaffen_Würfel[0] = data[position + 41]; this.Schaden_Wurfwaffen_Würfel[1] = data[position + 42];
 
-                this.Flucht_Bei_XX_LP = data[position + 34];
+                        this.Flucht_Bei_XX_LP = data[position + 43];
+                        break;
+
+                    case DSAVersion.Schweif:
+                        this.MonsterID = data[position];
+                        this.MonsterGraphicID = data[position + 1];
+                        this.RS = (sbyte)data[position + 2];
+
+                        this.unbekannterWert_1_DSA_2 = data[position + 3];
+
+                        this.MU_Würfel[0] = data[position + 4]; this.MU_Würfel[1] = data[position + 5];
+                        this.KL_Würfel[0] = data[position + 6]; this.KL_Würfel[1] = data[position + 7];
+                        this.CH_Würfel[0] = data[position + 8]; this.CH_Würfel[1] = data[position + 9];
+                        this.FF_Würfel[0] = data[position + 10]; this.FF_Würfel[1] = data[position + 11];
+                        this.GE_Würfel[0] = data[position + 12]; this.GE_Würfel[1] = data[position + 13];
+                        this.IN_Würfel[0] = data[position + 14]; this.IN_Würfel[1] = data[position + 15];
+                        this.KK_Würfel[0] = data[position + 16]; this.KK_Würfel[1] = data[position + 17];
+                        this.LE_Würfel[0] = data[position + 18]; this.LE_Würfel[1] = data[position + 19];
+                        this.AE_Würfel[0] = data[position + 20]; this.AE_Würfel[1] = data[position + 21];
+
+                        this.MR_Würfel[0] = data[position + 22]; this.MR_Würfel[1] = data[position + 23];
+                        this.erstAP = data[position + 24];
+                        this.Anzahl_Attacken = data[position + 25];
+
+                        this.AT = (sbyte)data[position + 26];
+                        this.PA = (sbyte)data[position + 27];
+
+                        this.Schaden_1_Angriff_Würfel[0] = data[position + 28]; this.Schaden_1_Angriff_Würfel[1] = data[position + 29];
+                        this.Schaden_2_Angriff_Würfel[0] = data[position + 30]; this.Schaden_2_Angriff_Würfel[1] = data[position + 31];
+                        
+                        this.BP = data[position + 32];
+
+                        this.Immunität_gegen_Normale_Waffen = data[position + 33];
+                        this.ID_Magierklasse = (sbyte)data[position + 34];
+                        this.Stufe = data[position + 35];
+
+                        this.Größenklasse = data[position + 36];
+                        this.MonsterTyp = data[position + 37];
+
+                        this.Anzahl_Geschosse = data[position + 38];
+                        this.Schaden_Schusswaffen_Würfel[0] = data[position + 39]; this.Schaden_Schusswaffen_Würfel[1] = data[position + 40];
+                        this.Anzahl_Wurfwaffen = data[position + 41];
+                        this.Schaden_Wurfwaffen_Würfel[0] = data[position + 42]; this.Schaden_Wurfwaffen_Würfel[1] = data[position + 43];
+
+                        this.Flucht_Bei_XX_LP = data[position + 44];
+
+                        this.unbekannterWert_2_DSA_2 = data[position + 45];
+                        this.unbekannterWert_3_DSA_2 = data[position + 46];
+                        this.unbekannterWert_4_DSA_2 = data[position + 47];
+
+                        break;
+                }
             }
 
             public string größenklasseToString()

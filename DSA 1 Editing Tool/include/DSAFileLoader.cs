@@ -102,7 +102,7 @@ namespace DSA_1_Editing_Tool
 
                 fileset_1 = this.getFileByName_DSA_1("MONSTER.DAT", false);
                 fileset_2 = this.getFileByName_DSA_1("MONNAMES", false);
-                this.monster.addMonsters(ref this.SCHICK_DAT, fileset_1, fileset_2);
+                this.monster.addMonsters(ref this.SCHICK_DAT, fileset_1, fileset_2, this._version);
 
                 fileset_1 = this.getFileByName_DSA_1("FIGHT.LST", false);
                 this.kampf.addKämpfe(ref this.SCHICK_DAT, fileset_1);
@@ -281,7 +281,7 @@ namespace DSA_1_Editing_Tool
 
             fileset_1 = this.getFileByName_DSA_2("MONSTER.DAT");
             fileset_2 = this.getFileByName_DSA_2("MONNAMES.LTX");
-            this.monster.addMonsters(ref this.STAR_DAT, fileset_1, fileset_2);
+            this.monster.addMonsters(ref this.STAR_DAT, fileset_1, fileset_2, this._version);
 
             filesetList_1 = this.getFilesBySuffix_DSA_2("NVF");
             this.bilder.addPictures(ref this.STAR_DAT, filesetList_1, this.Version);

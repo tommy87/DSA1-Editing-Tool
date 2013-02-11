@@ -261,7 +261,22 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             return null;
         }
-        public Image getMonsterImageByID(Int32 MonsterBildID)
+        public Image getMonsterImageByID(Int32 MonsterBildID, DSAVersion version)
+        {
+            switch (version)
+            {
+                case DSAVersion.Blade:
+                case DSAVersion.Schick:
+                    return this.getMonsterImageByID_DSA_1(MonsterBildID);
+                
+                case DSAVersion.Schweif:
+                    return this.getMonsterImageByID_DSA_2(MonsterBildID);
+
+                default:
+                    return null;
+            }
+        }
+        private Image getMonsterImageByID_DSA_1(Int32 MonsterBildID)
         {
             if (MonsterBildID < 0x01)
                 return null;
@@ -321,6 +336,79 @@ namespace DSA_1_Editing_Tool.File_Loader
                     {
                         if (pair.Value.Count > MonsterBildID && pair.Value[MonsterBildID].Count > 0)
                             return pair.Value[MonsterBildID][0];
+                        else
+                            return null;
+                    }
+                }
+            }
+
+
+
+            //if (MonsterBildID < this.itsMonsterImages.Count && this.itsMonsterImages[MonsterBildID].Count > 0)
+            //    return this.itsMonsterImages[MonsterBildID][0];
+
+            return null;
+        }
+        private Image getMonsterImageByID_DSA_2(Int32 MonsterBildID)
+        {
+            if (MonsterBildID < 0x01)
+                return null;
+
+            //if (MonsterBildID < 8)//0x17) //0x17 == 23
+            //{
+            //    MonsterBildID--;
+            //    MonsterBildID *= 4;
+            //    foreach (KeyValuePair<string, List<List<Image>>> pair in this.itsAnimations)
+            //    {
+            //        if (pair.Key == "MFIGS")
+            //        {
+            //            if (pair.Value.Count > MonsterBildID && pair.Value[MonsterBildID].Count > 0)
+            //                return pair.Value[MonsterBildID][0];
+            //            else
+            //                return null;
+            //        }
+            //    }
+            //}
+            //else if (MonsterBildID == 8)
+            //{
+            //    //kleine anomalie, da ab ID 8 ein Monster mit 5 Animationen kommt, dann der Druide mit 4(kein Bogen aber Zauber) und ab 10 haben alle wieder 5 Animationen
+            //    MonsterBildID = 29;
+            //    foreach (KeyValuePair<string, List<List<Image>>> pair in this.itsAnimations)
+            //    {
+            //        if (pair.Key == "MFIGS")
+            //        {
+            //            if (pair.Value.Count > MonsterBildID && pair.Value[MonsterBildID].Count > 0)
+            //                return pair.Value[MonsterBildID][0];
+            //            else
+            //                return null;
+            //        }
+            //    }
+            //}
+            else 
+            if (MonsterBildID < 0x14)
+            {
+                //MonsterBildID = 33 + (MonsterBildID - 9) * 5;
+                //foreach (KeyValuePair<string, List<List<Image>>> pair in this.itsAnimations)
+                //{
+                //    if (pair.Key == "MFIGS")
+                //    {
+                //        if (pair.Value.Count > MonsterBildID && pair.Value[MonsterBildID].Count > 0)
+                //            return pair.Value[MonsterBildID][0];
+                //        else
+                //            return null;
+                //    }
+                //}
+            }
+            else
+            {
+                MonsterBildID -= 0x14;
+
+                foreach (KeyValuePair<string, List<Image>> pair in this.itsImages)
+                {
+                    if (pair.Key == "MONPICS.NVF")
+                    {
+                        if (pair.Value.Count > MonsterBildID)
+                            return pair.Value[MonsterBildID];
                         else
                             return null;
                     }
