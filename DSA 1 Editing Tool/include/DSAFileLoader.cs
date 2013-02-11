@@ -6,8 +6,12 @@ using DSA_1_Editing_Tool.File_Loader;
 using System.IO;
 using System.Drawing;
 
+using System.Windows.Forms;
+
 namespace DSA_1_Editing_Tool
 {
+    public enum DSAVersion { Unbekannt, Schick, Blade, Schweif }
+
     public class CDSAFileLoader
     {
         //-----------DSA 1----------------------
@@ -28,8 +32,6 @@ namespace DSA_1_Editing_Tool
 
         private DSAVersion _version = DSAVersion.Unbekannt;
         public DSAVersion Version { get { return this._version; } }
-
-        public enum DSAVersion { Unbekannt, Schick, Blade, Schweif }
 
         // zum auslesen der einzelnen Dateien
         public CItemList itemList = new CItemList();
@@ -92,7 +94,7 @@ namespace DSA_1_Editing_Tool
             {
                 fileset_1 = this.getFileByName_DSA_1("ITEMS.DAT", false);
                 fileset_2 = this.getFileByName_DSA_1("ITEMNAME", false);
-                this.itemList.addItems(ref this.SCHICK_DAT, fileset_1, fileset_2);
+                this.itemList.addItems(ref this.SCHICK_DAT, fileset_1, fileset_2, this._version);
 
                 filesetList_1 = this.getFilesBySuffix_DSA_1(".LTX", false);
                 filesetList_2 = this.getFilesBySuffix_DSA_1(".DTX", false);
@@ -117,100 +119,100 @@ namespace DSA_1_Editing_Tool
             {
                 filesetList_1 = this.getFilesBySuffix_DSA_1(".NVF", false);
                 filesetList_2 = this.getFilesBySuffix_DSA_1(".NVF", true);
-                this.bilder.addPictures(ref this.SCHICK_DAT, filesetList_1, ref this.DSAGEN_DAT, filesetList_2);
+                this.bilder.addPictures(ref this.SCHICK_DAT, filesetList_1, ref this.DSAGEN_DAT, filesetList_2, this.Version);
                 //-------------Main Images------------------
                 CDebugger.addDebugLine("weitere Bilder werden geladen, bitte warten...");
 
                 fileset_1 = this.getFileByName_DSA_1("COMPASS", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("SPLASHES.DAT", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("TEMPICON", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("KARTE.DAT", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("BICONS", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("ICONS", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
 
                 //-------------Main Power Pack--------------
                 fileset_1 = this.getFileByName_DSA_1("PLAYM_UK", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("PLAYM_US", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("ZUSTA_UK", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("ZUSTA_US", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
 
                 fileset_1 = this.getFileByName_DSA_1("BUCH.DAT", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("KCBACK.DAT", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("KCLBACK.DAT", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("KDBACK.DAT", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("KDLBACK.DAT", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("KLBACK.DAT", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("KLLBACK.DAT", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("KSBACK.DAT", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("KSLBACK.DAT", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
 
                 //fileset_1 = this.getFileByName("BSKILLS.DAT", false);
                 //this.bilder.addPictureToList(ref this.MAIN_DAT, fileset_1);
 
                 fileset_1 = this.getFileByName_DSA_1("POPUP.DAT", false);
-                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.SCHICK_DAT, fileset_1, this.Version);
                 //-------------DSA GEN Images---------------
                 fileset_1 = this.getFileByName_DSA_1("ATTIC", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("DSALOGO.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("GENTIT.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("HEADS.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1); //daten sind amiga komprimiert
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version); //daten sind amiga komprimiert
                 fileset_1 = this.getFileByName_DSA_1("SEX.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 //-------------DSA GEN Power Pack------------
                 fileset_1 = this.getFileByName_DSA_1("DZWERG.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("DTHORWAL.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("DSTREUNE.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("DMENGE.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("DMAGIER.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("DKRIEGER.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("DDRUIDE.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("DAELF.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("DFELF.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("DWELF.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("DGAUKLER.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("DHEXE.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("DJAEGER.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
 
                 fileset_1 = this.getFileByName_DSA_1("POPUP.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
                 fileset_1 = this.getFileByName_DSA_1("ROALOGUS.DAT", true);
-                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1);
+                this.bilder.addPictureToList(ref this.DSAGEN_DAT, fileset_1, this.Version);
             }
 
             if (Properties.Settings.Default.loadAnims)
@@ -218,18 +220,18 @@ namespace DSA_1_Editing_Tool
                 //---------Bild Archive-----------------------
                 fileset_1 = this.getFileByName_DSA_1("MONSTER", false);
                 fileset_2 = this.getFileByName_DSA_1("MONSTER.TAB", false);
-                this.bilder.addArchivToList(ref this.SCHICK_DAT, fileset_1, fileset_2);
+                this.bilder.addArchivToList(ref this.SCHICK_DAT, fileset_1, fileset_2, this._version);
                 fileset_1 = this.getFileByName_DSA_1("MFIGS", false);
                 fileset_2 = this.getFileByName_DSA_1("MFIGS.TAB", false);
-                this.bilder.addArchivToList(ref this.SCHICK_DAT, fileset_1, fileset_2);
+                this.bilder.addArchivToList(ref this.SCHICK_DAT, fileset_1, fileset_2, this._version);
                 fileset_1 = this.getFileByName_DSA_1("WFIGS", false);
                 fileset_2 = this.getFileByName_DSA_1("WFIGS.TAB", false);
-                this.bilder.addArchivToList(ref this.SCHICK_DAT, fileset_1, fileset_2);
+                this.bilder.addArchivToList(ref this.SCHICK_DAT, fileset_1, fileset_2, this._version);
 
                 //Bilder im Archiv ANIS sind in einem alten Animationsformat (siehe wiki)
                 fileset_1 = this.getFileByName_DSA_1("ANIS", false);
                 fileset_2 = this.getFileByName_DSA_1("ANIS.TAB", false);
-                this.bilder.addArchivToList(ref this.SCHICK_DAT, fileset_1, fileset_2);
+                this.bilder.addArchivToList(ref this.SCHICK_DAT, fileset_1, fileset_2, this._version);
             }
 
             int fileCount;
@@ -272,7 +274,19 @@ namespace DSA_1_Editing_Tool
             filesetList_1 = this.getFilesBySuffix_DSA_2("LTX");
             filesetList_2 = this.getFilesBySuffix_DSA_2("DTX");
             this.texte.addTexte(ref this.STAR_DAT, filesetList_1, filesetList_2);
+
+            fileset_1 = this.getFileByName_DSA_2("ITEMS.DAT");
+            fileset_2 = this.getFileByName_DSA_2("ITEMS.LTX");
+            this.itemList.addItems(ref this.STAR_DAT, fileset_1, fileset_2, this._version);
+
+            fileset_1 = this.getFileByName_DSA_2("MONSTER.DAT");
+            fileset_2 = this.getFileByName_DSA_2("MONNAMES.LTX");
+            this.monster.addMonsters(ref this.STAR_DAT, fileset_1, fileset_2);
+
+            filesetList_1 = this.getFilesBySuffix_DSA_2("NVF");
+            this.bilder.addPictures(ref this.STAR_DAT, filesetList_1, this.Version);
             //---------------------------
+
         }
 
         public bool unpackAll(string filepath)
@@ -578,6 +592,12 @@ namespace DSA_1_Editing_Tool
                 string name = CHelpFunctions.readDSAString(ref this.STAR_DAT, position + 2, 14);
                 Int32 offset = CHelpFunctions.byteArrayToInt32(ref this.STAR_DAT, position + 16);
 
+                if (name == "DUMMY")
+                {
+                    position += 20;
+                    continue;
+                }
+
                 Int32 value = CHelpFunctions.byteArrayToInt16(ref this.STAR_DAT, position);
                 if (value == 0)
                 {
@@ -815,71 +835,114 @@ namespace DSA_1_Editing_Tool
             if (Config.PathSign == "")
                 return;
 
-            if (!Directory.Exists(filepath + Config.PathSign + "SCHICK"))
-                Directory.CreateDirectory(filepath + Config.PathSign + "SCHICK");
-
-            for (int i = 0; i < this.itsSCHICKOffsets.Count; i++)
+            switch (this._version)
             {
-                string typ;
-                if (i < this.itsSCHICKFilenames.Count)
-                    typ = getFileTyp(this.itsSCHICKFilenames[i]);
-                else
-                    typ = "unbekannt";
+                case DSAVersion.Blade:
+                case DSAVersion.Schick:
+                    if (!Directory.Exists(filepath + Config.PathSign + "SCHICK"))
+                        Directory.CreateDirectory(filepath + Config.PathSign + "SCHICK");
 
-                string name;
-                if (i < this.itsSCHICKFilenames.Count && this.itsSCHICKFilenames[i] != "")
-                    name = this.itsSCHICKFilenames[i];
-                else
-                    name = i.ToString();
+                    for (int i = 0; i < this.itsSCHICKOffsets.Count; i++)
+                    {
+                        string typ;
+                        if (i < this.itsSCHICKFilenames.Count)
+                            typ = getFileTyp(this.itsSCHICKFilenames[i]);
+                        else
+                            typ = "unbekannt";
 
-                if (!Directory.Exists(filepath + Config.PathSign + "SCHICK" + Config.PathSign + typ))
-                    Directory.CreateDirectory(filepath + Config.PathSign + "SCHICK" + Config.PathSign + typ);
+                        string name;
+                        if (i < this.itsSCHICKFilenames.Count && this.itsSCHICKFilenames[i] != "")
+                            name = this.itsSCHICKFilenames[i];
+                        else
+                            name = i.ToString();
 
-                int end;
-                if (i >= (this.itsSCHICKOffsets.Count - 1))
-                    end = this.SCHICK_DAT.Length;
-                else
-                    end = this.itsSCHICKOffsets[i + 1];
+                        if (!Directory.Exists(filepath + Config.PathSign + "SCHICK" + Config.PathSign + typ))
+                            Directory.CreateDirectory(filepath + Config.PathSign + "SCHICK" + Config.PathSign + typ);
 
-                byte[] data = new byte[end - this.itsSCHICKOffsets[i]];
-                Array.Copy(this.SCHICK_DAT, this.itsSCHICKOffsets[i], data, 0, data.Length);
+                        int end;
+                        if (i >= (this.itsSCHICKOffsets.Count - 1))
+                            end = this.SCHICK_DAT.Length;
+                        else
+                            end = this.itsSCHICKOffsets[i + 1];
 
-                if (data.Length > 0)
-                    File.WriteAllBytes(filepath + Config.PathSign + "SCHICK" + Config.PathSign + typ + Config.PathSign + name, data);
+                        byte[] data = new byte[end - this.itsSCHICKOffsets[i]];
+                        Array.Copy(this.SCHICK_DAT, this.itsSCHICKOffsets[i], data, 0, data.Length);
+
+                        if (data.Length > 0)
+                            File.WriteAllBytes(filepath + Config.PathSign + "SCHICK" + Config.PathSign + typ + Config.PathSign + name, data);
+                    }
+
+                    //----------------------------------------------------
+
+                    if (!Directory.Exists(filepath + Config.PathSign + "DSAGEN"))
+                        Directory.CreateDirectory(filepath + Config.PathSign + "DSAGEN");
+
+                    for (int i = 0; i < this.itsDSAGENOffsets.Count; i++)
+                    {
+                        string typ = getFileTyp(this.itsDSAGENOffsets[i].Key);
+
+                        if (!Directory.Exists(filepath + Config.PathSign + "DSAGEN" + Config.PathSign + typ))
+                            Directory.CreateDirectory(filepath + Config.PathSign + "DSAGEN" + Config.PathSign + typ);
+
+                        int end;
+                        if (i >= (this.itsDSAGENOffsets.Count - 1))
+                            end = this.DSAGEN_DAT.Length;
+                        else
+                            end = this.itsDSAGENOffsets[i + 1].Value;
+
+                        string name;
+                        if (i < this.itsDSAGENOffsets.Count && this.itsDSAGENOffsets[i].Key != "")
+                            name = this.itsDSAGENOffsets[i].Key;
+                        else
+                            name = i.ToString();
+
+                        byte[] data = new byte[end - this.itsDSAGENOffsets[i].Value];
+                        Array.Copy(this.DSAGEN_DAT, this.itsDSAGENOffsets[i].Value, data, 0, data.Length);
+
+                        if (data.Length > 0)
+                            File.WriteAllBytes(filepath + Config.PathSign + "DSAGEN" + Config.PathSign + typ + Config.PathSign + name, data);
+                    }
+                    break;
+
+                case DSAVersion.Schweif:
+                    string folder = filepath + Config.PathSign + "SCHWEIF";
+                    if (!Directory.Exists(folder))
+                        Directory.CreateDirectory(folder);
+
+                    for (int i = 0; i < this.itsSTAROffsets.Count; i++)
+                    {
+                        string typ = getFileTyp(this.itsSTAROffsets[i].Key);
+
+                        if (!Directory.Exists(folder + Config.PathSign + typ))
+                            Directory.CreateDirectory(folder + Config.PathSign + typ);
+
+                        int end;
+                        if (i >= (this.itsSTAROffsets.Count - 1))
+                            end = this.STAR_DAT.Length;
+                        else
+                            end = this.itsSTAROffsets[i + 1].Value;
+
+                        string name;
+                        if (i < this.itsSTAROffsets.Count && this.itsSTAROffsets[i].Key != "")
+                            name = this.itsSTAROffsets[i].Key;
+                        else
+                            name = i.ToString();
+
+                        byte[] data = new byte[end - this.itsSTAROffsets[i].Value];
+                        Array.Copy(this.STAR_DAT, this.itsSTAROffsets[i].Value, data, 0, data.Length);
+
+                        if (data.Length > 0)
+                            File.WriteAllBytes(folder + Config.PathSign + typ + Config.PathSign + name, data);
+                    }
+
+                    break;
+
+                default:
+                    MessageBox.Show("Fehler beim Entpacken version unbekannt");
+                    break;
             }
 
-            //----------------------------------------------------
-
-            if (!Directory.Exists(filepath + Config.PathSign + "DSAGEN"))
-                Directory.CreateDirectory(filepath + Config.PathSign + "DSAGEN");
-
-            for (int i = 0; i < this.itsDSAGENOffsets.Count; i++)
-            {
-                string typ = getFileTyp(this.itsDSAGENOffsets[i].Key);
-
-                if (!Directory.Exists(filepath + Config.PathSign + "DSAGEN" + Config.PathSign + typ))
-                    Directory.CreateDirectory(filepath + Config.PathSign + "DSAGEN" + Config.PathSign + typ);
-
-                int end;
-                if (i >= (this.itsDSAGENOffsets.Count - 1))
-                    end = this.DSAGEN_DAT.Length;
-                else
-                    end = this.itsDSAGENOffsets[i+1].Value;
-
-                string name;
-                if (i < this.itsDSAGENOffsets.Count && this.itsDSAGENOffsets[i].Key != "")
-                    name = this.itsDSAGENOffsets[i].Key;
-                else
-                    name = i.ToString();
-
-                byte[] data = new byte[end - this.itsDSAGENOffsets[i].Value];
-                Array.Copy(this.DSAGEN_DAT, this.itsDSAGENOffsets[i].Value, data, 0, data.Length);
-
-                if (data.Length > 0)
-                    File.WriteAllBytes(filepath + Config.PathSign + "DSAGEN" + Config.PathSign + typ + Config.PathSign + name, data);
-            }
-
-            CDebugger.addDebugLine("entpacken erfolgreich beendet");
+            MessageBox.Show("entpacken erfolgreich beendet");
         }
         private string getFileTyp(string filename)
         {

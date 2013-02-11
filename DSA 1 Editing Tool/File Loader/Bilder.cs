@@ -14,6 +14,7 @@ namespace DSA_1_Editing_Tool.File_Loader
         //----------------------------------------------------------
         private List<KeyValuePair<string, CImageHeader>> itsSpezialFiles_SCHICK = new List<KeyValuePair<string, CImageHeader>>();
         private List<KeyValuePair<string, CImageHeader>> itsSpezialFiles_DSAGEN = new List<KeyValuePair<string, CImageHeader>>();
+        private List<KeyValuePair<string, CImageHeader>> itsSpezialFiles_SCHWEIF = new List<KeyValuePair<string, CImageHeader>>();
 
         private List<string> itsTownPictures_SCHICK = new List<string>();
         private List<string> itsFightPictures_SCHICK = new List<string>();
@@ -21,7 +22,10 @@ namespace DSA_1_Editing_Tool.File_Loader
 
         private List<string> itsAmigaPackedFiles_SCHICK = new List<string>();
         private List<string> itsAmigaPackedFiles_DSAGEN = new List<string>();
+        private List<string> itsAmigaPackedFiles_SCHWEIF = new List<string>();
+
         private List<string> itsRLEPackedFiles_DSAGEN = new List<string>();
+        private List<string> itsRLEPackedFiles_SCHWEIF = new List<string>();
         //----------------------------------------------------------
 
         public CBilder()
@@ -148,30 +152,51 @@ namespace DSA_1_Editing_Tool.File_Loader
             this.itsRLEPackedFiles_DSAGEN.Add("GEN10.NVF");
             this.itsRLEPackedFiles_DSAGEN.Add("GEN11.NVF");
 
+            //-------------SCHWEIF-------------------------------------------
+
+            //this.itsSpezialFiles_SCHWEIF.Add(new KeyValuePair<string, CImageHeader>("ITEMS.NVF", new CImageHeader(32, 32, 0)));
+            //this.itsRLEPackedFiles_SCHWEIF.Add("ITEMS.NVF");
+            //this.itsAmigaPackedFiles_SCHWEIF.Add("ITEMS.NVF");
+
             
         }
         //fügt den Bildern die angegebenen Bilder hinzu
-        public void addPictures(ref byte[] MAIN_DAT, List<CDSAFileLoader.CFileSet> MAIN_NVFs, ref byte[] DSAGEN_DAT, List<CDSAFileLoader.CFileSet> DSAGEN_NVFs)
+        public void addPictures(ref byte[] BLADE_DAT, List<CDSAFileLoader.CFileSet> BLADE_NVFs, ref byte[] DSAGEN_DAT, List<CDSAFileLoader.CFileSet> DSAGEN_NVFs, DSAVersion version)
         {
-            if (MAIN_DAT == null)
+            if (BLADE_DAT == null || BLADE_NVFs == null || DSAGEN_DAT == null || DSAGEN_NVFs == null)
                 return;
 
-            if (MAIN_NVFs.Count == 0 && DSAGEN_NVFs.Count == 0)
+            if (BLADE_NVFs.Count == 0 && DSAGEN_NVFs.Count == 0)
                 CDebugger.addDebugLine("Bilder: keine NVF Dateien gefunden");
             else
-                CDebugger.addDebugLine("Bilder: es wurden " + (MAIN_NVFs.Count + DSAGEN_NVFs.Count).ToString() + " NVF Dateien gefunden");
+                CDebugger.addDebugLine("Bilder: es wurden " + (BLADE_NVFs.Count + DSAGEN_NVFs.Count).ToString() + " NVF Dateien gefunden");
 
-            foreach (CDSAFileLoader.CFileSet fileset in MAIN_NVFs)
+            foreach (CDSAFileLoader.CFileSet fileset in BLADE_NVFs)
             {
-                this.itsImages.Add(new KeyValuePair<string, List<Image>>(fileset.filename, this.loadNVF(ref MAIN_DAT, fileset)));
+                this.itsImages.Add(new KeyValuePair<string, List<Image>>(fileset.filename, this.loadNVF(ref BLADE_DAT, fileset, version)));
             }
             foreach (CDSAFileLoader.CFileSet fileset in DSAGEN_NVFs)
             {
-                this.itsImages.Add(new KeyValuePair<string, List<Image>>(fileset.filename, this.loadNVF(ref DSAGEN_DAT, fileset)));
+                this.itsImages.Add(new KeyValuePair<string, List<Image>>(fileset.filename, this.loadNVF(ref DSAGEN_DAT, fileset, version)));
+            }
+        }
+        public void addPictures(ref byte[] MAIN_DAT, List<CDSAFileLoader.CFileSet> MAIN_NVFs, DSAVersion version)
+        {
+            if (MAIN_DAT == null || MAIN_NVFs == null)
+                return;
+
+            if (MAIN_NVFs.Count == 0)
+                CDebugger.addDebugLine("Bilder: keine NVF Dateien gefunden");
+            else
+                CDebugger.addDebugLine("Bilder: es wurden " + MAIN_NVFs.Count.ToString() + " NVF Dateien gefunden");
+
+            foreach (CDSAFileLoader.CFileSet fileset in MAIN_NVFs)
+            {
+                this.itsImages.Add(new KeyValuePair<string, List<Image>>(fileset.filename, this.loadNVF(ref MAIN_DAT, fileset, version)));
             }
         }
         //fügt den Animationen ein Archiv hinzu
-        public void addArchivToList(ref byte[] data, CDSAFileLoader.CFileSet ARCHIV, CDSAFileLoader.CFileSet TAB)
+        public void addArchivToList(ref byte[] data, CDSAFileLoader.CFileSet ARCHIV, CDSAFileLoader.CFileSet TAB, DSAVersion version)
         {
             if (data == null || ARCHIV == null || TAB == null)
                 return;
@@ -193,7 +218,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                 try
                 {
                     fileSet = new CDSAFileLoader.CFileSet(ARCHIV.filename, ARCHIV.startOffset + offsets[i], ARCHIV.startOffset + offsets[i + 1]);                    
-                    list.Add(this.loadNVF(ref data, fileSet));
+                    list.Add(this.loadNVF(ref data, fileSet, version));
                 }
                 catch (SystemException e)
                 {
@@ -206,12 +231,12 @@ namespace DSA_1_Editing_Tool.File_Loader
             CDebugger.addDebugLine(list.Count.ToString() + " Animationen wurden aus dem Archiv " + ARCHIV.filename + " geladen");
         }
         //fügt den Bildern ein einzelnes Bild hinzu
-        public void addPictureToList(ref byte[] data, CDSAFileLoader.CFileSet NVF)
+        public void addPictureToList(ref byte[] data, CDSAFileLoader.CFileSet NVF, DSAVersion version)
         {
             if (data == null || NVF == null)
                 return;
 
-            this.itsImages.Add(new KeyValuePair<string, List<Image>>(NVF.filename, this.loadNVF(ref data, NVF)));
+            this.itsImages.Add(new KeyValuePair<string, List<Image>>(NVF.filename, this.loadNVF(ref data, NVF, version)));
         }
         public void clear()
         {
@@ -353,16 +378,16 @@ namespace DSA_1_Editing_Tool.File_Loader
 
         //----------------------------------------------------------
 
-        private List<Image> loadNVF(ref byte[] data, CDSAFileLoader.CFileSet NVF)
+        private List<Image> loadNVF(ref byte[] data, CDSAFileLoader.CFileSet NVF, DSAVersion version)
         {
             List<Image> images = new List<Image>();
             byte[] unpackedData = null;
 
-            CImageHeader header = this.checkForSpezialFile(NVF.filename); // header == null wenn es keine spezielle Datei ist und einen eigenen Header besitzt
+            CImageHeader header = this.checkForSpezialFile(NVF.filename, version); // header == null wenn es keine spezielle Datei ist und einen eigenen Header besitzt
 
             //----------------------------------------
             //  schauen ob das Bild gepackt ist
-            if (checkForAmigaPackedFile(NVF.filename))
+            if (checkForAmigaPackedFile(NVF.filename, version))
             {
                 try
                 {
@@ -376,7 +401,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                     return images;
                 }
             }
-            else if (checkForRLEPackedFile(NVF.filename))
+            else if (checkForRLEPackedFile(NVF.filename, version))
             {
                 if (header == null)
                 {
@@ -416,7 +441,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                     try
                     {
                         //unkomrimiert
-                        images.AddRange(this.loadUncompressedImage(ref unpackedData, NVF));
+                        images.AddRange(this.loadUncompressedImage(ref unpackedData, NVF, version));
                     }
                     catch (SystemException)
                     {
@@ -429,7 +454,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                     try
                     {
                         //Amiga Power Pack 2.0 Kompression
-                        images.AddRange(this.loadAmigaImage(ref unpackedData, NVF));
+                        images.AddRange(this.loadAmigaImage(ref unpackedData, NVF, version));
                     }
                     catch (SystemException)
                     {
@@ -442,7 +467,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                     try
                     {
                         //RLE Kompression
-                        images.AddRange(this.loadRLEImage(ref unpackedData, NVF));
+                        images.AddRange(this.loadRLEImage(ref unpackedData, NVF, version));
                     }
                     catch (SystemException)
                     {
@@ -462,7 +487,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                 //besitzt aber auch keinen Header und beginnt direkt mit den Bilddaten
                 try
                 {
-                    images.AddRange(this.loadImageWithoutHeader(ref unpackedData, NVF, header));
+                    images.AddRange(this.loadImageWithoutHeader(ref unpackedData, NVF, header, version));
                 }
                 catch (SystemException)
                 {
@@ -474,83 +499,142 @@ namespace DSA_1_Editing_Tool.File_Loader
             return images;
         }
 
-        private CImageHeader checkForSpezialFile(string filename)
+        private CImageHeader checkForSpezialFile(string filename, DSAVersion version)
         {
-            foreach (KeyValuePair<string,CImageHeader> pair in this.itsSpezialFiles_SCHICK)
+            switch (version)
             {
-                if (pair.Key == filename)
-                    return pair.Value;
-            }
-            foreach (KeyValuePair<string, CImageHeader> pair in this.itsSpezialFiles_DSAGEN)
-            {
-                if (pair.Key == filename)
-                    return pair.Value;
-            }
+                case DSAVersion.Blade:
+                case DSAVersion.Schick:
+                    foreach (KeyValuePair<string,CImageHeader> pair in this.itsSpezialFiles_SCHICK)
+                    {
+                        if (pair.Key == filename)
+                            return pair.Value;
+                    }
+                    foreach (KeyValuePair<string, CImageHeader> pair in this.itsSpezialFiles_DSAGEN)
+                    {
+                        if (pair.Key == filename)
+                            return pair.Value;
+                    }
+                    return null;
 
-            return null;
+                case DSAVersion.Schweif:
+                    foreach (KeyValuePair<string,CImageHeader> pair in this.itsSpezialFiles_SCHWEIF)
+                    {
+                        if (pair.Key == filename)
+                            return pair.Value;
+                    }
+                    return null;
+
+                default:
+                    return null;
+            }
         }
-        private bool checkForAmigaPackedFile(string filename)
+        private bool checkForAmigaPackedFile(string filename, DSAVersion version)
         {
-            foreach (string s in this.itsAmigaPackedFiles_SCHICK)
+            switch (version)
             {
-                if (s == filename)
-                    return true;
-            }
+                case DSAVersion.Blade:
+                case DSAVersion.Schick:
+                    foreach (string s in this.itsAmigaPackedFiles_SCHICK)
+                    {
+                        if (s == filename)
+                            return true;
+                    }
 
-            foreach (string s in this.itsAmigaPackedFiles_DSAGEN)
-            {
-                if (s == filename)
-                    return true;
-            }
+                    foreach (string s in this.itsAmigaPackedFiles_DSAGEN)
+                    {
+                        if (s == filename)
+                            return true;
+                    }
 
-            return false;
+                    return false;
+
+                case DSAVersion.Schweif:
+                    foreach (string s in this.itsAmigaPackedFiles_SCHWEIF)
+                    {
+                        if (s == filename)
+                            return true;
+                    }
+                    return false;
+
+                default:
+                    return false;
+            }
         }
-        private bool checkForRLEPackedFile(string filename)
+        private bool checkForRLEPackedFile(string filename, DSAVersion version)
         {
-            foreach (string s in this.itsRLEPackedFiles_DSAGEN)
+            switch(version)
             {
-                if (s == filename)
-                    return true;
-            }
+                case DSAVersion.Blade:
+                case DSAVersion.Schick:
+                    foreach (string s in this.itsRLEPackedFiles_DSAGEN)
+                    {
+                        if (s == filename)
+                            return true;
+                    }
 
-            return false;
+                    return false;
+
+                case DSAVersion.Schweif:
+                    foreach (string s in this.itsRLEPackedFiles_SCHWEIF)
+                    {
+                        if (s == filename)
+                            return true;
+                    }
+
+                    return false;
+
+                default:
+                    return false;
+            }
         }
-        private CFarbPalette.palettenTyp getPalettenTyp(string filename)
+        private CFarbPalette.palettenTyp getPalettenTyp(string filename, DSAVersion version)
         {
-            foreach (string s in itsTownPictures_SCHICK)
+            switch (version)
             {
-                if (s == filename)
-                    return CFarbPalette.palettenTyp.Town_Pal;
+                case DSAVersion.Blade:
+                case DSAVersion.Schick:
+                    foreach (string s in itsTownPictures_SCHICK)
+                    {
+                        if (s == filename)
+                            return CFarbPalette.palettenTyp.Town_Pal;
+                    }
+
+                    foreach (string s in itsFightPictures_SCHICK)
+                    {
+                        if (s == filename)
+                            return CFarbPalette.palettenTyp.Fight_Pal;
+                    }
+
+                    foreach (string s in itsCharMenüPictures_SCHICK)
+                    {
+                        if (s == filename)
+                            return CFarbPalette.palettenTyp.CharMenü_Pal;
+                    }
+
+                    if (filename == "ATTIC")
+                        return CFarbPalette.palettenTyp.Logo_Attic;
+
+                    if (filename == "DSALOGO.DAT")
+                        return CFarbPalette.palettenTyp.GEN_Pal;
+
+                    if (filename == "GENTIT.DAT")
+                        return CFarbPalette.palettenTyp.GEN_Pal;
+
+                    if (filename == "ROALOGUS.DAT")
+                        return CFarbPalette.palettenTyp.GEN_Pal;
+
+                    return CFarbPalette.palettenTyp.default_Pal;
+
+                case DSAVersion.Schweif:
+                    return CFarbPalette.palettenTyp.default_Pal;
+
+                default:
+                    return CFarbPalette.palettenTyp.default_Pal;
             }
-
-            foreach (string s in itsFightPictures_SCHICK)
-            {
-                if (s == filename)
-                    return CFarbPalette.palettenTyp.Fight_Pal;
-            }
-
-            foreach (string s in itsCharMenüPictures_SCHICK)
-            {
-                if (s == filename)
-                    return CFarbPalette.palettenTyp.CharMenü_Pal;
-            }
-
-            if (filename == "ATTIC")
-                return CFarbPalette.palettenTyp.Logo_Attic;
-
-            if (filename == "DSALOGO.DAT")
-                return CFarbPalette.palettenTyp.GEN_Pal;
-
-            if (filename == "GENTIT.DAT")
-                return CFarbPalette.palettenTyp.GEN_Pal;
-
-            if (filename == "ROALOGUS.DAT")
-                return CFarbPalette.palettenTyp.GEN_Pal;
-
-            return CFarbPalette.palettenTyp.default_Pal;
         }
 
-        private List<Image> loadAmigaImage(ref byte[] data, CDSAFileLoader.CFileSet NVF)
+        private List<Image> loadAmigaImage(ref byte[] data, CDSAFileLoader.CFileSet NVF, DSAVersion version)
         {
             List<Image> images = new List<Image>();
             int beginOfDataBlock;
@@ -633,7 +717,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                     colors = new Color[anzahlFarben];
                     for (int i = 0; i < anzahlFarben; i++)
                     {
-                        colors[i] = Color.FromArgb(data[position++] * 4, data[position++] * 4, data[position++] * 4);
+                        colors[i] = Color.FromArgb((byte)(data[position++] * 4), (byte)(data[position++] * 4), (byte)(data[position++] * 4));
                     }
                 }
                 catch (SystemException)
@@ -644,11 +728,10 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
 
             position = beginOfDataBlock;
-            CFarbPalette.palettenTyp typ = this.getPalettenTyp(NVF.filename);
+            CFarbPalette.palettenTyp typ = this.getPalettenTyp(NVF.filename, version);
 
             //---------Bilddaten auslesen-----------
             for (int i = 0; i < anzahlBilder; i++)
-            //for (int i = anzahlBilder - 1; i >= 0; i--)
             {
                 byte[] bytes = CHelpFunctions.unpackAmiga2Data(ref data, position, depackLengths[i]);
                 
@@ -657,17 +740,11 @@ namespace DSA_1_Editing_Tool.File_Loader
                 Bitmap image = new Bitmap(width[i], height[i]);
 
                 for (int y = 0; y < image.Height; y++)
-                //for (int y = image.Height - 1; y >= 0; y--)
                 {
                     for (int x = 0; x < image.Width; x++)
-                    //for (int x = image.Width - 1; x >= 0; x--)
                     {
-                        //image.SetPixel(x, y, CFarbPalette.getDefaultColor(bytes[bytePosition++]));
                         if (!hasFarbpalette)
                         {
-                            //if (isTownColor)
-                            //    image.SetPixel(x, y, CFarbPalette.getTownColor(bytes[bytePosition]));
-                            //else
                             image.SetPixel(x, y, CFarbPalette.getColor(typ, bytes[bytePosition]));
                         }
                         else
@@ -682,8 +759,8 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
 
             return images;
-        }       
-        private List<Image> loadRLEImage(ref byte[] data, CDSAFileLoader.CFileSet NVF)
+        }
+        private List<Image> loadRLEImage(ref byte[] data, CDSAFileLoader.CFileSet NVF, DSAVersion version)
         {
             List<Image> images = new List<Image>();
             int beginOfDataBlock;
@@ -757,7 +834,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                     colors = new Color[anzahlFarben];
                     for (int i = 0; i < anzahlFarben; i++)
                     {
-                        colors[i] = Color.FromArgb(data[position++] * 4, data[position++] * 4, data[position++] * 4);
+                        colors[i] = Color.FromArgb((byte)(data[position++] * 4), (byte)(data[position++] * 4), (byte)(data[position++] * 4));
                     }
                 }
                 catch (SystemException)
@@ -768,7 +845,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
 
             position = beginOfDataBlock;
-            CFarbPalette.palettenTyp typ = this.getPalettenTyp(NVF.filename);
+            CFarbPalette.palettenTyp typ = this.getPalettenTyp(NVF.filename, version);
 
             //---------Bilddaten auslesen-----------
             for (int i = 0; i < anzahlBilder; i++)
@@ -810,7 +887,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                                 unpacking = true;
 
                                 if (!hasFarbpalette)
-                                    image.SetPixel(x, y, CFarbPalette.getColor(this.getPalettenTyp(NVF.filename), value));
+                                    image.SetPixel(x, y, CFarbPalette.getColor(this.getPalettenTyp(NVF.filename, version), value));
                                 else
                                     image.SetPixel(x, y, colors[value % colors.Length]);
 
@@ -821,7 +898,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                                 // es läuft bereits ein entpackvorgang
 
                                 if (!hasFarbpalette)
-                                    image.SetPixel(x, y, CFarbPalette.getColor(this.getPalettenTyp(NVF.filename), value));
+                                    image.SetPixel(x, y, CFarbPalette.getColor(this.getPalettenTyp(NVF.filename, version), value));
                                 else
                                     image.SetPixel(x, y, colors[value % colors.Length]);
 
@@ -836,9 +913,8 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             return images;
         }
-        private List<Image> loadUncompressedImage(ref byte[] data, CDSAFileLoader.CFileSet NVF)
+        private List<Image> loadUncompressedImage(ref byte[] data, CDSAFileLoader.CFileSet NVF, DSAVersion version)
         {
-
             List<Image> images = new List<Image>();
 
             int offset = NVF.startOffset;
@@ -904,15 +980,17 @@ namespace DSA_1_Editing_Tool.File_Loader
             {
                 
                 int anzahlFarben = CHelpFunctions.byteArrayToInt16(ref data, position);
+                position += 2;
                 colors = new Color[anzahlFarben];
                 for (int i = 0; i < anzahlFarben; i++)
                 {
-                    colors[i] = Color.FromArgb(data[position++], data[position++], data[position++]);
+                    //colors[i] = Color.FromArgb(data[position++], data[position++], data[position++]);
+                    colors[i] = Color.FromArgb((byte)(data[position++] * 4), (byte)(data[position++] * 4), (byte)(data[position++] * 4));
                 }
             }
 
             position = beginOfDataBlock;
-            CFarbPalette.palettenTyp typ = this.getPalettenTyp(NVF.filename);
+            CFarbPalette.palettenTyp typ = this.getPalettenTyp(NVF.filename, version);
 
             for (int i = 0; i < anzahlBilder; i++)
             {
@@ -1137,7 +1215,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
         }
 
-        private List<Image> loadImageWithoutHeader(ref byte[] data, CDSAFileLoader.CFileSet NVF, CImageHeader header)
+        private List<Image> loadImageWithoutHeader(ref byte[] data, CDSAFileLoader.CFileSet NVF, CImageHeader header, DSAVersion version)
         {
             List<Image> images = new List<Image>();
 
@@ -1179,7 +1257,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
             
             position = NVF.startOffset;
-            CFarbPalette.palettenTyp typ = this.getPalettenTyp(NVF.filename);
+            CFarbPalette.palettenTyp typ = this.getPalettenTyp(NVF.filename, version);
 
             while ((position + header.height*header.width + anzahlFarben + helpvalue) <= NVF.endOffset)    //solange das ende der Datei nicht erreicht ist, sind noch bilder vorhanden
             {
