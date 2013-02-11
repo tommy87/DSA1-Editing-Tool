@@ -121,7 +121,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             public byte SortimentsID = 0;
             public byte Magisch = 0;
 
-            public byte unbekannt_1_DSA2 = 0;
+            public byte Typ_für_neue_Slots = 0;
             public byte unbekannt_2_DSA2 = 0;
 
             public CItem(ref byte[] data, int position, DSAVersion version)
@@ -143,10 +143,12 @@ namespace DSA_1_Editing_Tool.File_Loader
                     case DSAVersion.Schweif:
                         this.IconID = CHelpFunctions.byteArrayToInt16(ref data, position);
                         this.ItemTyp = data[position + 2];
-                        this.AnziehbarAnPosition = data[position + 3];
 
-                        //position 4 + 5 sind noch unbekannt
-                        this.unbekannt_1_DSA2 = data[position + 4];
+                        //position 3 + 5 sind noch unbekannt
+                        this.Typ_für_neue_Slots = data[position + 3];
+
+                        this.AnziehbarAnPosition = data[position + 4];
+                        
                         this.unbekannt_2_DSA2 = data[position + 5];
 
                         this.Gewicht = CHelpFunctions.byteArrayToInt16(ref data, position + 6);
@@ -316,6 +318,40 @@ namespace DSA_1_Editing_Tool.File_Loader
                 int Dukaten = geld / 100;
 
                 return (Dukaten.ToString() + "D " + Silberlinge.ToString() + "S " + Heller.ToString() + "H (" + this.Preis.ToString() + ")");
+            }
+            public string TypFürNeueSlotsToString()
+            {
+                string s = String.Empty;
+
+                switch (this.Typ_für_neue_Slots)
+                {
+                    case 0:
+                        s = "alter Slot";
+                        break;
+                    case 1:
+                        s = "Gürtel";
+                        break;
+                    case 2:
+                        s = "Ring";
+                        break;
+                    case 4:
+                        s = "Armreif";
+                        break;
+                    case 8:
+                        s = "Halskette";
+                        break;
+                    case 16:
+                        s = "Umhang";
+                        break;
+                    case 32:
+                        s = "Stirnreif";
+                        break;
+
+                    default:
+                        s = "Unbekannt";
+                        break;
+                }
+                return (s + "(" + this.Typ_für_neue_Slots.ToString() + ")");
             }
         }
     }

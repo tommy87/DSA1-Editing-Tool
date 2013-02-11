@@ -261,6 +261,14 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tB_Monster_Unbekannt_4 = new System.Windows.Forms.TextBox();
+            this.tB_Monster_Unbekannt_3 = new System.Windows.Forms.TextBox();
+            this.label120 = new System.Windows.Forms.Label();
+            this.label121 = new System.Windows.Forms.Label();
+            this.tB_Monster_Unbekannt_2 = new System.Windows.Forms.TextBox();
+            this.tB_Monster_Unbekannt_1 = new System.Windows.Forms.TextBox();
+            this.label118 = new System.Windows.Forms.Label();
+            this.label119 = new System.Windows.Forms.Label();
             this.Monster_pictureBox = new System.Windows.Forms.PictureBox();
             this.lL_Monster = new System.Windows.Forms.LinkLabel();
             this.tB_Monster_FluchtBeiXXLP = new System.Windows.Forms.TextBox();
@@ -391,7 +399,7 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gB_ItemDat = new System.Windows.Forms.GroupBox();
             this.tB_Item_Unbekannt_2 = new System.Windows.Forms.TextBox();
-            this.tB_Item_Unbekannt_1 = new System.Windows.Forms.TextBox();
+            this.tB_Item_ErweiterterTyp_DSA2 = new System.Windows.Forms.TextBox();
             this.label116 = new System.Windows.Forms.Label();
             this.label115 = new System.Windows.Forms.Label();
             this.Item_PictureBox = new System.Windows.Forms.PictureBox();
@@ -438,14 +446,6 @@
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
             this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
-            this.tB_Monster_Unbekannt_2 = new System.Windows.Forms.TextBox();
-            this.tB_Monster_Unbekannt_1 = new System.Windows.Forms.TextBox();
-            this.label118 = new System.Windows.Forms.Label();
-            this.label119 = new System.Windows.Forms.Label();
-            this.tB_Monster_Unbekannt_4 = new System.Windows.Forms.TextBox();
-            this.tB_Monster_Unbekannt_3 = new System.Windows.Forms.TextBox();
-            this.label120 = new System.Windows.Forms.Label();
-            this.label121 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -2770,6 +2770,82 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Monster.dat";
             // 
+            // tB_Monster_Unbekannt_4
+            // 
+            this.tB_Monster_Unbekannt_4.Location = new System.Drawing.Point(401, 398);
+            this.tB_Monster_Unbekannt_4.Name = "tB_Monster_Unbekannt_4";
+            this.tB_Monster_Unbekannt_4.ReadOnly = true;
+            this.tB_Monster_Unbekannt_4.Size = new System.Drawing.Size(85, 20);
+            this.tB_Monster_Unbekannt_4.TabIndex = 56;
+            this.tB_Monster_Unbekannt_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // tB_Monster_Unbekannt_3
+            // 
+            this.tB_Monster_Unbekannt_3.Location = new System.Drawing.Point(400, 372);
+            this.tB_Monster_Unbekannt_3.Name = "tB_Monster_Unbekannt_3";
+            this.tB_Monster_Unbekannt_3.ReadOnly = true;
+            this.tB_Monster_Unbekannt_3.Size = new System.Drawing.Size(86, 20);
+            this.tB_Monster_Unbekannt_3.TabIndex = 55;
+            this.tB_Monster_Unbekannt_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label120
+            // 
+            this.label120.AutoSize = true;
+            this.label120.BackColor = System.Drawing.Color.Peru;
+            this.label120.Location = new System.Drawing.Point(266, 401);
+            this.label120.Name = "label120";
+            this.label120.Size = new System.Drawing.Size(128, 13);
+            this.label120.TabIndex = 54;
+            this.label120.Text = "unbekannt 4 (nur DSA 2):";
+            // 
+            // label121
+            // 
+            this.label121.AutoSize = true;
+            this.label121.BackColor = System.Drawing.Color.Peru;
+            this.label121.Location = new System.Drawing.Point(266, 375);
+            this.label121.Name = "label121";
+            this.label121.Size = new System.Drawing.Size(128, 13);
+            this.label121.TabIndex = 53;
+            this.label121.Text = "unbekannt 3 (nur DSA 2):";
+            // 
+            // tB_Monster_Unbekannt_2
+            // 
+            this.tB_Monster_Unbekannt_2.Location = new System.Drawing.Point(156, 398);
+            this.tB_Monster_Unbekannt_2.Name = "tB_Monster_Unbekannt_2";
+            this.tB_Monster_Unbekannt_2.ReadOnly = true;
+            this.tB_Monster_Unbekannt_2.Size = new System.Drawing.Size(85, 20);
+            this.tB_Monster_Unbekannt_2.TabIndex = 52;
+            this.tB_Monster_Unbekannt_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // tB_Monster_Unbekannt_1
+            // 
+            this.tB_Monster_Unbekannt_1.Location = new System.Drawing.Point(155, 372);
+            this.tB_Monster_Unbekannt_1.Name = "tB_Monster_Unbekannt_1";
+            this.tB_Monster_Unbekannt_1.ReadOnly = true;
+            this.tB_Monster_Unbekannt_1.Size = new System.Drawing.Size(86, 20);
+            this.tB_Monster_Unbekannt_1.TabIndex = 51;
+            this.tB_Monster_Unbekannt_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label118
+            // 
+            this.label118.AutoSize = true;
+            this.label118.BackColor = System.Drawing.Color.Peru;
+            this.label118.Location = new System.Drawing.Point(21, 401);
+            this.label118.Name = "label118";
+            this.label118.Size = new System.Drawing.Size(128, 13);
+            this.label118.TabIndex = 50;
+            this.label118.Text = "unbekannt 2 (nur DSA 2):";
+            // 
+            // label119
+            // 
+            this.label119.AutoSize = true;
+            this.label119.BackColor = System.Drawing.Color.Peru;
+            this.label119.Location = new System.Drawing.Point(21, 375);
+            this.label119.Name = "label119";
+            this.label119.Size = new System.Drawing.Size(128, 13);
+            this.label119.TabIndex = 49;
+            this.label119.Text = "unbekannt 1 (nur DSA 2):";
+            // 
             // Monster_pictureBox
             // 
             this.Monster_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -3986,7 +4062,7 @@
             // label117
             // 
             this.label117.AutoSize = true;
-            this.label117.Location = new System.Drawing.Point(246, 259);
+            this.label117.Location = new System.Drawing.Point(240, 290);
             this.label117.Name = "label117";
             this.label117.Size = new System.Drawing.Size(265, 13);
             this.label117.TabIndex = 22;
@@ -4046,7 +4122,7 @@
             // 
             this.gB_ItemDat.BackColor = System.Drawing.Color.Transparent;
             this.gB_ItemDat.Controls.Add(this.tB_Item_Unbekannt_2);
-            this.gB_ItemDat.Controls.Add(this.tB_Item_Unbekannt_1);
+            this.gB_ItemDat.Controls.Add(this.tB_Item_ErweiterterTyp_DSA2);
             this.gB_ItemDat.Controls.Add(this.label116);
             this.gB_ItemDat.Controls.Add(this.label115);
             this.gB_ItemDat.Controls.Add(this.Item_PictureBox);
@@ -4068,7 +4144,7 @@
             this.gB_ItemDat.Controls.Add(this.tB_Item_IconID);
             this.gB_ItemDat.Location = new System.Drawing.Point(249, 12);
             this.gB_ItemDat.Name = "gB_ItemDat";
-            this.gB_ItemDat.Size = new System.Drawing.Size(661, 230);
+            this.gB_ItemDat.Size = new System.Drawing.Size(661, 266);
             this.gB_ItemDat.TabIndex = 0;
             this.gB_ItemDat.TabStop = false;
             this.gB_ItemDat.Text = "Items.dat";
@@ -4082,14 +4158,14 @@
             this.tB_Item_Unbekannt_2.TabIndex = 21;
             this.tB_Item_Unbekannt_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // tB_Item_Unbekannt_1
+            // tB_Item_ErweiterterTyp_DSA2
             // 
-            this.tB_Item_Unbekannt_1.Location = new System.Drawing.Point(426, 162);
-            this.tB_Item_Unbekannt_1.Name = "tB_Item_Unbekannt_1";
-            this.tB_Item_Unbekannt_1.ReadOnly = true;
-            this.tB_Item_Unbekannt_1.Size = new System.Drawing.Size(86, 20);
-            this.tB_Item_Unbekannt_1.TabIndex = 20;
-            this.tB_Item_Unbekannt_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tB_Item_ErweiterterTyp_DSA2.Location = new System.Drawing.Point(146, 93);
+            this.tB_Item_ErweiterterTyp_DSA2.Name = "tB_Item_ErweiterterTyp_DSA2";
+            this.tB_Item_ErweiterterTyp_DSA2.ReadOnly = true;
+            this.tB_Item_ErweiterterTyp_DSA2.Size = new System.Drawing.Size(110, 20);
+            this.tB_Item_ErweiterterTyp_DSA2.TabIndex = 20;
+            this.tB_Item_ErweiterterTyp_DSA2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label116
             // 
@@ -4105,16 +4181,16 @@
             // 
             this.label115.AutoSize = true;
             this.label115.BackColor = System.Drawing.Color.Peru;
-            this.label115.Location = new System.Drawing.Point(292, 165);
+            this.label115.Location = new System.Drawing.Point(19, 96);
             this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(128, 13);
+            this.label115.Size = new System.Drawing.Size(121, 13);
             this.label115.TabIndex = 18;
-            this.label115.Text = "unbekannt 1 (nur DSA 2):";
+            this.label115.Text = "Erweiterter Typ (DSA 2):";
             // 
             // Item_PictureBox
             // 
             this.Item_PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Item_PictureBox.Location = new System.Drawing.Point(111, 24);
+            this.Item_PictureBox.Location = new System.Drawing.Point(195, 24);
             this.Item_PictureBox.Name = "Item_PictureBox";
             this.Item_PictureBox.Size = new System.Drawing.Size(32, 32);
             this.Item_PictureBox.TabIndex = 3;
@@ -4248,7 +4324,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Peru;
-            this.label8.Location = new System.Drawing.Point(19, 198);
+            this.label8.Location = new System.Drawing.Point(19, 226);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 13);
             this.label8.TabIndex = 16;
@@ -4256,10 +4332,10 @@
             // 
             // tB_Item_Magisch
             // 
-            this.tB_Item_Magisch.Location = new System.Drawing.Point(153, 195);
+            this.tB_Item_Magisch.Location = new System.Drawing.Point(146, 223);
             this.tB_Item_Magisch.Name = "tB_Item_Magisch";
             this.tB_Item_Magisch.ReadOnly = true;
-            this.tB_Item_Magisch.Size = new System.Drawing.Size(85, 20);
+            this.tB_Item_Magisch.Size = new System.Drawing.Size(110, 20);
             this.tB_Item_Magisch.TabIndex = 15;
             this.tB_Item_Magisch.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -4267,7 +4343,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Peru;
-            this.label7.Location = new System.Drawing.Point(19, 172);
+            this.label7.Location = new System.Drawing.Point(19, 200);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 14;
@@ -4275,10 +4351,10 @@
             // 
             // tB_Item_SortimentsID
             // 
-            this.tB_Item_SortimentsID.Location = new System.Drawing.Point(153, 169);
+            this.tB_Item_SortimentsID.Location = new System.Drawing.Point(146, 197);
             this.tB_Item_SortimentsID.Name = "tB_Item_SortimentsID";
             this.tB_Item_SortimentsID.ReadOnly = true;
-            this.tB_Item_SortimentsID.Size = new System.Drawing.Size(85, 20);
+            this.tB_Item_SortimentsID.Size = new System.Drawing.Size(110, 20);
             this.tB_Item_SortimentsID.TabIndex = 13;
             this.tB_Item_SortimentsID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -4286,7 +4362,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Peru;
-            this.label6.Location = new System.Drawing.Point(19, 146);
+            this.label6.Location = new System.Drawing.Point(19, 174);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 12;
@@ -4294,10 +4370,10 @@
             // 
             // tB_Item_Price
             // 
-            this.tB_Item_Price.Location = new System.Drawing.Point(153, 143);
+            this.tB_Item_Price.Location = new System.Drawing.Point(146, 171);
             this.tB_Item_Price.Name = "tB_Item_Price";
             this.tB_Item_Price.ReadOnly = true;
-            this.tB_Item_Price.Size = new System.Drawing.Size(85, 20);
+            this.tB_Item_Price.Size = new System.Drawing.Size(110, 20);
             this.tB_Item_Price.TabIndex = 11;
             this.tB_Item_Price.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -4305,7 +4381,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Peru;
-            this.label5.Location = new System.Drawing.Point(19, 120);
+            this.label5.Location = new System.Drawing.Point(19, 148);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 10;
@@ -4313,10 +4389,10 @@
             // 
             // tB_Item_PriceBase
             // 
-            this.tB_Item_PriceBase.Location = new System.Drawing.Point(153, 117);
+            this.tB_Item_PriceBase.Location = new System.Drawing.Point(146, 145);
             this.tB_Item_PriceBase.Name = "tB_Item_PriceBase";
             this.tB_Item_PriceBase.ReadOnly = true;
-            this.tB_Item_PriceBase.Size = new System.Drawing.Size(85, 20);
+            this.tB_Item_PriceBase.Size = new System.Drawing.Size(110, 20);
             this.tB_Item_PriceBase.TabIndex = 9;
             this.tB_Item_PriceBase.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -4324,7 +4400,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Peru;
-            this.label4.Location = new System.Drawing.Point(19, 94);
+            this.label4.Location = new System.Drawing.Point(19, 122);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 8;
@@ -4332,10 +4408,10 @@
             // 
             // tB_Item_Gewicht
             // 
-            this.tB_Item_Gewicht.Location = new System.Drawing.Point(153, 91);
+            this.tB_Item_Gewicht.Location = new System.Drawing.Point(146, 119);
             this.tB_Item_Gewicht.Name = "tB_Item_Gewicht";
             this.tB_Item_Gewicht.ReadOnly = true;
-            this.tB_Item_Gewicht.Size = new System.Drawing.Size(85, 20);
+            this.tB_Item_Gewicht.Size = new System.Drawing.Size(110, 20);
             this.tB_Item_Gewicht.TabIndex = 7;
             this.tB_Item_Gewicht.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -4343,7 +4419,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Peru;
-            this.label3.Location = new System.Drawing.Point(19, 68);
+            this.label3.Location = new System.Drawing.Point(19, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(28, 13);
             this.label3.TabIndex = 6;
@@ -4351,10 +4427,10 @@
             // 
             // tB_Item_Position
             // 
-            this.tB_Item_Position.Location = new System.Drawing.Point(152, 65);
+            this.tB_Item_Position.Location = new System.Drawing.Point(89, 67);
             this.tB_Item_Position.Name = "tB_Item_Position";
             this.tB_Item_Position.ReadOnly = true;
-            this.tB_Item_Position.Size = new System.Drawing.Size(86, 20);
+            this.tB_Item_Position.Size = new System.Drawing.Size(167, 20);
             this.tB_Item_Position.TabIndex = 5;
             this.tB_Item_Position.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -4364,16 +4440,16 @@
             this.label1.BackColor = System.Drawing.Color.Peru;
             this.label1.Location = new System.Drawing.Point(19, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Bild:";
+            this.label1.Text = "Bild ID:";
             // 
             // tB_Item_IconID
             // 
-            this.tB_Item_IconID.Location = new System.Drawing.Point(153, 29);
+            this.tB_Item_IconID.Location = new System.Drawing.Point(128, 31);
             this.tB_Item_IconID.Name = "tB_Item_IconID";
             this.tB_Item_IconID.ReadOnly = true;
-            this.tB_Item_IconID.Size = new System.Drawing.Size(85, 20);
+            this.tB_Item_IconID.Size = new System.Drawing.Size(55, 20);
             this.tB_Item_IconID.TabIndex = 0;
             this.tB_Item_IconID.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -4603,82 +4679,6 @@
             this.saveXMLDialog.FileName = "monster.xml";
             this.saveXMLDialog.Filter = "MonsterXML|*.xml|Alle Dateien|*.*";
             this.saveXMLDialog.Title = "XML-File speichern unter";
-            // 
-            // tB_Monster_Unbekannt_2
-            // 
-            this.tB_Monster_Unbekannt_2.Location = new System.Drawing.Point(156, 398);
-            this.tB_Monster_Unbekannt_2.Name = "tB_Monster_Unbekannt_2";
-            this.tB_Monster_Unbekannt_2.ReadOnly = true;
-            this.tB_Monster_Unbekannt_2.Size = new System.Drawing.Size(85, 20);
-            this.tB_Monster_Unbekannt_2.TabIndex = 52;
-            this.tB_Monster_Unbekannt_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // tB_Monster_Unbekannt_1
-            // 
-            this.tB_Monster_Unbekannt_1.Location = new System.Drawing.Point(155, 372);
-            this.tB_Monster_Unbekannt_1.Name = "tB_Monster_Unbekannt_1";
-            this.tB_Monster_Unbekannt_1.ReadOnly = true;
-            this.tB_Monster_Unbekannt_1.Size = new System.Drawing.Size(86, 20);
-            this.tB_Monster_Unbekannt_1.TabIndex = 51;
-            this.tB_Monster_Unbekannt_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label118
-            // 
-            this.label118.AutoSize = true;
-            this.label118.BackColor = System.Drawing.Color.Peru;
-            this.label118.Location = new System.Drawing.Point(21, 401);
-            this.label118.Name = "label118";
-            this.label118.Size = new System.Drawing.Size(128, 13);
-            this.label118.TabIndex = 50;
-            this.label118.Text = "unbekannt 2 (nur DSA 2):";
-            // 
-            // label119
-            // 
-            this.label119.AutoSize = true;
-            this.label119.BackColor = System.Drawing.Color.Peru;
-            this.label119.Location = new System.Drawing.Point(21, 375);
-            this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(128, 13);
-            this.label119.TabIndex = 49;
-            this.label119.Text = "unbekannt 1 (nur DSA 2):";
-            // 
-            // tB_Monster_Unbekannt_4
-            // 
-            this.tB_Monster_Unbekannt_4.Location = new System.Drawing.Point(401, 398);
-            this.tB_Monster_Unbekannt_4.Name = "tB_Monster_Unbekannt_4";
-            this.tB_Monster_Unbekannt_4.ReadOnly = true;
-            this.tB_Monster_Unbekannt_4.Size = new System.Drawing.Size(85, 20);
-            this.tB_Monster_Unbekannt_4.TabIndex = 56;
-            this.tB_Monster_Unbekannt_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // tB_Monster_Unbekannt_3
-            // 
-            this.tB_Monster_Unbekannt_3.Location = new System.Drawing.Point(400, 372);
-            this.tB_Monster_Unbekannt_3.Name = "tB_Monster_Unbekannt_3";
-            this.tB_Monster_Unbekannt_3.ReadOnly = true;
-            this.tB_Monster_Unbekannt_3.Size = new System.Drawing.Size(86, 20);
-            this.tB_Monster_Unbekannt_3.TabIndex = 55;
-            this.tB_Monster_Unbekannt_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label120
-            // 
-            this.label120.AutoSize = true;
-            this.label120.BackColor = System.Drawing.Color.Peru;
-            this.label120.Location = new System.Drawing.Point(266, 401);
-            this.label120.Name = "label120";
-            this.label120.Size = new System.Drawing.Size(128, 13);
-            this.label120.TabIndex = 54;
-            this.label120.Text = "unbekannt 4 (nur DSA 2):";
-            // 
-            // label121
-            // 
-            this.label121.AutoSize = true;
-            this.label121.BackColor = System.Drawing.Color.Peru;
-            this.label121.Location = new System.Drawing.Point(266, 375);
-            this.label121.Name = "label121";
-            this.label121.Size = new System.Drawing.Size(128, 13);
-            this.label121.TabIndex = 53;
-            this.label121.Text = "unbekannt 3 (nur DSA 2):";
             // 
             // Form1
             // 
@@ -5190,7 +5190,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label114;
         private System.Windows.Forms.TextBox tB_Item_Unbekannt_2;
-        private System.Windows.Forms.TextBox tB_Item_Unbekannt_1;
+        private System.Windows.Forms.TextBox tB_Item_ErweiterterTyp_DSA2;
         private System.Windows.Forms.Label label116;
         private System.Windows.Forms.Label label115;
         private System.Windows.Forms.Label label117;

@@ -604,9 +604,9 @@ namespace DSA_1_Editing_Tool
                     CDebugger.addErrorLine("Die Datei " + name + " ist nur mit CD verfügbar");
                 }
                 else if (value != 1)
-                    CDebugger.addErrorLine("Die Datei " + name + " ist nicht verfügbar CD verfügbar (" + value.ToString() + ")");
-
-                this.itsSTAROffsets.Add(new KeyValuePair<string, int>(name, offsetFiles + offset));
+                    CDebugger.addErrorLine("Die Datei " + name + " ist nicht verfügbar ??? (" + value.ToString() + ")");
+                else
+                    this.itsSTAROffsets.Add(new KeyValuePair<string, int>(name, offsetFiles + offset));
 
                 position += 20;
             }

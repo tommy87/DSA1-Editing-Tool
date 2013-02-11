@@ -302,12 +302,12 @@ namespace DSA_1_Editing_Tool
 
                 if (this.itsDSAFileLoader.Version == DSAVersion.Schweif)
                 {
-                    this.tB_Item_Unbekannt_1.Text = item.unbekannt_1_DSA2.ToString();
+                    this.tB_Item_ErweiterterTyp_DSA2.Text = item.TypFürNeueSlotsToString();
                     this.tB_Item_Unbekannt_2.Text = item.unbekannt_2_DSA2.ToString();
                 }
                 else
                 {
-                    this.tB_Item_Unbekannt_1.Text = String.Empty;
+                    this.tB_Item_ErweiterterTyp_DSA2.Text = String.Empty;
                     this.tB_Item_Unbekannt_2.Text = String.Empty;
                 }
 
@@ -325,7 +325,7 @@ namespace DSA_1_Editing_Tool
                 this.tB_Item_PriceBase.Text = String.Empty;
                 this.tB_Item_SortimentsID.Text = String.Empty;
 
-                this.tB_Item_Unbekannt_1.Text = String.Empty;
+                this.tB_Item_ErweiterterTyp_DSA2.Text = String.Empty;
                 this.tB_Item_Unbekannt_2.Text = String.Empty;
 
                 this.loadItemTyp(0);
