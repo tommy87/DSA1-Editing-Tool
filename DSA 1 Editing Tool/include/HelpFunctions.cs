@@ -80,7 +80,7 @@ namespace DSA_1_Editing_Tool
 
             string s = "";
 
-            if ((data[1] & 0xF0) != 0)
+            if (data[1] != 0)
             {
                 s = ((data[1] & 0xF0) >> 4).ToString();
 
@@ -95,9 +95,15 @@ namespace DSA_1_Editing_Tool
                     case 0x03:
                         s += "W3";
                         break;
+                    case 0x04:
+                        s += "W4";
+                        break;
+                    case 0x05:
+                        s += "W100";
+                        break;
 
                     default:
-                        s += "W4";
+                        s += "??";
                         break;
                 }
 
@@ -115,7 +121,7 @@ namespace DSA_1_Editing_Tool
                 s = ((sbyte)data[0]).ToString();
             }
 
-
+            //s += "(" + data[0].ToString("X2") + "-" + data[1].ToString("X2") + ")";
             return s;
         }
         public static string dsaRichtungToString(byte data)

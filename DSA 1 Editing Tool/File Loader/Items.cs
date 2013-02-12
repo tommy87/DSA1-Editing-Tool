@@ -121,7 +121,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             public byte SortimentsID = 0;
             public byte Magisch = 0;
 
-            public byte Typ_für_neue_Slots = 0;
+            public byte erweiterterTyp = 0;
             public byte unbekannt_2_DSA2 = 0;
 
             public CItem(ref byte[] data, int position, DSAVersion version)
@@ -145,7 +145,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                         this.ItemTyp = data[position + 2];
 
                         //position 3 + 5 sind noch unbekannt
-                        this.Typ_für_neue_Slots = data[position + 3];
+                        this.erweiterterTyp = data[position + 3];
 
                         this.AnziehbarAnPosition = data[position + 4];
                         
@@ -228,57 +228,131 @@ namespace DSA_1_Editing_Tool.File_Loader
                 wr.WriteEndElement();
             }
 
-            public string AnziehbarAnPositionToString()
+            public string AnziehbarAnPositionToString(DSAVersion version)
             {
-                if ((this.ItemTyp & 0x01) != 0)
+                switch (version)
                 {
-                    switch (this.AnziehbarAnPosition)
-                    {
-                        case 0:
-                            return ("Kopf(" + AnziehbarAnPosition.ToString() + ")");
-                        case 1:
-                            return ("Arme(" + AnziehbarAnPosition.ToString() + ")");
-                        case 2:
-                            return ("Brust(" + AnziehbarAnPosition.ToString() + ")");
-                        case 5:
-                            return ("Beine(" + AnziehbarAnPosition.ToString() + ")");
-                        case 6:
-                            return ("Schuhe(" + AnziehbarAnPosition.ToString() + ")");
-                        case 9:
-                            return ("Schildhand(" + AnziehbarAnPosition.ToString() + ")");
-                    }
-                }
-                else if ((this.ItemTyp & 0x02) != 0) 
-                {
-                    switch (this.AnziehbarAnPosition)
-                    {
-                        case 0:
-                            return ("Waffenlos(Pfeile|Bolzen)(" + AnziehbarAnPosition.ToString() + ")");
-                        case 1:
-                            return ("Hiebwaffe(" + AnziehbarAnPosition.ToString() + ")");
-                        case 2:
-                            return ("Stichwaffe(" + AnziehbarAnPosition.ToString() + ")");
-                        case 3:
-                            return ("Schwerter(" + AnziehbarAnPosition.ToString() + ")");
-                        case 4:
-                            return ("Äxte(" + AnziehbarAnPosition.ToString() + ")");
-                        case 5:
-                            return ("Speere(" + AnziehbarAnPosition.ToString() + ")");
-                        case 6:
-                            return ("Zweihänder(" + AnziehbarAnPosition.ToString() + ")");
-                        case 7:
-                            return ("Schusswaffe(" + AnziehbarAnPosition.ToString() + ")");
-                        case 8:
-                            return ("Wurfwaffe(" + AnziehbarAnPosition.ToString() + ")");
-                    }
-                }
-                else
-                {
-                    switch (this.AnziehbarAnPosition)
-                    {
-                        case 0:
+                    case DSAVersion.Blade:
+                    case DSAVersion.Schick:
+                        if ((this.ItemTyp & 0x01) != 0)
+                        {
+                            switch (this.AnziehbarAnPosition)
+                            {
+                                case 0:
+                                    return ("Kopf(" + AnziehbarAnPosition.ToString() + ")");
+                                case 1:
+                                    return ("Arme(" + AnziehbarAnPosition.ToString() + ")");
+                                case 2:
+                                    return ("Brust(" + AnziehbarAnPosition.ToString() + ")");
+                                case 5:
+                                    return ("Beine(" + AnziehbarAnPosition.ToString() + ")");
+                                case 6:
+                                    return ("Schuhe(" + AnziehbarAnPosition.ToString() + ")");
+                                case 9:
+                                    return ("Schildhand(" + AnziehbarAnPosition.ToString() + ")");
+                            }
+                        }
+                        else if ((this.ItemTyp & 0x02) != 0)
+                        {
+                            switch (this.AnziehbarAnPosition)
+                            {
+                                case 0:
+                                    return ("Waffenlos(Pfeile|Bolzen)(" + AnziehbarAnPosition.ToString() + ")");
+                                case 1:
+                                    return ("Hiebwaffe(" + AnziehbarAnPosition.ToString() + ")");
+                                case 2:
+                                    return ("Stichwaffe(" + AnziehbarAnPosition.ToString() + ")");
+                                case 3:
+                                    return ("Schwerter(" + AnziehbarAnPosition.ToString() + ")");
+                                case 4:
+                                    return ("Äxte(" + AnziehbarAnPosition.ToString() + ")");
+                                case 5:
+                                    return ("Speere(" + AnziehbarAnPosition.ToString() + ")");
+                                case 6:
+                                    return ("Zweihänder(" + AnziehbarAnPosition.ToString() + ")");
+                                case 7:
+                                    return ("Schusswaffe(" + AnziehbarAnPosition.ToString() + ")");
+                                case 8:
+                                    return ("Wurfwaffe(" + AnziehbarAnPosition.ToString() + ")");
+                            }
+                        }
+                        else if (AnziehbarAnPosition == 0)
                             return ("Gegenstand(" + AnziehbarAnPosition.ToString() + ")");
-                    }
+                            
+                        break;
+
+                    //-------------------------------------------------------------
+                    case DSAVersion.Schweif:
+                        if ((this.ItemTyp & 0x01) != 0)
+                        {
+                            switch (this.AnziehbarAnPosition)
+                            {
+                                case 0:
+                                    return ("Kopf(" + AnziehbarAnPosition.ToString() + ")");
+                                case 1:
+                                    return ("Arme(" + AnziehbarAnPosition.ToString() + ")");
+                                //case 2:
+                                //    return ("Brust(" + AnziehbarAnPosition.ToString() + ")");
+                                case 5:
+                                    return ("Beine(" + AnziehbarAnPosition.ToString() + ")");
+                                //case 6:
+                                //    return ("Schuhe(" + AnziehbarAnPosition.ToString() + ")");
+                                case 9:
+                                    return ("Schildhand(" + AnziehbarAnPosition.ToString() + ")");
+                                case 10:
+                                    return ("Brust(" + AnziehbarAnPosition.ToString() + ")");
+                                case 14:
+                                    return ("Schuhe(" + AnziehbarAnPosition.ToString() + ")");
+                            }
+                        }
+                        else if ((this.ItemTyp & 0x02) != 0)
+                        {
+                            switch (this.AnziehbarAnPosition)
+                            {
+                                case 0:
+                                    return ("Waffenlos(Pfeile|Bolzen)(" + AnziehbarAnPosition.ToString() + ")");
+                                case 1:
+                                    return ("Hiebwaffe(" + AnziehbarAnPosition.ToString() + ")");
+                                case 2:
+                                    return ("Stichwaffe(" + AnziehbarAnPosition.ToString() + ")");
+                                case 3:
+                                    return ("Schwerter(" + AnziehbarAnPosition.ToString() + ")");
+                                case 4:
+                                    return ("Äxte(" + AnziehbarAnPosition.ToString() + ")");
+                                case 5:
+                                    return ("Speere(" + AnziehbarAnPosition.ToString() + ")");
+                                case 6:
+                                    return ("Zweihänder(" + AnziehbarAnPosition.ToString() + ")");
+                                case 7:
+                                    return ("Schusswaffe(" + AnziehbarAnPosition.ToString() + ")");
+                                case 8:
+                                    return ("Wurfwaffe(" + AnziehbarAnPosition.ToString() + ")");
+                            }
+                        }
+                        else if ((this.ItemTyp & 0x08) != 0)
+                        {
+                            switch (this.AnziehbarAnPosition)
+                            {
+                                case 0:
+                                    return ("Trinken(" + AnziehbarAnPosition.ToString() + ")");
+                                case 1:
+                                    return ("Essen(" + AnziehbarAnPosition.ToString() + ")");
+                            }
+                        }
+                        else if ((this.ItemTyp & 0x20) != 0)
+                        {
+                            switch (this.AnziehbarAnPosition)
+                            {
+                                case 0:
+                                    return ("Kräuter(" + AnziehbarAnPosition.ToString() + ")");
+                                case 1:
+                                    return ("Trank(" + AnziehbarAnPosition.ToString() + ")");
+                            }
+                        }
+                        else if (AnziehbarAnPosition == 0)
+                            return ("Gegenstand(" + AnziehbarAnPosition.ToString() + ")");
+
+                        break;
                 }
 
                 return ("???(" + AnziehbarAnPosition.ToString() + ")");
@@ -318,40 +392,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 int Dukaten = geld / 100;
 
                 return (Dukaten.ToString() + "D " + Silberlinge.ToString() + "S " + Heller.ToString() + "H (" + this.Preis.ToString() + ")");
-            }
-            public string TypFürNeueSlotsToString()
-            {
-                string s = String.Empty;
-
-                switch (this.Typ_für_neue_Slots)
-                {
-                    case 0:
-                        s = "alter Slot";
-                        break;
-                    case 1:
-                        s = "Gürtel";
-                        break;
-                    case 2:
-                        s = "Ring";
-                        break;
-                    case 4:
-                        s = "Armreif";
-                        break;
-                    case 8:
-                        s = "Halskette";
-                        break;
-                    case 16:
-                        s = "Umhang";
-                        break;
-                    case 32:
-                        s = "Stirnreif";
-                        break;
-
-                    default:
-                        s = "Unbekannt";
-                        break;
-                }
-                return (s + "(" + this.Typ_für_neue_Slots.ToString() + ")");
             }
         }
     }

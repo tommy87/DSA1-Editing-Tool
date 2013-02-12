@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tSBOpenFile = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -399,9 +399,7 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gB_ItemDat = new System.Windows.Forms.GroupBox();
             this.tB_Item_Unbekannt_2 = new System.Windows.Forms.TextBox();
-            this.tB_Item_ErweiterterTyp_DSA2 = new System.Windows.Forms.TextBox();
             this.label116 = new System.Windows.Forms.Label();
-            this.label115 = new System.Windows.Forms.Label();
             this.Item_PictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox14 = new System.Windows.Forms.GroupBox();
             this.Items_cBItemTypBit_8 = new System.Windows.Forms.CheckBox();
@@ -411,7 +409,7 @@
             this.Items_cBItemTypBit_4 = new System.Windows.Forms.CheckBox();
             this.Items_cBItemTypBit_3 = new System.Windows.Forms.CheckBox();
             this.Items_cBItemTypBit_2 = new System.Windows.Forms.CheckBox();
-            this.Items_cBItemTypBit_ = new System.Windows.Forms.CheckBox();
+            this.Items_cBItemTypBit_1 = new System.Windows.Forms.CheckBox();
             this.lL_ItemInfos = new System.Windows.Forms.LinkLabel();
             this.label8 = new System.Windows.Forms.Label();
             this.tB_Item_Magisch = new System.Windows.Forms.TextBox();
@@ -446,6 +444,15 @@
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
             this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cb_ExtendedItemTyp_value_128 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_64 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_32 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_16 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_8 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_4 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_2 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_1 = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -516,6 +523,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).BeginInit();
             this.tP_Routs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).BeginInit();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -2107,9 +2115,9 @@
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle31.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle31;
             this.dataGridViewTextBoxColumn17.HeaderText = "#";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
@@ -2145,9 +2153,9 @@
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle32.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle32;
             this.dataGridViewTextBoxColumn15.HeaderText = "#";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
@@ -2306,9 +2314,9 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle33.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle33;
             this.dataGridViewTextBoxColumn6.HeaderText = "#";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -2316,9 +2324,9 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle34.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle34;
             this.dataGridViewTextBoxColumn7.HeaderText = "ID";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -2585,9 +2593,9 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle35.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle35;
             this.dataGridViewTextBoxColumn3.HeaderText = "#";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -2595,9 +2603,9 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle36.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle36;
             this.dataGridViewTextBoxColumn4.HeaderText = "ID";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -2634,9 +2642,9 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle37.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle37;
             this.dataGridViewTextBoxColumn1.HeaderText = "#";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -2644,9 +2652,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle38.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle38;
             this.Column3.HeaderText = "ID";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -2693,9 +2701,9 @@
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle39.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle39;
             this.dataGridViewTextBoxColumn11.HeaderText = "#";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
@@ -2765,7 +2773,7 @@
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Location = new System.Drawing.Point(214, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(670, 440);
+            this.groupBox1.Size = new System.Drawing.Size(753, 440);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Monster.dat";
@@ -2849,7 +2857,7 @@
             // Monster_pictureBox
             // 
             this.Monster_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Monster_pictureBox.Location = new System.Drawing.Point(192, 167);
+            this.Monster_pictureBox.Location = new System.Drawing.Point(217, 167);
             this.Monster_pictureBox.Name = "Monster_pictureBox";
             this.Monster_pictureBox.Size = new System.Drawing.Size(48, 60);
             this.Monster_pictureBox.TabIndex = 48;
@@ -2885,7 +2893,7 @@
             // 
             // tB_Monster_MonsterTyp
             // 
-            this.tB_Monster_MonsterTyp.Location = new System.Drawing.Point(269, 141);
+            this.tB_Monster_MonsterTyp.Location = new System.Drawing.Point(294, 141);
             this.tB_Monster_MonsterTyp.Name = "tB_Monster_MonsterTyp";
             this.tB_Monster_MonsterTyp.ReadOnly = true;
             this.tB_Monster_MonsterTyp.Size = new System.Drawing.Size(71, 20);
@@ -2894,7 +2902,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(174, 144);
+            this.label38.Location = new System.Drawing.Point(199, 144);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(69, 13);
             this.label38.TabIndex = 44;
@@ -2902,7 +2910,7 @@
             // 
             // tB_Monster_Größenklasse
             // 
-            this.tB_Monster_Größenklasse.Location = new System.Drawing.Point(269, 115);
+            this.tB_Monster_Größenklasse.Location = new System.Drawing.Point(294, 115);
             this.tB_Monster_Größenklasse.Name = "tB_Monster_Größenklasse";
             this.tB_Monster_Größenklasse.ReadOnly = true;
             this.tB_Monster_Größenklasse.Size = new System.Drawing.Size(71, 20);
@@ -2911,7 +2919,7 @@
             // label35
             // 
             this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(174, 118);
+            this.label35.Location = new System.Drawing.Point(199, 118);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(75, 13);
             this.label35.TabIndex = 42;
@@ -2919,7 +2927,7 @@
             // 
             // tB_Monster_IDMagierklasse
             // 
-            this.tB_Monster_IDMagierklasse.Location = new System.Drawing.Point(269, 70);
+            this.tB_Monster_IDMagierklasse.Location = new System.Drawing.Point(294, 70);
             this.tB_Monster_IDMagierklasse.Name = "tB_Monster_IDMagierklasse";
             this.tB_Monster_IDMagierklasse.ReadOnly = true;
             this.tB_Monster_IDMagierklasse.Size = new System.Drawing.Size(71, 20);
@@ -2928,7 +2936,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(174, 73);
+            this.label36.Location = new System.Drawing.Point(199, 73);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(86, 13);
             this.label36.TabIndex = 40;
@@ -2936,7 +2944,7 @@
             // 
             // tB_Monster_ImmunitätNormaleWaffen
             // 
-            this.tB_Monster_ImmunitätNormaleWaffen.Location = new System.Drawing.Point(269, 44);
+            this.tB_Monster_ImmunitätNormaleWaffen.Location = new System.Drawing.Point(294, 44);
             this.tB_Monster_ImmunitätNormaleWaffen.Name = "tB_Monster_ImmunitätNormaleWaffen";
             this.tB_Monster_ImmunitätNormaleWaffen.ReadOnly = true;
             this.tB_Monster_ImmunitätNormaleWaffen.Size = new System.Drawing.Size(71, 20);
@@ -2945,7 +2953,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(174, 28);
+            this.label37.Location = new System.Drawing.Point(199, 28);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(166, 13);
             this.label37.TabIndex = 38;
@@ -2953,10 +2961,10 @@
             // 
             // tB_Monster_Stufe
             // 
-            this.tB_Monster_Stufe.Location = new System.Drawing.Point(89, 219);
+            this.tB_Monster_Stufe.Location = new System.Drawing.Point(66, 219);
             this.tB_Monster_Stufe.Name = "tB_Monster_Stufe";
             this.tB_Monster_Stufe.ReadOnly = true;
-            this.tB_Monster_Stufe.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_Stufe.Size = new System.Drawing.Size(109, 20);
             this.tB_Monster_Stufe.TabIndex = 37;
             // 
             // label34
@@ -2970,10 +2978,10 @@
             // 
             // tB_Monster_BP
             // 
-            this.tB_Monster_BP.Location = new System.Drawing.Point(89, 193);
+            this.tB_Monster_BP.Location = new System.Drawing.Point(66, 193);
             this.tB_Monster_BP.Name = "tB_Monster_BP";
             this.tB_Monster_BP.ReadOnly = true;
-            this.tB_Monster_BP.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_BP.Size = new System.Drawing.Size(109, 20);
             this.tB_Monster_BP.TabIndex = 35;
             // 
             // label33
@@ -2990,7 +2998,7 @@
             this.tB_Monster_SchadenWurfwaffen.Location = new System.Drawing.Point(327, 321);
             this.tB_Monster_SchadenWurfwaffen.Name = "tB_Monster_SchadenWurfwaffen";
             this.tB_Monster_SchadenWurfwaffen.ReadOnly = true;
-            this.tB_Monster_SchadenWurfwaffen.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_SchadenWurfwaffen.Size = new System.Drawing.Size(125, 20);
             this.tB_Monster_SchadenWurfwaffen.TabIndex = 33;
             // 
             // label29
@@ -3007,7 +3015,7 @@
             this.tB_Monster_AnzahlWurfattacken.Location = new System.Drawing.Point(327, 295);
             this.tB_Monster_AnzahlWurfattacken.Name = "tB_Monster_AnzahlWurfattacken";
             this.tB_Monster_AnzahlWurfattacken.ReadOnly = true;
-            this.tB_Monster_AnzahlWurfattacken.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_AnzahlWurfattacken.Size = new System.Drawing.Size(125, 20);
             this.tB_Monster_AnzahlWurfattacken.TabIndex = 31;
             // 
             // tB_Monster_SchadeGeschosse
@@ -3015,7 +3023,7 @@
             this.tB_Monster_SchadeGeschosse.Location = new System.Drawing.Point(327, 269);
             this.tB_Monster_SchadeGeschosse.Name = "tB_Monster_SchadeGeschosse";
             this.tB_Monster_SchadeGeschosse.ReadOnly = true;
-            this.tB_Monster_SchadeGeschosse.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_SchadeGeschosse.Size = new System.Drawing.Size(125, 20);
             this.tB_Monster_SchadeGeschosse.TabIndex = 30;
             // 
             // tB_Monster_AnzahlSchussattacken
@@ -3023,7 +3031,7 @@
             this.tB_Monster_AnzahlSchussattacken.Location = new System.Drawing.Point(327, 243);
             this.tB_Monster_AnzahlSchussattacken.Name = "tB_Monster_AnzahlSchussattacken";
             this.tB_Monster_AnzahlSchussattacken.ReadOnly = true;
-            this.tB_Monster_AnzahlSchussattacken.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_AnzahlSchussattacken.Size = new System.Drawing.Size(125, 20);
             this.tB_Monster_AnzahlSchussattacken.TabIndex = 29;
             // 
             // label30
@@ -3055,15 +3063,15 @@
             // 
             // tB_Monster_Schaden2Angriff
             // 
-            this.tB_Monster_Schaden2Angriff.Location = new System.Drawing.Point(537, 324);
+            this.tB_Monster_Schaden2Angriff.Location = new System.Drawing.Point(587, 321);
             this.tB_Monster_Schaden2Angriff.Name = "tB_Monster_Schaden2Angriff";
-            this.tB_Monster_Schaden2Angriff.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_Schaden2Angriff.Size = new System.Drawing.Size(117, 20);
             this.tB_Monster_Schaden2Angriff.TabIndex = 25;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(430, 327);
+            this.label25.Location = new System.Drawing.Point(480, 324);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(105, 13);
             this.label25.TabIndex = 24;
@@ -3071,29 +3079,29 @@
             // 
             // tB_Monster_Schaden1Angriff
             // 
-            this.tB_Monster_Schaden1Angriff.Location = new System.Drawing.Point(537, 298);
+            this.tB_Monster_Schaden1Angriff.Location = new System.Drawing.Point(587, 295);
             this.tB_Monster_Schaden1Angriff.Name = "tB_Monster_Schaden1Angriff";
-            this.tB_Monster_Schaden1Angriff.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_Schaden1Angriff.Size = new System.Drawing.Size(117, 20);
             this.tB_Monster_Schaden1Angriff.TabIndex = 23;
             // 
             // tB_Monster_AnzahlAttacken
             // 
-            this.tB_Monster_AnzahlAttacken.Location = new System.Drawing.Point(537, 272);
+            this.tB_Monster_AnzahlAttacken.Location = new System.Drawing.Point(587, 269);
             this.tB_Monster_AnzahlAttacken.Name = "tB_Monster_AnzahlAttacken";
-            this.tB_Monster_AnzahlAttacken.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_AnzahlAttacken.Size = new System.Drawing.Size(117, 20);
             this.tB_Monster_AnzahlAttacken.TabIndex = 22;
             // 
             // tB_Monster_ErstAP
             // 
-            this.tB_Monster_ErstAP.Location = new System.Drawing.Point(537, 246);
+            this.tB_Monster_ErstAP.Location = new System.Drawing.Point(587, 243);
             this.tB_Monster_ErstAP.Name = "tB_Monster_ErstAP";
-            this.tB_Monster_ErstAP.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_ErstAP.Size = new System.Drawing.Size(117, 20);
             this.tB_Monster_ErstAP.TabIndex = 21;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(430, 301);
+            this.label26.Location = new System.Drawing.Point(480, 298);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(105, 13);
             this.label26.TabIndex = 20;
@@ -3102,7 +3110,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(430, 275);
+            this.label27.Location = new System.Drawing.Point(480, 272);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(88, 13);
             this.label27.TabIndex = 19;
@@ -3111,7 +3119,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(430, 249);
+            this.label28.Location = new System.Drawing.Point(480, 246);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(45, 13);
             this.label28.TabIndex = 18;
@@ -3119,10 +3127,10 @@
             // 
             // tB_Monster_PA
             // 
-            this.tB_Monster_PA.Location = new System.Drawing.Point(89, 167);
+            this.tB_Monster_PA.Location = new System.Drawing.Point(66, 167);
             this.tB_Monster_PA.Name = "tB_Monster_PA";
             this.tB_Monster_PA.ReadOnly = true;
-            this.tB_Monster_PA.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_PA.Size = new System.Drawing.Size(109, 20);
             this.tB_Monster_PA.TabIndex = 17;
             // 
             // label24
@@ -3154,35 +3162,35 @@
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.label19);
-            this.groupBox3.Location = new System.Drawing.Point(346, 19);
+            this.groupBox3.Location = new System.Drawing.Point(371, 19);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(308, 172);
+            this.groupBox3.Size = new System.Drawing.Size(363, 172);
             this.groupBox3.TabIndex = 15;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Würfel";
             // 
             // tB_Monster_KK
             // 
-            this.tB_Monster_KK.Location = new System.Drawing.Point(191, 110);
+            this.tB_Monster_KK.Location = new System.Drawing.Point(231, 110);
             this.tB_Monster_KK.Name = "tB_Monster_KK";
             this.tB_Monster_KK.ReadOnly = true;
-            this.tB_Monster_KK.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_KK.Size = new System.Drawing.Size(110, 20);
             this.tB_Monster_KK.TabIndex = 34;
             // 
             // tB_Monster_IN
             // 
-            this.tB_Monster_IN.Location = new System.Drawing.Point(191, 84);
+            this.tB_Monster_IN.Location = new System.Drawing.Point(231, 84);
             this.tB_Monster_IN.Name = "tB_Monster_IN";
             this.tB_Monster_IN.ReadOnly = true;
-            this.tB_Monster_IN.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_IN.Size = new System.Drawing.Size(110, 20);
             this.tB_Monster_IN.TabIndex = 33;
             // 
             // tB_Monster_GE
             // 
-            this.tB_Monster_GE.Location = new System.Drawing.Point(191, 58);
+            this.tB_Monster_GE.Location = new System.Drawing.Point(231, 58);
             this.tB_Monster_GE.Name = "tB_Monster_GE";
             this.tB_Monster_GE.ReadOnly = true;
-            this.tB_Monster_GE.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_GE.Size = new System.Drawing.Size(110, 20);
             this.tB_Monster_GE.TabIndex = 32;
             // 
             // tB_Monster_LE
@@ -3190,21 +3198,21 @@
             this.tB_Monster_LE.Location = new System.Drawing.Point(71, 20);
             this.tB_Monster_LE.Name = "tB_Monster_LE";
             this.tB_Monster_LE.ReadOnly = true;
-            this.tB_Monster_LE.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_LE.Size = new System.Drawing.Size(113, 20);
             this.tB_Monster_LE.TabIndex = 31;
             // 
             // tB_Monster_AE
             // 
-            this.tB_Monster_AE.Location = new System.Drawing.Point(191, 19);
+            this.tB_Monster_AE.Location = new System.Drawing.Point(231, 19);
             this.tB_Monster_AE.Name = "tB_Monster_AE";
             this.tB_Monster_AE.ReadOnly = true;
-            this.tB_Monster_AE.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_AE.Size = new System.Drawing.Size(110, 20);
             this.tB_Monster_AE.TabIndex = 30;
             // 
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(161, 23);
+            this.label20.Location = new System.Drawing.Point(201, 23);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(24, 13);
             this.label20.TabIndex = 29;
@@ -3213,7 +3221,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(160, 113);
+            this.label21.Location = new System.Drawing.Point(200, 113);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(24, 13);
             this.label21.TabIndex = 28;
@@ -3222,7 +3230,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(160, 87);
+            this.label22.Location = new System.Drawing.Point(200, 87);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(21, 13);
             this.label22.TabIndex = 27;
@@ -3231,7 +3239,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(160, 61);
+            this.label23.Location = new System.Drawing.Point(200, 61);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(25, 13);
             this.label23.TabIndex = 26;
@@ -3242,7 +3250,7 @@
             this.tB_Monster_FF.Location = new System.Drawing.Point(71, 136);
             this.tB_Monster_FF.Name = "tB_Monster_FF";
             this.tB_Monster_FF.ReadOnly = true;
-            this.tB_Monster_FF.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_FF.Size = new System.Drawing.Size(113, 20);
             this.tB_Monster_FF.TabIndex = 24;
             // 
             // tB_Monster_CH
@@ -3250,7 +3258,7 @@
             this.tB_Monster_CH.Location = new System.Drawing.Point(71, 110);
             this.tB_Monster_CH.Name = "tB_Monster_CH";
             this.tB_Monster_CH.ReadOnly = true;
-            this.tB_Monster_CH.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_CH.Size = new System.Drawing.Size(113, 20);
             this.tB_Monster_CH.TabIndex = 23;
             // 
             // tB_Monster_KL
@@ -3258,7 +3266,7 @@
             this.tB_Monster_KL.Location = new System.Drawing.Point(71, 84);
             this.tB_Monster_KL.Name = "tB_Monster_KL";
             this.tB_Monster_KL.ReadOnly = true;
-            this.tB_Monster_KL.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_KL.Size = new System.Drawing.Size(113, 20);
             this.tB_Monster_KL.TabIndex = 22;
             // 
             // tB_Monster_MU
@@ -3266,7 +3274,7 @@
             this.tB_Monster_MU.Location = new System.Drawing.Point(71, 58);
             this.tB_Monster_MU.Name = "tB_Monster_MU";
             this.tB_Monster_MU.ReadOnly = true;
-            this.tB_Monster_MU.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_MU.Size = new System.Drawing.Size(113, 20);
             this.tB_Monster_MU.TabIndex = 21;
             // 
             // label15
@@ -3316,26 +3324,26 @@
             // 
             // tB_Monster_AT
             // 
-            this.tB_Monster_AT.Location = new System.Drawing.Point(89, 141);
+            this.tB_Monster_AT.Location = new System.Drawing.Point(66, 141);
             this.tB_Monster_AT.Name = "tB_Monster_AT";
             this.tB_Monster_AT.ReadOnly = true;
-            this.tB_Monster_AT.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_AT.Size = new System.Drawing.Size(109, 20);
             this.tB_Monster_AT.TabIndex = 14;
             // 
             // tB_Monster_MR
             // 
-            this.tB_Monster_MR.Location = new System.Drawing.Point(89, 115);
+            this.tB_Monster_MR.Location = new System.Drawing.Point(66, 115);
             this.tB_Monster_MR.Name = "tB_Monster_MR";
             this.tB_Monster_MR.ReadOnly = true;
-            this.tB_Monster_MR.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_MR.Size = new System.Drawing.Size(109, 20);
             this.tB_Monster_MR.TabIndex = 13;
             // 
             // tB_Monster_RS
             // 
-            this.tB_Monster_RS.Location = new System.Drawing.Point(89, 89);
+            this.tB_Monster_RS.Location = new System.Drawing.Point(66, 89);
             this.tB_Monster_RS.Name = "tB_Monster_RS";
             this.tB_Monster_RS.ReadOnly = true;
-            this.tB_Monster_RS.Size = new System.Drawing.Size(71, 20);
+            this.tB_Monster_RS.Size = new System.Drawing.Size(109, 20);
             this.tB_Monster_RS.TabIndex = 12;
             // 
             // tB_Monster_BildID
@@ -3435,9 +3443,9 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle40.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle40;
             this.dataGridViewTextBoxColumn9.HeaderText = "#";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -3473,9 +3481,9 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle41.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle41;
             this.Column1.HeaderText = "#";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -3835,9 +3843,9 @@
             // dataGridViewTextBoxColumn28
             // 
             this.dataGridViewTextBoxColumn28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn28.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle42.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn28.DefaultCellStyle = dataGridViewCellStyle42;
             this.dataGridViewTextBoxColumn28.HeaderText = "#";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
             this.dataGridViewTextBoxColumn28.ReadOnly = true;
@@ -3992,9 +4000,9 @@
             // dataGridViewTextBoxColumn30
             // 
             this.dataGridViewTextBoxColumn30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn30.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle43.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn30.DefaultCellStyle = dataGridViewCellStyle43;
             this.dataGridViewTextBoxColumn30.HeaderText = "#";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
             this.dataGridViewTextBoxColumn30.ReadOnly = true;
@@ -4030,9 +4038,9 @@
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle44.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle44;
             this.Column5.HeaderText = "#";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -4051,6 +4059,7 @@
             this.tP_Items.Controls.Add(this.label117);
             this.tP_Items.Controls.Add(this.richTextBox1);
             this.tP_Items.Controls.Add(this.Item_dgvList);
+            this.tP_Items.Controls.Add(this.lL_ItemInfos);
             this.tP_Items.Controls.Add(this.gB_ItemDat);
             this.tP_Items.Location = new System.Drawing.Point(4, 22);
             this.tP_Items.Name = "tP_Items";
@@ -4062,7 +4071,7 @@
             // label117
             // 
             this.label117.AutoSize = true;
-            this.label117.Location = new System.Drawing.Point(240, 290);
+            this.label117.Location = new System.Drawing.Point(240, 321);
             this.label117.Name = "label117";
             this.label117.Size = new System.Drawing.Size(265, 13);
             this.label117.TabIndex = 22;
@@ -4103,9 +4112,9 @@
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle45.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle45;
             this.dataGridViewTextBoxColumn13.HeaderText = "#";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
@@ -4121,13 +4130,11 @@
             // gB_ItemDat
             // 
             this.gB_ItemDat.BackColor = System.Drawing.Color.Transparent;
+            this.gB_ItemDat.Controls.Add(this.groupBox2);
             this.gB_ItemDat.Controls.Add(this.tB_Item_Unbekannt_2);
-            this.gB_ItemDat.Controls.Add(this.tB_Item_ErweiterterTyp_DSA2);
             this.gB_ItemDat.Controls.Add(this.label116);
-            this.gB_ItemDat.Controls.Add(this.label115);
             this.gB_ItemDat.Controls.Add(this.Item_PictureBox);
             this.gB_ItemDat.Controls.Add(this.groupBox14);
-            this.gB_ItemDat.Controls.Add(this.lL_ItemInfos);
             this.gB_ItemDat.Controls.Add(this.label8);
             this.gB_ItemDat.Controls.Add(this.tB_Item_Magisch);
             this.gB_ItemDat.Controls.Add(this.label7);
@@ -4144,48 +4151,29 @@
             this.gB_ItemDat.Controls.Add(this.tB_Item_IconID);
             this.gB_ItemDat.Location = new System.Drawing.Point(249, 12);
             this.gB_ItemDat.Name = "gB_ItemDat";
-            this.gB_ItemDat.Size = new System.Drawing.Size(661, 266);
+            this.gB_ItemDat.Size = new System.Drawing.Size(661, 287);
             this.gB_ItemDat.TabIndex = 0;
             this.gB_ItemDat.TabStop = false;
             this.gB_ItemDat.Text = "Items.dat";
             // 
             // tB_Item_Unbekannt_2
             // 
-            this.tB_Item_Unbekannt_2.Location = new System.Drawing.Point(427, 188);
+            this.tB_Item_Unbekannt_2.Location = new System.Drawing.Point(154, 238);
             this.tB_Item_Unbekannt_2.Name = "tB_Item_Unbekannt_2";
             this.tB_Item_Unbekannt_2.ReadOnly = true;
             this.tB_Item_Unbekannt_2.Size = new System.Drawing.Size(85, 20);
             this.tB_Item_Unbekannt_2.TabIndex = 21;
             this.tB_Item_Unbekannt_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // tB_Item_ErweiterterTyp_DSA2
-            // 
-            this.tB_Item_ErweiterterTyp_DSA2.Location = new System.Drawing.Point(146, 93);
-            this.tB_Item_ErweiterterTyp_DSA2.Name = "tB_Item_ErweiterterTyp_DSA2";
-            this.tB_Item_ErweiterterTyp_DSA2.ReadOnly = true;
-            this.tB_Item_ErweiterterTyp_DSA2.Size = new System.Drawing.Size(110, 20);
-            this.tB_Item_ErweiterterTyp_DSA2.TabIndex = 20;
-            this.tB_Item_ErweiterterTyp_DSA2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // label116
             // 
             this.label116.AutoSize = true;
             this.label116.BackColor = System.Drawing.Color.Peru;
-            this.label116.Location = new System.Drawing.Point(292, 191);
+            this.label116.Location = new System.Drawing.Point(19, 241);
             this.label116.Name = "label116";
             this.label116.Size = new System.Drawing.Size(128, 13);
             this.label116.TabIndex = 19;
             this.label116.Text = "unbekannt 2 (nur DSA 2):";
-            // 
-            // label115
-            // 
-            this.label115.AutoSize = true;
-            this.label115.BackColor = System.Drawing.Color.Peru;
-            this.label115.Location = new System.Drawing.Point(19, 96);
-            this.label115.Name = "label115";
-            this.label115.Size = new System.Drawing.Size(121, 13);
-            this.label115.TabIndex = 18;
-            this.label115.Text = "Erweiterter Typ (DSA 2):";
             // 
             // Item_PictureBox
             // 
@@ -4205,10 +4193,10 @@
             this.groupBox14.Controls.Add(this.Items_cBItemTypBit_4);
             this.groupBox14.Controls.Add(this.Items_cBItemTypBit_3);
             this.groupBox14.Controls.Add(this.Items_cBItemTypBit_2);
-            this.groupBox14.Controls.Add(this.Items_cBItemTypBit_);
-            this.groupBox14.Location = new System.Drawing.Point(325, 24);
+            this.groupBox14.Controls.Add(this.Items_cBItemTypBit_1);
+            this.groupBox14.Location = new System.Drawing.Point(296, 24);
             this.groupBox14.Name = "groupBox14";
-            this.groupBox14.Size = new System.Drawing.Size(320, 118);
+            this.groupBox14.Size = new System.Drawing.Size(349, 118);
             this.groupBox14.TabIndex = 17;
             this.groupBox14.TabStop = false;
             this.groupBox14.Text = "Item Flags";
@@ -4218,11 +4206,11 @@
             this.Items_cBItemTypBit_8.AutoCheck = false;
             this.Items_cBItemTypBit_8.AutoSize = true;
             this.Items_cBItemTypBit_8.BackColor = System.Drawing.Color.Peru;
-            this.Items_cBItemTypBit_8.Location = new System.Drawing.Point(167, 88);
+            this.Items_cBItemTypBit_8.Location = new System.Drawing.Point(181, 88);
             this.Items_cBItemTypBit_8.Name = "Items_cBItemTypBit_8";
-            this.Items_cBItemTypBit_8.Size = new System.Drawing.Size(100, 17);
+            this.Items_cBItemTypBit_8.Size = new System.Drawing.Size(124, 17);
             this.Items_cBItemTypBit_8.TabIndex = 7;
-            this.Items_cBItemTypBit_8.Text = "nicht Benutzbar";
+            this.Items_cBItemTypBit_8.Text = "nicht Benutzbar(128)";
             this.Items_cBItemTypBit_8.UseVisualStyleBackColor = false;
             // 
             // Items_cBItemTypBit_7
@@ -4230,11 +4218,11 @@
             this.Items_cBItemTypBit_7.AutoCheck = false;
             this.Items_cBItemTypBit_7.AutoSize = true;
             this.Items_cBItemTypBit_7.BackColor = System.Drawing.Color.Peru;
-            this.Items_cBItemTypBit_7.Location = new System.Drawing.Point(167, 65);
+            this.Items_cBItemTypBit_7.Location = new System.Drawing.Point(181, 65);
             this.Items_cBItemTypBit_7.Name = "Items_cBItemTypBit_7";
-            this.Items_cBItemTypBit_7.Size = new System.Drawing.Size(145, 17);
+            this.Items_cBItemTypBit_7.Size = new System.Drawing.Size(163, 17);
             this.Items_cBItemTypBit_7.TabIndex = 6;
-            this.Items_cBItemTypBit_7.Text = "Persönlicher Gegenstand";
+            this.Items_cBItemTypBit_7.Text = "Persönlicher Gegenstand(64)";
             this.Items_cBItemTypBit_7.UseVisualStyleBackColor = false;
             // 
             // Items_cBItemTypBit_6
@@ -4242,11 +4230,11 @@
             this.Items_cBItemTypBit_6.AutoCheck = false;
             this.Items_cBItemTypBit_6.AutoSize = true;
             this.Items_cBItemTypBit_6.BackColor = System.Drawing.Color.Peru;
-            this.Items_cBItemTypBit_6.Location = new System.Drawing.Point(167, 42);
+            this.Items_cBItemTypBit_6.Location = new System.Drawing.Point(181, 42);
             this.Items_cBItemTypBit_6.Name = "Items_cBItemTypBit_6";
-            this.Items_cBItemTypBit_6.Size = new System.Drawing.Size(99, 17);
+            this.Items_cBItemTypBit_6.Size = new System.Drawing.Size(117, 17);
             this.Items_cBItemTypBit_6.TabIndex = 5;
-            this.Items_cBItemTypBit_6.Text = "Trank|Gift|Kraut";
+            this.Items_cBItemTypBit_6.Text = "Trank|Gift|Kraut(32)";
             this.Items_cBItemTypBit_6.UseVisualStyleBackColor = false;
             // 
             // Items_cBItemTypBit_5
@@ -4254,11 +4242,11 @@
             this.Items_cBItemTypBit_5.AutoCheck = false;
             this.Items_cBItemTypBit_5.AutoSize = true;
             this.Items_cBItemTypBit_5.BackColor = System.Drawing.Color.Peru;
-            this.Items_cBItemTypBit_5.Location = new System.Drawing.Point(167, 19);
+            this.Items_cBItemTypBit_5.Location = new System.Drawing.Point(181, 19);
             this.Items_cBItemTypBit_5.Name = "Items_cBItemTypBit_5";
-            this.Items_cBItemTypBit_5.Size = new System.Drawing.Size(71, 17);
+            this.Items_cBItemTypBit_5.Size = new System.Drawing.Size(89, 17);
             this.Items_cBItemTypBit_5.TabIndex = 4;
-            this.Items_cBItemTypBit_5.Text = "Stapelbar";
+            this.Items_cBItemTypBit_5.Text = "Stapelbar(16)";
             this.Items_cBItemTypBit_5.UseVisualStyleBackColor = false;
             // 
             // Items_cBItemTypBit_4
@@ -4268,9 +4256,9 @@
             this.Items_cBItemTypBit_4.BackColor = System.Drawing.Color.Peru;
             this.Items_cBItemTypBit_4.Location = new System.Drawing.Point(23, 92);
             this.Items_cBItemTypBit_4.Name = "Items_cBItemTypBit_4";
-            this.Items_cBItemTypBit_4.Size = new System.Drawing.Size(99, 17);
+            this.Items_cBItemTypBit_4.Size = new System.Drawing.Size(111, 17);
             this.Items_cBItemTypBit_4.TabIndex = 3;
-            this.Items_cBItemTypBit_4.Text = "Essbar|Trinkbar";
+            this.Items_cBItemTypBit_4.Text = "Essbar|Trinkbar(8)";
             this.Items_cBItemTypBit_4.UseVisualStyleBackColor = false;
             // 
             // Items_cBItemTypBit_3
@@ -4280,9 +4268,9 @@
             this.Items_cBItemTypBit_3.BackColor = System.Drawing.Color.Peru;
             this.Items_cBItemTypBit_3.Location = new System.Drawing.Point(23, 69);
             this.Items_cBItemTypBit_3.Name = "Items_cBItemTypBit_3";
-            this.Items_cBItemTypBit_3.Size = new System.Drawing.Size(74, 17);
+            this.Items_cBItemTypBit_3.Size = new System.Drawing.Size(86, 17);
             this.Items_cBItemTypBit_3.TabIndex = 2;
-            this.Items_cBItemTypBit_3.Text = "Benutzbar";
+            this.Items_cBItemTypBit_3.Text = "Benutzbar(4)";
             this.Items_cBItemTypBit_3.UseVisualStyleBackColor = false;
             // 
             // Items_cBItemTypBit_2
@@ -4292,27 +4280,27 @@
             this.Items_cBItemTypBit_2.BackColor = System.Drawing.Color.Peru;
             this.Items_cBItemTypBit_2.Location = new System.Drawing.Point(23, 46);
             this.Items_cBItemTypBit_2.Name = "Items_cBItemTypBit_2";
-            this.Items_cBItemTypBit_2.Size = new System.Drawing.Size(97, 17);
+            this.Items_cBItemTypBit_2.Size = new System.Drawing.Size(109, 17);
             this.Items_cBItemTypBit_2.TabIndex = 1;
-            this.Items_cBItemTypBit_2.Text = "Waffe|Munition";
+            this.Items_cBItemTypBit_2.Text = "Waffe|Munition(2)";
             this.Items_cBItemTypBit_2.UseVisualStyleBackColor = false;
             // 
-            // Items_cBItemTypBit_
+            // Items_cBItemTypBit_1
             // 
-            this.Items_cBItemTypBit_.AutoCheck = false;
-            this.Items_cBItemTypBit_.AutoSize = true;
-            this.Items_cBItemTypBit_.BackColor = System.Drawing.Color.Peru;
-            this.Items_cBItemTypBit_.Location = new System.Drawing.Point(23, 23);
-            this.Items_cBItemTypBit_.Name = "Items_cBItemTypBit_";
-            this.Items_cBItemTypBit_.Size = new System.Drawing.Size(140, 17);
-            this.Items_cBItemTypBit_.TabIndex = 0;
-            this.Items_cBItemTypBit_.Text = "Kleidung|Rüstung|Schild";
-            this.Items_cBItemTypBit_.UseVisualStyleBackColor = false;
+            this.Items_cBItemTypBit_1.AutoCheck = false;
+            this.Items_cBItemTypBit_1.AutoSize = true;
+            this.Items_cBItemTypBit_1.BackColor = System.Drawing.Color.Peru;
+            this.Items_cBItemTypBit_1.Location = new System.Drawing.Point(23, 23);
+            this.Items_cBItemTypBit_1.Name = "Items_cBItemTypBit_1";
+            this.Items_cBItemTypBit_1.Size = new System.Drawing.Size(152, 17);
+            this.Items_cBItemTypBit_1.TabIndex = 0;
+            this.Items_cBItemTypBit_1.Text = "Kleidung|Rüstung|Schild(1)";
+            this.Items_cBItemTypBit_1.UseVisualStyleBackColor = false;
             // 
             // lL_ItemInfos
             // 
             this.lL_ItemInfos.AutoSize = true;
-            this.lL_ItemInfos.Location = new System.Drawing.Point(580, 202);
+            this.lL_ItemInfos.Location = new System.Drawing.Point(860, 325);
             this.lL_ItemInfos.Name = "lL_ItemInfos";
             this.lL_ItemInfos.Size = new System.Drawing.Size(65, 13);
             this.lL_ItemInfos.TabIndex = 3;
@@ -4324,7 +4312,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Peru;
-            this.label8.Location = new System.Drawing.Point(19, 226);
+            this.label8.Location = new System.Drawing.Point(19, 200);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(50, 13);
             this.label8.TabIndex = 16;
@@ -4332,7 +4320,7 @@
             // 
             // tB_Item_Magisch
             // 
-            this.tB_Item_Magisch.Location = new System.Drawing.Point(146, 223);
+            this.tB_Item_Magisch.Location = new System.Drawing.Point(146, 197);
             this.tB_Item_Magisch.Name = "tB_Item_Magisch";
             this.tB_Item_Magisch.ReadOnly = true;
             this.tB_Item_Magisch.Size = new System.Drawing.Size(110, 20);
@@ -4343,7 +4331,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.BackColor = System.Drawing.Color.Peru;
-            this.label7.Location = new System.Drawing.Point(19, 200);
+            this.label7.Location = new System.Drawing.Point(19, 174);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(70, 13);
             this.label7.TabIndex = 14;
@@ -4351,7 +4339,7 @@
             // 
             // tB_Item_SortimentsID
             // 
-            this.tB_Item_SortimentsID.Location = new System.Drawing.Point(146, 197);
+            this.tB_Item_SortimentsID.Location = new System.Drawing.Point(146, 171);
             this.tB_Item_SortimentsID.Name = "tB_Item_SortimentsID";
             this.tB_Item_SortimentsID.ReadOnly = true;
             this.tB_Item_SortimentsID.Size = new System.Drawing.Size(110, 20);
@@ -4362,7 +4350,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Peru;
-            this.label6.Location = new System.Drawing.Point(19, 174);
+            this.label6.Location = new System.Drawing.Point(19, 148);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(33, 13);
             this.label6.TabIndex = 12;
@@ -4370,7 +4358,7 @@
             // 
             // tB_Item_Price
             // 
-            this.tB_Item_Price.Location = new System.Drawing.Point(146, 171);
+            this.tB_Item_Price.Location = new System.Drawing.Point(146, 145);
             this.tB_Item_Price.Name = "tB_Item_Price";
             this.tB_Item_Price.ReadOnly = true;
             this.tB_Item_Price.Size = new System.Drawing.Size(110, 20);
@@ -4381,7 +4369,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Peru;
-            this.label5.Location = new System.Drawing.Point(19, 148);
+            this.label5.Location = new System.Drawing.Point(19, 122);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 10;
@@ -4389,7 +4377,7 @@
             // 
             // tB_Item_PriceBase
             // 
-            this.tB_Item_PriceBase.Location = new System.Drawing.Point(146, 145);
+            this.tB_Item_PriceBase.Location = new System.Drawing.Point(146, 119);
             this.tB_Item_PriceBase.Name = "tB_Item_PriceBase";
             this.tB_Item_PriceBase.ReadOnly = true;
             this.tB_Item_PriceBase.Size = new System.Drawing.Size(110, 20);
@@ -4400,7 +4388,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Peru;
-            this.label4.Location = new System.Drawing.Point(19, 122);
+            this.label4.Location = new System.Drawing.Point(19, 96);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 8;
@@ -4408,7 +4396,7 @@
             // 
             // tB_Item_Gewicht
             // 
-            this.tB_Item_Gewicht.Location = new System.Drawing.Point(146, 119);
+            this.tB_Item_Gewicht.Location = new System.Drawing.Point(146, 93);
             this.tB_Item_Gewicht.Name = "tB_Item_Gewicht";
             this.tB_Item_Gewicht.ReadOnly = true;
             this.tB_Item_Gewicht.Size = new System.Drawing.Size(110, 20);
@@ -4680,6 +4668,119 @@
             this.saveXMLDialog.Filter = "MonsterXML|*.xml|Alle Dateien|*.*";
             this.saveXMLDialog.Title = "XML-File speichern unter";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_128);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_64);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_32);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_16);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_8);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_4);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_2);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_1);
+            this.groupBox2.Location = new System.Drawing.Point(296, 148);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(349, 118);
+            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Erwiterte Flags (nur DSA 2)";
+            // 
+            // cb_ExtendedItemTyp_value_128
+            // 
+            this.cb_ExtendedItemTyp_value_128.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_128.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_128.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_128.Location = new System.Drawing.Point(181, 88);
+            this.cb_ExtendedItemTyp_value_128.Name = "cb_ExtendedItemTyp_value_128";
+            this.cb_ExtendedItemTyp_value_128.Size = new System.Drawing.Size(68, 17);
+            this.cb_ExtendedItemTyp_value_128.TabIndex = 7;
+            this.cb_ExtendedItemTyp_value_128.Text = "???(128)";
+            this.cb_ExtendedItemTyp_value_128.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_64
+            // 
+            this.cb_ExtendedItemTyp_value_64.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_64.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_64.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_64.Location = new System.Drawing.Point(181, 65);
+            this.cb_ExtendedItemTyp_value_64.Name = "cb_ExtendedItemTyp_value_64";
+            this.cb_ExtendedItemTyp_value_64.Size = new System.Drawing.Size(73, 17);
+            this.cb_ExtendedItemTyp_value_64.TabIndex = 6;
+            this.cb_ExtendedItemTyp_value_64.Text = "Jacke(64)";
+            this.cb_ExtendedItemTyp_value_64.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_32
+            // 
+            this.cb_ExtendedItemTyp_value_32.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_32.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_32.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_32.Location = new System.Drawing.Point(181, 42);
+            this.cb_ExtendedItemTyp_value_32.Name = "cb_ExtendedItemTyp_value_32";
+            this.cb_ExtendedItemTyp_value_32.Size = new System.Drawing.Size(79, 17);
+            this.cb_ExtendedItemTyp_value_32.TabIndex = 5;
+            this.cb_ExtendedItemTyp_value_32.Text = "Stirnreif(32)";
+            this.cb_ExtendedItemTyp_value_32.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_16
+            // 
+            this.cb_ExtendedItemTyp_value_16.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_16.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_16.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_16.Location = new System.Drawing.Point(181, 19);
+            this.cb_ExtendedItemTyp_value_16.Name = "cb_ExtendedItemTyp_value_16";
+            this.cb_ExtendedItemTyp_value_16.Size = new System.Drawing.Size(84, 17);
+            this.cb_ExtendedItemTyp_value_16.TabIndex = 4;
+            this.cb_ExtendedItemTyp_value_16.Text = "Umhang(16)";
+            this.cb_ExtendedItemTyp_value_16.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_8
+            // 
+            this.cb_ExtendedItemTyp_value_8.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_8.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_8.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_8.Location = new System.Drawing.Point(23, 92);
+            this.cb_ExtendedItemTyp_value_8.Name = "cb_ExtendedItemTyp_value_8";
+            this.cb_ExtendedItemTyp_value_8.Size = new System.Drawing.Size(83, 17);
+            this.cb_ExtendedItemTyp_value_8.TabIndex = 3;
+            this.cb_ExtendedItemTyp_value_8.Text = "Halskette(8)";
+            this.cb_ExtendedItemTyp_value_8.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_4
+            // 
+            this.cb_ExtendedItemTyp_value_4.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_4.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_4.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_4.Location = new System.Drawing.Point(23, 69);
+            this.cb_ExtendedItemTyp_value_4.Name = "cb_ExtendedItemTyp_value_4";
+            this.cb_ExtendedItemTyp_value_4.Size = new System.Drawing.Size(70, 17);
+            this.cb_ExtendedItemTyp_value_4.TabIndex = 2;
+            this.cb_ExtendedItemTyp_value_4.Text = "Armreif(4)";
+            this.cb_ExtendedItemTyp_value_4.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_2
+            // 
+            this.cb_ExtendedItemTyp_value_2.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_2.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_2.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_2.Location = new System.Drawing.Point(23, 46);
+            this.cb_ExtendedItemTyp_value_2.Name = "cb_ExtendedItemTyp_value_2";
+            this.cb_ExtendedItemTyp_value_2.Size = new System.Drawing.Size(60, 17);
+            this.cb_ExtendedItemTyp_value_2.TabIndex = 1;
+            this.cb_ExtendedItemTyp_value_2.Text = "Ring(2)";
+            this.cb_ExtendedItemTyp_value_2.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_1
+            // 
+            this.cb_ExtendedItemTyp_value_1.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_1.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_1.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_1.Location = new System.Drawing.Point(23, 23);
+            this.cb_ExtendedItemTyp_value_1.Name = "cb_ExtendedItemTyp_value_1";
+            this.cb_ExtendedItemTyp_value_1.Size = new System.Drawing.Size(69, 17);
+            this.cb_ExtendedItemTyp_value_1.TabIndex = 0;
+            this.cb_ExtendedItemTyp_value_1.Text = "Gürtel (1)";
+            this.cb_ExtendedItemTyp_value_1.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4793,6 +4894,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).EndInit();
             this.tP_Routs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5067,7 +5170,7 @@
         private System.Windows.Forms.CheckBox Items_cBItemTypBit_4;
         private System.Windows.Forms.CheckBox Items_cBItemTypBit_3;
         private System.Windows.Forms.CheckBox Items_cBItemTypBit_2;
-        private System.Windows.Forms.CheckBox Items_cBItemTypBit_;
+        private System.Windows.Forms.CheckBox Items_cBItemTypBit_1;
         private System.Windows.Forms.PictureBox Monster_pictureBox;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage1;
@@ -5190,9 +5293,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label114;
         private System.Windows.Forms.TextBox tB_Item_Unbekannt_2;
-        private System.Windows.Forms.TextBox tB_Item_ErweiterterTyp_DSA2;
         private System.Windows.Forms.Label label116;
-        private System.Windows.Forms.Label label115;
         private System.Windows.Forms.Label label117;
         private System.Windows.Forms.TextBox tB_Monster_Unbekannt_4;
         private System.Windows.Forms.TextBox tB_Monster_Unbekannt_3;
@@ -5202,6 +5303,15 @@
         private System.Windows.Forms.TextBox tB_Monster_Unbekannt_1;
         private System.Windows.Forms.Label label118;
         private System.Windows.Forms.Label label119;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.CheckBox cb_ExtendedItemTyp_value_128;
+        private System.Windows.Forms.CheckBox cb_ExtendedItemTyp_value_64;
+        private System.Windows.Forms.CheckBox cb_ExtendedItemTyp_value_32;
+        private System.Windows.Forms.CheckBox cb_ExtendedItemTyp_value_16;
+        private System.Windows.Forms.CheckBox cb_ExtendedItemTyp_value_8;
+        private System.Windows.Forms.CheckBox cb_ExtendedItemTyp_value_4;
+        private System.Windows.Forms.CheckBox cb_ExtendedItemTyp_value_2;
+        private System.Windows.Forms.CheckBox cb_ExtendedItemTyp_value_1;
     }
 }
 

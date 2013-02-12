@@ -295,23 +295,17 @@ namespace DSA_1_Editing_Tool
                 this.tB_Item_IconID.Text = item.IconID.ToString();
                 this.tB_Item_Gewicht.Text = item.Gewicht.ToString();
                 this.tB_Item_Magisch.Text = item.MagischToString();
-                this.tB_Item_Position.Text = item.AnziehbarAnPositionToString();
+                this.tB_Item_Position.Text = item.AnziehbarAnPositionToString(this.itsDSAFileLoader.Version);
                 this.tB_Item_Price.Text = item.PreisToString();
                 this.tB_Item_PriceBase.Text = item.Preis_GrundeinheitToString();
                 this.tB_Item_SortimentsID.Text = item.SortimentsID.ToString();
 
                 if (this.itsDSAFileLoader.Version == DSAVersion.Schweif)
-                {
-                    this.tB_Item_ErweiterterTyp_DSA2.Text = item.TypFürNeueSlotsToString();
                     this.tB_Item_Unbekannt_2.Text = item.unbekannt_2_DSA2.ToString();
-                }
                 else
-                {
-                    this.tB_Item_ErweiterterTyp_DSA2.Text = String.Empty;
                     this.tB_Item_Unbekannt_2.Text = String.Empty;
-                }
 
-                this.loadItemTyp(item.ItemTyp);
+                this.loadItemTyp(item.ItemTyp, item.erweiterterTyp);
 
                 this.Item_PictureBox.BackgroundImage = this.itsDSAFileLoader.bilder.getItemImageByID(item.IconID);
             }
@@ -325,20 +319,19 @@ namespace DSA_1_Editing_Tool
                 this.tB_Item_PriceBase.Text = String.Empty;
                 this.tB_Item_SortimentsID.Text = String.Empty;
 
-                this.tB_Item_ErweiterterTyp_DSA2.Text = String.Empty;
                 this.tB_Item_Unbekannt_2.Text = String.Empty;
 
-                this.loadItemTyp(0);
+                this.loadItemTyp(0,0);
 
                 this.Item_PictureBox.BackgroundImage = null;
             }
         }
-        private void loadItemTyp(byte itemTyp)
+        private void loadItemTyp(byte itemTyp, byte extendedTyp)
         {
             if ((itemTyp & 0x01) != 0)
-                this.Items_cBItemTypBit_.Checked = true;
+                this.Items_cBItemTypBit_1.Checked = true;
             else
-                this.Items_cBItemTypBit_.Checked = false;
+                this.Items_cBItemTypBit_1.Checked = false;
 
             if ((itemTyp & 0x02) != 0)
                 this.Items_cBItemTypBit_2.Checked = true;
@@ -375,6 +368,50 @@ namespace DSA_1_Editing_Tool
                 this.Items_cBItemTypBit_8.Checked = true;
             else
                 this.Items_cBItemTypBit_8.Checked = false;
+
+            //--------------------------------------------
+
+            if ((extendedTyp & 0x01) != 0)
+                this.cb_ExtendedItemTyp_value_1.Checked = true;
+            else
+                this.cb_ExtendedItemTyp_value_1.Checked = false;
+
+            if ((extendedTyp & 0x02) != 0)
+                this.cb_ExtendedItemTyp_value_2.Checked = true;
+            else
+                this.cb_ExtendedItemTyp_value_2.Checked = false;
+
+            if ((extendedTyp & 0x04) != 0)
+                this.cb_ExtendedItemTyp_value_4.Checked = true;
+            else
+                this.cb_ExtendedItemTyp_value_4.Checked = false;
+
+            if ((extendedTyp & 0x08) != 0)
+                this.cb_ExtendedItemTyp_value_8.Checked = true;
+            else
+                this.cb_ExtendedItemTyp_value_8.Checked = false;
+
+
+
+            if ((extendedTyp & 0x10) != 0)
+                this.cb_ExtendedItemTyp_value_16.Checked = true;
+            else
+                this.cb_ExtendedItemTyp_value_16.Checked = false;
+
+            if ((extendedTyp & 0x20) != 0)
+                this.cb_ExtendedItemTyp_value_32.Checked = true;
+            else
+                this.cb_ExtendedItemTyp_value_32.Checked = false;
+
+            if ((extendedTyp & 0x40) != 0)
+                this.cb_ExtendedItemTyp_value_64.Checked = true;
+            else
+                this.cb_ExtendedItemTyp_value_64.Checked = false;
+
+            if ((extendedTyp & 0x80) != 0)
+                this.cb_ExtendedItemTyp_value_128.Checked = true;
+            else
+                this.cb_ExtendedItemTyp_value_128.Checked = false;
         }
 
         //------------Dialoge---------------------------
