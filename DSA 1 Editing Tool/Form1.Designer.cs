@@ -29,26 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tSBOpenFile = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.dateiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.einstellungenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.öffnenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.beendenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,6 +60,7 @@
             this.aktuelleStadtExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alleStädteExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alleDungeonsExportierenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.einstellungenToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.tP_Pictures = new System.Windows.Forms.TabPage();
             this.label114 = new System.Windows.Forms.Label();
@@ -397,7 +397,17 @@
             this.Item_dgvList = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lL_ItemInfos = new System.Windows.Forms.LinkLabel();
             this.gB_ItemDat = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cb_ExtendedItemTyp_value_128 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_64 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_32 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_16 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_8 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_4 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_2 = new System.Windows.Forms.CheckBox();
+            this.cb_ExtendedItemTyp_value_1 = new System.Windows.Forms.CheckBox();
             this.tB_Item_Unbekannt_2 = new System.Windows.Forms.TextBox();
             this.label116 = new System.Windows.Forms.Label();
             this.Item_PictureBox = new System.Windows.Forms.PictureBox();
@@ -410,7 +420,6 @@
             this.Items_cBItemTypBit_3 = new System.Windows.Forms.CheckBox();
             this.Items_cBItemTypBit_2 = new System.Windows.Forms.CheckBox();
             this.Items_cBItemTypBit_1 = new System.Windows.Forms.CheckBox();
-            this.lL_ItemInfos = new System.Windows.Forms.LinkLabel();
             this.label8 = new System.Windows.Forms.Label();
             this.tB_Item_Magisch = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -444,15 +453,6 @@
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
             this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.cb_ExtendedItemTyp_value_128 = new System.Windows.Forms.CheckBox();
-            this.cb_ExtendedItemTyp_value_64 = new System.Windows.Forms.CheckBox();
-            this.cb_ExtendedItemTyp_value_32 = new System.Windows.Forms.CheckBox();
-            this.cb_ExtendedItemTyp_value_16 = new System.Windows.Forms.CheckBox();
-            this.cb_ExtendedItemTyp_value_8 = new System.Windows.Forms.CheckBox();
-            this.cb_ExtendedItemTyp_value_4 = new System.Windows.Forms.CheckBox();
-            this.cb_ExtendedItemTyp_value_2 = new System.Windows.Forms.CheckBox();
-            this.cb_ExtendedItemTyp_value_1 = new System.Windows.Forms.CheckBox();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -512,6 +512,7 @@
             this.tP_Items.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Item_dgvList)).BeginInit();
             this.gB_ItemDat.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Item_PictureBox)).BeginInit();
             this.groupBox14.SuspendLayout();
             this.tabControl1.SuspendLayout();
@@ -523,7 +524,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).BeginInit();
             this.tP_Routs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).BeginInit();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -551,7 +551,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dateiToolStripMenuItem,
-            this.exportierenToolStripMenuItem});
+            this.exportierenToolStripMenuItem,
+            this.einstellungenToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(995, 24);
@@ -561,31 +562,23 @@
             // dateiToolStripMenuItem
             // 
             this.dateiToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.einstellungenToolStripMenuItem,
             this.öffnenToolStripMenuItem,
             this.beendenToolStripMenuItem});
             this.dateiToolStripMenuItem.Name = "dateiToolStripMenuItem";
             this.dateiToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.dateiToolStripMenuItem.Text = "Datei";
             // 
-            // einstellungenToolStripMenuItem
-            // 
-            this.einstellungenToolStripMenuItem.Name = "einstellungenToolStripMenuItem";
-            this.einstellungenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
-            this.einstellungenToolStripMenuItem.Text = "Einstellungen";
-            this.einstellungenToolStripMenuItem.Click += new System.EventHandler(this.einstellungenToolStripMenuItem_Click);
-            // 
             // öffnenToolStripMenuItem
             // 
             this.öffnenToolStripMenuItem.Name = "öffnenToolStripMenuItem";
-            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.öffnenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.öffnenToolStripMenuItem.Text = "Öffnen";
             this.öffnenToolStripMenuItem.Click += new System.EventHandler(this.öffnenToolStripMenuItem_Click);
             // 
             // beendenToolStripMenuItem
             // 
             this.beendenToolStripMenuItem.Name = "beendenToolStripMenuItem";
-            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.beendenToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.beendenToolStripMenuItem.Text = "Beenden";
             this.beendenToolStripMenuItem.Click += new System.EventHandler(this.beendenToolStripMenuItem_Click);
             // 
@@ -669,6 +662,13 @@
             this.alleDungeonsExportierenToolStripMenuItem.Size = new System.Drawing.Size(213, 22);
             this.alleDungeonsExportierenToolStripMenuItem.Text = "Alle Dungeons exportieren";
             this.alleDungeonsExportierenToolStripMenuItem.Click += new System.EventHandler(this.alleDungeonsExportierenToolStripMenuItem_Click);
+            // 
+            // einstellungenToolStripMenuItem1
+            // 
+            this.einstellungenToolStripMenuItem1.Name = "einstellungenToolStripMenuItem1";
+            this.einstellungenToolStripMenuItem1.Size = new System.Drawing.Size(90, 20);
+            this.einstellungenToolStripMenuItem1.Text = "Einstellungen";
+            this.einstellungenToolStripMenuItem1.Click += new System.EventHandler(this.einstellungenToolStripMenuItem_Click);
             // 
             // tP_Pictures
             // 
@@ -2115,9 +2115,9 @@
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle31.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn17.HeaderText = "#";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
@@ -2153,9 +2153,9 @@
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle32.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn15.HeaderText = "#";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
@@ -2314,9 +2314,9 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle33.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle33;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridViewTextBoxColumn6.HeaderText = "#";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -2324,9 +2324,9 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle34.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridViewTextBoxColumn7.HeaderText = "ID";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -2593,9 +2593,9 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle35.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn3.HeaderText = "#";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -2603,9 +2603,9 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle36.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle36;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridViewTextBoxColumn4.HeaderText = "ID";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -2642,9 +2642,9 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle37.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle37.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle37;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTextBoxColumn1.HeaderText = "#";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -2652,9 +2652,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle38.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle38.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle38;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column3.HeaderText = "ID";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -2701,9 +2701,9 @@
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle39.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle39;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridViewTextBoxColumn11.HeaderText = "#";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
@@ -2780,7 +2780,7 @@
             // 
             // tB_Monster_Unbekannt_4
             // 
-            this.tB_Monster_Unbekannt_4.Location = new System.Drawing.Point(401, 398);
+            this.tB_Monster_Unbekannt_4.Location = new System.Drawing.Point(425, 398);
             this.tB_Monster_Unbekannt_4.Name = "tB_Monster_Unbekannt_4";
             this.tB_Monster_Unbekannt_4.ReadOnly = true;
             this.tB_Monster_Unbekannt_4.Size = new System.Drawing.Size(85, 20);
@@ -2789,7 +2789,7 @@
             // 
             // tB_Monster_Unbekannt_3
             // 
-            this.tB_Monster_Unbekannt_3.Location = new System.Drawing.Point(400, 372);
+            this.tB_Monster_Unbekannt_3.Location = new System.Drawing.Point(424, 372);
             this.tB_Monster_Unbekannt_3.Name = "tB_Monster_Unbekannt_3";
             this.tB_Monster_Unbekannt_3.ReadOnly = true;
             this.tB_Monster_Unbekannt_3.Size = new System.Drawing.Size(86, 20);
@@ -2800,7 +2800,7 @@
             // 
             this.label120.AutoSize = true;
             this.label120.BackColor = System.Drawing.Color.Peru;
-            this.label120.Location = new System.Drawing.Point(266, 401);
+            this.label120.Location = new System.Drawing.Point(290, 401);
             this.label120.Name = "label120";
             this.label120.Size = new System.Drawing.Size(128, 13);
             this.label120.TabIndex = 54;
@@ -2810,7 +2810,7 @@
             // 
             this.label121.AutoSize = true;
             this.label121.BackColor = System.Drawing.Color.Peru;
-            this.label121.Location = new System.Drawing.Point(266, 375);
+            this.label121.Location = new System.Drawing.Point(290, 375);
             this.label121.Name = "label121";
             this.label121.Size = new System.Drawing.Size(128, 13);
             this.label121.TabIndex = 53;
@@ -2818,7 +2818,7 @@
             // 
             // tB_Monster_Unbekannt_2
             // 
-            this.tB_Monster_Unbekannt_2.Location = new System.Drawing.Point(156, 398);
+            this.tB_Monster_Unbekannt_2.Location = new System.Drawing.Point(180, 398);
             this.tB_Monster_Unbekannt_2.Name = "tB_Monster_Unbekannt_2";
             this.tB_Monster_Unbekannt_2.ReadOnly = true;
             this.tB_Monster_Unbekannt_2.Size = new System.Drawing.Size(85, 20);
@@ -2827,7 +2827,7 @@
             // 
             // tB_Monster_Unbekannt_1
             // 
-            this.tB_Monster_Unbekannt_1.Location = new System.Drawing.Point(155, 372);
+            this.tB_Monster_Unbekannt_1.Location = new System.Drawing.Point(179, 372);
             this.tB_Monster_Unbekannt_1.Name = "tB_Monster_Unbekannt_1";
             this.tB_Monster_Unbekannt_1.ReadOnly = true;
             this.tB_Monster_Unbekannt_1.Size = new System.Drawing.Size(86, 20);
@@ -2850,9 +2850,9 @@
             this.label119.BackColor = System.Drawing.Color.Peru;
             this.label119.Location = new System.Drawing.Point(21, 375);
             this.label119.Name = "label119";
-            this.label119.Size = new System.Drawing.Size(128, 13);
+            this.label119.Size = new System.Drawing.Size(156, 13);
             this.label119.TabIndex = 49;
-            this.label119.Text = "unbekannt 1 (nur DSA 2):";
+            this.label119.Text = "Eisenrost möglich? (nur DSA 2):";
             // 
             // Monster_pictureBox
             // 
@@ -3443,9 +3443,9 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle40.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle40;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridViewTextBoxColumn9.HeaderText = "#";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -3481,9 +3481,9 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle41.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle41;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle11;
             this.Column1.HeaderText = "#";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -3843,9 +3843,9 @@
             // dataGridViewTextBoxColumn28
             // 
             this.dataGridViewTextBoxColumn28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle42.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn28.DefaultCellStyle = dataGridViewCellStyle42;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn28.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataGridViewTextBoxColumn28.HeaderText = "#";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
             this.dataGridViewTextBoxColumn28.ReadOnly = true;
@@ -4000,9 +4000,9 @@
             // dataGridViewTextBoxColumn30
             // 
             this.dataGridViewTextBoxColumn30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle43.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn30.DefaultCellStyle = dataGridViewCellStyle43;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn30.DefaultCellStyle = dataGridViewCellStyle13;
             this.dataGridViewTextBoxColumn30.HeaderText = "#";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
             this.dataGridViewTextBoxColumn30.ReadOnly = true;
@@ -4038,9 +4038,9 @@
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle44.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle44;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle14;
             this.Column5.HeaderText = "#";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -4112,9 +4112,9 @@
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle45.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle45;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewTextBoxColumn13.HeaderText = "#";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
@@ -4126,6 +4126,17 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "Item";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // lL_ItemInfos
+            // 
+            this.lL_ItemInfos.AutoSize = true;
+            this.lL_ItemInfos.Location = new System.Drawing.Point(860, 325);
+            this.lL_ItemInfos.Name = "lL_ItemInfos";
+            this.lL_ItemInfos.Size = new System.Drawing.Size(65, 13);
+            this.lL_ItemInfos.TabIndex = 3;
+            this.lL_ItemInfos.TabStop = true;
+            this.lL_ItemInfos.Text = "ITEMS.DAT";
+            this.lL_ItemInfos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lL_ItemInfos_LinkClicked);
             // 
             // gB_ItemDat
             // 
@@ -4155,6 +4166,119 @@
             this.gB_ItemDat.TabIndex = 0;
             this.gB_ItemDat.TabStop = false;
             this.gB_ItemDat.Text = "Items.dat";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_128);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_64);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_32);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_16);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_8);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_4);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_2);
+            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_1);
+            this.groupBox2.Location = new System.Drawing.Point(296, 148);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(349, 118);
+            this.groupBox2.TabIndex = 22;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Erwiterte Flags (nur DSA 2)";
+            // 
+            // cb_ExtendedItemTyp_value_128
+            // 
+            this.cb_ExtendedItemTyp_value_128.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_128.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_128.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_128.Location = new System.Drawing.Point(181, 88);
+            this.cb_ExtendedItemTyp_value_128.Name = "cb_ExtendedItemTyp_value_128";
+            this.cb_ExtendedItemTyp_value_128.Size = new System.Drawing.Size(68, 17);
+            this.cb_ExtendedItemTyp_value_128.TabIndex = 7;
+            this.cb_ExtendedItemTyp_value_128.Text = "???(128)";
+            this.cb_ExtendedItemTyp_value_128.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_64
+            // 
+            this.cb_ExtendedItemTyp_value_64.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_64.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_64.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_64.Location = new System.Drawing.Point(181, 65);
+            this.cb_ExtendedItemTyp_value_64.Name = "cb_ExtendedItemTyp_value_64";
+            this.cb_ExtendedItemTyp_value_64.Size = new System.Drawing.Size(73, 17);
+            this.cb_ExtendedItemTyp_value_64.TabIndex = 6;
+            this.cb_ExtendedItemTyp_value_64.Text = "Jacke(64)";
+            this.cb_ExtendedItemTyp_value_64.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_32
+            // 
+            this.cb_ExtendedItemTyp_value_32.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_32.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_32.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_32.Location = new System.Drawing.Point(181, 42);
+            this.cb_ExtendedItemTyp_value_32.Name = "cb_ExtendedItemTyp_value_32";
+            this.cb_ExtendedItemTyp_value_32.Size = new System.Drawing.Size(79, 17);
+            this.cb_ExtendedItemTyp_value_32.TabIndex = 5;
+            this.cb_ExtendedItemTyp_value_32.Text = "Stirnreif(32)";
+            this.cb_ExtendedItemTyp_value_32.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_16
+            // 
+            this.cb_ExtendedItemTyp_value_16.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_16.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_16.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_16.Location = new System.Drawing.Point(181, 19);
+            this.cb_ExtendedItemTyp_value_16.Name = "cb_ExtendedItemTyp_value_16";
+            this.cb_ExtendedItemTyp_value_16.Size = new System.Drawing.Size(84, 17);
+            this.cb_ExtendedItemTyp_value_16.TabIndex = 4;
+            this.cb_ExtendedItemTyp_value_16.Text = "Umhang(16)";
+            this.cb_ExtendedItemTyp_value_16.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_8
+            // 
+            this.cb_ExtendedItemTyp_value_8.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_8.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_8.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_8.Location = new System.Drawing.Point(23, 92);
+            this.cb_ExtendedItemTyp_value_8.Name = "cb_ExtendedItemTyp_value_8";
+            this.cb_ExtendedItemTyp_value_8.Size = new System.Drawing.Size(83, 17);
+            this.cb_ExtendedItemTyp_value_8.TabIndex = 3;
+            this.cb_ExtendedItemTyp_value_8.Text = "Halskette(8)";
+            this.cb_ExtendedItemTyp_value_8.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_4
+            // 
+            this.cb_ExtendedItemTyp_value_4.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_4.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_4.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_4.Location = new System.Drawing.Point(23, 69);
+            this.cb_ExtendedItemTyp_value_4.Name = "cb_ExtendedItemTyp_value_4";
+            this.cb_ExtendedItemTyp_value_4.Size = new System.Drawing.Size(70, 17);
+            this.cb_ExtendedItemTyp_value_4.TabIndex = 2;
+            this.cb_ExtendedItemTyp_value_4.Text = "Armreif(4)";
+            this.cb_ExtendedItemTyp_value_4.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_2
+            // 
+            this.cb_ExtendedItemTyp_value_2.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_2.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_2.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_2.Location = new System.Drawing.Point(23, 46);
+            this.cb_ExtendedItemTyp_value_2.Name = "cb_ExtendedItemTyp_value_2";
+            this.cb_ExtendedItemTyp_value_2.Size = new System.Drawing.Size(60, 17);
+            this.cb_ExtendedItemTyp_value_2.TabIndex = 1;
+            this.cb_ExtendedItemTyp_value_2.Text = "Ring(2)";
+            this.cb_ExtendedItemTyp_value_2.UseVisualStyleBackColor = false;
+            // 
+            // cb_ExtendedItemTyp_value_1
+            // 
+            this.cb_ExtendedItemTyp_value_1.AutoCheck = false;
+            this.cb_ExtendedItemTyp_value_1.AutoSize = true;
+            this.cb_ExtendedItemTyp_value_1.BackColor = System.Drawing.Color.Peru;
+            this.cb_ExtendedItemTyp_value_1.Location = new System.Drawing.Point(23, 23);
+            this.cb_ExtendedItemTyp_value_1.Name = "cb_ExtendedItemTyp_value_1";
+            this.cb_ExtendedItemTyp_value_1.Size = new System.Drawing.Size(69, 17);
+            this.cb_ExtendedItemTyp_value_1.TabIndex = 0;
+            this.cb_ExtendedItemTyp_value_1.Text = "Gürtel (1)";
+            this.cb_ExtendedItemTyp_value_1.UseVisualStyleBackColor = false;
             // 
             // tB_Item_Unbekannt_2
             // 
@@ -4296,17 +4420,6 @@
             this.Items_cBItemTypBit_1.TabIndex = 0;
             this.Items_cBItemTypBit_1.Text = "Kleidung|Rüstung|Schild(1)";
             this.Items_cBItemTypBit_1.UseVisualStyleBackColor = false;
-            // 
-            // lL_ItemInfos
-            // 
-            this.lL_ItemInfos.AutoSize = true;
-            this.lL_ItemInfos.Location = new System.Drawing.Point(860, 325);
-            this.lL_ItemInfos.Name = "lL_ItemInfos";
-            this.lL_ItemInfos.Size = new System.Drawing.Size(65, 13);
-            this.lL_ItemInfos.TabIndex = 3;
-            this.lL_ItemInfos.TabStop = true;
-            this.lL_ItemInfos.Text = "ITEMS.DAT";
-            this.lL_ItemInfos.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lL_ItemInfos_LinkClicked);
             // 
             // label8
             // 
@@ -4668,119 +4781,6 @@
             this.saveXMLDialog.Filter = "MonsterXML|*.xml|Alle Dateien|*.*";
             this.saveXMLDialog.Title = "XML-File speichern unter";
             // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_128);
-            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_64);
-            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_32);
-            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_16);
-            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_8);
-            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_4);
-            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_2);
-            this.groupBox2.Controls.Add(this.cb_ExtendedItemTyp_value_1);
-            this.groupBox2.Location = new System.Drawing.Point(296, 148);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(349, 118);
-            this.groupBox2.TabIndex = 22;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Erwiterte Flags (nur DSA 2)";
-            // 
-            // cb_ExtendedItemTyp_value_128
-            // 
-            this.cb_ExtendedItemTyp_value_128.AutoCheck = false;
-            this.cb_ExtendedItemTyp_value_128.AutoSize = true;
-            this.cb_ExtendedItemTyp_value_128.BackColor = System.Drawing.Color.Peru;
-            this.cb_ExtendedItemTyp_value_128.Location = new System.Drawing.Point(181, 88);
-            this.cb_ExtendedItemTyp_value_128.Name = "cb_ExtendedItemTyp_value_128";
-            this.cb_ExtendedItemTyp_value_128.Size = new System.Drawing.Size(68, 17);
-            this.cb_ExtendedItemTyp_value_128.TabIndex = 7;
-            this.cb_ExtendedItemTyp_value_128.Text = "???(128)";
-            this.cb_ExtendedItemTyp_value_128.UseVisualStyleBackColor = false;
-            // 
-            // cb_ExtendedItemTyp_value_64
-            // 
-            this.cb_ExtendedItemTyp_value_64.AutoCheck = false;
-            this.cb_ExtendedItemTyp_value_64.AutoSize = true;
-            this.cb_ExtendedItemTyp_value_64.BackColor = System.Drawing.Color.Peru;
-            this.cb_ExtendedItemTyp_value_64.Location = new System.Drawing.Point(181, 65);
-            this.cb_ExtendedItemTyp_value_64.Name = "cb_ExtendedItemTyp_value_64";
-            this.cb_ExtendedItemTyp_value_64.Size = new System.Drawing.Size(73, 17);
-            this.cb_ExtendedItemTyp_value_64.TabIndex = 6;
-            this.cb_ExtendedItemTyp_value_64.Text = "Jacke(64)";
-            this.cb_ExtendedItemTyp_value_64.UseVisualStyleBackColor = false;
-            // 
-            // cb_ExtendedItemTyp_value_32
-            // 
-            this.cb_ExtendedItemTyp_value_32.AutoCheck = false;
-            this.cb_ExtendedItemTyp_value_32.AutoSize = true;
-            this.cb_ExtendedItemTyp_value_32.BackColor = System.Drawing.Color.Peru;
-            this.cb_ExtendedItemTyp_value_32.Location = new System.Drawing.Point(181, 42);
-            this.cb_ExtendedItemTyp_value_32.Name = "cb_ExtendedItemTyp_value_32";
-            this.cb_ExtendedItemTyp_value_32.Size = new System.Drawing.Size(79, 17);
-            this.cb_ExtendedItemTyp_value_32.TabIndex = 5;
-            this.cb_ExtendedItemTyp_value_32.Text = "Stirnreif(32)";
-            this.cb_ExtendedItemTyp_value_32.UseVisualStyleBackColor = false;
-            // 
-            // cb_ExtendedItemTyp_value_16
-            // 
-            this.cb_ExtendedItemTyp_value_16.AutoCheck = false;
-            this.cb_ExtendedItemTyp_value_16.AutoSize = true;
-            this.cb_ExtendedItemTyp_value_16.BackColor = System.Drawing.Color.Peru;
-            this.cb_ExtendedItemTyp_value_16.Location = new System.Drawing.Point(181, 19);
-            this.cb_ExtendedItemTyp_value_16.Name = "cb_ExtendedItemTyp_value_16";
-            this.cb_ExtendedItemTyp_value_16.Size = new System.Drawing.Size(84, 17);
-            this.cb_ExtendedItemTyp_value_16.TabIndex = 4;
-            this.cb_ExtendedItemTyp_value_16.Text = "Umhang(16)";
-            this.cb_ExtendedItemTyp_value_16.UseVisualStyleBackColor = false;
-            // 
-            // cb_ExtendedItemTyp_value_8
-            // 
-            this.cb_ExtendedItemTyp_value_8.AutoCheck = false;
-            this.cb_ExtendedItemTyp_value_8.AutoSize = true;
-            this.cb_ExtendedItemTyp_value_8.BackColor = System.Drawing.Color.Peru;
-            this.cb_ExtendedItemTyp_value_8.Location = new System.Drawing.Point(23, 92);
-            this.cb_ExtendedItemTyp_value_8.Name = "cb_ExtendedItemTyp_value_8";
-            this.cb_ExtendedItemTyp_value_8.Size = new System.Drawing.Size(83, 17);
-            this.cb_ExtendedItemTyp_value_8.TabIndex = 3;
-            this.cb_ExtendedItemTyp_value_8.Text = "Halskette(8)";
-            this.cb_ExtendedItemTyp_value_8.UseVisualStyleBackColor = false;
-            // 
-            // cb_ExtendedItemTyp_value_4
-            // 
-            this.cb_ExtendedItemTyp_value_4.AutoCheck = false;
-            this.cb_ExtendedItemTyp_value_4.AutoSize = true;
-            this.cb_ExtendedItemTyp_value_4.BackColor = System.Drawing.Color.Peru;
-            this.cb_ExtendedItemTyp_value_4.Location = new System.Drawing.Point(23, 69);
-            this.cb_ExtendedItemTyp_value_4.Name = "cb_ExtendedItemTyp_value_4";
-            this.cb_ExtendedItemTyp_value_4.Size = new System.Drawing.Size(70, 17);
-            this.cb_ExtendedItemTyp_value_4.TabIndex = 2;
-            this.cb_ExtendedItemTyp_value_4.Text = "Armreif(4)";
-            this.cb_ExtendedItemTyp_value_4.UseVisualStyleBackColor = false;
-            // 
-            // cb_ExtendedItemTyp_value_2
-            // 
-            this.cb_ExtendedItemTyp_value_2.AutoCheck = false;
-            this.cb_ExtendedItemTyp_value_2.AutoSize = true;
-            this.cb_ExtendedItemTyp_value_2.BackColor = System.Drawing.Color.Peru;
-            this.cb_ExtendedItemTyp_value_2.Location = new System.Drawing.Point(23, 46);
-            this.cb_ExtendedItemTyp_value_2.Name = "cb_ExtendedItemTyp_value_2";
-            this.cb_ExtendedItemTyp_value_2.Size = new System.Drawing.Size(60, 17);
-            this.cb_ExtendedItemTyp_value_2.TabIndex = 1;
-            this.cb_ExtendedItemTyp_value_2.Text = "Ring(2)";
-            this.cb_ExtendedItemTyp_value_2.UseVisualStyleBackColor = false;
-            // 
-            // cb_ExtendedItemTyp_value_1
-            // 
-            this.cb_ExtendedItemTyp_value_1.AutoCheck = false;
-            this.cb_ExtendedItemTyp_value_1.AutoSize = true;
-            this.cb_ExtendedItemTyp_value_1.BackColor = System.Drawing.Color.Peru;
-            this.cb_ExtendedItemTyp_value_1.Location = new System.Drawing.Point(23, 23);
-            this.cb_ExtendedItemTyp_value_1.Name = "cb_ExtendedItemTyp_value_1";
-            this.cb_ExtendedItemTyp_value_1.Size = new System.Drawing.Size(69, 17);
-            this.cb_ExtendedItemTyp_value_1.TabIndex = 0;
-            this.cb_ExtendedItemTyp_value_1.Text = "Gürtel (1)";
-            this.cb_ExtendedItemTyp_value_1.UseVisualStyleBackColor = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4792,7 +4792,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "DSA Viewer v.1.20";
+            this.Text = "DSA Viewer v.1.22";
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -4880,6 +4880,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Item_dgvList)).EndInit();
             this.gB_ItemDat.ResumeLayout(false);
             this.gB_ItemDat.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Item_PictureBox)).EndInit();
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
@@ -4894,8 +4896,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).EndInit();
             this.tP_Routs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5232,7 +5232,6 @@
         private System.Windows.Forms.RadioButton Animationen_rBInterpolationMode_Bikubisch;
         private System.Windows.Forms.RadioButton Animationen_rBInterpolationMode_Bilinear;
         private System.Windows.Forms.RadioButton Animationen_rBInterpolationMode_NearestNeighbor;
-        private System.Windows.Forms.ToolStripMenuItem einstellungenToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem monsterXMLExportierenToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog saveXMLDialog;
         private System.Windows.Forms.GroupBox groupBox17;
@@ -5312,6 +5311,7 @@
         private System.Windows.Forms.CheckBox cb_ExtendedItemTyp_value_4;
         private System.Windows.Forms.CheckBox cb_ExtendedItemTyp_value_2;
         private System.Windows.Forms.CheckBox cb_ExtendedItemTyp_value_1;
+        private System.Windows.Forms.ToolStripMenuItem einstellungenToolStripMenuItem1;
     }
 }
 

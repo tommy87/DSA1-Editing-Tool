@@ -354,52 +354,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             if (MonsterBildID < 0x01)
                 return null;
 
-            //if (MonsterBildID < 8)//0x17) //0x17 == 23
-            //{
-            //    MonsterBildID--;
-            //    MonsterBildID *= 4;
-            //    foreach (KeyValuePair<string, List<List<Image>>> pair in this.itsAnimations)
-            //    {
-            //        if (pair.Key == "MFIGS")
-            //        {
-            //            if (pair.Value.Count > MonsterBildID && pair.Value[MonsterBildID].Count > 0)
-            //                return pair.Value[MonsterBildID][0];
-            //            else
-            //                return null;
-            //        }
-            //    }
-            //}
-            //else if (MonsterBildID == 8)
-            //{
-            //    //kleine anomalie, da ab ID 8 ein Monster mit 5 Animationen kommt, dann der Druide mit 4(kein Bogen aber Zauber) und ab 10 haben alle wieder 5 Animationen
-            //    MonsterBildID = 29;
-            //    foreach (KeyValuePair<string, List<List<Image>>> pair in this.itsAnimations)
-            //    {
-            //        if (pair.Key == "MFIGS")
-            //        {
-            //            if (pair.Value.Count > MonsterBildID && pair.Value[MonsterBildID].Count > 0)
-            //                return pair.Value[MonsterBildID][0];
-            //            else
-            //                return null;
-            //        }
-            //    }
-            //}
-            else 
-            if (MonsterBildID < 0x14)
-            {
-                //MonsterBildID = 33 + (MonsterBildID - 9) * 5;
-                //foreach (KeyValuePair<string, List<List<Image>>> pair in this.itsAnimations)
-                //{
-                //    if (pair.Key == "MFIGS")
-                //    {
-                //        if (pair.Value.Count > MonsterBildID && pair.Value[MonsterBildID].Count > 0)
-                //            return pair.Value[MonsterBildID][0];
-                //        else
-                //            return null;
-                //    }
-                //}
-            }
-            else
+            if (MonsterBildID >= 0x14)
             {
                 MonsterBildID -= 0x14;
 
@@ -1072,7 +1027,6 @@ namespace DSA_1_Editing_Tool.File_Loader
                 colors = new Color[anzahlFarben];
                 for (int i = 0; i < anzahlFarben; i++)
                 {
-                    //colors[i] = Color.FromArgb(data[position++], data[position++], data[position++]);
                     colors[i] = Color.FromArgb((byte)(data[position++] * 4), (byte)(data[position++] * 4), (byte)(data[position++] * 4));
                 }
             }
@@ -1334,7 +1288,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                     colors = new Color[anzahlFarben];
                     for (int i = 0; i < anzahlFarben; i++)
                     {
-                        colors[i] = Color.FromArgb(data[position++] * 4, data[position++] * 4, data[position++] * 4);
+                        colors[i] = Color.FromArgb((byte)(data[position++] * 4), (byte)(data[position++] * 4), (byte)(data[position++] * 4));
                     }
                 }
                 catch(SystemException)

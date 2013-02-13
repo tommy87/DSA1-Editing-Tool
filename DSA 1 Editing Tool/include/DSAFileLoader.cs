@@ -278,7 +278,7 @@ namespace DSA_1_Editing_Tool
             //  Texte
             //if (Properties.Settings.Default.loadData)
             //{
-            //    string myFile = filepath + Config.PathSign + "DATA" + Config.PathSign + "GLOBLTXT.LTX";
+            //    string myFile = filepath + Path.DirectorySeparator + "DATA" + Path.DirectorySeparator + "GLOBLTXT.LTX";
             //    if (File.Exists(myFile))
             //    {
             //        byte[] data = File.ReadAllBytes(myFile);
@@ -323,8 +323,8 @@ namespace DSA_1_Editing_Tool
             }
 
         }
-
-        public bool unpackAll(string filepath)
+        
+        public bool unpackAll(string directoryPath)
         {
             CDebugger.clearDebugText();
 
@@ -334,75 +334,130 @@ namespace DSA_1_Editing_Tool
             this.SCHICK_DAT = null;
             this.DSAGEN_DAT = null;
 
-            string[] steuerungszeichen = { "\\", "/" }; //Windows, Linux
+            foreach (DSA2_Archiv archiv in this.DSA2_Archive)
+            {
+                archiv.data = null;
+                archiv.entries.Clear();
+            }
+           
             bool found = false;
 
-            foreach (string s in steuerungszeichen)
+            List<string> files = new List<string>();
+            files.AddRange(Directory.GetFiles(directoryPath));  
+
+            if (files.Count == 0)
             {
-                if (File.Exists(filepath + s + "SCHICKM.EXE"))
+                CDebugger.addErrorLine("keine .exe Dateien gefunden");
+                return false;
+            }
+            
+            foreach (string filepath in files)
+            {
+                if (String.Compare("SCHICKM.EXE", Path.GetFileName(filepath), true) == 0)
                 {
-                    Properties.Settings.Default.DefaultDSAPath = filepath;
+                    Properties.Settings.Default.DefaultDSAPath = directoryPath;
                     Properties.Settings.Default.Save();
 
                     CDebugger.addDebugLine("SCHICKM.EXE wurde erkannt ");
-                    this.loadFilenames_DSA_1(filepath + s +"SCHICKM.EXE");   //  dateinamen sind in der exe verankert
-                    this.unpack_SCHICK(filepath + s +"SCHICK.DAT");
+                    this.loadFilenames_DSA_1(filepath);   //  dateinamen sind in der exe verankert
 
-                    this.unpack_DSAGEN(filepath + s +"DSAGEN.DAT");
+                    foreach (string s in files)
+                    {
+                        if (this.SCHICK_DAT == null && String.Compare("SCHICK.DAT", Path.GetFileName(s), true) == 0)
+                            this.unpack_SCHICK(s);
+                        if (this.DSAGEN_DAT == null && String.Compare("DSAGEN.DAT", Path.GetFileName(s), true) == 0)
+                            this.unpack_DSAGEN(s);
+                    }
+
+                    if (this.SCHICK_DAT == null || this.DSAGEN_DAT == null)
+                    {
+                        CDebugger.addErrorLine("Fehler beim laden der .DAT Dateien");
+                        return false;
+                    }
+
                     found = true;
-                    Config.PathSign = s;
                     this._version = DSAVersion.Schick;
                     break;
                 }
-                else if (File.Exists(filepath + s + "BLADEM.EXE"))
+                else if (String.Compare("BLADEM.EXE", Path.GetFileName(filepath), true) == 0)
                 {
-                    Properties.Settings.Default.DefaultDSAPath = filepath;
+                    Properties.Settings.Default.DefaultDSAPath = directoryPath;
                     Properties.Settings.Default.Save();
 
                     CDebugger.addDebugLine("BLADEM.EXE wurde erkannt ");
-                    this.loadFilenames_DSA_1(filepath + s + "BLADEM.EXE");   //  dateinamen sind in der exe verankert
-                    this.unpack_SCHICK(filepath + s + "BLADE.DAT");
+                    this.loadFilenames_DSA_1(filepath);   //  dateinamen sind in der exe verankert
 
-                    this.unpack_DSAGEN(filepath + s + "DSAGEN.DAT");
+                    foreach (string s in files)
+                    {
+                        if (this.SCHICK_DAT == null && String.Compare("BLADE.DAT", Path.GetFileName(s), true) == 0)
+                            this.unpack_SCHICK(s);
+
+                        if (this.DSAGEN_DAT == null && String.Compare("DSAGEN.DAT", Path.GetFileName(s), true) == 0)
+                            this.unpack_DSAGEN(s);
+                    }
+
+                    if (this.SCHICK_DAT == null || this.DSAGEN_DAT == null)
+                    {
+                        CDebugger.addErrorLine("Fehler beim laden der .DAT Dateien");
+                        return false;
+                    }
+
                     found = true;
-                    Config.PathSign = s;
                     this._version = DSAVersion.Blade;
                     break;
                 }
-                else if (File.Exists(filepath + s + "SCHWEIF.EXE"))
+                else if (String.Compare("SCHWEIF.EXE", Path.GetFileName(filepath), true) == 0)
                 {
-                    Properties.Settings.Default.DefaultDSAPath = filepath;
+                    Properties.Settings.Default.DefaultDSAPath = directoryPath;
                     Properties.Settings.Default.Save();
 
                     CDebugger.addDebugLine("SCHWEIF.EXE wurde erkannt ");
 
-                    found = true;
-                    Config.PathSign = s;
                     this._version = DSAVersion.Schweif;
 
-                    string path_starDat = filepath + s + "DATA";
-                    if (!File.Exists(path_starDat + s + "STAR.DAT"))
-                        CDebugger.addErrorLine("Die Datei " + path_starDat + " konnte nicht gefunden werden");
-                    else
-                        this.unpack_SCHWEIF(path_starDat);    
+                    string[] helper = Directory.GetDirectories(directoryPath);
+                    foreach (var s in helper)
+                    {
+                        if (String.Compare(new DirectoryInfo(s).Name, "DATA", true) == 0)
+                        {
+                            this.unpack_SCHWEIF(s);
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found)
+                    {
+                        CDebugger.addErrorLine("DATA Verzeichnis wurde nicht gefunden");
+                        return false;
+                    }
+
                     break;
                 }
-                else if (File.Exists(filepath + s + "STAR.EXE"))
+                else if (String.Compare("STAR.EXE", Path.GetFileName(filepath), true) == 0)
                 {
-                    Properties.Settings.Default.DefaultDSAPath = filepath;
+                    Properties.Settings.Default.DefaultDSAPath = directoryPath;
                     Properties.Settings.Default.Save();
 
                     CDebugger.addDebugLine("STAR.EXE wurde erkannt ");
 
-                    found = true;
-                    Config.PathSign = s;
                     this._version = DSAVersion.Schweif;
 
-                    string path_starDat = filepath + s + "DATA";
-                    if (!Directory.Exists(path_starDat + s + "STAR.DAT"))
-                        CDebugger.addErrorLine("Die Datei " + path_starDat + " konnte nicht gefunden werden");
-                    else
-                        this.unpack_SCHWEIF(path_starDat);
+                    string[] helper = Directory.GetDirectories(directoryPath);
+                    foreach (var s in helper)
+                    {
+                        if (String.Compare(new DirectoryInfo(s).Name, "DATA", true) == 0)
+                        {
+                            this.unpack_SCHWEIF(s);
+                            found = true;
+                            break;
+                        }
+                    }
+                    if (!found)
+                    {
+                        CDebugger.addErrorLine("DATA Verzeichnis wurde nicht gefunden");
+                        return false;
+                    }
+
                     break;
                 }
             }
@@ -410,16 +465,13 @@ namespace DSA_1_Editing_Tool
             if (!found)
             {
                 CDebugger.addErrorLine("DSA Version konnte nicht erkannt werden");
-                string[] exe_Files = Directory.GetFiles(filepath, "*.exe");
-                string[] EXE_Files = Directory.GetFiles(filepath, "*.EXE");
+                string[] exe_Files = Directory.GetFiles(directoryPath, "*.exe");
+                string[] EXE_Files = Directory.GetFiles(directoryPath, "*.EXE");
                 CDebugger.addErrorLine("es wurden " + (exe_Files.Length + EXE_Files.Length).ToString() + " .exe Dateien gefunden:");
                 if (exe_Files.Length > 0)
                 {
                     foreach (string s in exe_Files)
                         CDebugger.addErrorLine("  - exe: " + s);
-                }
-                else
-                {
                     foreach (string s in EXE_Files)
                         CDebugger.addErrorLine("  - EXE: " + s);
                 }
@@ -505,41 +557,6 @@ namespace DSA_1_Editing_Tool
             }
 
             CDebugger.addDebugLine(this.itsSCHICKOffsets.Count.ToString() + " Datei Einträge wurden in \"" + filename + "\" gefunden");
-
-            //Dateien entpacken
-            //for (int i = 0; i < (this.itsSCHICKOffsets.Count - 1); i++)
-            //{
-            //    if (!Directory.Exists((this.path + CConfig.ExportFolder + "\\" + CConfig.ExportSubFolder_Schick)))
-            //        Directory.CreateDirectory(this.path + CConfig.ExportFolder + "\\" + CConfig.ExportSubFolder_Schick);
-
-            //    Byte[] temp = new byte[this.itsSCHICKOffsets[i + 1] - this.itsSCHICKOffsets[i]];
-            //    if (temp.Length == 0)
-            //        continue;
-
-            //    System.Array.Copy(data, this.itsSCHICKOffsets[i], temp, 0, (this.itsSCHICKOffsets[i + 1] - this.itsSCHICKOffsets[i]));
-
-
-            //    //Dateiname bestimmen
-            //    string writeName;
-            //    if (this.itsFilenames[i] == "" || this.itsFilenames.Count <= i)
-            //        writeName = "unknownFile_" + i.ToString();
-            //    else
-            //        writeName = this.itsFilenames[i];
-
-            //    //Unter Ordner bestimmen
-            //    string SubDirectory = "unbekannt\\";
-            //    if (writeName.Length > 4 && writeName.Contains("."))   //besitzt die datei eine Dateiendung?
-            //    {
-            //        int help = writeName.LastIndexOf('.');
-            //        SubDirectory = writeName.Substring(help + 1, writeName.Length - help - 1) + "\\";
-            //    }
-
-            //    if (!Directory.Exists(this.path + CConfig.ExportFolder + "\\" + CConfig.ExportSubFolder_Schick + "\\" + SubDirectory))
-            //        Directory.CreateDirectory(this.path + CConfig.ExportFolder + "\\" + CConfig.ExportSubFolder_Schick + "\\" + SubDirectory);
-
-            //    //Datei schreiben
-            //    File.WriteAllBytes(this.path + CConfig.ExportFolder + "\\" + CConfig.ExportSubFolder_Schick + "\\" + SubDirectory + writeName, temp);
-            //}
         }   
         private void unpack_DSAGEN(string filename)
         {
@@ -573,52 +590,41 @@ namespace DSA_1_Editing_Tool
             }
 
             CDebugger.addDebugLine(this.itsDSAGENOffsets.Count.ToString() + " Dateien wurden in \"" + filename + "\" gefunden");
-
-            //Dateien entpacken
-            //for (int i = 0; i < (this.itsDSAGENOffsets.Count - 1); i++)
-            //{
-            //    if (!Directory.Exists((this.path + CConfig.ExportFolder + "\\" + CConfig.ExportSubFolder_DSAGEN)))
-            //        Directory.CreateDirectory(this.path + CConfig.ExportFolder + "\\" + CConfig.ExportSubFolder_DSAGEN);
-
-            //    Byte[] temp = new byte[this.itsDSAGENOffsets[i + 1].Value - this.itsDSAGENOffsets[i].Value];
-            //    if (temp.Length == 0)
-            //        continue;
-
-            //    System.Array.Copy(data, this.itsDSAGENOffsets[i].Value, temp, 0, (this.itsDSAGENOffsets[i + 1].Value - this.itsDSAGENOffsets[i].Value));
-
-
-            //    //Dateiname bestimmen
-            //    string writeName = this.itsDSAGENOffsets[i].Key;
-
-            //    //Unter Ordner bestimmen
-            //    string SubDirectory = "unbekannt\\";
-            //    if (writeName.Length > 4 && writeName.Contains("."))   //besitzt die datei eine Dateiendung?
-            //    {
-            //        int help = writeName.LastIndexOf('.');
-            //        SubDirectory = writeName.Substring(help + 1, writeName.Length - help - 1) + "\\";
-            //    }
-
-            //    if (!Directory.Exists(this.path + CConfig.ExportFolder + "\\" + CConfig.ExportSubFolder_DSAGEN + "\\" + SubDirectory))
-            //        Directory.CreateDirectory(this.path + CConfig.ExportFolder + "\\" + CConfig.ExportSubFolder_DSAGEN + "\\" + SubDirectory);
-
-            //    //Datei schreiben
-            //    File.WriteAllBytes(this.path + CConfig.ExportFolder + "\\" + CConfig.ExportSubFolder_DSAGEN + "\\" + SubDirectory + writeName, temp);
-            //}
         }
-        private void unpack_SCHWEIF(string filename)
+        private void unpack_SCHWEIF(string directoryName)
         {
+            bool found = false;
             string CD_Path = null;
             System.IO.DriveInfo[] allDrives = System.IO.DriveInfo.GetDrives();
+            
             foreach (System.IO.DriveInfo d in allDrives)
             {
-                if (d.DriveType == DriveType.CDRom)
+                if (found)
+                    break;
+
+                if (d.DriveType == DriveType.CDRom && d.IsReady)
                 {
-                    if (File.Exists(d.RootDirectory + "DATA" + Config.PathSign + "STAR.DAT"))
+                    foreach (String folder in Directory.GetDirectories(d.RootDirectory.FullName))
                     {
-                        CD_Path = d.RootDirectory + "DATA" + Config.PathSign;
+                        if (found)
+                            break;
+
+                        if (String.Compare(new DirectoryInfo(folder).Name, "DATA", true) == 0)
+                        {
+                            foreach (string file in Directory.GetFiles(folder))
+                            {
+                                if (String.Compare(Path.GetFileName(file), "STAR.DAT", true) == 0)
+                                {
+                                    CD_Path = folder;
+                                    found = true;
+                                    break;
+                                }
+                            }
+                        }
                     }
                 }
             }
+
             if (CD_Path == null)
                 CDebugger.addErrorLine("Sternenschweif CD wurde nicht gefunden");
 
@@ -629,51 +635,76 @@ namespace DSA_1_Editing_Tool
                 Archiv.data = null;
                 Archiv.entries.Clear();
 
-                string path = null;
+                string ArchiveName = null;
                 bool cd = false;
                 switch(Archiv.Typ)
                 {
                     case DSA2_Archiv.ArchivTyp.FX:
-                        path = filename + Config.PathSign + "FX.DAT";
+                        ArchiveName = "FX.DAT";
                         break;
                     case DSA2_Archiv.ArchivTyp.RAW:
-                        path = filename + Config.PathSign + "RAW.DAT";
+                        ArchiveName = "RAW.DAT";
                         break;
                     case DSA2_Archiv.ArchivTyp.SPEECH:
-                        path = filename + Config.PathSign + "SPEECH.DAT";
+                        ArchiveName = "SPEECH.DAT";
                         break;
                     case DSA2_Archiv.ArchivTyp.STAR:
-                        path = filename + Config.PathSign + "STAR.DAT";
+                        ArchiveName = "STAR.DAT";
                         break;
 
                     case DSA2_Archiv.ArchivTyp.CD_FX:
-                        path = CD_Path + "FX.DAT"; cd = true;
+                        ArchiveName = "FX.DAT"; cd = true;
                         break;
                     case DSA2_Archiv.ArchivTyp.CD_RAW:
-                        path = CD_Path + "RAW.DAT"; cd = true;
+                        ArchiveName = "RAW.DAT"; cd = true;
                         break;
                     case DSA2_Archiv.ArchivTyp.CD_SPEECH:
-                        path = CD_Path + "SPEECH.DAT"; cd = true;
+                        ArchiveName = "SPEECH.DAT"; cd = true;
                         break;
                     case DSA2_Archiv.ArchivTyp.CD_SPEECHCD:
-                        path = CD_Path + "SPEECHCD.DAT"; cd = true;
+                        ArchiveName = "SPEECHCD.DAT"; cd = true;
                         break;
                     case DSA2_Archiv.ArchivTyp.CD_STAR:
-                        path = CD_Path + "STAR.DAT"; cd = true;
+                        ArchiveName = "STAR.DAT"; cd = true;
                         break;
                     case DSA2_Archiv.ArchivTyp.CD_STARCD:
-                        path = CD_Path + "STARCD.DAT"; cd = true;
+                        ArchiveName = "STARCD.DAT"; cd = true;
                         break;
                 }
-           
 
-                if (!File.Exists(path))
+                string Archive_path = null;
+                if (cd && CD_Path != null)
                 {
-                    CDebugger.addErrorLine("die Datei '" + filename + "' konnte nicht geladen werden");
-                    return;
+                    foreach (string file in Directory.GetFiles(CD_Path))
+                    {
+                        if (String.Compare(Path.GetFileName(file), ArchiveName, true) == 0)
+                        {
+                            Archive_path = file;
+                            break;
+                        }
+                    }
+                }
+                else if (!cd)
+                {
+                    foreach (string file in Directory.GetFiles(directoryName))
+                    {
+                        if (String.Compare(Path.GetFileName(file), ArchiveName, true) == 0)
+                        {
+                            Archive_path = file;
+                            break;
+                        }
+                    }
                 }
 
-                Archiv.data = File.ReadAllBytes(path);
+                if (Archive_path == null || !File.Exists(Archive_path))
+                {
+                    if (!(CD_Path == null && cd))
+                        CDebugger.addErrorLine("die Datei '" + Archive_path + "' konnte nicht geladen werden");
+                    
+                    continue;
+                }
+
+                Archiv.data = File.ReadAllBytes(Archive_path);
 
 
                 Int16 anzahlEinträge = CHelpFunctions.byteArrayToInt16(ref Archiv.data, 0);
@@ -702,7 +733,7 @@ namespace DSA_1_Editing_Tool
                     position += 20;
                 }
 
-                CDebugger.addDebugLine(Archiv.entries.Count.ToString() + " Datei Einträge wurden in \"" + path + "\" gefunden");
+                CDebugger.addDebugLine(Archiv.entries.Count.ToString() + " Datei Einträge wurden in \"" + Archive_path + "\" gefunden");
             }
         }
 
@@ -939,15 +970,12 @@ namespace DSA_1_Editing_Tool
 
         public void exportFiles(string filepath)
         {
-            if (Config.PathSign == "")
-                return;
-
             switch (this._version)
             {
                 case DSAVersion.Blade:
                 case DSAVersion.Schick:
-                    if (!Directory.Exists(filepath + Config.PathSign + "SCHICK"))
-                        Directory.CreateDirectory(filepath + Config.PathSign + "SCHICK");
+                    if (!Directory.Exists(filepath + Path.DirectorySeparatorChar + "SCHICK"))
+                        Directory.CreateDirectory(filepath + Path.DirectorySeparatorChar + "SCHICK");
 
                     for (int i = 0; i < this.itsSCHICKOffsets.Count; i++)
                     {
@@ -963,8 +991,8 @@ namespace DSA_1_Editing_Tool
                         else
                             name = i.ToString();
 
-                        if (!Directory.Exists(filepath + Config.PathSign + "SCHICK" + Config.PathSign + typ))
-                            Directory.CreateDirectory(filepath + Config.PathSign + "SCHICK" + Config.PathSign + typ);
+                        if (!Directory.Exists(filepath + Path.DirectorySeparatorChar + "SCHICK" + Path.DirectorySeparatorChar + typ))
+                            Directory.CreateDirectory(filepath + Path.DirectorySeparatorChar + "SCHICK" + Path.DirectorySeparatorChar + typ);
 
                         int end;
                         if (i >= (this.itsSCHICKOffsets.Count - 1))
@@ -976,20 +1004,20 @@ namespace DSA_1_Editing_Tool
                         Array.Copy(this.SCHICK_DAT, this.itsSCHICKOffsets[i], data, 0, data.Length);
 
                         if (data.Length > 0)
-                            File.WriteAllBytes(filepath + Config.PathSign + "SCHICK" + Config.PathSign + typ + Config.PathSign + name, data);
+                            File.WriteAllBytes(filepath + Path.DirectorySeparatorChar + "SCHICK" + Path.DirectorySeparatorChar + typ + Path.DirectorySeparatorChar + name, data);
                     }
 
                     //----------------------------------------------------
 
-                    if (!Directory.Exists(filepath + Config.PathSign + "DSAGEN"))
-                        Directory.CreateDirectory(filepath + Config.PathSign + "DSAGEN");
+                    if (!Directory.Exists(filepath + Path.DirectorySeparatorChar + "DSAGEN"))
+                        Directory.CreateDirectory(filepath + Path.DirectorySeparatorChar + "DSAGEN");
 
                     for (int i = 0; i < this.itsDSAGENOffsets.Count; i++)
                     {
                         string typ = getFileTyp(this.itsDSAGENOffsets[i].Key);
 
-                        if (!Directory.Exists(filepath + Config.PathSign + "DSAGEN" + Config.PathSign + typ))
-                            Directory.CreateDirectory(filepath + Config.PathSign + "DSAGEN" + Config.PathSign + typ);
+                        if (!Directory.Exists(filepath + Path.DirectorySeparatorChar + "DSAGEN" + Path.DirectorySeparatorChar + typ))
+                            Directory.CreateDirectory(filepath + Path.DirectorySeparatorChar + "DSAGEN" + Path.DirectorySeparatorChar + typ);
 
                         int end;
                         if (i >= (this.itsDSAGENOffsets.Count - 1))
@@ -1007,7 +1035,7 @@ namespace DSA_1_Editing_Tool
                         Array.Copy(this.DSAGEN_DAT, this.itsDSAGENOffsets[i].Value, data, 0, data.Length);
 
                         if (data.Length > 0)
-                            File.WriteAllBytes(filepath + Config.PathSign + "DSAGEN" + Config.PathSign + typ + Config.PathSign + name, data);
+                            File.WriteAllBytes(filepath + Path.DirectorySeparatorChar + "DSAGEN" + Path.DirectorySeparatorChar + typ + Path.DirectorySeparatorChar + name, data);
                     }
                     break;
 
@@ -1018,26 +1046,26 @@ namespace DSA_1_Editing_Tool
                         switch(Archiv.Typ)
                         {
                             case DSA2_Archiv.ArchivTyp.FX:
-                                folder = filepath + Config.PathSign + "SCHWEIF" + Config.PathSign + "FX" ; break;
+                                folder = filepath + Path.DirectorySeparatorChar + "SCHWEIF" + Path.DirectorySeparatorChar + "FX" ; break;
                             case DSA2_Archiv.ArchivTyp.RAW:
-                                folder = filepath + Config.PathSign + "SCHWEIF" + Config.PathSign + "RAW"; break;
+                                folder = filepath + Path.DirectorySeparatorChar + "SCHWEIF" + Path.DirectorySeparatorChar + "RAW"; break;
                             case DSA2_Archiv.ArchivTyp.SPEECH:
-                                folder = filepath + Config.PathSign + "SCHWEIF" + Config.PathSign + "SPEECH"; break;
+                                folder = filepath + Path.DirectorySeparatorChar + "SCHWEIF" + Path.DirectorySeparatorChar + "SPEECH"; break;
                             case DSA2_Archiv.ArchivTyp.STAR:
-                                folder = filepath + Config.PathSign + "SCHWEIF" + Config.PathSign + "STAR"; break;
+                                folder = filepath + Path.DirectorySeparatorChar + "SCHWEIF" + Path.DirectorySeparatorChar + "STAR"; break;
 
                             case DSA2_Archiv.ArchivTyp.CD_FX:
-                                folder = filepath + Config.PathSign + "CD" + Config.PathSign + "FX"; break;
+                                folder = filepath + Path.DirectorySeparatorChar + "CD" + Path.DirectorySeparatorChar + "FX"; break;
                             case DSA2_Archiv.ArchivTyp.CD_RAW:
-                                folder = filepath + Config.PathSign + "CD" + Config.PathSign + "RAW"; break;
+                                folder = filepath + Path.DirectorySeparatorChar + "CD" + Path.DirectorySeparatorChar + "RAW"; break;
                             case DSA2_Archiv.ArchivTyp.CD_SPEECH:
-                                folder = filepath + Config.PathSign + "CD" + Config.PathSign + "SPEECH"; break;
+                                folder = filepath + Path.DirectorySeparatorChar + "CD" + Path.DirectorySeparatorChar + "SPEECH"; break;
                             case DSA2_Archiv.ArchivTyp.CD_SPEECHCD:
-                                folder = filepath + Config.PathSign + "CD" + Config.PathSign + "SPEECHCD"; break;
+                                folder = filepath + Path.DirectorySeparatorChar + "CD" + Path.DirectorySeparatorChar + "SPEECHCD"; break;
                             case DSA2_Archiv.ArchivTyp.CD_STAR:
-                                folder = filepath + Config.PathSign + "CD" + Config.PathSign + "STAR"; break;
+                                folder = filepath + Path.DirectorySeparatorChar + "CD" + Path.DirectorySeparatorChar + "STAR"; break;
                             case DSA2_Archiv.ArchivTyp.CD_STARCD:
-                                folder = filepath + Config.PathSign + "CD" + Config.PathSign + "STARCD"; break;
+                                folder = filepath + Path.DirectorySeparatorChar + "CD" + Path.DirectorySeparatorChar + "STARCD"; break;
                         }
                         if (folder == null)
                         {
@@ -1052,8 +1080,8 @@ namespace DSA_1_Editing_Tool
                         {
                             string typ = getFileTyp(Archiv.entries[i].Key);
 
-                            if (!Directory.Exists(folder + Config.PathSign + typ))
-                                Directory.CreateDirectory(folder + Config.PathSign + typ);
+                            if (!Directory.Exists(folder + Path.DirectorySeparatorChar + typ))
+                                Directory.CreateDirectory(folder + Path.DirectorySeparatorChar + typ);
 
                             int end;
                             if (i >= (Archiv.entries.Count - 1))
@@ -1071,7 +1099,7 @@ namespace DSA_1_Editing_Tool
                             Array.Copy(Archiv.data, Archiv.entries[i].Value, data, 0, data.Length);
 
                             if (data.Length > 0)
-                                File.WriteAllBytes(folder + Config.PathSign + typ + Config.PathSign + name, data);
+                                File.WriteAllBytes(folder + Path.DirectorySeparatorChar + typ + Path.DirectorySeparatorChar + name, data);
                         }
                     }
 
@@ -1097,20 +1125,17 @@ namespace DSA_1_Editing_Tool
 
         public void exportPictures(string filepath)
         {
-            if (Config.PathSign == "")
-                return;
-
             CDebugger.addDebugLine("Bilder werden exportiert...");
             foreach (KeyValuePair<string, List<Image>> pair in this.bilder.itsImages)
             {
                 string name = getFileFront(pair.Key);
-                string path = filepath + Config.PathSign + "Bilder" + Config.PathSign + name;
+                string path = filepath + Path.DirectorySeparatorChar + "Bilder" + Path.DirectorySeparatorChar + name;
 
                 if (!Directory.Exists(path))
                     Directory.CreateDirectory(path);
 
                 for (int i = 0; i < pair.Value.Count; i++)
-                    pair.Value[i].Save(path + Config.PathSign + i.ToString() + ".png");
+                    pair.Value[i].Save(path + Path.DirectorySeparatorChar + i.ToString() + ".png");
             }
             foreach (KeyValuePair<string, List<List<Image>>> pair_name in this.bilder.itsAnimations)
             {
@@ -1119,13 +1144,13 @@ namespace DSA_1_Editing_Tool
 
                 foreach (List<Image> Images in pair_name.Value)
                 {
-                    string path = filepath + Config.PathSign + "Animationen" + Config.PathSign + name + Config.PathSign + counter;
+                    string path = filepath + Path.DirectorySeparatorChar + "Animationen" + Path.DirectorySeparatorChar + name + Path.DirectorySeparatorChar + counter;
 
                     if (!Directory.Exists(path))
                         Directory.CreateDirectory(path);
 
                     for (int i = 0; i < Images.Count; i++)
-                        Images[i].Save(path + Config.PathSign + i.ToString() + ".png");
+                        Images[i].Save(path + Path.DirectorySeparatorChar + i.ToString() + ".png");
 
                     counter++;
                 }
