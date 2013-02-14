@@ -53,13 +53,8 @@ namespace DSA_1_Editing_Tool.File_Loader
 
         private void addLTX(ref byte[] data, List<CDSAFileLoader.CFileSet> LTX)
         {
-            if (data == null)
+            if (data == null || LTX == null)
                 return;
-
-            if (LTX.Count == 0)
-                CDebugger.addDebugLine("Texte: keine LTX Dateien gefunden");
-            else
-                CDebugger.addDebugLine("Texte: es wurden " + LTX.Count.ToString() + " LTX Dateien gefunden");
 
             foreach (CDSAFileLoader.CFileSet fileSet in LTX)
             {
@@ -87,13 +82,8 @@ namespace DSA_1_Editing_Tool.File_Loader
         }
         private void addDTX(ref byte[] data, List<CDSAFileLoader.CFileSet> DTX)
         {
-            if (data == null)
+            if (data == null || DTX == null)
                 return;
-
-            if (DTX.Count == 0)
-                CDebugger.addDebugLine("Texte: keine DTX Dateien gefunden");
-            else
-                CDebugger.addDebugLine("Texte: es wurden " + DTX.Count.ToString() + " DTX Dateien gefunden");
 
             foreach (CDSAFileLoader.CFileSet fileSet in DTX)
             {

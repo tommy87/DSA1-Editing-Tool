@@ -13,7 +13,7 @@ namespace DSA_1_Editing_Tool
             if (length <= 0)    
             {
                 //es wird ein 0 terminierter string gelesen
-                while (data[position] != 0)
+                while (position < data.Length && data[position] != 0)
                 {
                     s += getCharFromData(data[position]);
                     position++;
