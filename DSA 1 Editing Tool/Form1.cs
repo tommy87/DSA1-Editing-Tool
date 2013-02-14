@@ -725,6 +725,8 @@ namespace DSA_1_Editing_Tool
 
         private void Texte_Filenames_dgvList_SelectionChanged(object sender, EventArgs e)
         {
+            this.Texte_dgvTexte.Rows.Clear();
+
             DataGridViewSelectedRowCollection texte = Texte_Filenames_dgvList.SelectedRows;
             if (texte.Count <= 0)
             {
@@ -737,8 +739,6 @@ namespace DSA_1_Editing_Tool
 
                 if (this.rB_Texte_LTX.Checked)
                 {
-                    this.Texte_dgvTexte.Rows.Clear();
-
                     if (this.itsDSAFileLoader.texte.LTX_Texte.Count <= index)
                         return;
 
@@ -749,8 +749,6 @@ namespace DSA_1_Editing_Tool
                 }
                 else
                 {
-                    this.Texte_dgvTexte.Rows.Clear();
-
                     if (this.itsDSAFileLoader.texte.DTX_Texte.Count <= index)
                         return;
 
