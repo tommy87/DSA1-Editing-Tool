@@ -29,21 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle41 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle42 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle43 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle44 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle45 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle51 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle52 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tSBOpenFile = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -345,49 +343,6 @@
             this.rB_Texte_LTX = new System.Windows.Forms.RadioButton();
             this.tP_Dialoge = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
-            this.groupBox13 = new System.Windows.Forms.GroupBox();
-            this.Dialoge_btTestDialogAntwort3 = new System.Windows.Forms.Button();
-            this.Dialoge_btTestDialogAntwort2 = new System.Windows.Forms.Button();
-            this.Dialoge_btTestDialogAntwort1 = new System.Windows.Forms.Button();
-            this.Dialoge_rtbTestDialog = new System.Windows.Forms.RichTextBox();
-            this.groupBox12 = new System.Windows.Forms.GroupBox();
-            this.Dialoge_Layout_tbLayoutIndexAntwort3 = new System.Windows.Forms.TextBox();
-            this.label91 = new System.Windows.Forms.Label();
-            this.Dialoge_Layout_tbTextIndexAntwort3 = new System.Windows.Forms.TextBox();
-            this.label92 = new System.Windows.Forms.Label();
-            this.Dialoge_Layout_tbLayoutIndexAntwort2 = new System.Windows.Forms.TextBox();
-            this.label89 = new System.Windows.Forms.Label();
-            this.Dialoge_Layout_tbTextIndexAntwort2 = new System.Windows.Forms.TextBox();
-            this.label90 = new System.Windows.Forms.Label();
-            this.Dialoge_Layout_tbLayoutIndexAntwort1 = new System.Windows.Forms.TextBox();
-            this.label87 = new System.Windows.Forms.Label();
-            this.Dialoge_Layout_tbTextIndexAntwort1 = new System.Windows.Forms.TextBox();
-            this.label88 = new System.Windows.Forms.Label();
-            this.Dialoge_Layout_tbUnbekannt = new System.Windows.Forms.TextBox();
-            this.label86 = new System.Windows.Forms.Label();
-            this.Dialoge_Layout_tbTextIndex = new System.Windows.Forms.TextBox();
-            this.label85 = new System.Windows.Forms.Label();
-            this.Dialoge_dgvLayout = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dialoge_rtbCurrenText = new System.Windows.Forms.RichTextBox();
-            this.Dialoge_dgvTexte = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.ll_Dialoge = new System.Windows.Forms.LinkLabel();
-            this.Dialoge_btStartTestDialog = new System.Windows.Forms.Button();
-            this.Dialoge_pictureBox = new System.Windows.Forms.PictureBox();
-            this.Dialoge_Gesprächspartner_tbBildID = new System.Windows.Forms.TextBox();
-            this.label96 = new System.Windows.Forms.Label();
-            this.Dialoge_Gesprächspartner_tbIndexStartLayout = new System.Windows.Forms.TextBox();
-            this.label93 = new System.Windows.Forms.Label();
-            this.Dialoge_Gesprächspartner_tbName = new System.Windows.Forms.TextBox();
-            this.Dialoge_Gesprächspartner_tbIndexStartText = new System.Windows.Forms.TextBox();
-            this.label94 = new System.Windows.Forms.Label();
-            this.label95 = new System.Windows.Forms.Label();
-            this.Dialoge_dgvGesprächspartner = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dialoge_dgvList = new System.Windows.Forms.DataGridView();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -453,6 +408,9 @@
             this.tP_Routs = new System.Windows.Forms.TabPage();
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
             this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -501,13 +459,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.Texte_dgvTexte)).BeginInit();
             this.gB_TextSource.SuspendLayout();
             this.tP_Dialoge.SuspendLayout();
-            this.groupBox13.SuspendLayout();
-            this.groupBox12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dialoge_dgvLayout)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dialoge_dgvTexte)).BeginInit();
-            this.groupBox11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dialoge_pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dialoge_dgvGesprächspartner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dialoge_dgvList)).BeginInit();
             this.tP_Items.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Item_dgvList)).BeginInit();
@@ -524,6 +475,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).BeginInit();
             this.tP_Routs.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -681,7 +640,7 @@
             this.tP_Pictures.Controls.Add(this.Bilder_dgvList);
             this.tP_Pictures.Location = new System.Drawing.Point(4, 22);
             this.tP_Pictures.Name = "tP_Pictures";
-            this.tP_Pictures.Size = new System.Drawing.Size(987, 683);
+            this.tP_Pictures.Size = new System.Drawing.Size(984, 504);
             this.tP_Pictures.TabIndex = 7;
             this.tP_Pictures.Text = "Bilder";
             // 
@@ -838,7 +797,7 @@
             this.tP_Dungeons.Controls.Add(this.Dungeons_dgvList);
             this.tP_Dungeons.Location = new System.Drawing.Point(4, 22);
             this.tP_Dungeons.Name = "tP_Dungeons";
-            this.tP_Dungeons.Size = new System.Drawing.Size(987, 683);
+            this.tP_Dungeons.Size = new System.Drawing.Size(984, 504);
             this.tP_Dungeons.TabIndex = 6;
             this.tP_Dungeons.Text = "Dungeons";
             // 
@@ -1859,7 +1818,7 @@
             this.tP_Towns.Controls.Add(this.Städte_dgvList);
             this.tP_Towns.Location = new System.Drawing.Point(4, 22);
             this.tP_Towns.Name = "tP_Towns";
-            this.tP_Towns.Size = new System.Drawing.Size(987, 683);
+            this.tP_Towns.Size = new System.Drawing.Size(984, 504);
             this.tP_Towns.TabIndex = 5;
             this.tP_Towns.Text = "Städte";
             // 
@@ -2115,9 +2074,9 @@
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle40.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle40;
             this.dataGridViewTextBoxColumn17.HeaderText = "#";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
@@ -2153,9 +2112,9 @@
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle41.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle41.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle41;
             this.dataGridViewTextBoxColumn15.HeaderText = "#";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
@@ -2185,7 +2144,7 @@
             this.tP_Fights.Controls.Add(this.Fight_dgvList);
             this.tP_Fights.Location = new System.Drawing.Point(4, 22);
             this.tP_Fights.Name = "tP_Fights";
-            this.tP_Fights.Size = new System.Drawing.Size(987, 683);
+            this.tP_Fights.Size = new System.Drawing.Size(984, 504);
             this.tP_Fights.TabIndex = 4;
             this.tP_Fights.Text = "Kämpfe";
             // 
@@ -2314,9 +2273,9 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle42.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle42.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle42;
             this.dataGridViewTextBoxColumn6.HeaderText = "#";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -2324,9 +2283,9 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle43.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle43.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle43;
             this.dataGridViewTextBoxColumn7.HeaderText = "ID";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -2593,9 +2552,9 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle44.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle44.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle44;
             this.dataGridViewTextBoxColumn3.HeaderText = "#";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -2603,9 +2562,9 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle45.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle45.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle45;
             this.dataGridViewTextBoxColumn4.HeaderText = "ID";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -2642,9 +2601,9 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle46.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle46.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle46;
             this.dataGridViewTextBoxColumn1.HeaderText = "#";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -2652,9 +2611,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle47.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle47;
             this.Column3.HeaderText = "ID";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -2674,7 +2633,7 @@
             this.tP_Monster.Controls.Add(this.groupBox1);
             this.tP_Monster.Location = new System.Drawing.Point(4, 22);
             this.tP_Monster.Name = "tP_Monster";
-            this.tP_Monster.Size = new System.Drawing.Size(987, 683);
+            this.tP_Monster.Size = new System.Drawing.Size(984, 504);
             this.tP_Monster.TabIndex = 3;
             this.tP_Monster.Text = "Monster";
             // 
@@ -2701,9 +2660,9 @@
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle48.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle48;
             this.dataGridViewTextBoxColumn11.HeaderText = "#";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
@@ -3416,7 +3375,7 @@
             this.tP_Text.Controls.Add(this.gB_TextSource);
             this.tP_Text.Location = new System.Drawing.Point(4, 22);
             this.tP_Text.Name = "tP_Text";
-            this.tP_Text.Size = new System.Drawing.Size(987, 683);
+            this.tP_Text.Size = new System.Drawing.Size(984, 504);
             this.tP_Text.TabIndex = 2;
             this.tP_Text.Text = "Texte";
             // 
@@ -3443,9 +3402,9 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle49.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle49;
             this.dataGridViewTextBoxColumn9.HeaderText = "#";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -3481,9 +3440,9 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle50.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle50.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle50;
             this.Column1.HeaderText = "#";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -3544,476 +3503,22 @@
             // tP_Dialoge
             // 
             this.tP_Dialoge.BackColor = System.Drawing.Color.Peru;
-            this.tP_Dialoge.Controls.Add(this.label9);
-            this.tP_Dialoge.Controls.Add(this.groupBox13);
-            this.tP_Dialoge.Controls.Add(this.groupBox12);
-            this.tP_Dialoge.Controls.Add(this.Dialoge_dgvLayout);
-            this.tP_Dialoge.Controls.Add(this.Dialoge_rtbCurrenText);
-            this.tP_Dialoge.Controls.Add(this.Dialoge_dgvTexte);
-            this.tP_Dialoge.Controls.Add(this.groupBox11);
-            this.tP_Dialoge.Controls.Add(this.Dialoge_dgvGesprächspartner);
-            this.tP_Dialoge.Controls.Add(this.Dialoge_dgvList);
+            this.tP_Dialoge.Controls.Add(this.splitContainer2);
             this.tP_Dialoge.Location = new System.Drawing.Point(4, 22);
             this.tP_Dialoge.Name = "tP_Dialoge";
-            this.tP_Dialoge.Size = new System.Drawing.Size(987, 683);
+            this.tP_Dialoge.Size = new System.Drawing.Size(987, 504);
             this.tP_Dialoge.TabIndex = 1;
             this.tP_Dialoge.Text = "Dialoge";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(8, 479);
+            this.label9.Location = new System.Drawing.Point(89, 10);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(644, 13);
             this.label9.TabIndex = 15;
             this.label9.Text = "Hinweis: Steht bei einem Testdialog weiter, so wird die Entscheidung wie der Dial" +
     "og weitergeht anhand von internen Variablen bestimmt";
-            // 
-            // groupBox13
-            // 
-            this.groupBox13.Controls.Add(this.Dialoge_btTestDialogAntwort3);
-            this.groupBox13.Controls.Add(this.Dialoge_btTestDialogAntwort2);
-            this.groupBox13.Controls.Add(this.Dialoge_btTestDialogAntwort1);
-            this.groupBox13.Controls.Add(this.Dialoge_rtbTestDialog);
-            this.groupBox13.Location = new System.Drawing.Point(587, 12);
-            this.groupBox13.Name = "groupBox13";
-            this.groupBox13.Size = new System.Drawing.Size(313, 221);
-            this.groupBox13.TabIndex = 14;
-            this.groupBox13.TabStop = false;
-            this.groupBox13.Text = "Dialog Test";
-            // 
-            // Dialoge_btTestDialogAntwort3
-            // 
-            this.Dialoge_btTestDialogAntwort3.AutoEllipsis = true;
-            this.Dialoge_btTestDialogAntwort3.Enabled = false;
-            this.Dialoge_btTestDialogAntwort3.Location = new System.Drawing.Point(6, 190);
-            this.Dialoge_btTestDialogAntwort3.Name = "Dialoge_btTestDialogAntwort3";
-            this.Dialoge_btTestDialogAntwort3.Size = new System.Drawing.Size(297, 25);
-            this.Dialoge_btTestDialogAntwort3.TabIndex = 15;
-            this.Dialoge_btTestDialogAntwort3.UseVisualStyleBackColor = true;
-            this.Dialoge_btTestDialogAntwort3.Click += new System.EventHandler(this.Dialoge_btTestDialogAntwort3_Click);
-            // 
-            // Dialoge_btTestDialogAntwort2
-            // 
-            this.Dialoge_btTestDialogAntwort2.AutoEllipsis = true;
-            this.Dialoge_btTestDialogAntwort2.Enabled = false;
-            this.Dialoge_btTestDialogAntwort2.Location = new System.Drawing.Point(6, 159);
-            this.Dialoge_btTestDialogAntwort2.Name = "Dialoge_btTestDialogAntwort2";
-            this.Dialoge_btTestDialogAntwort2.Size = new System.Drawing.Size(297, 25);
-            this.Dialoge_btTestDialogAntwort2.TabIndex = 14;
-            this.Dialoge_btTestDialogAntwort2.UseVisualStyleBackColor = true;
-            this.Dialoge_btTestDialogAntwort2.Click += new System.EventHandler(this.Dialoge_btTestDialogAntwort2_Click);
-            // 
-            // Dialoge_btTestDialogAntwort1
-            // 
-            this.Dialoge_btTestDialogAntwort1.AutoEllipsis = true;
-            this.Dialoge_btTestDialogAntwort1.Enabled = false;
-            this.Dialoge_btTestDialogAntwort1.Location = new System.Drawing.Point(6, 128);
-            this.Dialoge_btTestDialogAntwort1.Name = "Dialoge_btTestDialogAntwort1";
-            this.Dialoge_btTestDialogAntwort1.Size = new System.Drawing.Size(297, 25);
-            this.Dialoge_btTestDialogAntwort1.TabIndex = 13;
-            this.Dialoge_btTestDialogAntwort1.UseVisualStyleBackColor = true;
-            this.Dialoge_btTestDialogAntwort1.Click += new System.EventHandler(this.Dialoge_btTestDialogAntwort1_Click);
-            // 
-            // Dialoge_rtbTestDialog
-            // 
-            this.Dialoge_rtbTestDialog.Location = new System.Drawing.Point(6, 19);
-            this.Dialoge_rtbTestDialog.Name = "Dialoge_rtbTestDialog";
-            this.Dialoge_rtbTestDialog.ReadOnly = true;
-            this.Dialoge_rtbTestDialog.Size = new System.Drawing.Size(301, 103);
-            this.Dialoge_rtbTestDialog.TabIndex = 0;
-            this.Dialoge_rtbTestDialog.Text = "";
-            // 
-            // groupBox12
-            // 
-            this.groupBox12.Controls.Add(this.Dialoge_Layout_tbLayoutIndexAntwort3);
-            this.groupBox12.Controls.Add(this.label91);
-            this.groupBox12.Controls.Add(this.Dialoge_Layout_tbTextIndexAntwort3);
-            this.groupBox12.Controls.Add(this.label92);
-            this.groupBox12.Controls.Add(this.Dialoge_Layout_tbLayoutIndexAntwort2);
-            this.groupBox12.Controls.Add(this.label89);
-            this.groupBox12.Controls.Add(this.Dialoge_Layout_tbTextIndexAntwort2);
-            this.groupBox12.Controls.Add(this.label90);
-            this.groupBox12.Controls.Add(this.Dialoge_Layout_tbLayoutIndexAntwort1);
-            this.groupBox12.Controls.Add(this.label87);
-            this.groupBox12.Controls.Add(this.Dialoge_Layout_tbTextIndexAntwort1);
-            this.groupBox12.Controls.Add(this.label88);
-            this.groupBox12.Controls.Add(this.Dialoge_Layout_tbUnbekannt);
-            this.groupBox12.Controls.Add(this.label86);
-            this.groupBox12.Controls.Add(this.Dialoge_Layout_tbTextIndex);
-            this.groupBox12.Controls.Add(this.label85);
-            this.groupBox12.Location = new System.Drawing.Point(357, 239);
-            this.groupBox12.Name = "groupBox12";
-            this.groupBox12.Size = new System.Drawing.Size(543, 113);
-            this.groupBox12.TabIndex = 13;
-            this.groupBox12.TabStop = false;
-            this.groupBox12.Text = "Layout";
-            // 
-            // Dialoge_Layout_tbLayoutIndexAntwort3
-            // 
-            this.Dialoge_Layout_tbLayoutIndexAntwort3.Location = new System.Drawing.Point(417, 79);
-            this.Dialoge_Layout_tbLayoutIndexAntwort3.Name = "Dialoge_Layout_tbLayoutIndexAntwort3";
-            this.Dialoge_Layout_tbLayoutIndexAntwort3.ReadOnly = true;
-            this.Dialoge_Layout_tbLayoutIndexAntwort3.Size = new System.Drawing.Size(100, 20);
-            this.Dialoge_Layout_tbLayoutIndexAntwort3.TabIndex = 15;
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Location = new System.Drawing.Point(414, 63);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(119, 13);
-            this.label91.TabIndex = 14;
-            this.label91.Text = "Layout Index Antwort 3:";
-            // 
-            // Dialoge_Layout_tbTextIndexAntwort3
-            // 
-            this.Dialoge_Layout_tbTextIndexAntwort3.Location = new System.Drawing.Point(417, 40);
-            this.Dialoge_Layout_tbTextIndexAntwort3.Name = "Dialoge_Layout_tbTextIndexAntwort3";
-            this.Dialoge_Layout_tbTextIndexAntwort3.ReadOnly = true;
-            this.Dialoge_Layout_tbTextIndexAntwort3.Size = new System.Drawing.Size(100, 20);
-            this.Dialoge_Layout_tbTextIndexAntwort3.TabIndex = 13;
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Location = new System.Drawing.Point(414, 24);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(108, 13);
-            this.label92.TabIndex = 12;
-            this.label92.Text = "Text Index Antwort 3:";
-            // 
-            // Dialoge_Layout_tbLayoutIndexAntwort2
-            // 
-            this.Dialoge_Layout_tbLayoutIndexAntwort2.Location = new System.Drawing.Point(292, 79);
-            this.Dialoge_Layout_tbLayoutIndexAntwort2.Name = "Dialoge_Layout_tbLayoutIndexAntwort2";
-            this.Dialoge_Layout_tbLayoutIndexAntwort2.ReadOnly = true;
-            this.Dialoge_Layout_tbLayoutIndexAntwort2.Size = new System.Drawing.Size(100, 20);
-            this.Dialoge_Layout_tbLayoutIndexAntwort2.TabIndex = 11;
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(289, 63);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(119, 13);
-            this.label89.TabIndex = 10;
-            this.label89.Text = "Layout Index Antwort 2:";
-            // 
-            // Dialoge_Layout_tbTextIndexAntwort2
-            // 
-            this.Dialoge_Layout_tbTextIndexAntwort2.Location = new System.Drawing.Point(292, 40);
-            this.Dialoge_Layout_tbTextIndexAntwort2.Name = "Dialoge_Layout_tbTextIndexAntwort2";
-            this.Dialoge_Layout_tbTextIndexAntwort2.ReadOnly = true;
-            this.Dialoge_Layout_tbTextIndexAntwort2.Size = new System.Drawing.Size(100, 20);
-            this.Dialoge_Layout_tbTextIndexAntwort2.TabIndex = 9;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(289, 24);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(108, 13);
-            this.label90.TabIndex = 8;
-            this.label90.Text = "Text Index Antwort 2:";
-            // 
-            // Dialoge_Layout_tbLayoutIndexAntwort1
-            // 
-            this.Dialoge_Layout_tbLayoutIndexAntwort1.Location = new System.Drawing.Point(167, 79);
-            this.Dialoge_Layout_tbLayoutIndexAntwort1.Name = "Dialoge_Layout_tbLayoutIndexAntwort1";
-            this.Dialoge_Layout_tbLayoutIndexAntwort1.ReadOnly = true;
-            this.Dialoge_Layout_tbLayoutIndexAntwort1.Size = new System.Drawing.Size(100, 20);
-            this.Dialoge_Layout_tbLayoutIndexAntwort1.TabIndex = 7;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(164, 63);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(119, 13);
-            this.label87.TabIndex = 6;
-            this.label87.Text = "Layout Index Antwort 1:";
-            // 
-            // Dialoge_Layout_tbTextIndexAntwort1
-            // 
-            this.Dialoge_Layout_tbTextIndexAntwort1.Location = new System.Drawing.Point(167, 40);
-            this.Dialoge_Layout_tbTextIndexAntwort1.Name = "Dialoge_Layout_tbTextIndexAntwort1";
-            this.Dialoge_Layout_tbTextIndexAntwort1.ReadOnly = true;
-            this.Dialoge_Layout_tbTextIndexAntwort1.Size = new System.Drawing.Size(100, 20);
-            this.Dialoge_Layout_tbTextIndexAntwort1.TabIndex = 5;
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(164, 24);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(108, 13);
-            this.label88.TabIndex = 4;
-            this.label88.Text = "Text Index Antwort 1:";
-            // 
-            // Dialoge_Layout_tbUnbekannt
-            // 
-            this.Dialoge_Layout_tbUnbekannt.Location = new System.Drawing.Point(21, 79);
-            this.Dialoge_Layout_tbUnbekannt.Name = "Dialoge_Layout_tbUnbekannt";
-            this.Dialoge_Layout_tbUnbekannt.ReadOnly = true;
-            this.Dialoge_Layout_tbUnbekannt.Size = new System.Drawing.Size(100, 20);
-            this.Dialoge_Layout_tbUnbekannt.TabIndex = 3;
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Location = new System.Drawing.Point(18, 63);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(61, 13);
-            this.label86.TabIndex = 2;
-            this.label86.Text = "unbekannt:";
-            // 
-            // Dialoge_Layout_tbTextIndex
-            // 
-            this.Dialoge_Layout_tbTextIndex.Location = new System.Drawing.Point(21, 40);
-            this.Dialoge_Layout_tbTextIndex.Name = "Dialoge_Layout_tbTextIndex";
-            this.Dialoge_Layout_tbTextIndex.ReadOnly = true;
-            this.Dialoge_Layout_tbTextIndex.Size = new System.Drawing.Size(100, 20);
-            this.Dialoge_Layout_tbTextIndex.TabIndex = 1;
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(18, 24);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(60, 13);
-            this.label85.TabIndex = 0;
-            this.label85.Text = "Text Index:";
-            // 
-            // Dialoge_dgvLayout
-            // 
-            this.Dialoge_dgvLayout.AllowUserToAddRows = false;
-            this.Dialoge_dgvLayout.AllowUserToDeleteRows = false;
-            this.Dialoge_dgvLayout.AllowUserToResizeColumns = false;
-            this.Dialoge_dgvLayout.AllowUserToResizeRows = false;
-            this.Dialoge_dgvLayout.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dialoge_dgvLayout.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn32});
-            this.Dialoge_dgvLayout.Location = new System.Drawing.Point(906, 12);
-            this.Dialoge_dgvLayout.MultiSelect = false;
-            this.Dialoge_dgvLayout.Name = "Dialoge_dgvLayout";
-            this.Dialoge_dgvLayout.ReadOnly = true;
-            this.Dialoge_dgvLayout.RowHeadersVisible = false;
-            this.Dialoge_dgvLayout.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dialoge_dgvLayout.Size = new System.Drawing.Size(73, 340);
-            this.Dialoge_dgvLayout.TabIndex = 12;
-            this.Dialoge_dgvLayout.SelectionChanged += new System.EventHandler(this.Dialoge_dgvLayout_SelectionChanged);
-            // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn32.HeaderText = "Layout";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            this.dataGridViewTextBoxColumn32.ReadOnly = true;
-            // 
-            // Dialoge_rtbCurrenText
-            // 
-            this.Dialoge_rtbCurrenText.Location = new System.Drawing.Point(357, 358);
-            this.Dialoge_rtbCurrenText.Name = "Dialoge_rtbCurrenText";
-            this.Dialoge_rtbCurrenText.ReadOnly = true;
-            this.Dialoge_rtbCurrenText.Size = new System.Drawing.Size(622, 118);
-            this.Dialoge_rtbCurrenText.TabIndex = 11;
-            this.Dialoge_rtbCurrenText.Text = "";
-            // 
-            // Dialoge_dgvTexte
-            // 
-            this.Dialoge_dgvTexte.AllowUserToAddRows = false;
-            this.Dialoge_dgvTexte.AllowUserToDeleteRows = false;
-            this.Dialoge_dgvTexte.AllowUserToResizeColumns = false;
-            this.Dialoge_dgvTexte.AllowUserToResizeRows = false;
-            this.Dialoge_dgvTexte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dialoge_dgvTexte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29});
-            this.Dialoge_dgvTexte.Location = new System.Drawing.Point(190, 230);
-            this.Dialoge_dgvTexte.MultiSelect = false;
-            this.Dialoge_dgvTexte.Name = "Dialoge_dgvTexte";
-            this.Dialoge_dgvTexte.ReadOnly = true;
-            this.Dialoge_dgvTexte.RowHeadersVisible = false;
-            this.Dialoge_dgvTexte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dialoge_dgvTexte.Size = new System.Drawing.Size(161, 246);
-            this.Dialoge_dgvTexte.TabIndex = 10;
-            this.Dialoge_dgvTexte.SelectionChanged += new System.EventHandler(this.Dialoge_dgvTexte_SelectionChanged);
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn28.DefaultCellStyle = dataGridViewCellStyle12;
-            this.dataGridViewTextBoxColumn28.HeaderText = "#";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.ReadOnly = true;
-            this.dataGridViewTextBoxColumn28.Width = 40;
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn29.HeaderText = "Texte";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.ReadOnly = true;
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.ll_Dialoge);
-            this.groupBox11.Controls.Add(this.Dialoge_btStartTestDialog);
-            this.groupBox11.Controls.Add(this.Dialoge_pictureBox);
-            this.groupBox11.Controls.Add(this.Dialoge_Gesprächspartner_tbBildID);
-            this.groupBox11.Controls.Add(this.label96);
-            this.groupBox11.Controls.Add(this.Dialoge_Gesprächspartner_tbIndexStartLayout);
-            this.groupBox11.Controls.Add(this.label93);
-            this.groupBox11.Controls.Add(this.Dialoge_Gesprächspartner_tbName);
-            this.groupBox11.Controls.Add(this.Dialoge_Gesprächspartner_tbIndexStartText);
-            this.groupBox11.Controls.Add(this.label94);
-            this.groupBox11.Controls.Add(this.label95);
-            this.groupBox11.Location = new System.Drawing.Point(357, 12);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(224, 221);
-            this.groupBox11.TabIndex = 8;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Gesprächspartner";
-            // 
-            // ll_Dialoge
-            // 
-            this.ll_Dialoge.AutoSize = true;
-            this.ll_Dialoge.Location = new System.Drawing.Point(123, 19);
-            this.ll_Dialoge.Name = "ll_Dialoge";
-            this.ll_Dialoge.Size = new System.Drawing.Size(43, 13);
-            this.ll_Dialoge.TabIndex = 15;
-            this.ll_Dialoge.TabStop = true;
-            this.ll_Dialoge.Text = "Dialoge";
-            this.ll_Dialoge.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.ll_Dialoge_LinkClicked);
-            // 
-            // Dialoge_btStartTestDialog
-            // 
-            this.Dialoge_btStartTestDialog.Enabled = false;
-            this.Dialoge_btStartTestDialog.Location = new System.Drawing.Point(52, 177);
-            this.Dialoge_btStartTestDialog.Name = "Dialoge_btStartTestDialog";
-            this.Dialoge_btStartTestDialog.Size = new System.Drawing.Size(114, 25);
-            this.Dialoge_btStartTestDialog.TabIndex = 12;
-            this.Dialoge_btStartTestDialog.Text = "starte Testdialog";
-            this.Dialoge_btStartTestDialog.UseVisualStyleBackColor = true;
-            this.Dialoge_btStartTestDialog.Click += new System.EventHandler(this.Dialoge_btStartTestDialog_Click);
-            // 
-            // Dialoge_pictureBox
-            // 
-            this.Dialoge_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Dialoge_pictureBox.Location = new System.Drawing.Point(15, 19);
-            this.Dialoge_pictureBox.Name = "Dialoge_pictureBox";
-            this.Dialoge_pictureBox.Size = new System.Drawing.Size(48, 48);
-            this.Dialoge_pictureBox.TabIndex = 0;
-            this.Dialoge_pictureBox.TabStop = false;
-            // 
-            // Dialoge_Gesprächspartner_tbBildID
-            // 
-            this.Dialoge_Gesprächspartner_tbBildID.Location = new System.Drawing.Point(109, 99);
-            this.Dialoge_Gesprächspartner_tbBildID.Name = "Dialoge_Gesprächspartner_tbBildID";
-            this.Dialoge_Gesprächspartner_tbBildID.ReadOnly = true;
-            this.Dialoge_Gesprächspartner_tbBildID.Size = new System.Drawing.Size(100, 20);
-            this.Dialoge_Gesprächspartner_tbBildID.TabIndex = 11;
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Location = new System.Drawing.Point(8, 102);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(41, 13);
-            this.label96.TabIndex = 10;
-            this.label96.Text = "Bild ID:";
-            // 
-            // Dialoge_Gesprächspartner_tbIndexStartLayout
-            // 
-            this.Dialoge_Gesprächspartner_tbIndexStartLayout.Location = new System.Drawing.Point(109, 151);
-            this.Dialoge_Gesprächspartner_tbIndexStartLayout.Name = "Dialoge_Gesprächspartner_tbIndexStartLayout";
-            this.Dialoge_Gesprächspartner_tbIndexStartLayout.ReadOnly = true;
-            this.Dialoge_Gesprächspartner_tbIndexStartLayout.Size = new System.Drawing.Size(100, 20);
-            this.Dialoge_Gesprächspartner_tbIndexStartLayout.TabIndex = 7;
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Location = new System.Drawing.Point(8, 154);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(96, 13);
-            this.label93.TabIndex = 6;
-            this.label93.Text = "Index Start Layout:";
-            // 
-            // Dialoge_Gesprächspartner_tbName
-            // 
-            this.Dialoge_Gesprächspartner_tbName.Location = new System.Drawing.Point(52, 73);
-            this.Dialoge_Gesprächspartner_tbName.Name = "Dialoge_Gesprächspartner_tbName";
-            this.Dialoge_Gesprächspartner_tbName.ReadOnly = true;
-            this.Dialoge_Gesprächspartner_tbName.Size = new System.Drawing.Size(157, 20);
-            this.Dialoge_Gesprächspartner_tbName.TabIndex = 9;
-            // 
-            // Dialoge_Gesprächspartner_tbIndexStartText
-            // 
-            this.Dialoge_Gesprächspartner_tbIndexStartText.Location = new System.Drawing.Point(109, 125);
-            this.Dialoge_Gesprächspartner_tbIndexStartText.Name = "Dialoge_Gesprächspartner_tbIndexStartText";
-            this.Dialoge_Gesprächspartner_tbIndexStartText.ReadOnly = true;
-            this.Dialoge_Gesprächspartner_tbIndexStartText.Size = new System.Drawing.Size(100, 20);
-            this.Dialoge_Gesprächspartner_tbIndexStartText.TabIndex = 5;
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Location = new System.Drawing.Point(8, 128);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(85, 13);
-            this.label94.TabIndex = 4;
-            this.label94.Text = "Index Start Text:";
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Location = new System.Drawing.Point(8, 76);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(38, 13);
-            this.label95.TabIndex = 8;
-            this.label95.Text = "Name:";
-            // 
-            // Dialoge_dgvGesprächspartner
-            // 
-            this.Dialoge_dgvGesprächspartner.AllowUserToAddRows = false;
-            this.Dialoge_dgvGesprächspartner.AllowUserToDeleteRows = false;
-            this.Dialoge_dgvGesprächspartner.AllowUserToResizeColumns = false;
-            this.Dialoge_dgvGesprächspartner.AllowUserToResizeRows = false;
-            this.Dialoge_dgvGesprächspartner.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Dialoge_dgvGesprächspartner.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn30,
-            this.dataGridViewTextBoxColumn31});
-            this.Dialoge_dgvGesprächspartner.Location = new System.Drawing.Point(190, 12);
-            this.Dialoge_dgvGesprächspartner.MultiSelect = false;
-            this.Dialoge_dgvGesprächspartner.Name = "Dialoge_dgvGesprächspartner";
-            this.Dialoge_dgvGesprächspartner.ReadOnly = true;
-            this.Dialoge_dgvGesprächspartner.RowHeadersVisible = false;
-            this.Dialoge_dgvGesprächspartner.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.Dialoge_dgvGesprächspartner.Size = new System.Drawing.Size(161, 212);
-            this.Dialoge_dgvGesprächspartner.TabIndex = 7;
-            this.Dialoge_dgvGesprächspartner.SelectionChanged += new System.EventHandler(this.Dialoge_dgvGesprächspartner_SelectionChanged);
-            // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn30.DefaultCellStyle = dataGridViewCellStyle13;
-            this.dataGridViewTextBoxColumn30.HeaderText = "#";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            this.dataGridViewTextBoxColumn30.ReadOnly = true;
-            this.dataGridViewTextBoxColumn30.Width = 40;
-            // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn31.HeaderText = "Dialog mit";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            this.dataGridViewTextBoxColumn31.ReadOnly = true;
             // 
             // Dialoge_dgvList
             // 
@@ -4025,7 +3530,7 @@
             this.Dialoge_dgvList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column5,
             this.Column6});
-            this.Dialoge_dgvList.Location = new System.Drawing.Point(8, 12);
+            this.Dialoge_dgvList.Location = new System.Drawing.Point(8, 3);
             this.Dialoge_dgvList.MultiSelect = false;
             this.Dialoge_dgvList.Name = "Dialoge_dgvList";
             this.Dialoge_dgvList.ReadOnly = true;
@@ -4038,9 +3543,9 @@
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle51.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle51.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle51;
             this.Column5.HeaderText = "#";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -4064,7 +3569,7 @@
             this.tP_Items.Location = new System.Drawing.Point(4, 22);
             this.tP_Items.Name = "tP_Items";
             this.tP_Items.Padding = new System.Windows.Forms.Padding(3);
-            this.tP_Items.Size = new System.Drawing.Size(987, 683);
+            this.tP_Items.Size = new System.Drawing.Size(984, 504);
             this.tP_Items.TabIndex = 0;
             this.tP_Items.Text = "Items";
             // 
@@ -4112,9 +3617,9 @@
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle52.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle52.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle52;
             this.dataGridViewTextBoxColumn13.HeaderText = "#";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
@@ -4556,11 +4061,11 @@
             // 
             // rTB_Debug
             // 
-            this.rTB_Debug.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.rTB_Debug.Location = new System.Drawing.Point(0, 573);
+            this.rTB_Debug.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rTB_Debug.Location = new System.Drawing.Point(0, 0);
             this.rTB_Debug.Name = "rTB_Debug";
             this.rTB_Debug.ReadOnly = true;
-            this.rTB_Debug.Size = new System.Drawing.Size(995, 185);
+            this.rTB_Debug.Size = new System.Drawing.Size(995, 175);
             this.rTB_Debug.TabIndex = 2;
             this.rTB_Debug.Text = "";
             // 
@@ -4577,10 +4082,10 @@
             this.tabControl1.Controls.Add(this.tP_Animations);
             this.tabControl1.Controls.Add(this.tP_Routs);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(0, 49);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(995, 709);
+            this.tabControl1.Size = new System.Drawing.Size(995, 530);
             this.tabControl1.TabIndex = 3;
             // 
             // tP_Animations
@@ -4595,7 +4100,7 @@
             this.tP_Animations.Location = new System.Drawing.Point(4, 22);
             this.tP_Animations.Name = "tP_Animations";
             this.tP_Animations.Padding = new System.Windows.Forms.Padding(3);
-            this.tP_Animations.Size = new System.Drawing.Size(987, 683);
+            this.tP_Animations.Size = new System.Drawing.Size(984, 504);
             this.tP_Animations.TabIndex = 9;
             this.tP_Animations.Text = "Animationen";
             // 
@@ -4761,7 +4266,7 @@
             this.tP_Routs.Controls.Add(this.Rout_pictureBox);
             this.tP_Routs.Location = new System.Drawing.Point(4, 22);
             this.tP_Routs.Name = "tP_Routs";
-            this.tP_Routs.Size = new System.Drawing.Size(987, 683);
+            this.tP_Routs.Size = new System.Drawing.Size(984, 504);
             this.tP_Routs.TabIndex = 8;
             this.tP_Routs.Text = "Routen";
             // 
@@ -4781,13 +4286,67 @@
             this.saveXMLDialog.Filter = "MonsterXML|*.xml|Alle Dateien|*.*";
             this.saveXMLDialog.Title = "XML-File speichern unter";
             // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.IsSplitterFixed = true;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 49);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.tabControl1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.rTB_Debug);
+            this.splitContainer1.Size = new System.Drawing.Size(995, 709);
+            this.splitContainer1.SplitterDistance = 530;
+            this.splitContainer1.TabIndex = 4;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel2;
+            this.splitContainer2.IsSplitterFixed = true;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.splitContainer3);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.label9);
+            this.splitContainer2.Size = new System.Drawing.Size(987, 504);
+            this.splitContainer2.SplitterDistance = 465;
+            this.splitContainer2.TabIndex = 0;
+            // 
+            // splitContainer3
+            // 
+            this.splitContainer3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer3.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer3.IsSplitterFixed = true;
+            this.splitContainer3.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer3.Name = "splitContainer3";
+            // 
+            // splitContainer3.Panel1
+            // 
+            this.splitContainer3.Panel1.Controls.Add(this.Dialoge_dgvList);
+            this.splitContainer3.Size = new System.Drawing.Size(987, 465);
+            this.splitContainer3.SplitterDistance = 178;
+            this.splitContainer3.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 758);
-            this.Controls.Add(this.rTB_Debug);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -4864,16 +4423,6 @@
             this.gB_TextSource.ResumeLayout(false);
             this.gB_TextSource.PerformLayout();
             this.tP_Dialoge.ResumeLayout(false);
-            this.tP_Dialoge.PerformLayout();
-            this.groupBox13.ResumeLayout(false);
-            this.groupBox12.ResumeLayout(false);
-            this.groupBox12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dialoge_dgvLayout)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dialoge_dgvTexte)).EndInit();
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Dialoge_pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Dialoge_dgvGesprächspartner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dialoge_dgvList)).EndInit();
             this.tP_Items.ResumeLayout(false);
             this.tP_Items.PerformLayout();
@@ -4896,6 +4445,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_dgvList)).EndInit();
             this.tP_Routs.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Rout_pictureBox)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            this.splitContainer2.Panel2.PerformLayout();
+            this.splitContainer2.ResumeLayout(false);
+            this.splitContainer3.Panel1.ResumeLayout(false);
+            this.splitContainer3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -5123,45 +4681,6 @@
         private System.Windows.Forms.PictureBox Rout_pictureBox;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.DataGridView Dialoge_dgvList;
-        private System.Windows.Forms.DataGridView Dialoge_dgvGesprächspartner;
-        private System.Windows.Forms.GroupBox groupBox11;
-        private System.Windows.Forms.PictureBox Dialoge_pictureBox;
-        private System.Windows.Forms.DataGridView Dialoge_dgvTexte;
-        private System.Windows.Forms.RichTextBox Dialoge_rtbCurrenText;
-        private System.Windows.Forms.DataGridView Dialoge_dgvLayout;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
-        private System.Windows.Forms.GroupBox groupBox12;
-        private System.Windows.Forms.TextBox Dialoge_Layout_tbLayoutIndexAntwort3;
-        private System.Windows.Forms.Label label91;
-        private System.Windows.Forms.TextBox Dialoge_Layout_tbTextIndexAntwort3;
-        private System.Windows.Forms.Label label92;
-        private System.Windows.Forms.TextBox Dialoge_Layout_tbLayoutIndexAntwort2;
-        private System.Windows.Forms.Label label89;
-        private System.Windows.Forms.TextBox Dialoge_Layout_tbTextIndexAntwort2;
-        private System.Windows.Forms.Label label90;
-        private System.Windows.Forms.TextBox Dialoge_Layout_tbLayoutIndexAntwort1;
-        private System.Windows.Forms.Label label87;
-        private System.Windows.Forms.TextBox Dialoge_Layout_tbTextIndexAntwort1;
-        private System.Windows.Forms.Label label88;
-        private System.Windows.Forms.TextBox Dialoge_Layout_tbUnbekannt;
-        private System.Windows.Forms.Label label86;
-        private System.Windows.Forms.TextBox Dialoge_Layout_tbTextIndex;
-        private System.Windows.Forms.Label label85;
-        private System.Windows.Forms.TextBox Dialoge_Gesprächspartner_tbBildID;
-        private System.Windows.Forms.Label label96;
-        private System.Windows.Forms.TextBox Dialoge_Gesprächspartner_tbName;
-        private System.Windows.Forms.Label label95;
-        private System.Windows.Forms.TextBox Dialoge_Gesprächspartner_tbIndexStartLayout;
-        private System.Windows.Forms.Label label93;
-        private System.Windows.Forms.TextBox Dialoge_Gesprächspartner_tbIndexStartText;
-        private System.Windows.Forms.Label label94;
-        private System.Windows.Forms.GroupBox groupBox13;
-        private System.Windows.Forms.Button Dialoge_btStartTestDialog;
-        private System.Windows.Forms.RichTextBox Dialoge_rtbTestDialog;
-        private System.Windows.Forms.Button Dialoge_btTestDialogAntwort3;
-        private System.Windows.Forms.Button Dialoge_btTestDialogAntwort2;
-        private System.Windows.Forms.Button Dialoge_btTestDialogAntwort1;
-        private System.Windows.Forms.LinkLabel ll_Dialoge;
         private System.Windows.Forms.GroupBox groupBox14;
         private System.Windows.Forms.CheckBox Items_cBItemTypBit_8;
         private System.Windows.Forms.CheckBox Items_cBItemTypBit_7;
@@ -5281,10 +4800,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
@@ -5312,6 +4827,9 @@
         private System.Windows.Forms.CheckBox cb_ExtendedItemTyp_value_2;
         private System.Windows.Forms.CheckBox cb_ExtendedItemTyp_value_1;
         private System.Windows.Forms.ToolStripMenuItem einstellungenToolStripMenuItem1;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.SplitContainer splitContainer3;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }
 

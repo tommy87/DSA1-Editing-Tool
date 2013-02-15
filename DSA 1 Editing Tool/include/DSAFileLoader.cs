@@ -256,7 +256,7 @@ namespace DSA_1_Editing_Tool
 
             //----------Dialoge--------------------
             filesetList_1 = this.getFilesBySuffix_DSA_1("TLK", false);
-            this.dialoge.addDialoge(ref this.SCHICK_DAT, filesetList_1);
+            this.dialoge.addDialoge(ref this.SCHICK_DAT, filesetList_1, this._version);
         }
         private void loadDSA2(string filepath)
         {
@@ -308,8 +308,9 @@ namespace DSA_1_Editing_Tool
                 else if (fileset_cd_1 != null)
                     this.kampf.addKämpfe(ref currentArchiv.data_CD, fileset_cd_1);
 
-                //filesetList_1 = this.getFilesBySuffix_DSA_2("TLK", currentArchiv.Typ);
-                //this.dialoge.addDialoge(ref currentArchiv.data, filesetList_1);
+                this.getFilesBySuffix_DSA_2("TLK", ref currentArchiv, out filesetList_install, out filesetList_cd);
+                this.dialoge.addDialoge(ref currentArchiv.data_Install, filesetList_install, this._version);
+                this.dialoge.addDialoge(ref currentArchiv.data_CD, filesetList_cd, this._version);
             }
 
             if (currentArchiv != null) 

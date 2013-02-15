@@ -15,15 +15,16 @@ namespace DSA_1_Editing_Tool.File_Loader
         {
         }
 
-        public void addDialoge(ref byte[] data, List<CDSAFileLoader.CFileSet> TLKs)
+        public void addDialoge(ref byte[] data, List<CDSAFileLoader.CFileSet> TLKs, DSAVersion version)
         {
             foreach (CDSAFileLoader.CFileSet set in TLKs)
             {
-                this.itsDialoge.Add(new KeyValuePair<string, CDialog>(set.filename, new CDialog(ref data, set)));
+                this.itsDialoge.Add(new KeyValuePair<string, CDialog>(set.filename, new CDialog(ref data, set, version)));
             }
 
             CDebugger.addDebugLine("Dialoge wurden erfolgreich geladen");
         }
+
         public void clear()
         {
             this.itsDialoge.Clear();
@@ -184,16 +185,56 @@ namespace DSA_1_Editing_Tool.File_Loader
 
         public class CDialog
         {
-            public List<CGesprächspartner> itsPartner = new List<CGesprächspartner>();
-            public List<CDialogLayoutZeile> itsDialogZeile = new List<CDialogLayoutZeile>();
             public List<string> itsTexte = new List<string>();
 
-            public CDialog(ref byte[] data, CDSAFileLoader.CFileSet TLK)
+            //DSA 1 
+            public List<CGesprächspartner> itsPartner = new List<CGesprächspartner>();
+            public List<CDialogLayoutZeile> itsDialogZeile = new List<CDialogLayoutZeile>();
+
+            //DSA 2
+            public bool isDSA2InfoDialog = false;
+            //DSA 2 - Dialog
+            public List<KeyValuePair<CGesprächspartner, List<CDialogLayoutZeile>>> itsDSA2Dialog = new List<KeyValuePair<CGesprächspartner, List<CDialogLayoutZeile>>>();
+            //DSA 2 - info 
+
+            //-----------------------------------------
+
+            public CDialog(ref byte[] data, CDSAFileLoader.CFileSet TLK, DSAVersion version)
             {
                 this.itsDialogZeile.Clear();
                 this.itsPartner.Clear();
                 this.itsTexte.Clear();
 
+                if (data == null || TLK == null)
+                    return;
+
+                switch (version)
+                {
+                    case DSAVersion.Blade:
+                    case DSAVersion.Schick:
+                        this.loadDSA1(ref data, TLK);
+                        break;
+
+                    case DSAVersion.Schweif:
+                        bool found = false;
+                        for (int i = TLK.startOffset; i < (TLK.endOffset - 3); i++)
+                        {
+                            if (data[i] == 'P' && data[i + 1] == 'I' && data[i + 2] == 'C')
+                            {
+                                found = true;
+                                break;
+                            }
+                        }
+                        if (found)
+                            this.loadDSA2_info(ref data, TLK);
+                        else
+                            this.loadDSA2_dialog(ref data, TLK);
+
+                        break;
+                }
+            }
+            private void loadDSA1(ref byte[] data, CDSAFileLoader.CFileSet TLK)
+            {
                 int position = TLK.startOffset;
 
                 Int32 offsetTextBlock = TLK.startOffset + CHelpFunctions.byteArrayToInt32(ref data, position) + 6; //warum +6--> weil header genau 6 bytes hat
@@ -203,7 +244,7 @@ namespace DSA_1_Editing_Tool.File_Loader
 
                 for (int i = 0; i < anzahlGesprächspartner; i++)
                 {
-                    this.itsPartner.Add(new CGesprächspartner(ref data, position));
+                    this.itsPartner.Add(new CGesprächspartner(ref data, position, DSAVersion.Schick));
                     position += 38;
                 }
 
@@ -223,16 +264,86 @@ namespace DSA_1_Editing_Tool.File_Loader
                 }
                 while (position < TLK.endOffset);
             }
+            private void loadDSA2_dialog(ref byte[] data, CDSAFileLoader.CFileSet TLK)
+            {
+                int position = TLK.startOffset;
+
+                Int16 numberDialogs = CHelpFunctions.byteArrayToInt16(ref data, position);
+                position += 2;
+
+                List<CGesprächspartner> partner = new List<CGesprächspartner>(numberDialogs);
+
+                for (int i = 0; i < numberDialogs; i++)
+                {
+                    partner.Add(new CGesprächspartner(ref data, position, DSAVersion.Schweif));
+                    position += 12;
+                }
+
+                
+
+                for (int i = 0; i < numberDialogs; i++)
+                {
+                    int numberLayouts = CHelpFunctions.byteArrayToInt16(ref data, position);
+                    position += 2;
+
+                    List<CDialogLayoutZeile> layout = new List<CDialogLayoutZeile>(numberLayouts);
+
+                    for (int j = 0; j < numberLayouts; j++)
+                    {
+                        layout.Add(new CDialogLayoutZeile(ref data, position));
+                        position += 8;
+                    }
+
+                    this.itsDSA2Dialog.Add(new KeyValuePair<CGesprächspartner, List<CDialogLayoutZeile>>(partner[i], layout));
+                }
+
+                position += 4;
+
+                do
+                {
+                    string text = CHelpFunctions.readDSAString(ref data, position, 0);
+                    this.itsTexte.Add(text);
+                    position += text.Length + 1;
+                }
+                while (position < TLK.endOffset);
+            }
+            private void loadDSA2_info(ref byte[] data, CDSAFileLoader.CFileSet TLK)
+            {
+            }
         }
         public class CGesprächspartner
         {
+            //DSA 1
             public UInt16 offsetStartLayoutZeile = 0;
             public UInt16 offsetStartString = 0;
             public string name = "";
             public UInt16 BildID_IN_HEADS_NVF = 0;
-            public byte[] unbekannteBytes = null;
 
-            public CGesprächspartner(ref byte[] data, Int32 position)
+            //---------------------------------
+            //DSA 2
+            public byte[] DSA2_unknownBytes = new Byte[] { 0, 0, 0, 0 };
+            public Int16 DSA2_IndexToText = 0;
+            public Int16 DSA2_IndexToName = 0;
+            public Int16 DSA2_PictureID = 0;
+            public Int16 DSA2_Unknown = 0;
+
+            //---------------------------------
+            public CGesprächspartner(ref byte[] data, Int32 position, DSAVersion version)
+            {
+                switch (version)
+                {
+                    case DSAVersion.Blade:
+                    case DSAVersion.Schick:
+                        this.loadDSA1(ref data, position);
+                        break;
+
+                    case DSAVersion.Schweif:
+                        this.loadDSA2(ref data, position);
+                        break;
+                }
+            }
+
+            private void loadDSA1(ref byte[] data, Int32 position)
             {
                 this.offsetStartLayoutZeile = (UInt16)(CHelpFunctions.byteArrayToInt32(ref data, position) / 8);
                 position += 4;
@@ -241,6 +352,21 @@ namespace DSA_1_Editing_Tool.File_Loader
                 this.name = CHelpFunctions.readDSAString(ref data, position, 30);
                 position += 30;
                 this.BildID_IN_HEADS_NVF = (UInt16)CHelpFunctions.byteArrayToInt16(ref data, position);
+            }
+            private void loadDSA2(ref byte[] data, Int32 position)
+            {
+                if ((position + 12) > data.Length)
+                    return;
+
+                this.DSA2_unknownBytes[0] = data[position];
+                this.DSA2_unknownBytes[1] = data[position + 1];
+                this.DSA2_unknownBytes[2] = data[position + 2];
+                this.DSA2_unknownBytes[3] = data[position + 3];
+
+                this.DSA2_IndexToText = CHelpFunctions.byteArrayToInt16(ref data, position + 4);
+                this.DSA2_IndexToName = CHelpFunctions.byteArrayToInt16(ref data, position + 6);
+                this.DSA2_PictureID = CHelpFunctions.byteArrayToInt16(ref data, position + 8);
+                this.DSA2_Unknown = CHelpFunctions.byteArrayToInt16(ref data, position + 10);
             }
         }
         public class CDialogLayoutZeile
