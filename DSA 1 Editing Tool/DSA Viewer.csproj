@@ -60,6 +60,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\TLK\TLK_DSA2_Dialog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TLK\TLK_DSA2_Dialog.designer.cs">
+      <DependentUpon>TLK_DSA2_Dialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TLK\TLK_DSA2_info.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TLK\TLK_DSA2_info.designer.cs">
+      <DependentUpon>TLK_DSA2_info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TLK\TLK_DSA_1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TLK\TLK_DSA_1.designer.cs">
+      <DependentUpon>TLK_DSA_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TLK\TLK_Form.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\TLK\TLK_Form.designer.cs">
+      <DependentUpon>TLK_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="include\config.cs" />
     <Compile Include="include\Debugger.cs" />
     <Compile Include="include\DSAFileLoader.cs" />
@@ -91,6 +115,18 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TLK\TLK_DSA2_Dialog.resx">
+      <DependentUpon>TLK_DSA2_Dialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TLK\TLK_DSA2_info.resx">
+      <DependentUpon>TLK_DSA2_info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TLK\TLK_DSA_1.resx">
+      <DependentUpon>TLK_DSA_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TLK\TLK_Form.resx">
+      <DependentUpon>TLK_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
