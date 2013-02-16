@@ -13,7 +13,6 @@ namespace DSA_1_Editing_Tool.Forms.TLK
     //public partial class TLK_DSA2_Dialog : UserControl
     public partial class TLK_DSA2_Dialog : TLK_Form
     {
-
         private CDialoge _dialog = null;
         private CBilder _bilder = null;
 
@@ -42,7 +41,9 @@ namespace DSA_1_Editing_Tool.Forms.TLK
             for (int i = 0; i < dialog.itsDSA2Dialog.Count; i++)
             {
                 int value = dialog.itsDSA2Dialog[i].Key.DSA2_IndexToName;
-                if (value < dialog.itsTexte.Count)
+                if (value == -1)
+                    this.Dialoge_dgvGesprächspartner.Rows.Add(i, "Fehler(-1)");
+                else if (value < dialog.itsTexte.Count)
                     this.Dialoge_dgvGesprächspartner.Rows.Add(i, dialog.itsTexte[value] + "(" + value.ToString() + ")");
                 else
                     this.Dialoge_dgvGesprächspartner.Rows.Add(i, "???(" + value.ToString() + ")" );
@@ -62,34 +63,50 @@ namespace DSA_1_Editing_Tool.Forms.TLK
         {
             try
             {
-                //DataGridViewSelectedRowCollection selectedPartner = Dialoge_dgvGesprächspartner.SelectedRows;
+                DataGridViewSelectedRowCollection selectedPartner = Dialoge_dgvGesprächspartner.SelectedRows;
 
-                //if (this.selectedFileIndex < 0 || selectedPartner.Count <= 0)
-                //{
-                //    this.Dialoge_btStartTestDialog.Enabled = false;
-                //    this.disableTestDialoge();
-                //    return;
-                //}
+                if (this.selectedFileIndex < 0 || selectedPartner.Count <= 0)
+                {
+                    this.Dialoge_btStartTestDialog.Enabled = false;
+                    this.disableTestDialoge();
+                    return;
+                }
 
-                //int index_1 = this.selectedFileIndex;
-                //int index_2 = Convert.ToInt32(selectedPartner[0].Cells[0].Value);
+                int index_1 = this.selectedFileIndex;
+                int index_2 = Convert.ToInt32(selectedPartner[0].Cells[0].Value);
 
-                //if (index_1 >= this._dialog.itsDialoge.Count || index_2 >= this._dialog.itsDialoge[index_1].Value.itsPartner.Count)
-                //{
-                //    this.Dialoge_btStartTestDialog.Enabled = false;
-                //    this.disableTestDialoge();
-                //    return;
-                //}
+                if (index_1 >= this._dialog.itsDialoge.Count || index_2 >= this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog.Count)
+                {
+                    this.Dialoge_btStartTestDialog.Enabled = false;
+                    this.disableTestDialoge();
+                    return;
+                }
 
-                //CDialoge.CGesprächspartner partner = this._dialog.itsDialoge[index_1].Value.itsPartner[index_2];
-                //this.Dialoge_pictureBox.BackgroundImage = this._bilder.getIn_HeadsImageByID(partner.BildID_IN_HEADS_NVF);
+                CDialoge.CDialog dialog = this._dialog.itsDialoge[index_1].Value;
+                CDialoge.CGesprächspartner partner = dialog.itsDSA2Dialog[index_2].Key;
 
-                //this.Dialoge_Gesprächspartner_tbBildID.Text = partner.BildID_IN_HEADS_NVF.ToString();
-                //this.Dialoge_Gesprächspartner_tbIndexStartLayout.Text = partner.offsetStartLayoutZeile.ToString();
-                //this.Dialoge_Gesprächspartner_tbIndexStartText.Text = partner.offsetStartString.ToString();
-                //this.Dialoge_Gesprächspartner_tbName.Text = partner.name;
+                this.Dialoge_dgvLayout.Rows.Clear();
+                for (int i = 0; i < dialog.itsDSA2Dialog[index_2].Value.Count; i++)
+                {
+                    this.Dialoge_dgvLayout.Rows.Add((object)i); //als object konvertieren um die richtige add Funktion zu benutzen
+                }
 
-                //this.Dialoge_btStartTestDialog.Enabled = true;
+                this.Dialoge_pictureBox.BackgroundImage = this._bilder.getHeadsImageByID_DSA2(partner.DSA2_PictureID);
+                this.Dialoge_Gesprächspartner_Bytes.Text = BitConverter.ToString(partner.DSA2_unknownBytes);
+                this.Dialoge_Gesprächspartner_tbBildID.Text = partner.DSA2_PictureID.ToString();
+                this.Dialoge_Gesprächspartner_tbIndexStartText.Text = partner.DSA2_IndexToText.ToString();
+                
+                int value = dialog.itsDSA2Dialog[index_2].Key.DSA2_IndexToName;
+                if (value == -1)
+                    this.Dialoge_Gesprächspartner_tbName.Text = "Fehler(-1)";
+                else if (value < dialog.itsTexte.Count)
+                    this.Dialoge_Gesprächspartner_tbName.Text = dialog.itsTexte[value] + "(" + value.ToString() + ")";
+                else
+                    this.Dialoge_Gesprächspartner_tbName.Text = "???(" + value.ToString() + ")";
+
+                this.Dialoge_Gesprächspartner_tbUnknown.Text = partner.DSA2_Unknown.ToString();
+
+                this.Dialoge_btStartTestDialog.Enabled = true;
 
             }
             catch (SystemException)
@@ -103,7 +120,7 @@ namespace DSA_1_Editing_Tool.Forms.TLK
             {
                 DataGridViewSelectedRowCollection selectedText = Dialoge_dgvTexte.SelectedRows;
 
-                if (this.selectedFileIndex < 0 || selectedText.Count <= 0)
+                if (this.selectedFileIndex < 0 || this.selectedFileIndex >= this._dialog.itsDialoge.Count || selectedText.Count <= 0)
                     return;
 
                 int index_1 = this.selectedFileIndex;
@@ -124,18 +141,22 @@ namespace DSA_1_Editing_Tool.Forms.TLK
         {
             try
             {
+                DataGridViewSelectedRowCollection selectedPartner = Dialoge_dgvGesprächspartner.SelectedRows;
                 DataGridViewSelectedRowCollection selectedLayout = Dialoge_dgvLayout.SelectedRows;
 
-                if (this.selectedFileIndex < 0 || selectedLayout.Count <= 0)
+                if (this.selectedFileIndex < 0 || selectedLayout.Count <= 0 || selectedPartner.Count <= 0)
                     return;
 
                 int index_1 = this.selectedFileIndex;
-                int index_2 = Convert.ToInt32(selectedLayout[0].Cells[0].Value);
+                int index_2 = Convert.ToInt32(selectedPartner[0].Cells[0].Value); 
+                int index_3 = Convert.ToInt32(selectedLayout[0].Cells[0].Value);
 
-                if (index_1 >= this._dialog.itsDialoge.Count || index_2 >= this._dialog.itsDialoge[index_1].Value.itsDialogZeile.Count)
+                if (index_1 >= this._dialog.itsDialoge.Count || 
+                    index_2 >= this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog.Count || 
+                    index_3 >= this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog[index_2].Value.Count)
                     return;
 
-                CDialoge.CDialogLayoutZeile layout = this._dialog.itsDialoge[index_1].Value.itsDialogZeile[index_2];
+                CDialoge.CDialogLayoutZeile layout = this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog[index_2].Value[index_3];
 
                 this.Dialoge_Layout_tbTextIndex.Text = layout.offsetHaupttext.ToString();
                 this.Dialoge_Layout_tbUnbekannt.Text = layout.unbekannterWert.ToString();
@@ -167,24 +188,19 @@ namespace DSA_1_Editing_Tool.Forms.TLK
         {
             try
             {
-                int index_1;
-                int index_2;
-
                 DataGridViewSelectedRowCollection selectedPartner = Dialoge_dgvGesprächspartner.SelectedRows;
+                DataGridViewSelectedRowCollection selectedLayout = Dialoge_dgvLayout.SelectedRows;
 
-                if (this.selectedFileIndex < 0 || selectedPartner.Count <= 0)
-                {
-                    this.Dialoge_btStartTestDialog.Enabled = false;
-                    this.disableTestDialoge();
+                if (this.selectedFileIndex < 0 || selectedLayout.Count <= 0 || selectedPartner.Count <= 0)
                     return;
-                }
 
-                index_1 = this.selectedFileIndex;
-                index_2 = Convert.ToInt32(selectedPartner[0].Cells[0].Value);
+                int index_1 = this.selectedFileIndex;
+                int index_2 = Convert.ToInt32(selectedPartner[0].Cells[0].Value);
+                int index_3 = Convert.ToInt32(selectedLayout[0].Cells[0].Value);
 
-
-
-                if (index_1 >= this._dialog.itsDialoge.Count || index_2 >= this._dialog.itsDialoge[index_1].Value.itsPartner.Count)
+                if (index_1 >= this._dialog.itsDialoge.Count ||
+                    index_2 >= this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog.Count ||
+                    index_3 >= this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog[index_2].Value.Count)
                 {
                     this.Dialoge_btStartTestDialog.Enabled = false;
                     this.disableTestDialoge();
@@ -192,16 +208,16 @@ namespace DSA_1_Editing_Tool.Forms.TLK
                 }
 
                 CDialoge.CDialog dialog = this._dialog.itsDialoge[index_1].Value;
-                CDialoge.CGesprächspartner partner = this._dialog.itsDialoge[index_1].Value.itsPartner[index_2];
+                CDialoge.CGesprächspartner partner = this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog[index_2].Key;
 
-                if (partner.offsetStartString == 255 || partner.offsetStartString >= dialog.itsTexte.Count)
+                if (partner.offsetStartString == 255 || partner.DSA2_IndexToText >= dialog.itsTexte.Count)
                     this.Dialoge_rtbTestDialog.Text = "";
                 else
                     this.Dialoge_rtbTestDialog.Text = dialog.itsTexte[partner.offsetStartString];
 
                 this.currentDialog = dialog;
-                this.offsetCurrentLayout = partner.offsetStartLayoutZeile;
-                this.offsetCurrentText = partner.offsetStartString;
+                this.currentLayoutLines = this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog[index_2].Value;
+                this.offsetCurrentText = partner.DSA2_IndexToText;
 
                 this.loadLayoutForTestDialog(0);
             }
@@ -212,8 +228,8 @@ namespace DSA_1_Editing_Tool.Forms.TLK
             }
         }
         private CDialoge.CDialog currentDialog = null;
+        private List<CDialoge.CDialogLayoutZeile> currentLayoutLines = null;
         private CDialoge.CDialogLayoutZeile currentLayout = null;
-        private int offsetCurrentLayout = 0;
         private int offsetCurrentText = 0;
         private void loadLayoutForTestDialog(int layoutIndex)
         {
@@ -228,16 +244,14 @@ namespace DSA_1_Editing_Tool.Forms.TLK
                 return;
             }
 
-            layoutIndex += offsetCurrentLayout;
-
-            if (currentDialog == null || layoutIndex >= currentDialog.itsDialogZeile.Count)
+            if (currentDialog == null || layoutIndex >= currentLayoutLines.Count)
             {
                 this.Dialoge_rtbTestDialog.Text = "Fehler beim laden des Dialoges";
                 this.disableTestDialoge();
                 return;
             }
 
-            this.currentLayout = currentDialog.itsDialogZeile[layoutIndex];
+            this.currentLayout = currentLayoutLines[layoutIndex];
 
             this.Dialoge_dgvLayout.Rows[layoutIndex].Selected = true;
 
