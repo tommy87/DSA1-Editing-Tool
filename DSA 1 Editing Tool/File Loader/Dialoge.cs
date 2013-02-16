@@ -49,21 +49,21 @@ namespace DSA_1_Editing_Tool.File_Loader
                 string cap = "dlg" + dlgstore.Key.Substring(0, dlgstore.Key.Length - 4).ToLower();
                 CDebugger.addDebugLine("initial "+unused.Count.ToString()+" Texte in "+cap+" vorhanden");
 
-                for (i = 0; i < dlg.itsPartner.Count; i++ )
+                for (i = 0; i < dlg.itsDSA1Partner.Count; i++ )
                 {
-                    CGesprächspartner p = dlg.itsPartner[i];
+                    CGesprächspartner p = dlg.itsDSA1Partner[i];
                     int layoutstart = p.offsetStartLayoutZeile;
                     int stringstart = p.offsetStartString;
 
                     int layoutende;
-                    if( i == dlg.itsPartner.Count - 1 )
-                        layoutende = dlg.itsDialogZeile.Count;
+                    if( i == dlg.itsDSA1Partner.Count - 1 )
+                        layoutende = dlg.itsDSA1DialogZeile.Count;
                     else
-                        layoutende = dlg.itsPartner[i+1].offsetStartLayoutZeile;
+                        layoutende = dlg.itsDSA1Partner[i+1].offsetStartLayoutZeile;
 
                     for( j = layoutstart; j < layoutende; j++ )
                     {
-                        CDialogLayoutZeile lay = dlg.itsDialogZeile[j];
+                        CDialogLayoutZeile lay = dlg.itsDSA1DialogZeile[j];
                         // CDebugger.addDebugLine("Entferne " + lay.Antwort1.ToString());
                         try { unused.Remove(lay.Antwort1 + stringstart); }
                         catch (Exception) { }
@@ -120,9 +120,9 @@ namespace DSA_1_Editing_Tool.File_Loader
                 string cap = dlgstore.Key.Substring(0, dlgstore.Key.Length - 4).ToLower();
                 // CDebugger.addDebugLine("initial " + unused.Count.ToString() + " Texte in " + cap + " vorhanden");
 
-                for (i = 0; i < dlg.itsPartner.Count; i++)
+                for (i = 0; i < dlg.itsDSA1Partner.Count; i++)
                 {
-                    CGesprächspartner p = dlg.itsPartner[i];
+                    CGesprächspartner p = dlg.itsDSA1Partner[i];
                     wp.WriteStartElement("partner");
 
                     string pid = cap + "_" + (i+1).ToString();
@@ -135,14 +135,14 @@ namespace DSA_1_Editing_Tool.File_Loader
                     int stringstart = p.offsetStartString;
 
                     int layoutende;
-                    if (i == dlg.itsPartner.Count - 1)
-                        layoutende = dlg.itsDialogZeile.Count;
+                    if (i == dlg.itsDSA1Partner.Count - 1)
+                        layoutende = dlg.itsDSA1DialogZeile.Count;
                     else
-                        layoutende = dlg.itsPartner[i + 1].offsetStartLayoutZeile;
+                        layoutende = dlg.itsDSA1Partner[i + 1].offsetStartLayoutZeile;
 
                     for (j = layoutstart; j < layoutende; j++)
                     {
-                        CDialogLayoutZeile lay = dlg.itsDialogZeile[j];
+                        CDialogLayoutZeile lay = dlg.itsDSA1DialogZeile[j];
 
                         wr.WriteStartElement("text");
                         wr.WriteElementString("partner", pid);
@@ -188,8 +188,8 @@ namespace DSA_1_Editing_Tool.File_Loader
             public List<string> itsTexte = new List<string>();
 
             //DSA 1 
-            public List<CGesprächspartner> itsPartner = new List<CGesprächspartner>();
-            public List<CDialogLayoutZeile> itsDialogZeile = new List<CDialogLayoutZeile>();
+            public List<CGesprächspartner> itsDSA1Partner = new List<CGesprächspartner>();
+            public List<CDialogLayoutZeile> itsDSA1DialogZeile = new List<CDialogLayoutZeile>();
 
             //DSA 2
             public bool isDSA2InfoDialog = false;
@@ -201,8 +201,8 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             public CDialog(ref byte[] data, CDSAFileLoader.CFileSet TLK, DSAVersion version)
             {
-                this.itsDialogZeile.Clear();
-                this.itsPartner.Clear();
+                this.itsDSA1DialogZeile.Clear();
+                this.itsDSA1Partner.Clear();
                 this.itsTexte.Clear();
 
                 if (data == null || TLK == null)
@@ -244,13 +244,13 @@ namespace DSA_1_Editing_Tool.File_Loader
 
                 for (int i = 0; i < anzahlGesprächspartner; i++)
                 {
-                    this.itsPartner.Add(new CGesprächspartner(ref data, position, DSAVersion.Schick));
+                    this.itsDSA1Partner.Add(new CGesprächspartner(ref data, position, DSAVersion.Schick));
                     position += 38;
                 }
 
                 while (position < offsetTextBlock)
                 {
-                    this.itsDialogZeile.Add(new CDialogLayoutZeile(ref data, position));
+                    this.itsDSA1DialogZeile.Add(new CDialogLayoutZeile(ref data, position));
                     position += 8;
                 }
 
@@ -309,6 +309,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
             private void loadDSA2_info(ref byte[] data, CDSAFileLoader.CFileSet TLK)
             {
+                this.isDSA2InfoDialog = true;
             }
         }
         public class CGesprächspartner

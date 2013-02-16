@@ -377,7 +377,7 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             return null;
         }
-        public Image getIn_HeadsImageByID(Int32 ImageID)
+        public Image getIn_HeadsImageByID_DSA1(Int32 ImageID)
         {
             if (ImageID < 0)
                 return null;
@@ -385,6 +385,30 @@ namespace DSA_1_Editing_Tool.File_Loader
             foreach (KeyValuePair<string, List<Image>> pair in itsImages)
             {
                 if (pair.Key == "IN_HEADS.NVF" && ImageID < pair.Value.Count)
+                {
+                    return new Bitmap(pair.Value[ImageID]);
+                }
+            }
+
+            return null;
+        }
+        public Image getHeadsImageByID_DSA2(Int32 ImageID)
+        {
+            if (ImageID < 0)
+                return null;
+
+            // CHEADS und HEADS werden nur in DSA 2 benutzt
+            foreach (KeyValuePair<string, List<Image>> pair in itsImages)
+            {
+                if (pair.Key == "CHEADS.NVF" && ImageID < pair.Value.Count)
+                {
+                    return new Bitmap(pair.Value[ImageID]);
+                }
+            }
+
+            foreach (KeyValuePair<string, List<Image>> pair in itsImages)
+            {
+                if (pair.Key == "HEADS.NVF"&& ImageID < pair.Value.Count)
                 {
                     return new Bitmap(pair.Value[ImageID]);
                 }
