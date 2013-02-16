@@ -326,7 +326,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             public Int16 DSA2_IndexToText = 0;
             public Int16 DSA2_IndexToName = 0;
             public Int16 DSA2_PictureID = 0;
-            public Int16 DSA2_Unknown = 0;
+            public Int16 DSA2_StartLayout = 0;
 
             //---------------------------------
             public CGesprächspartner(ref byte[] data, Int32 position, DSAVersion version)
@@ -367,7 +367,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                 this.DSA2_IndexToText = CHelpFunctions.byteArrayToInt16(ref data, position + 4);
                 this.DSA2_IndexToName = CHelpFunctions.byteArrayToInt16(ref data, position + 6);
                 this.DSA2_PictureID = CHelpFunctions.byteArrayToInt16(ref data, position + 8);
-                this.DSA2_Unknown = CHelpFunctions.byteArrayToInt16(ref data, position + 10);
+                this.DSA2_StartLayout = CHelpFunctions.byteArrayToInt16(ref data, position + 10);
             }
         }
         public class CDialogLayoutZeile

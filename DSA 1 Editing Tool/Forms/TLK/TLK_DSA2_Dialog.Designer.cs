@@ -473,9 +473,9 @@
             this.label93.AutoSize = true;
             this.label93.Location = new System.Drawing.Point(8, 180);
             this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(63, 13);
+            this.label93.Size = new System.Drawing.Size(94, 13);
             this.label93.TabIndex = 6;
-            this.label93.Text = "Unbekannt:";
+            this.label93.Text = "start Layout Index:";
             // 
             // Dialoge_Gesprächspartner_tbName
             // 

@@ -104,7 +104,7 @@ namespace DSA_1_Editing_Tool.Forms.TLK
                 else
                     this.Dialoge_Gesprächspartner_tbName.Text = "???(" + value.ToString() + ")";
 
-                this.Dialoge_Gesprächspartner_tbUnknown.Text = partner.DSA2_Unknown.ToString();
+                this.Dialoge_Gesprächspartner_tbUnknown.Text = partner.DSA2_StartLayout.ToString();
 
                 this.Dialoge_btStartTestDialog.Enabled = true;
 
@@ -196,11 +196,9 @@ namespace DSA_1_Editing_Tool.Forms.TLK
 
                 int index_1 = this.selectedFileIndex;
                 int index_2 = Convert.ToInt32(selectedPartner[0].Cells[0].Value);
-                int index_3 = Convert.ToInt32(selectedLayout[0].Cells[0].Value);
 
                 if (index_1 >= this._dialog.itsDialoge.Count ||
-                    index_2 >= this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog.Count ||
-                    index_3 >= this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog[index_2].Value.Count)
+                    index_2 >= this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog.Count)
                 {
                     this.Dialoge_btStartTestDialog.Enabled = false;
                     this.disableTestDialoge();
@@ -209,6 +207,13 @@ namespace DSA_1_Editing_Tool.Forms.TLK
 
                 CDialoge.CDialog dialog = this._dialog.itsDialoge[index_1].Value;
                 CDialoge.CGesprächspartner partner = this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog[index_2].Key;
+
+                if (partner.DSA2_StartLayout >= this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog[index_2].Value.Count)
+                {
+                    this.Dialoge_btStartTestDialog.Enabled = false;
+                    this.disableTestDialoge();
+                    return;
+                }      
 
                 if (partner.offsetStartString == 255 || partner.DSA2_IndexToText >= dialog.itsTexte.Count)
                     this.Dialoge_rtbTestDialog.Text = "";
@@ -219,7 +224,7 @@ namespace DSA_1_Editing_Tool.Forms.TLK
                 this.currentLayoutLines = this._dialog.itsDialoge[index_1].Value.itsDSA2Dialog[index_2].Value;
                 this.offsetCurrentText = partner.DSA2_IndexToText;
 
-                this.loadLayoutForTestDialog(0);
+                this.loadLayoutForTestDialog(partner.DSA2_StartLayout);
             }
             catch (SystemException)
             {
