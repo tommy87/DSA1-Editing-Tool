@@ -392,7 +392,7 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             return null;
         }
-        public Image getHeadsImageByID_DSA2(Int32 ImageID)
+        public Image getHeadsAndCHeadsImageByID_DSA2(Int32 ImageID)
         {
             if (ImageID < 0)
                 return null;
@@ -409,6 +409,21 @@ namespace DSA_1_Editing_Tool.File_Loader
             foreach (KeyValuePair<string, List<Image>> pair in itsImages)
             {
                 if (pair.Key == "HEADS.NVF"&& ImageID < pair.Value.Count)
+                {
+                    return new Bitmap(pair.Value[ImageID]);
+                }
+            }
+
+            return null;
+        }
+        public Image getHeadsImageByID_DSA2(Int32 ImageID)
+        {
+            if (ImageID < 0)
+                return null;
+
+            foreach (KeyValuePair<string, List<Image>> pair in itsImages)
+            {
+                if (pair.Key == "HEADS.NVF" && ImageID < pair.Value.Count)
                 {
                     return new Bitmap(pair.Value[ImageID]);
                 }

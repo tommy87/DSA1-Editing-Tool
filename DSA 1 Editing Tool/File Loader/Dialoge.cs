@@ -4,6 +4,8 @@ using System.Text;
 using System.Xml;
 
 using System.Data;
+using System.IO;
+using System.Text.RegularExpressions;
 
 namespace DSA_1_Editing_Tool.File_Loader
 {
@@ -196,6 +198,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             //DSA 2 - Dialog
             public List<KeyValuePair<CGesprächspartner, List<CDialogLayoutZeile>>> itsDSA2Dialog = new List<KeyValuePair<CGesprächspartner, List<CDialogLayoutZeile>>>();
             //DSA 2 - info 
+            public DSA2InfoDialog itsDSA2InfoDialog = new DSA2InfoDialog();
 
             //-----------------------------------------
 
@@ -309,9 +312,188 @@ namespace DSA_1_Editing_Tool.File_Loader
             }
             private void loadDSA2_info(ref byte[] data, CDSAFileLoader.CFileSet TLK)
             {
+                int length = TLK.endOffset - TLK.startOffset;
+                if (length <= 0)
+                {
+                    CDebugger.addErrorLine("Fehler beim Laden des Info Dialogs " + TLK.filename + " (offset Problem)");
+                    return;
+                }
+
+                Byte[] bytes = new byte[TLK.endOffset - TLK.startOffset];
+                Array.Copy(data, TLK.startOffset, bytes, 0, length);
+
+                DSA2InfoDialog infoDialog = new DSA2InfoDialog();
+                DSA2InfoDialog.TOPIC topic = null;
+
+                try
+                {
+                    using (StreamReader reader = new StreamReader(new MemoryStream(bytes)))
+                    {
+                        string line;
+                        bool currentlyReadingATopic = false;
+
+                        while ((line = reader.ReadLine()) != null)
+                        {
+                            string[] values;
+                            if (line.Contains("#"))
+                                values = getSubStringsFromStringLine(line.Substring(0, line.IndexOf('#')));
+                            else
+                                values = getSubStringsFromStringLine(line);
+
+                            if (values.Length <= 0)
+                                continue;
+
+                            if (currentlyReadingATopic)
+                            {
+                                if (values[0] == "TOPIC")
+                                {
+                                    if (topic != null)
+                                        infoDialog.itsTopics.Add(topic);
+
+                                    topic = new DSA2InfoDialog.TOPIC();
+                                    topic.NAME = values[1];
+                                }
+                                else if (values[0] == "END")
+                                {
+                                    if (topic != null)
+                                        infoDialog.itsTopics.Add(topic);
+
+                                    topic = null;
+                                    break;
+                                }
+                                else if (values.Length == 3)
+                                {
+                                    DSA2InfoDialog.TOPIC.TOPICLine topicLine = new DSA2InfoDialog.TOPIC.TOPICLine();
+                                    topicLine.value_1 = Convert.ToInt32(values[0]);
+                                    topicLine.valie_2 = Convert.ToInt32(values[1]);
+                                    topicLine.text = values[2];
+
+                                    topic.itsTopics.Add(topicLine);
+                                }
+                                else if (values.Length == 1)
+                                {
+                                    topic.itsTopics[topic.itsTopics.Count - 1].text += Environment.NewLine + values[0];
+                                }
+                                else
+                                {
+                                    CDebugger.addErrorLine("Fehler beim laden des Dialogs " + TLK.filename + " (Unerwarteter Zustand beim lesen eines TOPICS)");
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                if (values[0] == "PIC")
+                                {
+                                    infoDialog.PIC = Convert.ToInt32(values[1]);
+                                }
+                                else if (values[0] == "TOLERANCE")
+                                {
+                                    infoDialog.TOLERANCE = Convert.ToInt32(values[1]);
+                                }
+                                else if (values[0] == "NAME")
+                                {
+                                    infoDialog.Name = values[1];
+                                }
+                                else if (values[0] == "TOPIC")
+                                {
+                                    currentlyReadingATopic = true;
+                                    if (topic != null)
+                                        infoDialog.itsTopics.Add(topic);
+
+                                    topic = new DSA2InfoDialog.TOPIC();
+                                    topic.NAME = values[1];
+                                }
+                                else
+                                {
+                                    CDebugger.addErrorLine("Fehler beim laden des Dialogs " + TLK.filename + " (Unbekannte Konstante " + values[0] + ")");
+                                    break;
+                                }
+
+                            }
+                        }
+                        if (topic != null)
+                            infoDialog.itsTopics.Add(topic);
+
+                        this.itsDSA2InfoDialog = infoDialog;
+                    }
+                }
+                catch (SystemException e)
+                {
+                    CDebugger.addErrorLine("Fehler beim Laden des Dialogs " + TLK.filename + Environment.NewLine + e.ToString());
+                }
+
                 this.isDSA2InfoDialog = true;
             }
+
+            static Regex regEx = new Regex("[A-Za-z0-9_äÄöÖüÜß]");
+            private static string[] getSubStringsFromStringLine(string line)
+            {
+                List<string> subStrings = new List<string>(3);
+
+                int start = 0;
+                int length = 0;
+
+                for (int position = 0; position < line.Length; position++)
+                {
+                    if (line[position] == '/')
+                        position++; //zählt insgessamt 2 Zeichen weiter
+                    else if (line[position] == '"' && line.Length > (position + 1))
+                    {
+                        position++;
+
+                        start = position;
+                        length = 0;
+
+                        do
+                        {
+                            position++;
+                            length++;
+                        }
+                        while (position < line.Length && line[position] != '"');
+
+                        subStrings.Add(line.Substring(start, length));
+                    }
+                    else if (regEx.IsMatch(line[position].ToString()))
+                    {
+                        start = position;
+                        length = 0;
+                        do
+                        {
+                            position++;
+                            length++;
+                        }
+                        while (position < line.Length && regEx.IsMatch(line[position].ToString()));
+
+                        subStrings.Add(line.Substring(start, length));
+                    }
+                }
+
+                return subStrings.ToArray();
+            }
         }
+
+        public class DSA2InfoDialog
+        {
+            public int PIC = 0;
+            public int TOLERANCE = 0;
+            public string Name = String.Empty;
+
+            public List<TOPIC> itsTopics = new List<TOPIC>();
+
+            public class TOPIC
+            {
+                public string NAME = String.Empty;
+                public List<TOPICLine> itsTopics = new List<TOPICLine>();
+
+                public class TOPICLine
+                {
+                    public int value_1 = 0;
+                    public int valie_2 = 0;
+                    public string text = String.Empty;
+                }
+            }
+        }
+
         public class CGesprächspartner
         {
             //DSA 1
@@ -326,7 +508,7 @@ namespace DSA_1_Editing_Tool.File_Loader
             public Int16 DSA2_IndexToText = 0;
             public Int16 DSA2_IndexToName = 0;
             public Int16 DSA2_PictureID = 0;
-            public Int16 DSA2_StartLayout = 0;
+            public Int16 DSA2_Unknown = 0;
 
             //---------------------------------
             public CGesprächspartner(ref byte[] data, Int32 position, DSAVersion version)
@@ -367,7 +549,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                 this.DSA2_IndexToText = CHelpFunctions.byteArrayToInt16(ref data, position + 4);
                 this.DSA2_IndexToName = CHelpFunctions.byteArrayToInt16(ref data, position + 6);
                 this.DSA2_PictureID = CHelpFunctions.byteArrayToInt16(ref data, position + 8);
-                this.DSA2_StartLayout = CHelpFunctions.byteArrayToInt16(ref data, position + 10);
+                this.DSA2_Unknown = CHelpFunctions.byteArrayToInt16(ref data, position + 10);
             }
         }
         public class CDialogLayoutZeile

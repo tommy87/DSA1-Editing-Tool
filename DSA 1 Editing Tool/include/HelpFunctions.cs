@@ -32,7 +32,7 @@ namespace DSA_1_Editing_Tool
 
             return s;
         }
-        private static string getCharFromData(byte data)
+        public static string getCharFromData(byte data)
         {
             string s = "";
             switch (data)
@@ -323,9 +323,10 @@ namespace DSA_1_Editing_Tool
                     }
                 }
             }
-            catch (SystemException e)
+            catch (SystemException)
             {
-                throw e;
+                //throw e;
+                return null;
             }
 
 
