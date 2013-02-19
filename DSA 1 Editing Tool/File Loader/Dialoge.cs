@@ -406,7 +406,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                                 else
                                 {
                                     CDebugger.addErrorLine("Fehler beim laden des Dialogs " + TLK.filename + " (Unbekannte Konstante " + values[0] + ")");
-                                    break;
+                                    continue;
                                 }
 
                             }

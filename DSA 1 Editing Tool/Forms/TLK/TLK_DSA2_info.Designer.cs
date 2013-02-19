@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Allgemein_pB_DialogPartner = new System.Windows.Forms.PictureBox();
             this.tB_Allgemein_NAME = new System.Windows.Forms.TextBox();
@@ -40,9 +41,16 @@
             this.dgvTOPICs = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dGV_SelectedTOPIC = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rTB_Text = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Allgemein_pB_DialogPartner)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTOPICs)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_SelectedTOPIC)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -136,13 +144,14 @@
             this.dgvTOPICs.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTOPICs.Size = new System.Drawing.Size(166, 350);
             this.dgvTOPICs.TabIndex = 8;
+            this.dgvTOPICs.SelectionChanged += new System.EventHandler(this.dgvTOPICs_SelectionChanged);
             // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridViewTextBoxColumn13.HeaderText = "#";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
@@ -155,10 +164,75 @@
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             this.dataGridViewTextBoxColumn14.ReadOnly = true;
             // 
+            // dGV_SelectedTOPIC
+            // 
+            this.dGV_SelectedTOPIC.AllowUserToAddRows = false;
+            this.dGV_SelectedTOPIC.AllowUserToDeleteRows = false;
+            this.dGV_SelectedTOPIC.AllowUserToResizeColumns = false;
+            this.dGV_SelectedTOPIC.AllowUserToResizeRows = false;
+            this.dGV_SelectedTOPIC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_SelectedTOPIC.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.Column1,
+            this.Column2});
+            this.dGV_SelectedTOPIC.Location = new System.Drawing.Point(198, 127);
+            this.dGV_SelectedTOPIC.MultiSelect = false;
+            this.dGV_SelectedTOPIC.Name = "dGV_SelectedTOPIC";
+            this.dGV_SelectedTOPIC.ReadOnly = true;
+            this.dGV_SelectedTOPIC.RowHeadersVisible = false;
+            this.dGV_SelectedTOPIC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGV_SelectedTOPIC.Size = new System.Drawing.Size(545, 350);
+            this.dGV_SelectedTOPIC.TabIndex = 9;
+            this.dGV_SelectedTOPIC.SelectionChanged += new System.EventHandler(this.dGV_SelectedTOPIC_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridViewTextBoxColumn1.HeaderText = "#";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Value 1";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 70;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Value 2";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 70;
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "Antwort";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // rTB_Text
+            // 
+            this.rTB_Text.Location = new System.Drawing.Point(268, 15);
+            this.rTB_Text.Name = "rTB_Text";
+            this.rTB_Text.Size = new System.Drawing.Size(475, 106);
+            this.rTB_Text.TabIndex = 10;
+            this.rTB_Text.Text = "";
+            // 
             // TLK_DSA2_info
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.rTB_Text);
+            this.Controls.Add(this.dGV_SelectedTOPIC);
             this.Controls.Add(this.dgvTOPICs);
             this.Controls.Add(this.groupBox1);
             this.Name = "TLK_DSA2_info";
@@ -167,6 +241,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Allgemein_pB_DialogPartner)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTOPICs)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_SelectedTOPIC)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -184,5 +259,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.PictureBox Allgemein_pB_DialogPartner;
+        private System.Windows.Forms.DataGridView dGV_SelectedTOPIC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.RichTextBox rTB_Text;
     }
 }

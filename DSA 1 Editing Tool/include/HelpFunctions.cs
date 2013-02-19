@@ -32,7 +32,7 @@ namespace DSA_1_Editing_Tool
 
             return s;
         }
-        public static string getCharFromData(byte data)
+        private static string getCharFromData(byte data)
         {
             string s = "";
             switch (data)

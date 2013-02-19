@@ -91,7 +91,11 @@ namespace DSA_1_Editing_Tool.Forms.TLK
                     this.Dialoge_dgvLayout.Rows.Add((object)i); //als object konvertieren um die richtige add Funktion zu benutzen
                 }
 
-                this.Dialoge_pictureBox.BackgroundImage = this._bilder.getHeadsAndCHeadsImageByID_DSA2(partner.DSA2_PictureID);
+                if (this._dialog.itsDialoge[index_1].Key == "BLUT.TLK")
+                    this.Dialoge_pictureBox.BackgroundImage = this._bilder.getCHeadsImageByID_DSA2(partner.DSA2_PictureID);
+                else
+                    this.Dialoge_pictureBox.BackgroundImage = this._bilder.getHeadsImageByID_DSA2(partner.DSA2_PictureID);
+
                 this.Dialoge_Gesprächspartner_Bytes.Text = BitConverter.ToString(partner.DSA2_unknownBytes);
                 this.Dialoge_Gesprächspartner_tbBildID.Text = partner.DSA2_PictureID.ToString();
                 this.Dialoge_Gesprächspartner_tbIndexStartText.Text = partner.DSA2_IndexToText.ToString();
