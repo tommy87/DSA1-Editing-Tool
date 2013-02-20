@@ -319,8 +319,48 @@ namespace DSA_1_Editing_Tool.File_Loader
                     return;
                 }
 
+                
                 Byte[] bytes = new byte[TLK.endOffset - TLK.startOffset];
                 Array.Copy(data, TLK.startOffset, bytes, 0, length);
+                List<byte> converted = new List<byte>(bytes);
+
+                for (int i = bytes.Length - 1; i >= 0; i--)
+                {
+                    switch (bytes[i])
+                    {
+                        case 129:
+                            converted.RemoveAt(i);
+                            converted.InsertRange(i, new Byte[] { 117, 101 });    //ü -> ue
+                            break;
+                        case 132:
+                            converted.RemoveAt(i);
+                            converted.InsertRange(i, new Byte[] { 97, 101 });    //ä -> ae
+                            break;
+                        case 142:
+                            converted.RemoveAt(i);
+                            converted.InsertRange(i, new Byte[] { 64, 69 });    //Ä -> AE
+                            break;
+                        case 148:
+                            converted.RemoveAt(i);
+                            converted.InsertRange(i, new Byte[] { 111, 101 });    //ö -> oe
+                            break;
+                        case 153:
+                            converted.RemoveAt(i);
+                            converted.InsertRange(i, new Byte[] { 79, 69 });    //Ö -> OE
+                            break;
+                        case 154:
+                            converted.RemoveAt(i);
+                            converted.InsertRange(i, new Byte[] { 85, 69 });    //Ü -> UE
+                            break;
+                        case 225:
+                            converted.RemoveAt(i);
+                            converted.InsertRange(i, new Byte[] { 115, 115 });    //ß -> ss
+                            break;
+                    }
+                }
+
+                bytes = converted.ToArray();
+
 
                 DSA2InfoDialog infoDialog = new DSA2InfoDialog();
                 DSA2InfoDialog.TOPIC topic = null;

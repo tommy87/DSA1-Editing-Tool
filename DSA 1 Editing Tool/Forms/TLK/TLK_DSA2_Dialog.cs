@@ -41,8 +41,13 @@ namespace DSA_1_Editing_Tool.Forms.TLK
             for (int i = 0; i < dialog.itsDSA2Dialog.Count; i++)
             {
                 int value = dialog.itsDSA2Dialog[i].Key.DSA2_IndexToName;
-                if (value == -1)
-                    this.Dialoge_dgvGesprächspartner.Rows.Add(i, "Fehler(-1)");
+                if (value < 0)
+                {
+                    //if ((value + dialog.itsTexte.Count - 1) > 0)
+                    //    this.Dialoge_dgvGesprächspartner.Rows.Add(i, dialog.itsTexte[value + dialog.itsTexte.Count - 1] + "(" + value.ToString() + ")");
+                    //else
+                        this.Dialoge_dgvGesprächspartner.Rows.Add(i, "Fehler(" + value.ToString() + ")");
+                }
                 else if (value < dialog.itsTexte.Count)
                     this.Dialoge_dgvGesprächspartner.Rows.Add(i, dialog.itsTexte[value] + "(" + value.ToString() + ")");
                 else
@@ -101,8 +106,13 @@ namespace DSA_1_Editing_Tool.Forms.TLK
                 this.Dialoge_Gesprächspartner_tbIndexStartText.Text = partner.DSA2_IndexToText.ToString();
                 
                 int value = dialog.itsDSA2Dialog[index_2].Key.DSA2_IndexToName;
-                if (value == -1)
-                    this.Dialoge_Gesprächspartner_tbName.Text = "Fehler(-1)";
+                if (value < 0)
+                {
+                    //if ((value + dialog.itsTexte.Count - 1) > 0)
+                    //    this.Dialoge_Gesprächspartner_tbName.Text = dialog.itsTexte[value + dialog.itsTexte.Count - 1] + "(" + value.ToString() + ")";
+                    //else
+                        this.Dialoge_Gesprächspartner_tbName.Text = "Fehler(" + value.ToString() + ")";
+                }
                 else if (value < dialog.itsTexte.Count)
                     this.Dialoge_Gesprächspartner_tbName.Text = dialog.itsTexte[value] + "(" + value.ToString() + ")";
                 else
