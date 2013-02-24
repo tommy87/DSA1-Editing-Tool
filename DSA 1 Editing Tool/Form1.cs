@@ -128,6 +128,7 @@ namespace DSA_1_Editing_Tool
             this.loadKampfTab();
             this.loadStädteTab();
             this.loadDungeonsTab();
+            this.loadDSA2Locations();
             this.loadBilderTab();
             this.loadAnimationenTab();
             this.loadRouts();
@@ -210,6 +211,15 @@ namespace DSA_1_Editing_Tool
             for (int i = 0; i < this.itsDSAFileLoader.dungeons.itsDungeons.Count; i++)
             {
                 this.Dungeons_dgvList.Rows.Add(i, this.itsDSAFileLoader.dungeons.itsDungeons[i].Key);
+            }
+        }
+        private void loadDSA2Locations()
+        {
+            this.DSA2Locations_dGVList.Rows.Clear();
+
+            for (int i = 0; i < this.itsDSAFileLoader.DSA2_Locations.itsLocations.Count; i++)
+            {
+                this.DSA2Locations_dGVList.Rows.Add(i, this.itsDSAFileLoader.DSA2_Locations.itsLocations[i].Key);
             }
         }
         private void loadBilderTab()
@@ -1755,6 +1765,37 @@ namespace DSA_1_Editing_Tool
             }
         }
 
+        //------------DSA 2 Locations-----------------------------
+        private void DSA2Locations_dGVList_SelectionChanged(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection location = this.DSA2Locations_dGVList.SelectedRows;
+
+            if (location.Count <= 0)
+            {
+                this.DSA2Locations_Map.Image = null;
+
+                return;
+            }
+
+            try
+            {
+                int index = Convert.ToInt32(location[0].Cells[0].Value);
+
+                if (index < this.itsDSAFileLoader.DSA2_Locations.itsLocations.Count)
+                {
+                    this.DSA2Locations_Map.Image = this.itsDSAFileLoader.DSA2_Locations.itsLocations[index].Value.getImage();
+                }
+                else
+                {
+                    this.DSA2Locations_Map.Image = null;
+                }
+            }
+            catch (SystemException)
+            {
+                this.DSA2Locations_Map.Image = null;
+            }
+        }
+
         //------------Bilder-----------------------------
         private void Bilder_dgvList_SelectionChanged(object sender, EventArgs e)
         {
@@ -2064,7 +2105,6 @@ namespace DSA_1_Editing_Tool
                 this.itsDSAFileLoader.monster.exportMonsterXML(saveXMLDialog.FileName);
             }
         }
-
         private void texteXMLExportierenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveXMLDialog.FileName = "de.xml";
@@ -2079,7 +2119,6 @@ namespace DSA_1_Editing_Tool
                     this.itsDSAFileLoader.texte.exportCSV(saveXMLDialog.FileName);
             }
         }
-
         private void itemsExportierenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             saveXMLDialog.FileName = "items.xml";
@@ -2091,7 +2130,6 @@ namespace DSA_1_Editing_Tool
                 this.itsDSAFileLoader.itemList.exportXML(saveXMLDialog.FileName);
             }
         }
-
         private void aktuelleStadtExportierenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             KeyValuePair<string, CStädte.CTown> sel = this.itsDSAFileLoader.städte.itsTowns[this.Townmarker_currentTown];
@@ -2105,7 +2143,6 @@ namespace DSA_1_Editing_Tool
                 sel.Value.exportXML(saveXMLDialog.FileName, sel.Key.Substring(0, sel.Key.Length - 4));
             }
         }
-
         private void alleStädteExportierenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             folderBrowserDialog1.SelectedPath = Properties.Settings.Default.DefaultExportPath;
@@ -2116,7 +2153,6 @@ namespace DSA_1_Editing_Tool
             }
 
         }
-
         private void dialogeExportierenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             folderBrowserDialog1.SelectedPath = Properties.Settings.Default.DefaultExportPath;
@@ -2126,7 +2162,6 @@ namespace DSA_1_Editing_Tool
                 this.itsDSAFileLoader.dialoge.exportXML(folderBrowserDialog1.SelectedPath);
             }
         }
-
         private void alleDungeonsExportierenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             folderBrowserDialog1.SelectedPath = Properties.Settings.Default.DefaultExportPath;
@@ -2136,7 +2171,6 @@ namespace DSA_1_Editing_Tool
                 this.itsDSAFileLoader.dungeons.exportXML(folderBrowserDialog1.SelectedPath, itsDSAFileLoader.kampf);
             }
         }
-
 
         private void Dungeons_dgvFights_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
@@ -2171,7 +2205,6 @@ namespace DSA_1_Editing_Tool
                 CDebugger.addErrorLine("Error doubleclicking dungeon fights: " + e2);
             }
         }
-
         private void Fight_Items_dgvList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
@@ -2185,7 +2218,6 @@ namespace DSA_1_Editing_Tool
                 CDebugger.addErrorLine("Error selecting Item: " + e2);
             }
         }
-
         private void Fight_Monster_dgvList_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
@@ -2199,5 +2231,6 @@ namespace DSA_1_Editing_Tool
                 CDebugger.addErrorLine("Error selecting Monster: " + e2);
             }
         }
+
     }
 }

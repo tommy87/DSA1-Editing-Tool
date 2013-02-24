@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="File Loader\DSA2_Locations.cs" />
     <Compile Include="Forms\TLK\TLK_DSA2_Dialog.cs">
       <SubType>UserControl</SubType>
     </Compile>

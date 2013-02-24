@@ -53,6 +53,8 @@ namespace DSA_1_Editing_Tool
         public CRouten routen = new CRouten();
         public CDialoge dialoge = new CDialoge();
 
+        public CDSA2_Locations DSA2_Locations = new CDSA2_Locations();
+
         public class CFileSet
         {
             public Int32 startOffset = 0;
@@ -266,8 +268,10 @@ namespace DSA_1_Editing_Tool
             CFileSet fileset_install_2;
             CFileSet fileset_cd_1;
             CFileSet fileset_cd_2;
-            List<CFileSet> filesetList_install;
-            List<CFileSet> filesetList_cd;
+            List<CFileSet> filesetList_install_1;
+            List<CFileSet> filesetList_install_2;
+            List<CFileSet> filesetList_cd_1;
+            List<CFileSet> filesetList_cd_2;
 
             DSA2_Archiv currentArchiv = null;
             foreach (var Archiv in this.DSA2_Archive)
@@ -279,47 +283,57 @@ namespace DSA_1_Editing_Tool
                 }
             }
 
-            if (currentArchiv != null)
+            if (Properties.Settings.Default.loadImages)
             {
-                this.getFilesBySuffix_DSA_2("LTX", ref currentArchiv, out filesetList_install, out filesetList_cd);
-                this.texte.addTexte(ref currentArchiv.data_Install, filesetList_install, null);
-                this.texte.addTexte(ref currentArchiv.data_CD, filesetList_cd, null);
+                if (currentArchiv != null)
+                {
+                    this.getFilesBySuffix_DSA_2("NVF", ref currentArchiv, out filesetList_install_1, out filesetList_cd_1);
+                    this.bilder.addPictures(ref currentArchiv.data_Install, filesetList_install_1, DSAVersion.Schweif);
+                    this.bilder.addPictures(ref currentArchiv.data_CD, filesetList_cd_1, DSAVersion.Schweif);
+                }
             }
 
-            if (currentArchiv != null)
+            if (Properties.Settings.Default.loadData)
             {
-                this.getFileByName_DSA_2("ITEMS.DAT", ref currentArchiv, out fileset_install_1, out fileset_cd_1);
-                this.getFileByName_DSA_2("ITEMS.LTX", ref currentArchiv, out fileset_install_2, out fileset_cd_2);
-                if (fileset_install_1 != null && fileset_install_2 != null)
-                    this.itemList.addItems(ref currentArchiv.data_Install, fileset_install_1, fileset_install_2, this._version);
-                else if (fileset_cd_1 != null && fileset_cd_2 != null)
-                    this.itemList.addItems(ref currentArchiv.data_CD, fileset_cd_1, fileset_cd_2, this._version);
+                if (currentArchiv != null)
+                {
+                    this.getFilesBySuffix_DSA_2("LTX", ref currentArchiv, out filesetList_install_1, out filesetList_cd_1);
+                    this.texte.addTexte(ref currentArchiv.data_Install, filesetList_install_1, null);
+                    this.texte.addTexte(ref currentArchiv.data_CD, filesetList_cd_1, null);
+                }
 
-                this.getFileByName_DSA_2("MONSTER.DAT", ref currentArchiv, out fileset_install_1, out fileset_cd_1);
-                this.getFileByName_DSA_2("MONNAMES.LTX", ref currentArchiv, out fileset_install_2, out fileset_cd_2);
-                if (fileset_install_1 != null && fileset_install_2 != null)
-                    this.monster.addMonsters(ref currentArchiv.data_Install, fileset_install_1, fileset_install_2, this._version);
-                else if (fileset_cd_1 != null && fileset_cd_2 != null)
-                    this.monster.addMonsters(ref currentArchiv.data_CD, fileset_cd_1, fileset_cd_2, this._version);
+                if (currentArchiv != null)
+                {
+                    this.getFileByName_DSA_2("ITEMS.DAT", ref currentArchiv, out fileset_install_1, out fileset_cd_1);
+                    this.getFileByName_DSA_2("ITEMS.LTX", ref currentArchiv, out fileset_install_2, out fileset_cd_2);
+                    if (fileset_install_1 != null && fileset_install_2 != null)
+                        this.itemList.addItems(ref currentArchiv.data_Install, fileset_install_1, fileset_install_2, this._version);
+                    else if (fileset_cd_1 != null && fileset_cd_2 != null)
+                        this.itemList.addItems(ref currentArchiv.data_CD, fileset_cd_1, fileset_cd_2, this._version);
 
-                this.getFileByName_DSA_2("FIGHT.LST", ref currentArchiv, out fileset_install_1, out fileset_cd_1);
-                if (fileset_install_1 != null)
-                    this.kampf.addKämpfe(ref currentArchiv.data_Install, fileset_install_1);
-                else if (fileset_cd_1 != null)
-                    this.kampf.addKämpfe(ref currentArchiv.data_CD, fileset_cd_1);
+                    this.getFileByName_DSA_2("MONSTER.DAT", ref currentArchiv, out fileset_install_1, out fileset_cd_1);
+                    this.getFileByName_DSA_2("MONNAMES.LTX", ref currentArchiv, out fileset_install_2, out fileset_cd_2);
+                    if (fileset_install_1 != null && fileset_install_2 != null)
+                        this.monster.addMonsters(ref currentArchiv.data_Install, fileset_install_1, fileset_install_2, this._version);
+                    else if (fileset_cd_1 != null && fileset_cd_2 != null)
+                        this.monster.addMonsters(ref currentArchiv.data_CD, fileset_cd_1, fileset_cd_2, this._version);
 
-                this.getFilesBySuffix_DSA_2("TLK", ref currentArchiv, out filesetList_install, out filesetList_cd);
-                this.dialoge.addDialoge(ref currentArchiv.data_Install, filesetList_install, this._version);
-                this.dialoge.addDialoge(ref currentArchiv.data_CD, filesetList_cd, this._version);
+                    this.getFileByName_DSA_2("FIGHT.LST", ref currentArchiv, out fileset_install_1, out fileset_cd_1);
+                    if (fileset_install_1 != null)
+                        this.kampf.addKämpfe(ref currentArchiv.data_Install, fileset_install_1);
+                    else if (fileset_cd_1 != null)
+                        this.kampf.addKämpfe(ref currentArchiv.data_CD, fileset_cd_1);
+
+                    this.getFilesBySuffix_DSA_2("TLK", ref currentArchiv, out filesetList_install_1, out filesetList_cd_1);
+                    this.dialoge.addDialoge(ref currentArchiv.data_Install, filesetList_install_1, this._version);
+                    this.dialoge.addDialoge(ref currentArchiv.data_CD, filesetList_cd_1, this._version);
+
+                    this.getFilesBySuffix_DSA_2("MAD", ref currentArchiv, out filesetList_install_1, out filesetList_cd_1);
+                    this.getFilesBySuffix_DSA_2("INF", ref currentArchiv, out filesetList_install_2, out filesetList_cd_2);
+                    this.DSA2_Locations.addLocation(ref currentArchiv.data_Install, ref this.bilder, filesetList_install_1, filesetList_install_2);
+                    this.DSA2_Locations.addLocation(ref currentArchiv.data_CD, ref this.bilder, filesetList_cd_1, filesetList_cd_2);
+                }
             }
-
-            if (currentArchiv != null) 
-            {
-                this.getFilesBySuffix_DSA_2("NVF", ref currentArchiv, out filesetList_install, out filesetList_cd);
-                this.bilder.addPictures(ref currentArchiv.data_Install, filesetList_install, DSAVersion.Schweif);
-                this.bilder.addPictures(ref currentArchiv.data_CD, filesetList_cd, DSAVersion.Schweif);
-            }
-
         }
         
         public bool unpackAll(string directoryPath)
@@ -491,6 +505,8 @@ namespace DSA_1_Editing_Tool
             this.bilder.clear();
             this.routen.clear();
             this.dialoge.clear();
+
+            this.DSA2_Locations.clear();
         }
 
         private void loadFilenames_DSA_1(string filename)
