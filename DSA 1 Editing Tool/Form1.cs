@@ -1772,7 +1772,11 @@ namespace DSA_1_Editing_Tool
 
             if (location.Count <= 0)
             {
+                this.DSA2Locations_Map.Width = 0;
+                this.DSA2Locations_Map.Height = 0;
                 this.DSA2Locations_Map.Image = null;
+
+                this.DSA2Locations_Details_usedNVFSet.Text = String.Empty;
 
                 return;
             }
@@ -1783,16 +1787,37 @@ namespace DSA_1_Editing_Tool
 
                 if (index < this.itsDSAFileLoader.DSA2_Locations.itsLocations.Count)
                 {
-                    this.DSA2Locations_Map.Image = this.itsDSAFileLoader.DSA2_Locations.itsLocations[index].Value.getImage();
+                    Image image = this.itsDSAFileLoader.DSA2_Locations.itsLocations[index].Value.getImage();
+                    if (image != null)
+                    {
+                        this.DSA2Locations_Map.Width = image.Width;
+                        this.DSA2Locations_Map.Height = image.Height;
+                    }
+                    else
+                    {
+                        this.DSA2Locations_Map.Width = 0;
+                        this.DSA2Locations_Map.Height = 0;
+                    }
+                    this.DSA2Locations_Map.Image = image;
+
+                    this.DSA2Locations_Details_usedNVFSet.Text = this.itsDSAFileLoader.DSA2_Locations.itsLocations[index].Value.UsedNVF;
                 }
                 else
                 {
+                    this.DSA2Locations_Map.Width = 0;
+                    this.DSA2Locations_Map.Height = 0;
                     this.DSA2Locations_Map.Image = null;
+
+                    this.DSA2Locations_Details_usedNVFSet.Text = String.Empty;
                 }
             }
             catch (SystemException)
             {
+                this.DSA2Locations_Map.Width = 0;
+                this.DSA2Locations_Map.Height = 0;
                 this.DSA2Locations_Map.Image = null;
+
+                this.DSA2Locations_Details_usedNVFSet.Text = String.Empty;
             }
         }
 

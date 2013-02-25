@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle66 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle67 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle68 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle69 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle70 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle71 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle72 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle73 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle74 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle75 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle76 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle77 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle78 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.tSBOpenFile = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -393,6 +393,11 @@
             this.tB_Item_IconID = new System.Windows.Forms.TextBox();
             this.rTB_Debug = new System.Windows.Forms.RichTextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tP_DSA2Locations = new System.Windows.Forms.TabPage();
+            this.DSA2Locations_Map = new System.Windows.Forms.PictureBox();
+            this.DSA2Locations_dGVList = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tP_Animations = new System.Windows.Forms.TabPage();
             this.groupBox16 = new System.Windows.Forms.GroupBox();
             this.Animationen_rBInterpolationMode_Bikubisch = new System.Windows.Forms.RadioButton();
@@ -411,11 +416,19 @@
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
             this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tP_DSA2Locations = new System.Windows.Forms.TabPage();
-            this.DSA2Locations_dGVList = new System.Windows.Forms.DataGridView();
-            this.DSA2Locations_Map = new System.Windows.Forms.PictureBox();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.DSA2Locations_Details_usedNVFSet = new System.Windows.Forms.TextBox();
+            this.label86 = new System.Windows.Forms.Label();
+            this.DSA2Locations_Details_Unknown = new System.Windows.Forms.TextBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.DSA2Locations_Details_ImageIndex = new System.Windows.Forms.TextBox();
+            this.label88 = new System.Windows.Forms.Label();
+            this.DSA2Locations_Details_PosY = new System.Windows.Forms.TextBox();
+            this.label89 = new System.Windows.Forms.Label();
+            this.DSA2Locations_Details_PosX = new System.Windows.Forms.TextBox();
+            this.label90 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -477,6 +490,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.Item_PictureBox)).BeginInit();
             this.groupBox14.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.tP_DSA2Locations.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DSA2Locations_Map)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DSA2Locations_dGVList)).BeginInit();
             this.tP_Animations.SuspendLayout();
             this.groupBox16.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Animationen_Einzelbild)).BeginInit();
@@ -488,9 +504,8 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.tP_DSA2Locations.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DSA2Locations_dGVList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DSA2Locations_Map)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -2082,9 +2097,9 @@
             // dataGridViewTextBoxColumn17
             // 
             this.dataGridViewTextBoxColumn17.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle66.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle66.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle66;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn17.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridViewTextBoxColumn17.HeaderText = "#";
             this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
             this.dataGridViewTextBoxColumn17.ReadOnly = true;
@@ -2120,9 +2135,9 @@
             // dataGridViewTextBoxColumn15
             // 
             this.dataGridViewTextBoxColumn15.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle67.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle67.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle67;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn15.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridViewTextBoxColumn15.HeaderText = "#";
             this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             this.dataGridViewTextBoxColumn15.ReadOnly = true;
@@ -2281,9 +2296,9 @@
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle68.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle68.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle68;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn6.DefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridViewTextBoxColumn6.HeaderText = "#";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
@@ -2291,9 +2306,9 @@
             // 
             // dataGridViewTextBoxColumn7
             // 
-            dataGridViewCellStyle69.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle69.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle69;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn7.DefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridViewTextBoxColumn7.HeaderText = "ID";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
@@ -2560,9 +2575,9 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle70.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle70.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle70;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle18.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridViewTextBoxColumn3.HeaderText = "#";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
@@ -2570,9 +2585,9 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
-            dataGridViewCellStyle71.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle71.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle71;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle19.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle19;
             this.dataGridViewTextBoxColumn4.HeaderText = "ID";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
@@ -2609,9 +2624,9 @@
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle72.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle72.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle72;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle20.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle20;
             this.dataGridViewTextBoxColumn1.HeaderText = "#";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -2619,9 +2634,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle73.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle73.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle73;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle21.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle21;
             this.Column3.HeaderText = "ID";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
@@ -2668,9 +2683,9 @@
             // dataGridViewTextBoxColumn11
             // 
             this.dataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle74.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle74.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle74;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle22.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn11.DefaultCellStyle = dataGridViewCellStyle22;
             this.dataGridViewTextBoxColumn11.HeaderText = "#";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             this.dataGridViewTextBoxColumn11.ReadOnly = true;
@@ -3410,9 +3425,9 @@
             // dataGridViewTextBoxColumn9
             // 
             this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle75.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle75.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle75;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle23.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn9.DefaultCellStyle = dataGridViewCellStyle23;
             this.dataGridViewTextBoxColumn9.HeaderText = "#";
             this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             this.dataGridViewTextBoxColumn9.ReadOnly = true;
@@ -3448,9 +3463,9 @@
             // Column1
             // 
             this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle76.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle76.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle76;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle24.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle24;
             this.Column1.HeaderText = "#";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
@@ -3576,9 +3591,9 @@
             // Column5
             // 
             this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle77.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle77.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle77;
+            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle25.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle25;
             this.Column5.HeaderText = "#";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
@@ -3660,9 +3675,9 @@
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            dataGridViewCellStyle78.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle78.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
-            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle78;
+            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle26.Padding = new System.Windows.Forms.Padding(0, 0, 7, 0);
+            this.dataGridViewTextBoxColumn13.DefaultCellStyle = dataGridViewCellStyle26;
             this.dataGridViewTextBoxColumn13.HeaderText = "#";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             this.dataGridViewTextBoxColumn13.ReadOnly = true;
@@ -4132,6 +4147,62 @@
             this.tabControl1.Size = new System.Drawing.Size(995, 530);
             this.tabControl1.TabIndex = 3;
             // 
+            // tP_DSA2Locations
+            // 
+            this.tP_DSA2Locations.BackColor = System.Drawing.Color.Peru;
+            this.tP_DSA2Locations.Controls.Add(this.groupBox11);
+            this.tP_DSA2Locations.Controls.Add(this.panel1);
+            this.tP_DSA2Locations.Controls.Add(this.DSA2Locations_dGVList);
+            this.tP_DSA2Locations.Location = new System.Drawing.Point(4, 22);
+            this.tP_DSA2Locations.Name = "tP_DSA2Locations";
+            this.tP_DSA2Locations.Size = new System.Drawing.Size(987, 504);
+            this.tP_DSA2Locations.TabIndex = 10;
+            this.tP_DSA2Locations.Text = "DSA 2 Orte";
+            // 
+            // DSA2Locations_Map
+            // 
+            this.DSA2Locations_Map.Location = new System.Drawing.Point(3, 3);
+            this.DSA2Locations_Map.Name = "DSA2Locations_Map";
+            this.DSA2Locations_Map.Size = new System.Drawing.Size(180, 120);
+            this.DSA2Locations_Map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.DSA2Locations_Map.TabIndex = 11;
+            this.DSA2Locations_Map.TabStop = false;
+            // 
+            // DSA2Locations_dGVList
+            // 
+            this.DSA2Locations_dGVList.AllowUserToAddRows = false;
+            this.DSA2Locations_dGVList.AllowUserToDeleteRows = false;
+            this.DSA2Locations_dGVList.AllowUserToResizeColumns = false;
+            this.DSA2Locations_dGVList.AllowUserToResizeRows = false;
+            this.DSA2Locations_dGVList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DSA2Locations_dGVList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29});
+            this.DSA2Locations_dGVList.Location = new System.Drawing.Point(8, 12);
+            this.DSA2Locations_dGVList.MultiSelect = false;
+            this.DSA2Locations_dGVList.Name = "DSA2Locations_dGVList";
+            this.DSA2Locations_dGVList.ReadOnly = true;
+            this.DSA2Locations_dGVList.RowHeadersVisible = false;
+            this.DSA2Locations_dGVList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DSA2Locations_dGVList.Size = new System.Drawing.Size(226, 475);
+            this.DSA2Locations_dGVList.TabIndex = 10;
+            this.DSA2Locations_dGVList.SelectionChanged += new System.EventHandler(this.DSA2Locations_dGVList_SelectionChanged);
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.dataGridViewTextBoxColumn28.HeaderText = "#";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.dataGridViewTextBoxColumn28.ReadOnly = true;
+            this.dataGridViewTextBoxColumn28.Width = 40;
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn29.HeaderText = "Orte";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.dataGridViewTextBoxColumn29.ReadOnly = true;
+            // 
             // tP_Animations
             // 
             this.tP_Animations.BackColor = System.Drawing.Color.Peru;
@@ -4350,60 +4421,127 @@
             this.splitContainer1.SplitterDistance = 530;
             this.splitContainer1.TabIndex = 4;
             // 
-            // tP_DSA2Locations
+            // panel1
             // 
-            this.tP_DSA2Locations.BackColor = System.Drawing.Color.Peru;
-            this.tP_DSA2Locations.Controls.Add(this.DSA2Locations_Map);
-            this.tP_DSA2Locations.Controls.Add(this.DSA2Locations_dGVList);
-            this.tP_DSA2Locations.Location = new System.Drawing.Point(4, 22);
-            this.tP_DSA2Locations.Name = "tP_DSA2Locations";
-            this.tP_DSA2Locations.Size = new System.Drawing.Size(987, 504);
-            this.tP_DSA2Locations.TabIndex = 10;
-            this.tP_DSA2Locations.Text = "DSA 2 Orte";
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.DSA2Locations_Map);
+            this.panel1.Location = new System.Drawing.Point(240, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(431, 475);
+            this.panel1.TabIndex = 12;
             // 
-            // DSA2Locations_dGVList
+            // groupBox11
             // 
-            this.DSA2Locations_dGVList.AllowUserToAddRows = false;
-            this.DSA2Locations_dGVList.AllowUserToDeleteRows = false;
-            this.DSA2Locations_dGVList.AllowUserToResizeColumns = false;
-            this.DSA2Locations_dGVList.AllowUserToResizeRows = false;
-            this.DSA2Locations_dGVList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DSA2Locations_dGVList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29});
-            this.DSA2Locations_dGVList.Location = new System.Drawing.Point(8, 12);
-            this.DSA2Locations_dGVList.MultiSelect = false;
-            this.DSA2Locations_dGVList.Name = "DSA2Locations_dGVList";
-            this.DSA2Locations_dGVList.ReadOnly = true;
-            this.DSA2Locations_dGVList.RowHeadersVisible = false;
-            this.DSA2Locations_dGVList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DSA2Locations_dGVList.Size = new System.Drawing.Size(226, 475);
-            this.DSA2Locations_dGVList.TabIndex = 10;
-            this.DSA2Locations_dGVList.SelectionChanged += new System.EventHandler(this.DSA2Locations_dGVList_SelectionChanged);
+            this.groupBox11.Controls.Add(this.DSA2Locations_Details_Unknown);
+            this.groupBox11.Controls.Add(this.label87);
+            this.groupBox11.Controls.Add(this.DSA2Locations_Details_ImageIndex);
+            this.groupBox11.Controls.Add(this.label88);
+            this.groupBox11.Controls.Add(this.DSA2Locations_Details_PosY);
+            this.groupBox11.Controls.Add(this.label89);
+            this.groupBox11.Controls.Add(this.DSA2Locations_Details_PosX);
+            this.groupBox11.Controls.Add(this.label90);
+            this.groupBox11.Controls.Add(this.label86);
+            this.groupBox11.Controls.Add(this.DSA2Locations_Details_usedNVFSet);
+            this.groupBox11.Controls.Add(this.label85);
+            this.groupBox11.Location = new System.Drawing.Point(677, 12);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(287, 191);
+            this.groupBox11.TabIndex = 13;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Details";
             // 
-            // DSA2Locations_Map
+            // label85
             // 
-            this.DSA2Locations_Map.Location = new System.Drawing.Point(249, 12);
-            this.DSA2Locations_Map.Name = "DSA2Locations_Map";
-            this.DSA2Locations_Map.Size = new System.Drawing.Size(546, 475);
-            this.DSA2Locations_Map.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.DSA2Locations_Map.TabIndex = 11;
-            this.DSA2Locations_Map.TabStop = false;
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(17, 27);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(97, 13);
+            this.label85.TabIndex = 0;
+            this.label85.Text = "benutztes NVF set:";
             // 
-            // dataGridViewTextBoxColumn28
+            // DSA2Locations_Details_usedNVFSet
             // 
-            this.dataGridViewTextBoxColumn28.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.dataGridViewTextBoxColumn28.HeaderText = "#";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            this.dataGridViewTextBoxColumn28.ReadOnly = true;
-            this.dataGridViewTextBoxColumn28.Width = 40;
+            this.DSA2Locations_Details_usedNVFSet.Location = new System.Drawing.Point(120, 24);
+            this.DSA2Locations_Details_usedNVFSet.Name = "DSA2Locations_Details_usedNVFSet";
+            this.DSA2Locations_Details_usedNVFSet.ReadOnly = true;
+            this.DSA2Locations_Details_usedNVFSet.Size = new System.Drawing.Size(138, 20);
+            this.DSA2Locations_Details_usedNVFSet.TabIndex = 1;
             // 
-            // dataGridViewTextBoxColumn29
+            // label86
             // 
-            this.dataGridViewTextBoxColumn29.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn29.HeaderText = "Orte";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            this.dataGridViewTextBoxColumn29.ReadOnly = true;
+            this.label86.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label86.Location = new System.Drawing.Point(16, 57);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(250, 2);
+            this.label86.TabIndex = 2;
+            // 
+            // DSA2Locations_Details_Unknown
+            // 
+            this.DSA2Locations_Details_Unknown.Location = new System.Drawing.Point(120, 153);
+            this.DSA2Locations_Details_Unknown.Name = "DSA2Locations_Details_Unknown";
+            this.DSA2Locations_Details_Unknown.ReadOnly = true;
+            this.DSA2Locations_Details_Unknown.Size = new System.Drawing.Size(50, 20);
+            this.DSA2Locations_Details_Unknown.TabIndex = 31;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(17, 156);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(61, 13);
+            this.label87.TabIndex = 30;
+            this.label87.Text = "unbekannt:";
+            // 
+            // DSA2Locations_Details_ImageIndex
+            // 
+            this.DSA2Locations_Details_ImageIndex.Location = new System.Drawing.Point(120, 127);
+            this.DSA2Locations_Details_ImageIndex.Name = "DSA2Locations_Details_ImageIndex";
+            this.DSA2Locations_Details_ImageIndex.ReadOnly = true;
+            this.DSA2Locations_Details_ImageIndex.Size = new System.Drawing.Size(50, 20);
+            this.DSA2Locations_Details_ImageIndex.TabIndex = 29;
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(17, 130);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(92, 13);
+            this.label88.TabIndex = 28;
+            this.label88.Text = "NVF Image Index:";
+            // 
+            // DSA2Locations_Details_PosY
+            // 
+            this.DSA2Locations_Details_PosY.Location = new System.Drawing.Point(120, 101);
+            this.DSA2Locations_Details_PosY.Name = "DSA2Locations_Details_PosY";
+            this.DSA2Locations_Details_PosY.ReadOnly = true;
+            this.DSA2Locations_Details_PosY.Size = new System.Drawing.Size(50, 20);
+            this.DSA2Locations_Details_PosY.TabIndex = 27;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(17, 104);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(57, 13);
+            this.label89.TabIndex = 26;
+            this.label89.Text = "Position Y:";
+            // 
+            // DSA2Locations_Details_PosX
+            // 
+            this.DSA2Locations_Details_PosX.Location = new System.Drawing.Point(120, 75);
+            this.DSA2Locations_Details_PosX.Name = "DSA2Locations_Details_PosX";
+            this.DSA2Locations_Details_PosX.ReadOnly = true;
+            this.DSA2Locations_Details_PosX.Size = new System.Drawing.Size(50, 20);
+            this.DSA2Locations_Details_PosX.TabIndex = 25;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(17, 78);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(57, 13);
+            this.label90.TabIndex = 24;
+            this.label90.Text = "Position X:";
             // 
             // Form1
             // 
@@ -4505,6 +4643,9 @@
             this.groupBox14.ResumeLayout(false);
             this.groupBox14.PerformLayout();
             this.tabControl1.ResumeLayout(false);
+            this.tP_DSA2Locations.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DSA2Locations_Map)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DSA2Locations_dGVList)).EndInit();
             this.tP_Animations.ResumeLayout(false);
             this.tP_Animations.PerformLayout();
             this.groupBox16.ResumeLayout(false);
@@ -4518,9 +4659,9 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
-            this.tP_DSA2Locations.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DSA2Locations_dGVList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DSA2Locations_Map)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4902,6 +5043,19 @@
         private System.Windows.Forms.DataGridView DSA2Locations_dGVList;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.TextBox DSA2Locations_Details_usedNVFSet;
+        private System.Windows.Forms.Label label85;
+        private System.Windows.Forms.Label label86;
+        private System.Windows.Forms.TextBox DSA2Locations_Details_Unknown;
+        private System.Windows.Forms.Label label87;
+        private System.Windows.Forms.TextBox DSA2Locations_Details_ImageIndex;
+        private System.Windows.Forms.Label label88;
+        private System.Windows.Forms.TextBox DSA2Locations_Details_PosY;
+        private System.Windows.Forms.Label label89;
+        private System.Windows.Forms.TextBox DSA2Locations_Details_PosX;
+        private System.Windows.Forms.Label label90;
     }
 }
 
