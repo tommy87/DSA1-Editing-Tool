@@ -12,9 +12,19 @@ namespace DSA_1_Editing_Tool
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            try
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Form1());
+            }
+            catch (Exception)
+            {
+                //mono workaround:
+                //index = dataGridView.SelcetedRows[0].Index
+                //wenn dataGridView neue Rows bekommt und der RowCount < index ist -->crash
+            }
+
         }
     }
 }
