@@ -261,6 +261,7 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             return null;
         }
+
         public Image getMonsterImageByID(Int32 MonsterBildID, DSAVersion version)
         {
             switch (version)
@@ -377,6 +378,7 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             return null;
         }
+
         public Image getIn_HeadsImageByID_DSA1(Int32 ImageID)
         {
             if (ImageID < 0)
@@ -423,6 +425,7 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             return null;
         }
+
         public Image getWoldMap()
         {
             foreach (KeyValuePair<string, List<Image>> pair in this.itsImages)
@@ -454,6 +457,10 @@ namespace DSA_1_Editing_Tool.File_Loader
 
         private List<Image> loadNVF(ref byte[] data, CDSAFileLoader.CFileSet NVF, DSAVersion version)
         {
+            int test = 0;
+            if (NVF.filename == "POPUP.DAT")
+                test++;
+
             List<Image> images = new List<Image>();
             byte[] unpackedData = null;
 

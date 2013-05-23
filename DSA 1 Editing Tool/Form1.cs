@@ -91,6 +91,12 @@ namespace DSA_1_Editing_Tool
                         this.bilderExportierenNachToolStripMenuItem.Enabled = false;
                     }
 
+                    //if (this.itsDSAFileLoader.Version == DSAVersion.Blade || this.itsDSAFileLoader.Version ==  DSAVersion.Schick)
+                    //{
+                    //    //this.tabControl1. = true;
+                    //    //this.tP_Dungeons.
+                    //}
+
                     this.loadAllTabs();
                 }
             }

@@ -59,7 +59,7 @@ namespace DSA_1_Editing_Tool
         {
             public Int32 startOffset = 0;
             public Int32 endOffset = 0;
-            public string filename = "";
+            public string filename = String.Empty;
 
             public CFileSet(string filename, Int32 startOffset, Int32 endOffset)
             {

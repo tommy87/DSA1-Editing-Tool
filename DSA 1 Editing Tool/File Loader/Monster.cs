@@ -87,7 +87,7 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             for (int i = 1; i < this.itsMonsterStats.Count; i++)
             {
-                this.itsMonsterStats[i].writeXML(wr);
+                this.itsMonsterStats[i].writeXML(wr, this.itsMonsterNames[i]);
             }
             wr.WriteEndElement();
             wr.WriteEndDocument();
@@ -288,10 +288,11 @@ namespace DSA_1_Editing_Tool.File_Loader
              * schreibt das Monster in einen bereits initialisierten XMLTextWriter
              * @input       wr  XMLTextWriter       das Ziel
              */
-            public void writeXML( XmlTextWriter wr ) {
+            public void writeXML( XmlTextWriter wr , string name) {
                 wr.WriteStartElement("monster");
                 wr.WriteAttributeString("id", this.MonsterID.ToString());
                 wr.WriteAttributeString("img", this.MonsterGraphicID.ToString());
+                wr.WriteAttributeString("name", name);
                 wr.WriteStartElement("base");
                     wr.WriteAttributeString("level", this.Stufe.ToString());
                     wr.WriteAttributeString("firstap", this.erstAP.ToString());
