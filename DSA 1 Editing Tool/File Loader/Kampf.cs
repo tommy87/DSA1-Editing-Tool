@@ -61,7 +61,8 @@ namespace DSA_1_Editing_Tool.File_Loader
 
         public CFight_LST(ref byte[] data, Int32 position)
         {
-            this.name = CHelpFunctions.readDSAString(ref data, position, 20);
+            Int32 helper = position;
+            this.name = CHelpFunctions.readDSAString(ref data, ref helper, 20);
             this.nummerDesScenarios = (Int16)(data[position + 20] + ((Int16)data[position + 21] << 8));
 
             Int32 helpPosition = position + 22;

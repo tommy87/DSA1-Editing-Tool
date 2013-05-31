@@ -6,14 +6,22 @@ namespace DSA_1_Editing_Tool
 {
     public class CHelpFunctions
     {
-        public static string readDSAString(ref byte[] data, Int32 position, UInt32 length) //bei length = 0 wird ein 0 Terminierter string eingelesen
+        public static string readDSAString(ref byte[] data, Int32 position, UInt32 length)
+        {
+            return readDSAString(ref data, ref position, length, data.Length);
+        }
+        public static string readDSAString(ref byte[] data, ref Int32 position, UInt32 length)
+        {
+           return readDSAString(ref data, ref position, length, data.Length);
+        }
+        public static string readDSAString(ref byte[] data, ref Int32 position, UInt32 length, Int32 maxPosition) //bei length = 0 wird ein 0 Terminierter string eingelesen
         {
             string s = "";
 
             if (length <= 0)    
             {
                 //es wird ein 0 terminierter string gelesen
-                while (position < data.Length && data[position] != 0)
+                while (position < data.Length && position < maxPosition && data[position] != 0)
                 {
                     s += getCharFromData(data[position]);
                     position++;

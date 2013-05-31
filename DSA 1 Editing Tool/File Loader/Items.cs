@@ -39,15 +39,15 @@ namespace DSA_1_Editing_Tool.File_Loader
                 // alle Texte der Datei auslesen
                 Int32 position = itemname.startOffset;
 
-                string text = CHelpFunctions.readDSAString(ref data, position, 0);
+                string text = CHelpFunctions.readDSAString(ref data, ref position, 0, itemname.endOffset);
                 itsItemNames.Add(text);
-                position += (text.Length + 1);
+                position++;
 
-                while ((position) < itemname.endOffset)
+                while (position < itemname.endOffset)
                 {
-                    text = CHelpFunctions.readDSAString(ref data, position, 0);
+                    text = CHelpFunctions.readDSAString(ref data, ref position, 0, itemname.endOffset);
                     itsItemNames.Add(text);
-                    position += (text.Length + 1);
+                    position++;
                 }
                 CDebugger.addDebugLine("Items: ITEMNAME wurde erfolgreich extrahiert");
             }

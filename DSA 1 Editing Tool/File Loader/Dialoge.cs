@@ -261,9 +261,9 @@ namespace DSA_1_Editing_Tool.File_Loader
 
                 do
                 {
-                    string text = CHelpFunctions.readDSAString(ref data, position, 0);
+                    string text = CHelpFunctions.readDSAString(ref data, ref position, 0, TLK.endOffset);
                     this.itsTexte.Add(text);
-                    position += text.Length + 1;
+                    position ++;
                 }
                 while (position < TLK.endOffset);
             }

@@ -28,15 +28,15 @@ namespace DSA_1_Editing_Tool.File_Loader
             Int32 position = LTX.startOffset;
             List<string> textList = new List<string>();
 
-            string text = CHelpFunctions.readDSAString(ref data, position, 0);
+            string text = CHelpFunctions.readDSAString(ref data, ref position, 0, LTX.endOffset);
             textList.Add(text);
-            position += (text.Length + 1);
+            position++;
 
-            while ((position + text.Length + 2) < LTX.endOffset)
+            while (position < LTX.endOffset)
             {
-                text = CHelpFunctions.readDSAString(ref data, position, 0);
+                text = CHelpFunctions.readDSAString(ref data, ref position, 0, LTX.endOffset);
                 textList.Add(text);
-                position += (text.Length + 1);
+                position++;
             }
 
             //dateinamen auslesen
@@ -62,20 +62,16 @@ namespace DSA_1_Editing_Tool.File_Loader
                 Int32 position = fileSet.startOffset;
                 List<string> textList = new List<string>();
 
-                string text = CHelpFunctions.readDSAString(ref data, position, 0);
+                string text = CHelpFunctions.readDSAString(ref data, ref position, 0, fileSet.endOffset);
                 textList.Add(text);
-                position += (text.Length + 1);
+                position++;
 
-                while ((position + text.Length + 2) < fileSet.endOffset)
+                while (position < fileSet.endOffset)
                 {
-                    text = CHelpFunctions.readDSAString(ref data, position, 0);
+                    text = CHelpFunctions.readDSAString(ref data, ref position, 0, fileSet.endOffset);
                     textList.Add(text);
-                    position += (text.Length + 1);
+                    position++;
                 }
-
-                //dateinamen auslesen
-                //int pos = s.LastIndexOf("\\");
-                //string filename = s.Substring(pos + 1);
 
                 this.LTX_Texte.Add(new KeyValuePair<string, List<string>>(fileSet.filename, textList));
             }
@@ -91,15 +87,15 @@ namespace DSA_1_Editing_Tool.File_Loader
                 Int32 position = fileSet.startOffset;
                 List<string> textList = new List<string>();
 
-                string text = CHelpFunctions.readDSAString(ref data, position, 0);
+                string text = CHelpFunctions.readDSAString(ref data, ref position, 0, fileSet.endOffset);
                 textList.Add(text);
-                position += (text.Length + 1);
+                position++;
 
-                while ((position + text.Length + 2) < fileSet.endOffset)
+                while (position < fileSet.endOffset)
                 {
-                    text = CHelpFunctions.readDSAString(ref data, position, 0);
+                    text = CHelpFunctions.readDSAString(ref data, ref position, 0, fileSet.endOffset);
                     textList.Add(text);
-                    position += (text.Length + 1);
+                    position++;
                 }
 
                 //dateinamen auslesen
