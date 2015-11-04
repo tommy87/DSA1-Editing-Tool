@@ -394,6 +394,19 @@
             this.rTB_Debug = new System.Windows.Forms.RichTextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tP_DSA2Locations = new System.Windows.Forms.TabPage();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.DSA2Locations_Details_Unknown = new System.Windows.Forms.TextBox();
+            this.label87 = new System.Windows.Forms.Label();
+            this.DSA2Locations_Details_ImageIndex = new System.Windows.Forms.TextBox();
+            this.label88 = new System.Windows.Forms.Label();
+            this.DSA2Locations_Details_PosY = new System.Windows.Forms.TextBox();
+            this.label89 = new System.Windows.Forms.Label();
+            this.DSA2Locations_Details_PosX = new System.Windows.Forms.TextBox();
+            this.label90 = new System.Windows.Forms.Label();
+            this.label86 = new System.Windows.Forms.Label();
+            this.DSA2Locations_Details_usedNVFSet = new System.Windows.Forms.TextBox();
+            this.label85 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.DSA2Locations_Map = new System.Windows.Forms.PictureBox();
             this.DSA2Locations_dGVList = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -416,19 +429,6 @@
             this.Rout_pictureBox = new System.Windows.Forms.PictureBox();
             this.saveXMLDialog = new System.Windows.Forms.SaveFileDialog();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBox11 = new System.Windows.Forms.GroupBox();
-            this.label85 = new System.Windows.Forms.Label();
-            this.DSA2Locations_Details_usedNVFSet = new System.Windows.Forms.TextBox();
-            this.label86 = new System.Windows.Forms.Label();
-            this.DSA2Locations_Details_Unknown = new System.Windows.Forms.TextBox();
-            this.label87 = new System.Windows.Forms.Label();
-            this.DSA2Locations_Details_ImageIndex = new System.Windows.Forms.TextBox();
-            this.label88 = new System.Windows.Forms.Label();
-            this.DSA2Locations_Details_PosY = new System.Windows.Forms.TextBox();
-            this.label89 = new System.Windows.Forms.Label();
-            this.DSA2Locations_Details_PosX = new System.Windows.Forms.TextBox();
-            this.label90 = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.tP_Pictures.SuspendLayout();
@@ -491,6 +491,8 @@
             this.groupBox14.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tP_DSA2Locations.SuspendLayout();
+            this.groupBox11.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DSA2Locations_Map)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DSA2Locations_dGVList)).BeginInit();
             this.tP_Animations.SuspendLayout();
@@ -504,8 +506,6 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.groupBox11.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -683,7 +683,7 @@
             this.groupBox15.Controls.Add(this.Bilder_rBInterpolationMode_Bikubisch);
             this.groupBox15.Controls.Add(this.Bilder_rBInterpolationMode_Biliniear);
             this.groupBox15.Controls.Add(this.Bilder_rBInterpolationMode_NearestNeighbor);
-            this.groupBox15.Location = new System.Drawing.Point(664, 51);
+            this.groupBox15.Location = new System.Drawing.Point(762, 13);
             this.groupBox15.Name = "groupBox15";
             this.groupBox15.Size = new System.Drawing.Size(165, 97);
             this.groupBox15.TabIndex = 21;
@@ -729,7 +729,7 @@
             // Bilder_cBZoom
             // 
             this.Bilder_cBZoom.AutoSize = true;
-            this.Bilder_cBZoom.Location = new System.Drawing.Point(605, 93);
+            this.Bilder_cBZoom.Location = new System.Drawing.Point(762, 151);
             this.Bilder_cBZoom.Name = "Bilder_cBZoom";
             this.Bilder_cBZoom.Size = new System.Drawing.Size(53, 17);
             this.Bilder_cBZoom.TabIndex = 20;
@@ -742,7 +742,7 @@
             this.Bilder_pictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.Bilder_pictureBox.Location = new System.Drawing.Point(252, 12);
             this.Bilder_pictureBox.Name = "Bilder_pictureBox";
-            this.Bilder_pictureBox.Size = new System.Drawing.Size(320, 200);
+            this.Bilder_pictureBox.Size = new System.Drawing.Size(492, 375);
             this.Bilder_pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.Bilder_pictureBox.TabIndex = 14;
             this.Bilder_pictureBox.TabStop = false;
@@ -4159,6 +4159,128 @@
             this.tP_DSA2Locations.TabIndex = 10;
             this.tP_DSA2Locations.Text = "DSA 2 Orte";
             // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.DSA2Locations_Details_Unknown);
+            this.groupBox11.Controls.Add(this.label87);
+            this.groupBox11.Controls.Add(this.DSA2Locations_Details_ImageIndex);
+            this.groupBox11.Controls.Add(this.label88);
+            this.groupBox11.Controls.Add(this.DSA2Locations_Details_PosY);
+            this.groupBox11.Controls.Add(this.label89);
+            this.groupBox11.Controls.Add(this.DSA2Locations_Details_PosX);
+            this.groupBox11.Controls.Add(this.label90);
+            this.groupBox11.Controls.Add(this.label86);
+            this.groupBox11.Controls.Add(this.DSA2Locations_Details_usedNVFSet);
+            this.groupBox11.Controls.Add(this.label85);
+            this.groupBox11.Location = new System.Drawing.Point(677, 12);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(287, 191);
+            this.groupBox11.TabIndex = 13;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Details";
+            // 
+            // DSA2Locations_Details_Unknown
+            // 
+            this.DSA2Locations_Details_Unknown.Location = new System.Drawing.Point(120, 153);
+            this.DSA2Locations_Details_Unknown.Name = "DSA2Locations_Details_Unknown";
+            this.DSA2Locations_Details_Unknown.ReadOnly = true;
+            this.DSA2Locations_Details_Unknown.Size = new System.Drawing.Size(50, 20);
+            this.DSA2Locations_Details_Unknown.TabIndex = 31;
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Location = new System.Drawing.Point(17, 156);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(61, 13);
+            this.label87.TabIndex = 30;
+            this.label87.Text = "unbekannt:";
+            // 
+            // DSA2Locations_Details_ImageIndex
+            // 
+            this.DSA2Locations_Details_ImageIndex.Location = new System.Drawing.Point(120, 127);
+            this.DSA2Locations_Details_ImageIndex.Name = "DSA2Locations_Details_ImageIndex";
+            this.DSA2Locations_Details_ImageIndex.ReadOnly = true;
+            this.DSA2Locations_Details_ImageIndex.Size = new System.Drawing.Size(50, 20);
+            this.DSA2Locations_Details_ImageIndex.TabIndex = 29;
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Location = new System.Drawing.Point(17, 130);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(92, 13);
+            this.label88.TabIndex = 28;
+            this.label88.Text = "NVF Image Index:";
+            // 
+            // DSA2Locations_Details_PosY
+            // 
+            this.DSA2Locations_Details_PosY.Location = new System.Drawing.Point(120, 101);
+            this.DSA2Locations_Details_PosY.Name = "DSA2Locations_Details_PosY";
+            this.DSA2Locations_Details_PosY.ReadOnly = true;
+            this.DSA2Locations_Details_PosY.Size = new System.Drawing.Size(50, 20);
+            this.DSA2Locations_Details_PosY.TabIndex = 27;
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Location = new System.Drawing.Point(17, 104);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(57, 13);
+            this.label89.TabIndex = 26;
+            this.label89.Text = "Position Y:";
+            // 
+            // DSA2Locations_Details_PosX
+            // 
+            this.DSA2Locations_Details_PosX.Location = new System.Drawing.Point(120, 75);
+            this.DSA2Locations_Details_PosX.Name = "DSA2Locations_Details_PosX";
+            this.DSA2Locations_Details_PosX.ReadOnly = true;
+            this.DSA2Locations_Details_PosX.Size = new System.Drawing.Size(50, 20);
+            this.DSA2Locations_Details_PosX.TabIndex = 25;
+            // 
+            // label90
+            // 
+            this.label90.AutoSize = true;
+            this.label90.Location = new System.Drawing.Point(17, 78);
+            this.label90.Name = "label90";
+            this.label90.Size = new System.Drawing.Size(57, 13);
+            this.label90.TabIndex = 24;
+            this.label90.Text = "Position X:";
+            // 
+            // label86
+            // 
+            this.label86.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label86.Location = new System.Drawing.Point(16, 57);
+            this.label86.Name = "label86";
+            this.label86.Size = new System.Drawing.Size(250, 2);
+            this.label86.TabIndex = 2;
+            // 
+            // DSA2Locations_Details_usedNVFSet
+            // 
+            this.DSA2Locations_Details_usedNVFSet.Location = new System.Drawing.Point(120, 24);
+            this.DSA2Locations_Details_usedNVFSet.Name = "DSA2Locations_Details_usedNVFSet";
+            this.DSA2Locations_Details_usedNVFSet.ReadOnly = true;
+            this.DSA2Locations_Details_usedNVFSet.Size = new System.Drawing.Size(138, 20);
+            this.DSA2Locations_Details_usedNVFSet.TabIndex = 1;
+            // 
+            // label85
+            // 
+            this.label85.AutoSize = true;
+            this.label85.Location = new System.Drawing.Point(17, 27);
+            this.label85.Name = "label85";
+            this.label85.Size = new System.Drawing.Size(97, 13);
+            this.label85.TabIndex = 0;
+            this.label85.Text = "benutztes NVF set:";
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.DSA2Locations_Map);
+            this.panel1.Location = new System.Drawing.Point(240, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(431, 475);
+            this.panel1.TabIndex = 12;
+            // 
             // DSA2Locations_Map
             // 
             this.DSA2Locations_Map.Location = new System.Drawing.Point(3, 3);
@@ -4421,128 +4543,6 @@
             this.splitContainer1.SplitterDistance = 530;
             this.splitContainer1.TabIndex = 4;
             // 
-            // panel1
-            // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.DSA2Locations_Map);
-            this.panel1.Location = new System.Drawing.Point(240, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(431, 475);
-            this.panel1.TabIndex = 12;
-            // 
-            // groupBox11
-            // 
-            this.groupBox11.Controls.Add(this.DSA2Locations_Details_Unknown);
-            this.groupBox11.Controls.Add(this.label87);
-            this.groupBox11.Controls.Add(this.DSA2Locations_Details_ImageIndex);
-            this.groupBox11.Controls.Add(this.label88);
-            this.groupBox11.Controls.Add(this.DSA2Locations_Details_PosY);
-            this.groupBox11.Controls.Add(this.label89);
-            this.groupBox11.Controls.Add(this.DSA2Locations_Details_PosX);
-            this.groupBox11.Controls.Add(this.label90);
-            this.groupBox11.Controls.Add(this.label86);
-            this.groupBox11.Controls.Add(this.DSA2Locations_Details_usedNVFSet);
-            this.groupBox11.Controls.Add(this.label85);
-            this.groupBox11.Location = new System.Drawing.Point(677, 12);
-            this.groupBox11.Name = "groupBox11";
-            this.groupBox11.Size = new System.Drawing.Size(287, 191);
-            this.groupBox11.TabIndex = 13;
-            this.groupBox11.TabStop = false;
-            this.groupBox11.Text = "Details";
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Location = new System.Drawing.Point(17, 27);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(97, 13);
-            this.label85.TabIndex = 0;
-            this.label85.Text = "benutztes NVF set:";
-            // 
-            // DSA2Locations_Details_usedNVFSet
-            // 
-            this.DSA2Locations_Details_usedNVFSet.Location = new System.Drawing.Point(120, 24);
-            this.DSA2Locations_Details_usedNVFSet.Name = "DSA2Locations_Details_usedNVFSet";
-            this.DSA2Locations_Details_usedNVFSet.ReadOnly = true;
-            this.DSA2Locations_Details_usedNVFSet.Size = new System.Drawing.Size(138, 20);
-            this.DSA2Locations_Details_usedNVFSet.TabIndex = 1;
-            // 
-            // label86
-            // 
-            this.label86.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label86.Location = new System.Drawing.Point(16, 57);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(250, 2);
-            this.label86.TabIndex = 2;
-            // 
-            // DSA2Locations_Details_Unknown
-            // 
-            this.DSA2Locations_Details_Unknown.Location = new System.Drawing.Point(120, 153);
-            this.DSA2Locations_Details_Unknown.Name = "DSA2Locations_Details_Unknown";
-            this.DSA2Locations_Details_Unknown.ReadOnly = true;
-            this.DSA2Locations_Details_Unknown.Size = new System.Drawing.Size(50, 20);
-            this.DSA2Locations_Details_Unknown.TabIndex = 31;
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Location = new System.Drawing.Point(17, 156);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(61, 13);
-            this.label87.TabIndex = 30;
-            this.label87.Text = "unbekannt:";
-            // 
-            // DSA2Locations_Details_ImageIndex
-            // 
-            this.DSA2Locations_Details_ImageIndex.Location = new System.Drawing.Point(120, 127);
-            this.DSA2Locations_Details_ImageIndex.Name = "DSA2Locations_Details_ImageIndex";
-            this.DSA2Locations_Details_ImageIndex.ReadOnly = true;
-            this.DSA2Locations_Details_ImageIndex.Size = new System.Drawing.Size(50, 20);
-            this.DSA2Locations_Details_ImageIndex.TabIndex = 29;
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Location = new System.Drawing.Point(17, 130);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(92, 13);
-            this.label88.TabIndex = 28;
-            this.label88.Text = "NVF Image Index:";
-            // 
-            // DSA2Locations_Details_PosY
-            // 
-            this.DSA2Locations_Details_PosY.Location = new System.Drawing.Point(120, 101);
-            this.DSA2Locations_Details_PosY.Name = "DSA2Locations_Details_PosY";
-            this.DSA2Locations_Details_PosY.ReadOnly = true;
-            this.DSA2Locations_Details_PosY.Size = new System.Drawing.Size(50, 20);
-            this.DSA2Locations_Details_PosY.TabIndex = 27;
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Location = new System.Drawing.Point(17, 104);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(57, 13);
-            this.label89.TabIndex = 26;
-            this.label89.Text = "Position Y:";
-            // 
-            // DSA2Locations_Details_PosX
-            // 
-            this.DSA2Locations_Details_PosX.Location = new System.Drawing.Point(120, 75);
-            this.DSA2Locations_Details_PosX.Name = "DSA2Locations_Details_PosX";
-            this.DSA2Locations_Details_PosX.ReadOnly = true;
-            this.DSA2Locations_Details_PosX.Size = new System.Drawing.Size(50, 20);
-            this.DSA2Locations_Details_PosX.TabIndex = 25;
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Location = new System.Drawing.Point(17, 78);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(57, 13);
-            this.label90.TabIndex = 24;
-            this.label90.Text = "Position X:";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4644,6 +4644,9 @@
             this.groupBox14.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tP_DSA2Locations.ResumeLayout(false);
+            this.groupBox11.ResumeLayout(false);
+            this.groupBox11.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DSA2Locations_Map)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DSA2Locations_dGVList)).EndInit();
             this.tP_Animations.ResumeLayout(false);
@@ -4659,9 +4662,6 @@
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.groupBox11.ResumeLayout(false);
-            this.groupBox11.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

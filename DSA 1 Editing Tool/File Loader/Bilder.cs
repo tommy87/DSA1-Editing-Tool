@@ -160,6 +160,79 @@ namespace DSA_1_Editing_Tool.File_Loader
 
             
         }
+        public void addDSA2Textures(ref byte[] RAW_DAT, List<CDSAFileLoader.CFileSet> SCHWEIF_TEXTURES)
+        {
+            foreach(CDSAFileLoader.CFileSet fileset in SCHWEIF_TEXTURES)
+            {
+                this.itsImages.Add(new KeyValuePair<string, List<Image>>(fileset.filename, this.loadTexture(ref RAW_DAT, fileset)));
+            }
+        }
+
+        private List<Image> loadTexture(ref byte[] data, CDSAFileLoader.CFileSet NVF)
+        {
+            List<Image> images = new List<Image>();
+
+            try
+            {
+                Int32 currentPosition = NVF.startOffset;
+
+                while (currentPosition < NVF.endOffset - 4)
+                {
+                    if (data[currentPosition] == 'R' && data[currentPosition + 1] == 'O' && data[currentPosition + 2] == 'H' && data[currentPosition + 3] == 0)
+                        break;
+                    else
+                        currentPosition++;
+                }
+
+                currentPosition += 4;
+
+                int width = (CHelpFunctions.byteArrayToInt16(ref data, currentPosition) + 1);
+                currentPosition += 2;
+
+                int height = (CHelpFunctions.byteArrayToInt16(ref data, currentPosition) + 1);
+                currentPosition += 2;
+
+                int colorCount = CHelpFunctions.byteArrayToInt16(ref data, currentPosition);
+                currentPosition += 2;
+
+                if (colorCount <= 0)
+                {
+                    CDebugger.addErrorLine("unable to load textrue " + NVF.filename + Environment.NewLine + "header error");
+                    return images;
+                }
+
+                Color[] colors = new Color[colorCount];
+                for (int i = 0; i < colors.Length; i++)
+                {
+                    int r = data[currentPosition++];
+                    int g = data[currentPosition++];
+                    int b = data[currentPosition++];
+
+                    colors[i] = Color.FromArgb(r, g, b);
+                }
+
+                Bitmap image = new Bitmap(width, height);
+
+                for (int y = 0; y < image.Height; y++)
+                {
+                    for (int x = 0; x < image.Width; x++)
+                    {
+                        image.SetPixel(x, y, colors[data[currentPosition]]);
+                        currentPosition++;
+                    }
+                }
+
+                images.Add(image);
+            }
+            catch (Exception e)
+            {
+                CDebugger.addErrorLine("unable to load textrue " + NVF.filename + Environment.NewLine +e.Message);
+            }
+
+
+            return images;
+        }
+
         //fügt den Bildern die angegebenen Bilder hinzu
         public void addPictures(ref byte[] BLADE_DAT, List<CDSAFileLoader.CFileSet> BLADE_NVFs, ref byte[] DSAGEN_DAT, List<CDSAFileLoader.CFileSet> DSAGEN_NVFs, DSAVersion version)
         {

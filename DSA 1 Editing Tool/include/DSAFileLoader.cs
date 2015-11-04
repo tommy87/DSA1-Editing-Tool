@@ -16,12 +16,12 @@ namespace DSA_1_Editing_Tool
     {
         public CDSAFileLoader()
         {
-            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.FX));
-            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.RAW));
-            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.SPEECH));
-            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.STAR));
-            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.CD_SPEECHCD));
-            this.DSA2_Archive.Add(new DSA2_Archiv(DSA2_Archiv.ArchivTyp.CD_STARCD));           
+            this.DSA2_Archive.Add(DSA2_Archiv.ArchivTyp.FX, new DSA2_Archiv(DSA2_Archiv.ArchivTyp.FX));
+            this.DSA2_Archive.Add(DSA2_Archiv.ArchivTyp.RAW, new DSA2_Archiv(DSA2_Archiv.ArchivTyp.RAW));
+            this.DSA2_Archive.Add(DSA2_Archiv.ArchivTyp.SPEECH, new DSA2_Archiv(DSA2_Archiv.ArchivTyp.SPEECH));
+            this.DSA2_Archive.Add(DSA2_Archiv.ArchivTyp.STAR, new DSA2_Archiv(DSA2_Archiv.ArchivTyp.STAR));
+            this.DSA2_Archive.Add(DSA2_Archiv.ArchivTyp.CD_SPEECHCD, new DSA2_Archiv(DSA2_Archiv.ArchivTyp.CD_SPEECHCD));
+            this.DSA2_Archive.Add(DSA2_Archiv.ArchivTyp.CD_STARCD, new DSA2_Archiv(DSA2_Archiv.ArchivTyp.CD_STARCD));           
         }
         //-----------DSA 1----------------------
         List<string> itsSCHICKFilenames = new List<string>();
@@ -35,7 +35,8 @@ namespace DSA_1_Editing_Tool
         //-----------DSA 2----------------------
 
         //erstes Archiv ist das auf der Festplatte, zweites ist das von der CD
-        List<DSA2_Archiv> DSA2_Archive = new List<DSA2_Archiv>();
+        //List<DSA2_Archiv> DSA2_Archive = new List<DSA2_Archiv>();
+        Dictionary<DSA2_Archiv.ArchivTyp, DSA2_Archiv> DSA2_Archive = new Dictionary<DSA2_Archiv.ArchivTyp, DSA2_Archiv>();
 
         //--------------------------------------
 
@@ -273,66 +274,67 @@ namespace DSA_1_Editing_Tool
             List<CFileSet> filesetList_cd_1;
             List<CFileSet> filesetList_cd_2;
 
-            DSA2_Archiv currentArchiv = null;
-            foreach (var Archiv in this.DSA2_Archive)
+            DSA2_Archiv currentArchiv = this.DSA2_Archive[DSA2_Archiv.ArchivTyp.STAR];
             {
-                if (Archiv.Typ == DSA2_Archiv.ArchivTyp.STAR)
+                if (Properties.Settings.Default.loadImages)
                 {
-                    currentArchiv = Archiv;
-                    break;
+                    if (currentArchiv != null)
+                    {
+                        this.getFilesBySuffix_DSA_2("NVF", ref currentArchiv, out filesetList_install_1, out filesetList_cd_1);
+                        this.bilder.addPictures(ref currentArchiv.data_Install, filesetList_install_1, DSAVersion.Schweif);
+                        this.bilder.addPictures(ref currentArchiv.data_CD, filesetList_cd_1, DSAVersion.Schweif);
+                    }
+                }
+
+                if (Properties.Settings.Default.loadData)
+                {
+                    if (currentArchiv != null)
+                    {
+                        this.getFilesBySuffix_DSA_2("LTX", ref currentArchiv, out filesetList_install_1, out filesetList_cd_1);
+                        this.texte.addTexte(ref currentArchiv.data_Install, filesetList_install_1, null);
+                        this.texte.addTexte(ref currentArchiv.data_CD, filesetList_cd_1, null);
+                    }
+
+                    if (currentArchiv != null)
+                    {
+                        this.getFileByName_DSA_2("ITEMS.DAT", ref currentArchiv, out fileset_install_1, out fileset_cd_1);
+                        this.getFileByName_DSA_2("ITEMS.LTX", ref currentArchiv, out fileset_install_2, out fileset_cd_2);
+                        if (fileset_install_1 != null && fileset_install_2 != null)
+                            this.itemList.addItems(ref currentArchiv.data_Install, fileset_install_1, fileset_install_2, this._version);
+                        else if (fileset_cd_1 != null && fileset_cd_2 != null)
+                            this.itemList.addItems(ref currentArchiv.data_CD, fileset_cd_1, fileset_cd_2, this._version);
+
+                        this.getFileByName_DSA_2("MONSTER.DAT", ref currentArchiv, out fileset_install_1, out fileset_cd_1);
+                        this.getFileByName_DSA_2("MONNAMES.LTX", ref currentArchiv, out fileset_install_2, out fileset_cd_2);
+                        if (fileset_install_1 != null && fileset_install_2 != null)
+                            this.monster.addMonsters(ref currentArchiv.data_Install, fileset_install_1, fileset_install_2, this._version);
+                        else if (fileset_cd_1 != null && fileset_cd_2 != null)
+                            this.monster.addMonsters(ref currentArchiv.data_CD, fileset_cd_1, fileset_cd_2, this._version);
+
+                        this.getFileByName_DSA_2("FIGHT.LST", ref currentArchiv, out fileset_install_1, out fileset_cd_1);
+                        if (fileset_install_1 != null)
+                            this.kampf.addKämpfe(ref currentArchiv.data_Install, fileset_install_1);
+                        else if (fileset_cd_1 != null)
+                            this.kampf.addKämpfe(ref currentArchiv.data_CD, fileset_cd_1);
+
+                        this.getFilesBySuffix_DSA_2("TLK", ref currentArchiv, out filesetList_install_1, out filesetList_cd_1);
+                        this.dialoge.addDialoge(ref currentArchiv.data_Install, filesetList_install_1, this._version);
+                        this.dialoge.addDialoge(ref currentArchiv.data_CD, filesetList_cd_1, this._version);
+
+                        this.getFilesBySuffix_DSA_2("MAD", ref currentArchiv, out filesetList_install_1, out filesetList_cd_1);
+                        this.getFilesBySuffix_DSA_2("INF", ref currentArchiv, out filesetList_install_2, out filesetList_cd_2);
+                        this.DSA2_Locations.addLocation(ref currentArchiv.data_Install, ref this.bilder, filesetList_install_1, filesetList_install_2);
+                        this.DSA2_Locations.addLocation(ref currentArchiv.data_CD, ref this.bilder, filesetList_cd_1, filesetList_cd_2);
+                    }
                 }
             }
 
-            if (Properties.Settings.Default.loadImages)
+            //Texturen
+            currentArchiv = this.DSA2_Archive[DSA2_Archiv.ArchivTyp.RAW];
             {
-                if (currentArchiv != null)
-                {
-                    this.getFilesBySuffix_DSA_2("NVF", ref currentArchiv, out filesetList_install_1, out filesetList_cd_1);
-                    this.bilder.addPictures(ref currentArchiv.data_Install, filesetList_install_1, DSAVersion.Schweif);
-                    this.bilder.addPictures(ref currentArchiv.data_CD, filesetList_cd_1, DSAVersion.Schweif);
-                }
-            }
-
-            if (Properties.Settings.Default.loadData)
-            {
-                if (currentArchiv != null)
-                {
-                    this.getFilesBySuffix_DSA_2("LTX", ref currentArchiv, out filesetList_install_1, out filesetList_cd_1);
-                    this.texte.addTexte(ref currentArchiv.data_Install, filesetList_install_1, null);
-                    this.texte.addTexte(ref currentArchiv.data_CD, filesetList_cd_1, null);
-                }
-
-                if (currentArchiv != null)
-                {
-                    this.getFileByName_DSA_2("ITEMS.DAT", ref currentArchiv, out fileset_install_1, out fileset_cd_1);
-                    this.getFileByName_DSA_2("ITEMS.LTX", ref currentArchiv, out fileset_install_2, out fileset_cd_2);
-                    if (fileset_install_1 != null && fileset_install_2 != null)
-                        this.itemList.addItems(ref currentArchiv.data_Install, fileset_install_1, fileset_install_2, this._version);
-                    else if (fileset_cd_1 != null && fileset_cd_2 != null)
-                        this.itemList.addItems(ref currentArchiv.data_CD, fileset_cd_1, fileset_cd_2, this._version);
-
-                    this.getFileByName_DSA_2("MONSTER.DAT", ref currentArchiv, out fileset_install_1, out fileset_cd_1);
-                    this.getFileByName_DSA_2("MONNAMES.LTX", ref currentArchiv, out fileset_install_2, out fileset_cd_2);
-                    if (fileset_install_1 != null && fileset_install_2 != null)
-                        this.monster.addMonsters(ref currentArchiv.data_Install, fileset_install_1, fileset_install_2, this._version);
-                    else if (fileset_cd_1 != null && fileset_cd_2 != null)
-                        this.monster.addMonsters(ref currentArchiv.data_CD, fileset_cd_1, fileset_cd_2, this._version);
-
-                    this.getFileByName_DSA_2("FIGHT.LST", ref currentArchiv, out fileset_install_1, out fileset_cd_1);
-                    if (fileset_install_1 != null)
-                        this.kampf.addKämpfe(ref currentArchiv.data_Install, fileset_install_1);
-                    else if (fileset_cd_1 != null)
-                        this.kampf.addKämpfe(ref currentArchiv.data_CD, fileset_cd_1);
-
-                    this.getFilesBySuffix_DSA_2("TLK", ref currentArchiv, out filesetList_install_1, out filesetList_cd_1);
-                    this.dialoge.addDialoge(ref currentArchiv.data_Install, filesetList_install_1, this._version);
-                    this.dialoge.addDialoge(ref currentArchiv.data_CD, filesetList_cd_1, this._version);
-
-                    this.getFilesBySuffix_DSA_2("MAD", ref currentArchiv, out filesetList_install_1, out filesetList_cd_1);
-                    this.getFilesBySuffix_DSA_2("INF", ref currentArchiv, out filesetList_install_2, out filesetList_cd_2);
-                    this.DSA2_Locations.addLocation(ref currentArchiv.data_Install, ref this.bilder, filesetList_install_1, filesetList_install_2);
-                    this.DSA2_Locations.addLocation(ref currentArchiv.data_CD, ref this.bilder, filesetList_cd_1, filesetList_cd_2);
-                }
+                this.getFilesBySuffix_DSA_2("RAW", ref currentArchiv, out filesetList_install_1, out filesetList_cd_1);
+                this.bilder.addDSA2Textures(ref currentArchiv.data_Install, filesetList_install_1);
+                this.bilder.addDSA2Textures(ref currentArchiv.data_CD, filesetList_cd_1);
             }
         }
         
@@ -346,7 +348,7 @@ namespace DSA_1_Editing_Tool
             this.SCHICK_DAT = null;
             this.DSAGEN_DAT = null;
 
-            foreach (DSA2_Archiv archiv in this.DSA2_Archive)
+            foreach (DSA2_Archiv archiv in this.DSA2_Archive.Values)
             {
                 archiv.data_Install = null;
                 archiv.data_CD = null;
@@ -643,10 +645,12 @@ namespace DSA_1_Editing_Tool
 
             if (CD_Path == null)
                 CDebugger.addErrorLine("Sternenschweif CD wurde nicht gefunden");
+            else
+                CDebugger.addDebugLine("Sternenschweif CD gefunden");
 
             //---------------------------------------------------------------------
 
-            foreach (var Archiv in this.DSA2_Archive)
+            foreach (var Archiv in this.DSA2_Archive.Values)
             {
                 Archiv.data_Install = null;
                 Archiv.data_CD = null;
@@ -678,13 +682,13 @@ namespace DSA_1_Editing_Tool
                         break;
                 }
 
-                string Archive_path_install = null;
+                string Archive_path_installFolder = null;
                 string Archive_path_cd = null;
                 foreach (string file in Directory.GetFiles(directoryName))
                 {
                     if (String.Compare(Path.GetFileName(file), ArchiveName, true) == 0)
                     {
-                        Archive_path_install = file;
+                        Archive_path_installFolder = file;
                         break;
                     }
                 }
@@ -700,8 +704,9 @@ namespace DSA_1_Editing_Tool
                     }
                 }
 
-                if (File.Exists(Archive_path_install))
-                    Archiv.data_Install = File.ReadAllBytes(Archive_path_install);
+                //if the archiv is found in the directory load all data from it
+                if (File.Exists(Archive_path_installFolder))
+                    Archiv.data_Install = File.ReadAllBytes(Archive_path_installFolder);
 
                 if (File.Exists(Archive_path_cd))
                     Archiv.data_CD = File.ReadAllBytes(Archive_path_cd);
@@ -1096,7 +1101,7 @@ namespace DSA_1_Editing_Tool
                     break;
 
                 case DSAVersion.Schweif:
-                    foreach (var Archiv in this.DSA2_Archive)
+                    foreach (var Archiv in this.DSA2_Archive.Values)
                     {
                         string folder = null;
                         switch(Archiv.Typ)
