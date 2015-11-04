@@ -208,7 +208,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                     int g = data[currentPosition++];
                     int b = data[currentPosition++];
 
-                    colors[i] = Color.FromArgb(r, g, b);
+                    colors[i] = Color.FromArgb(r*4, g*4, b*4);
                 }
 
                 Bitmap image = new Bitmap(width, height);
