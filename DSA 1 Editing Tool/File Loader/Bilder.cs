@@ -208,6 +208,11 @@ namespace DSA_1_Editing_Tool.File_Loader
                     int g = data[currentPosition++];
                     int b = data[currentPosition++];
 
+                    if (r > 64 || g > 64 || b > 64)
+                    {
+                        CDebugger.addErrorLine("the color of texture " + NVF.filename + " is out of range");
+                    }
+
                     colors[i] = Color.FromArgb(r*4, g*4, b*4);
                 }
 
