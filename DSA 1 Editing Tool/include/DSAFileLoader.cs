@@ -1221,6 +1221,17 @@ namespace DSA_1_Editing_Tool
                     counter++;
                 }
             }
+            foreach (KeyValuePair<string, Image> pair in this.bilder.itsTextures)
+            {
+                string name = getFileFront(pair.Key);
+                string path = filepath + Path.DirectorySeparatorChar + "Textures";
+
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+
+                pair.Value.Save(path + Path.DirectorySeparatorChar + pair.Key + ".png");
+            }
+
             CDebugger.addDebugLine("Bilder wurden erfolgreich exportiert");
         }
         private string getFileFront(string filename)

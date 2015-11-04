@@ -236,6 +236,11 @@ namespace DSA_1_Editing_Tool
             {
                 this.Bilder_dgvList.Rows.Add(i, this.itsDSAFileLoader.bilder.itsImages[i].Key);
             };
+
+            if (this.itsDSAFileLoader.bilder.itsTextures.Count > 0)
+            {
+                this.Bilder_dgvList.Rows.Add(this.itsDSAFileLoader.bilder.itsImages.Count, "textures");
+            }
         }
         private void loadAnimationenTab()
         {
@@ -1842,13 +1847,13 @@ namespace DSA_1_Editing_Tool
 
             try
             {
+                this.Bilder_dgvBildnummer.ClearSelection();
+                this.Bilder_dgvBildnummer.Rows.Clear();
+
                 int i = Convert.ToInt32(this.Bilder_dgvList.SelectedRows[0].Cells[0].Value);
 
                 if (i < this.itsDSAFileLoader.bilder.itsImages.Count)
                 {
-                    this.Bilder_dgvBildnummer.ClearSelection();
-                    this.Bilder_dgvBildnummer.Rows.Clear();
-
                     //DataGridViewRow[] values = new DataGridViewRow[this.itsDSAFileLoader.bilder.itsImages[i].Value.Count];
 
                     for (int j = 0; j < this.itsDSAFileLoader.bilder.itsImages[i].Value.Count; j++)
@@ -1860,6 +1865,19 @@ namespace DSA_1_Editing_Tool
                     this.Bilder_dgvBildnummer.ClearSelection();
                     if (this.Bilder_dgvBildnummer.Rows.Count > 0)
                         this.Bilder_dgvBildnummer.Rows[0].Selected = true;
+                }
+                else if (i == this.itsDSAFileLoader.bilder.itsImages.Count && this.itsDSAFileLoader.bilder.itsTextures.Count > 0)
+                {
+                    foreach (KeyValuePair<String, Image> pair in this.itsDSAFileLoader.bilder.itsTextures)                        
+                    {
+                        this.Bilder_dgvBildnummer.Rows.Add(pair.Key);
+                    }
+                    //this.Bilder_dgvBildnummer.Rows.AddRange(values);       
+
+                    this.Bilder_dgvBildnummer.ClearSelection();
+                    if (this.Bilder_dgvBildnummer.Rows.Count > 0)
+                        this.Bilder_dgvBildnummer.Rows[0].Selected = true;
+                    
                 }
             }
             catch (SystemException e2)
@@ -1885,43 +1903,48 @@ namespace DSA_1_Editing_Tool
             try
             {
                 int i = Convert.ToInt32(bilder[0].Cells[0].Value);
-                int j = Convert.ToInt32(bildnummer[0].Cells[0].Value);
+                int j = bildnummer[0].Index; //Convert.ToInt32(bildnummer[0].Cells[0].Value);
 
+                Image image = null;
                 if ((i < this.itsDSAFileLoader.bilder.itsImages.Count) && (j < this.itsDSAFileLoader.bilder.itsImages[i].Value.Count))
                 {
-                    Image image = new Bitmap(this.itsDSAFileLoader.bilder.itsImages[i].Value[j]);
+                    image = new Bitmap(this.itsDSAFileLoader.bilder.itsImages[i].Value[j]);
+                }
+                if (i == this.itsDSAFileLoader.bilder.itsImages.Count && j < this.itsDSAFileLoader.bilder.itsTextures.Count)
+                {
+                    image = new Bitmap(this.itsDSAFileLoader.bilder.itsTextures[j].Value);
+                }
 
-                    if (image == null)
+                if (image == null)
+                {
+                    this.Bilder_pictureBox.Image = null;
+                }
+                else
+                {
+                    if (this.Bilder_cBZoom.Checked)
                     {
-                        this.Bilder_pictureBox.Image = null;
+                        float faktor_X = (float)Bilder_pictureBox.Width / (float)image.Width;
+                        float faktor_Y = (float)Bilder_pictureBox.Height / (float)image.Height;
+                        Bitmap bmp2;
+                        if (faktor_X > faktor_Y)
+                            bmp2 = new Bitmap((int)(image.Width * faktor_Y), (int)(image.Height * faktor_Y));
+                        else
+                            bmp2 = new Bitmap((int)(image.Width * faktor_X), (int)(image.Height * faktor_X));
+
+                        Graphics g = Graphics.FromImage(bmp2);
+
+                        if (this.Bilder_rBInterpolationMode_NearestNeighbor.Checked)
+                            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
+                        else if (this.Bilder_rBInterpolationMode_Biliniear.Checked)
+                            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bilinear;
+                        else if (this.Bilder_rBInterpolationMode_Bikubisch.Checked)
+                            g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
+
+                        g.DrawImage(image, new Rectangle(Point.Empty, bmp2.Size));
+                        Bilder_pictureBox.BackgroundImage = bmp2;
                     }
                     else
-                    {
-                        if (this.Bilder_cBZoom.Checked)
-                        {
-                            float faktor_X = (float)Bilder_pictureBox.Width / (float)image.Width;
-                            float faktor_Y = (float)Bilder_pictureBox.Height / (float)image.Height;
-                            Bitmap bmp2;
-                            if (faktor_X > faktor_Y)
-                                bmp2 = new Bitmap((int)(image.Width * faktor_Y), (int)(image.Height * faktor_Y));
-                            else
-                                bmp2 = new Bitmap((int)(image.Width * faktor_X), (int)(image.Height * faktor_X));
-
-                            Graphics g = Graphics.FromImage(bmp2);
-
-                            if (this.Bilder_rBInterpolationMode_NearestNeighbor.Checked)
-                                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.NearestNeighbor;
-                            else if (this.Bilder_rBInterpolationMode_Biliniear.Checked)
-                                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bilinear;
-                            else if (this.Bilder_rBInterpolationMode_Bikubisch.Checked)
-                                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.Bicubic;
-
-                            g.DrawImage(image, new Rectangle(Point.Empty, bmp2.Size));
-                            Bilder_pictureBox.BackgroundImage = bmp2;
-                        }
-                        else
-                            Bilder_pictureBox.BackgroundImage = image;
-                    }
+                        Bilder_pictureBox.BackgroundImage = image;
                 }
             }
             catch (SystemException e2)

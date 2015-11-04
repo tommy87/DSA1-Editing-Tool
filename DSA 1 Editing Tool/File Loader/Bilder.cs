@@ -9,6 +9,7 @@ namespace DSA_1_Editing_Tool.File_Loader
     public class CBilder
     {
         public List<KeyValuePair<string, List<Image>>> itsImages = new List<KeyValuePair<string, List<Image>>>();
+        public List<KeyValuePair<String, Image>> itsTextures = new List<KeyValuePair<string, Image>>();
         public List<KeyValuePair<string, List<List<Image>>>> itsAnimations = new List<KeyValuePair<string,List<List<Image>>>>();
 
         //----------------------------------------------------------
@@ -164,14 +165,12 @@ namespace DSA_1_Editing_Tool.File_Loader
         {
             foreach(CDSAFileLoader.CFileSet fileset in SCHWEIF_TEXTURES)
             {
-                this.itsImages.Add(new KeyValuePair<string, List<Image>>(fileset.filename, this.loadTexture(ref RAW_DAT, fileset)));
+                this.addTexture(ref RAW_DAT, fileset);
             }
         }
 
-        private List<Image> loadTexture(ref byte[] data, CDSAFileLoader.CFileSet NVF)
+        private void addTexture(ref byte[] data, CDSAFileLoader.CFileSet NVF)
         {
-            List<Image> images = new List<Image>();
-
             try
             {
                 Int32 currentPosition = NVF.startOffset;
@@ -198,7 +197,7 @@ namespace DSA_1_Editing_Tool.File_Loader
                 if (colorCount <= 0)
                 {
                     CDebugger.addErrorLine("unable to load textrue " + NVF.filename + Environment.NewLine + "header error");
-                    return images;
+                    return;
                 }
 
                 Color[] colors = new Color[colorCount];
@@ -227,15 +226,12 @@ namespace DSA_1_Editing_Tool.File_Loader
                     }
                 }
 
-                images.Add(image);
+                this.itsTextures.Add(new KeyValuePair<string, Image>(NVF.filename, image));
             }
             catch (Exception e)
             {
                 CDebugger.addErrorLine("unable to load textrue " + NVF.filename + Environment.NewLine +e.Message);
             }
-
-
-            return images;
         }
 
         //fügt den Bildern die angegebenen Bilder hinzu
@@ -319,6 +315,7 @@ namespace DSA_1_Editing_Tool.File_Loader
         public void clear()
         {
             this.itsImages.Clear();
+            this.itsTextures.Clear();
             this.itsAnimations.Clear();
         }
 
